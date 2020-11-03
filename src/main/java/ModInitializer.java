@@ -1,16 +1,20 @@
 import basemod.BaseMod;
+import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
+import cards.Ats_strike;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 
 @SpireInitializer
-public class ModInitializer implements PostDrawSubscriber {
+public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber {
 
     public ModInitializer(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
         BaseMod.subscribe(this);
     }
+
+
 
     //Used by @SpireInitializer
     public static void initialize(){
@@ -29,5 +33,9 @@ public class ModInitializer implements PostDrawSubscriber {
         System.out.println(card.name + " 이(가) 뽑혔다!");
     }
 
+    @Override
+    public void receiveEditCards() {
+        BaseMod.addCard(new Ats_strike());
+    }
 }
 

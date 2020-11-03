@@ -1,26 +1,22 @@
 package cards;
 
-import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class Ats_strike
-        extends CustomCard {
-    public static final String ID = "ats:strike";
-    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+public class Ats_strike extends CustomCard {
+    public static final String ID = "ats_strike";
+    //private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/strike.png";
+    public static final String NAME = "강타γ"; //cardStrings.NAME;
+    public static final String DESCRIPTION = "피해를 6만큼 줍니다"; //cardStrings.DESCRIPTION;
+    public static final String IMG_PATH = "img/cards/strike.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 12;
@@ -40,7 +36,6 @@ public class Ats_strike
 
         this.setBannerTexture("img/512/rar.png", "img/1024/rar_big.png");
 
-        BaseMod.addCard(this);
     }
 
     @Override
