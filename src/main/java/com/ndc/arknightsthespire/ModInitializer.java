@@ -5,7 +5,7 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.ndc.arknightsthespire.cards.CardStrike;
+import com.ndc.arknightsthespire.cards.CardSniperOverload;
 
 
 @SpireInitializer
@@ -37,7 +37,7 @@ public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber {
 
     @Override
     public void receiveEditCards() {
-        BaseMod.addCard(new CardStrike());
+        BaseMod.addCard(new CardSniperOverload());
     }
 }
 

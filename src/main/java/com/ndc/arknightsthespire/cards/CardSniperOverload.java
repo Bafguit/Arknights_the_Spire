@@ -10,20 +10,20 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class CardStrike extends CustomCard {
-    public static final String ID = "ats_strike";
+public class CardSniperOverload extends CustomCard {
+    public static final String ID = "overload";
     //private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
-    public static final String NAME = "강타γ"; //cardStrings.NAME;
+    public static final String NAME = "과부하 모드"; //cardStrings.NAME;
     public static final String DESCRIPTION = "피해를 6만큼 줍니다"; //cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/strike.png";
+    public static final String IMG_PATH = "img/cards/overload.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 12;
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
 
-    public CardStrike() {
+    public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColor.RED,
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -48,7 +48,7 @@ public class CardStrike extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardStrike();
+        return new CardSniperOverload();
     }
 
     @Override

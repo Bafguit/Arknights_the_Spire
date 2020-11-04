@@ -1,9 +1,9 @@
 {
-  "modid": "Example_Mod_ID_12345",
-  "name": "Example Mod Name",
-  "author_list": ["Author Name"],
-  "description": "Mod Description",
-  "version": "0.1",
+  "modid": "AtS_ID:1590",
+  "name": "Arknights the Spire",
+  "author_list": ["FastCat & Kuiprux"],
+  "description": "Arknights in StS",
+  "version": "0.0.1",
   "sts_version": "06-15-2018",
-  "mts_version": "2.7.0"
+  "mts_version": "3.17.0"
 }
