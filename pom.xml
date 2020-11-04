@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Change These to match your mod -->
-    <groupId>examplemod</groupId>
-    <artifactId>ExampleMod</artifactId>
+    <groupId>com.ndc</groupId>
+    <artifactId>arknights-the-spire</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
     <name>Arknights the Spire</name>
@@ -46,7 +46,7 @@
     <!-- This is how your code is packaged into the jar file-->
     <build>
         <!-- Change this to match your mods name -->
-        <finalName>ExampleMod</finalName>
+        <finalName>ArknightsTheSpire</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -55,7 +55,7 @@
                 <executions>
                     <execution>
                         <!-- Change this to match your mods artifactId -->
-                        <id>ExampleMod</id>
+                        <id>arknights-the-spire</id>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
@@ -64,7 +64,7 @@
                             <filters>
                                 <filter>
                                     <!-- Change this to match your mods groupId:artifactId -->
-                                    <artifact>examplemod:ExampleMod</artifact>
+                                    <artifact>com.ndc:arknights-the-spire</artifact>
                                 </filter>
                             </filters>
                         </configuration>
@@ -83,7 +83,7 @@
                             <target>
                                 <!-- Change to match your mods name.
                                      This moves your mod into a common folder where all mods you make can go. -->
-                                <copy file="target/ExampleMod.jar" tofile="../_ModTheSpire/mods/ExampleMod.jar"/>
+                                <copy file="target/ArknightsTheSpire.jar" tofile="C:\Program Files (x86)\Steam\steamapps\common\SlayTheSpire\mods\ArknightsTheSpire.jar"/>
                             </target>
                         </configuration>
                         <goals>

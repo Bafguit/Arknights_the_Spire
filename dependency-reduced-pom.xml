@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>examplemod</groupId>
-  <artifactId>ExampleMod</artifactId>
+  <groupId>com.ndc</groupId>
+  <artifactId>arknights-the-spire</artifactId>
   <name>Arknights the Spire</name>
   <version>0.0.1</version>
   <description>Slay the Spire mod</description>
   <build>
-    <finalName>ExampleMod</finalName>
+    <finalName>ArknightsTheSpire</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>2.4.2</version>
         <executions>
           <execution>
-            <id>ExampleMod</id>
+            <id>arknights-the-spire</id>
             <phase>package</phase>
             <goals>
               <goal>shade</goal>
@@ -22,7 +22,7 @@
             <configuration>
               <filters>
                 <filter>
-                  <artifact>examplemod:ExampleMod</artifact>
+                  <artifact>com.ndc:arknights-the-spire</artifact>
                 </filter>
               </filters>
             </configuration>
