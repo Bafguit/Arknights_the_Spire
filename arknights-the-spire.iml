@@ -13,7 +13,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.megacrit.cardcrawl:slaythespire:017">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/desktop-1.0.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -22,7 +22,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.evacipated.cardcrawl:ModTheSpire:2.7.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/ModTheSpire.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -31,7 +31,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.evacipated.cardcrawl:BaseMod:2.14.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/BaseMod.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
