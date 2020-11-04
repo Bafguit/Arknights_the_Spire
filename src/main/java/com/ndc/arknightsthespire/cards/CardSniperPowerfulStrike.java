@@ -10,24 +10,24 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CardSniperOverload extends CustomCard {
-    public static final String ID = "Overload";
+public class CardSniperPowerfulStrike extends CustomCard {
+    public static final String ID = "Powerful Strike";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/overload.png";
+    public static final String IMG_PATH = "img/cards/strike.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 2;
-    private static final int UPGRADE_PLUS_DMG = 1;
-    private static final int REPEAT_ATK = 4;
+    private static final int ATTACK_DMG = 7;
+    private static final int SP = 3;
+    private static final int UPGRADE_SP = -1;
 
-    public CardSniperOverload() {
+    public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColor.RED,
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = ATTACK_DMG;
-        this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
+        this.magicNumber = this.baseMagicNumber = SP;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
@@ -39,23 +39,21 @@ public class CardSniperOverload extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int for_i = 0; for_i < REPEAT_ATK; for_i++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
-        }
+                    AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardSniperOverload();
+        return new CardSniperPowerfulStrike();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeMagicNumber(UPGRADE_SP);
         }
     }
 

@@ -6,6 +6,7 @@ import basemod.interfaces.PostDrawSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
+import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
 
 
 @SpireInitializer
@@ -38,6 +39,7 @@ public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber {
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new CardSniperOverload());
+        BaseMod.addCard(new CardSniperPowerfulStrike());
     }
 }
 
