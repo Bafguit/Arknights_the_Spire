@@ -1,14 +1,14 @@
 {
   "Overload": {
-    "NAME": "슈팅 모드",
+    "NAME": "어설트 모드",
     "SP_NAME": "과부하 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 4 번 줍니다. NL SP 10 자동 발동",
-    "SP_DESCRIPTION": "SP 10 자동 발동 NL 피해를 !D! 만큼 5 번 줍니다."
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 만큼 5 번 줍니다."
   },
   "Emotion Absorption": {
     "NAME": "감정 흡수",
     "SP_NAME": "스피릿 버스트",
-    "DESCRIPTION": "SP를 !M! 만큼 회복합니다. 이번 턴에 적이 죽은 경우 !M! 만큼 회복합니다. NL SP 20 자동 발동",
+    "DESCRIPTION": "SP를 !M! 만큼 회복합니다. 이번 턴에 적이 죽은 경우 추가로 6 만큼 회복합니다. NL SP 20 자동 발동",
     "SP_DESCRIPTION": "SP 20 자동 발동 NL 피해를 !D! 만큼 !M! 번 줍니다. NL 캐스터 2턴 금지."
   },
   "Powerful Strike": {
