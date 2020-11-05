@@ -8,19 +8,52 @@
   "Emotion Absorption": {
     "NAME": "감정 흡수",
     "SP_NAME": "스피릿 버스트",
-    "DESCRIPTION": "SP를 !M! 만큼 회복합니다. 이번 턴에 적이 죽은 경우 추가로 6 만큼 회복합니다. NL SP 20 자동 발동",
-    "SP_DESCRIPTION": "SP 20 자동 발동 NL 피해를 !D! 만큼 !M! 번 줍니다. NL 캐스터 2턴 금지."
+    "DESCRIPTION": "SP를 !M! 회복합니다. 이번 턴에 적이 죽은 경우 추가로 6 회복합니다. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 만큼 !M! 번 줍니다. NL 캐스터 2턴 금지."
   },
   "Powerful Strike": {
     "NAME": "강타β",
     "SP_NAME": "강타γ",
-    "DESCRIPTION": "피해를 !D! 만큼 줍니다. NL SP !M! 자동 발동 ",
-    "SP_DESCRIPTION": "SP !M! 자동 발동 NL 피해를 !D! 만큼 줍니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동 ",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 줍니다."
   },
   "Armor-crushing Shot": {
     "NAME": "쇄갑격",
-    "DESCRIPTION": "방어도를 !M! 만큼 파괴합니다. NL SP 4 자동 발동",
-    "SP_DESCRIPTION": "SP 4 자동 발동 NL 방어도를 !M! 만큼 파괴합니다. NL 취약을 1 부여합니다."
+    "DESCRIPTION": "방어도를 !M! 파괴합니다. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 방어도를 !M! 파괴합니다. NL 취약을 1 부여합니다."
+  },
+  "Sunburst": {
+    "NAME": "화염 폭발",
+    "DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 피해를 !D! 줍니다. 방어도가 있다면 추가로 피해를 2 줍니다. NL 화상을 !M! 부여합니다.",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 피해를 !D! 줍니다. 방어도가 있다면 추가로 피해를 2 줍니다. NL 화상을 !M! 부여합니다."
+  },
+  "Soul Absorption": {
+    "NAME": "영혼 착취",
+    "DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 캐스터 공격 카드가 준 피해만큼 방어도를 얻습니다.",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 캐스터 공격 카드가 준 피해만큼 방어도를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다.",
+    "UPGRADE_SP_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다."
+  },
+  "Burst Stimulant-Durian": {
+    "NAME": "폭발제-두리안맛",
+    "DESCRIPTION": "피해를 3 만큼 5 번 받습니다. NL 이번 턴 동안 힘을 5 얻고 모든 카드의 SP 소모가 3 감소합니다. NL 방어도에는 피해가 2로 감소합니다. NL 소멸."
+  },
+  "Rat Pack": {
+    "NAME": "쥐 떼",
+    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 스페셜리스트 2턴 금지. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 스페셜리스트 2턴 금지."
+  },
+  "Assault Order": {
+    "NAME": "돌격지령β",
+    "UPGRADE_NAME": "돌격지령γ",
+    "DESCRIPTION": "SP !S! 자동 발동 NL [R] [R] 을 얻습니다.",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL [R] [R] 을 얻습니다."
+  },
+  "Support Order": {
+    "NAME": "지원지령β",
+    "SP_NAME": "지원지령γ",
+    "DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지.",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지."
   },
   "NULL": {
     "NAME": "",
@@ -28,6 +61,7 @@
     "DESCRIPTION": "",
     "SP_DESCRIPTION": ""
   },
+
   "A Thousand Cuts": {
     "NAME": "능지처참",
     "DESCRIPTION": "카드를 사용할 때마다 적 전체에게 피해를 !M! 줍니다."

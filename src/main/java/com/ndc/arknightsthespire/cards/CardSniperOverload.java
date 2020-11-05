@@ -20,7 +20,7 @@ public class CardSniperOverload extends CustomCard {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
-    private static final int REPEAT_ATK = 4;
+    private static final int REPEAT_ATK = 3;
 
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
