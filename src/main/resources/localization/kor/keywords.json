@@ -1,5 +1,30 @@
 {
   "Game Dictionary": {
+    "SP_DESCRIPTION": {
+      "NAMES": [
+        "SP !S!",
+        "SP"
+      ],
+      "DESCRIPTION": "일정 SP를 소모하여 강화된 카드를 사용합니다."
+    },
+    "AUTO_TRIGGER": {
+      "NAMES": [
+        "자동 발동",
+        "자동 발동인",
+        "자동 발동의",
+        "Auto Trigger"
+      ],
+      "DESCRIPTION": "SP 조건이 충족되면 무조건 발동합니다."
+    },
+    "MANUAL_TRIGGER": {
+      "NAMES": [
+        "수동 발동",
+        "수동 발동인",
+        "수동 발동의",
+        "Manual Trigger"
+      ],
+      "DESCRIPTION": "SP 사용 버튼을 눌러야만 발동할 수 있습니다."
+    },
     "ARTIFACT": {
       "NAMES": [
         "인공물",
