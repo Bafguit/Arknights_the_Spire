@@ -1,4 +1,10 @@
 {
+  "SpToggleButton": {
+    "TEXT": [
+      "SP 강화 켜기",
+      "SP 강화 끄기"
+    ]
+  },
   "AbandonRunButton": {
     "TEXT": [
       "전투 포기"

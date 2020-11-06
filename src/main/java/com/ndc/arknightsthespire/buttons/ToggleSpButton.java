@@ -1,11 +1,11 @@
 package com.ndc.arknightsthespire.buttons;
 
+import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -20,7 +20,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.EndTurnGlowEffect;
-import com.megacrit.cardcrawl.vfx.EndTurnLongPressBarFlashEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,8 +31,8 @@ public class ToggleSpButton {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private String label;
-    public static final String END_TURN_MSG;
-    public static final String ENEMY_TURN_MSG;
+    public static final String TURN_ON_MSG;
+    public static final String TURN_OFF_MSG;
     private static final Color DISABLED_COLOR;
     private static final float SHOW_X;
     private static final float SHOW_Y;
@@ -49,12 +48,12 @@ public class ToggleSpButton {
     private static final float GLOW_INTERVAL = 1.2F;
     private float glowTimer;
     public boolean isGlowing;
-    public boolean isWarning;
     private Hitbox hb;
     private float holdProgress;
     private static final float HOLD_DUR = 0.4F;
     private Color holdBarColor;
 
+    private static final float BUTTON_OFFSET_Y = 70;
     EndTurnButton endTurnButton;
 
     public ToggleSpButton(EndTurnButton endTurnButton) {
@@ -68,7 +67,6 @@ public class ToggleSpButton {
         this.glowList = new ArrayList();
         this.glowTimer = 0.0F;
         this.isGlowing = false;
-        this.isWarning = false;
         this.hb = new Hitbox(0.0F, 0.0F, 230.0F * Settings.scale, 110.0F * Settings.scale);
         this.holdProgress = 0.0F;
         this.holdBarColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
@@ -77,6 +75,13 @@ public class ToggleSpButton {
     }
 
     public void update() {
+        if(!Settings.hideEndTurn) {
+            this.current_y = SHOW_Y + BUTTON_OFFSET_Y;
+        }
+        if(isMyTurn()) {
+            this.enable();
+        }
+
         this.glow();
         this.updateHoldProgress();
         if (this.current_x != this.target_x) {
@@ -103,7 +108,6 @@ public class ToggleSpButton {
             }
 
             if (this.hb.hovered && !this.isDisabled && !AbstractDungeon.isScreenUp) {
-                this.isWarning = this.showWarning();
                 if (this.hb.justHovered && AbstractDungeon.player.hoveredCard == null) {
                     CardCrawlGame.sound.play("UI_HOVER");
                     Iterator var1 = AbstractDungeon.player.hand.group.iterator();
@@ -119,15 +123,14 @@ public class ToggleSpButton {
         }
 
         if (this.holdProgress == 0.4F && !this.isDisabled && !AbstractDungeon.isScreenUp) {
-            this.disable(true);
+            this.disable();
             this.holdProgress = 0.0F;
-            AbstractDungeon.effectsQueue.add(new EndTurnLongPressBarFlashEffect());
         }
 
         if ((!Settings.USE_LONG_PRESS || !Settings.isControllerMode && !InputActionSet.endTurn.isPressed()) && (this.hb.clicked || (InputActionSet.endTurn.isJustPressed() || CInputActionSet.proceed.isJustPressed()) && !this.isDisabled && this.enabled)) {
             this.hb.clicked = false;
             if (!this.isDisabled && !AbstractDungeon.isScreenUp) {
-                this.disable(true);
+                this.disable();
             }
         }
 
@@ -156,41 +159,8 @@ public class ToggleSpButton {
         }
     }
 
-    private boolean showWarning() {
-        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
-
-        AbstractCard card;
-        do {
-            if (!var1.hasNext()) {
-                return false;
-            }
-
-            card = (AbstractCard)var1.next();
-        } while(!card.isGlowing);
-
-        return true;
-    }
-
     public void enable() {
         this.enabled = true;
-        this.updateText(END_TURN_MSG);
-    }
-
-    public void disable(boolean isEnemyTurn) {
-        InputHelper.moveCursorToNeutralPosition();
-        AbstractDungeon.actionManager.addToBottom(new NewQueueCardAction());
-        this.enabled = false;
-        this.hb.hovered = false;
-        this.isGlowing = false;
-        if (isEnemyTurn) {
-            this.updateText(ENEMY_TURN_MSG);
-            CardCrawlGame.sound.play("END_TURN");
-            AbstractDungeon.player.endTurnQueued = true;
-            AbstractDungeon.player.releaseCard();
-        } else {
-            this.updateText(END_TURN_MSG);
-        }
-
     }
 
     public void disable() {
@@ -244,19 +214,16 @@ public class ToggleSpButton {
 
     }
 
+    private boolean isMyTurn() {
+        return ReflectionHacks.getPrivate(endTurnButton, EndTurnButton.class, "label").equals(EndTurnButton.END_TURN_MSG);
+    }
+
     public void render(SpriteBatch sb) {
-        if (!Settings.hideEndTurn) {
-            current_y -= 128.0F;
-        }
             float tmpY = this.current_y;
             this.renderHoldEndTurn(sb);
             if (!this.isDisabled && this.enabled) {
                 if (this.hb.hovered) {
-                    if (this.isWarning) {
-                        this.textColor = Settings.RED_TEXT_COLOR;
-                    } else {
-                        this.textColor = Color.CYAN;
-                    }
+                    this.textColor = Color.CYAN;
                 } else if (this.isGlowing) {
                     this.textColor = Settings.GOLD_COLOR;
                 } else {
@@ -264,9 +231,9 @@ public class ToggleSpButton {
                 }
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {
-                    TipHelper.renderGenericTip(this.current_x - 90.0F * Settings.scale, this.current_y + 300.0F * Settings.scale, LABEL[0] + " (" + InputActionSet.endTurn.getKeyString() + ")", MSG[0] + AbstractDungeon.player.gameHandSize + MSG[1]);
+                    TipHelper.renderGenericTip(this.current_x - 90.0F * Settings.scale, this.current_y + 300.0F * Settings.scale, LABEL[0] + " (" + InputActionSet.endTurn.getKeyString() + ")", MSG[0]);
                 }
-            } else if (this.label.equals(ENEMY_TURN_MSG)) {
+            } else if (!isMyTurn()) {
                 this.textColor = Settings.CREAM_COLOR;
             } else {
                 this.textColor = Color.LIGHT_GRAY;
@@ -349,13 +316,13 @@ public class ToggleSpButton {
     }
 
     static {
-        tutorialStrings = CardCrawlGame.languagePack.getTutorialString("End Turn Tip");
+        tutorialStrings = CardCrawlGame.languagePack.getTutorialString("SpToggleButton Tip");//TODO
         MSG = tutorialStrings.TEXT;
         LABEL = tutorialStrings.LABEL;
-        uiStrings = CardCrawlGame.languagePack.getUIString("End Turn Button");
+        uiStrings = CardCrawlGame.languagePack.getUIString("SpToggleButton");
         TEXT = uiStrings.TEXT;
-        END_TURN_MSG = TEXT[0];
-        ENEMY_TURN_MSG = TEXT[1];
+        TURN_ON_MSG = TEXT[0];
+        TURN_OFF_MSG = TEXT[1];
         DISABLED_COLOR = new Color(0.7F, 0.7F, 0.7F, 1.0F);
         SHOW_X = 1640.0F * Settings.scale;
         SHOW_Y = 210.0F * Settings.scale;

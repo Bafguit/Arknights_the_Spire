@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 )
 public class HandCardSelectScreenPatcher {
 
-    private static ToggleSpButton toggleSpButton;
+    public static ToggleSpButton toggleSpButton;
 
     @SpirePatch(
             clz= OverlayMenu.class,
@@ -21,6 +21,13 @@ public class HandCardSelectScreenPatcher {
     public static class ConstructorPatcher {
         public static void PostFix(OverlayMenu __instance) {
             toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            System.out.println("AAAAAAAAAAAAAaaaaaa");
+            System.out.println("AAAAAAAAAAAAAaaaaaa");
+            System.out.println("AAAAAAAAAAAAAaaaaaa");
+            System.out.println(toggleSpButton);
+            System.out.println("AAAAAAAAAAAAAaaaaaa");
+            System.out.println("AAAAAAAAAAAAAaaaaaa");
+            System.out.println("AAAAAAAAAAAAAaaaaaa");
         }
     }
 
@@ -73,6 +80,9 @@ public class HandCardSelectScreenPatcher {
                 localvars = {"sb"}
         )
         public static void Insert(OverlayMenu __instance, SpriteBatch sb) {
+            if(toggleSpButton == null) {
+                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            }
             toggleSpButton.render(sb);
         }
     }
