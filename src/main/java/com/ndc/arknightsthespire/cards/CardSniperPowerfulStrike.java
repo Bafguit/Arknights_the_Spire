@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CardSniperPowerfulStrike extends CustomCard {
+public class CardSniperPowerfulStrike extends CardSPBase {
     public static final String ID = "Powerful Strike";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
@@ -19,7 +19,7 @@ public class CardSniperPowerfulStrike extends CustomCard {
     public static final String IMG_PATH = "img/cards/strike.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
-    private static final int SP = 3;
+    private static final int DEFAULT_SP = 3;
     private static final int UPGRADE_SP = -1;
 
     public CardSniperPowerfulStrike() {
@@ -27,7 +27,7 @@ public class CardSniperPowerfulStrike extends CustomCard {
                 CardType.ATTACK, CardColor.RED,
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = ATTACK_DMG;
-        this.magicNumber = this.baseMagicNumber = SP;
+        this.sp = this.baseSp = DEFAULT_SP;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
@@ -53,7 +53,7 @@ public class CardSniperPowerfulStrike extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_SP);
+            //this.upgradedSp(UPGRADE_SP);
         }
     }
 

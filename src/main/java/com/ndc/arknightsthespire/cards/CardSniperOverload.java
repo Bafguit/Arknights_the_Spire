@@ -20,7 +20,7 @@ public class CardSniperOverload extends CardSPBase {
     private static final int ATTACK_DMG = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
-    private static final int SP = 3;
+    private static final int DEFAULT_SP = 10;
 
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -28,7 +28,7 @@ public class CardSniperOverload extends CardSPBase {
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
-        this.sp = this.baseSp = 10;
+        this.sp = this.baseSp = DEFAULT_SP;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
