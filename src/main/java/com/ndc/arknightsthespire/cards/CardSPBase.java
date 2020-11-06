@@ -1,12 +1,8 @@
 package com.ndc.arknightsthespire.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.helpers.GameDataStringBuilder;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.Arrays;
 
 public class CardSPBase extends CustomCard {
 
@@ -32,7 +28,7 @@ public class CardSPBase extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 
     }
-
+/*
     public void displayUpgrades() {
         if (this.upgradedCost) {
             this.isCostModified = true;
@@ -162,5 +158,5 @@ public class CardSPBase extends CustomCard {
         builder.addFieldData(this.baseSp);
         builder.addFieldData(this.isMultiDamage);
         return builder.toString();
-    }
+    }*/
 }

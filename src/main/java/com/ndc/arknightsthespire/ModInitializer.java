@@ -21,7 +21,7 @@ public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber {
 
     //Used by @SpireInitializer
     public static void initialize(){
-
+        BaseMod.addDynamicVariable(new SPDynamicVariable());
         //This creates an instance of our classes and gets our code going after BaseMod and ModTheSpire initialize.
         ModInitializer modInitializer = new ModInitializer();
 

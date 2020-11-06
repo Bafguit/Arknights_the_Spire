@@ -1,23 +1,7 @@
 package com.ndc.arknightsthespire.patcher;
 
-import basemod.ReflectionHacks;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.DescriptionLine;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.GameDictionary;
-import com.megacrit.cardcrawl.localization.LocalizedStrings;
-import com.ndc.arknightsthespire.cards.CardSPBase;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.logging.Logger;
-
 public class AbstractCardPatcher {
-
+/*
     static Method dedupeKeyword;
 
     static {
@@ -35,14 +19,14 @@ public class AbstractCardPatcher {
             paramtypez = {
                     String.class, String.class, String.class, int.class, String.class, AbstractCard.CardType.class, AbstractCard.CardColor.class, AbstractCard.CardRarity.class, AbstractCard.CardTarget.class, DamageInfo.DamageType.class
             }
-    )/*
+    )
     @SpirePatch(
             clz= AbstractCard.class,
             method=SpirePatch.CONSTRUCTOR,
             paramtypez = {
                     AbstractCard.class
             }
-    )*/
+    )
     public static class ConstructorPatcher {
         public static void Postfix(AbstractCard __instance, String id, String name, String imgUrl, int cost, String rawDescription, AbstractCard.CardType type, AbstractCard.CardColor color, AbstractCard.CardRarity rarity, AbstractCard.CardTarget target, DamageInfo.DamageType dType) {
             if(__instance instanceof CardSPBase) {
@@ -61,6 +45,7 @@ public class AbstractCardPatcher {
     )
     public static class GetDynamicValuePatcher
     {
+        RenderCustomDynamicVariable.Inner
         public static String Replace(AbstractCard __instance, char key) {
             System.out.println(key);
             switch(key) {
@@ -309,7 +294,7 @@ public class AbstractCardPatcher {
         }
     }
 
-/*
+
         @SpirePatch(
                 clz= AbstractCard.class,
                 method="initializeDescriptionCN"
