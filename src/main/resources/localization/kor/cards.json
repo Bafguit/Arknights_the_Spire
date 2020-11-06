@@ -55,6 +55,25 @@
     "DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지.",
     "SP_DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지."
   },
+  "True Silver Slash": {
+    "NAME": "진은참",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 3 번 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 가드 카드 수만큼 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
+  },
+  "Volcano": {
+    "NAME": "화산",
+    "DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸.",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸."
+  },
+  "Nebulous Foxfire": {
+    "NAME": "희미한 여우불",
+    "DESCRIPTION": "적 전체에게 약화를 2 , 취약을 2 부여합니다. 재생을 !M! 얻습니다."
+  },
+  "Charging Defense": {
+    "NAME": "차지 디펜스",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP 8 자동 발동",
+    "SP_DESCRIPTION": "SP 8 자동 발동 NL 방어도를 !B! 얻습니다. 다음 한 번만 피해를 받지 않습니다."
+  },
   "NULL": {
     "NAME": "",
     "SP_NAME": "",

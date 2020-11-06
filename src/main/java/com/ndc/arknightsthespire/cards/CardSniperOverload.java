@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CardSniperOverload extends CustomCard {
+public class CardSniperOverload extends CardSPBase {
     public static final String ID = "Overload";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
@@ -21,6 +21,7 @@ public class CardSniperOverload extends CustomCard {
     private static final int ATTACK_DMG = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
+    private static final int SP = 3;
 
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -28,6 +29,7 @@ public class CardSniperOverload extends CustomCard {
                 CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
+        this.sp = this.baseSp = 10;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 

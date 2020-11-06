@@ -1,4 +1,27 @@
 {
+  "Lavender": {
+    "NAME": "라벤더",
+    "FLAVOR": "퍼퓨머 재능",
+    "DESCRIPTIONS": [
+      "턴이 끝날 때마다 체력을 1 회복합니다."
+    ]
+  },
+  "Blood Sample Collection": {
+    "NAME": "혈액 샘플 회수",
+    "FLAVOR": "와파린 재능",
+    "DESCRIPTIONS": [
+      "",
+      ""
+    ]
+  },
+  "": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "",
+      ""
+    ]
+  },
   "Akabeko": {
     "NAME": "아카베코",
     "FLAVOR": "\"음머어~\"",
