@@ -1,6 +1,5 @@
 package com.ndc.arknightsthespire.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -26,7 +25,7 @@ public class CardSniperOverload extends CardSPBase {
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColor.RED,
-                CardRarity.UNCOMMON, CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
         this.sp = this.baseSp = 10;

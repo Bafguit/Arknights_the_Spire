@@ -1,22 +1,31 @@
 package com.ndc.arknightsthespire.cards;
 
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CardSPBase extends CustomCard {
+ public class CardSPBase extends CustomCard {
+    // 87 251 218
+    //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
+    public static final Color CYAN_BORDER_GLOW_COLOR = new Color(1.0F, 0.14F, 0.14F, 0.5F);
 
     public int baseSp;
     public int sp;
+    public final boolean isAuto;
     public boolean isSpModified;
     public boolean upgradedSp;
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        this.isAuto = isAuto;
+        this.updateGlowColor(false);
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        this.isAuto = isAuto;
+        this.updateGlowColor(false);
     }
 
     @Override
@@ -27,6 +36,14 @@ public class CardSPBase extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
+    }
+
+    public void updateGlowColor(boolean isSpEnabled) {
+        if(isSpEnabled || isAuto) {
+            this.glowColor = CYAN_BORDER_GLOW_COLOR;
+        } else {
+            this.glowColor = BLUE_BORDER_GLOW_COLOR;
+        }
     }
 /*
     public void displayUpgrades() {
