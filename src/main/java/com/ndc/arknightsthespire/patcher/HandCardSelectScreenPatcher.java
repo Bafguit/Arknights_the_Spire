@@ -21,13 +21,6 @@ public class HandCardSelectScreenPatcher {
     public static class ConstructorPatcher {
         public static void PostFix(OverlayMenu __instance) {
             toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
-            System.out.println("AAAAAAAAAAAAAaaaaaa");
-            System.out.println("AAAAAAAAAAAAAaaaaaa");
-            System.out.println("AAAAAAAAAAAAAaaaaaa");
-            System.out.println(toggleSpButton);
-            System.out.println("AAAAAAAAAAAAAaaaaaa");
-            System.out.println("AAAAAAAAAAAAAaaaaaa");
-            System.out.println("AAAAAAAAAAAAAaaaaaa");
         }
     }
 
@@ -40,6 +33,9 @@ public class HandCardSelectScreenPatcher {
                 loc=67
         )
         public static void Insert(OverlayMenu __instance) {
+            if(toggleSpButton == null) {
+                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            }
             toggleSpButton.update();
         }
     }
@@ -53,6 +49,9 @@ public class HandCardSelectScreenPatcher {
                 loc=110
         )
         public static void Insert(OverlayMenu __instance) {
+            if(toggleSpButton == null) {
+                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            }
             toggleSpButton.show();
         }
     }
@@ -66,6 +65,9 @@ public class HandCardSelectScreenPatcher {
                 loc=126
         )
         public static void Insert(OverlayMenu __instance) {
+            if(toggleSpButton == null) {
+                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            }
             toggleSpButton.hide();
         }
     }
