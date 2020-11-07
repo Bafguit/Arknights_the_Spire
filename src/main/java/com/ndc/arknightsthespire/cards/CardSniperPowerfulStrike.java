@@ -23,7 +23,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
 
     public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, CardColor.RED,
+                CardType.ATTACK, CardColor.COLORLESS,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, false);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = this.baseSp = DEFAULT_SP;

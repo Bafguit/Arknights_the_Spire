@@ -77,7 +77,7 @@ public class EndTurnButtonPatcher {
         }
     }
 
-    @SpirePatch(
+/*    @SpirePatch(
             clz= EndTurnButton.class,
             method="render"
     )
@@ -187,7 +187,7 @@ public class EndTurnButtonPatcher {
             }
 
         }
-    }
+    }*/
 
     public static Object getPrivate(EndTurnButton __instance, String name) {
         return ReflectionHacks.getPrivate(__instance, EndTurnButton.class, name);

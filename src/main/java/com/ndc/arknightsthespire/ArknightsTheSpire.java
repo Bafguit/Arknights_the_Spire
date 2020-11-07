@@ -4,8 +4,10 @@ import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
@@ -13,20 +15,13 @@ import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
 
 
 @SpireInitializer
-public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber, PostInitializeSubscriber {
-
-    public ModInitializer(){
-        //Use this for when you subscribe to any hooks offered by BaseMod.
-        BaseMod.subscribe(this);
-    }
-
-
+public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscriber, PostInitializeSubscriber {
 
     //Used by @SpireInitializer
     public static void initialize(){
         BaseMod.addDynamicVariable(new SPDynamicVariable());
         //This creates an instance of our classes and gets our code going after BaseMod and ModTheSpire initialize.
-        ModInitializer modInitializer = new ModInitializer();
+        ArknightsTheSpire modInitializer = new ArknightsTheSpire();
 
         //Look at the BaseMod wiki for getting started. (Skip the decompiling part. It's not needed right now)
 
