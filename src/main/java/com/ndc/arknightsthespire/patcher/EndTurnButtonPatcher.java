@@ -1,19 +1,11 @@
 package com.ndc.arknightsthespire.patcher;
 
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.*;
-import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
-import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class EndTurnButtonPatcher {
