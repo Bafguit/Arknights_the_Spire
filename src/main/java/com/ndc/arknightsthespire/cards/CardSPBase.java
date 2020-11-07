@@ -45,6 +45,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
             this.glowColor = BLUE_BORDER_GLOW_COLOR;
         }
     }
+
+     public boolean canAffordSP(int sp) {
+        return sp >= this.sp;
+     }
 /*
     public void displayUpgrades() {
         if (this.upgradedCost) {

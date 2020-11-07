@@ -1,18 +1,22 @@
 package com.ndc.arknightsthespire;
 
 public class SPHandler {
-    private int sp;
-    private boolean isSpModeEnabled;
+    private static int sp = 10;
+    private static boolean isSpModeEnabled;
 
-    public int getSp() {
+    public static int getSp() {
         return sp;
     }
 
-    public void addSp(int sp) {
-        this.sp = sp;
+    public static void setSp(int sp1) {
+        sp = sp1;
     }
 
-    public boolean toggleSpMode() {
+    public static void addSp(int sp1) {
+        sp += sp1;
+    }
+
+    public static boolean toggleSpMode() {
         return isSpModeEnabled = !isSpModeEnabled;
     }
 }

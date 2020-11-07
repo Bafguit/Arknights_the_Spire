@@ -1,8 +1,8 @@
 {
   "SpToggleButton": {
     "TEXT": [
-      "SP 강화 켜기",
-      "SP 강화 끄기"
+      "SP 켜기",
+      "SP 끄기"
     ]
   },
   "AbandonRunButton": {

@@ -20,7 +20,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.EndTurnGlowEffect;
+import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.patcher.EndTurnButtonPatcher;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -54,9 +56,20 @@ public class ToggleSpButton {
     private static final float HOLD_DUR = 0.4F;
     private Color holdBarColor;
 
-    private static final float BUTTON_OFFSET_Y = 70;
+    public static final float RIGHT_OFFSET_X = 39;
+    public static final float LEFT_OFFSET_X = -103;
+    public static final float BUTTON_OFFSET_Y = 19;
+    public static final float LEFT_TEXT_OFFSET_X = -8.0F;
+    public static final float RIGHT_TEXT_OFFSET_X = 8.0F;
+    public static final float TEXT_OFFSET_Y = -1.0F;
     EndTurnButton endTurnButton;
     boolean isSpEnabled = false;
+
+    public static Texture UI_BUTTON_LEFT = ImageMaster.loadImage("img/ui/uiButtonLeft.png");
+    public static Texture UI_BUTTON_LEFT_HOVER = ImageMaster.loadImage("img/ui/uiButtonLeftHover.png");
+    public static Texture UI_BUTTON_RIGHT = ImageMaster.loadImage("img/ui/uiButtonRight.png");
+    public static Texture UI_BUTTON_RIGHT_GLOW = ImageMaster.loadImage("img/ui/uiButtonRightGlow.png");
+    public static Texture UI_BUTTON_RIGHT_HOVER = ImageMaster.loadImage("img/ui/uiButtonRightHover.png");
 
     public ToggleSpButton(EndTurnButton endTurnButton) {
         this.label = TEXT[0];
@@ -69,7 +82,7 @@ public class ToggleSpButton {
         this.glowList = new ArrayList();
         this.glowTimer = 0.0F;
         this.isGlowing = false;
-        this.hb = new Hitbox(0.0F, 0.0F, 230.0F * Settings.scale, 110.0F * Settings.scale);
+        this.hb = new Hitbox(0.0F, 0.0F, 200.0F * Settings.scale, 100.0F * Settings.scale);
         this.holdProgress = 0.0F;
         this.holdBarColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
 
@@ -77,9 +90,10 @@ public class ToggleSpButton {
     }
 
     public void update() {
-        if(!Settings.hideEndTurn) {
+        /*if(!Settings.hideEndTurn) {
             this.current_y = SHOW_Y + BUTTON_OFFSET_Y;
-        }
+        }*/
+
         if(!this.enabled && endTurnButton.enabled) {
             this.enable();
         }
@@ -120,8 +134,11 @@ public class ToggleSpButton {
                     System.out.println("HOVER");
                     while(var1.hasNext()) {
                         AbstractCard c = (AbstractCard)var1.next();
-                        if (c.isGlowing) {
-                            c.superFlash(c.glowColor);
+                        if(c instanceof CardSPBase) {
+                            CardSPBase card = (CardSPBase) c;
+                            if (card.isGlowing && card.canAffordSP(SPHandler.getSp())) {
+                                //c.superFlash(c.glowColor);
+                            }
                         }
                     }
 
@@ -272,13 +289,13 @@ public class ToggleSpButton {
 
             Texture buttonImg;
             if (this.isGlowing && !this.hb.clickStarted) {
-                buttonImg = ImageMaster.END_TURN_BUTTON_GLOW;
+                buttonImg = UI_BUTTON_LEFT_HOVER;
             } else {
-                buttonImg = ImageMaster.END_TURN_BUTTON;
+                buttonImg = UI_BUTTON_LEFT;
             }
 
             if (this.hb.hovered && !this.isDisabled && !AbstractDungeon.isScreenUp) {
-                sb.draw(ImageMaster.END_TURN_HOVER, this.current_x - 128.0F, tmpY - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
+                sb.draw(UI_BUTTON_LEFT_HOVER, this.current_x - 128.0F, tmpY - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
             }
 
             sb.draw(buttonImg, this.current_x - 128.0F, tmpY - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
@@ -299,7 +316,7 @@ public class ToggleSpButton {
                 sb.draw(CInputActionSet.proceed.getKeyImg(), this.current_x - 32.0F - 42.0F * Settings.scale - FontHelper.getSmartWidth(FontHelper.panelEndTurnFont, this.label, 99999.0F, 0.0F) / 2.0F, tmpY - 32.0F, 32.0F, 32.0F, 64.0F, 64.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 64, 64, false, false);
             }
 
-            FontHelper.renderFontCentered(sb, FontHelper.panelEndTurnFont, this.label, this.current_x - 0.0F * Settings.scale, tmpY - 3.0F * Settings.scale, this.textColor);
+            FontHelper.renderFontCentered(sb, FontHelper.panelEndTurnFont, this.label, this.current_x + LEFT_TEXT_OFFSET_X * Settings.scale, tmpY + TEXT_OFFSET_Y * Settings.scale, this.textColor);
             if (!this.isHidden) {
                 this.hb.render(sb);
             }
@@ -341,8 +358,8 @@ public class ToggleSpButton {
         TURN_ON_MSG = TEXT[0];
         TURN_OFF_MSG = TEXT[1];
         DISABLED_COLOR = new Color(0.7F, 0.7F, 0.7F, 1.0F);
-        SHOW_X = 1640.0F * Settings.scale;
-        SHOW_Y = 210.0F * Settings.scale;
-        HIDE_X = SHOW_X + 500.0F * Settings.scale;
+        SHOW_X = EndTurnButtonPatcher.SHOW_X + LEFT_OFFSET_X;
+        SHOW_Y = EndTurnButtonPatcher.SHOW_Y;
+        HIDE_X = EndTurnButtonPatcher.HIDE_X;
     }
 }

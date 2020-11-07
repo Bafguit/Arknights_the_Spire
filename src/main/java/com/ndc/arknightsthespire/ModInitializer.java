@@ -3,14 +3,17 @@ package com.ndc.arknightsthespire;
 import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
 import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
 
 
 @SpireInitializer
-public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber {
+public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber, PostInitializeSubscriber {
 
     public ModInitializer(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
@@ -40,6 +43,13 @@ public class ModInitializer implements PostDrawSubscriber, EditCardsSubscriber {
     public void receiveEditCards() {
         BaseMod.addCard(new CardSniperOverload());
         BaseMod.addCard(new CardSniperPowerfulStrike());
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
+        ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
+        ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
     }
 }
 

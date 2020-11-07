@@ -1,6 +1,5 @@
 package com.ndc.arknightsthespire.cards;
 
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -25,7 +24,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColor.RED,
-                CardRarity.UNCOMMON, CardTarget.ENEMY);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, false);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = this.baseSp = DEFAULT_SP;
 

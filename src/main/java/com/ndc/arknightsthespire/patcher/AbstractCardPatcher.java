@@ -1,7 +1,7 @@
 package com.ndc.arknightsthespire.patcher;
 
-public class AbstractCardPatcher {
 /*
+public class AbstractCardPatcher {
     static Method dedupeKeyword;
 
     static {
@@ -323,6 +323,6 @@ public class AbstractCardPatcher {
                     }
                 }
         }
-        */
 
 }
+        */
