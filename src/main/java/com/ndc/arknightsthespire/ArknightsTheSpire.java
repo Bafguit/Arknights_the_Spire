@@ -4,10 +4,8 @@ import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
@@ -24,7 +22,7 @@ public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscribe
         ArknightsTheSpire modInitializer = new ArknightsTheSpire();
 
         //Look at the BaseMod wiki for getting started. (Skip the decompiling part. It's not needed right now)
-
+        CardColors.initialize();
     }
 
 
