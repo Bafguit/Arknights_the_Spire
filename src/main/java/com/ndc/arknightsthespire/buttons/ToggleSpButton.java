@@ -82,7 +82,7 @@ public class ToggleSpButton {
         this.glowList = new ArrayList();
         this.glowTimer = 0.0F;
         this.isGlowing = false;
-        this.hb = new Hitbox(0.0F, 0.0F, 200.0F * Settings.scale, 100.0F * Settings.scale);
+        this.hb = new Hitbox(0.0F, 0.0F, 160.0F * Settings.scale, 100.0F * Settings.scale);
         this.holdProgress = 0.0F;
         this.holdBarColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
 
