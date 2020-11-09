@@ -6,10 +6,12 @@ import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
 import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
+import com.ndc.arknightsthespire.character.CharacterDoctor;
 
 
 @SpireInitializer
@@ -52,6 +54,14 @@ public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscribe
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
+                MY_CHARACTER_BUTTON,
+                MY_CHARACTER_PORTRAIT,
+                MyPlayerClassEnum.MY_PLAYER_CLASS);
     }
 }
 
