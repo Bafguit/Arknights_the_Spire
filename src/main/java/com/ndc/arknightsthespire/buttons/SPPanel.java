@@ -19,8 +19,9 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.RefreshEnergyEffect;
-
+/*
 public class SPPanel extends AbstractPanel {
+
     private static final TutorialStrings tutorialStrings;
     public static final String[] MSG;
     public static final String[] LABEL;
@@ -164,4 +165,4 @@ public class SPPanel extends AbstractPanel {
         totalCount = 0;
         energyVfxTimer = 0.0F;
     }
-}
+}*/
