@@ -1,7 +1,9 @@
+
 package com.ndc.arknightsthespire;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -13,9 +15,11 @@ import com.ndc.arknightsthespire.cards.CardSniperOverload;
 import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 
+import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
+
 
 @SpireInitializer
-public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscriber, PostInitializeSubscriber {
+public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
 
@@ -58,10 +62,11 @@ public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscribe
 
     @Override
     public void receiveEditCharacters() {
+        System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
-                MY_CHARACTER_BUTTON,
-                MY_CHARACTER_PORTRAIT,
-                MyPlayerClassEnum.MY_PLAYER_CLASS);
+                "img/char/CharacterDoctorButton.png",
+                "img/char/PortraitBG.png",
+                DOCTOR_CLASS);
+        System.out.println("DONE");
     }
 }
-

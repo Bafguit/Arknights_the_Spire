@@ -1,31 +1,72 @@
+
+
 package com.ndc.arknightsthespire.character;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.red.Bash;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.events.beyond.SpireHeart;
+import com.megacrit.cardcrawl.events.city.Vampires;
+import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.character.ATSCharacterEnum;
 
 import java.util.ArrayList;
 
 public class CharacterDoctor extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
+    public static final int STARTING_HP = 75;
+    public static final int MAX_HP = 75;
+    public static final int STARTING_GOLD = 99;
+    public static final int HAND_SIZE = 5;
+    private static final int ORB_SLOTS = 0;
+
+    private static final CharacterStrings characterStrings;
+    private static final String[] NAMES;
+    private static final String[] TEXT;
+
     public static final String MY_CHARACTER_SHOULDER_2 = "img/char/shoulder2.png"; // campfire pose
     public static final String MY_CHARACTER_SHOULDER_1 = "img/char/shoulder1.png"; // another campfire pose
     public static final String MY_CHARACTER_CORPSE = "img/char/corpse.png"; // dead corpse
     public static final String MY_CHARACTER_SKELETON_ATLAS = "img/char/skeleton.atlas"; // spine animation atlas
     public static final String MY_CHARACTER_SKELETON_JSON = "img/char/skeleton.json"; // spine animation json
-    private static final int ORB_SLOTS = 0;
+    public static final String[] orbTextures = {
+            "img/char/orb/layer1.png",
+            "img/char/orb/layer2.png",
+            "img/char/orb/layer3.png",
+            "img/char/orb/layer4.png",
+            "img/char/orb/layer5.png",
+            "img/char/orb/layer6.png",
+            "img/char/orb/layer1d.png",
+            "img/char/orb/layer2d.png",
+            "img/char/orb/layer3d.png",
+            "img/char/orb/layer4d.png",
+            "img/char/orb/layer5d.png",};
+
+    static {
+        characterStrings = CardCrawlGame.languagePack.getCharacterString("Doctor");
+        NAMES = characterStrings.NAMES;
+        TEXT = characterStrings.TEXT;
+    }
 
     public CharacterDoctor (String name) {
-        super(name, ATSCharacterEnum.DOCTOR_CLASS, String[] orbTextures, String orbVfxPath, String model, String animation);
+        super(name, ATSCharacterEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpriterAnimation(
+                "img/char/Spriter/theDefaultAnimation.scml"));
 
         this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
         this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
@@ -43,59 +84,50 @@ public class CharacterDoctor extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() { // starting deck 'nuff said
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("MyCard0");
-        retVal.add("MyCard0");
-        retVal.add("MyCard0");
-        retVal.add("MyCard0");
-        retVal.add("MyCard1");
-        retVal.add("MyCard1");
-        retVal.add("MyCard1");
-        retVal.add("MyCard1");
-        retVal.add("MyCard2");
+        retVal.add("Powerful Strike");
+        retVal.add("Powerful Strike");
+        retVal.add("Powerful Strike");
         return retVal;
     }
 
     public ArrayList<String> getStartingRelics() { // starting relics - also simple
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("MyRelic");
-        UnlockTracker.markRelicAsSeen("MyRelic");
+        retVal.add("Bag of Preparation");
+        UnlockTracker.markRelicAsSeen("Bag of Preparation");
         return retVal;
     }
 
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
-    public static final int STARTING_GOLD = 99;
-    public static final int HAND_SIZE = 5;
+
 
     public CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold
-        return new CharSelectInfo("My Character", "My character is a person from the outer worlds. He makes magic stuff happen.",
+        return new CharSelectInfo("독타", "테라에서 구출되어 기억을 잃은 사람. 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
                 STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, HAND_SIZE,
                 this, getStartingRelics(), getStartingDeck(), false);
     }
 
     @Override
     public String getTitle(PlayerClass playerClass) {
-        return null;
+        return "Doctor";
     }
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return null;
+        return CardColors.AbstractCardEnum.ATS_SNIPER;
     }
 
     @Override
     public Color getCardRenderColor() {
-        return null;
+        return CardHelper.getColor(255, 255, 255);
     }
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return null;
+        return new Bash();
     }
 
     @Override
     public Color getCardTrailColor() {
-        return null;
+        return CardHelper.getColor(255, 255, 255);
     }
 
     @Override
@@ -105,37 +137,38 @@ public class CharacterDoctor extends CustomPlayer {
 
     @Override
     public BitmapFont getEnergyNumFont() {
-        return null;
+        return FontHelper.energyNumFontBlue;
     }
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-
+        CardCrawlGame.sound.playA("ATTACK_HEAVY", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return null;
+        return "ATTACK_HEAVY";
     }
 
     @Override
     public String getLocalizedCharacterName() {
-        return null;
+        return NAMES[0];
     }
 
     @Override
     public AbstractPlayer newInstance() {
-        return null;
+        return new CharacterDoctor(this.name);
     }
 
     @Override
     public String getSpireHeartText() {
-        return null;
+        return SpireHeart.DESCRIPTIONS[8];
     }
 
     @Override
     public Color getSlashAttackColor() {
-        return null;
+        return CardHelper.getColor(255, 255, 255);
     }
 
     @Override
@@ -145,7 +178,8 @@ public class CharacterDoctor extends CustomPlayer {
 
     @Override
     public String getVampireText() {
-        return null;
+        return Vampires.DESCRIPTIONS[0];
     }
 
 }
+

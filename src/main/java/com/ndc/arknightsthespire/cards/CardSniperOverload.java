@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.ndc.arknightsthespire.CardColors;
 
 public class CardSniperOverload extends CardSPBase {
     public static final String ID = "Overload";
@@ -24,7 +25,7 @@ public class CardSniperOverload extends CardSPBase {
 
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, CardColor.COLORLESS,
+                CardType.ATTACK, CardColors.AbstractCardEnum.ATS_SNIPER,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
