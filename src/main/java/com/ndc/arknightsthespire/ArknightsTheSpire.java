@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.buttons.ToggleSpButton;
+import com.ndc.arknightsthespire.cards.CardDefenderDefendUp;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
 import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
@@ -50,6 +51,7 @@ public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscribe
         System.out.println("ADDING CARDS");
         BaseMod.addCard(new CardSniperOverload());
         BaseMod.addCard(new CardSniperPowerfulStrike());
+        BaseMod.addCard(new CardDefenderDefendUp());
     }
 
     @Override

@@ -17,6 +17,12 @@
     "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동 ",
     "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 줍니다."
   },
+  "Defend Up": {
+    "NAME": "방어 강화β",
+    "SP_NAME": "방어 강화γ",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
+    "SP_DESCRIPTION": "SP !S! 수동 발동 NL 방어도를 !B! 얻습니다."
+  },
   "Armor-crushing Shot": {
     "NAME": "쇄갑격",
     "DESCRIPTION": "방어도를 !M! 파괴합니다. NL SP !S! 자동 발동",
