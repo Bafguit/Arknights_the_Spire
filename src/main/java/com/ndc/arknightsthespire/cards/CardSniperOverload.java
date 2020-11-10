@@ -17,6 +17,7 @@ public class CardSniperOverload extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/overload.png";
+    public static final String CLASS = "SNIPER";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
@@ -25,11 +26,13 @@ public class CardSniperOverload extends CardSPBase {
 
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, CardColors.AbstractCardEnum.ATS_SNIPER,
+                CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
-        this.sp = this.baseSp = DEFAULT_SP;
+        this.sp = this.baseSP = DEFAULT_SP;
+        this.ats_class = CLASS;
+        this.isAuto = true;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper.png");
 

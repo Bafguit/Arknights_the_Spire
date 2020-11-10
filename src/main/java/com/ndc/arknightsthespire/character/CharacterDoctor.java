@@ -87,6 +87,13 @@ public class CharacterDoctor extends CustomPlayer {
         retVal.add("Powerful Strike");
         retVal.add("Powerful Strike");
         retVal.add("Powerful Strike");
+        retVal.add("Powerful Strike");
+        retVal.add("Powerful Strike");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
         return retVal;
     }
 
@@ -112,7 +119,7 @@ public class CharacterDoctor extends CustomPlayer {
 
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return CardColors.AbstractCardEnum.ATS_SNIPER;
+        return CardColors.AbstractCardEnum.DOCTOR_COLOR;
     }
 
     @Override

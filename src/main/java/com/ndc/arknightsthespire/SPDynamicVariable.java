@@ -14,7 +14,7 @@ public class SPDynamicVariable extends DynamicVariable {
     public boolean isModified(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return card.isSpModified;
+            return card.isSPModified;
         }
         return false;
     }
@@ -32,7 +32,7 @@ public class SPDynamicVariable extends DynamicVariable {
     public int baseValue(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return card.baseSp;
+            return card.baseSP;
         }
         return 0;
     }
@@ -41,7 +41,7 @@ public class SPDynamicVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return card.upgradedSp;
+            return card.upgradedSP;
         }
         return false;
     }

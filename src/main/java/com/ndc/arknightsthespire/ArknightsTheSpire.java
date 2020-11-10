@@ -14,13 +14,14 @@ import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.CardDefenderDefendUp;
 import com.ndc.arknightsthespire.cards.CardSniperOverload;
 import com.ndc.arknightsthespire.cards.CardSniperPowerfulStrike;
+import com.ndc.arknightsthespire.cards.CardSupporterFoxfire;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 
 import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
 
@@ -40,18 +41,14 @@ public class ArknightsTheSpire implements PostDrawSubscriber, EditCardsSubscribe
     }
 
 
-
-    @Override
-    public void receivePostDraw(AbstractCard card) {
-        System.out.println(card.name + " 이(가) 뽑혔다!");
-    }
-
     @Override
     public void receiveEditCards() {
         System.out.println("ADDING CARDS");
         BaseMod.addCard(new CardSniperOverload());
         BaseMod.addCard(new CardSniperPowerfulStrike());
         BaseMod.addCard(new CardDefenderDefendUp());
+        BaseMod.addCard(new CardSupporterFoxfire());
+        System.out.println("DONE");
     }
 
     @Override

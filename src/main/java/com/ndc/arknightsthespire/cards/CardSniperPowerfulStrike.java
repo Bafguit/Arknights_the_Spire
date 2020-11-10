@@ -17,6 +17,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/strike.png";
+    public static final String CLASS = "SNIPER";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int DEFAULT_SP = 3;
@@ -24,10 +25,11 @@ public class CardSniperPowerfulStrike extends CardSPBase {
 
     public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, CardColors.AbstractCardEnum.ATS_SNIPER,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, false);
+                CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.UNCOMMON, CardTarget.ENEMY, true);
         this.damage = this.baseDamage = ATTACK_DMG;
-        this.sp = this.baseSp = DEFAULT_SP;
+        this.sp = this.baseSP = DEFAULT_SP;
+        this.ats_class = CLASS;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
@@ -51,7 +53,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            //this.upgradedSp(UPGRADE_SP);
+            this.upgradeSP(UPGRADE_SP);
         }
     }
 

@@ -18,6 +18,7 @@ public class CardDefenderDefendUp extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/defend.png";
+    public static final String CLASS = "DEFENDER";
     private static final int COST = 1;
     private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_BLOCK = 3;
@@ -25,11 +26,12 @@ public class CardDefenderDefendUp extends CardSPBase {
 
     public CardDefenderDefendUp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, CardColors.AbstractCardEnum.ATS_SNIPER,
-                CardRarity.UNCOMMON, CardTarget.SELF, true);
+                CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.UNCOMMON, CardTarget.SELF, false);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
-        this.sp = this.baseSp = DEFAULT_SP;
+        this.sp = this.baseSP = DEFAULT_SP;
+        this.ats_class = CLASS;
 
         this.setBackgroundTexture("img/512/skill_defender.png", "img/1024/skill_defender.png");
 
@@ -44,7 +46,7 @@ public class CardDefenderDefendUp extends CardSPBase {
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardSniperOverload();
+        return new CardDefenderDefendUp();
     }
 
     @Override
