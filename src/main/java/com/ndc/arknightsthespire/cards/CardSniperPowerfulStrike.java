@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.ndc.arknightsthespire.CardColors;
 
 public class CardSniperPowerfulStrike extends CardSPBase {
     public static final String ID = "Powerful Strike";
@@ -23,7 +24,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
 
     public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, CardColor.COLORLESS,
+                CardType.ATTACK, CardColors.AbstractCardEnum.ATS_SNIPER,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, false);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = this.baseSp = DEFAULT_SP;
@@ -31,8 +32,6 @@ public class CardSniperPowerfulStrike extends CardSPBase {
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
-        this.setBannerTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
     }
 
