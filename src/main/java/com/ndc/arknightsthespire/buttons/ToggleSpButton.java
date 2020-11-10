@@ -72,7 +72,7 @@ public class ToggleSpButton {
     public static Texture UI_BUTTON_RIGHT_HOVER = ImageMaster.loadImage("img/ui/uiButtonRightHover.png");
 
     public ToggleSpButton(EndTurnButton endTurnButton) {
-        this.label = TEXT[0];
+        this.label = TURN_ON_MSG;
         this.current_x = HIDE_X;
         this.current_y = SHOW_Y;
         this.target_x = this.current_x;
@@ -89,6 +89,15 @@ public class ToggleSpButton {
         this.endTurnButton = endTurnButton;
     }
 
+    private void setSp(boolean isSpEnabled) {
+        this.isSpEnabled = isSpEnabled;
+        updateText(isSpEnabled ? TURN_OFF_MSG : TURN_ON_MSG);
+    }
+
+    private void toggleSp() {
+        setSp(!isSpEnabled);
+    }
+
     public void update() {
         /*if(!Settings.hideEndTurn) {
             this.current_y = SHOW_Y + BUTTON_OFFSET_Y;
@@ -98,6 +107,7 @@ public class ToggleSpButton {
             this.enable();
         }
         if(this.enabled && !endTurnButton.enabled) {
+            setSp(false);
             this.disable();
         }
 
@@ -159,7 +169,7 @@ public class ToggleSpButton {
                 //When Clicked
                 System.out.println("TEST333");
 
-                this.isSpEnabled = !isSpEnabled;
+                toggleSp();
                 Iterator var1 = AbstractDungeon.player.hand.group.iterator();
                 while(var1.hasNext()) {
                     AbstractCard c = (AbstractCard)var1.next();
@@ -167,8 +177,6 @@ public class ToggleSpButton {
                         ((CardSPBase) c).updateGlowColor(this.isSpEnabled);
                     }
                 }
-
-                this.disable();
             }
         }
 
@@ -257,7 +265,11 @@ public class ToggleSpButton {
             this.renderHoldEndTurn(sb);
             if (!this.isDisabled && this.enabled) {
                 if (this.hb.hovered) {
-                    this.textColor = Color.CYAN;
+                    if(this.isSpEnabled) {
+                        this.textColor = Color.MAGENTA;
+                    } else {
+                        this.textColor = Color.CYAN;
+                    }
                 } else if (this.isGlowing) {
                     this.textColor = Settings.GOLD_COLOR;
                 } else {
