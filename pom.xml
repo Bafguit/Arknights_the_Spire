@@ -6,10 +6,10 @@
     <!-- Change These to match your mod -->
     <groupId>com.ndc</groupId>
     <artifactId>arknights-the-spire</artifactId>
-    <version>0.0.1</version>
+    <version>0.1.2</version>
     <packaging>jar</packaging>
     <name>Arknights the Spire</name>
-    <description>Slay the Spire mod</description>
+    <description>Slay the Spire mod with Arknights Dokutah</description>
 
     <!-- These are the dependencies that were placed in the libs folder.
          Try to keep the version numbers the same as from their GitHub.  -->

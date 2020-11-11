@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Arknights the Spire.iml" filepath="$PROJECT_DIR$/Arknights the Spire.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ArknightsTheSpire.iml" filepath="$PROJECT_DIR$/ArknightsTheSpire.iml" />
       <module fileurl="file://$PROJECT_DIR$/arknights-the-spire.iml" filepath="$PROJECT_DIR$/arknights-the-spire.iml" />
     </modules>
   </component>

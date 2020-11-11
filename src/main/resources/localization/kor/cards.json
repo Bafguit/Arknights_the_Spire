@@ -23,10 +23,38 @@
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
     "SP_DESCRIPTION": "SP !S! 수동 발동 NL 방어도를 !B! 얻습니다."
   },
-  "Armor-crushing Shot": {
+  "Charging Defense": {
+    "NAME": "차지 디펜스",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP !S! 자동 발동 ",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 방어도를 !B! 얻습니다. 다음 피해를 받지 않습니다."
+  },
+  "Shell Defense": {
+    "NAME": "쉘 디펜스",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
+    "SP_DESCRIPTION": "SP !S! 수동 발동 NL 방어도를 !B! 얻습니다. 재생을 2 얻습니다. NL 이번 턴 동안 더 이상 공격 카드를 사용할 수 없습니다."
+  },
+  "Magnetic Hammer": {
+    "NAME": "마그네틱 해머",
+    "DESCRIPTION": "다음 적 턴 동안 적 전체의 힘을 1 감소시킵니다. NL SP !S! 수동 발동 ",
+    "SP_DESCRIPTION": "SP !S! 수동 발동 NL 적 전체에게 피해를 7 주고 다음 적 턴 동안 적 전체의 힘을 1 감소시킵니다."
+  },
+  "Thorns": {
+    "NAME": "가시덤불",
+    "DESCRIPTION": "가시를 !M! 얻습니다."
+  },
+  "Armor Crushing Shot": {
     "NAME": "쇄갑격",
     "DESCRIPTION": "방어도를 !M! 파괴합니다. NL SP !S! 자동 발동",
     "SP_DESCRIPTION": "SP !S! 자동 발동 NL 방어도를 !M! 파괴합니다. NL 취약을 1 부여합니다."
+  },
+  "Dogmatic Field": {
+    "NAME": "신조의 역장",
+    "DESCRIPTION": "방어도를 얻는 대신 그만큼 회복합니다."
+  },
+  "Rapid Magazine": {
+    "NAME": "쾌속장전",
+    "DESCRIPTION": "스나이퍼 공격 카드의 SP 소모가 1 감소합니다.",
+    "SP_DESCRIPTION": "스나이퍼 카드의 SP 소모가 1 감소합니다."
   },
   "Sunburst": {
     "NAME": "화염 폭발",
@@ -40,7 +68,7 @@
     "UPGRADE_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다.",
     "UPGRADE_SP_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다."
   },
-  "Burst Stimulant-Durian": {
+  "Burst Stimulant Durian": {
     "NAME": "폭발제-두리안맛",
     "DESCRIPTION": "피해를 3 만큼 5 번 받습니다. NL 이번 턴 동안 힘을 5 얻고 모든 카드의 SP 소모가 3 감소합니다. NL 방어도에는 피해가 2로 감소합니다. NL 소멸."
   },
@@ -74,11 +102,6 @@
   "Nebulous Foxfire": {
     "NAME": "희미한 여우불",
     "DESCRIPTION": "적 전체에게 약화를 2 , 취약을 2 부여합니다. 재생을 !M! 얻습니다."
-  },
-  "Charging Defense": {
-    "NAME": "차지 디펜스",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP 8 자동 발동",
-    "SP_DESCRIPTION": "SP 8 자동 발동 NL 방어도를 !B! 얻습니다. 다음 한 번만 피해를 받지 않습니다."
   },
   "NULL": {
     "NAME": "",

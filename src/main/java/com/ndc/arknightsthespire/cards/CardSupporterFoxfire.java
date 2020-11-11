@@ -29,10 +29,9 @@ public class CardSupporterFoxfire extends CardSPBase {
 
     public CardSupporterFoxfire() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true);
+                CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, CLASS);
         this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;
-        this.ats_class = CLASS;
 
         this.setBackgroundTexture("img/512/skill_beta.png", "img/1024/skill_beta.png");
 
@@ -43,9 +42,13 @@ public class CardSupporterFoxfire extends CardSPBase {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, 2, false), 2, true, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 2, false), 2, true, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, false, AbstractGameAction.AttackEffect.NONE));
+        for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
+                    new VulnerablePower(mo, 2, false), 2));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
+                    new WeakPower(mo, 2, false), 2));
+        }
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber));
 
     }
 

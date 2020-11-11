@@ -1,9 +1,7 @@
 package com.ndc.arknightsthespire.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,28 +9,22 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 
-public class CardDefenderDefendUp extends CardSPBase {
-    public static final String ID = "Defend Up";
+public class CardSniperRapidMagazine extends CardSPBase {
+    public static final String ID = "Rapid Magazine";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/defend.png";
-    public static final String CLASS = "DEFENDER";
+    public static final String IMG_PATH = "img/cards/overload.png";
+    public static final String CLASS = "SNIPER";
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 5;
-    private static final int UPGRADE_BLOCK = 3;
-    private static final int DEFAULT_SP = 5;
 
-    public CardDefenderDefendUp() {
+    public CardSniperRapidMagazine() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, false, CLASS);
-        this.block = this.baseBlock = BLOCK_AMT;
-        this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
-        this.sp = this.baseSP = DEFAULT_SP;
+                CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.UNCOMMON, CardTarget.SELF, false, CLASS);
 
-        this.setBackgroundTexture("img/512/skill_defender.png", "img/1024/skill_defender.png");
+        this.setBackgroundTexture("img/512/pwr_sniper.png", "img/1024/pwr_sniper.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
@@ -40,20 +32,20 @@ public class CardDefenderDefendUp extends CardSPBase {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        //SP Effect
+
+        //Effect
+
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardDefenderDefendUp();
+        return new CardSniperRapidMagazine();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(UPGRADE_BLOCK);
         }
     }
 

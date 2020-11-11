@@ -17,15 +17,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
     public boolean isSPModified;
     public boolean upgradedSP;
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto) {
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = this.isAuto;
+        this.ats_class = cardClass;
         this.updateGlowColor(false);
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto) {
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = isAuto;
+        this.ats_class = cardClass;
         this.updateGlowColor(false);
     }
 
