@@ -27,7 +27,7 @@ public class CardDefenderMagHammer extends CardSPBase {
     public CardDefenderMagHammer() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, CLASS);
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, CLASS, true);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = DIFF_STRENGTH;
         this.sp = this.baseSP = DEFAULT_SP;

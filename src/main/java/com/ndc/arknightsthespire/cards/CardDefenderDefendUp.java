@@ -27,7 +27,7 @@ public class CardDefenderDefendUp extends CardSPBase {
     public CardDefenderDefendUp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, false, CLASS);
+                CardRarity.BASIC, CardTarget.SELF, false, CLASS, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;

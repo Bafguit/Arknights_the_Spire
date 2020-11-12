@@ -25,7 +25,7 @@ public class CardDefenderShellDef extends CardSPBase {
     public CardDefenderShellDef() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, CLASS);
+                CardRarity.COMMON, CardTarget.SELF, false, CLASS, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;

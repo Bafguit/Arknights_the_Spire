@@ -22,7 +22,7 @@ public class CardSniperRapidMagazine extends CardSPBase {
     public CardSniperRapidMagazine() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, CLASS);
+                CardRarity.UNCOMMON, CardTarget.SELF, true, CLASS, false);
 
         this.setBackgroundTexture("img/512/pwr_sniper.png", "img/1024/pwr_sniper.png");
 
@@ -33,8 +33,8 @@ public class CardSniperRapidMagazine extends CardSPBase {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        //Effect
-
+        diff_sp += 1;
+        this.getSPChange(1);
     }
 
     @Override
@@ -48,7 +48,5 @@ public class CardSniperRapidMagazine extends CardSPBase {
             this.upgradeName();
         }
     }
-
-
 
 }

@@ -27,10 +27,11 @@ public class CardSniperOverload extends CardSPBase {
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, true, CLASS);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, true, CLASS, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
-        this.sp = this.baseSP = DEFAULT_SP;
+        this.sp = DEFAULT_SP;
+        this.baseSP = DEFAULT_SP - diff_sp;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper.png");
 
@@ -59,7 +60,5 @@ public class CardSniperOverload extends CardSPBase {
             this.upgradeDamage(UPGRADE_PLUS_DMG);
         }
     }
-
-
 
 }

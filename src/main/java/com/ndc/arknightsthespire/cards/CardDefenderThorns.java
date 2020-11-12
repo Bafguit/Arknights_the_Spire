@@ -27,7 +27,7 @@ public class CardDefenderThorns extends CardSPBase {
     public CardDefenderThorns() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, CLASS);
+                CardRarity.UNCOMMON, CardTarget.SELF, false, CLASS, false);
         this.magicNumber = this.baseMagicNumber = THORNS_AMOUNT;
 
         this.setBackgroundTexture("img/512/pwr_defender.png", "img/1024/pwr_defender.png");

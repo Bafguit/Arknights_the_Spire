@@ -1,45 +1,93 @@
 package com.ndc.arknightsthespire.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.interfaces.OnCardUseSubscriber;
+import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
- public class CardSPBase extends CustomCard {
+import java.util.Iterator;
+
+public abstract class CardSPBase extends CustomCard implements PostBattleSubscriber, OnStartBattleSubscriber, OnCardUseSubscriber {
     // 87 251 218
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
     public static final Color CYAN_BORDER_GLOW_COLOR = new Color(1.0F, 0.14F, 0.14F, 0.5F);
 
     public int baseSP;
     public int sp;
+    public int diff_sp = 0;
+    public int default_SP = 0;
+    public int current_SP = 0;
+    public int receive_SP = 1;
+    public int lastSPAmount;
     public String ats_class;
     public boolean isAuto;
     public boolean isSPModified;
+    public boolean canUseSP;
+    public boolean isSPUsed;
     public boolean upgradedSP;
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass) {
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass, boolean hasSP) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = this.isAuto;
         this.ats_class = cardClass;
+        this.canUseSP = hasSP;
         this.updateGlowColor(false);
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass) {
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass, boolean hasSP) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = isAuto;
         this.ats_class = cardClass;
+        this.canUseSP = hasSP;
         this.updateGlowColor(false);
     }
 
      protected void upgradeSP(int amount) {
-         this.baseSP += amount;
+         this.baseSP = amount;
          this.upgradedSP = true;
      }
 
      protected void upgradeSPName(int amount) {
-         this.baseSP += amount;
+         this.baseSP = amount;
          this.upgradedSP = true;
      }
+
+     public void changeSP(int c_sp) {
+         this.baseSP -= c_sp;
+     }
+
+    public void getSPChange(int c_sp) {
+
+        Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
+
+        while (var1.hasNext()) {
+            CardSPBase c = (CardSPBase) var1.next();
+            if(c.ats_class == "SNIPER" && c.canUseSP == true) c.changeSP(c_sp);
+        }
+    }
+
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        diff_sp = 0;
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        current_SP = default_SP;
+        current_SP += receive_SP;
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard abstractCard) {
+        current_SP -= lastSPAmount;
+    }
 
     @Override
     public void upgrade() {

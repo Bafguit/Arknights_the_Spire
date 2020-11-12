@@ -25,7 +25,7 @@ public class CardDefenderChargingDef extends CardSPBase {
     public CardDefenderChargingDef() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, true, CLASS);
+                CardRarity.UNCOMMON, CardTarget.SELF, true, CLASS, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;

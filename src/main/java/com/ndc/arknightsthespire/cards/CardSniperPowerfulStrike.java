@@ -21,14 +21,15 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int DEFAULT_SP = 3;
-    private static final int UPGRADE_SP = -1;
+    private static final int UPGRADE_SP = 2;
 
     public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.ENEMY, true, CLASS);
+                CardRarity.BASIC, CardTarget.ENEMY, true, CLASS, true);
         this.damage = this.baseDamage = ATTACK_DMG;
-        this.sp = this.baseSP = DEFAULT_SP;
+        this.sp = DEFAULT_SP;
+        this.baseSP = DEFAULT_SP - diff_sp;
 
         this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper_large.png");
 
@@ -38,9 +39,16 @@ public class CardSniperPowerfulStrike extends CardSPBase {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+
+        if(current_SP >= this.baseSP){
+            isSPUsed = true;
+            lastSPAmount = this.baseSP;
+        }
+        else{
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        }
     }
 
     @Override
@@ -55,7 +63,5 @@ public class CardSniperPowerfulStrike extends CardSPBase {
             this.upgradeSP(UPGRADE_SP);
         }
     }
-
-
 
 }

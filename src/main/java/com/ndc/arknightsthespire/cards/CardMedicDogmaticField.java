@@ -21,7 +21,7 @@ public class CardMedicDogmaticField extends CardSPBase {
     public CardMedicDogmaticField() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, false, CLASS);
+                CardRarity.RARE, CardTarget.SELF, false, CLASS, false);
 
         this.setBackgroundTexture("img/512/pwr_defender.png", "img/1024/pwr_defender.png");
 
