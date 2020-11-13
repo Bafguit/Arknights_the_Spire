@@ -1,7 +1,7 @@
 package com.ndc.arknightsthespire;
 
 public class SPHandler {
-    private static int sp = 0;
+    private static int sp = 3;
     private static int addSp = 2;
     private static int maxSp = 10;
     private static boolean isSpModeEnabled;

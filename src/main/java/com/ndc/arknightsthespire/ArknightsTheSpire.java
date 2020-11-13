@@ -8,7 +8,7 @@ import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.ndc.arknightsthespire.buttons.ToggleSpButton;
+import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 
