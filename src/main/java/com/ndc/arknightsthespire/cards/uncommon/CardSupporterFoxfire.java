@@ -1,10 +1,7 @@
-package com.ndc.arknightsthespire.cards;
+package com.ndc.arknightsthespire.cards.uncommon;
 
-import basemod.devcommands.power.Power;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,6 +11,7 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.cards.utill.CardSPBase;
 
 public class CardSupporterFoxfire extends CardSPBase {
     public static final String ID = "Nebulous Foxfire";

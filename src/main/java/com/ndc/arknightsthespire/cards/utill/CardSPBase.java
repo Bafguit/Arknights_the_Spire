@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.cards;
+package com.ndc.arknightsthespire.cards.utill;
 
 import basemod.abstracts.CustomCard;
 import basemod.interfaces.OnCardUseSubscriber;
@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.ndc.arknightsthespire.SPHandler;
 
 import java.util.Iterator;
 
@@ -20,16 +21,10 @@ public abstract class CardSPBase extends CustomCard implements PostBattleSubscri
 
     public int baseSP;
     public int sp;
-    public int diff_sp = 0;
-    public int default_SP = 0;
-    public int current_SP = 0;
-    public int receive_SP = 1;
-    public int lastSPAmount;
     public String ats_class;
     public boolean isAuto;
     public boolean isSPModified;
     public boolean canUseSP;
-    public boolean isSPUsed;
     public boolean upgradedSP;
 
     public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass, boolean hasSP) {
@@ -72,21 +67,34 @@ public abstract class CardSPBase extends CustomCard implements PostBattleSubscri
         }
     }
 
+    public boolean checkUsingSP(int base) {
+        if(SPHandler.current_SP >= base){
+            SPHandler.lastSPAmount = base;
+            SPHandler.current_SP -= SPHandler.lastSPAmount;
+            System.out.println("Used SP: " + SPHandler.lastSPAmount);
+            System.out.println("Current SP: " + SPHandler.current_SP);
+        }
+        else return false;
+        return true;
+    }
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        diff_sp = 0;
+        SPHandler.diff_sp = 0;
+        SPHandler.current_SP = 0;
     }
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        current_SP = default_SP;
-        current_SP += receive_SP;
+        SPHandler.current_SP = SPHandler.default_SP;
+        SPHandler.current_SP += SPHandler.receive_SP;
+        System.out.println("Current SP: " + SPHandler.current_SP);
     }
 
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        current_SP -= lastSPAmount;
+        SPHandler.current_SP += SPHandler.receive_SP_cardUse;
+        System.out.println("Current SP: " + SPHandler.current_SP);
     }
 
     @Override

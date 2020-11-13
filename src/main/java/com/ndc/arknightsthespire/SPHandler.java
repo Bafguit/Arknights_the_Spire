@@ -1,10 +1,16 @@
 package com.ndc.arknightsthespire;
 
 public class SPHandler {
-    private static int sp = 3;
+    private static int sp = 0;
     private static int addSp = 2;
     private static int maxSp = 10;
     private static boolean isSpModeEnabled;
+    public static int diff_sp = 0;
+    public static int default_SP = 0;
+    public static int current_SP = 0;
+    public static int receive_SP = 1;
+    public static int receive_SP_cardUse = 1;
+    public static int lastSPAmount;
 
     public static int getSp() {
         return sp;

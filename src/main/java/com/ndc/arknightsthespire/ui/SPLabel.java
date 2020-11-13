@@ -37,6 +37,6 @@ public class SPLabel {
     }
 
     public void render(SpriteBatch sb) {
-        FontHelper.renderFontCentered(sb, SP_LABEL_FONT, String.valueOf(SPHandler.getSp()), TEXT_X * Settings.scale, TEXT_Y * Settings.scale, TEXT_COLOR);
+        FontHelper.renderFontCentered(sb, SP_LABEL_FONT, SPHandler.getSp()+"/"+SPHandler.getMaxSp(), TEXT_X * Settings.scale, TEXT_Y * Settings.scale, TEXT_COLOR);
     }
 }

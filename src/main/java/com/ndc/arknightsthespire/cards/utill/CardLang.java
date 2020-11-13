@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.cards;
+package com.ndc.arknightsthespire.cards.utill;
 
 import com.megacrit.cardcrawl.localization.CardStrings;
 

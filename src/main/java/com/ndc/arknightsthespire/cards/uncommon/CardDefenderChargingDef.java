@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.cards;
+package com.ndc.arknightsthespire.cards.uncommon;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,9 +8,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.cards.utill.CardSPBase;
 
-public class CardDefenderShellDef extends CardSPBase {
-    public static final String ID = "Shell Defense";
+public class CardDefenderChargingDef extends CardSPBase {
+    public static final String ID = "Charging Defense";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
@@ -18,14 +19,14 @@ public class CardDefenderShellDef extends CardSPBase {
     public static final String IMG_PATH = "img/cards/defend.png";
     public static final String CLASS = "DEFENDER";
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 8;
-    private static final int UPGRADE_BLOCK = 5;
-    private static final int DEFAULT_SP = 12;
+    private static final int BLOCK_AMT = 5;
+    private static final int UPGRADE_BLOCK = 3;
+    private static final int DEFAULT_SP = 8;
 
-    public CardDefenderShellDef() {
+    public CardDefenderChargingDef() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, CLASS, true);
+                CardRarity.UNCOMMON, CardTarget.SELF, true, CLASS, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;
@@ -44,7 +45,7 @@ public class CardDefenderShellDef extends CardSPBase {
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardDefenderShellDef();
+        return new CardDefenderChargingDef();
     }
 
     @Override

@@ -9,7 +9,11 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
-import com.ndc.arknightsthespire.cards.*;
+import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
+import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
+import com.ndc.arknightsthespire.cards.common.CardDefenderShellDef;
+import com.ndc.arknightsthespire.cards.rare.CardMedicDogmaticField;
+import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 
 import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;

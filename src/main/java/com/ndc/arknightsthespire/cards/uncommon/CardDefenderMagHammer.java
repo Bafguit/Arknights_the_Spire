@@ -1,7 +1,6 @@
-package com.ndc.arknightsthespire.cards;
+package com.ndc.arknightsthespire.cards.uncommon;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,28 +8,32 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.cards.utill.CardSPBase;
 
-public class CardDefenderThorns extends CardSPBase {
-    public static final String ID = "Thorns";
+public class CardDefenderMagHammer extends CardSPBase {
+    public static final String ID = "Magnetic Hammer";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/defend.png";
     public static final String CLASS = "DEFENDER";
-    private static final int COST = 1;
-    private static final int THORNS_AMOUNT = 3;
-    private static final int UPGRADE_THORNS = 1;
+    private static final int COST = 2;
+    private static final int DAMAGE = 7;
+    private static final int DIFF_STRENGTH = -2;
+    private static final int UP_STRENGTH = -1;
+    private static final int DEFAULT_SP = 8;
 
-    public CardDefenderThorns() {
+    public CardDefenderMagHammer() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, CLASS, false);
-        this.magicNumber = this.baseMagicNumber = THORNS_AMOUNT;
+                CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, CLASS, true);
+        this.damage = this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = DIFF_STRENGTH;
+        this.sp = this.baseSP = DEFAULT_SP;
 
-        this.setBackgroundTexture("img/512/pwr_defender.png", "img/1024/pwr_defender.png");
+        this.setBackgroundTexture("img/512/skill_defender.png", "img/1024/skill_defender.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
@@ -38,19 +41,25 @@ public class CardDefenderThorns extends CardSPBase {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber), magicNumber));
+
+        for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
+                new StrengthPower(mo, magicNumber), magicNumber));
+        }
+
+        //SP
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardDefenderThorns();
+        return new CardDefenderMagHammer();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_THORNS);
+            this.upgradeMagicNumber(UP_STRENGTH);
         }
     }
 

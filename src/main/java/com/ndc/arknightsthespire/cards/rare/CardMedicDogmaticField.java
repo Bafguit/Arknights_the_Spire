@@ -1,30 +1,30 @@
-package com.ndc.arknightsthespire.cards;
+package com.ndc.arknightsthespire.cards.rare;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.cards.utill.CardSPBase;
 
-public class CardSniperRapidMagazine extends CardSPBase {
-    public static final String ID = "Rapid Magazine";
+public class CardMedicDogmaticField extends CardSPBase {
+    public static final String ID = "Dogmatic Field";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/overload.png";
-    public static final String CLASS = "SNIPER";
-    private static final int COST = 1;
+    public static final String IMG_PATH = "img/cards/defend.png";
+    public static final String CLASS = "MEDIC";
+    private static final int COST = 3;
+    private static final int UPGRADE_COST = 2;
 
-    public CardSniperRapidMagazine() {
+    public CardMedicDogmaticField() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, true, CLASS, false);
+                CardRarity.RARE, CardTarget.SELF, false, CLASS, false);
 
-        this.setBackgroundTexture("img/512/pwr_sniper.png", "img/1024/pwr_sniper.png");
+        this.setBackgroundTexture("img/512/pwr_defender.png", "img/1024/pwr_defender.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
@@ -33,20 +33,23 @@ public class CardSniperRapidMagazine extends CardSPBase {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-        diff_sp += 1;
-        this.getSPChange(1);
+        //Effect
+
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardSniperRapidMagazine();
+        return new CardMedicDogmaticField();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBaseCost(UPGRADE_COST);
         }
     }
+
+
 
 }
