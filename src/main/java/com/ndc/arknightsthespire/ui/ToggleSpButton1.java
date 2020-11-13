@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.buttons;
+package com.ndc.arknightsthespire.ui;
 /*
 public class ToggleSpButton1 {
 

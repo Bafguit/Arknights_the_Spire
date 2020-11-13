@@ -4,7 +4,7 @@ import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
-import com.ndc.arknightsthespire.buttons.ToggleSpButton;
+import com.ndc.arknightsthespire.ui.ToggleSpButton;
 
 import java.lang.reflect.Method;
 

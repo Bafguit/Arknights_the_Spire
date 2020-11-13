@@ -4,7 +4,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.core.OverlayMenu;
-import com.ndc.arknightsthespire.buttons.ToggleSpButton;
+import com.ndc.arknightsthespire.ui.SPLabel;
+import com.ndc.arknightsthespire.ui.ToggleSpButton;
 
 @SpirePatch(
         clz= OverlayMenu.class,
@@ -13,6 +14,7 @@ import com.ndc.arknightsthespire.buttons.ToggleSpButton;
 public class HandCardSelectScreenPatcher {
 
     public static ToggleSpButton toggleSpButton;
+    public static SPLabel spLabel;
 
     @SpirePatch(
             clz= OverlayMenu.class,
@@ -21,6 +23,7 @@ public class HandCardSelectScreenPatcher {
     public static class ConstructorPatcher {
         public static void PostFix(OverlayMenu __instance) {
             toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            spLabel = new SPLabel();
         }
     }
 
@@ -85,7 +88,11 @@ public class HandCardSelectScreenPatcher {
             if(toggleSpButton == null) {
                 toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
             }
+            if(spLabel == null) {
+                spLabel = new SPLabel();
+            }
             toggleSpButton.render(sb);
+            spLabel.render(sb);
         }
     }
 }

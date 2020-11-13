@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.buttons;
+package com.ndc.arknightsthespire.ui;
 
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.Gdx;
