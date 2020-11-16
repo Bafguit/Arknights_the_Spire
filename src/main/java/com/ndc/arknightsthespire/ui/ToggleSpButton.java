@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.EndTurnGlowEffect;
 import com.ndc.arknightsthespire.SPHandler;
-import com.ndc.arknightsthespire.cards.utill.CardSPBase;
+import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.patcher.EndTurnButtonPatcher;
 
 import java.util.ArrayList;
@@ -63,7 +63,6 @@ public class ToggleSpButton {
     public static final float RIGHT_TEXT_OFFSET_X = 8.0F;
     public static final float TEXT_OFFSET_Y = -1.0F;
     EndTurnButton endTurnButton;
-    boolean isSpEnabled = false;
 
     public static Texture UI_BUTTON_LEFT = ImageMaster.loadImage("img/ui/uiButtonLeft.png");
     public static Texture UI_BUTTON_LEFT_HOVER = ImageMaster.loadImage("img/ui/uiButtonLeftHover.png");
@@ -90,12 +89,8 @@ public class ToggleSpButton {
     }
 
     private void setSp(boolean isSpEnabled) {
-        this.isSpEnabled = isSpEnabled;
+        SPHandler.setSpMode(isSpEnabled);
         updateText(isSpEnabled ? TURN_OFF_MSG : TURN_ON_MSG);
-    }
-
-    private void toggleSp() {
-        setSp(!isSpEnabled);
     }
 
     public void update() {
@@ -169,14 +164,8 @@ public class ToggleSpButton {
                 //When Clicked
                 System.out.println("TEST333");
 
-                toggleSp();
-                Iterator var1 = AbstractDungeon.player.hand.group.iterator();
-                while(var1.hasNext()) {
-                    AbstractCard c = (AbstractCard)var1.next();
-                    if(c instanceof CardSPBase) {
-                        ((CardSPBase) c).updateGlowColor(this.isSpEnabled);
-                    }
-                }
+                SPHandler.toggleSpMode();
+                CardSPBase.updateAllGlowInHand();
             }
         }
 
@@ -265,7 +254,7 @@ public class ToggleSpButton {
             this.renderHoldEndTurn(sb);
             if (!this.isDisabled && this.enabled) {
                 if (this.hb.hovered) {
-                    if(this.isSpEnabled) {
+                    if(SPHandler.isSpModeEnabled()) {
                         this.textColor = Color.MAGENTA;
                     } else {
                         this.textColor = Color.CYAN;

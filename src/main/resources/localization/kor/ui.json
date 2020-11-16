@@ -1,4 +1,10 @@
 {
+  "SpSingleCardViewPopup": {
+    "TEXT": [
+      "#rSP가 부족해.",
+      "와! #r샌#b즈!"
+    ]
+  },
   "SpToggleButton": {
     "TEXT": [
       "SP 켜기",

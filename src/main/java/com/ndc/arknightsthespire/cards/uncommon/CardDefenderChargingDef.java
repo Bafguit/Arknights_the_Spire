@@ -8,7 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.cards.utill.CardSPBase;
+import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardDefenderChargingDef extends CardSPBase {
     public static final String ID = "Charging Defense";
@@ -17,7 +18,7 @@ public class CardDefenderChargingDef extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/defend.png";
-    public static final String CLASS = "DEFENDER";
+    public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int BLOCK_AMT = 5;
     private static final int UPGRADE_BLOCK = 3;
@@ -26,7 +27,7 @@ public class CardDefenderChargingDef extends CardSPBase {
     public CardDefenderChargingDef() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, true, CLASS, true);
+                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;
@@ -38,7 +39,7 @@ public class CardDefenderChargingDef extends CardSPBase {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         //SP Effect
     }

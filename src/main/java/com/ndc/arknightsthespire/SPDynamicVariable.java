@@ -2,7 +2,7 @@ package com.ndc.arknightsthespire;
 
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.ndc.arknightsthespire.cards.utill.CardSPBase;
+import com.ndc.arknightsthespire.cards.CardSPBase;
 
 public class SPDynamicVariable extends DynamicVariable {
     @Override

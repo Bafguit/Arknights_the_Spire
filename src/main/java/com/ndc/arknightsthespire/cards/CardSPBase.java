@@ -1,48 +1,56 @@
-package com.ndc.arknightsthespire.cards.utill;
+package com.ndc.arknightsthespire.cards;
 
 import basemod.abstracts.CustomCard;
-import basemod.interfaces.OnCardUseSubscriber;
-import basemod.interfaces.OnStartBattleSubscriber;
-import basemod.interfaces.PostBattleSubscriber;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.ndc.arknightsthespire.SPHandler;
 
 import java.util.Iterator;
 
-public abstract class CardSPBase extends CustomCard implements PostBattleSubscriber, OnStartBattleSubscriber, OnCardUseSubscriber {
+public abstract class CardSPBase extends CustomCard {
     // 87 251 218
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
-    public static final Color CYAN_BORDER_GLOW_COLOR = new Color(1.0F, 0.14F, 0.14F, 0.5F);
+    public static final Color DEFAULT_BORDER_GLOW_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
+    public static final Color SP_BORDER_GLOW_COLOR = new Color(0.0F, 0.0F, 0.63F, 0.5F);
+    private static final UIStrings uiSPStrings;
 
     public int baseSP;
     public int sp;
-    public String ats_class;
+    public PositionType position;
     public boolean isAuto;
     public boolean isSPModified;
     public boolean canUseSP;
     public boolean upgradedSP;
+    public boolean onlySP;
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass, boolean hasSP) {
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
-        this.isAuto = this.isAuto;
-        this.ats_class = cardClass;
-        this.canUseSP = hasSP;
-        this.updateGlowColor(false);
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
+        this(id, name, img, cost, rawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, String cardClass, boolean hasSP) {
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = isAuto;
-        this.ats_class = cardClass;
+        this.position = position;
         this.canUseSP = hasSP;
-        this.updateGlowColor(false);
+        this.updateGlow(false);
     }
 
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
+        this(id, name, img, cost, rawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
+    }
+
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
+        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        this.isAuto = isAuto;
+        this.position = position;
+        this.canUseSP = hasSP;
+        this.updateGlow(false);
+    }
      protected void upgradeSP(int amount) {
          this.baseSP = amount;
          this.upgradedSP = true;
@@ -57,62 +65,91 @@ public abstract class CardSPBase extends CustomCard implements PostBattleSubscri
          this.baseSP -= c_sp;
      }
 
-    public void getSPChange(int c_sp) {
+    public void getSPChange(int c_sp) { //TODO I don't even know what this does.
 
         Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
 
         while (var1.hasNext()) {
-            CardSPBase c = (CardSPBase) var1.next();
-            if(c.ats_class == "SNIPER" && c.canUseSP == true) c.changeSP(c_sp);
+            CardSPBase card = (CardSPBase) var1.next();
+            if(card.position == PositionType.SNIPER && card.canUseSP == true) card.changeSP(c_sp);
         }
-    }
-
-    public boolean checkUsingSP(int base) {
-        if(SPHandler.current_SP >= base){
-            SPHandler.lastSPAmount = base;
-            SPHandler.current_SP -= SPHandler.lastSPAmount;
-            System.out.println("Used SP: " + SPHandler.lastSPAmount);
-            System.out.println("Current SP: " + SPHandler.current_SP);
-        }
-        else return false;
-        return true;
-    }
-
-    @Override
-    public void receivePostBattle(AbstractRoom abstractRoom) {
-        SPHandler.diff_sp = 0;
-        SPHandler.current_SP = 0;
-    }
-
-    @Override
-    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        SPHandler.current_SP = SPHandler.default_SP;
-        SPHandler.current_SP += SPHandler.receive_SP;
-        System.out.println("Current SP: " + SPHandler.current_SP);
-    }
-
-    @Override
-    public void receiveCardUsed(AbstractCard abstractCard) {
-        SPHandler.current_SP += SPHandler.receive_SP_cardUse;
-        System.out.println("Current SP: " + SPHandler.current_SP);
     }
 
     @Override
     public void upgrade() {
 
     }
-
+/*
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
+    public boolean hasEnoughEnergy() {
+        this.cantUseMessage = uiSPStrings.TEXT[1];
+        return false;
+    } // onlySP 체크는 여기서
+*/
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if(SPHandler.isSpModeEnabled() && (!canUseSP || !canAffordSP(SPHandler.getSp()))) {
+            this.cantUseMessage = uiSPStrings.TEXT[0];
+            return false;
+        }
+        return true;
     }
 
-    public void updateGlowColor(boolean isSpEnabled) {
-        if(isSpEnabled || isAuto) {
-            this.glowColor = CYAN_BORDER_GLOW_COLOR;
-        } else {
-            this.glowColor = BLUE_BORDER_GLOW_COLOR;
+    @Override
+    public final void use(AbstractPlayer p, AbstractMonster m) { //TODO Fix this
+        boolean isSpJustUsed = false;
+        if(canAffordSP(SPHandler.getBeforeSp()) && (this.isAuto || SPHandler.isSpModeEnabled())) { //TODO I guess there'll be some case that need sp not beforeSp
+            SPHandler.removeSp(this.baseSP);
+            isSpJustUsed = true;
+            updateAllGlowInHand();
         }
+        useCard(p, m, isSpJustUsed);
+    }
+
+    public abstract void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed);
+
+    public static void updateAllGlowInHand() {
+        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
+        while(var1.hasNext()) {
+            AbstractCard c = (AbstractCard)var1.next();
+            if(c instanceof CardSPBase) {
+                ((CardSPBase) c).updateGlow(SPHandler.isSpModeEnabled());
+            }
+        }
+    }
+
+    public void updateGlow(boolean isSpEnabled) {
+        boolean checkGlow = checkGlow(isSpEnabled);
+        if(checkGlow && !this.isGlowing) this.beginGlowing();
+        if(!checkGlow && this.isGlowing) this.stopGlowing();
+    }
+
+    private boolean checkGlow(boolean isSpEnabled) {
+        System.out.println(SPHandler.getSp() + " " + canAffordSP(SPHandler.getSp()));
+        if(isSpEnabled) {
+            if(canAffordSP(SPHandler.getSp())) {
+                this.glowColor = SP_BORDER_GLOW_COLOR;
+                System.out.println("CASE A");
+                return true;
+            }
+        } else {
+            if(isAuto) {
+                if(canAffordSP(SPHandler.getSp())) {
+                    this.glowColor = SP_BORDER_GLOW_COLOR;
+                    System.out.println("CASE B");
+                    return true;
+                }
+                if(!onlySP) {
+                    this.glowColor = DEFAULT_BORDER_GLOW_COLOR;
+                    System.out.println("CASE C");
+                    return true;
+                }
+                System.out.println("CASE D");
+                return false;
+            }
+        }
+        System.out.println("CASE E");
+        return false;
     }
 
      public boolean canAffordSP(int sp) {
@@ -249,4 +286,8 @@ public abstract class CardSPBase extends CustomCard implements PostBattleSubscri
         builder.addFieldData(this.isMultiDamage);
         return builder.toString();
     }*/
+
+    static {
+        uiSPStrings = CardCrawlGame.languagePack.getUIString("SpSingleCardViewPopup");
+    }
 }

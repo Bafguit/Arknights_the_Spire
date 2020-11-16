@@ -27,6 +27,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public ArknightsTheSpire(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
         BaseMod.subscribe(this);
+        BaseMod.subscribe(new SPHandler());
     }
 
     //Used by @SpireInitializer

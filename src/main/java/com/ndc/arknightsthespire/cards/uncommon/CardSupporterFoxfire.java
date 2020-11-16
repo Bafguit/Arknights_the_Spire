@@ -11,7 +11,8 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.cards.utill.CardSPBase;
+import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSupporterFoxfire extends CardSPBase {
     public static final String ID = "Nebulous Foxfire";
@@ -20,7 +21,7 @@ public class CardSupporterFoxfire extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/beta.png";
-    public static final String CLASS = "SUPPORTER";
+    public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 3;
     private static final int REGEN_AMOUNT = 3;
     private static final int UPGRADE_REGEN = 1;
@@ -28,7 +29,7 @@ public class CardSupporterFoxfire extends CardSPBase {
     public CardSupporterFoxfire() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, CLASS, false);
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, false);
         this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;
 
         this.setBackgroundTexture("img/512/skill_beta.png", "img/1024/skill_beta.png");
@@ -38,8 +39,7 @@ public class CardSupporterFoxfire extends CardSPBase {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-
+    public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
                     new VulnerablePower(mo, 2, false), 2));
