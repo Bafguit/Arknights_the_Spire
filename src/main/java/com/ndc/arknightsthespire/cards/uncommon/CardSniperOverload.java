@@ -44,7 +44,8 @@ public class CardSniperOverload extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        for (int for_i = 0; for_i < REPEAT_ATK; for_i++) {
+        int repeat = (isSpJustUsed ? 5 : REPEAT_ATK);
+        for (int forI = 0; forI < repeat; forI++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));

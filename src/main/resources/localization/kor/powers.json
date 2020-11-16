@@ -1,4 +1,11 @@
 {
+  "Rapid Magazine": {
+    "NAME": "쾌속장전",
+    "DESCRIPTIONS": [
+      "스나이퍼 공격 카드의 SP 소모가 #b",
+      " 감소합니다."
+    ]
+  },
   "Accuracy": {
     "NAME": "정밀",
     "DESCRIPTIONS": [
