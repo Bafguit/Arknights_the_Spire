@@ -1,14 +1,17 @@
 package com.ndc.arknightsthespire.cards.uncommon;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
+import com.ndc.arknightsthespire.power.RapidMagazine;
 
 public class CardSniperRapidMagazine extends CardSPBase {
     public static final String ID = "Rapid Magazine";
@@ -33,10 +36,12 @@ public class CardSniperRapidMagazine extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        SPHandler.addDiffSp(1);
-        this.getSPChange(1);
-    }
 
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new RapidMagazine(p, p, 1),
+                1));
+
+
+}
     @Override
     public AbstractCard makeCopy() {
         return new CardSniperRapidMagazine();
