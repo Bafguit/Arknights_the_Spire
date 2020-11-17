@@ -32,7 +32,7 @@ public class CardSupporterFoxfire extends CardSPBase {
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, false);
         this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;
 
-        this.setBackgroundTexture("img/512/skill_beta.png", "img/1024/skill_beta.png");
+        this.setBackgroundTexture("img/512/supporter_512.png", "img/1024/supporter_512.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 

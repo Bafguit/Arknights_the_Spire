@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.SPHandler;
 
 import java.util.Iterator;
@@ -62,16 +63,25 @@ public abstract class CardSPBase extends CustomCard {
      }
 
      public void changeSP(int c_sp) {
-         this.baseSP -= c_sp;
+         this.baseSP = this.sp + c_sp;
      }
 
-    public void getSPChange(int c_sp) { //TODO I don't even know what this does.
+    public static void getGroupSPChange(PositionType cardClass, int c_sp) {
 
-        Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
+        SPHandler.addDiffSp(c_sp);
+
+        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
 
         while (var1.hasNext()) {
             CardSPBase card = (CardSPBase) var1.next();
-            if(card.position == PositionType.SNIPER && card.canUseSP == true) card.changeSP(c_sp);
+            if(card.position == cardClass && card.canUseSP == true) card.changeSP(SPHandler.getDiffSp());
+        }
+    }
+
+    public static void getSingleClassSPChange(AbstractCard card, PositionType cardClass) {
+        if(card instanceof CardSPBase) {
+            CardSPBase sCard = (CardSPBase) card;
+            if (sCard.position == cardClass && sCard.canUseSP == true) sCard.changeSP(SPHandler.getDiffSp());
         }
     }
 
@@ -154,8 +164,10 @@ public abstract class CardSPBase extends CustomCard {
     }
 
      public boolean canAffordSP(int sp) {
-        return sp >= this.sp;
+        return sp >= this.baseSP;
      }
+
+
 /*
     public void displayUpgrades() {
         if (this.upgradedCost) {

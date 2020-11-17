@@ -8,6 +8,8 @@ import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
+import com.ndc.arknightsthespire.cards.basic.CardTestSPGainer;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
 import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
@@ -43,17 +45,27 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receiveEditCards() {
+
         System.out.println("ADDING CARDS");
+        //Sniper
         BaseMod.addCard(new CardSniperOverload());
         BaseMod.addCard(new CardSniperPowerfulStrike());
+        BaseMod.addCard(new CardSniperArmCrushShot());
+        BaseMod.addCard(new CardSniperRapidMagazine());
+        //Medic
+        BaseMod.addCard(new CardMedicDogmaticField());
+        //Supporter
+        BaseMod.addCard(new CardSupporterFoxfire());
+        //Defender
         BaseMod.addCard(new CardDefenderDefendUp());
         BaseMod.addCard(new CardDefenderChargingDef());
         BaseMod.addCard(new CardDefenderShellDef());
         BaseMod.addCard(new CardDefenderMagHammer());
         BaseMod.addCard(new CardDefenderThorns());
-        BaseMod.addCard(new CardMedicDogmaticField());
-        BaseMod.addCard(new CardSniperRapidMagazine());
-        BaseMod.addCard(new CardSupporterFoxfire());
+        BaseMod.addCard(new CardDefenderCntHealMod());
+        //Test
+        BaseMod.addCard(new CardTestSPGainer());
+
         System.out.println("DONE");
     }
 

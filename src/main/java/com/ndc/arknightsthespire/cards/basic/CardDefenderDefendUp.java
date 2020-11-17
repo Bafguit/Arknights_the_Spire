@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.basic;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
+import com.ndc.arknightsthespire.power.DogmaticField;
 
 import javax.swing.text.Position;
 
@@ -29,12 +31,12 @@ public class CardDefenderDefendUp extends CardSPBase {
     public CardDefenderDefendUp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, false, POSITION, true);
+                CardRarity.COMMON, CardTarget.SELF, false, POSITION, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;
 
-        this.setBackgroundTexture("img/512/skill_defender.png", "img/1024/skill_defender.png");
+        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
@@ -43,7 +45,12 @@ public class CardDefenderDefendUp extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         int block = this.block * (isSpJustUsed ? 2 : 1);
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        if(!DogmaticField.checkGainBlock()) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
+        }
         //SP Effect
     }
 

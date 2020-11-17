@@ -25,7 +25,7 @@ public class CardSniperOverload extends CardSPBase {
     private static final int ATTACK_DMG = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
-    private static final int DEFAULT_SP = 10;
+    private static final int DEFAULT_SP = 8;
 
     public CardSniperOverload() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -34,9 +34,9 @@ public class CardSniperOverload extends CardSPBase {
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
         this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP - SPHandler.getDiffSp();
+        this.baseSP = DEFAULT_SP + SPHandler.getDiffSp();
 
-        this.setBackgroundTexture("img/512/atk_sniper.png", "img/1024/atk_sniper.png");
+        this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 

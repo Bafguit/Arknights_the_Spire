@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.cards.uncommon;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -34,7 +35,7 @@ public class CardDefenderMagHammer extends CardSPBase {
         this.magicNumber = this.baseMagicNumber = DIFF_STRENGTH;
         this.sp = this.baseSP = DEFAULT_SP;
 
-        this.setBackgroundTexture("img/512/skill_defender.png", "img/1024/skill_defender.png");
+        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 

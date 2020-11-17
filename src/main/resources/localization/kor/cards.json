@@ -5,6 +5,14 @@
     "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL SP !S! 자동 발동",
     "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 만큼 5 번 줍니다."
   },
+  "SP Gainer": {
+    "NAME": "SP 획득",
+    "DESCRIPTION": "SP를 10 얻습니다."
+  },
+  "Counter Healing Mode": {
+    "NAME": "반격 의료 모드",
+    "DESCRIPTION": "체력을 회복할 때마다 SP를 !M! 얻습니다."
+  },
   "Emotion Absorption": {
     "NAME": "감정 흡수",
     "SP_NAME": "스피릿 버스트",
@@ -44,8 +52,8 @@
   },
   "Armor Crushing Shot": {
     "NAME": "쇄갑격",
-    "DESCRIPTION": "방어도를 !M! 파괴합니다. NL SP !S! 자동 발동",
-    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 방어도를 !M! 파괴합니다. NL 취약을 1 부여합니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 줍니다. NL 취약을 !M! 부여합니다."
   },
   "Dogmatic Field": {
     "NAME": "신조의 역장",

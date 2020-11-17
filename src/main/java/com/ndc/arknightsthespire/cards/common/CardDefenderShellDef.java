@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.cards.common;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
+import com.ndc.arknightsthespire.power.DogmaticField;
 
 public class CardDefenderShellDef extends CardSPBase {
     public static final String ID = "Shell Defense";
@@ -34,7 +36,7 @@ public class CardDefenderShellDef extends CardSPBase {
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;
 
-        this.setBackgroundTexture("img/512/skill_defender.png", "img/1024/skill_defender.png");
+        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
@@ -42,9 +44,21 @@ public class CardDefenderShellDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(!isSpJustUsed) { AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block)); }
+        if(!isSpJustUsed) {
+            if(!DogmaticField.checkGainBlock()) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+            }
+            else {
+                AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
+            }
+        }
         else {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+            if(!DogmaticField.checkGainBlock()) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+            }
+            else {
+                AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
+            }
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
         }
     }

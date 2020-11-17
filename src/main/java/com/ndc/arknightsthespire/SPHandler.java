@@ -2,9 +2,13 @@ package com.ndc.arknightsthespire;
 
 import basemod.interfaces.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.PositionType;
 import org.lwjgl.Sys;
+
+import java.util.Iterator;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber {
     private static int sp = 0;
@@ -74,9 +78,11 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
+        System.out.println("Saving...");
         beforeSp = sp;
         diffSp = 0;
         sp = 0;
+        System.out.println("Saved.");
     }
 
     @Override

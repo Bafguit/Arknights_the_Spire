@@ -93,7 +93,7 @@ public class CharacterDoctor extends CustomPlayer {
         retVal.add("Defend Up");
         retVal.add("Defend Up");
         retVal.add("Defend Up");
-        retVal.add("Defend Up");
+        retVal.add("Armor Crushing Shot");
         return retVal;
     }
 
@@ -107,7 +107,7 @@ public class CharacterDoctor extends CustomPlayer {
 
 
     public CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold
-        return new CharSelectInfo("독타", "테라에서 구출되어 기억을 잃은 사람. 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
+        return new CharSelectInfo("독타", "테라에서 구출되어 기억을 잃은 사람. NL 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
                 STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, HAND_SIZE,
                 this, getStartingRelics(), getStartingDeck(), false);
     }

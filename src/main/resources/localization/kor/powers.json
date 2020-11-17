@@ -6,6 +6,25 @@
       " 감소합니다."
     ]
   },
+  "Dogmatic Field": {
+    "NAME": "성역",
+    "DESCRIPTIONS": [
+      "방어도를 얻을 때, 대신 그만큼 회복합니다."
+    ]
+  },
+  "Counter Healing Mode": {
+    "NAME": "반격 의료 모드",
+    "DESCRIPTIONS": [
+      "체력을 회복할 때마다 SP를 #b",
+      " 얻습니다."
+    ]
+  },
+  "Charging Defense": {
+    "NAME": "충전 완료",
+    "DESCRIPTIONS": [
+      "다음 피해를 받지 않습니다."
+    ]
+  },
   "Accuracy": {
     "NAME": "정밀",
     "DESCRIPTIONS": [
