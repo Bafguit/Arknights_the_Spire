@@ -37,23 +37,32 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         sp = value;
     }
     public static void addSp(int amount) {
-        beforeSp = sp;
-        sp += amount;
+        if(sp < maxSp) {
+            beforeSp = sp;
+            if(sp + amount > maxSp) sp = maxSp;
+            else sp += amount;
+        }
     }
     public static void removeSp(int amount) {
-        beforeSp = sp;
-        sp -= amount;
+        if(sp > 0) {
+            beforeSp = sp;
+            if(sp - amount < 0) sp = 0;
+            else sp -= amount;
+        }
     }
     public static void addDiffSp(int amount) {
-        diffSp += amount;
+        if(diffSp + amount < 0) diffSp = 0;
+        else diffSp += amount;
     }
 
     public static void setSpMode(boolean isEnabled) {
         isSpModeEnabled = isEnabled;
     }
+
     public static boolean toggleSpMode() {
         return isSpModeEnabled = !isSpModeEnabled;
     }
+
     public static boolean isSpModeEnabled() {
         return isSpModeEnabled;
     }

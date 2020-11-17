@@ -59,7 +59,7 @@ public class CounterHealingMode extends AbstractPower implements CloneablePowerI
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + SPAmt + DESCRIPTIONS[1];
     }
 
     @Override

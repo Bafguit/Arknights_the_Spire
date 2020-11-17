@@ -2,14 +2,17 @@
 package com.ndc.arknightsthespire;
 
 import basemod.BaseMod;
+import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
 import com.ndc.arknightsthespire.cards.basic.CardTestSPGainer;
+import com.ndc.arknightsthespire.relics.SpiritualRecovery;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
 import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
@@ -22,7 +25,7 @@ import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
 
@@ -84,6 +87,16 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
                 "img/char/CharacterDoctorButton.png",
                 "img/char/PortraitBG.png",
                 DOCTOR_CLASS);
+        System.out.println("DONE");
+    }
+
+    @Override
+    public void receiveEditRelics() {
+        System.out.println("ADDING RELICS");
+
+        BaseMod.addRelic(new SpiritualRecovery(), RelicType.SHARED);
+        //TODO    RelicType에 박사 전용으로 하나 만들어야함. 이름은 대충 DOCTOR로 하면 될듯
+
         System.out.println("DONE");
     }
 }

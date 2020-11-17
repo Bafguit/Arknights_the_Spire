@@ -63,7 +63,8 @@ public abstract class CardSPBase extends CustomCard {
      }
 
      public void changeSP(int c_sp) {
-         this.baseSP = this.sp + c_sp;
+         if(this.sp + c_sp < 0) this.baseSP = 0;
+         else this.baseSP = this.sp + c_sp;
      }
 
     public static void getGroupSPChange(PositionType cardClass, int c_sp) {

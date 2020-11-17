@@ -14,6 +14,14 @@
       ""
     ]
   },
+  "Spiritual Recovery": {
+    "NAME": "정신 회복",
+    "FLAVOR": "사리아 재능",
+    "DESCRIPTIONS": [
+      "체력을 회복할 때마다 SP를 #b",
+      " 얻습니다."
+    ]
+  },
   "": {
     "NAME": "",
     "FLAVOR": "",
