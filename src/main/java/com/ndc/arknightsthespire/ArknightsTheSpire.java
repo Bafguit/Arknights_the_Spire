@@ -94,8 +94,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditRelics() {
         System.out.println("ADDING RELICS");
 
-        BaseMod.addRelic(new SpiritualRecovery(), RelicType.SHARED);
-        //TODO    RelicType에 박사 전용으로 하나 만들어야함. 이름은 대충 DOCTOR로 하면 될듯
+        BaseMod.addRelicToCustomPool(new SpiritualRecovery(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
 
         System.out.println("DONE");
     }
