@@ -18,7 +18,7 @@ public class CardDefenderThorns extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/defend.png";
+    public static final String IMG_PATH = "img/cards/thorns.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int THORNS_AMOUNT = 3;

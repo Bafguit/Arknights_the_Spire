@@ -57,7 +57,7 @@ public class RapidMagazine extends AbstractPower implements CloneablePowerInterf
         CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
         System.out.println(SPHandler.getDiffSp() + " is current diffSP");
         System.out.println(amount + " is current amount");
-    }*/
+    }
 
     @Override
     public void onApplyPower(AbstractPower p, AbstractCreature t, AbstractCreature s) {
@@ -65,7 +65,7 @@ public class RapidMagazine extends AbstractPower implements CloneablePowerInterf
             System.out.println(p.ID + " is successfully applied!");
             CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
         }
-    }
+    }*/
 
     public void onCardDraw(AbstractCard card) {
         CardSPBase.getSingleClassSPChange(card, PositionType.SNIPER);

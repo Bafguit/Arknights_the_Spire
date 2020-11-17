@@ -51,8 +51,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         }
     }
     public static void addDiffSp(int amount) {
-        if(diffSp + amount < 0) diffSp = 0;
-        else diffSp += amount;
+        diffSp += amount;
     }
 
     public static void setSpMode(boolean isEnabled) {

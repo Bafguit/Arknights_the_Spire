@@ -7,9 +7,9 @@
     ]
   },
   "Dogmatic Field": {
-    "NAME": "성역",
+    "NAME": "신조의 역장",
     "DESCRIPTIONS": [
-      "방어도를 얻을 때, 대신 그만큼 체력을 회복합니다."
+      "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다."
     ]
   },
   "Counter Healing Mode": {

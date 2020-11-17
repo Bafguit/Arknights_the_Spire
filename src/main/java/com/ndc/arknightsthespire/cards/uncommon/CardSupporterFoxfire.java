@@ -20,7 +20,7 @@ public class CardSupporterFoxfire extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/beta.png";
+    public static final String IMG_PATH = "img/cards/nff.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 3;
     private static final int REGEN_AMOUNT = 3;
@@ -29,7 +29,7 @@ public class CardSupporterFoxfire extends CardSPBase {
     public CardSupporterFoxfire() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, false);
+                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, false);
         this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;
 
         this.setBackgroundTexture("img/512/supporter_512.png", "img/1024/supporter_512.png");
@@ -42,11 +42,11 @@ public class CardSupporterFoxfire extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new VulnerablePower(mo, 2, false), 2));
+                    new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new WeakPower(mo, 2, false), 2));
+                    new WeakPower(mo, this.magicNumber, false), this.magicNumber, true));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, true));
 
     }
 

@@ -57,7 +57,7 @@
   },
   "Dogmatic Field": {
     "NAME": "신조의 역장",
-    "DESCRIPTION": "방어도를 얻는 대신 그만큼 회복합니다."
+    "DESCRIPTION": "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다."
   },
   "Rapid Magazine": {
     "NAME": "쾌속장전",
@@ -109,7 +109,7 @@
   },
   "Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 2 , 취약을 2 부여합니다. 재생을 !M! 얻습니다."
+    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
   },
   "NULL": {
     "NAME": "",

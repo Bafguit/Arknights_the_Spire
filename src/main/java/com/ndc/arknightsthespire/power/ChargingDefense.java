@@ -51,7 +51,7 @@ public class ChargingDefense extends AbstractPower implements CloneablePowerInte
 
     @Override
     public int onAttacked (DamageInfo info, int damageAmount) {
-        if(isApplied && !info.owner.isPlayer) {
+        if(isApplied && !info.owner.isPlayer && AbstractDungeon.player.currentBlock < damageAmount) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Charging Defense"));
             isApplied = false;
             return onAttackToChangeDamage(info, 0);
