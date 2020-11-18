@@ -1,14 +1,23 @@
 package com.ndc.arknightsthespire.cards;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.ndc.arknightsthespire.SPHandler;
 
 import java.util.Iterator;
@@ -18,6 +27,8 @@ public abstract class CardSPBase extends CustomCard {
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
     public static final Color DEFAULT_BORDER_GLOW_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
     public static final Color SP_BORDER_GLOW_COLOR = new Color(0.0F, 0.0F, 0.63F, 0.5F);
+    public static final Color SP_COST_RESTRICTED_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
+    public static final Color SP_COST_MODIFIED_COLOR = new Color(0.0F, 0.0F, 0.63F, 0.5F);
     private static final UIStrings uiSPStrings;
 
     public int baseSP;
@@ -25,6 +36,7 @@ public abstract class CardSPBase extends CustomCard {
     public PositionType position;
     public boolean isAuto;
     public boolean isSPModified;
+    public boolean isSPModifiedForTurn; //TODO Not implemented
     public boolean canUseSP;
     public boolean upgradedSP;
     public boolean onlySP;
@@ -52,6 +64,7 @@ public abstract class CardSPBase extends CustomCard {
         this.canUseSP = hasSP;
         this.updateGlow(false);
     }
+
      protected void upgradeSP(int amount) {
          this.baseSP = amount;
          this.upgradedSP = true;
@@ -100,7 +113,7 @@ public abstract class CardSPBase extends CustomCard {
 */
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(SPHandler.isSpModeEnabled() && (!canUseSP || !canAffordSP(SPHandler.getSp()))) {
+        if(SPHandler.isSpModeEnabled() && (!canUseSP || !canAffordSP())) {
             this.cantUseMessage = uiSPStrings.TEXT[0];
             return false;
         }
@@ -110,7 +123,7 @@ public abstract class CardSPBase extends CustomCard {
     @Override
     public final void use(AbstractPlayer p, AbstractMonster m) {
         boolean isSpJustUsed = false;
-        if(canAffordSP(SPHandler.getSp()) && (this.isAuto || SPHandler.isSpModeEnabled())) {
+        if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
             SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
             updateAllGlowInHand();
@@ -138,16 +151,16 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     private boolean checkGlow(boolean isSpEnabled) {
-        System.out.println(SPHandler.getSp() + " " + canAffordSP(SPHandler.getSp()));
+        System.out.println(SPHandler.getSp() + " " + canAffordSP());
         if(isSpEnabled) {
-            if(canAffordSP(SPHandler.getSp())) {
+            if(canAffordSP()) {
                 this.glowColor = SP_BORDER_GLOW_COLOR;
                 System.out.println("CASE A");
                 return true;
             }
         } else {
             if(isAuto) {
-                if(canAffordSP(SPHandler.getSp())) {
+                if(canAffordSP()) {
                     this.glowColor = SP_BORDER_GLOW_COLOR;
                     System.out.println("CASE B");
                     return true;
@@ -165,10 +178,34 @@ public abstract class CardSPBase extends CustomCard {
         return false;
     }
 
-     public boolean canAffordSP(int sp) {
-        return sp >= this.baseSP;
+     public boolean canAffordSP() {
+        return SPHandler.getSp() >= this.baseSP;
      }
 
+    private BitmapFont getSpFont() {
+        FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale);
+        return FontHelper.cardEnergyFont_L;
+    }
+
+    public void renderSp(SpriteBatch sb) {
+        boolean darken = (boolean) ReflectionHacks.getPrivate(this, boolean.class, "darken");
+        if (this.cost > -2 && !darken && !this.isLocked && this.isSeen) {
+
+            Color costColor = Color.WHITE.cpy();
+            if (AbstractDungeon.player != null && AbstractDungeon.player.hand.contains(this) && !this.canAffordSP()) {
+                costColor = SP_COST_RESTRICTED_COLOR;
+            } else if (this.isSPModified || this.isSPModifiedForTurn || this.freeToPlay()) {
+                costColor = SP_COST_MODIFIED_COLOR;
+            }
+
+            costColor.a = this.transparency;
+            String text = String.valueOf(sp);
+            BitmapFont font = this.getSpFont();
+            if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
+                FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, -(132.0F+2.0F) * this.drawScale * Settings.scale, 192.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
+            }
+        }
+    }
 
 /*
     public void displayUpgrades() {
