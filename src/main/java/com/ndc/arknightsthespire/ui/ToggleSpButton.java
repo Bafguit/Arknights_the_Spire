@@ -88,11 +88,6 @@ public class ToggleSpButton {
         this.endTurnButton = endTurnButton;
     }
 
-    private void setSp(boolean isSpEnabled) {
-        SPHandler.setSpMode(isSpEnabled);
-        updateText(isSpEnabled ? TURN_OFF_MSG : TURN_ON_MSG);
-    }
-
     public void update() {
         /*if(!Settings.hideEndTurn) {
             this.current_y = SHOW_Y + BUTTON_OFFSET_Y;
@@ -102,7 +97,8 @@ public class ToggleSpButton {
             this.enable();
         }
         if(this.enabled && !endTurnButton.enabled) {
-            setSp(false);
+            SPHandler.setSpMode(false);
+            updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
             this.disable();
         }
 
@@ -165,6 +161,7 @@ public class ToggleSpButton {
                 System.out.println("TEST333");
 
                 SPHandler.toggleSpMode();
+                updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
                 CardSPBase.updateAllGlowInHand();
             }
         }
