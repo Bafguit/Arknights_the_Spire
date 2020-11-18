@@ -10,26 +10,25 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
-import sun.reflect.Reflection;
 
-public class SkippableAttackDamageRandomEnemyAction extends AttackDamageRandomEnemyAction {
+public class RandomAttack extends AttackDamageRandomEnemyAction {
 
     private boolean skipWait;
 
-    public SkippableAttackDamageRandomEnemyAction(AbstractCard card, AttackEffect effect) {
+    public RandomAttack(AbstractCard card, AttackEffect effect) {
         this(card, effect, false);
     }
 
-    public SkippableAttackDamageRandomEnemyAction(AbstractCard card, AttackEffect effect, boolean superFast) {
+    public RandomAttack(AbstractCard card, AttackEffect effect, boolean superFast) {
         super(card, effect);
         this.skipWait = superFast;
     }
 
-    public SkippableAttackDamageRandomEnemyAction(AbstractCard card) {
+    public RandomAttack(AbstractCard card) {
         this(card, false);
     }
 
-    public SkippableAttackDamageRandomEnemyAction(AbstractCard card, boolean superFast) {
+    public RandomAttack(AbstractCard card, boolean superFast) {
         this(card, AttackEffect.NONE, superFast);
     }
 
