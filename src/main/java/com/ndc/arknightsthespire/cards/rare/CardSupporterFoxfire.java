@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.cards.uncommon;
+package com.ndc.arknightsthespire.cards.rare;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

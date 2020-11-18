@@ -2,7 +2,6 @@
 package com.ndc.arknightsthespire;
 
 import basemod.BaseMod;
-import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
@@ -12,6 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
 import com.ndc.arknightsthespire.cards.basic.CardTestSPGainer;
+import com.ndc.arknightsthespire.cards.common.CardCasterEmotionAbs;
+import com.ndc.arknightsthespire.cards.common.CardGuardCatScratch;
+import com.ndc.arknightsthespire.cards.rare.CardGuardShadowAssault;
+import com.ndc.arknightsthespire.cards.rare.CardSpecialistRatPack;
+import com.ndc.arknightsthespire.cards.rare.CardSupporterFoxfire;
 import com.ndc.arknightsthespire.relics.SpiritualRecovery;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
@@ -63,9 +67,18 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardDefenderDefendUp());
         BaseMod.addCard(new CardDefenderChargingDef());
         BaseMod.addCard(new CardDefenderShellDef());
-        BaseMod.addCard(new CardDefenderMagHammer());
+        //BaseMod.addCard(new CardDefenderMagHammer());
         BaseMod.addCard(new CardDefenderThorns());
         BaseMod.addCard(new CardDefenderCntHealMod());
+        //Caster
+        BaseMod.addCard(new CardCasterEmotionAbs());
+        //Specialist
+        BaseMod.addCard(new CardSpecialistRatPack());
+        //Guard
+        BaseMod.addCard(new CardGuardCatScratch());
+        BaseMod.addCard(new CardGuardRedShift());
+        //BaseMod.addCard(new CardGuardBloodOath());
+        //BaseMod.addCard(new CardGuardShadowAssault());
         //Test
         BaseMod.addCard(new CardTestSPGainer());
 

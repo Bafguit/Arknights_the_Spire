@@ -1,12 +1,18 @@
 package com.ndc.arknightsthespire.power;
 
+import basemod.devcommands.power.Power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.combat.PowerDebuffEffect;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -18,6 +24,7 @@ public class DogmaticField extends AbstractPower implements CloneablePowerInterf
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public static final AbstractPlayer p = AbstractDungeon.player;
     public static boolean isApplied = false;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
@@ -43,10 +50,29 @@ public class DogmaticField extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
-    public static boolean checkGainBlock() {
-        if(isApplied) return true;
+    public static boolean checkGainBlock(int amt) {
+        if(isApplied) {
+            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, amt));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amt));
+        }
         return false;
     }
+
+    @Override
+    public int onHeal(int healAmount) {
+
+        int overHeal = p.currentHealth + healAmount;
+
+        if(overHeal > p.maxHealth)
+        {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, overHeal - p.maxHealth));
+        }
+
+        return healAmount;
+    }
+
 
     @Override
     public void onVictory() {

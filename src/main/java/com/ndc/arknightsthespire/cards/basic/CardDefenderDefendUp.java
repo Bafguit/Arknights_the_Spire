@@ -31,7 +31,7 @@ public class CardDefenderDefendUp extends CardSPBase {
     public CardDefenderDefendUp() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, POSITION, true);
+                CardRarity.BASIC, CardTarget.SELF, false, POSITION, true);
         this.block = this.baseBlock = BLOCK_AMT;
         this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
         this.sp = this.baseSP = DEFAULT_SP;
@@ -45,12 +45,13 @@ public class CardDefenderDefendUp extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         int block = this.block * (isSpJustUsed ? 2 : 1);
-        if(!DogmaticField.checkGainBlock()) {
+        DogmaticField.checkGainBlock(block);
+/*        if(!DogmaticField.checkGainBlock()) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-        }
+        }*/
         //SP Effect
     }
 

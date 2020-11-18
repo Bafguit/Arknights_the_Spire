@@ -45,20 +45,22 @@ public class CardDefenderShellDef extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(!isSpJustUsed) {
-            if(!DogmaticField.checkGainBlock()) {
+            DogmaticField.checkGainBlock(block);
+/*            if(!DogmaticField.checkGainBlock()) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
             }
             else {
                 AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-            }
+            }*/
         }
         else {
-            if(!DogmaticField.checkGainBlock()) {
+            DogmaticField.checkGainBlock(block);
+/*            if(!DogmaticField.checkGainBlock()) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
             }
             else {
                 AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-            }
+            }*/
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
         }
     }

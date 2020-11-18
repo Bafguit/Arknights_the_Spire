@@ -38,8 +38,7 @@ public class CardMedicDogmaticField extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         //Effect
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new DogmaticField(p, p),
-                1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DogmaticField(p, p)));
 
     }
 

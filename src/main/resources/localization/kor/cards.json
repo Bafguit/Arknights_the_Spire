@@ -15,9 +15,7 @@
   },
   "Emotion Absorption": {
     "NAME": "감정 흡수",
-    "SP_NAME": "스피릿 버스트",
-    "DESCRIPTION": "SP를 !M! 회복합니다. 이번 턴에 적이 죽은 경우 추가로 6 회복합니다. NL SP !S! 자동 발동",
-    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 만큼 !M! 번 줍니다. NL 캐스터 2턴 금지."
+    "DESCRIPTION": "SP를 !M! 회복합니다."
   },
   "Powerful Strike": {
     "NAME": "강타β",
@@ -57,7 +55,7 @@
   },
   "Dogmatic Field": {
     "NAME": "신조의 역장",
-    "DESCRIPTION": "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다."
+    "DESCRIPTION": "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다. NL 최대 체력을 초과한 회복이 방어도로 전환됩니다."
   },
   "Rapid Magazine": {
     "NAME": "쾌속장전",
@@ -82,8 +80,7 @@
   },
   "Rat Pack": {
     "NAME": "쥐 떼",
-    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 스페셜리스트 2턴 금지. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 스페셜리스트 2턴 금지."
+    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 스페셜리스트 2턴 금지. NL 소멸."
   },
   "Assault Order": {
     "NAME": "돌격지령β",
@@ -110,6 +107,30 @@
   "Nebulous Foxfire": {
     "NAME": "희미한 여우불",
     "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
+  },
+  "Cat Scratch": {
+    "NAME": "할퀴기!",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 주고 약화를 !M! 부여합니다."
+  },
+  "Seething Burst": {
+    "NAME": "끓어오르는 폭발",
+    "DESCRIPTION": "이번 턴 동안 힘을 !M! , 민첩을 !M! 얻습니다. 턴이 끝날 때 적 전체에게 피해를 15 줍니다."
+  },
+  "Red Shift": {
+    "NAME": "적색 편이",
+    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 5 번 줍니다."
+  },
+  "Shadow Assault": {
+    "NAME": "적소: 발도",
+    "SP_NAME": "적소: 절영",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 의 2배만큼 2 번 줍니다. NL SP !S! 수동 발동",
+    "SP_DESCRIPTION": "SP !S! 수동 발동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다. 마지막 피해는 2 배가 됩니다."
+  },
+  "Blood Oath": {
+    "NAME": "흡혈",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 줍니다. 체력을 !M! 회복합니다."
   },
   "NULL": {
     "NAME": "",

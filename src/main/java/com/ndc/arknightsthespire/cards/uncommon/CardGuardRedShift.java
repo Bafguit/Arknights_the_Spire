@@ -1,6 +1,7 @@
-package com.ndc.arknightsthespire.cards.basic;
+package com.ndc.arknightsthespire.cards.uncommon;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,28 +9,31 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
-public class CardTestSPGainer extends CardSPBase {
-    public static final String ID = "SP Gainer";
+public class CardGuardRedShift extends CardSPBase {
+    public static final String ID = "Red Shift";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/skill_beta.png";
-    public static final PositionType POSITION = PositionType.VANGUARD;
-    private static final int COST = 0;
-    private static final int SP_GAIN = 10;
+    public static final String IMG_PATH = "img/cards/attack_beta.png";
+    public static final PositionType POSITION = PositionType.GUARD;
+    private static final int COST = 1;
+    private static final int ATTACK_DMG = 2;
+    private static final int UP_DMG = 1;
 
-    public CardTestSPGainer() {
+    public CardGuardRedShift() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, false, POSITION, false);
+                CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, false);
+        this.damage = this.baseDamage = ATTACK_DMG;
 
-        this.setBackgroundTexture("img/512/beta.png", "img/1024/beta.png");
+        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
@@ -37,18 +41,23 @@ public class CardTestSPGainer extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        SPHandler.addSp(10);
+        for(int for_i = 0; for_i < 5; for_i++) {
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                    new DamageInfo(AbstractDungeon.getRandomMonster(), damage, this.damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardTestSPGainer();
+        return new CardGuardRedShift();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeDamage(UP_DMG);
         }
     }
 

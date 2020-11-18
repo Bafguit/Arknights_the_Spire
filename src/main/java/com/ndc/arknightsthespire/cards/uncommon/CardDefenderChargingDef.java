@@ -46,12 +46,14 @@ public class CardDefenderChargingDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(!DogmaticField.checkGainBlock()) {
+/*        if(!DogmaticField.checkGainBlock()) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-        }
+        }*/
+
+        DogmaticField.checkGainBlock(block);
 
         //SP Effect
         if(isSpJustUsed) {

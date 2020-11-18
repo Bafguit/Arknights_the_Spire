@@ -29,7 +29,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     public CardSniperPowerfulStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true);
+                CardRarity.BASIC, CardTarget.ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = DEFAULT_SP;
         this.baseSP = DEFAULT_SP - SPHandler.getDiffSp();
