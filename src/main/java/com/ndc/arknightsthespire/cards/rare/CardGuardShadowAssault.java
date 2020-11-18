@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.RandomAttack;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
@@ -32,7 +34,7 @@ public class CardGuardShadowAssault extends CardSPBase {
     public CardGuardShadowAssault() { //Not Using
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ENEMY, false, POSITION, true);
+                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = SP;
         this.baseSP = SP - SPHandler.getDiffSp();
@@ -47,16 +49,16 @@ public class CardGuardShadowAssault extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
 
         if(isSpJustUsed) {
-            for (int for_i = 0; for_i < 8; for_i++) {
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                        new DamageInfo(AbstractDungeon.getMonsters().getRandomMonster(true), this.damage, this.damageTypeForTurn),
+            for (int for_i = 0; for_i < 4; for_i++) {
+                this.addToBot(new RandomAttack(this,
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+                this.addToBot(new RandomAttack(this,
+                        AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
             }
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(AbstractDungeon.getMonsters().getRandomMonster(true), this.damage, this.damageTypeForTurn),
+            this.addToBot(new RandomAttack(this,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(AbstractDungeon.getMonsters().getRandomMonster(true), this.damage * 2, this.damageTypeForTurn),
+
+            this.addToBot(new RandomAttack(this,
                     AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
         }
         else {

@@ -36,7 +36,7 @@ public class CardSpecialistRatPack extends CardSPBase {
     public CardSpecialistRatPack() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ENEMY, false, POSITION, false);
+                CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
 
         this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
 
