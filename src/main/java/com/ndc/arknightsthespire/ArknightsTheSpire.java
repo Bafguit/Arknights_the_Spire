@@ -11,17 +11,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
 import com.ndc.arknightsthespire.cards.basic.CardTestSPGainer;
-import com.ndc.arknightsthespire.cards.common.CardCasterEmotionAbs;
-import com.ndc.arknightsthespire.cards.common.CardGuardCatScratch;
-import com.ndc.arknightsthespire.cards.rare.CardGuardShadowAssault;
-import com.ndc.arknightsthespire.cards.rare.CardSpecialistRatPack;
-import com.ndc.arknightsthespire.cards.rare.CardSupporterFoxfire;
+import com.ndc.arknightsthespire.cards.common.*;
+import com.ndc.arknightsthespire.cards.rare.*;
 import com.ndc.arknightsthespire.relics.SpiritualRecovery;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
 import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
-import com.ndc.arknightsthespire.cards.common.CardDefenderShellDef;
-import com.ndc.arknightsthespire.cards.rare.CardMedicDogmaticField;
 import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 
@@ -59,6 +54,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardSniperPowerfulStrike());
         BaseMod.addCard(new CardSniperArmCrushShot());
         BaseMod.addCard(new CardSniperRapidMagazine());
+        BaseMod.addCard(new CardSniperConShotAuto());
+        BaseMod.addCard(new CardSniperExpAreaStr());
         //Medic
         BaseMod.addCard(new CardMedicDogmaticField());
         //Supporter
@@ -67,7 +64,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardDefenderDefendUp());
         BaseMod.addCard(new CardDefenderChargingDef());
         BaseMod.addCard(new CardDefenderShellDef());
-        //BaseMod.addCard(new CardDefenderMagHammer());
+        BaseMod.addCard(new CardDefenderMagHammer());
         BaseMod.addCard(new CardDefenderThorns());
         BaseMod.addCard(new CardDefenderCntHealMod());
         //Caster
@@ -77,8 +74,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         //Guard
         BaseMod.addCard(new CardGuardCatScratch());
         BaseMod.addCard(new CardGuardRedShift());
-        //BaseMod.addCard(new CardGuardBloodOath());
-        //BaseMod.addCard(new CardGuardShadowAssault());
+        BaseMod.addCard(new CardGuardTrueSilverSlash());
+        BaseMod.addCard(new CardGuardBloodOath());
+        BaseMod.addCard(new CardGuardShadowAssault());
         //Test
         BaseMod.addCard(new CardTestSPGainer());
 

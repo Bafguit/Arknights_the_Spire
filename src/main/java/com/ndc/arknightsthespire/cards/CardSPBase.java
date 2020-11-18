@@ -110,12 +110,15 @@ public abstract class CardSPBase extends CustomCard {
     @Override
     public final void use(AbstractPlayer p, AbstractMonster m) { //TODO Fix this
         boolean isSpJustUsed = false;
-        if(canAffordSP(SPHandler.getBeforeSp()) && (this.isAuto || SPHandler.isSpModeEnabled())) { //TODO I guess there'll be some case that need sp not beforeSp
+        if(canAffordSP(SPHandler.getSp()) && (this.isAuto || SPHandler.isSpModeEnabled())) { //TODO I guess there'll be some case that need sp not beforeSp
             SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
             updateAllGlowInHand();
         }
         useCard(p, m, isSpJustUsed);
+
+        SPHandler.addSp(SPHandler.getTurnAddSp());
+        System.out.println("Current SP: " + SPHandler.getSp());
     }
 
     public abstract void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed);

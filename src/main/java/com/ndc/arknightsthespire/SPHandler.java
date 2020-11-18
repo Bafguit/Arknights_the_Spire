@@ -12,7 +12,7 @@ import java.util.Iterator;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber {
     private static int sp = 0;
-    private static int maxSp = 10;
+    private static int maxSp = 50;
     private static int diffSp = 0;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
@@ -31,6 +31,9 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     }
     public static int getDiffSp() {
         return diffSp;
+    }
+    public static int getTurnAddSp() {
+        return turnAddSp;
     }
     public static void setSp(int value) {
         beforeSp = sp;
@@ -95,8 +98,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        this.addSp(cardAddSp);
-        System.out.println("Current SP: " + sp);
     }
 
     @Override
