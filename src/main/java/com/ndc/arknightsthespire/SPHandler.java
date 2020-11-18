@@ -20,7 +20,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     private static int lastSPAmount;
     private static boolean isSpModeEnabled;
 
-    private static int actualSp = 0; //This is useful when card use triggers addSp
+    private static int soonAddedSp = 0; //This is useful when card use triggers addSp
 
     public static int getSp() {
         return sp;
@@ -36,26 +36,20 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return turnAddSp;
     }
     public static void setSp(int value) {
-        actualSp = sp;
         sp = value;
     }
     public static void addSp(int amount) {
-        addSp(amount, false);
+        sp = Math.min(sp + amount, maxSp);
     }
-    public static void addSp(int amount, boolean shouldBeAppliedInNextUpdate) {
-        if(sp < maxSp) {
-            actualSp = sp;
-            if(sp + amount > maxSp) sp = maxSp;
-            else sp += amount;
-            if(!shouldBeAppliedInNextUpdate) actualSp = sp;
-        }
+    public static void addSpSoon(int amount) {
+        soonAddedSp += amount;
     }
-    public static void updateActualSp() {
-        actualSp = sp;
+    public static void updateSp() {
+        addSp(soonAddedSp);
+        soonAddedSp = 0;
     }
     public static void removeSp(int amount) {
         if(sp > 0) {
-            actualSp = sp;
             if(sp - amount < 0) sp = 0;
             else sp -= amount;
         }
@@ -76,10 +70,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return isSpModeEnabled;
     }
 
-    public static int getActualSp() {
-        return actualSp;
-    }
-
     @Override
     public void receivePostDraw(AbstractCard abstractCard) {
         /*if(abstractCard instanceof CardSPBase) {
@@ -97,7 +87,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         System.out.println("Saving...");
-        actualSp = sp;
         diffSp = 0;
         sp = 0;
         System.out.println("Saved.");
@@ -106,7 +95,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     //
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        this.addSp(cardAddSp, true);
+        addSpSoon(cardAddSp);
         System.out.println("Current SP: " + sp);
     }
 

@@ -100,7 +100,7 @@ public abstract class CardSPBase extends CustomCard {
 */
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(SPHandler.isSpModeEnabled() && (!canUseSP || !canAffordSP(SPHandler.getActualSp()))) {
+        if(SPHandler.isSpModeEnabled() && (!canUseSP || !canAffordSP(SPHandler.getSp()))) {
             this.cantUseMessage = uiSPStrings.TEXT[0];
             return false;
         }
@@ -110,13 +110,13 @@ public abstract class CardSPBase extends CustomCard {
     @Override
     public final void use(AbstractPlayer p, AbstractMonster m) {
         boolean isSpJustUsed = false;
-        if(canAffordSP(SPHandler.getActualSp()) && (this.isAuto || SPHandler.isSpModeEnabled())) { //TODO I guess there'll be some case that need sp not beforeSp
+        if(canAffordSP(SPHandler.getSp()) && (this.isAuto || SPHandler.isSpModeEnabled())) {
             SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
             updateAllGlowInHand();
         }
         useCard(p, m, isSpJustUsed);
-        SPHandler.updateActualSp();
+        SPHandler.updateSp();
     }
 
     public abstract void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed);
@@ -138,16 +138,16 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     private boolean checkGlow(boolean isSpEnabled) {
-        System.out.println(SPHandler.getActualSp() + " " + canAffordSP(SPHandler.getActualSp()));
+        System.out.println(SPHandler.getSp() + " " + canAffordSP(SPHandler.getSp()));
         if(isSpEnabled) {
-            if(canAffordSP(SPHandler.getActualSp())) {
+            if(canAffordSP(SPHandler.getSp())) {
                 this.glowColor = SP_BORDER_GLOW_COLOR;
                 System.out.println("CASE A");
                 return true;
             }
         } else {
             if(isAuto) {
-                if(canAffordSP(SPHandler.getActualSp())) {
+                if(canAffordSP(SPHandler.getSp())) {
                     this.glowColor = SP_BORDER_GLOW_COLOR;
                     System.out.println("CASE B");
                     return true;
