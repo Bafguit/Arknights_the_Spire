@@ -141,7 +141,7 @@ public class ToggleSpButton {
                         AbstractCard c = (AbstractCard)var1.next();
                         if(c instanceof CardSPBase) {
                             CardSPBase card = (CardSPBase) c;
-                            if (card.isGlowing && card.canAffordSP(SPHandler.getSp())) {
+                            if (card.isGlowing && card.canAffordSP(SPHandler.getActualSp())) {
                                 //c.superFlash(c.glowColor);
                             }
                         }

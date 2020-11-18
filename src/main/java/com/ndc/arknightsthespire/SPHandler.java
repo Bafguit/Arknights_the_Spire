@@ -20,7 +20,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     private static int lastSPAmount;
     private static boolean isSpModeEnabled;
 
-    private static int beforeSp = 0; //SP value before it got changed.
+    private static int actualSp = 0; //This is useful when card use triggers addSp
 
     public static int getSp() {
         return sp;
@@ -33,19 +33,26 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return diffSp;
     }
     public static void setSp(int value) {
-        beforeSp = sp;
+        actualSp = sp;
         sp = value;
     }
     public static void addSp(int amount) {
+        addSp(amount, false);
+    }
+    public static void addSp(int amount, boolean shouldBeAppliedInNextUpdate) {
         if(sp < maxSp) {
-            beforeSp = sp;
+            actualSp = sp;
             if(sp + amount > maxSp) sp = maxSp;
             else sp += amount;
+            if(!shouldBeAppliedInNextUpdate) actualSp = sp;
         }
+    }
+    public static void updateActualSp() {
+        actualSp = sp;
     }
     public static void removeSp(int amount) {
         if(sp > 0) {
-            beforeSp = sp;
+            actualSp = sp;
             if(sp - amount < 0) sp = 0;
             else sp -= amount;
         }
@@ -66,8 +73,8 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return isSpModeEnabled;
     }
 
-    public static int getBeforeSp() {
-        return beforeSp;
+    public static int getActualSp() {
+        return actualSp;
     }
 
     @Override
@@ -87,15 +94,16 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         System.out.println("Saving...");
-        beforeSp = sp;
+        actualSp = sp;
         diffSp = 0;
         sp = 0;
         System.out.println("Saved.");
     }
 
+    //
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        this.addSp(cardAddSp);
+        this.addSp(cardAddSp, true);
         System.out.println("Current SP: " + sp);
     }
 
