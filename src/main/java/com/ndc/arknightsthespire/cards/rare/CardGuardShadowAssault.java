@@ -13,6 +13,8 @@ import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
+import javax.smartcardio.Card;
+
 public class CardGuardShadowAssault extends CardSPBase {
     public static final String ID = "Shadow Assault";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -24,13 +26,13 @@ public class CardGuardShadowAssault extends CardSPBase {
     private static final int COST = 3;
     private static final int ATTACK_DMG = 5;
     private static final int UP_DMG = 1;
-    private static final int SP = 10;
+    private static final int SP = 40;
     private static final int UP_SP = 30;
 
     public CardGuardShadowAssault() { //Not Using
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true);
+                CardRarity.RARE, CardTarget.ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = SP;
         this.baseSP = SP - SPHandler.getDiffSp();
@@ -43,25 +45,26 @@ public class CardGuardShadowAssault extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+
         if(isSpJustUsed) {
             for (int for_i = 0; for_i < 8; for_i++) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                        new DamageInfo(AbstractDungeon.getRandomMonster(), damage, this.damageTypeForTurn),
+                        new DamageInfo(AbstractDungeon.getMonsters().getRandomMonster(true), this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
             }
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(AbstractDungeon.getRandomMonster(), damage, this.damageTypeForTurn),
+                    new DamageInfo(AbstractDungeon.getMonsters().getRandomMonster(true), this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(AbstractDungeon.getRandomMonster(), damage * 2, this.damageTypeForTurn),
+                    new DamageInfo(AbstractDungeon.getMonsters().getRandomMonster(true), this.damage * 2, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(m, damage * 2, this.damageTypeForTurn),
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
+                    DamageInfo.createDamageMatrix(this.damage * 2, true), this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(m, damage * 2, this.damageTypeForTurn),
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
+                    DamageInfo.createDamageMatrix(this.damage * 2, true), this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
     }

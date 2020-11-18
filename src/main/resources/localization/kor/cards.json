@@ -97,7 +97,7 @@
   "True Silver Slash": {
     "NAME": "진은참",
     "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 3 번 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸. NL SP !S! 자동 발동",
-    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 가드 카드 수만큼 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 내 덱의 가드 카드 수만큼 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
   },
   "Volcano": {
     "NAME": "화산",
@@ -131,6 +131,14 @@
     "NAME": "흡혈",
     "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
     "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 줍니다. 체력을 !M! 회복합니다."
+  },
+  "Consecutive Shot: Auto": {
+    "NAME": "2연사: 자동",
+    "DESCRIPTION": "피해를 !D! 만큼 2 번 줍니다."
+  },
+  "Explosion Area Strengthen": {
+    "NAME": "폭발범위확대",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다."
   },
   "NULL": {
     "NAME": "",
