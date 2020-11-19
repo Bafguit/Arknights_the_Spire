@@ -18,9 +18,23 @@ public class AbstractCardPatcher {
                 localvars = {"sb"}
         )
         public static void Insert(AbstractCard __instance, SpriteBatch sb) {
-            System.out.println("HEYYYY");
             if(__instance instanceof CardSPBase) {
-                System.out.println("KAYYYY");
+                ((CardSPBase) __instance).renderSp(sb);
+            }
+        }
+    }
+
+    @SpirePatch(
+            clz= AbstractCard.class,
+            method="renderCard"
+    )
+    public static class RenderCardPatcher {
+        @SpireInsertPatch(
+                rloc = 21,
+                localvars = {"sb"}
+        )
+        public static void Insert(AbstractCard __instance, SpriteBatch sb) {
+            if(__instance instanceof CardSPBase) {
                 ((CardSPBase) __instance).renderSp(sb);
             }
         }

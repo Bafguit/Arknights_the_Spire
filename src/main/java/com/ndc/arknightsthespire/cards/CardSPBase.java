@@ -27,8 +27,12 @@ public abstract class CardSPBase extends CustomCard {
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
     public static final Color DEFAULT_BORDER_GLOW_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
     public static final Color SP_BORDER_GLOW_COLOR = new Color(0.0F, 0.0F, 0.63F, 0.5F);
-    public static final Color SP_COST_RESTRICTED_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
-    public static final Color SP_COST_MODIFIED_COLOR = new Color(0.0F, 0.0F, 0.63F, 0.5F);
+    public static final Color NORMAL_AND_USABLE_COLOR = new Color(0x00E0FFFF);
+    public static final Color NORMAL_AND_NOT_USABLE_COLOR = new Color(0x79A6B2FF);
+    public static final Color NORMAL_AND_RESTRICTED_COLOR = new Color(0xC66F79FF);
+    public static final Color MODIFIED_AND_USABLE_COLOR = new Color(0x0BFB7CFF);
+    public static final Color MODIFIED_AND_NOT_USABLE_COLOR = new Color(0x7DA590FF);
+    public static final Color MODIFIED_AND_RESTRICTED_COLOR = new Color(0x9B8077FF);
     private static final UIStrings uiSPStrings;
 
     public int baseSP;
@@ -183,26 +187,38 @@ public abstract class CardSPBase extends CustomCard {
      }
 
     private BitmapFont getSpFont() {
-        FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale);
+        FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale*8/7);
         return FontHelper.cardEnergyFont_L;
     }
 
     public void renderSp(SpriteBatch sb) {
-        boolean darken = (boolean) ReflectionHacks.getPrivate(this, boolean.class, "darken");
+        boolean darken = (boolean) ReflectionHacks.getPrivate(this, AbstractCard.class, "darken");
         if (this.cost > -2 && !darken && !this.isLocked && this.isSeen) {
 
-            Color costColor = Color.WHITE.cpy();
-            if (AbstractDungeon.player != null && AbstractDungeon.player.hand.contains(this) && !this.canAffordSP()) {
-                costColor = SP_COST_RESTRICTED_COLOR;
-            } else if (this.isSPModified || this.isSPModifiedForTurn || this.freeToPlay()) {
-                costColor = SP_COST_MODIFIED_COLOR;
+            Color costColor;
+            if (this.isSPModified || this.isSPModifiedForTurn || this.freeToPlay()) {
+                if(this.canAffordSP()) {
+                    costColor = MODIFIED_AND_USABLE_COLOR;
+                } else if(this.onlySP) {
+                    costColor = MODIFIED_AND_RESTRICTED_COLOR;
+                } else {
+                    costColor = MODIFIED_AND_NOT_USABLE_COLOR;
+                }
+            } else {
+                if(this.canAffordSP()) {
+                    costColor = NORMAL_AND_USABLE_COLOR;
+                } else if(this.onlySP) {
+                    costColor = NORMAL_AND_RESTRICTED_COLOR;
+                } else {
+                    costColor = NORMAL_AND_NOT_USABLE_COLOR;
+                }
             }
 
             costColor.a = this.transparency;
             String text = String.valueOf(sp);
             BitmapFont font = this.getSpFont();
             if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
-                FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, -(132.0F+2.0F) * this.drawScale * Settings.scale, 192.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
+                FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, 125.0F * this.drawScale * Settings.scale, 180.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
             }
         }
     }
