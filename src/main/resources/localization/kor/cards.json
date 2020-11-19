@@ -15,7 +15,8 @@
   },
   "Emotion Absorption": {
     "NAME": "감정 흡수",
-    "DESCRIPTION": "SP를 !M! 회복합니다."
+    "DESCRIPTION": "SP를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
   },
   "Powerful Strike": {
     "NAME": "강타β",
@@ -70,11 +71,9 @@
   "Soul Absorption": {
     "NAME": "영혼 착취",
     "DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 캐스터 공격 카드가 준 피해만큼 방어도를 얻습니다.",
-    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 캐스터 공격 카드가 준 피해만큼 방어도를 얻습니다.",
-    "UPGRADE_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다.",
-    "UPGRADE_SP_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다."
+    "UPGRADE_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 준 피해만큼 방어도를 얻습니다."
   },
-  "Burst Stimulant Durian": {
+  "Burst Stimulant: Durian": {
     "NAME": "폭발제-두리안맛",
     "DESCRIPTION": "피해를 3 만큼 5 번 받습니다. NL 이번 턴 동안 힘을 5 얻고 모든 카드의 SP 소모가 3 감소합니다. NL 방어도에는 피해가 2로 감소합니다. NL 소멸."
   },
@@ -84,7 +83,6 @@
   },
   "Assault Order": {
     "NAME": "돌격지령β",
-    "UPGRADE_NAME": "돌격지령γ",
     "DESCRIPTION": "SP !S! 자동 발동 NL [R] [R] 을 얻습니다.",
     "SP_DESCRIPTION": "SP !S! 자동 발동 NL [R] [R] 을 얻습니다."
   },
@@ -140,13 +138,25 @@
     "NAME": "폭발범위확대",
     "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다."
   },
+  "Thermite Blade": {
+    "NAME": "테르밋 블레이드",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 수동 발동",
+    "SP_DESCRIPTION": "SP !S! 자동 발동 NL 피해를 !D! 줍니다. 피해가 방어도를 무시합니다."
+  },
+  "Mental Burst": {
+    "NAME": "스피릿 버스트",
+    "DESCRIPTION": "SP !S! 자동 발동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 줍니다."
+  },
+  "Fate": {
+    "NAME": "운명",
+    "DESCRIPTION": "캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다."
+  },
   "NULL": {
     "NAME": "",
     "SP_NAME": "",
     "DESCRIPTION": "",
     "SP_DESCRIPTION": ""
   },
-
   "A Thousand Cuts": {
     "NAME": "능지처참",
     "DESCRIPTION": "카드를 사용할 때마다 적 전체에게 피해를 !M! 줍니다."

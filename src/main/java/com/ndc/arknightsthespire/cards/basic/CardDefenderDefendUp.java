@@ -11,9 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
-import com.ndc.arknightsthespire.power.DogmaticField;
-
-import javax.swing.text.Position;
 
 public class CardDefenderDefendUp extends CardSPBase {
     public static final String ID = "Defend Up";
@@ -45,7 +42,7 @@ public class CardDefenderDefendUp extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         int block = this.block * (isSpJustUsed ? 2 : 1);
-        DogmaticField.checkGainBlock(block);
+        checkGainBlock(block);
 /*        if(!DogmaticField.checkGainBlock()) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }
