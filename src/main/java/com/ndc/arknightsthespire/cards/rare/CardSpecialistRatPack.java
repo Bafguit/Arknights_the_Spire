@@ -42,6 +42,8 @@ public class CardSpecialistRatPack extends CardSPBase {
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
+        this.exhaust = true;
+
     }
 
     @Override

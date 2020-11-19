@@ -52,8 +52,11 @@ public class CardGuardTrueSilverSlash extends CardSPBase {
         Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
 
         while (var1.hasNext()) {
-            CardSPBase card = (CardSPBase) var1.next();
-            if(card.position == POSITION) guardCount++;
+            AbstractCard c = (AbstractCard) var1.next();
+            if(c instanceof CardSPBase) {
+                CardSPBase card = (CardSPBase) c;
+                if (card.position == POSITION) guardCount++;
+            }
         }
 
         return guardCount;
@@ -68,7 +71,7 @@ public class CardGuardTrueSilverSlash extends CardSPBase {
 
         for(int for_i = 0; for_i < (isSpJustUsed ? cardAmount : 3); for_i++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
-                    DamageInfo.createDamageMatrix(this.damage/2, true), this.damageTypeForTurn,
+                    DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
