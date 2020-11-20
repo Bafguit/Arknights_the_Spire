@@ -10,13 +10,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DescriptionLine;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.power.DogmaticField;
 
-import javax.smartcardio.Card;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public abstract class CardSPBase extends CustomCard {
@@ -40,6 +40,7 @@ public abstract class CardSPBase extends CustomCard {
     public static final Color MODIFIED_AND_RESTRICTED_COLOR = new Color(0x9B8077FF);
     private static final UIStrings uiSPStrings;
 
+
     public int baseSP;
     public int sp;
     public PositionType position;
@@ -50,28 +51,35 @@ public abstract class CardSPBase extends CustomCard {
     public boolean upgradedSP;
     public boolean onlySP;
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        this(id, name, img, cost, rawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
+    public String normalRawDescription;
+    public ArrayList<DescriptionLine> normalDescription;
+    public String spRawDescription;
+    public ArrayList<DescriptionLine> spDescription;
+
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, String spRawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
+        this(id, name, img, cost, rawDescription, spRawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
     }
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
+    public CardSPBase(String id, String name, String img, int cost, String rawDescription, String spRawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = isAuto;
         this.position = position;
         this.canUseSP = hasSP;
-        this.updateGlow(false);
+        this.spRawDescription = spRawDescription;
+        this.updateGlow();
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        this(id, name, img, cost, rawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, String spRawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
+        this(id, name, img, cost, rawDescription, spRawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
+    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, String spRawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isAuto = isAuto;
         this.position = position;
         this.canUseSP = hasSP;
-        this.updateGlow(false);
+        this.spRawDescription = spRawDescription;
+        this.updateGlow();
     }
 
      protected void upgradeSP(int amount) {
@@ -153,20 +161,20 @@ public abstract class CardSPBase extends CustomCard {
         while(var1.hasNext()) {
             AbstractCard c = (AbstractCard)var1.next();
             if(c instanceof CardSPBase) {
-                ((CardSPBase) c).updateGlow(SPHandler.isSpModeEnabled());
+                ((CardSPBase) c).updateGlow();
             }
         }
     }
 
-    public void updateGlow(boolean isSpEnabled) {
-        boolean checkGlow = checkGlow(isSpEnabled);
+    public void updateGlow() {
+        boolean checkGlow = checkGlow();
         if(checkGlow && !this.isGlowing) this.beginGlowing();
         if(!checkGlow && this.isGlowing) this.stopGlowing();
     }
 
-    private boolean checkGlow(boolean isSpEnabled) {
+    private boolean checkGlow() {
         System.out.println(SPHandler.getSp() + " " + canAffordSP());
-        if(isSpEnabled) {
+        if(SPHandler.isSpModeEnabled()) {
             if(canAffordSP()) {
                 this.glowColor = SP_BORDER_GLOW_COLOR;
                 System.out.println("CASE A");
@@ -195,6 +203,10 @@ public abstract class CardSPBase extends CustomCard {
      public boolean canAffordSP() {
         return SPHandler.getSp() >= this.baseSP;
      }
+
+    public boolean shouldUseSp() {
+        return canAffordSP() && (SPHandler.isSpModeEnabled() || isAuto);
+    }
 
     private BitmapFont getSpFont() {
         FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale*8/7);
@@ -243,155 +255,6 @@ public abstract class CardSPBase extends CustomCard {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amt));
         }
     }
-/*
-    public static void setSpCardInfo(CardSPBase c, boolean b) {
-        if(c.position != PositionType.CASTER && b) {
-            final CardLang spDes = (CardLang) CardCrawlGame.languagePack.getCardStrings(c.cardID);
-            c.name = spDes.SP_NAME;
-            c.rawDescription = spDes.SP_DESCRIPTION;
-            c.initializeTitle();
-            c.initializeDescription();
-        }
-        else if(!b) {
-            final CardStrings spDes = CardCrawlGame.languagePack.getCardStrings(c.cardID);
-            c.name = spDes.NAME;
-            c.rawDescription = spDes.DESCRIPTION;
-            c.initializeTitle();
-            c.initializeDescription();
-        }
-    }
-*/
-/*
-    public void displayUpgrades() {
-        if (this.upgradedCost) {
-            this.isCostModified = true;
-        }
-
-        if (this.upgradedDamage) {
-            this.damage = this.baseDamage;
-            this.isDamageModified = true;
-        }
-
-        if (this.upgradedBlock) {
-            this.block = this.baseBlock;
-            this.isBlockModified = true;
-        }
-
-        if (this.upgradedMagicNumber) {
-            this.magicNumber = this.baseMagicNumber;
-            this.isMagicNumberModified = true;
-        }
-
-        if (this.upgradedSp) {
-            this.sp = this.baseSp;
-            this.isSpModified = true;
-        }
-    }
-
-    protected void upgradeSp(int amount) {
-        this.baseSp += amount;
-        this.sp = this.baseSp;
-        this.upgradedSp = true;
-    }
-
-    public AbstractCard makeCopy() {
-        try {
-            return this.getClass().newInstance();
-        } catch (IllegalAccessException | InstantiationException var2) {
-            throw new RuntimeException("BaseMod failed to auto-generate makeCopy for card: " + this.cardID);
-        }
-    }
-
-    public AbstractCard makeStatEquivalentCopy() {
-        CardSPBase card = (CardSPBase) this.makeCopy();
-
-        for(int i = 0; i < this.timesUpgraded; ++i) {
-            card.upgrade();
-        }
-
-        card.name = this.name;
-        card.target = this.target;
-        card.upgraded = this.upgraded;
-        card.timesUpgraded = this.timesUpgraded;
-        card.baseDamage = this.baseDamage;
-        card.baseBlock = this.baseBlock;
-        card.baseMagicNumber = this.baseMagicNumber;
-        card.baseSp = this.baseSp;
-        card.cost = this.cost;
-        card.costForTurn = this.costForTurn;
-        card.isCostModified = this.isCostModified;
-        card.isCostModifiedForTurn = this.isCostModifiedForTurn;
-        card.inBottleLightning = this.inBottleLightning;
-        card.inBottleFlame = this.inBottleFlame;
-        card.inBottleTornado = this.inBottleTornado;
-        card.isSeen = this.isSeen;
-        card.isLocked = this.isLocked;
-        card.misc = this.misc;
-        card.freeToPlayOnce = this.freeToPlayOnce;
-        return card;
-    }
-
-    public void resetAttributes() {
-        this.block = this.baseBlock;
-        this.isBlockModified = false;
-        this.damage = this.baseDamage;
-        this.isDamageModified = false;
-        this.magicNumber = this.baseMagicNumber;
-        this.isMagicNumberModified = false;
-        this.sp = this.baseSp;
-        this.isSpModified = false;
-        this.damageTypeForTurn = this.damageType;
-        this.costForTurn = this.cost;
-        this.isCostModifiedForTurn = false;
-    }
-
-    public static String gameDataUploadHeader() {
-        GameDataStringBuilder builder = new GameDataStringBuilder();
-        builder.addFieldData("name");
-        builder.addFieldData("cardID");
-        builder.addFieldData("rawDescription");
-        builder.addFieldData("assetURL");
-        builder.addFieldData("keywords");
-        builder.addFieldData("color");
-        builder.addFieldData("type");
-        builder.addFieldData("rarity");
-        builder.addFieldData("cost");
-        builder.addFieldData("target");
-        builder.addFieldData("damageType");
-        builder.addFieldData("baseDamage");
-        builder.addFieldData("baseBlock");
-        builder.addFieldData("baseHeal");
-        builder.addFieldData("baseDraw");
-        builder.addFieldData("baseDiscard");
-        builder.addFieldData("baseMagicNumber");
-        builder.addFieldData("baseSP");
-        builder.addFieldData("isMultiDamage");
-        return builder.toString();
-    }
-
-    public String gameDataUploadData() {
-        GameDataStringBuilder builder = new GameDataStringBuilder();
-        builder.addFieldData(this.name);
-        builder.addFieldData(this.cardID);
-        builder.addFieldData(this.rawDescription);
-        builder.addFieldData(this.assetUrl);
-        builder.addFieldData(Arrays.toString(this.keywords.toArray()));
-        builder.addFieldData(this.color.name());
-        builder.addFieldData(this.type.name());
-        builder.addFieldData(this.rarity.name());
-        builder.addFieldData(this.cost);
-        builder.addFieldData(this.target.name());
-        builder.addFieldData(this.damageType.name());
-        builder.addFieldData(this.baseDamage);
-        builder.addFieldData(this.baseBlock);
-        builder.addFieldData(this.baseHeal);
-        builder.addFieldData(this.baseDraw);
-        builder.addFieldData(this.baseDiscard);
-        builder.addFieldData(this.baseMagicNumber);
-        builder.addFieldData(this.baseSp);
-        builder.addFieldData(this.isMultiDamage);
-        return builder.toString();
-    }*/
 
     static {
         uiSPStrings = CardCrawlGame.languagePack.getUIString("SpSingleCardViewPopup");
