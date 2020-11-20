@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
-import com.ndc.arknightsthespire.power.DogmaticField;
 
 public class CardDefenderShellDef extends CardSPBase {
     public static final String ID = "Shell Defense";
@@ -26,7 +25,7 @@ public class CardDefenderShellDef extends CardSPBase {
     private static final int COST = 1;
     private static final int BLOCK_AMT = 8;
     private static final int UPGRADE_BLOCK = 5;
-    private static final int DEFAULT_SP = 8;
+    private static final int DEFAULT_SP = 6;
 
     public CardDefenderShellDef() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -44,23 +43,9 @@ public class CardDefenderShellDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(!isSpJustUsed) {
-            DogmaticField.checkGainBlock(block);
-/*            if(!DogmaticField.checkGainBlock()) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-            }
-            else {
-                AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-            }*/
-        }
+        if(!isSpJustUsed) checkGainBlock(block);
         else {
-            DogmaticField.checkGainBlock(block);
-/*            if(!DogmaticField.checkGainBlock()) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-            }
-            else {
-                AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-            }*/
+            checkGainBlock(block);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
         }
     }

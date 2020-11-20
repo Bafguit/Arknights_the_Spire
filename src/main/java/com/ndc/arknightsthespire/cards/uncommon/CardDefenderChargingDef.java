@@ -14,8 +14,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.ChargingDefense;
-import com.ndc.arknightsthespire.power.DogmaticField;
-import com.ndc.arknightsthespire.power.RapidMagazine;
 
 public class CardDefenderChargingDef extends CardSPBase {
     public static final String ID = "Charging Defense";
@@ -53,7 +51,7 @@ public class CardDefenderChargingDef extends CardSPBase {
             AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
         }*/
 
-        DogmaticField.checkGainBlock(block);
+        checkGainBlock(block);
 
         //SP Effect
         if(isSpJustUsed) {

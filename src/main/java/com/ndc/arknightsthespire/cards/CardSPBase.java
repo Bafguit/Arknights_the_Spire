@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DescriptionLine;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,6 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.power.DogmaticField;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -101,8 +104,11 @@ public abstract class CardSPBase extends CustomCard {
         Iterator var1 = AbstractDungeon.player.hand.group.iterator();
 
         while (var1.hasNext()) {
-            CardSPBase card = (CardSPBase) var1.next();
-            if(card.position == cardClass && card.canUseSP == true) card.changeSP(SPHandler.getDiffSp());
+            AbstractCard c = (AbstractCard) var1.next();
+            if(c instanceof CardSPBase) {
+                CardSPBase card = (CardSPBase) c;
+                if (card.position == cardClass && card.canUseSP == true) card.changeSP(SPHandler.getDiffSp());
+            }
         }
     }
 
@@ -113,9 +119,11 @@ public abstract class CardSPBase extends CustomCard {
         }
     }
 
-    @Override
-    public void upgrade() {
-
+    public void upgradeDescription(String UP_DES) {
+        ++this.timesUpgraded;
+        this.upgraded = true;
+        this.rawDescription = UP_DES;
+        this.initializeDescription();
     }
 
 /*
@@ -229,11 +237,22 @@ public abstract class CardSPBase extends CustomCard {
             }
 
             costColor.a = this.transparency;
-            String text = String.valueOf(sp);
+            String text = String.valueOf(baseSP);
             BitmapFont font = this.getSpFont();
             if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
                 FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, 125.0F * this.drawScale * Settings.scale, 180.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
             }
+        }
+    }
+
+    public static void checkGainBlock(int amt) {
+        AbstractPlayer p = AbstractDungeon.player;
+
+        if(p.hasPower(DogmaticField.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, amt));
+        }
+        else {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amt));
         }
     }
 

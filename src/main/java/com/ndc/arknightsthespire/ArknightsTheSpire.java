@@ -6,6 +6,7 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -69,6 +70,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardDefenderCntHealMod());
         //Caster
         BaseMod.addCard(new CardCasterEmotionAbs());
+        BaseMod.addCard(new CardCasterMentalBurst());
+        BaseMod.addCard(new CardCasterSoulAbs());
+        BaseMod.addCard(new CardCasterFate());
         //Specialist
         BaseMod.addCard(new CardSpecialistRatPack());
         //Guard
@@ -77,6 +81,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardGuardTrueSilverSlash());
         BaseMod.addCard(new CardGuardBloodOath());
         BaseMod.addCard(new CardGuardShadowAssault());
+        BaseMod.addCard(new CardGuardThermiteBlade());
+        //Vanguard
+        BaseMod.addCard(new CardVanguardAssaultOrder());
         //Test
         BaseMod.addCard(new CardTestSPGainer());
 

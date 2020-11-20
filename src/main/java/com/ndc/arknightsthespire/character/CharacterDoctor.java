@@ -30,8 +30,8 @@ import java.util.ArrayList;
 
 public class CharacterDoctor extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-    public static final int STARTING_HP = 75;
-    public static final int MAX_HP = 75;
+    public static final int STARTING_HP = 70;
+    public static final int MAX_HP = 70;
     public static final int STARTING_GOLD = 99;
     public static final int HAND_SIZE = 5;
     private static final int ORB_SLOTS = 0;
@@ -88,12 +88,12 @@ public class CharacterDoctor extends CustomPlayer {
         retVal.add("Powerful Strike");
         retVal.add("Powerful Strike");
         retVal.add("Powerful Strike");
-        retVal.add("Powerful Strike");
-        retVal.add("Defend Up");
-        retVal.add("Defend Up");
-        retVal.add("Defend Up");
-        retVal.add("Defend Up");
         retVal.add("Armor Crushing Shot");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
+        retVal.add("Defend Up");
+        retVal.add("Emotion Absorption");
         return retVal;
     }
 

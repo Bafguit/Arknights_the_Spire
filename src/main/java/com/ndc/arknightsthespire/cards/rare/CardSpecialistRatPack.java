@@ -19,9 +19,6 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.DogmaticField;
 
-import javax.smartcardio.Card;
-import java.sql.Time;
-
 public class CardSpecialistRatPack extends CardSPBase {
     public static final String ID = "Rat Pack";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -42,11 +39,13 @@ public class CardSpecialistRatPack extends CardSPBase {
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
+        this.exhaust = true;
+
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        DogmaticField.checkGainBlock(AbstractDungeon.player.currentHealth);
+        checkGainBlock(AbstractDungeon.player.currentHealth);
     }
 
     @Override
