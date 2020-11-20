@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -23,6 +24,7 @@ import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.power.DogmaticField;
 
+import javax.smartcardio.Card;
 import java.util.Iterator;
 
 public abstract class CardSPBase extends CustomCard {
@@ -241,7 +243,24 @@ public abstract class CardSPBase extends CustomCard {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amt));
         }
     }
-
+/*
+    public static void setSpCardInfo(CardSPBase c, boolean b) {
+        if(c.position != PositionType.CASTER && b) {
+            final CardLang spDes = (CardLang) CardCrawlGame.languagePack.getCardStrings(c.cardID);
+            c.name = spDes.SP_NAME;
+            c.rawDescription = spDes.SP_DESCRIPTION;
+            c.initializeTitle();
+            c.initializeDescription();
+        }
+        else if(!b) {
+            final CardStrings spDes = CardCrawlGame.languagePack.getCardStrings(c.cardID);
+            c.name = spDes.NAME;
+            c.rawDescription = spDes.DESCRIPTION;
+            c.initializeTitle();
+            c.initializeDescription();
+        }
+    }
+*/
 /*
     public void displayUpgrades() {
         if (this.upgradedCost) {

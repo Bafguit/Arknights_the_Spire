@@ -14,6 +14,7 @@ import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
 import com.ndc.arknightsthespire.cards.basic.CardTestSPGainer;
 import com.ndc.arknightsthespire.cards.common.*;
 import com.ndc.arknightsthespire.cards.rare.*;
+import com.ndc.arknightsthespire.relics.RhineCircuitry;
 import com.ndc.arknightsthespire.relics.SpiritualRecovery;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
@@ -113,6 +114,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         System.out.println("ADDING RELICS");
 
         BaseMod.addRelicToCustomPool(new SpiritualRecovery(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new RhineCircuitry(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

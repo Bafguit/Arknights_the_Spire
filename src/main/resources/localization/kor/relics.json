@@ -22,6 +22,14 @@
       " 얻습니다."
     ]
   },
+  "Rhine Circuitry": {
+    "NAME": "라인 회로",
+    "FLAVOR": "이프리트 재능",
+    "DESCRIPTIONS": [
+      "카드를 6 장 사용할 때마다 SP를 #b",
+      " 얻습니다."
+    ]
+  },
   "": {
     "NAME": "",
     "FLAVOR": "",
