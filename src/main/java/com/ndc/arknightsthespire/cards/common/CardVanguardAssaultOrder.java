@@ -16,7 +16,7 @@ public class CardVanguardAssaultOrder extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/skill_beta.png";
+    public static final String IMG_PATH = "img/cards/AssaultOrder.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 0;
     private static final int SP = 10;

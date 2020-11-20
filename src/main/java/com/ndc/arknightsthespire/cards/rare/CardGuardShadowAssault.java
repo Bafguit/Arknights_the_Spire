@@ -23,7 +23,8 @@ public class CardGuardShadowAssault extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/attack_beta.png";
+    public static final String IMG_PATH = "img/cards/ShadowAssault.png";
+    public static final String SP_IMG_PATH = "img/cards/ShadowAssault_sp.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
     private static final int ATTACK_DMG = 5;

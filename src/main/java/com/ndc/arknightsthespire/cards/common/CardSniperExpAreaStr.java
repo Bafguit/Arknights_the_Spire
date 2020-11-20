@@ -18,7 +18,7 @@ public class CardSniperExpAreaStr extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/attack_beta.png";
+    public static final String IMG_PATH = "img/cards/ExpAreaStr.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;

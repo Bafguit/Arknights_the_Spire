@@ -31,9 +31,10 @@ public class ChargingDefense extends AbstractPower implements CloneablePowerInte
     private static final Texture tex84 = TextureLoader.getTexture("img/power/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("img/power/placeholder_power32.png");
 
-    public ChargingDefense(final AbstractCreature owner, final AbstractCreature source) {
+    public ChargingDefense(final AbstractCreature owner, final AbstractCreature source, int amount) {
         name = NAME;
         ID = POWER_ID;
+        this.amount = amount;
 
         this.owner = owner;
         this.source = source;
@@ -52,8 +53,11 @@ public class ChargingDefense extends AbstractPower implements CloneablePowerInte
     @Override
     public int onAttacked (DamageInfo info, int damageAmount) {
         if(isApplied && !info.owner.isPlayer && AbstractDungeon.player.currentBlock < damageAmount) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Charging Defense"));
-            isApplied = false;
+            if(this.amount > 1) addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, "Charging Defense", 1));
+            else if(this.amount == 1){
+                addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Charging Defense"));
+                isApplied = false;
+            }
             return onAttackToChangeDamage(info, 0);
         }
         return damageAmount;
@@ -72,6 +76,6 @@ public class ChargingDefense extends AbstractPower implements CloneablePowerInte
 
     @Override
     public AbstractPower makeCopy() {
-        return new ChargingDefense(owner, source);
+        return new ChargingDefense(owner, source, amount);
     }
 }

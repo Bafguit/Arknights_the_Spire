@@ -7,10 +7,13 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -27,7 +30,7 @@ public class SoulAbsorption extends AbstractPower implements CloneablePowerInter
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public static PositionType LAST_POSITION;
+    public static CardSPBase lastCard;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
@@ -56,23 +59,29 @@ public class SoulAbsorption extends AbstractPower implements CloneablePowerInter
     public void onUseCard(AbstractCard card, UseCardAction action) {
         AbstractCard c = card;
         if(c instanceof CardSPBase) {
-            CardSPBase cSP = (CardSPBase) c;
-            LAST_POSITION = cSP.position;
+            lastCard = (CardSPBase) c;
         }
     }
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if(!target.isPlayer && damageAmount > 0) {
-            if(!isUped && LAST_POSITION == PositionType.CASTER) {
-                CardSPBase.checkGainBlock(damageAmount);
-                addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Soul Absorption"));
-            }
-            else if(isUped) {
-                CardSPBase.checkGainBlock(damageAmount);
-                addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Soul Absorption"));
-            }
+            if(!isUped && lastCard.position == PositionType.CASTER) targetCheck(damageAmount);
+            else if(isUped) targetCheck(damageAmount);
+            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Soul Absorption"));
         }
+
+    }
+
+    public void targetCheck(int damageAmount) {
+        if(lastCard.target == AbstractCard.CardTarget.ALL_ENEMY) {
+            int totalDamage = 0;
+            for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                totalDamage += mo.lastDamageTaken;
+            }
+            CardSPBase.checkGainBlock(totalDamage);
+        }
+        else CardSPBase.checkGainBlock(damageAmount);
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

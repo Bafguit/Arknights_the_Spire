@@ -25,7 +25,7 @@ public class CardSpecialistRatPack extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/skill_beta.png";
+    public static final String IMG_PATH = "img/cards/RatPack.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 3;
     private static final int UP_COST = 2;

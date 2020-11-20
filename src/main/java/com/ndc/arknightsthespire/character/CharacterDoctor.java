@@ -87,12 +87,12 @@ public class CharacterDoctor extends CustomPlayer {
         retVal.add("Powerful Strike");
         retVal.add("Powerful Strike");
         retVal.add("Powerful Strike");
-        retVal.add("Powerful Strike");
         retVal.add("Armor Crushing Shot");
         retVal.add("Defend Up");
         retVal.add("Defend Up");
         retVal.add("Defend Up");
         retVal.add("Defend Up");
+        retVal.add("Emotion Absorption");
         retVal.add("Emotion Absorption");
         return retVal;
     }

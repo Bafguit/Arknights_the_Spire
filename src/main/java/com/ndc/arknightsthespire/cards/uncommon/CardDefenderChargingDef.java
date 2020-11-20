@@ -55,8 +55,7 @@ public class CardDefenderChargingDef extends CardSPBase {
 
         //SP Effect
         if(isSpJustUsed) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new ChargingDefense(p, p),
-                    1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new ChargingDefense(p, p, 1), 1));
         }
     }
 

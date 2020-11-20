@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.SPHandler;
@@ -22,7 +21,7 @@ public class CardGuardCatScratch extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/attack_beta.png";
+    public static final String IMG_PATH = "img/cards/CatScratch.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;

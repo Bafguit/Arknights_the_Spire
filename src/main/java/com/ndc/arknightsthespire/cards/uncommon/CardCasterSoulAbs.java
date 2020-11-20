@@ -21,7 +21,7 @@ public class CardCasterSoulAbs extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/skill_beta.png";
+    public static final String IMG_PATH = "img/cards/SoulAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
     private static final int SP = 5;
@@ -30,7 +30,7 @@ public class CardCasterSoulAbs extends CardSPBase {
     public CardCasterSoulAbs() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, true, POSITION, true);
+                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true);
         this.sp = this.baseSP = SP;
 
         this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");

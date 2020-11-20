@@ -149,7 +149,11 @@
   },
   "Fate": {
     "NAME": "운명",
-    "DESCRIPTION": "캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다."
+    "DESCRIPTION": "캐스터 카드를 연속으로 사용할 때마다 카드를 1 장 뽑습니다."
+  },
+  "Revitalization": {
+    "NAME": "활력회복",
+    "DESCRIPTION": "재생을 !M! 얻습니다."
   },
   "NULL": {
     "NAME": "",

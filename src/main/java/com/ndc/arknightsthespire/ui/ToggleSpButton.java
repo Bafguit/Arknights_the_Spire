@@ -93,10 +93,10 @@ public class ToggleSpButton {
             this.current_y = SHOW_Y + BUTTON_OFFSET_Y;
         }*/
 
-        if(!this.enabled && endTurnButton.enabled) {
+        if(endTurnButton.enabled) {
             this.enable();
         }
-        if(this.enabled && !endTurnButton.enabled) {
+        if(!endTurnButton.enabled) {
             SPHandler.setSpMode(false);
             updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
             this.disable();
@@ -228,30 +228,27 @@ public class ToggleSpButton {
     }
 
     public void hide() {
-        if (!this.isHidden) {
-            this.target_x = HIDE_X;
-            this.isHidden = true;
-        }
+        this.target_x = HIDE_X;
+        this.isHidden = true;
 
     }
 
     public void show() {
-        if (this.isHidden) {
-            this.target_x = SHOW_X;
-            this.isHidden = false;
-            if (this.isGlowing) {
-                this.glowTimer = -1.0F;
-            }
+        this.target_x = SHOW_X;
+        this.isHidden = false;
+        if (this.isGlowing) {
+            this.glowTimer = -1.0F;
         }
 
     }
 
     public void render(SpriteBatch sb) {
+        if(!Settings.hideEndTurn) {
             float tmpY = this.current_y;
             this.renderHoldEndTurn(sb);
             if (!this.isDisabled && this.enabled) {
                 if (this.hb.hovered) {
-                    if(SPHandler.isSpModeEnabled()) {
+                    if (SPHandler.isSpModeEnabled()) {
                         this.textColor = Color.MAGENTA;
                     } else {
                         this.textColor = Color.CYAN;
@@ -318,6 +315,7 @@ public class ToggleSpButton {
             if (!this.isHidden) {
                 this.hb.render(sb);
             }
+        }
     }
 
     private void renderHoldEndTurn(SpriteBatch sb) {

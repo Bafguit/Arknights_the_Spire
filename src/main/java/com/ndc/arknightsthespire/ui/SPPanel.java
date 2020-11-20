@@ -1,7 +1,26 @@
 package com.ndc.arknightsthespire.ui;
 
 
-/*
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.MathHelper;
+import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.localization.TutorialStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.RefreshEnergyEffect;
+import com.ndc.arknightsthespire.SPHandler;
+
 public class SPPanel extends AbstractPanel {
 
     private static final TutorialStrings tutorialStrings;
@@ -30,6 +49,10 @@ public class SPPanel extends AbstractPanel {
         this.gainEnergyImg = AbstractDungeon.player.getEnergyImage();
     }
 
+    public static void modifySp(int sp) {
+        totalCount = sp;
+    }
+
     public static void setEnergy(int energy) {
         totalCount = energy;
         AbstractDungeon.effectsQueue.add(new RefreshEnergyEffect());
@@ -49,7 +72,7 @@ public class SPPanel extends AbstractPanel {
 
         AbstractDungeon.effectsQueue.add(new RefreshEnergyEffect());
         fontScale = 2.0F;
-        spVfxTimer = 2.0F;
+        energyVfxTimer = 2.0F;
     }
 
     public static void useSp(int e) {
@@ -60,6 +83,28 @@ public class SPPanel extends AbstractPanel {
 
         if (e != 0) {
             fontScale = 2.0F;
+        }
+
+    }
+
+    public void show() {
+        if (this.isHidden) {
+            this.target_x = this.show_x;
+            this.target_y = this.show_y;
+            this.isHidden = false;
+            this.doneAnimating = false;
+        } else if (Settings.isDebug) {
+            System.out.println("Attempting to show panel through already shown");
+        }
+
+    }
+
+    public void hide() {
+        if (!this.isHidden) {
+            this.target_x = this.hide_x;
+            this.target_y = this.hide_y;
+            this.isHidden = true;
+            this.doneAnimating = false;
         }
 
     }
@@ -78,7 +123,7 @@ public class SPPanel extends AbstractPanel {
 
         if (Settings.isDebug) {
             if (InputHelper.scrolledDown) {
-                addSp(1);
+                SPHandler.addSp(1);
             } else if (InputHelper.scrolledUp && totalCount > 0) {
                 useSp(1);
             }
@@ -87,14 +132,14 @@ public class SPPanel extends AbstractPanel {
     }
 
     private void updateVfx() {
-        if (spVfxTimer != 0.0F) {
-            this.spVfxColor.a = Interpolation.exp10In.apply(0.5F, 0.0F, 1.0F - spVfxTimer / 2.0F);
-            this.spVfxAngle += Gdx.graphics.getDeltaTime() * -30.0F;
-            this.spVfxScale = Settings.scale * Interpolation.exp10In.apply(1.0F, 0.1F, 1.0F - energyVfxTimer / 2.0F);
-            spVfxTimer -= Gdx.graphics.getDeltaTime();
-            if (spVfxTimer < 0.0F) {
-                spVfxTimer = 0.0F;
-                this.spVfxColor.a = 0.0F;
+        if (energyVfxTimer != 0.0F) {
+            this.energyVfxColor.a = Interpolation.exp10In.apply(0.5F, 0.0F, 1.0F - energyVfxTimer / 2.0F);
+            this.energyVfxAngle += Gdx.graphics.getDeltaTime() * -30.0F;
+            this.energyVfxScale = Settings.scale * Interpolation.exp10In.apply(1.0F, 0.1F, 1.0F - energyVfxTimer / 2.0F);
+            energyVfxTimer -= Gdx.graphics.getDeltaTime();
+            if (energyVfxTimer< 0.0F) {
+                energyVfxTimer = 0.0F;
+                this.energyVfxColor.a = 0.0F;
             }
         }
 
@@ -106,7 +151,7 @@ public class SPPanel extends AbstractPanel {
         this.renderVfx(sb);
         String spMsg = totalCount + "/" + AbstractDungeon.player.energy.energy;
         AbstractDungeon.player.getEnergyNumFont().getData().setScale(fontScale);
-        FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), energyMsg, this.current_x, this.current_y, ENERGY_TEXT_COLOR);
+        FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), "Ang~", this.current_x, this.current_y, ENERGY_TEXT_COLOR);
         this.tipHitbox.render(sb);
         if (this.tipHitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
             TipHelper.renderGenericTip(50.0F * Settings.scale, 380.0F * Settings.scale, LABEL[0], MSG[0]);
@@ -147,4 +192,4 @@ public class SPPanel extends AbstractPanel {
         totalCount = 0;
         energyVfxTimer = 0.0F;
     }
-}*/
+}

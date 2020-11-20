@@ -2,13 +2,13 @@
   "SpSingleCardViewPopup": {
     "TEXT": [
       "#rSP가 부족해.",
-      "와! #r샌#b즈!"
+      "#r수동 #r발동이 아니야."
     ]
   },
   "SpToggleButton": {
     "TEXT": [
-      "SP 켜기",
-      "SP 끄기"
+      "자동 발동",
+      "수동 발동"
     ]
   },
   "AbandonRunButton": {
