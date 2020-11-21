@@ -22,7 +22,7 @@ public class HandCardSelectScreenPatcher {
     )
     public static class ConstructorPatcher {
         public static void PostFix(OverlayMenu __instance) {
-            toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+            toggleSpButton = new ToggleSpButton();
             spLabel = new SPLabel();
         }
     }
@@ -37,9 +37,9 @@ public class HandCardSelectScreenPatcher {
         )
         public static void Insert(OverlayMenu __instance) {
             if(toggleSpButton == null) {
-                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+                toggleSpButton = new ToggleSpButton();
             }
-            toggleSpButton.update();
+            toggleSpButton.update(__instance.endTurnButton);
         }
     }
 
@@ -53,7 +53,7 @@ public class HandCardSelectScreenPatcher {
         )
         public static void Insert(OverlayMenu __instance) {
             if(toggleSpButton == null) {
-                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+                toggleSpButton = new ToggleSpButton();
             }
             toggleSpButton.show();
         }
@@ -69,7 +69,7 @@ public class HandCardSelectScreenPatcher {
         )
         public static void Insert(OverlayMenu __instance) {
             if(toggleSpButton == null) {
-                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+                toggleSpButton = new ToggleSpButton();
             }
             toggleSpButton.hide();
         }
@@ -86,7 +86,7 @@ public class HandCardSelectScreenPatcher {
         )
         public static void Insert(OverlayMenu __instance, SpriteBatch sb) {
             if(toggleSpButton == null) {
-                toggleSpButton = new ToggleSpButton(__instance.endTurnButton);
+                toggleSpButton = new ToggleSpButton();
             }
             if(spLabel == null) {
                 spLabel = new SPLabel();
