@@ -6,6 +6,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.ndc.arknightsthespire.cards.basic.CardCasterEmotionAbs;
 import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
@@ -22,7 +23,7 @@ import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
 
@@ -59,11 +60,13 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardMedicRevitalization());
         //Supporter
         BaseMod.addCard(new CardSupporterFoxfire());
+        BaseMod.addCard(new CardSupporterSporePro());
+        BaseMod.addCard(new CardSupporterEncForest());
         //Defender
         BaseMod.addCard(new CardDefenderDefendUp());
         BaseMod.addCard(new CardDefenderChargingDef());
         BaseMod.addCard(new CardDefenderShellDef());
-        BaseMod.addCard(new CardDefenderMagHammer());
+        //BaseMod.addCard(new CardDefenderMagHammer());
         BaseMod.addCard(new CardDefenderThorns());
         BaseMod.addCard(new CardDefenderCntHealMod());
         //Caster
@@ -73,6 +76,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardCasterFate());
         //Specialist
         BaseMod.addCard(new CardSpecialistRatPack());
+        BaseMod.addCard(new CardSpecialistChainHook());
+        BaseMod.addCard(new CardSpecialistHookShot());
         //Guard
         BaseMod.addCard(new CardGuardCatScratch());
         BaseMod.addCard(new CardGuardRedShift());
@@ -80,6 +85,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardGuardBloodOath());
         BaseMod.addCard(new CardGuardShadowAssault());
         BaseMod.addCard(new CardGuardThermiteBlade());
+        BaseMod.addCard(new CardGuardSoulRend());
         //Vanguard
         BaseMod.addCard(new CardVanguardAssaultOrder());
 
@@ -114,10 +120,54 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new AbilityAura(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Lavender(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Omniscience(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Sanity(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Berate(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new IndustrialWaterCannon(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Bonebreaker(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
 
         System.out.println("DONE");
     }
 
     public void receivePreRoomRender(SpriteBatch sb) {
     }
+
+
+    @Override
+    public void receiveEditStrings() {
+        switch(Settings.language) {
+            //case ENG:
+                 //getLanguage("eng");
+            case KOR:
+                getLanguage("kor");
+                break;
+        }
+    }
+
+    public void getLanguage(String lang) {
+        /*
+        String cardStr = Gdx.files.internal("localization/" + lang + "/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStringsFile(CardStrings.class, cardStr);
+        String powerStr = Gdx.files.internal("localization/" + lang + "/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStringsFile(PowerStrings.class, powerStr);
+        String relicStr = Gdx.files.internal("localization/" + lang + "/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStringsFile(RelicStrings.class, relicStr);
+        //BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/events.json");
+        //BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/potion.json");
+        String charStr = Gdx.files.internal("localization/" + lang + "/characters.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStringsFile(CharacterStrings.class,
+                charStr);
+        //BaseMod.loadCustomStringsFile(OrbStrings.class, "localization/" + lang + "/orbs.json");
+        */
+    }
+
+
+    @Override
+    public void receiveEditKeywords() {
+    }
+/*
+    public String[] getKeyword(String id) {
+        KeywordStrings keywordStrings = CardCrawlGame.languagePack.getKeywordString(id);
+        String[] names = keywordStrings
+        return
+    }*/
 }

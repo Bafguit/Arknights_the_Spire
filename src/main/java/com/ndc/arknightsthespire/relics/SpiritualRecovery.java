@@ -8,12 +8,11 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class SpiritualRecovery extends CustomRelic {
     public static final String ID = "Spiritual Recovery";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/beta.png");
-    private static final Texture OUTLINE = TextureLoader.getTexture("img/relics/outline/beta.png");
+    private static final Texture IMG = TextureLoader.getTexture("img/relics/SpiritualRecovery.png");
     private static final int SP_RECOVER = 1;
 
     public SpiritualRecovery() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.MAGICAL); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override

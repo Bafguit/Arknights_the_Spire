@@ -10,7 +10,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.Fate;
-import com.ndc.arknightsthespire.power.SoulAbsorption;
 
 public class CardCasterFate extends CardSPBase {
     public static final String ID = "Fate";

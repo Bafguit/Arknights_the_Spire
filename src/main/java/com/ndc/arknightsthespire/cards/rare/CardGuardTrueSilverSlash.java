@@ -1,6 +1,5 @@
 package com.ndc.arknightsthespire.cards.rare;
 
-import basemod.devcommands.power.Power;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,9 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
@@ -26,7 +23,7 @@ public class CardGuardTrueSilverSlash extends CardSPBase {
     private static final int COST = 3;
     private static final int ATTACK_DMG = 6;
     private static final int UP_DMG = 2;
-    private static final int SP = 50;
+    private static final int SP = 40;
 
     public CardGuardTrueSilverSlash() {
         super(ID, IMG_PATH, COST,

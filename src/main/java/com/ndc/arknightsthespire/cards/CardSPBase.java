@@ -5,8 +5,6 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,13 +13,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.power.DogmaticField;
 
@@ -49,6 +42,10 @@ public abstract class CardSPBase extends CustomCard {
     public boolean canUseSP = false;
     public boolean upgradedSP = false;
     public boolean onlySP = false;
+    public String spName;
+    public String normalName;
+    public String spDescription;
+    public String normalDescription;
 
     protected static CardStrings CARD_STRINGS;
     protected static String NAME;
@@ -75,9 +72,16 @@ public abstract class CardSPBase extends CustomCard {
         this.upgradedSP = true;
     }
 
-    protected void upgradeSPName(int amount) {
-        this.baseSP = amount;
-        this.upgradedSP = true;
+    protected void upgradeName() {
+        ++this.timesUpgraded;
+        this.upgraded = true;
+        this.name = this.normalName = this.name + "+";
+        this.initializeTitle();
+    }
+
+    public void upgradeSpName(String SP_NAME) {
+        this.name = SP_NAME;
+        this.initializeTitle();
     }
 
     public void changeSP(int c_sp) {
@@ -110,9 +114,16 @@ public abstract class CardSPBase extends CustomCard {
     public void upgradeDescription(String UP_DES) {
         ++this.timesUpgraded;
         this.upgraded = true;
-        this.rawDescription = UP_DES;
+        this.rawDescription = this.normalDescription = UP_DES;
         this.initializeDescription();
     }
+
+    public void upgradeSpDescription(String SP_DES) {
+        this.rawDescription = SP_DES;
+        this.initializeDescription();
+    }
+
+
 
     /*
         @Override
@@ -138,7 +149,7 @@ public abstract class CardSPBase extends CustomCard {
 
     @Override
     public final void use(AbstractPlayer p, AbstractMonster m) {
-        boolean isSpJustUsed = false;
+        isSpJustUsed = false;
         if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
             SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
@@ -206,6 +217,26 @@ public abstract class CardSPBase extends CustomCard {
         FontHelper.cardEnergyFont_L.getData().setScale(this.drawScale*8/7);
         return FontHelper.cardEnergyFont_L;
     }
+/*
+    public static void changeCardInfo(CardSPBase card, String name, String des) {
+        card.rawDescription = des;
+        card.name = name;
+        card.initializeTitle();
+        card.initializeDescription();
+    }
+
+    public static void checkCardInfo(CardSPBase card, boolean usingSP) {
+        if(usingSP) {
+            card.rawDescription = CardLang.getMockCardString().SP_DESCRIPTION;
+            CardLang spInfo = (CardLang) CardCrawlGame.languagePack.getCardStrings(card.cardID);
+            changeCardInfo(card, spInfo.SP_NAME, spInfo.SP_DESCRIPTION);
+        }
+        else {
+            CardStrings nInfo = CardCrawlGame.languagePack.getCardStrings(card.cardID);
+            changeCardInfo(card, nInfo.NAME, nInfo.DESCRIPTION);
+            if(card.upgraded) card.upgrade();
+        }
+    }*/
 
     public void renderSp(SpriteBatch sb) {
         boolean darken = (boolean) ReflectionHacks.getPrivate(this, AbstractCard.class, "darken");

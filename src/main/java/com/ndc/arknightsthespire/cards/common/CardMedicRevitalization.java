@@ -23,13 +23,13 @@ public class CardMedicRevitalization extends CardSPBase {
     public CardMedicRevitalization() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, true, POSITION, true);
+                CardRarity.COMMON, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = REGEN;
 
         this.setBackgroundTexture("img/512/medic_512.png", "img/1024/medic.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+        this.exhaust = true;
     }
 
     @Override

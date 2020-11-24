@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
@@ -32,7 +31,7 @@ public class CardSniperArmCrushShot extends CardSPBase {
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = VULN;
         this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP - SPHandler.getDiffSp();
+        this.baseSP = DEFAULT_SP;
 
         this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
 

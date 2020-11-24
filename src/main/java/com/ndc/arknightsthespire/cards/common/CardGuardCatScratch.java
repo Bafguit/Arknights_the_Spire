@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
@@ -33,7 +32,7 @@ public class CardGuardCatScratch extends CardSPBase {
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = WEAK;
         this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP - SPHandler.getDiffSp();
+        this.baseSP = DEFAULT_SP;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 

@@ -11,7 +11,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.DogmaticField;
-import com.ndc.arknightsthespire.power.RapidMagazine;
 
 public class CardMedicDogmaticField extends CardSPBase {
     public static final String ID = "Dogmatic Field";
