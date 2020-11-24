@@ -3,7 +3,8 @@
     "NAME": "라벤더",
     "FLAVOR": "퍼퓨머 재능",
     "DESCRIPTIONS": [
-      "턴이 끝날 때마다 체력을 1 회복합니다."
+      "턴이 끝날 때마다 체력을 ",
+      " 회복합니다."
     ]
   },
   "Blood Sample Collection": {
@@ -20,6 +21,37 @@
     "DESCRIPTIONS": [
       "체력을 회복할 때마다 SP를 #b",
       " 얻습니다."
+    ]
+  },
+  "Rhine Circuitry": {
+    "NAME": "라인 회로",
+    "FLAVOR": "이프리트 재능",
+    "DESCRIPTIONS": [
+      "카드를 6 장 사용할 때마다 SP를 #b",
+      " 얻습니다."
+    ]
+  },
+  "Military Tradition": {
+    "NAME": "군사 전통",
+    "FLAVOR": "백파이프 재능",
+    "DESCRIPTIONS": [
+      "전투 시작 시 SP를 #b",
+      " 얻습니다."
+    ]
+  },
+  "Ability Aura": {
+    "NAME": "스킬 아우라",
+    "FLAVOR": "프틸롭시스 재능",
+    "DESCRIPTIONS": [
+      "매 턴 시작 시 SP를 #b",
+      " 얻습니다."
+    ]
+  },
+  "Omniscience": {
+    "NAME": "간명가감",
+    "FLAVOR": "니엔 재능",
+    "DESCRIPTIONS": [
+      "전투 시작 시 #y충전 #y완료를 #b3 얻습니다."
     ]
   },
   "": {

@@ -30,6 +30,7 @@ public class Fate extends AbstractPower implements CloneablePowerInterface {
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture("img/power/placeholder_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("img/power/placeholder_power32.png");
+    private static PositionType lastCardPosition = PositionType.GUARD;
 
     public Fate(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
@@ -53,15 +54,33 @@ public class Fate extends AbstractPower implements CloneablePowerInterface {
         AbstractCard c = card;
         if(c instanceof CardSPBase) {
             CardSPBase cSP = (CardSPBase) c;
-            if(cSP.position == PositionType.CASTER) addToBot(new DrawCardAction(1));
+            if(cSP.position == PositionType.CASTER && lastCardPosition == PositionType.CASTER) {
+                flash();
+                addToBot(new DrawCardAction(1));
+            }
+            lastCardPosition = cSP.position;
         }
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if(isPlayer) lastCardPosition = PositionType.GUARD;
+    }
+
+    @Override
+    public void onDeath() {
+        lastCardPosition = PositionType.GUARD;
+    }
+
+    @Override
+    public void onVictory() {
+        lastCardPosition = PositionType.GUARD;
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        if(amount > 1) description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        else description = DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
     }
 
     @Override

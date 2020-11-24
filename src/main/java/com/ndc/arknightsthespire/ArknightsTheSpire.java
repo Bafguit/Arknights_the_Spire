@@ -2,30 +2,27 @@
 package com.ndc.arknightsthespire;
 
 import basemod.BaseMod;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
-import com.badlogic.gdx.utils.compression.lzma.Base;
+import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.ndc.arknightsthespire.cards.basic.CardCasterEmotionAbs;
+import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
 import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
-import com.ndc.arknightsthespire.cards.basic.CardTestSPGainer;
+import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
 import com.ndc.arknightsthespire.cards.common.*;
 import com.ndc.arknightsthespire.cards.rare.*;
-import com.ndc.arknightsthespire.relics.SpiritualRecovery;
-import com.ndc.arknightsthespire.ui.ToggleSpButton;
-import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
-import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
 import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
+import com.ndc.arknightsthespire.relics.*;
+import com.ndc.arknightsthespire.ui.ToggleSpButton;
 
 import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
 
@@ -59,6 +56,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardSniperExpAreaStr());
         //Medic
         BaseMod.addCard(new CardMedicDogmaticField());
+        BaseMod.addCard(new CardMedicRevitalization());
         //Supporter
         BaseMod.addCard(new CardSupporterFoxfire());
         //Defender
@@ -84,8 +82,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardGuardThermiteBlade());
         //Vanguard
         BaseMod.addCard(new CardVanguardAssaultOrder());
-        //Test
-        BaseMod.addCard(new CardTestSPGainer());
 
         System.out.println("DONE");
     }
@@ -113,7 +109,15 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         System.out.println("ADDING RELICS");
 
         BaseMod.addRelicToCustomPool(new SpiritualRecovery(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new RhineCircuitry(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new MilitaryTradition(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new AbilityAura(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Lavender(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Omniscience(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
 
         System.out.println("DONE");
+    }
+
+    public void receivePreRoomRender(SpriteBatch sb) {
     }
 }

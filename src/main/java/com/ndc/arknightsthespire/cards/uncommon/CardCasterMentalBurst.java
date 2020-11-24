@@ -21,7 +21,7 @@ public class CardCasterMentalBurst extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/attack_beta.png";
+    public static final String IMG_PATH = "img/cards/MentalBurst.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
     private static final int DAMAGE = 5;
@@ -32,7 +32,7 @@ public class CardCasterMentalBurst extends CardSPBase {
     public CardCasterMentalBurst() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ALL_ENEMY, true, POSITION, false);
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, false);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = HIT;
         this.sp = this.baseSP = SP;

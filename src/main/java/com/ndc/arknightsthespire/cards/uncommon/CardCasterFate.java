@@ -19,15 +19,15 @@ public class CardCasterFate extends CardSPBase {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String IMG_PATH = "img/cards/power_beta.png";
+    public static final String IMG_PATH = "img/cards/Fate.png";
     public static final PositionType POSITION = PositionType.CASTER;
-    private static final int COST = 2;
-    private static final int UP_COST = 1;
+    private static final int COST = 3;
+    private static final int UP_COST = 2;
 
     public CardCasterFate() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, POSITION, false);
+                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
 
         this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
 
@@ -37,7 +37,7 @@ public class CardCasterFate extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new Fate(p, p), 1));
+        addToBot(new ApplyPowerAction(p, p, new Fate(p, p)));
     }
 
     @Override
