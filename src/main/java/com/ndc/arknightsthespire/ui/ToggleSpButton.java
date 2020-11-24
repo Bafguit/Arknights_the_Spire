@@ -70,7 +70,7 @@ public class ToggleSpButton {
     public static Texture UI_BUTTON_RIGHT_GLOW = ImageMaster.loadImage("img/ui/uiButtonRightGlow.png");
     public static Texture UI_BUTTON_RIGHT_HOVER = ImageMaster.loadImage("img/ui/uiButtonRightHover.png");
 
-    public ToggleSpButton() {
+    public ToggleSpButton(EndTurnButton endTurnButton) {
         this.label = TURN_ON_MSG;
         this.current_x = HIDE_X;
         this.current_y = SHOW_Y;
@@ -84,15 +84,14 @@ public class ToggleSpButton {
         this.hb = new Hitbox(0.0F, 0.0F, 160.0F * Settings.scale, 100.0F * Settings.scale);
         this.holdProgress = 0.0F;
         this.holdBarColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
+
+        this.endTurnButton = endTurnButton;
     }
 
-    public void update(EndTurnButton button) {
+    public void update() {
         /*if(!Settings.hideEndTurn) {
             this.current_y = SHOW_Y + BUTTON_OFFSET_Y;
         }*/
-        if(this.endTurnButton == null || !this.endTurnButton.equals(button)) {
-            this.endTurnButton = button;
-        }
 
         if(endTurnButton.enabled) {
             this.enable();
