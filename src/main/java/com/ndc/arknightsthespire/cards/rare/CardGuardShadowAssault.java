@@ -1,7 +1,6 @@
 package com.ndc.arknightsthespire.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,11 +10,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.RandomAttack;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
-
-import javax.smartcardio.Card;
 
 public class CardGuardShadowAssault extends CardSPBase {
     public static final String ID = "Shadow Assault";
@@ -23,6 +19,8 @@ public class CardGuardShadowAssault extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String SP_NAME = cardStrings.EXTENDED_DESCRIPTION[0];
+    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[1];
     public static final String IMG_PATH = "img/cards/ShadowAssault.png";
     public static final String SP_IMG_PATH = "img/cards/ShadowAssault_sp.png";
     public static final PositionType POSITION = PositionType.GUARD;
@@ -33,12 +31,12 @@ public class CardGuardShadowAssault extends CardSPBase {
     private static final int UP_SP = 30;
 
     public CardGuardShadowAssault() { //Not Using
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, SP_NAME, SP_DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = SP;
-        this.baseSP = SP - SPHandler.getDiffSp();
+        this.baseSP = SP;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 

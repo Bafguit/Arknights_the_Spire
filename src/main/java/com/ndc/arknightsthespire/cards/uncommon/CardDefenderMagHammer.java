@@ -3,7 +3,6 @@ package com.ndc.arknightsthespire.cards.uncommon;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -19,6 +18,7 @@ public class CardDefenderMagHammer extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "img/cards/attack_beta.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;
@@ -28,7 +28,7 @@ public class CardDefenderMagHammer extends CardSPBase {
     private static final int DEFAULT_SP = 8;
 
     public CardDefenderMagHammer() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, SP_DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = DAMAGE;

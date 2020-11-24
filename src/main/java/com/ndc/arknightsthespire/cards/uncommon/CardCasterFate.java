@@ -10,7 +10,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.Fate;
-import com.ndc.arknightsthespire.power.SoulAbsorption;
 
 public class CardCasterFate extends CardSPBase {
     public static final String ID = "Fate";
@@ -25,7 +24,7 @@ public class CardCasterFate extends CardSPBase {
     private static final int UP_COST = 2;
 
     public CardCasterFate() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
 

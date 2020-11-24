@@ -1,6 +1,5 @@
 package com.ndc.arknightsthespire.cards.uncommon;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,10 +7,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.RandomAttack;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
-import com.ndc.arknightsthespire.power.DogmaticField;
 import com.ndc.arknightsthespire.power.SoulAbsorption;
 
 public class CardCasterSoulAbs extends CardSPBase {
@@ -28,7 +25,7 @@ public class CardCasterSoulAbs extends CardSPBase {
     private static final int UP_SP = 3;
 
     public CardCasterSoulAbs() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true);
         this.sp = this.baseSP = SP;

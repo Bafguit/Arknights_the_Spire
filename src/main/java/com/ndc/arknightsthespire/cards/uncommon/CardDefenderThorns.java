@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -21,11 +22,11 @@ public class CardDefenderThorns extends CardSPBase {
     public static final String IMG_PATH = "img/cards/thorns.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
-    private static final int THORNS_AMOUNT = 3;
+    private static final int THORNS_AMOUNT = 2;
     private static final int UPGRADE_THORNS = 1;
 
     public CardDefenderThorns() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = THORNS_AMOUNT;
@@ -39,6 +40,7 @@ public class CardDefenderThorns extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
     }
 
     @Override

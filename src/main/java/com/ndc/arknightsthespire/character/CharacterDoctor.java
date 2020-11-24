@@ -24,7 +24,6 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.character.ATSCharacterEnum;
 
 import java.util.ArrayList;
 
@@ -99,15 +98,15 @@ public class CharacterDoctor extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() { // starting relics - also simple
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("Bag of Preparation");
-        UnlockTracker.markRelicAsSeen("Bag of Preparation");
+        retVal.add("Sanity");
+        UnlockTracker.markRelicAsSeen("Sanity");
         return retVal;
     }
 
 
 
     public CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold
-        return new CharSelectInfo("독타", "테라에서 구출되어 기억을 잃은 사람. NL 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
+        return new CharSelectInfo("박사", "테라에서 구출되어 기억을 잃은 사람. NL 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
                 STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, HAND_SIZE,
                 this, getStartingRelics(), getStartingDeck(), false);
     }

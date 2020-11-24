@@ -54,6 +54,36 @@
       "전투 시작 시 #y충전 #y완료를 #b3 얻습니다."
     ]
   },
+  "Sanity": {
+    "NAME": "이성",
+    "FLAVOR": "능지 수듄",
+    "DESCRIPTIONS": [
+      "매 턴마다 처음 소모하는 SP의 절반이 반환됩니다."
+    ]
+  },
+  "Berate": {
+    "NAME": "호령",
+    "FLAVOR": "첸 재능",
+    "DESCRIPTIONS": [
+      "공격 카드를 4장 사용할 때마다 SP를 #b",
+      " 얻습니다."
+    ]
+  },
+  "Industrial Water Cannon": {
+    "NAME": "공학용 저수포",
+    "FLAVOR": "위디 재능",
+    "DESCRIPTIONS": [
+      "SP를 3번 소모할 때마다 카드를 뽑습니다."
+    ]
+  },
+  "Bonebreaker": {
+    "NAME": "뼈찌르기",
+    "FLAVOR": "레드 재능",
+    "DESCRIPTIONS": [
+      "방어도가 있는 적에게 주는 공격 피해가 #b",
+      " 증가합니다."
+    ]
+  },
   "": {
     "NAME": "",
     "FLAVOR": "",
@@ -62,6 +92,7 @@
       ""
     ]
   },
+
   "Akabeko": {
     "NAME": "아카베코",
     "FLAVOR": "\"음머어~\"",

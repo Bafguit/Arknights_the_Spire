@@ -5,16 +5,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Lavender extends CustomRelic {
     public static final String ID = "Lavender";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/beta.png");
-    private static final Texture OUTLINE = TextureLoader.getTexture("img/relics/outline/beta.png");
+    private static final Texture IMG = TextureLoader.getTexture("img/relics/Lavender.png");
 
     public Lavender() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.COMMON, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override

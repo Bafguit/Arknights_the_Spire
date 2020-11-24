@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
@@ -19,6 +18,8 @@ public class CardSniperOverload extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String SP_NAME = cardStrings.EXTENDED_DESCRIPTION[0];
+    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[1];
     public static final String IMG_PATH = "img/cards/overload.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
@@ -28,13 +29,13 @@ public class CardSniperOverload extends CardSPBase {
     private static final int DEFAULT_SP = 8;
 
     public CardSniperOverload() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, SP_NAME, SP_DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
         this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP + SPHandler.getDiffSp();
+        this.baseSP = DEFAULT_SP;
 
         this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
 

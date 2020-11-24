@@ -22,12 +22,12 @@ public class CardSupporterFoxfire extends CardSPBase {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/nff.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
-    private static final int COST = 3;
-    private static final int REGEN_AMOUNT = 3;
+    private static final int COST = 2;
+    private static final int REGEN_AMOUNT = 2;
     private static final int UPGRADE_REGEN = 1;
 
     public CardSupporterFoxfire() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, false);
         this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;

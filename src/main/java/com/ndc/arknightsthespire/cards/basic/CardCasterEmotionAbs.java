@@ -24,7 +24,7 @@ public class CardCasterEmotionAbs extends CardSPBase {
     private static final int SP = 3;
 
     public CardCasterEmotionAbs() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = SP;

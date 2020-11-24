@@ -11,7 +11,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.DogmaticField;
-import com.ndc.arknightsthespire.power.RapidMagazine;
 
 public class CardMedicDogmaticField extends CardSPBase {
     public static final String ID = "Dogmatic Field";
@@ -25,7 +24,7 @@ public class CardMedicDogmaticField extends CardSPBase {
     private static final int UPGRADE_COST = 2;
 
     public CardMedicDogmaticField() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
 

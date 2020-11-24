@@ -25,7 +25,7 @@ public class CardSniperConShotAuto extends CardSPBase {
     private static final int UPGRADE_PLUS_DMG = 2;
 
     public CardSniperConShotAuto() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, false, POSITION, false);
         this.damage = this.baseDamage = ATTACK_DMG;

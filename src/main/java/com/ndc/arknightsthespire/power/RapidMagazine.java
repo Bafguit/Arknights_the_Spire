@@ -6,15 +6,11 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.util.TextureLoader;
-
-import javax.smartcardio.Card;
 
 //Gain 1 dex for the turn for each card played.
 
@@ -28,8 +24,8 @@ public class RapidMagazine extends AbstractPower implements CloneablePowerInterf
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("img/power/RapidMagazine_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("img/power/RapidMagazine_32.png");
 
     public RapidMagazine(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -67,6 +63,7 @@ public class RapidMagazine extends AbstractPower implements CloneablePowerInterf
         }
     }*/
 
+    @Override
     public void onCardDraw(AbstractCard card) {
         CardSPBase.getSingleClassSPChange(card, PositionType.SNIPER);
     }

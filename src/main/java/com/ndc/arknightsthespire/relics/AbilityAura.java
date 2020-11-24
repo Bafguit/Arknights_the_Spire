@@ -8,11 +8,10 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class AbilityAura extends CustomRelic {
     public static final String ID = "Ability Aura";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/beta.png");
-    private static final Texture OUTLINE = TextureLoader.getTexture("img/relics/outline/beta.png");
+    private static final Texture IMG = TextureLoader.getTexture("img/relics/AbilityAura.png");
 
     public AbilityAura() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.COMMON, LandingSound.CLINK); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override

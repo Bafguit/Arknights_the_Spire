@@ -1,19 +1,15 @@
 package com.ndc.arknightsthespire.power;
 
-import basemod.devcommands.power.Power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.PowerDebuffEffect;
-import com.megacrit.cardcrawl.vfx.combat.StunStarEffect;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -29,8 +25,8 @@ public class DogmaticField extends AbstractPower implements CloneablePowerInterf
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("img/power/DogmaticField_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("img/power/DogmaticField_32.png");
 
     public DogmaticField(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
@@ -58,10 +54,10 @@ public class DogmaticField extends AbstractPower implements CloneablePowerInterf
 
         if(overHeal > p.maxHealth)
         {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, overHeal - p.maxHealth));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(overHeal - p.maxHealth)/2));
         }
 
-        return healAmount;
+        return healAmount - (overHeal - p.maxHealth);
     }
 
 

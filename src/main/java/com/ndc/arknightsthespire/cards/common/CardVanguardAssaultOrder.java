@@ -24,7 +24,7 @@ public class CardVanguardAssaultOrder extends CardSPBase {
     private static final int ENERGY = 2;
 
     public CardVanguardAssaultOrder() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, true, POSITION, true);
         this.sp = this.baseSP = SP;

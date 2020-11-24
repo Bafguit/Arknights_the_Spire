@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
-import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
@@ -21,6 +20,7 @@ public class CardGuardThermiteBlade extends CardSPBase {
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "img/cards/ThermiteBlade.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
@@ -29,12 +29,12 @@ public class CardGuardThermiteBlade extends CardSPBase {
     private static final int DEFAULT_SP = 5;
 
     public CardGuardThermiteBlade() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, SP_DESCRIPTION,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP - SPHandler.getDiffSp();
+        this.baseSP = DEFAULT_SP;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 
