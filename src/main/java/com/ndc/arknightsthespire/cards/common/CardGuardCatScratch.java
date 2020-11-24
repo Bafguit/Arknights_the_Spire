@@ -55,12 +55,9 @@ public class CardGuardCatScratch extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UP_DMG);
-            this.upgradeMagicNumber(UP_WEAK);
-        }
+    public void upgradeCard() {
+        this.upgradeDamage(UP_DMG);
+        this.upgradeMagicNumber(UP_WEAK);
     }
 
 }

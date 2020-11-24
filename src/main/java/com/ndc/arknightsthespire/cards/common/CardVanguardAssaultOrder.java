@@ -43,11 +43,8 @@ public class CardVanguardAssaultOrder extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeSP(UP_SP);
-        }
+    public void upgradeCard() {
+        this.upgradeSP(UP_SP);
     }
 
 }

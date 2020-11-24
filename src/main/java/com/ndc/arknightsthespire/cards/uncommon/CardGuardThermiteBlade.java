@@ -52,11 +52,8 @@ public class CardGuardThermiteBlade extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UP_DMG);
-        }
+    public void upgradeCard() {
+        this.upgradeDamage(UP_DMG);
     }
 
 }

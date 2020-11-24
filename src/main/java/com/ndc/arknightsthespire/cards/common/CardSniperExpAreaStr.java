@@ -45,11 +45,8 @@ public class CardSniperExpAreaStr extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
-        }
+    public void upgradeCard() {
+        this.upgradeDamage(UPGRADE_PLUS_DMG);
     }
 
 }

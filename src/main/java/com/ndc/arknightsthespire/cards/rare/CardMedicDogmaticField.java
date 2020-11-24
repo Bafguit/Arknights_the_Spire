@@ -43,11 +43,8 @@ public class CardMedicDogmaticField extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UPGRADE_COST);
-        }
+    public void upgradeCard() {
+        this.upgradeBaseCost(UPGRADE_COST);
     }
 
 

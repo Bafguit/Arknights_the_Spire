@@ -31,6 +31,7 @@ public class CardGuardShadowAssault extends CardSPBase {
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = SP;
         this.baseSP = SP;
+        this.spCardImage = SP_IMG_PATH;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 
@@ -70,12 +71,9 @@ public class CardGuardShadowAssault extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UP_DMG);
-            this.upgradeSP(UP_SP);
-        }
+    public void upgradeCard() {
+        this.upgradeDamage(UP_DMG);
+        this.upgradeSP(UP_SP);
     }
 
 }

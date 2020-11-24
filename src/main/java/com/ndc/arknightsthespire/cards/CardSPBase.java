@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.SPHandler;
@@ -42,15 +43,18 @@ public abstract class CardSPBase extends CustomCard {
     public boolean canUseSP = false;
     public boolean upgradedSP = false;
     public boolean onlySP = false;
-    public String spName;
-    public String normalName;
-    public String spDescription;
-    public String normalDescription;
+
+    public static boolean isSpJustUsed;
+
+    protected static String normalCardImage;
+    protected static String spCardImage;
 
     protected static CardStrings CARD_STRINGS;
-    protected static String NAME;
-    protected static String DESCRIPTION;
-    protected static String UP_DESCRIPTION;
+    protected static String NORMAL_NAME;
+    protected static String SP_NAME;
+    protected static String NORMAL_DESCRIPTION;
+    protected static String SP_DESCRIPTION;
+    protected static String UPGRADE_DESCRIPTION;
 
     public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
         this(id, img, cost, type, color, rarity, target, isAuto, position, hasSP, false);
@@ -62,26 +66,37 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     private CardSPBase(String id, CardStrings cardStrings, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
-        super(id, NAME = cardStrings.NAME, img, cost, DESCRIPTION = cardStrings.DESCRIPTION, type, color, rarity, target);
-        UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-        this.updateState();
+        super(id, NORMAL_NAME = cardStrings.NAME, normalCardImage = img, cost, NORMAL_DESCRIPTION = cardStrings.DESCRIPTION, type, color, rarity, target);
+        if(cardStrings.EXTENDED_DESCRIPTION != null) {
+            if (cardStrings.EXTENDED_DESCRIPTION.length == 1) {
+                SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
+            } else if (cardStrings.EXTENDED_DESCRIPTION.length > 1) {
+                SP_NAME = cardStrings.EXTENDED_DESCRIPTION[0];
+                SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[1];
+            }
+        }
+        UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+        this.updateState(false);
     }
 
-    protected void upgradeSP(int amount) {
-        this.baseSP = amount;
-        this.upgradedSP = true;
+    @Override
+    public final void upgrade() {
+        if(!upgraded) {
+            upgraded = true;
+            ++this.timesUpgraded; //TODO What does this do
+            upgradeCard();
+            updateState(false);
+        }
     }
 
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = this.normalName = this.name + "+";
-        this.initializeTitle();
-    }
+    public abstract void upgradeCard();
 
-    public void upgradeSpName(String SP_NAME) {
-        this.name = SP_NAME;
-        this.initializeTitle();
+    @Override
+    protected final void upgradeName() {}
+
+    public void upgradeSP(int sp) {
+        baseSP = sp;
+        upgradedSP = true;
     }
 
     public void changeSP(int c_sp) {
@@ -111,16 +126,89 @@ public abstract class CardSPBase extends CustomCard {
         }
     }
 
-    public void upgradeDescription(String UP_DES) {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.rawDescription = this.normalDescription = UP_DES;
+
+    public static void updateAllStateInHand(boolean shouldGlow) {
+        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
+        while(var1.hasNext()) {
+            AbstractCard c = (AbstractCard)var1.next();
+            if(c instanceof CardSPBase) {
+                ((CardSPBase) c).updateState(shouldGlow);
+            }
+        }
+    }
+
+    public void updateState(boolean shouldGlow) {
+        updateName();
+        updateDescription();
+        updateImage();
+        updateGlow();
+    }
+
+    public void updateGlow() {
+        boolean checkGlow = checkGlow();
+        if(checkGlow && !this.isGlowing) this.beginGlowing();
+        if(!checkGlow && this.isGlowing) this.stopGlowing();
+    }
+
+    public void updateName() {
+        if(shouldUseSp() && SP_NAME != null) {
+            this.name = SP_NAME;
+        } else {
+            this.name = NORMAL_NAME;
+        }
+        if(upgraded) {
+            this.name += "+";
+        }
+
+        this.initializeTitle();
+    }
+
+    public void updateDescription() {
+        if(shouldUseSp() && SP_DESCRIPTION != null) {
+            this.rawDescription = SP_DESCRIPTION;
+        } else if(upgraded && UPGRADE_DESCRIPTION != null) {
+            this.rawDescription = UPGRADE_DESCRIPTION;
+        } else {
+            this.rawDescription = NORMAL_DESCRIPTION;
+        }
+
         this.initializeDescription();
     }
 
-    public void upgradeSpDescription(String SP_DES) {
-        this.rawDescription = SP_DES;
-        this.initializeDescription();
+    public void updateImage() {
+        if(shouldUseSp() && spCardImage != null) {
+            loadCardImage(spCardImage);
+        } else {
+            loadCardImage(normalCardImage);
+        }
+    }
+
+    private boolean checkGlow() {
+        System.out.println(SPHandler.getSp() + " " + canAffordSP());
+        if(SPHandler.isSpModeEnabled()) {
+            if(canAffordSP()) {
+                this.glowColor = SP_BORDER_GLOW_COLOR;
+                System.out.println("CASE A");
+                return true;
+            }
+        } else {
+            if(isAuto) {
+                if(canAffordSP()) {
+                    this.glowColor = SP_BORDER_GLOW_COLOR;
+                    System.out.println("CASE B");
+                    return true;
+                }
+                if(!onlySP) {
+                    this.glowColor = DEFAULT_BORDER_GLOW_COLOR;
+                    System.out.println("CASE C");
+                    return true;
+                }
+                System.out.println("CASE D");
+                return false;
+            }
+        }
+        System.out.println("CASE E");
+        return false;
     }
 
 
@@ -153,7 +241,7 @@ public abstract class CardSPBase extends CustomCard {
         if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
             SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
-            updateAllStateInHand();
+            updateAllStateInHand(true);
         }
         useCard(p, m, isSpJustUsed);
         SPHandler.updateSp();
@@ -161,53 +249,8 @@ public abstract class CardSPBase extends CustomCard {
 
     public abstract void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed);
 
-    public static void updateAllStateInHand() {
-        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
-        while(var1.hasNext()) {
-            AbstractCard c = (AbstractCard)var1.next();
-            if(c instanceof CardSPBase) {
-                ((CardSPBase) c).updateState();
-            }
-        }
-    }
 
-    public void updateState() {
-        updateGlow();
-    }
 
-    public void updateGlow() {
-        boolean checkGlow = checkGlow();
-        if(checkGlow && !this.isGlowing) this.beginGlowing();
-        if(!checkGlow && this.isGlowing) this.stopGlowing();
-    }
-
-    private boolean checkGlow() {
-        System.out.println(SPHandler.getSp() + " " + canAffordSP());
-        if(SPHandler.isSpModeEnabled()) {
-            if(canAffordSP()) {
-                this.glowColor = SP_BORDER_GLOW_COLOR;
-                System.out.println("CASE A");
-                return true;
-            }
-        } else {
-            if(isAuto) {
-                if(canAffordSP()) {
-                    this.glowColor = SP_BORDER_GLOW_COLOR;
-                    System.out.println("CASE B");
-                    return true;
-                }
-                if(!onlySP) {
-                    this.glowColor = DEFAULT_BORDER_GLOW_COLOR;
-                    System.out.println("CASE C");
-                    return true;
-                }
-                System.out.println("CASE D");
-                return false;
-            }
-        }
-        System.out.println("CASE E");
-        return false;
-    }
 
     public boolean canAffordSP() {
         return SPHandler.getSp() >= this.baseSP;
@@ -237,6 +280,10 @@ public abstract class CardSPBase extends CustomCard {
             if(card.upgraded) card.upgrade();
         }
     }*/
+
+    public boolean shouldUseSp() {
+        return canAffordSP() && (SPHandler.isSpModeEnabled() || isAuto);
+    }
 
     public void renderSp(SpriteBatch sb) {
         boolean darken = (boolean) ReflectionHacks.getPrivate(this, AbstractCard.class, "darken");

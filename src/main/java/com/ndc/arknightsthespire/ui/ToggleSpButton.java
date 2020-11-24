@@ -163,7 +163,7 @@ public class ToggleSpButton {
 
                 SPHandler.toggleSpMode();
                 updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
-                CardSPBase.updateAllStateInHand();
+                CardSPBase.updateAllStateInHand(true);
             }
         }
 
@@ -247,6 +247,7 @@ public class ToggleSpButton {
         if(!Settings.hideEndTurn) {
             float tmpY = this.current_y;
             this.renderHoldEndTurn(sb);
+            System.out.println(ReflectionHacks.getPrivate(endTurnButton, EndTurnButton.class, "label"));
             if (!this.isDisabled && this.enabled) {
                 if (this.hb.hovered) {
                     if (SPHandler.isSpModeEnabled()) {

@@ -50,11 +50,8 @@ public class CardCasterMentalBurst extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UP_HIT);
-        }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(UP_HIT);
     }
 
 }

@@ -15,11 +15,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSupporterSporePro extends CardSPBase {
     public static final String ID = "Spore Proliferation";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "img/cards/SporeProliferation.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 1;
@@ -28,7 +23,7 @@ public class CardSupporterSporePro extends CardSPBase {
     private static final int UP_SP = 10;
 
     public CardSupporterSporePro() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, SP_DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true);
         this.magicNumber = this.baseMagicNumber = WEAK;
@@ -53,11 +48,8 @@ public class CardSupporterSporePro extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeSP(UP_SP);
-        }
+    public void upgradeCard() {
+        this.upgradeSP(UP_SP);
     }
 
 

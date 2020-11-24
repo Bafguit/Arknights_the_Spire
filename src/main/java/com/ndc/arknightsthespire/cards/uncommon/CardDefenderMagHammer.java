@@ -52,11 +52,8 @@ public class CardDefenderMagHammer extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UP_STRENGTH);
-        }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(UP_STRENGTH);
     }
 
 

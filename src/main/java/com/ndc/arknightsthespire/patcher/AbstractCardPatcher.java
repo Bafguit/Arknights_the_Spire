@@ -20,15 +20,7 @@ public class AbstractCardPatcher {
         public static void Insert(AbstractCard __instance, SpriteBatch sb) {
             if(__instance instanceof CardSPBase) {
                 CardSPBase card = (CardSPBase) __instance;
-                if (card.shouldUseSp()) {
-                    card.upgradeSpName(card.spName);
-                    card.upgradeSpDescription(card.spDescription);
-                    if(card.cardID == "Shadow Assault") card.loadCardImage("img/cards/ShadowAssault_sp.png");
-                } else {
-                    card.upgradeSpName(card.normalName);
-                    card.upgradeSpDescription(card.normalDescription);
-                    if(card.cardID == "Shadow Assault") card.loadCardImage("img/cards/ShadowAssault.png");
-                }
+                card.updateState(false);
                 card.renderSp(sb);
             }
         }
@@ -46,15 +38,7 @@ public class AbstractCardPatcher {
         public static void Insert(AbstractCard __instance, SpriteBatch sb) {
             if(__instance instanceof CardSPBase) {
                 CardSPBase card = (CardSPBase) __instance;
-                if (card.shouldUseSp()) {
-                    card.upgradeSpName(card.spName);
-                    card.upgradeSpDescription(card.spDescription);
-                    if(card.cardID == "Shadow Assault") card.loadCardImage("img/cards/ShadowAssault_sp.png");
-                } else {
-                    card.upgradeSpName(card.normalName);
-                    card.upgradeSpDescription(card.normalDescription);
-                    if(card.cardID == "Shadow Assault") card.loadCardImage("img/cards/ShadowAssault.png");
-                }
+                card.updateState(true);
                 card.renderSp(sb);
             }
         }

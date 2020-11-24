@@ -45,11 +45,8 @@ public class CardDefenderThorns extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_THORNS);
-        }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(UPGRADE_THORNS);
     }
 
 

@@ -14,10 +14,6 @@ import com.ndc.arknightsthespire.power.SoulRend;
 
 public class CardGuardSoulRend extends CardSPBase {
     public static final String ID = "Soul Rend";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/SoulRend.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
@@ -25,7 +21,7 @@ public class CardGuardSoulRend extends CardSPBase {
     private static final int UPGRADE_HEAL = 1;
 
     public CardGuardSoulRend() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = HEAL_AMOUNT;
@@ -47,11 +43,8 @@ public class CardGuardSoulRend extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UPGRADE_HEAL);
-        }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(UPGRADE_HEAL);
     }
 
 

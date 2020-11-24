@@ -54,11 +54,8 @@ public class CardSniperArmCrushShot extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UP_VULN);
-        }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(UP_VULN);
     }
 
 }

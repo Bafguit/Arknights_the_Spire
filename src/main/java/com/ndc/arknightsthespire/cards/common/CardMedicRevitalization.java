@@ -43,11 +43,8 @@ public class CardMedicRevitalization extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBaseCost(UP_COST);
-        }
+    public void upgradeCard() {
+        this.upgradeBaseCost(UP_COST);
     }
 
 }

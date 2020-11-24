@@ -15,11 +15,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSpecialistChainHook extends CardSPBase {
     public static final String ID = "Chain Hook";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "img/cards/ChainHook.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
@@ -29,7 +24,7 @@ public class CardSpecialistChainHook extends CardSPBase {
     private static final int UP_SP = 2;
 
     public CardSpecialistChainHook() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, SP_DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
 
@@ -54,12 +49,9 @@ public class CardSpecialistChainHook extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeDamage(UP_DAMAGE);
-            this.upgradeSP(UP_SP);
-        }
+    public void upgradeCard() {
+        this.upgradeDamage(UP_DAMAGE);
+        this.upgradeSP(UP_SP);
     }
 
 }

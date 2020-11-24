@@ -58,13 +58,8 @@ public class CardDefenderChargingDef extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeBlock(UPGRADE_BLOCK);
-        }
+    public void upgradeCard() {
+        this.upgradeBlock(UPGRADE_BLOCK);
     }
-
-
 
 }

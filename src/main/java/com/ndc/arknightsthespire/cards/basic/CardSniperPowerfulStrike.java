@@ -49,11 +49,8 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeSP(UPGRADE_SP);
-        }
+    public void upgradeCard() {
+        upgradeSP(UPGRADE_SP);
     }
 
 }

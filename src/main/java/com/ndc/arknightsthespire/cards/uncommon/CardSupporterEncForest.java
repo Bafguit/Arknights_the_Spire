@@ -14,11 +14,6 @@ import com.ndc.arknightsthespire.power.Shelter;
 
 public class CardSupporterEncForest extends CardSPBase {
     public static final String ID = "Encircling Forest";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
     public static final String IMG_PATH = "img/cards/EncirclingForest.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 1;
@@ -27,7 +22,7 @@ public class CardSupporterEncForest extends CardSPBase {
     private static final int SP = 13;
 
     public CardSupporterEncForest() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, NAME, SP_DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, true);
         this.magicNumber = this.baseMagicNumber = SHELTER;
@@ -51,13 +46,8 @@ public class CardSupporterEncForest extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeMagicNumber(UP_SHELTER);
-        }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(UP_SHELTER);
     }
-
-
 
 }

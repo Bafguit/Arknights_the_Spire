@@ -42,12 +42,8 @@ public class CardCasterSoulAbs extends CardSPBase {
     }
 
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.upgradeSP(UP_SP);
-            this.upgradeDescription(UP_DESCRIPTION);
-        }
+    public void upgradeCard() {
+        this.upgradeSP(UP_SP);
     }
 
 }
