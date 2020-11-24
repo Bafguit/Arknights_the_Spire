@@ -19,8 +19,8 @@ public class CardSupporterSporePro extends CardSPBase {
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 1;
     private static final int WEAK = 2;
-    private static final int SP = 13;
-    private static final int UP_SP = 10;
+    private static final int SP = 17;
+    private static final int UP_SP = 14;
 
     public CardSupporterSporePro() {
         super(ID, IMG_PATH, COST,

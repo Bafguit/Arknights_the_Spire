@@ -33,8 +33,7 @@ public class CardSniperRapidMagazine extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new RapidMagazine(p, p, 1),
-                1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new RapidMagazine(p, p)));
 
 
 }

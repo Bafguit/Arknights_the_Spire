@@ -246,7 +246,7 @@ public class ToggleSpButton {
         if(!Settings.hideEndTurn) {
             float tmpY = this.current_y;
             this.renderHoldEndTurn(sb);
-            System.out.println(ReflectionHacks.getPrivate(endTurnButton, EndTurnButton.class, "label"));
+            //System.out.println(ReflectionHacks.getPrivate(endTurnButton, EndTurnButton.class, "label"));
             if (!this.isDisabled && this.enabled) {
                 if (this.hb.hovered) {
                     if (SPHandler.isSpModeEnabled()) {

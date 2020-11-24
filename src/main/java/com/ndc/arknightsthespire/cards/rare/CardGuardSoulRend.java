@@ -1,11 +1,9 @@
-package com.ndc.arknightsthespire.cards.uncommon;
+package com.ndc.arknightsthespire.cards.rare;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -23,7 +21,7 @@ public class CardGuardSoulRend extends CardSPBase {
     public CardGuardSoulRend() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
+                CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = HEAL_AMOUNT;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
@@ -34,7 +32,7 @@ public class CardGuardSoulRend extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SoulRend(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SoulRend(p, p, magicNumber)));
     }
 
     @Override

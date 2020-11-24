@@ -188,30 +188,24 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     private boolean checkGlow() {
-        System.out.println(SPHandler.getSp() + " " + canAffordSP());
         if(SPHandler.isSpModeEnabled()) {
             if(canAffordSP()) {
                 this.glowColor = SP_BORDER_GLOW_COLOR;
-                System.out.println("CASE A");
                 return true;
             }
         } else {
             if(isAuto) {
                 if(canAffordSP()) {
                     this.glowColor = SP_BORDER_GLOW_COLOR;
-                    System.out.println("CASE B");
                     return true;
                 }
                 if(!onlySP) {
                     this.glowColor = DEFAULT_BORDER_GLOW_COLOR;
-                    System.out.println("CASE C");
                     return true;
                 }
-                System.out.println("CASE D");
                 return false;
             }
         }
-        System.out.println("CASE E");
         return false;
     }
 

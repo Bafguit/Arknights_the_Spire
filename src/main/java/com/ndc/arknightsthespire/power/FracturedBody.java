@@ -3,36 +3,37 @@ package com.ndc.arknightsthespire.power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.ndc.arknightsthespire.cards.CardSPBase;
-import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
 
-public class RapidMagazine extends AbstractPower implements CloneablePowerInterface {
+public class FracturedBody extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = "Rapid Magazine";
+    public static final String POWER_ID = "Fractured Body";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/RapidMagazine_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/RapidMagazine_32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("img/power/SoulRend_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("img/power/SoulRend_32.png");
 
-    public RapidMagazine(final AbstractCreature owner, final AbstractCreature source) {
+    public FracturedBody(final AbstractCreature owner, final AbstractCreature source, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+        this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -42,44 +43,40 @@ public class RapidMagazine extends AbstractPower implements CloneablePowerInterf
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
-
-        CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
-        System.out.println(RapidMagazine.POWER_ID + " Applied Successfully.");
-    }
-
- /*   @Override
-    public void onInitialApplication() {
-        CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
-        System.out.println(SPHandler.getDiffSp() + " is current diffSP");
-        System.out.println(amount + " is current amount");
     }
 
     @Override
-    public void onApplyPower(AbstractPower p, AbstractCreature t, AbstractCreature s) {
-        if(p.ID == "Rapid Magazine" && t == AbstractDungeon.player) {
-            System.out.println(p.ID + " is successfully applied!");
-            CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
+    public int onAttacked(DamageInfo info, int damage) {
+        if(damage >= AbstractDungeon.player.currentHealth && AbstractDungeon.player.currentHealth != 1) {
+            flash();
+            return AbstractDungeon.player.currentHealth - 1;
         }
-    }*/
+        else if(damage >= AbstractDungeon.player.currentHealth && AbstractDungeon.player.currentHealth == 1) {
+            flash();
+            return 0;
+        }
 
-    @Override
-    public void onCardDraw(AbstractCard card) {
-        CardSPBase.getSingleClassSPChange(card, PositionType.SNIPER);
+        return damage;
     }
 
     @Override
-    public void onVictory() {
-
+    public void atStartOfTurn() {
+        if (this.amount > 1)
+            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, "Fractured Body", 1));
+        else if (this.amount == 1) {
+            AbstractDungeon.player.currentHealth = 1;
+            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Fractured Body"));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new RapidMagazine(owner, source);
+        return new FracturedBody(owner, source, amount);
     }
 }

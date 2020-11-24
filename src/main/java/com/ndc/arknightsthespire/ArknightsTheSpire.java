@@ -86,6 +86,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardGuardShadowAssault());
         BaseMod.addCard(new CardGuardThermiteBlade());
         BaseMod.addCard(new CardGuardSoulRend());
+        BaseMod.addCard(new CardGuardFracturedBody());
         //Vanguard
         BaseMod.addCard(new CardVanguardAssaultOrder());
 
@@ -134,12 +135,15 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receiveEditStrings() {
+
+    }
+
+    public String checkLang() {
         switch(Settings.language) {
-            //case ENG:
-                 //getLanguage("eng");
             case KOR:
-                getLanguage("kor");
-                break;
+                return "kor";
+            default:
+                return "eng";
         }
     }
 

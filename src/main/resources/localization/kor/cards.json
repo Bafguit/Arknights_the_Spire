@@ -8,9 +8,9 @@
       ""
     ]
   },
-  "SP Gainer": {
-    "NAME": "SP 획득",
-    "DESCRIPTION": "SP를 10 얻습니다."
+  "Cheat": {
+    "NAME": "치트",
+    "DESCRIPTION": "다 죽입니다."
   },
   "Counter Healing Mode": {
     "NAME": "반격 의료 모드",
@@ -98,7 +98,7 @@
   },
   "Rat Pack": {
     "NAME": "쥐 떼",
-    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 스페셜리스트 2턴 금지. NL 소멸."
+    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 소멸."
   },
   "Assault Order": {
     "NAME": "돌격지령β",
@@ -128,7 +128,8 @@
   },
   "Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
+    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
   },
   "Cat Scratch": {
     "NAME": "할퀴기!",
@@ -217,6 +218,13 @@
     "DESCRIPTION": "카드를 3 장 뽑습니다. NL SP !S! 자동 발동",
     "EXTENDED_DESCRIPTION": [
       "SP !S! 자동 발동 NL 카드를 3 장 뽑습니다. [R] 을 얻습니다."
+    ]
+  },
+  "Fracture Body": {
+    "NAME": "육참골단",
+    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. NL SP !S! 자동 발동",
+    "EXTENDED_DESCRIPTION": [
+      "SP !S! 자동 발동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다."
     ]
   },
   "NULL": {

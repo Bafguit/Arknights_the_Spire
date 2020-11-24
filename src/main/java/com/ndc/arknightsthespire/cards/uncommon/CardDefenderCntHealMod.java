@@ -34,7 +34,7 @@ public class CardDefenderCntHealMod extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CounterHealingMode(p, p, this.magicNumber), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CounterHealingMode(p, p, this.magicNumber)));
     }
 
     @Override
