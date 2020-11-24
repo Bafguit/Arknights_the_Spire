@@ -13,7 +13,7 @@ import javax.smartcardio.Card;
 import java.util.ArrayList;
 
 public class AbstractCardPatcher {
-    /*
+    /*]]]=
 
     @SpirePatch(
             clz= AbstractCard.class,

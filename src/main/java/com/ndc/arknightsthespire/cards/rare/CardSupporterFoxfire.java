@@ -16,10 +16,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSupporterFoxfire extends CardSPBase {
     public static final String ID = "Nebulous Foxfire";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/nff.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 3;
@@ -27,7 +23,7 @@ public class CardSupporterFoxfire extends CardSPBase {
     private static final int UPGRADE_REGEN = 1;
 
     public CardSupporterFoxfire() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, false);
         this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;

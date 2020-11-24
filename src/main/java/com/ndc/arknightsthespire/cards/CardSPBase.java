@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -39,38 +40,34 @@ public abstract class CardSPBase extends CustomCard {
     public static final Color MODIFIED_AND_RESTRICTED_COLOR = new Color(0x9B8077FF);
     private static final UIStrings uiSPStrings;
 
-    public int baseSP;
-    public int sp;
+    public int baseSP = 0;
+    public int sp = 0;
     public PositionType position;
-    public boolean isAuto;
-    public boolean isSPModified;
-    public boolean isSPModifiedForTurn; //TODO Not implemented
-    public boolean canUseSP;
-    public boolean upgradedSP;
-    public boolean onlySP;
+    public boolean isAuto = false;
+    public boolean isSPModified = false;
+    public boolean isSPModifiedForTurn = false; //TODO Not implemented
+    public boolean canUseSP = false;
+    public boolean upgradedSP = false;
+    public boolean onlySP = false;
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        this(id, name, img, cost, rawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
+    protected static CardStrings CARD_STRINGS;
+    protected static String NAME;
+    protected static String DESCRIPTION;
+    protected static String UP_DESCRIPTION;
+
+    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
+        this(id, img, cost, type, color, rarity, target, isAuto, position, hasSP, false);
     }
 
-    public CardSPBase(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
-        this.isAuto = isAuto;
-        this.position = position;
-        this.canUseSP = hasSP;
-        this.updateGlow(false);
+    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
+        this(id, CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(id),
+                img, cost, type, color, rarity, target);
     }
 
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        this(id, name, img, cost, rawDescription, type, color, rarity, target, isAuto, position, hasSP, false);
-    }
-
-    public CardSPBase(String id, String name, RegionName img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
-        this.isAuto = isAuto;
-        this.position = position;
-        this.canUseSP = hasSP;
-        this.updateGlow(false);
+    private CardSPBase(String id, CardStrings cardStrings, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+        super(id, NAME = cardStrings.NAME, img, cost, DESCRIPTION = cardStrings.DESCRIPTION, type, color, rarity, target);
+        UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+        this.updateState();
     }
 
     protected void upgradeSP(int amount) {
@@ -145,7 +142,7 @@ public abstract class CardSPBase extends CustomCard {
         if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
             SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
-            updateAllGlowInHand();
+            updateAllStateInHand();
         }
         useCard(p, m, isSpJustUsed);
         SPHandler.updateSp();
@@ -153,25 +150,29 @@ public abstract class CardSPBase extends CustomCard {
 
     public abstract void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed);
 
-    public static void updateAllGlowInHand() {
+    public static void updateAllStateInHand() {
         Iterator var1 = AbstractDungeon.player.hand.group.iterator();
         while(var1.hasNext()) {
             AbstractCard c = (AbstractCard)var1.next();
             if(c instanceof CardSPBase) {
-                ((CardSPBase) c).updateGlow(SPHandler.isSpModeEnabled());
+                ((CardSPBase) c).updateState();
             }
         }
     }
 
-    public void updateGlow(boolean isSpEnabled) {
-        boolean checkGlow = checkGlow(isSpEnabled);
+    public void updateState() {
+        updateGlow();
+    }
+
+    public void updateGlow() {
+        boolean checkGlow = checkGlow();
         if(checkGlow && !this.isGlowing) this.beginGlowing();
         if(!checkGlow && this.isGlowing) this.stopGlowing();
     }
 
-    private boolean checkGlow(boolean isSpEnabled) {
+    private boolean checkGlow() {
         System.out.println(SPHandler.getSp() + " " + canAffordSP());
-        if(isSpEnabled) {
+        if(SPHandler.isSpModeEnabled()) {
             if(canAffordSP()) {
                 this.glowColor = SP_BORDER_GLOW_COLOR;
                 System.out.println("CASE A");

@@ -15,10 +15,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardDefenderMagHammer extends CardSPBase {
     public static final String ID = "Magnetic Hammer";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/attack_beta.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;
@@ -28,7 +24,7 @@ public class CardDefenderMagHammer extends CardSPBase {
     private static final int DEFAULT_SP = 8;
 
     public CardDefenderMagHammer() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = DAMAGE;

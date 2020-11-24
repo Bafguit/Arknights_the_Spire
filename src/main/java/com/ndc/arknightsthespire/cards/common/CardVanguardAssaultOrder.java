@@ -12,10 +12,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardVanguardAssaultOrder extends CardSPBase {
     public static final String ID = "Assault Order";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/AssaultOrder.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 0;
@@ -24,7 +20,7 @@ public class CardVanguardAssaultOrder extends CardSPBase {
     private static final int ENERGY = 2;
 
     public CardVanguardAssaultOrder() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, true, POSITION, true);
         this.sp = this.baseSP = SP;

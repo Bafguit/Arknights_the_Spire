@@ -21,10 +21,6 @@ import java.util.Iterator;
 
 public class CardGuardTrueSilverSlash extends CardSPBase {
     public static final String ID = "True Silver Slash";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/TrueSilverSlash.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
@@ -33,7 +29,7 @@ public class CardGuardTrueSilverSlash extends CardSPBase {
     private static final int SP = 50;
 
     public CardGuardTrueSilverSlash() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;

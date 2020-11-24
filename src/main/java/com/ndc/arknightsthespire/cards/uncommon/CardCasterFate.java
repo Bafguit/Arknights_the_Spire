@@ -14,18 +14,13 @@ import com.ndc.arknightsthespire.power.SoulAbsorption;
 
 public class CardCasterFate extends CardSPBase {
     public static final String ID = "Fate";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "img/cards/Fate.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 3;
     private static final int UP_COST = 2;
 
     public CardCasterFate() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
 

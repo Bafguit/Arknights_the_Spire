@@ -15,17 +15,13 @@ import com.ndc.arknightsthespire.power.RapidMagazine;
 
 public class CardMedicDogmaticField extends CardSPBase {
     public static final String ID = "Dogmatic Field";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/dmf.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;
 
     public CardMedicDogmaticField() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
 

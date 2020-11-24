@@ -13,18 +13,13 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardCasterEmotionAbs extends CardSPBase {
     public static final String ID = "Emotion Absorption";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "img/cards/EmotionAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
     private static final int SP = 3;
 
     public CardCasterEmotionAbs() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = SP;

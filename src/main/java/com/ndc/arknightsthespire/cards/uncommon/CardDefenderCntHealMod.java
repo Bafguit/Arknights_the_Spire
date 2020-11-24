@@ -15,10 +15,6 @@ import com.ndc.arknightsthespire.power.CounterHealingMode;
 
 public class CardDefenderCntHealMod extends CardSPBase {
     public static final String ID = "Counter Healing Mode";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/CntHealMode.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;
@@ -26,7 +22,7 @@ public class CardDefenderCntHealMod extends CardSPBase {
     private static final int UP_SP = 1;
 
     public CardDefenderCntHealMod() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
         this.magicNumber = this.baseMagicNumber = SP;

@@ -15,10 +15,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSniperPowerfulStrike extends CardSPBase {
     public static final String ID = "Powerful Strike";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/ps.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
@@ -27,7 +23,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
     private static final int UPGRADE_SP = 2;
 
     public CardSniperPowerfulStrike() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;

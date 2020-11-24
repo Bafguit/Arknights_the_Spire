@@ -18,10 +18,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardGuardBloodOath extends CardSPBase {
     public static final String ID = "Blood Oath";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/BloodOath.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
@@ -33,7 +29,7 @@ public class CardGuardBloodOath extends CardSPBase {
     private static final int UP_HEAL = 2;
 
     public CardGuardBloodOath() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;

@@ -19,10 +19,6 @@ import javax.smartcardio.Card;
 
 public class CardGuardShadowAssault extends CardSPBase {
     public static final String ID = "Shadow Assault";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/ShadowAssault.png";
     public static final String SP_IMG_PATH = "img/cards/ShadowAssault_sp.png";
     public static final PositionType POSITION = PositionType.GUARD;
@@ -33,7 +29,7 @@ public class CardGuardShadowAssault extends CardSPBase {
     private static final int UP_SP = 30;
 
     public CardGuardShadowAssault() { //Not Using
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;

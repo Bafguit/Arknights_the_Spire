@@ -21,10 +21,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardGuardRedShift extends CardSPBase {
     public static final String ID = "Red Shift";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/RedShift.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
@@ -32,7 +28,7 @@ public class CardGuardRedShift extends CardSPBase {
     private static final int UP_DMG = 1;
 
     public CardGuardRedShift() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, false);
         this.damage = this.baseDamage = ATTACK_DMG;

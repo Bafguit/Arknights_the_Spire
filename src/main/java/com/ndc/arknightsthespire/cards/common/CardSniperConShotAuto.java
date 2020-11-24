@@ -14,10 +14,6 @@ import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSniperConShotAuto extends CardSPBase {
     public static final String ID = "Consecutive Shot: Auto";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/ConShotAuto.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
@@ -25,7 +21,7 @@ public class CardSniperConShotAuto extends CardSPBase {
     private static final int UPGRADE_PLUS_DMG = 2;
 
     public CardSniperConShotAuto() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, false, POSITION, false);
         this.damage = this.baseDamage = ATTACK_DMG;

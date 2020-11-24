@@ -16,11 +16,6 @@ import com.ndc.arknightsthespire.power.SoulAbsorption;
 
 public class CardCasterSoulAbs extends CardSPBase {
     public static final String ID = "Soul Absorption";
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    // Get object containing the strings that are displayed in the game.
-    public static final String NAME = cardStrings.NAME;
-    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UP_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "img/cards/SoulAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
@@ -28,7 +23,7 @@ public class CardCasterSoulAbs extends CardSPBase {
     private static final int UP_SP = 3;
 
     public CardCasterSoulAbs() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+        super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true);
         this.sp = this.baseSP = SP;
