@@ -44,29 +44,33 @@ public abstract class CardSPBase extends CustomCard {
     public boolean upgradedSP = false;
     public boolean onlySP = false;
 
-    public static boolean isSpJustUsed;
+    public boolean isSpJustUsed;
 
-    protected static String normalCardImage;
-    protected static String spCardImage;
+    protected String normalCardImage;
+    protected String spCardImage;
 
-    protected static CardStrings CARD_STRINGS;
-    protected static String NORMAL_NAME;
-    protected static String SP_NAME;
-    protected static String NORMAL_DESCRIPTION;
-    protected static String SP_DESCRIPTION;
-    protected static String UPGRADE_DESCRIPTION;
+    protected CardStrings CARD_STRINGS;
+    protected String NORMAL_NAME;
+    protected String SP_NAME;
+    protected String NORMAL_DESCRIPTION;
+    protected String SP_DESCRIPTION;
+    protected String UPGRADE_DESCRIPTION;
 
     public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
         this(id, img, cost, type, color, rarity, target, isAuto, position, hasSP, false);
     }
 
     public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
-        this(id, CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(id),
+        this(id, CardCrawlGame.languagePack.getCardStrings(id),
                 img, cost, type, color, rarity, target);
     }
 
     private CardSPBase(String id, CardStrings cardStrings, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
-        super(id, NORMAL_NAME = cardStrings.NAME, normalCardImage = img, cost, NORMAL_DESCRIPTION = cardStrings.DESCRIPTION, type, color, rarity, target);
+        super(id, cardStrings.NAME, img, cost, cardStrings.DESCRIPTION, type, color, rarity, target);
+        CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(id);
+        normalCardImage = img;
+        NORMAL_DESCRIPTION = cardStrings.DESCRIPTION;
+        NORMAL_NAME = cardStrings.NAME;
         if(cardStrings.EXTENDED_DESCRIPTION != null) {
             if (cardStrings.EXTENDED_DESCRIPTION.length == 1) {
                 SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
