@@ -3,9 +3,7 @@ package com.ndc.arknightsthespire.cards.common;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.ndc.arknightsthespire.CardColors;
@@ -17,8 +15,7 @@ public class CardMedicRevitalization extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Revitalization.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int UP_COST = 0;
-    private static final int REGEN = 3;
+    private static final int REGEN = 2;
 
     public CardMedicRevitalization() {
         super(ID, IMG_PATH, COST,
@@ -35,6 +32,7 @@ public class CardMedicRevitalization extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber));
+        if(this.upgraded) this.exhaust = false;
     }
 
     @Override
@@ -43,8 +41,6 @@ public class CardMedicRevitalization extends CardSPBase {
     }
 
     @Override
-    public void upgradeCard() {
-        this.upgradeBaseCost(UP_COST);
-    }
+    public void upgradeCard() { }
 
 }

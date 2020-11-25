@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.Bash;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,11 +26,13 @@ import com.ndc.arknightsthespire.CardColors;
 
 import java.util.ArrayList;
 
+import static com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+
 public class CharacterDoctor extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-    public static final int STARTING_HP = 70;
-    public static final int MAX_HP = 70;
-    public static final int STARTING_GOLD = 99;
+    public static final int STARTING_HP = 56;
+    public static final int MAX_HP = 56;
+    public static final int STARTING_GOLD = 120;
     public static final int HAND_SIZE = 5;
     private static final int ORB_SLOTS = 0;
 
@@ -178,8 +179,19 @@ public class CharacterDoctor extends CustomPlayer {
     }
 
     @Override
-    public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
-        return new AbstractGameAction.AttackEffect[0];
+    public AttackEffect[] getSpireHeartSlashEffect() {
+        return new AttackEffect[]{
+                AttackEffect.SLASH_HORIZONTAL,
+                AttackEffect.SLASH_VERTICAL,
+                AttackEffect.SLASH_HORIZONTAL,
+                AttackEffect.SLASH_VERTICAL,
+                AttackEffect.SLASH_HORIZONTAL,
+                AttackEffect.SLASH_VERTICAL,
+                AttackEffect.SLASH_HORIZONTAL,
+                AttackEffect.SLASH_VERTICAL,
+                AttackEffect.SLASH_HORIZONTAL,
+                AttackEffect.SLASH_HEAVY
+        };
     }
 
     @Override

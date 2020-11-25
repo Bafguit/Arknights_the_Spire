@@ -1,12 +1,11 @@
 package com.ndc.arknightsthespire.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.RandomAttack;
@@ -52,14 +51,16 @@ public class CardGuardShadowAssault extends CardSPBase {
             this.addToBot(new RandomAttack(this,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
 
+            this.damage = this.damage * 2;
             this.addToBot(new RandomAttack(this,
                     AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
+            this.damage = this.baseDamage;
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
                     DamageInfo.createDamageMatrix(this.damage * 2, true), this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
                     DamageInfo.createDamageMatrix(this.damage * 2, true), this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }

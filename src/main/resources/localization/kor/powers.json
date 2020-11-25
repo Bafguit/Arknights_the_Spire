@@ -60,7 +60,7 @@
       " 회복합니다."
     ]
   },
-  "Fracture Body": {
+  "Fractured Body": {
     "NAME": "육참골단",
     "DESCRIPTIONS": [
       "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다."

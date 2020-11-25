@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.ndc.arknightsthespire.power.ChargingDefense;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Omniscience extends CustomRelic {
@@ -26,7 +26,7 @@ public class Omniscience extends CustomRelic {
     public void atBattleStartPreDraw() {
         AbstractPlayer p = AbstractDungeon.player;
         flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ChargingDefense(p, p, 3), 3));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, 3), 3));
     }
 
     @Override

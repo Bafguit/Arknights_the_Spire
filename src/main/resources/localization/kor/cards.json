@@ -116,7 +116,7 @@
     "NAME": "진은참",
     "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 3 번 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL SP !S! 자동 발동",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 적 전체에게 내 덱의 가드 카드 수만큼 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
+      "SP !S! 자동 발동 NL 덱에 있는 가드 카드 1 장당 적 전체에게 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
     ]
   },
   "Volcano": {
@@ -128,7 +128,7 @@
   },
   "Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다.",
+    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다.",
     "UPGRADE_DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
   },
   "Cat Scratch": {
@@ -151,7 +151,7 @@
     "DESCRIPTION": "적 전체에게 피해를 !D! 의 2배만큼 2 번 줍니다. NL SP !S! 수동 발동",
     "EXTENDED_DESCRIPTION": [
       "적소: 절영",
-      "SP !S! 수동 발동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다. 마지막 피해는 2 배가 됩니다."
+      "SP !S! 수동 발동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다."
     ]
   },
   "Blood Oath": {
@@ -186,7 +186,8 @@
   },
   "Revitalization": {
     "NAME": "활력회복",
-    "DESCRIPTION": "재생을 !M! 얻습니다. NL 소멸"
+    "DESCRIPTION": "재생을 !M! 얻습니다. NL 소멸",
+    "UPGRADE_DESCRIPTION": "재생을 !M! 얻습니다."
   },
   "Spore Proliferation": {
     "NAME": "포자 확산",
@@ -220,12 +221,16 @@
       "SP !S! 자동 발동 NL 카드를 3 장 뽑습니다. [R] 을 얻습니다."
     ]
   },
-  "Fracture Body": {
+  "Fractured Body": {
     "NAME": "육참골단",
     "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. NL SP !S! 자동 발동",
     "EXTENDED_DESCRIPTION": [
       "SP !S! 자동 발동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다."
     ]
+  },
+  "Flexible Camouflage": {
+    "NAME": "재빠른 변장",
+    "DESCRIPTION": "힘을 !M! 얻습니다. NL 이번 턴이 끝날 때 힘을 !M! 잃습니다."
   },
   "NULL": {
     "NAME": "",

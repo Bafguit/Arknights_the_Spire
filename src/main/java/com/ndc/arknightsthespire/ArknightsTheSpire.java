@@ -8,10 +8,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.ndc.arknightsthespire.cards.basic.CardCasterEmotionAbs;
-import com.ndc.arknightsthespire.cards.basic.CardDefenderDefendUp;
-import com.ndc.arknightsthespire.cards.basic.CardSniperArmCrushShot;
-import com.ndc.arknightsthespire.cards.basic.CardSniperPowerfulStrike;
+import com.ndc.arknightsthespire.cards.basic.*;
 import com.ndc.arknightsthespire.cards.common.*;
 import com.ndc.arknightsthespire.cards.rare.*;
 import com.ndc.arknightsthespire.cards.uncommon.*;
@@ -44,10 +41,12 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     }
 
 
+
     @Override
     public void receiveEditCards() {
 
         System.out.println("ADDING CARDS");
+        BaseMod.addCard(new CardCheat());
         //Sniper
         BaseMod.addCard(new CardSniperOverload());
         BaseMod.addCard(new CardSniperPowerfulStrike());
@@ -55,6 +54,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardSniperRapidMagazine());
         BaseMod.addCard(new CardSniperConShotAuto());
         BaseMod.addCard(new CardSniperExpAreaStr());
+        BaseMod.addCard(new CardSniperFlexCamouflage());
         //Medic
         BaseMod.addCard(new CardMedicDogmaticField());
         BaseMod.addCard(new CardMedicRevitalization());

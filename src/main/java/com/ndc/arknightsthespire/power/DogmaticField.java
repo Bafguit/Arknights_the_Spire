@@ -55,9 +55,10 @@ public class DogmaticField extends AbstractPower implements CloneablePowerInterf
         if(overHeal > p.maxHealth)
         {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(overHeal - p.maxHealth)/2));
+            return healAmount - (overHeal - p.maxHealth);
         }
 
-        return healAmount - (overHeal - p.maxHealth);
+        return healAmount;
     }
 
 

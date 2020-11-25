@@ -57,15 +57,11 @@ public abstract class CardSPBase extends CustomCard {
     protected String UPGRADE_DESCRIPTION;
 
     public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        this(id, img, cost, type, color, rarity, target, isAuto, position, hasSP, false);
-    }
-
-    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, boolean onlySP) {
         this(id, CardCrawlGame.languagePack.getCardStrings(id),
-                img, cost, type, color, rarity, target);
+                img, cost, type, color, rarity, target, isAuto, position, hasSP);
     }
 
-    private CardSPBase(String id, CardStrings cardStrings, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+    private CardSPBase(String id, CardStrings cardStrings, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
         super(id, cardStrings.NAME, img, cost, cardStrings.DESCRIPTION, type, color, rarity, target);
         CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(id);
         normalCardImage = img;
@@ -80,6 +76,9 @@ public abstract class CardSPBase extends CustomCard {
             }
         }
         UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+        this.position = position;
+        this.isAuto = isAuto;
+        this.canUseSP = hasSP;
         this.updateState(false);
     }
 
