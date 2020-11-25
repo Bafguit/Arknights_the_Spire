@@ -30,9 +30,9 @@ import static com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 
 public class CharacterDoctor extends CustomPlayer {
     public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-    public static final int STARTING_HP = 56;
-    public static final int MAX_HP = 56;
-    public static final int STARTING_GOLD = 120;
+    public static final int STARTING_HP = 64;
+    public static final int MAX_HP = 64;
+    public static final int STARTING_GOLD = 112;
     public static final int HAND_SIZE = 5;
     private static final int ORB_SLOTS = 0;
 

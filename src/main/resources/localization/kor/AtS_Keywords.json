@@ -1,0 +1,100 @@
+[
+  {
+    "PROPER_NAME": "SP",
+    "NAMES": [
+      "SP",
+      "SP를",
+      "SP의",
+      "SP가"
+    ],
+    "DESCRIPTION": "SP를 소모하면 카드의 효과가 강화됩니다."
+  },
+  {
+    "PROPER_NAME": "Auto Trigger",
+    "NAMES": [
+      "자동 발동",
+      "자동 발동인"
+    ],
+    "DESCRIPTION": "#ySP가 충분하다면 자동으로 소모합니다."
+  },
+  {
+    "PROPER_NAME": "Manual Trigger",
+    "NAMES": [
+      "수동 발동",
+      "수동 발동인"
+    ],
+    "DESCRIPTION": "#ySP가 충분하다면 사용 모드 전환을 눌러 소모할 수 있습니다."
+  },
+  {
+    "PROPER_NAME": "Shelter",
+    "NAMES": [
+      "가호",
+      "가호를",
+      "가호의"
+    ],
+    "DESCRIPTION": "피해를 일정 % 적게 받습니다."
+  },
+  {
+    "PROPER_NAME": "Sniper",
+    "NAMES": [
+      "스나이퍼"
+    ],
+    "DESCRIPTION": "스나이퍼"
+  },
+  {
+    "PROPER_NAME": "Guard",
+    "NAMES": [
+      "가드"
+    ],
+    "DESCRIPTION": "가드"
+  },
+  {
+    "PROPER_NAME": "Medic",
+    "NAMES": [
+      "메딕"
+    ],
+    "DESCRIPTION": "메딕"
+  },
+  {
+    "PROPER_NAME": "Defender",
+    "NAMES": [
+      "디펜더"
+    ],
+    "DESCRIPTION": "디펜더"
+  },
+  {
+    "PROPER_NAME": "Caster",
+    "NAMES": [
+      "캐스터"
+    ],
+    "DESCRIPTION": "캐스터"
+  },
+  {
+    "PROPER_NAME": "Supporter",
+    "NAMES": [
+      "서포터"
+    ],
+    "DESCRIPTION": "서포터"
+  },
+  {
+    "PROPER_NAME": "Vanguard",
+    "NAMES": [
+      "뱅가드"
+    ],
+    "DESCRIPTION": "뱅가드"
+  },
+  {
+    "PROPER_NAME": "Specialist",
+    "NAMES": [
+      "스페셜리스트"
+    ],
+    "DESCRIPTION": "스페셜리스트"
+  },
+  {
+    "PROPER_NAME": "",
+    "NAMES": [
+      ""
+    ],
+    "DESCRIPTION": ""
+  }
+]

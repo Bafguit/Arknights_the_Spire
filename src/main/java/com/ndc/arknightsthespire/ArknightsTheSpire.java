@@ -3,11 +3,14 @@ package com.ndc.arknightsthespire;
 
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.localization.*;
 import com.ndc.arknightsthespire.cards.basic.*;
 import com.ndc.arknightsthespire.cards.common.*;
 import com.ndc.arknightsthespire.cards.rare.*;
@@ -15,6 +18,9 @@ import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
+import com.ndc.arknightsthespire.util.KeywordUtil;
+
+import java.nio.charset.StandardCharsets;
 
 import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
@@ -135,43 +141,38 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receiveEditStrings() {
-
-    }
-
-    public String checkLang() {
-        switch(Settings.language) {
-            case KOR:
-                return "kor";
-            default:
-                return "eng";
-        }
-    }
-
-    public void getLanguage(String lang) {
-        /*
-        String cardStr = Gdx.files.internal("localization/" + lang + "/cards.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStringsFile(CardStrings.class, cardStr);
-        String powerStr = Gdx.files.internal("localization/" + lang + "/powers.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStringsFile(PowerStrings.class, powerStr);
-        String relicStr = Gdx.files.internal("localization/" + lang + "/relics.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStringsFile(RelicStrings.class, relicStr);
+        String lang = getLangString();
+        BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/AtS_Powers.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
         //BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/events.json");
         //BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/potion.json");
-        String charStr = Gdx.files.internal("localization/" + lang + "/characters.json").readString(String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                charStr);
-        //BaseMod.loadCustomStringsFile(OrbStrings.class, "localization/" + lang + "/orbs.json");
-        */
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
+    }
+
+
+    private String getLangString() {
+        return Settings.language.name().toLowerCase();
     }
 
 
     @Override
     public void receiveEditKeywords() {
+        try {
+            Gson gson = new Gson();
+            String json = Gdx.files.internal("localization/" + getLangString() + "/AtS_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+            KeywordUtil[] keywords = (KeywordUtil[])gson.fromJson(json, KeywordUtil[].class);
+            if (keywords != null) {
+                int var7 = keywords.length;
+
+                for(int var8 = 0; var8 < var7; ++var8) {
+                    KeywordUtil keyword = keywords[var8];
+                    BaseMod.addKeyword("AtS", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                    System.out.println("KEYWORD INFO: "+keyword.PROPER_NAME+" / "+keyword.NAMES+" / "+keyword.DESCRIPTION);
+                }
+            }
+        } catch (Exception var10) {
+        }
     }
-/*
-    public String[] getKeyword(String id) {
-        KeywordStrings keywordStrings = CardCrawlGame.languagePack.getKeywordString(id);
-        String[] names = keywordStrings
-        return
-    }*/
 }
