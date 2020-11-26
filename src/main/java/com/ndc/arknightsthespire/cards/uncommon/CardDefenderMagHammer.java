@@ -2,7 +2,6 @@ package com.ndc.arknightsthespire.cards.uncommon;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -31,9 +30,8 @@ public class CardDefenderMagHammer extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            //addToBot(new StunMonsterAction(mo, c));
-        }
+        //for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+        //}
 
         //SP
     }
