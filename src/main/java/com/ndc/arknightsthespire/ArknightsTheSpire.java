@@ -5,6 +5,8 @@ import basemod.BaseMod;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.patches.CommonKeywordIconsPatches;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,7 +20,6 @@ import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
-import com.ndc.arknightsthespire.util.KeywordUtil;
 
 import java.nio.charset.StandardCharsets;
 
@@ -157,19 +158,17 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receiveEditKeywords() {
-        try {
-            Gson gson = new Gson();
-            String json = Gdx.files.internal("localization/" + getLangString() + "/AtS_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
-            KeywordUtil[] keywords = (KeywordUtil[])gson.fromJson(json, KeywordUtil[].class);
-            if (keywords != null) {
-                int var7 = keywords.length;
-
-                for(int var8 = 0; var8 < var7; ++var8) {
-                    KeywordUtil keyword = keywords[var8];
-                    BaseMod.addKeyword("ats", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
-                }
+        Gson gson = new Gson();
+        String json = Gdx.files.internal("localization/" + getLangString() + "/AtS_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        Keyword[] keywords = (Keyword[])gson.fromJson(json, Keyword[].class);
+        if (keywords != null) {
+            int var7 = keywords.length;
+            for(int var8 = 0; var8 < var7; ++var8) {
+                Keyword keyword = keywords[var8];
+                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
-        } catch (Exception var10) {
         }
+        BaseMod.addKeyword(new String[]{"WTF"}, "WTF is this!");
+        System.out.println();
     }
 }
