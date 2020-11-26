@@ -21,6 +21,7 @@ import com.ndc.arknightsthespire.power.DogmaticField;
 
 import java.util.Iterator;
 
+//TODO TEST
 public abstract class CardSPBase extends CustomCard {
     // 87 251 218
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
