@@ -35,6 +35,8 @@ public abstract class CardSPBase extends CustomCard {
     public static final Color MODIFIED_AND_RESTRICTED_COLOR = new Color(0x9B8077FF);
     private static final UIStrings uiSPStrings;
 
+
+    //아니 이거 왜이래
     public int baseSP = 0;
     public int sp = 0;
     public PositionType position;

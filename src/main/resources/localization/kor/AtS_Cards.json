@@ -1,10 +1,10 @@
 {
   "Overload": {
     "NAME": "어설트 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL AtS:SP !S! AtS:자동 발동",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL SP !S! 자동 발동",
     "EXTENDED_DESCRIPTION": [
       "과부하 모드",
-      "AtS:SP !S! AtS:자동 발동 NL 피해를 !D! 만큼 5 번 줍니다.",
+      "SP !S! 자동 발동 NL 피해를 !D! 만큼 5 번 줍니다.",
       ""
     ]
   },
@@ -14,19 +14,19 @@
   },
   "Counter Healing Mode": {
     "NAME": "반격 의료 모드",
-    "DESCRIPTION": "체력을 회복할 때마다 AtS:SP를 !M! 얻습니다."
+    "DESCRIPTION": "체력을 회복할 때마다 SP를 !M! 얻습니다."
   },
   "Emotion Absorption": {
     "NAME": "감정 흡수",
-    "DESCRIPTION": "AtS:SP를 !M! 얻습니다.",
-    "UPGRADE_DESCRIPTION": "AtS:SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
+    "DESCRIPTION": "SP를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
   },
   "Powerful Strike": {
     "NAME": "강타β",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동 ",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동 NL WTF",
     "EXTENDED_DESCRIPTION": [
       "강타γ",
-      "SP !S! 자동 발동 NL 피해를 !D! 의 두 배 줍니다."
+      "SP !S! 자동 발동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
     ]
   },
   "Defend Up": {
@@ -34,7 +34,7 @@
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
     "EXTENDED_DESCRIPTION": [
       "방어 강화γ",
-      "SP !S! 수동 발동 NL 방어도를 !B! 의 두 배 얻습니다."
+      "SP !S! 수동 발동 NL 방어도를 !B! 얻습니다. 얻는 방어도가 5 증가합니다."
     ]
   },
   "Charging Defense": {
@@ -53,9 +53,9 @@
   },
   "Magnetic Hammer": {
     "NAME": "마그네틱 해머",
-    "DESCRIPTION": "다음 적 턴 동안 적 전체의 힘을 1 감소시킵니다. NL SP !S! 수동 발동 ",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 적 전체에게 피해를 7 주고 다음 적 턴 동안 적 전체의 힘을 1 감소시킵니다."
+      "SP !S! 수동 발동 NL 적 전체에게 피해를 !D! 주고 기절시킵니다."
     ]
   },
   "Thorns": {
@@ -173,7 +173,7 @@
     "NAME": "테르밋 블레이드",
     "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 수동 발동",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 피해를 !D! 에 추가로 4 줍니다. 피해가 방어도를 무시합니다."
+      "SP !S! 수동 발동 NL 피해를 !D! 줍니다. 피해가 4 증가하고 방어도를 무시합니다."
     ]
   },
   "Mental Burst": {

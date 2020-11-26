@@ -30,7 +30,7 @@ public class Sanity extends CustomRelic {
             CardSPBase card = (CardSPBase) c;
             if (card.canUseSP && card.isSpJustUsed && !used) {
                 flash();
-                SPHandler.addSp(Math.round(card.baseSP / 2));
+                SPHandler.addSp((Math.round(card.baseSP / 2) <= 5 ? Math.round(card.baseSP / 2) : 5));
                 used = true;
             }
         }
