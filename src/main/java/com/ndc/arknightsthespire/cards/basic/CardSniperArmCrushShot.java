@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.ndc.arknightsthespire.CardColors;
@@ -20,6 +18,7 @@ public class CardSniperArmCrushShot extends CardSPBase {
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
+    private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 4;
     private static final int VULN = 1;
     private static final int UP_VULN = 1;
@@ -56,6 +55,7 @@ public class CardSniperArmCrushShot extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_VULN);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

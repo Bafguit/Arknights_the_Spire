@@ -1,10 +1,10 @@
 {
   "Overload": {
     "NAME": "어설트 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL AtS:SP !S! AtS:자동 발동",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL SP !S! 자동 발동",
     "EXTENDED_DESCRIPTION": [
       "과부하 모드",
-      "AtS:SP !S! AtS:자동 발동 NL 피해를 !D! 만큼 5 번 줍니다.",
+      "SP !S! 자동 발동 NL 피해를 !D! 만큼 5 번 줍니다.",
       ""
     ]
   },
@@ -14,12 +14,12 @@
   },
   "Counter Healing Mode": {
     "NAME": "반격 의료 모드",
-    "DESCRIPTION": "체력을 회복할 때마다 AtS:SP를 !M! 얻습니다."
+    "DESCRIPTION": "체력을 회복할 때마다 SP를 !M! 얻습니다."
   },
   "Emotion Absorption": {
     "NAME": "감정 흡수",
-    "DESCRIPTION": "AtS:SP를 !M! 얻습니다.",
-    "UPGRADE_DESCRIPTION": "AtS:SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
+    "DESCRIPTION": "SP를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
   },
   "Powerful Strike": {
     "NAME": "강타β",

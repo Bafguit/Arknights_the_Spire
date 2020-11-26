@@ -2,8 +2,6 @@ package com.ndc.arknightsthespire.cards.basic;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -34,8 +32,9 @@ public class CardDefenderDefendUp extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        int block = this.block * (isSpJustUsed ? 2 : 1);
-        checkGainBlock(block);
+        this.block = this.baseBlock * (isSpJustUsed ? 2 : 1);
+        checkGainBlock(this.block);
+        this.block = this.baseBlock;
 /*        if(!DogmaticField.checkGainBlock()) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         }

@@ -26,7 +26,7 @@ import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber{
 
     private static ArknightsTheSpire INSTANCE;
 

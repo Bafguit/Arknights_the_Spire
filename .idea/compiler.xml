@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ArknightsTheSpire" />
         <module name="arknights-the-spire" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="arknights-the-spire" target="1.8" />
+      <module name="arknights-the-spire (1)" target="1.8" />
+      <module name="arknights-the-spire (2)" target="1.8" />
+      <module name="arknights-the-spire (3)" target="1.8" />
       <module name="ArknightsTheSpire" target="1.8" />
+      <module name="AtS" target="1.5" />
       <module name="ExampleMod" target="1.8" />
+      <module name="untitled" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
