@@ -32,7 +32,7 @@ public class CardDefenderDefendUp extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        this.block = this.baseBlock * (isSpJustUsed ? 2 : 1);
+        int b = this.block + (isSpJustUsed ? this.baseDamage : 0);
         checkGainBlock(this.block);
         this.block = this.baseBlock;
 /*        if(!DogmaticField.checkGainBlock()) {

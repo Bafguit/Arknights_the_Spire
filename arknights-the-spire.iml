@@ -64,5 +64,14 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.evacipated.cardcrawl.mod:StSLib:1.10.0">
+        <CLASSES>
+          <root url="jar://C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

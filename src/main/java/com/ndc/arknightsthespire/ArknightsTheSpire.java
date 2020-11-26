@@ -72,7 +72,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardDefenderDefendUp());
         BaseMod.addCard(new CardDefenderChargingDef());
         BaseMod.addCard(new CardDefenderShellDef());
-        //BaseMod.addCard(new CardDefenderMagHammer());
+        BaseMod.addCard(new CardDefenderMagHammer());
         BaseMod.addCard(new CardDefenderThorns());
         BaseMod.addCard(new CardDefenderCntHealMod());
         //Caster
@@ -145,8 +145,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/AtS_Powers.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
-        //BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/events.json");
-        //BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/potion.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
     }
@@ -168,8 +166,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
                 for(int var8 = 0; var8 < var7; ++var8) {
                     KeywordUtil keyword = keywords[var8];
-                    BaseMod.addKeyword("AtS", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
-                    System.out.println("KEYWORD INFO: "+keyword.PROPER_NAME+" / "+keyword.NAMES+" / "+keyword.DESCRIPTION);
+                    BaseMod.addKeyword("ats", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
                 }
             }
         } catch (Exception var10) {
