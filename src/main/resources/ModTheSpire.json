@@ -1,0 +1,12 @@
+{
+  "modid": "ArknightsTheSpire",
+  "name": "Arknights The Spire",
+  "author_list": ["Bafguit", "Kuiprux"],
+  "description": "Arknights Mode",
+  "version": "0.1.2",
+  "sts_version": "01-14-2020",
+  "mts_version": "3.18.0",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}
+

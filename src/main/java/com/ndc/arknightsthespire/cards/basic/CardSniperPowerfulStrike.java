@@ -35,7 +35,7 @@ public class CardSniperPowerfulStrike extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        int d = this.damage + (isSpJustUsed ? this.baseDamage : 0);
+        int d = this.damage + (isSpJustUsed ? 5 : 0);
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 new DamageInfo(p, d, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY));

@@ -1,10 +1,10 @@
 {
   "ats:Overload": {
     "NAME": "어설트 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "과부하 모드",
-      "ats:SP !S! ats:자동 발동 NL 피해를 !D! 만큼 5 번 줍니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 5 번 줍니다."
     ]
   },
   "ats:Cheat": {
@@ -13,48 +13,48 @@
   },
   "ats:Counter Healing Mode": {
     "NAME": "반격 의료 모드",
-    "DESCRIPTION": "체력을 회복할 때마다 ats:SP 를 !M! 얻습니다."
+    "DESCRIPTION": "체력을 회복할 때마다 ats:SP를 !M! 얻습니다."
   },
   "ats:Emotion Absorption": {
     "NAME": "감정 흡수",
-    "DESCRIPTION": "ats:SP 를 !M! 얻습니다.",
-    "UPGRADE_DESCRIPTION": "ats:SP 를 !M! 얻습니다. 카드를 1 장 뽑습니다."
+    "DESCRIPTION": "ats:SP를 !M! 얻습니다.",
+    "UPGRADE_DESCRIPTION": "ats:SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
   },
   "ats:Powerful Strike": {
     "NAME": "강타β",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "강타γ",
-      "ats:SP !S! ats:자동 발동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
     ]
   },
   "ats:Defend Up": {
     "NAME": "방어 강화β",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동 발동 ",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
       "방어 강화γ",
-      "ats:SP !S! ats:수동 발동 NL 방어도를 !B! 얻습니다. 얻는 방어도가 5 증가합니다."
+      "ats:SP !S! ats:수동 NL 방어도를 !B! 얻습니다. 얻는 방어도가 5 증가합니다."
     ]
   },
   "ats:Charging Defense": {
     "NAME": "차지 디펜스",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:자동 발동 ",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 방어도를 !B! 얻습니다. 다음 피해를 받지 않습니다."
+      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻습니다. 다음 피해를 받지 않습니다."
     ]
   },
   "ats:Shell Defense": {
     "NAME": "쉘 디펜스",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동 발동 ",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 발동 NL 방어도를 !B! 얻습니다. 재생을 2 얻습니다."
+      "ats:SP !S! ats:수동 NL 방어도를 !B! 얻습니다. 재생을 2 얻습니다."
     ]
   },
   "ats:Magnetic Hammer": {
     "NAME": "마그네틱 해머",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동 발동 ",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 발동 NL 적 전체에게 피해를 !D! 주고 기절시킵니다."
+      "ats:SP !S! ats:수동 NL 적 전체에게 피해를 !D! 주고 기절시킵니다."
     ]
   },
   "ats:Thorns": {
@@ -63,9 +63,9 @@
   },
   "ats:Armor Crushing Shot": {
     "NAME": "쇄갑격",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 피해를 !D! 줍니다. NL 취약을 !M! 부여합니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. NL 취약을 !M! 부여합니다."
     ]
   },
   "ats:Dogmatic Field": {
@@ -81,12 +81,12 @@
   },
   "ats:Sunburst": {
     "NAME": "화염 폭발",
-    "DESCRIPTION": "ats:SP !S! ats:자동 발동 NL 적 전체에게 피해를 !D! 줍니다. 방어도가 있다면 추가로 피해를 2 줍니다. NL ats:화상을 !M! 부여합니다.",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 적 전체에게 피해를 !D! 줍니다. 방어도가 있다면 추가로 피해를 2 줍니다. NL ats:화상을 !M! 부여합니다."
   },
   "ats:Soul Absorption": {
     "NAME": "영혼 착취",
-    "DESCRIPTION": "ats:SP !S! ats:자동 발동 NL 이번 턴에 사용하는 다음 ats:캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
-    "UPGRADE_DESCRIPTION": "ats:SP !S! ats:자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 사용하는 다음 ats:캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
   },
   "ats:Burst Stimulant: Durian": {
     "NAME": "폭발제-두리안맛",
@@ -98,26 +98,26 @@
   },
   "ats:Assault Order": {
     "NAME": "돌격지령β",
-    "DESCRIPTION": "ats:SP !S! ats:자동 발동 NL [R] [R] 을 얻습니다."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL [R] [R] 을 얻습니다."
   },
   "ats:Support Order": {
     "NAME": "지원지령β",
-    "DESCRIPTION": "ats:SP !S! ats:자동 발동 NL ats:지령을 2 얻습니다. NL ats:뱅가드 2턴 금지.",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL ats:지령을 2 얻습니다.",
     "EXTENDED_DESCRIPTION": [
       "지원지령γ",
-      "ats:SP !S! ats:자동 발동 NL 지령을 2 얻습니다. NL ats:뱅가드 2턴 금지."
+      "ats:SP !S! ats:자동 NL ats:지령을 2 얻습니다."
     ]
   },
   "ats:True Silver Slash": {
     "NAME": "진은참",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 3 번 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 3 번 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 덱에 있는 ats:가드 카드 1 장당 적 전체에게 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
+      "ats:SP !S! ats:자동 NL 덱에 있는 ats:가드 카드 1 장당 적 전체에게 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
     ]
   },
   "ats:Volcano": {
     "NAME": "화산",
-    "DESCRIPTION": "ats:SP !S! ats:자동 발동 NL 적 전체에게 ats:캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 적 전체에게 ats:캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸."
   },
   "ats:Nebulous Foxfire": {
     "NAME": "희미한 여우불",
@@ -126,9 +126,9 @@
   },
   "ats:Cat Scratch": {
     "NAME": "할퀴기!",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 피해를 !D! 주고 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 주고 약화를 !M! 부여합니다."
     ]
   },
   "ats:Seething Burst": {
@@ -141,17 +141,17 @@
   },
   "ats:Shadow Assault": {
     "NAME": "적소: 발도",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 의 2배만큼 2 번 줍니다. NL ats:SP !S! ats:수동 발동",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 의 2배만큼 2 번 줍니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
       "적소: 절영",
-      "ats:SP !S! ats:수동 발동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다."
+      "ats:SP !S! ats:수동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다."
     ]
   },
   "ats:Blood Oath": {
     "NAME": "흡혈",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 피해를 !D! 줍니다. 체력을 !M! 회복합니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 체력을 !M! 회복합니다."
     ]
   },
   "ats:Consecutive Shot: Auto": {
@@ -164,14 +164,14 @@
   },
   "ats:Thermite Blade": {
     "NAME": "테르밋 블레이드",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:수동 발동",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 발동 NL 피해를 !D! 줍니다. 피해가 4 증가하고 방어도를 무시합니다."
+      "ats:SP !S! ats:수동 NL 피해를 !D! 줍니다. 피해가 4 증가하고 방어도를 무시합니다."
     ]
   },
   "ats:Mental Burst": {
     "NAME": "스피릿 버스트",
-    "DESCRIPTION": "ats:SP !S! ats:자동 발동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 줍니다."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 줍니다."
   },
   "ats:Fate": {
     "NAME": "운명",
@@ -184,16 +184,16 @@
   },
   "ats:Spore Proliferation": {
     "NAME": "포자 확산",
-    "DESCRIPTION": "약화를 !M! 부여합니다. NL ats:SP !S! ats:수동 발동",
+    "DESCRIPTION": "약화를 !M! 부여합니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 발동 NL 적이 가진 모든 효과를 제거합니다. 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:수동 NL 적이 가진 모든 효과를 제거합니다. 약화를 !M! 부여합니다."
     ]
   },
   "ats:Encircling Forest": {
     "NAME": "삼회",
-    "DESCRIPTION": "ats:가호를 !M! 얻습니다. NL ats:SP !S! ats:수동 발동",
+    "DESCRIPTION": "ats:가호를 !M! 얻습니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 발동 NL ats:가호를 !M! 얻습니다. ats:가호의 효과가 두배로 증가합니다."
+      "ats:SP !S! ats:수동 NL ats:가호를 !M! 얻습니다. ats:가호의 효과가 두배로 증가합니다."
     ]
   },
   "ats:Soul Rend": {
@@ -202,23 +202,23 @@
   },
   "ats:Chain Hook": {
     "NAME": "체인 훅",
-    "DESCRIPTION": "피해를 !D! 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "피해를 !D! 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 피해를 !D! 줍니다. 카드를 2 장 뽑습니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 카드를 2 장 뽑습니다."
     ]
   },
   "ats:Hook Shot": {
     "NAME": "갈고리 발사",
-    "DESCRIPTION": "카드를 3 장 뽑습니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "카드를 3 장 뽑습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 카드를 3 장 뽑습니다. [R] 을 얻습니다."
+      "ats:SP !S! ats:자동 NL 카드를 3 장 뽑습니다. [R] 을 얻습니다."
     ]
   },
   "ats:Fractured Body": {
     "NAME": "육참골단",
-    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. NL ats:SP !S! ats:자동 발동",
+    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 발동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다."
+      "ats:SP !S! ats:자동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다."
     ]
   },
   "ats:Flexible Camouflage": {

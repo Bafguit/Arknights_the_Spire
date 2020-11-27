@@ -1,11 +1,10 @@
 {
   "ats:Overload": {
     "NAME": "어설트 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL SP !S! 자동발동",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동발동",
     "EXTENDED_DESCRIPTION": [
       "Overload",
-      "SP !S! 자동발동 NL 피해를 !D! 만큼 5 번 줍니다.",
-      ""
+      "ats:SP !S! ats:자동발동 NL 피해를 !D! 만큼 5 번 줍니다."
     ]
   },
   "ats:Cheat": {
@@ -14,12 +13,12 @@
   },
   "ats:Counter Healing Mode": {
     "NAME": "반격 의료 모드",
-    "DESCRIPTION": "Gain !M! SP when healed."
+    "DESCRIPTION": "Gain !M! ats:SP when healed."
   },
   "ats:Emotion Absorption": {
     "NAME": "Emotion Absorption",
-    "DESCRIPTION": "Gain 3 ats:SP.",
-    "UPGRADE_DESCRIPTION": "Gain 3 ats:SP. NL Draw a card."
+    "DESCRIPTION": "Gain !M! ats:SP.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ats:SP. NL Draw a card."
   },
   "ats:Powerful Strike": {
     "NAME": "Powerful Strike",
@@ -92,7 +91,7 @@
     "DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
     "UPGRADE_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
   },
-  "ats:Burst Stimulant: Durian": {
+  "ats:Burst Stimulant Durian": {
     "NAME": "폭발제-두리안맛",
     "DESCRIPTION": "피해를 3 만큼 5 번 받습니다. NL 이번 턴 동안 힘을 5 얻고 모든 카드의 SP 소모가 3 감소합니다. NL 방어도에는 피해가 2로 감소합니다. NL 소멸."
   },
@@ -106,11 +105,7 @@
   },
   "ats:Support Order": {
     "NAME": "지원지령β",
-    "DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지.",
-    "EXTENDED_DESCRIPTION": [
-      "지원지령γ",
-      "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지."
-    ]
+    "DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지."
   },
   "ats:True Silver Slash": {
     "NAME": "진은참",
@@ -197,10 +192,10 @@
     ]
   },
   "ats:Encircling Forest": {
-    "NAME": "삼회",
-    "DESCRIPTION": "가호를 !M! 얻습니다. NL SP !S! 수동 발동",
+    "NAME": "Encircling Forest",
+    "DESCRIPTION": "Gain !M! ats:Shelter. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 가호를 !M! 얻습니다. 가호의 효과가 두배로 증가합니다."
+      "ats:SP !S! ats:Manual NL Gain !M! ats:Shelter. NL Effect of ats:Shelter is doubled."
     ]
   },
   "ats:Soul Rend": {

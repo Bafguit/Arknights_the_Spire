@@ -64,7 +64,7 @@ public class SoulAbsorption extends AbstractPower implements CloneablePowerInter
         if(!target.isPlayer && damageAmount > 0) {
             if(!isUped && lastCard.position == PositionType.CASTER && info.owner.isPlayer) CardSPBase.checkGainBlock(damageAmount);
             else if(isUped) CardSPBase.checkGainBlock(damageAmount);
-            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Soul Absorption"));
+            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "ats:Soul Absorption"));
         }
 
     }
@@ -78,7 +78,7 @@ public class SoulAbsorption extends AbstractPower implements CloneablePowerInter
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if(isPlayer) addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Soul Absorption"));
+        if(isPlayer) addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "ats:Soul Absorption"));
     }
 
     @Override

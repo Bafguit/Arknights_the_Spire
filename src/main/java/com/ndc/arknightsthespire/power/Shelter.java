@@ -1,5 +1,6 @@
 package com.ndc.arknightsthespire.power;
 
+import basemod.devcommands.power.Power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -57,9 +58,9 @@ public class Shelter extends AbstractPower implements CloneablePowerInterface {
     @Override
     public void atStartOfTurn() {
         if (this.amount > 1)
-            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, "Shelter", 1));
+            addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, "ats:Shelter", 1));
         else if (this.amount == 1) {
-            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "Shelter"));
+            addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "ats:Shelter"));
         }
     }
 

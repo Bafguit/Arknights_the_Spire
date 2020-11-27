@@ -150,15 +150,12 @@ public class ToggleSpButton {
         if (this.holdProgress == 0.4F && !this.isDisabled && !AbstractDungeon.isScreenUp) {
             this.disable();
             this.holdProgress = 0.0F;
-            System.out.println("TEST111");
         }
 
         if ((!Settings.USE_LONG_PRESS || !Settings.isControllerMode && !InputActionSet.endTurn.isPressed()) && (this.hb.clicked || (InputActionSet.endTurn.isJustPressed() || CInputActionSet.proceed.isJustPressed()) && !this.isDisabled && this.enabled)) {
             this.hb.clicked = false;
-            System.out.println("TEST222");
             if (!this.isDisabled && !AbstractDungeon.isScreenUp) {
                 //When Clicked
-                System.out.println("TEST333");
 
                 SPHandler.toggleSpMode();
                 updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);

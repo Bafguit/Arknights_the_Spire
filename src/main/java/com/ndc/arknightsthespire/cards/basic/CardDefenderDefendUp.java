@@ -32,16 +32,8 @@ public class CardDefenderDefendUp extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        int b = this.block + (isSpJustUsed ? this.baseDamage : 0);
-        checkGainBlock(this.block);
-        this.block = this.baseBlock;
-/*        if(!DogmaticField.checkGainBlock()) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
-        }*/
-        //SP Effect
+        int b = this.block + (isSpJustUsed ? 5 : 0);
+        checkGainBlock(b);
     }
 
     @Override
