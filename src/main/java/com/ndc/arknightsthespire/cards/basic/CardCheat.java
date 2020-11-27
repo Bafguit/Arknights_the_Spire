@@ -21,7 +21,7 @@ public class CardCheat extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.SPECIAL, CardTarget.ALL_ENEMY, false, POSITION, false);
 
-        this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
+        this.setBackgroundTexture("img/512/beta.png", "img/1024/beta.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 

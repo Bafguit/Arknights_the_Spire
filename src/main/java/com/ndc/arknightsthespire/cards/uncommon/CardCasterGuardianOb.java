@@ -1,32 +1,34 @@
 package com.ndc.arknightsthespire.cards.uncommon;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.RandomAttack;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
-public class CardCasterMentalBurst extends CardSPBase {
-    public static final String ID = "ats:Mental Burst";
-    public static final String IMG_PATH = "img/cards/MentalBurst.png";
+import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
+import static com.megacrit.cardcrawl.cards.DamageInfo.*;
+
+public class CardCasterGuardianOb extends CardSPBase {
+    public static final String ID = "ats:Guardian Obelisk";
+    public static final String IMG_PATH = "img/cards/GuardianObelisk.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 10;
+    private static final int UP_DAMAGE = 5;
     private static final int SP = 20;
-    private static final int HIT = 6;
-    private static final int UP_HIT = 2;
 
-    public CardCasterMentalBurst() {
+    public CardCasterGuardianOb() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, true);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = HIT;
         this.sp = this.baseSP = SP;
 
         this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
@@ -38,20 +40,19 @@ public class CardCasterMentalBurst extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(isSpJustUsed) {
-            for (int forI = 0; forI < this.magicNumber; forI++) {
-                this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
-            }
+            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageType.NORMAL), AttackEffect.BLUNT_HEAVY));
+            addToBot(new StunMonsterAction(m, p, 1));
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardCasterMentalBurst();
+        return new CardCasterGuardianOb();
     }
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_HIT);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

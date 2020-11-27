@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.mod.stslib.patches.CommonKeywordIconsPatches;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -31,6 +32,8 @@ import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber{
 
     private static ArknightsTheSpire INSTANCE;
+
+
 
     public ArknightsTheSpire(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
@@ -60,6 +63,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardSniperConShotAuto());
         BaseMod.addCard(new CardSniperExpAreaStr());
         BaseMod.addCard(new CardSniperFlexCamouflage());
+        BaseMod.addCard(new CardSniperPoisonSpread());
         //Medic
         BaseMod.addCard(new CardMedicDogmaticField());
         BaseMod.addCard(new CardMedicRevitalization());
@@ -67,6 +71,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardSupporterFoxfire());
         BaseMod.addCard(new CardSupporterSporePro());
         BaseMod.addCard(new CardSupporterEncForest());
+        BaseMod.addCard(new CardSupporterCurseDoll());
         //Defender
         BaseMod.addCard(new CardDefenderDefendUp());
         BaseMod.addCard(new CardDefenderChargingDef());
@@ -79,10 +84,12 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardCasterMentalBurst());
         BaseMod.addCard(new CardCasterSoulAbs());
         BaseMod.addCard(new CardCasterFate());
+        BaseMod.addCard(new CardCasterGuardianOb());
         //Specialist
         BaseMod.addCard(new CardSpecialistRatPack());
         BaseMod.addCard(new CardSpecialistChainHook());
         BaseMod.addCard(new CardSpecialistHookShot());
+        BaseMod.addCard(new CardSpecialistShadowRaid());
         //Guard
         BaseMod.addCard(new CardGuardCatScratch());
         BaseMod.addCard(new CardGuardRedShift());

@@ -225,6 +225,28 @@
     "NAME": "재빠른 변장",
     "DESCRIPTION": "힘을 !M! 얻습니다. NL 이번 턴이 끝날 때 힘을 !M! 잃습니다."
   },
+  "ats:Poison Spread": {
+    "NAME": "독액 살포",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 중독을 !M! 부여합니다."
+    ]
+  },
+  "ats:Curse Doll": {
+    "NAME": "저주인형",
+    "DESCRIPTION": "약화를 !M! 부여합니다. 취약을 !M! 부여합니다."
+  },
+  "ats:Shadow Raid": {
+    "NAME": "그림자 방패",
+    "DESCRIPTION": "민첩을 !M! 얻습니다. 이번 턴이 끝날 때 민첩을 !M! 잃습니다. NL 소멸"
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "방어 오벨리스크",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다.",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다."
+    ]
+  },
   "ats:NULL": {
     "NAME": "",
     "DESCRIPTION": "",

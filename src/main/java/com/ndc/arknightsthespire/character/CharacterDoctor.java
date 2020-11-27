@@ -3,9 +3,11 @@
 package com.ndc.arknightsthespire.character;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -29,6 +31,14 @@ import java.util.ArrayList;
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 
 public class CharacterDoctor extends CustomPlayer {
+
+    @Override
+    public void renderPlayerImage(SpriteBatch sb) {
+        sr.setPremultipliedAlpha(false);
+        super.renderPlayerImage(sb);
+        sr.setPremultipliedAlpha(true);
+    }
+
     public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
     public static final int STARTING_HP = 64;
     public static final int MAX_HP = 64;
@@ -43,8 +53,8 @@ public class CharacterDoctor extends CustomPlayer {
     public static final String MY_CHARACTER_SHOULDER_2 = "img/char/shoulder2.png"; // campfire pose
     public static final String MY_CHARACTER_SHOULDER_1 = "img/char/shoulder1.png"; // another campfire pose
     public static final String MY_CHARACTER_CORPSE = "img/char/corpse.png"; // dead corpse
-    public static final String MY_CHARACTER_SKELETON_ATLAS = "img/char/skeleton.atlas"; // spine animation atlas
-    public static final String MY_CHARACTER_SKELETON_JSON = "img/char/skeleton.json"; // spine animation json
+    public static final String MY_CHARACTER_SKELETON_ATLAS = "img/char/spine/doctor_anim.atlas"; // spine animation atlas
+    public static final String MY_CHARACTER_SKELETON_JSON = "img/char/spine/doctor_anim.json"; // spine animation json
     public static final String[] orbTextures = {
             "img/char/orb/layer1.png",
             "img/char/orb/layer2.png",
@@ -65,8 +75,8 @@ public class CharacterDoctor extends CustomPlayer {
     }
 
     public CharacterDoctor (String name) {
-        super(name, ATSCharacterEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpriterAnimation(
-                "img/char/Spriter/theDefaultAnimation.scml"));
+        super(name, ATSCharacterEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpineAnimation(
+                MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1F));
 
         this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
         this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
@@ -78,8 +88,11 @@ public class CharacterDoctor extends CustomPlayer {
 
         loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.0F); // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
 
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "animation", true);
+        /*
+        AnimationState.TrackEntry e = this.state.setAnimation(0, MY_CHARACTER_SKELETON_JSON, true);
         e.setTime(e.getEndTime() * MathUtils.random());
+         */
+
     }
 
     public ArrayList<String> getStartingDeck() { // starting deck 'nuff said

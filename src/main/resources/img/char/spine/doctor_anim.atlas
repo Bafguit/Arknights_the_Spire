@@ -1,0 +1,48 @@
+
+doctor_anim.png
+size: 256,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+d_leg
+  rotate: false
+  xy: 1, 275
+  size: 106, 127
+  orig: 106, 127
+  offset: 0, 0
+  index: -1
+d_body
+  rotate: false
+  xy: 1, 1
+  size: 112, 272
+  orig: 112, 272
+  offset: 0, 0
+  index: -1
+d_chest
+  rotate: false
+  xy: 109, 275
+  size: 88, 113
+  orig: 88, 113
+  offset: 0, 0
+  index: -1
+d_arm_2
+  rotate: false
+  xy: 1, 404
+  size: 40, 55
+  orig: 40, 55
+  offset: 0, 0
+  index: -1
+d_arm
+  rotate: false
+  xy: 192, 390
+  size: 36, 80
+  orig: 36, 80
+  offset: 0, 0
+  index: -1
+d_head
+  rotate: false
+  xy: 109, 390
+  size: 81, 74
+  orig: 81, 74
+  offset: 0, 0
+  index: -1

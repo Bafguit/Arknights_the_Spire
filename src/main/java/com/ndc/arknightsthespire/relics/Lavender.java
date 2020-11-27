@@ -12,7 +12,7 @@ public class Lavender extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Lavender.png");
 
     public Lavender() {
-        super(ID, IMG, RelicTier.COMMON, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override
