@@ -10,7 +10,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Sanity extends CustomRelic {
-    public static final String ID = "Sanity";
+    public static final String ID = "ats:Sanity";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Sanity.png");
 
     public boolean used;

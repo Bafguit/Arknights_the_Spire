@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Omniscience extends CustomRelic {
-    public static final String ID = "Omniscience";
+    public static final String ID = "ats:Omniscience";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Omniscience.png");
 
     public Omniscience() {

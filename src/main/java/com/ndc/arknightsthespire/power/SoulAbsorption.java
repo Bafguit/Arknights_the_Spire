@@ -22,7 +22,7 @@ public class SoulAbsorption extends AbstractPower implements CloneablePowerInter
     public AbstractCreature source;
     public boolean isUped;
 
-    public static final String POWER_ID = "Soul Absorption";
+    public static final String POWER_ID = "ats:Soul Absorption";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

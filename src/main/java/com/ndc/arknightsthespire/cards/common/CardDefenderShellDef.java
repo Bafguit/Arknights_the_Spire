@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardDefenderShellDef extends CardSPBase {
-    public static final String ID = "Shell Defense";
+    public static final String ID = "ats:Shell Defense";
     public static final String IMG_PATH = "img/cards/sdef.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;

@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSniperExpAreaStr extends CardSPBase {
-    public static final String ID = "Explosion Area Strengthen";
+    public static final String ID = "ats:Explosion Area Strengthen";
     public static final String IMG_PATH = "img/cards/ExpAreaStr.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;

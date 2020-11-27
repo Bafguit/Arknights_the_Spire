@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Lavender extends CustomRelic {
-    public static final String ID = "Lavender";
+    public static final String ID = "ats:Lavender";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Lavender.png");
 
     public Lavender() {

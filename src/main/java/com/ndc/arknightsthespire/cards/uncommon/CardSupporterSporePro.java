@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSupporterSporePro extends CardSPBase {
-    public static final String ID = "Spore Proliferation";
+    public static final String ID = "ats:Spore Proliferation";
     public static final String IMG_PATH = "img/cards/SporeProliferation.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 1;

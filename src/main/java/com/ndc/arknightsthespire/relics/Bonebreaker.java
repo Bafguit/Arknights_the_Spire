@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Bonebreaker extends CustomRelic {
-    public static final String ID = "Bonebreaker";
+    public static final String ID = "ats:Bonebreaker";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Bonebreaker.png");
 
     public Bonebreaker() {

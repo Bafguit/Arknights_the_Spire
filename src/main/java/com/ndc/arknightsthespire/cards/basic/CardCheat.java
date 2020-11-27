@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardCheat extends CardSPBase {
-    public static final String ID = "Cheat";
+    public static final String ID = "ats:Cheat";
     public static final String IMG_PATH = "img/cards/attack_beta.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;

@@ -7,7 +7,7 @@ import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class AbilityAura extends CustomRelic {
-    public static final String ID = "Ability Aura";
+    public static final String ID = "ats:Ability Aura";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/AbilityAura.png");
 
     public AbilityAura() {

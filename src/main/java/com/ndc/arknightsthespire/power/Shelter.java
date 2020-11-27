@@ -19,7 +19,7 @@ public class Shelter extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
     public int toMulti = 1;
 
-    public static final String POWER_ID = "Shelter";
+    public static final String POWER_ID = "ats:Shelter";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

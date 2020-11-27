@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSniperFlexCamouflage extends CardSPBase {
-    public static final String ID = "Flexible Camouflage";
+    public static final String ID = "ats:Flexible Camouflage";
     public static final String IMG_PATH = "img/cards/FlexibleCamouflage.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 0;

@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardCasterEmotionAbs extends CardSPBase {
-    public static final String ID = "Emotion Absorption";
+    public static final String ID = "ats:Emotion Absorption";
     public static final String IMG_PATH = "img/cards/EmotionAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;

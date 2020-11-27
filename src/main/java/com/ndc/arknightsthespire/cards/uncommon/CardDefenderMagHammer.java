@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardDefenderMagHammer extends CardSPBase {
-    public static final String ID = "Magnetic Hammer";
+    public static final String ID = "ats:Magnetic Hammer";
     public static final String IMG_PATH = "img/cards/attack_beta.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;

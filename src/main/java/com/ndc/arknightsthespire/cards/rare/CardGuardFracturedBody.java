@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.FracturedBody;
 
 public class CardGuardFracturedBody extends CardSPBase {
-    public static final String ID = "Fractured Body";
+    public static final String ID = "ats:Fractured Body";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;

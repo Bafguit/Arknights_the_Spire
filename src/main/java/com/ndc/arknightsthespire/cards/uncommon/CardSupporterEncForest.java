@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.Shelter;
 
 public class CardSupporterEncForest extends CardSPBase {
-    public static final String ID = "Encircling Forest";
+    public static final String ID = "ats:Encircling Forest";
     public static final String IMG_PATH = "img/cards/EncirclingForest.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 1;

@@ -17,7 +17,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 public class RapidMagazine extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
-    public static final String POWER_ID = "Rapid Magazine";
+    public static final String POWER_ID = "ats:Rapid Magazine";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

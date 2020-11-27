@@ -8,7 +8,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardDefenderDefendUp extends CardSPBase {
-    public static final String ID = "Defend Up";
+    public static final String ID = "ats:Defend Up";
     public static final String IMG_PATH = "img/cards/defend.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;

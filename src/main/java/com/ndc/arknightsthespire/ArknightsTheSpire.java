@@ -20,6 +20,7 @@ import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
+import com.sun.org.apache.xpath.internal.compiler.Keywords;
 
 import java.nio.charset.StandardCharsets;
 
@@ -47,9 +48,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         CardColors.initialize();
     }
 
-
-
-    @Override
     public void receiveEditCards() {
 
         System.out.println("ADDING CARDS");
@@ -100,7 +98,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         System.out.println("DONE");
     }
 
-    @Override
     public void receivePostInitialize() {
         System.out.println("POSTINIT");
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
@@ -108,7 +105,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
     }
 
-    @Override
     public void receiveEditCharacters() {
         System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
@@ -118,7 +114,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         System.out.println("DONE");
     }
 
-    @Override
     public void receiveEditRelics() {
         System.out.println("ADDING RELICS");
 
@@ -140,7 +135,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     }
 
 
-    @Override
     public void receiveEditStrings() {
         String lang = getLangString();
         BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
@@ -156,7 +150,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     }
 
 
-    @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
         String json = Gdx.files.internal("localization/" + getLangString() + "/AtS_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
@@ -165,10 +158,10 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
             int var7 = keywords.length;
             for(int var8 = 0; var8 < var7; ++var8) {
                 Keyword keyword = keywords[var8];
-                BaseMod.addKeyword(keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                BaseMod.addKeyword("ats", keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+
             }
         }
-        BaseMod.addKeyword(new String[]{"WTF"}, "WTF is this!");
         System.out.println();
     }
 }

@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSniperArmCrushShot extends CardSPBase {
-    public static final String ID = "Armor Crushing Shot";
+    public static final String ID = "ats:Armor Crushing Shot";
     public static final String IMG_PATH = "img/cards/acs.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;

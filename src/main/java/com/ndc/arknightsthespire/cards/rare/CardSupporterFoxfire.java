@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSupporterFoxfire extends CardSPBase {
-    public static final String ID = "Nebulous Foxfire";
+    public static final String ID = "ats:Nebulous Foxfire";
     public static final String IMG_PATH = "img/cards/nff.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 2;

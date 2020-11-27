@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardGuardShadowAssault extends CardSPBase {
-    public static final String ID = "Shadow Assault";
+    public static final String ID = "ats:Shadow Assault";
     public static final String IMG_PATH = "img/cards/ShadowAssault.png";
     public static final String SP_IMG_PATH = "img/cards/ShadowAssault_sp.png";
     public static final PositionType POSITION = PositionType.GUARD;

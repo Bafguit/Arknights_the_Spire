@@ -9,7 +9,7 @@ import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Berate extends CustomRelic {
-    public static final String ID = "Berate";
+    public static final String ID = "ats:Berate";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Berate.png");
 
     public Berate() {

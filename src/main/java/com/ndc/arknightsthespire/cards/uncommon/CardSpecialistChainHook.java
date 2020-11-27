@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSpecialistChainHook extends CardSPBase {
-    public static final String ID = "Chain Hook";
+    public static final String ID = "ats:Chain Hook";
     public static final String IMG_PATH = "img/cards/ChainHook.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;

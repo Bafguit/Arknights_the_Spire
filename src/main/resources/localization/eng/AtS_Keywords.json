@@ -1,0 +1,86 @@
+[
+  {
+    "PROPER_NAME": "SP",
+    "NAMES": [
+      "sp"
+    ],
+    "DESCRIPTION": "Use enhanced effect when you consume #ySP."
+  },
+  {
+    "PROPER_NAME": "Auto",
+    "NAMES": [
+      "auto"
+    ],
+    "DESCRIPTION": "Consume automatically if you have enough #ySP."
+  },
+  {
+    "PROPER_NAME": "Manual",
+    "NAMES": [
+      "manual"
+    ],
+    "DESCRIPTION": "You can consume by Mode Change Button if you have enough #ySP."
+  },
+  {
+    "PROPER_NAME": "Shelter",
+    "NAMES": [
+      "shelter"
+    ],
+    "DESCRIPTION": "Reduced Damage N%."
+  },
+  {
+    "PROPER_NAME": "Sniper",
+    "NAMES": [
+      "sniper"
+    ],
+    "DESCRIPTION": "Sniper"
+  },
+  {
+    "PROPER_NAME": "Guard",
+    "NAMES": [
+      "guard"
+    ],
+    "DESCRIPTION": "Guard"
+  },
+  {
+    "PROPER_NAME": "Medic",
+    "NAMES": [
+      "medic"
+    ],
+    "DESCRIPTION": "Medic"
+  },
+  {
+    "PROPER_NAME": "Defender",
+    "NAMES": [
+      "defender"
+    ],
+    "DESCRIPTION": "Defender"
+  },
+  {
+    "PROPER_NAME": "Caster",
+    "NAMES": [
+      "caster"
+    ],
+    "DESCRIPTION": "Caster"
+  },
+  {
+    "PROPER_NAME": "Supporter",
+    "NAMES": [
+      "supporter"
+    ],
+    "DESCRIPTION": "Supporter"
+  },
+  {
+    "PROPER_NAME": "Vanguard",
+    "NAMES": [
+      "vanguard"
+    ],
+    "DESCRIPTION": "Vanguard"
+  },
+  {
+    "PROPER_NAME": "Specialist",
+    "NAMES": [
+      "specialist"
+    ],
+    "DESCRIPTION": "Specialist"
+  }
+]

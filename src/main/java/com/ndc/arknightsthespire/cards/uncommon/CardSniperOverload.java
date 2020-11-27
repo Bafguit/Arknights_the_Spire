@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardSniperOverload extends CardSPBase {
-    public static final String ID = "Overload";
+    public static final String ID = "ats:Overload";
     public static final String IMG_PATH = "img/cards/overload.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;

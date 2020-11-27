@@ -59,7 +59,7 @@ public class CharacterDoctor extends CustomPlayer {
             "img/char/orb/layer5d.png",};
 
     static {
-        characterStrings = CardCrawlGame.languagePack.getCharacterString("Doctor");
+        characterStrings = CardCrawlGame.languagePack.getCharacterString("ats:Doctor");
         NAMES = characterStrings.NAMES;
         TEXT = characterStrings.TEXT;
     }
@@ -84,23 +84,23 @@ public class CharacterDoctor extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() { // starting deck 'nuff said
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("Powerful Strike");
-        retVal.add("Powerful Strike");
-        retVal.add("Powerful Strike");
-        retVal.add("Armor Crushing Shot");
-        retVal.add("Defend Up");
-        retVal.add("Defend Up");
-        retVal.add("Defend Up");
-        retVal.add("Defend Up");
-        retVal.add("Emotion Absorption");
-        retVal.add("Emotion Absorption");
+        retVal.add("ats:Powerful Strike");
+        retVal.add("ats:Powerful Strike");
+        retVal.add("ats:Powerful Strike");
+        retVal.add("ats:Armor Crushing Shot");
+        retVal.add("ats:Defend Up");
+        retVal.add("ats:Defend Up");
+        retVal.add("ats:Defend Up");
+        retVal.add("ats:Defend Up");
+        retVal.add("ats:Emotion Absorption");
+        retVal.add("ats:Emotion Absorption");
         return retVal;
     }
 
     public ArrayList<String> getStartingRelics() { // starting relics - also simple
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("Sanity");
-        UnlockTracker.markRelicAsSeen("Sanity");
+        retVal.add("ats:Sanity");
+        UnlockTracker.markRelicAsSeen("ats:Sanity");
         return retVal;
     }
 

@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.CounterHealingMode;
 
 public class CardDefenderCntHealMod extends CardSPBase {
-    public static final String ID = "Counter Healing Mode";
+    public static final String ID = "ats:Counter Healing Mode";
     public static final String IMG_PATH = "img/cards/CntHealMode.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;

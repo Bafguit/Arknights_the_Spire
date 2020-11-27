@@ -7,7 +7,7 @@ import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class MilitaryTradition extends CustomRelic {
-    public static final String ID = "Military Tradition";
+    public static final String ID = "ats:Military Tradition";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/MilitaryTradition.png");
 
     public MilitaryTradition() {

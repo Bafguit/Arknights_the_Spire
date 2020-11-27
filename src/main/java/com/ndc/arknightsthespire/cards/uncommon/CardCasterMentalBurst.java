@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardCasterMentalBurst extends CardSPBase {
-    public static final String ID = "Mental Burst";
+    public static final String ID = "ats:Mental Burst";
     public static final String IMG_PATH = "img/cards/MentalBurst.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;

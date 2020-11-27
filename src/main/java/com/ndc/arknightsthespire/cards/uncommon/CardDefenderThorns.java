@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardDefenderThorns extends CardSPBase {
-    public static final String ID = "Thorns";
+    public static final String ID = "ats:Thorns";
     public static final String IMG_PATH = "img/cards/thorns.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;

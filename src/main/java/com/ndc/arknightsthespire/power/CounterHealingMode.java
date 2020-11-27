@@ -16,7 +16,7 @@ public class CounterHealingMode extends AbstractPower implements CloneablePowerI
     public AbstractCreature source;
     public int SPAmt;
 
-    public static final String POWER_ID = "Counter Healing Mode";
+    public static final String POWER_ID = "ats:Counter Healing Mode";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

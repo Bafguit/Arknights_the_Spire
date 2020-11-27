@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.SoulAbsorption;
 
 public class CardCasterSoulAbs extends CardSPBase {
-    public static final String ID = "Soul Absorption";
+    public static final String ID = "ats:Soul Absorption";
     public static final String IMG_PATH = "img/cards/SoulAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;

@@ -15,7 +15,7 @@
   "ats:Counter Healing Mode": {
     "NAME": "반격 의료 모드",
     "DESCRIPTIONS": [
-      "체력을 회복할 때마다 SP 를 #b",
+      "체력을 회복할 때마다 SP를 #b",
       " 얻습니다."
     ]
   },

@@ -9,7 +9,7 @@ import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class RhineCircuitry extends CustomRelic {
-    public static final String ID = "Rhine Circuitry";
+    public static final String ID = "ats:Rhine Circuitry";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/RhineCircuity.png");
 
     public RhineCircuitry() {

@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardGuardThermiteBlade extends CardSPBase {
-    public static final String ID = "Thermite Blade";
+    public static final String ID = "ats:Thermite Blade";
     public static final String IMG_PATH = "img/cards/ThermiteBlade.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;

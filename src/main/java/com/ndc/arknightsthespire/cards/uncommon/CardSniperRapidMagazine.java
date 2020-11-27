@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.RapidMagazine;
 
 public class CardSniperRapidMagazine extends CardSPBase {
-    public static final String ID = "Rapid Magazine";
+    public static final String ID = "ats:Rapid Magazine";
     public static final String IMG_PATH = "img/cards/RapidMagazine.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 2;

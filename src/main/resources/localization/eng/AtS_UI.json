@@ -1,0 +1,14 @@
+{
+  "SpSingleCardViewPopup": {
+    "TEXT": [
+      "#rSP가 부족해.",
+      "#r수동 #r발동이 아니야."
+    ]
+  },
+  "SpToggleButton": {
+    "TEXT": [
+      "자동 발동",
+      "수동 발동"
+    ]
+  }
+}

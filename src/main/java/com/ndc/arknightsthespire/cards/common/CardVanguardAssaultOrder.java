@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardVanguardAssaultOrder extends CardSPBase {
-    public static final String ID = "Assault Order";
+    public static final String ID = "ats:Assault Order";
     public static final String IMG_PATH = "img/cards/AssaultOrder.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 0;

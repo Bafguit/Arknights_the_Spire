@@ -2,31 +2,32 @@
   {
     "PROPER_NAME": "SP",
     "NAMES": [
-      "SP",
-      "SP를",
-      "SP의",
-      "SP가"
+      "sp"
     ],
     "DESCRIPTION": "SP를 소모하면 카드의 효과가 강화됩니다."
   },
   {
-    "PROPER_NAME": "Auto Trigger",
+    "PROPER_NAME": "자동 발동",
     "NAMES": [
       "자동 발동",
-      "자동 발동인"
+      "자동_발동",
+      "자동 발동인",
+      "자동_발동인"
     ],
-    "DESCRIPTION": "#ySP가 충분하다면 자동으로 소모합니다."
+    "DESCRIPTION": "SP가 충분하다면 자동으로 소모합니다."
   },
   {
-    "PROPER_NAME": "Manual Trigger",
+    "PROPER_NAME": "수동 발동",
     "NAMES": [
       "수동 발동",
-      "수동 발동인"
+      "수동_발동",
+      "수동 발동인",
+      "수동_발동인"
     ],
-    "DESCRIPTION": "#ySP가 충분하다면 사용 모드 전환을 눌러 소모할 수 있습니다."
+    "DESCRIPTION": "SP가 충분하다면 사용 모드 전환을 눌러 소모할 수 있습니다."
   },
   {
-    "PROPER_NAME": "Shelter",
+    "PROPER_NAME": "가호",
     "NAMES": [
       "가호",
       "가호를",
@@ -35,66 +36,59 @@
     "DESCRIPTION": "피해를 일정 % 적게 받습니다."
   },
   {
-    "PROPER_NAME": "Sniper",
+    "PROPER_NAME": "스나이퍼",
     "NAMES": [
       "스나이퍼"
     ],
     "DESCRIPTION": "스나이퍼"
   },
   {
-    "PROPER_NAME": "Guard",
+    "PROPER_NAME": "가드",
     "NAMES": [
       "가드"
     ],
     "DESCRIPTION": "가드"
   },
   {
-    "PROPER_NAME": "Medic",
+    "PROPER_NAME": "메딕",
     "NAMES": [
       "메딕"
     ],
     "DESCRIPTION": "메딕"
   },
   {
-    "PROPER_NAME": "Defender",
+    "PROPER_NAME": "디펜더",
     "NAMES": [
       "디펜더"
     ],
     "DESCRIPTION": "디펜더"
   },
   {
-    "PROPER_NAME": "Caster",
+    "PROPER_NAME": "캐스터",
     "NAMES": [
       "캐스터"
     ],
     "DESCRIPTION": "캐스터"
   },
   {
-    "PROPER_NAME": "Supporter",
+    "PROPER_NAME": "서포터",
     "NAMES": [
       "서포터"
     ],
     "DESCRIPTION": "서포터"
   },
   {
-    "PROPER_NAME": "Vanguard",
+    "PROPER_NAME": "뱅가드",
     "NAMES": [
       "뱅가드"
     ],
     "DESCRIPTION": "뱅가드"
   },
   {
-    "PROPER_NAME": "Specialist",
+    "PROPER_NAME": "스페셜리스트",
     "NAMES": [
       "스페셜리스트"
     ],
     "DESCRIPTION": "스페셜리스트"
-  },
-  {
-    "PROPER_NAME": "",
-    "NAMES": [
-      ""
-    ],
-    "DESCRIPTION": ""
   }
 ]

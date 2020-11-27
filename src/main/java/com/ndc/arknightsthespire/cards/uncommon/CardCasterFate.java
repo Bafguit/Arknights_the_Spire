@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.Fate;
 
 public class CardCasterFate extends CardSPBase {
-    public static final String ID = "Fate";
+    public static final String ID = "ats:Fate";
     public static final String IMG_PATH = "img/cards/Fate.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 3;

@@ -23,7 +23,7 @@ public class SoulRend extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
     public int healAmt = 0;
 
-    public static final String POWER_ID = "Soul Rend";
+    public static final String POWER_ID = "ats:Soul Rend";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

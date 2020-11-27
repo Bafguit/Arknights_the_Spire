@@ -10,7 +10,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class IndustrialWaterCannon extends CustomRelic {
-    public static final String ID = "Industrial Water Cannon";
+    public static final String ID = "ats:Industrial Water Cannon";
     private static final Texture IMG = TextureLoader.getTexture("img/relics/IndustrialWaterCannon.png");
 
     public IndustrialWaterCannon() {
