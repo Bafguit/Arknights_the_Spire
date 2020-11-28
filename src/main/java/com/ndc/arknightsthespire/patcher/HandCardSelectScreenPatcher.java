@@ -1,3 +1,4 @@
+/*
 package com.ndc.arknightsthespire.patcher;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -96,3 +97,4 @@ public class HandCardSelectScreenPatcher {
         }
     }
 }
+*/
