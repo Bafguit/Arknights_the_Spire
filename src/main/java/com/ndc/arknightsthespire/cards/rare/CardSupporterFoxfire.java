@@ -51,7 +51,6 @@ public class CardSupporterFoxfire extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UPGRADE_REGEN);
     }
 
 

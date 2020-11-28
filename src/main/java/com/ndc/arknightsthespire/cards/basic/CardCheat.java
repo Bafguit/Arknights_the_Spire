@@ -19,7 +19,7 @@ public class CardCheat extends CardSPBase {
     public CardCheat() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.SPECIAL, CardTarget.ALL_ENEMY, false, POSITION, false);
+                CardRarity.BASIC, CardTarget.ALL_ENEMY, false, POSITION, false);
 
         this.setBackgroundTexture("img/512/beta.png", "img/1024/beta.png");
 

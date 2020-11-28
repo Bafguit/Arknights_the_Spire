@@ -32,7 +32,6 @@ public class CardMedicRevitalization extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber));
-        if(this.upgraded) this.exhaust = false;
     }
 
     @Override
@@ -41,6 +40,9 @@ public class CardMedicRevitalization extends CardSPBase {
     }
 
     @Override
-    public void upgradeCard() { }
+    public void upgradeCard() {
+        this.upgradeMagicNumber(-1);
+        this.exhaust = false;
+    }
 
 }

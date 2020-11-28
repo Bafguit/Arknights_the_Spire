@@ -70,14 +70,11 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "신조의 역장",
-    "DESCRIPTION": "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다. NL 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다."
+    "DESCRIPTION": "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다. NL 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다. 민첩을 1 잃습니다."
   },
   "ats:Rapid Magazine": {
     "NAME": "쾌속장전",
-    "DESCRIPTION": "ats:스나이퍼 공격 카드의 ats:SP 소모가 1 감소합니다.",
-    "EXTENDED_DESCRIPTION": [
-      "ats:스나이퍼 카드의 ats:SP 소모가 1 감소합니다."
-    ]
+    "DESCRIPTION": "ats:스나이퍼 공격 카드의 ats:SP 소모가 1 감소합니다."
   },
   "ats:Sunburst": {
     "NAME": "화염 폭발",

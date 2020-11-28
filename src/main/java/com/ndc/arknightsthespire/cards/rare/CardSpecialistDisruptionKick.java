@@ -23,6 +23,7 @@ public class CardSpecialistDisruptionKick extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, false);
+        this.damage = this.baseDamage = 1;
 
         this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
 
