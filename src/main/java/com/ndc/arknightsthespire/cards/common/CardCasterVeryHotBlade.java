@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 public class CardCasterVeryHotBlade extends CardSPBase {
-    public static final String ID = "ats:Very Hot Balde";
+    public static final String ID = "ats:Very Hot Blade";
     public static final String IMG_PATH = "img/cards/VeryHotBlade.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;

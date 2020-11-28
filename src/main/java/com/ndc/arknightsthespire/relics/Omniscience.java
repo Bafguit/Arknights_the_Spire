@@ -26,7 +26,7 @@ public class Omniscience extends CustomRelic {
     public void atBattleStartPreDraw() {
         AbstractPlayer p = AbstractDungeon.player;
         flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, 3), 3));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, 2), 2));
     }
 
     @Override

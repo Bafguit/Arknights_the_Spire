@@ -25,6 +25,7 @@ import com.sun.org.apache.xpath.internal.compiler.Keywords;
 
 import java.nio.charset.StandardCharsets;
 
+import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
 import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
@@ -130,16 +131,17 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditRelics() {
         System.out.println("ADDING RELICS");
 
-        BaseMod.addRelicToCustomPool(new SpiritualRecovery(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new RhineCircuitry(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new MilitaryTradition(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new AbilityAura(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new Lavender(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new Omniscience(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new Sanity(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new Berate(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new IndustrialWaterCannon(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new Bonebreaker(), CardColors.AbstractCardEnum.DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new SpiritualRecovery(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new RhineCircuitry(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new MilitaryTradition(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new AbilityAura(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Lavender(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Omniscience(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Sanity(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Berate(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new IndustrialWaterCannon(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Bonebreaker(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new EmergencyDefibrillator(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

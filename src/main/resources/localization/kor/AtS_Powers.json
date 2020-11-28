@@ -72,5 +72,18 @@
       "턴이 끝날 때 민첩을 #b",
       " 잃습니다."
     ]
+  },
+  "ats:Emergency Defibrillator": {
+    "NAME": "긴급 제세동기",
+    "DESCRIPTIONS": [
+      "공격 피해를 받지 않습니다. NL 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
+    ]
+  },
+  "ats:": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "",
+      ""
+    ]
   }
 }

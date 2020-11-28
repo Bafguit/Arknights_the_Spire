@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -40,7 +41,7 @@ public class CardSpecialistDurian extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         int d = 3;
-        int dex = AbstractDungeon.player.getPower("Dexterity").amount;
+        int dex = (p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0);
 
         if(d - dex >= 1)
             d -= dex;
