@@ -67,6 +67,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         //Medic
         BaseMod.addCard(new CardMedicDogmaticField());
         BaseMod.addCard(new CardMedicRevitalization());
+        BaseMod.addCard(new CardMedicAutoCover());
+        BaseMod.addCard(new CardMedicApocalypse());
         //Supporter
         BaseMod.addCard(new CardSupporterFoxfire());
         BaseMod.addCard(new CardSupporterSporePro());
@@ -85,11 +87,15 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardCasterSoulAbs());
         BaseMod.addCard(new CardCasterFate());
         BaseMod.addCard(new CardCasterGuardianOb());
+        BaseMod.addCard(new CardCasterVeryHotBlade());
         //Specialist
         BaseMod.addCard(new CardSpecialistRatPack());
         BaseMod.addCard(new CardSpecialistChainHook());
         BaseMod.addCard(new CardSpecialistHookShot());
         BaseMod.addCard(new CardSpecialistShadowRaid());
+        BaseMod.addCard(new CardSpecialistWolfPack());
+        BaseMod.addCard(new CardSpecialistDisruptionKick());
+        BaseMod.addCard(new CardSpecialistDurian());
         //Guard
         BaseMod.addCard(new CardGuardCatScratch());
         BaseMod.addCard(new CardGuardRedShift());

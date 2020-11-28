@@ -17,10 +17,10 @@ public class CardSniperOverload extends CardSPBase {
     public static final String IMG_PATH = "img/cards/overload.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 2;
+    private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
-    private static final int DEFAULT_SP = 8;
+    private static final int DEFAULT_SP = 7;
 
     public CardSniperOverload() {
         super(ID, IMG_PATH, COST,

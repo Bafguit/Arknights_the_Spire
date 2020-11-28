@@ -1,34 +1,32 @@
-package com.ndc.arknightsthespire.cards.uncommon;
+package com.ndc.arknightsthespire.cards.common;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.RandomAttack;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
-import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
-import static com.megacrit.cardcrawl.cards.DamageInfo.*;
-
-public class CardCasterGuardianOb extends CardSPBase {
-    public static final String ID = "ats:Guardian Obelisk";
-    public static final String IMG_PATH = "img/cards/GuardianObelisk.png";
+public class CardCasterVeryHotBlade extends CardSPBase {
+    public static final String ID = "ats:Very Hot Balde";
+    public static final String IMG_PATH = "img/cards/VeryHotBlade.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
-    private static final int DAMAGE = 10;
-    private static final int UP_DAMAGE = 5;
-    private static final int SP = 15;
+    private static final int DAMAGE = 3;
+    private static final int UP_DAMAGE = 1;
+    private static final int SP = 5;
+    private static final int HIT = 3;
 
-    public CardCasterGuardianOb() {
+    public CardCasterVeryHotBlade() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
+                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = HIT;
         this.sp = this.baseSP = SP;
 
         this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
@@ -40,14 +38,17 @@ public class CardCasterGuardianOb extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(isSpJustUsed) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageType.NORMAL), AttackEffect.BLUNT_HEAVY));
-            addToBot(new StunMonsterAction(m, p, 1));
+            for (int forI = 0; forI < this.magicNumber; forI++) {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                        new DamageInfo(p, (m.currentBlock > 0 ? this.damage + 2 : this.damage), this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+            }
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new CardCasterGuardianOb();
+        return new CardCasterVeryHotBlade();
     }
 
     @Override

@@ -88,23 +88,23 @@
     "DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 사용하는 다음 ats:캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
     "UPGRADE_DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
   },
-  "ats:Burst Stimulant: Durian": {
+  "ats:Durian": {
     "NAME": "폭발제-두리안맛",
-    "DESCRIPTION": "피해를 3 만큼 5 번 받습니다. NL 이번 턴 동안 힘을 5 얻고 모든 카드의 ats:SP 소모가 3 감소합니다. NL 방어도에는 피해가 2로 감소합니다. NL 소멸."
+    "DESCRIPTION": "체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다. (최대 2) NL 다음 공격이 두 배의 피해를 가합니다. NL 소멸."
   },
   "ats:Rat Pack": {
     "NAME": "쥐 떼",
     "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 소멸."
   },
   "ats:Assault Order": {
-    "NAME": "돌격지령β",
+    "NAME": "돌격지령:β",
     "DESCRIPTION": "ats:SP !S! ats:자동 NL [R] [R] 을 얻습니다."
   },
   "ats:Support Order": {
-    "NAME": "지원지령β",
+    "NAME": "지원지령:β",
     "DESCRIPTION": "ats:SP !S! ats:자동 NL ats:지령을 2 얻습니다.",
     "EXTENDED_DESCRIPTION": [
-      "지원지령γ",
+      "지원지령:γ",
       "ats:SP !S! ats:자동 NL ats:지령을 2 얻습니다."
     ]
   },
@@ -242,10 +242,27 @@
   },
   "ats:Guardian Obelisk": {
     "NAME": "방어 오벨리스크",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다.",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다."
-    ]
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다."
+  },
+  "ats:Wolf Pack": {
+    "NAME": "이리 떼",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 기절시킵니다. NL 소멸"
+  },
+  "ats:Disruption Kick": {
+    "NAME": "칠무약진각",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다., NL 소멸"
+  },
+  "ats:Automatic Cover": {
+    "NAME": "자동 엄호",
+    "DESCRIPTION": "방어도를 !B! 얻고 민첩을 !M! 얻습니다. 이번 턴이 끝날 때 민첩을 !M! 잃습니다."
+  },
+  "ats:Very Hot Blade": {
+    "NAME": "엄청 뜨거운 칼",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 3 번 줍니다. 방어도를 가진 적에게 피해가 2 증가합니다."
+  },
+  "ats:Just Like an Apocalypse": {
+    "NAME": "종말처럼",
+    "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
   },
   "ats:NULL": {
     "NAME": "",
