@@ -1,5 +1,7 @@
 package com.ndc.arknightsthespire.cards.rare;
 
+import basemod.devcommands.deck.DeckRemove;
+import com.megacrit.cardcrawl.actions.unique.AddCardToDeckAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;

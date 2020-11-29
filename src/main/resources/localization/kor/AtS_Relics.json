@@ -1,7 +1,7 @@
 {
   "ats:Lavender": {
     "NAME": "라벤더",
-    "FLAVOR": "퍼퓨머 재능",
+    "FLAVOR": "퍼퓨머 씨의 식물원에는 항상 라벤더 향이 납니다.",
     "DESCRIPTIONS": [
       "턴이 끝날 때마다 체력을 ",
       " 회복합니다."
@@ -9,7 +9,7 @@
   },
   "ats:Blood Sample Collection": {
     "NAME": "혈액 샘플 회수",
-    "FLAVOR": "와파린 재능",
+    "FLAVOR": "\"블러드 씨에게 갖다주면 좋아하겠지?\"",
     "DESCRIPTIONS": [
       "",
       ""
@@ -17,7 +17,7 @@
   },
   "ats:Spiritual Recovery": {
     "NAME": "정신 회복",
-    "FLAVOR": "사리아 재능",
+    "FLAVOR": "소량의 겨자 추출물이 함유되어 있사오니...",
     "DESCRIPTIONS": [
       "체력을 회복할 때마다 #ySP 를 #b",
       " 얻습니다."
@@ -25,7 +25,7 @@
   },
   "ats:Rhine Circuitry": {
     "NAME": "라인 회로",
-    "FLAVOR": "이프리트 재능",
+    "FLAVOR": "\"오퍼레이터 이프리트에게 설명서를 건네주거나 읽어주지 마시오.\"",
     "DESCRIPTIONS": [
       "카드를 6 장 사용할 때마다 #ySP 를 #b",
       " 얻습니다."
@@ -33,7 +33,7 @@
   },
   "ats:Military Tradition": {
     "NAME": "군사 전통",
-    "FLAVOR": "백파이프 재능",
+    "FLAVOR": "빅토리아 군에서는 전통 의복을 입어야 하나 봅니다.",
     "DESCRIPTIONS": [
       "전투 시작 시 #ySP 를 #b",
       " 얻습니다."
@@ -41,7 +41,7 @@
   },
   "ats:Ability Aura": {
     "NAME": "스킬 아우라",
-    "FLAVOR": "프틸롭시스 재능",
+    "FLAVOR": "\"에라 핫세-\"",
     "DESCRIPTIONS": [
       "매 턴 시작 시 #ySP 를 #b",
       " 얻습니다."
@@ -49,21 +49,21 @@
   },
   "ats:Omniscience": {
     "NAME": "간명가감",
-    "FLAVOR": "니엔 재능",
+    "FLAVOR": "주의: 매우 뜨거움",
     "DESCRIPTIONS": [
       "전투마다 두 번, 체력을 잃는 것을 막아줍니다."
     ]
   },
   "ats:Sanity": {
     "NAME": "이성",
-    "FLAVOR": "능지 수듄",
+    "FLAVOR": "\"박사님, 그건 먹는 게 아니에요!\"",
     "DESCRIPTIONS": [
       "매 턴마다 처음 소모하는 #ySP 의 절반이 반환됩니다. (최대 5)"
     ]
   },
   "ats:Berate": {
     "NAME": "호령",
-    "FLAVOR": "첸 재능",
+    "FLAVOR": "\"첸 총장님은 이런 건 사용하지 않으시는데...\"",
     "DESCRIPTIONS": [
       "공격 카드를 4장 사용할 때마다 #ySP 를 #b",
       " 얻습니다."
@@ -71,14 +71,14 @@
   },
   "ats:Industrial Water Cannon": {
     "NAME": "공학용 저수포",
-    "FLAVOR": "위디 재능",
+    "FLAVOR": "\"상관 저저저저저 사람들이 또 방에서 바비큐를 하고 있습니다 빨리 막지 않으면 우와아아아 소관의 소화기를 이프리트 씨의 화염방사기랑 바꿔놓은 건 누구입니까아아아아아 괜찮으십니까 상관님!\"",
     "DESCRIPTIONS": [
       "#ySP 를 3번 소모할 때마다 카드를 뽑습니다."
     ]
   },
   "ats:Bonebreaker": {
     "NAME": "뼈찌르기",
-    "FLAVOR": "레드 재능",
+    "FLAVOR": "\"그녀는 또 아무렇지 않게 벽을 타고... 아니, 걷고 있다.\"",
     "DESCRIPTIONS": [
       "방어도가 있는 적에게 주는 공격 피해가 #b",
       " 증가합니다."
@@ -86,16 +86,65 @@
   },
   "ats:Emergency Defibrillator": {
     "NAME": "긴급 제세동기",
-    "FLAVOR": "블레이즈 재능",
+    "FLAVOR": "제세동기 가동 중에는 과격한 행동을 삼가 주십시오.",
     "DESCRIPTIONS": [
       "공격 피해로 인해 체력이 #b25% 이하로 내려갈 때, 한 번에 한해 그 턴 동안 공격 피해를 받지 않고 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
     ]
   },
-  "ats:Angels Blessings": {
-    "NAME": "천사의 축복",
-    "FLAVOR": "엑시아 재능",
+  "ats:Arts": {
+    "NAME": "아츠",
+    "FLAVOR": "분명 무언가와 연관점이 있을 것입니다.",
     "DESCRIPTIONS": [
-      "#y스나이퍼 공격 카드를 3장 사용할 때마다 다음 공격 카드로 주는 피해가 1 증가합니다."
+      "#y캐스터 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Assault": {
+    "NAME": "돌격",
+    "FLAVOR": "선봉대는 카나리아가 아니랍니다.",
+    "DESCRIPTIONS": [
+      "#y뱅가드 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Attack": {
+    "NAME": "공격",
+    "FLAVOR": "공격이야말로 최선의 방어.",
+    "DESCRIPTIONS": [
+      "#y가드 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Defend": {
+    "NAME": "방어",
+    "FLAVOR": "방어야말로 최선의 공격.",
+    "DESCRIPTIONS": [
+      "#y디펜더 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Cure": {
+    "NAME": "치유",
+    "FLAVOR": "\"여기로 모이세요.\"",
+    "DESCRIPTIONS": [
+      "#y메딕 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Snipe": {
+    "NAME": "저격",
+    "FLAVOR": "위험요소는 미리 제거하는게 좋죠.",
+    "DESCRIPTIONS": [
+      "#y스나이퍼 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Special": {
+    "NAME": "특수",
+    "FLAVOR": "특별한 것과 특수한 것은 명백한 차이가 있죠.",
+    "DESCRIPTIONS": [
+      "#y스페셜리스트 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Support": {
+    "NAME": "지원",
+    "FLAVOR": "\"블러드 씨, 거긴 서포터 전용 대기실이라구.\"",
+    "DESCRIPTIONS": [
+      "#y캐스터 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
     ]
   },
   "ats:": {

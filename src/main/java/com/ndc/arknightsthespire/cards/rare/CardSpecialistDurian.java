@@ -17,6 +17,7 @@ import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
+import static com.megacrit.cardcrawl.cards.DamageInfo.*;
 
 public class CardSpecialistDurian extends CardSPBase {
     public static final String ID = "ats:Durian";
@@ -43,13 +44,11 @@ public class CardSpecialistDurian extends CardSPBase {
         int d = 3;
         int dex = (p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0);
 
-        if(d - dex >= 1)
-            d -= dex;
-        else if (d - dex < 1)
-            d = 1;
+        if(dex <= 2) d -= dex;
+        else d = 1;
 
         for(int forI = 0; forI < 5; forI++) {
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, d, AttackEffect.FIRE));
+            addToBot(new DamageAction(p, new DamageInfo(p, d, DamageType.HP_LOSS), AttackEffect.FIRE, true));
         }
 
         addToBot(new ApplyPowerAction(p, p, new PenNibPower(p, 1), 1));

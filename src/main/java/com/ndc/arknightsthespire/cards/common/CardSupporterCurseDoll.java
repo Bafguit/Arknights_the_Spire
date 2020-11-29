@@ -47,7 +47,7 @@ public class CardSupporterCurseDoll extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeSP(UP_NUM);
+        this.upgradeMagicNumber(UP_NUM);
     }
 
 

@@ -79,12 +79,6 @@
       "공격 피해를 받지 않습니다. NL 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
     ]
   },
-  "ats:Angel Bless": {
-    "NAME": "천사의 축복",
-    "DESCRIPTIONS": [
-      "다음 공격 카드로 주는 피해가 1 증가합니다."
-    ]
-  },
   "ats:": {
     "NAME": "",
     "DESCRIPTIONS": [

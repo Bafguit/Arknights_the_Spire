@@ -247,7 +247,7 @@
   },
   "ats:Disruption Kick": {
     "NAME": "칠무약진각",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다., NL 소멸"
+    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다. NL 소멸"
   },
   "ats:Automatic Cover": {
     "NAME": "자동 엄호",

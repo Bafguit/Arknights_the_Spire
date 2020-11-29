@@ -6,9 +6,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.mod.stslib.patches.CommonKeywordIconsPatches;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -21,7 +19,6 @@ import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
-import com.sun.org.apache.xpath.internal.compiler.Keywords;
 
 import java.nio.charset.StandardCharsets;
 
@@ -142,7 +139,14 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new IndustrialWaterCannon(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Bonebreaker(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new EmergencyDefibrillator(), DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new AngelsBlessings(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Arts(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Assault(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Attack(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Defend(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Cure(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Snipe(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Special(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Support(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

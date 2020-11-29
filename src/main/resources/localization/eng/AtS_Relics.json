@@ -91,11 +91,60 @@
       "공격 피해로 인해 체력이 #b25% 이하로 내려갈 때, 한 번에 한해 그 턴 동안 공격 피해를 받지 않고 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
     ]
   },
-  "ats:Angels Blessings": {
-    "NAME": "천사의 축복",
-    "FLAVOR": "엑시아 재능",
+  "ats:Arts": {
+    "NAME": "아츠",
+    "FLAVOR": "분명 연관점이 있을 것이다.",
     "DESCRIPTIONS": [
-      "#y스나이퍼 공격 카드를 3장 사용할 때마다 다음 공격 카드로 주는 피해가 1 증가합니다."
+      "#y캐스터 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Assault": {
+    "NAME": "돌격",
+    "FLAVOR": "선봉대는 카나리아가 아니다.",
+    "DESCRIPTIONS": [
+      "#y뱅가드 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Attack": {
+    "NAME": "공격",
+    "FLAVOR": "공격이야말로 최선의 방어.",
+    "DESCRIPTIONS": [
+      "#y가드 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Defend": {
+    "NAME": "방어",
+    "FLAVOR": "방어야말로 최선의 공격.",
+    "DESCRIPTIONS": [
+      "#y디펜더 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Cure": {
+    "NAME": "치유",
+    "FLAVOR": "여기로 모이세요.",
+    "DESCRIPTIONS": [
+      "#y메딕 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Snipe": {
+    "NAME": "저격",
+    "FLAVOR": "위험요소는 미리 제거하는게 좋지.",
+    "DESCRIPTIONS": [
+      "#y스나이퍼 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Special": {
+    "NAME": "특수",
+    "FLAVOR": "특별한 것과 특수한 것은 명백한 차이가 있지.",
+    "DESCRIPTIONS": [
+      "#y스페셜리스트 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
+    ]
+  },
+  "ats:Support": {
+    "NAME": "지원",
+    "FLAVOR": "\"블러드 씨, 거긴 서포터 전용 대기실이에요.\"",
+    "DESCRIPTIONS": [
+      "#y캐스터 카드를 사용할 때마다 #ySP 를 #b1 얻습니다."
     ]
   },
   "ats:": {

@@ -56,17 +56,7 @@ public class CharacterDoctor extends CustomPlayer {
     public static final String MY_CHARACTER_SKELETON_ATLAS = "img/char/spine/doctor_anim.atlas"; // spine animation atlas
     public static final String MY_CHARACTER_SKELETON_JSON = "img/char/spine/doctor_anim.json"; // spine animation json
     public static final String[] orbTextures = {
-            "img/char/orb/layer1.png",
-            "img/char/orb/layer2.png",
-            "img/char/orb/layer3.png",
-            "img/char/orb/layer4.png",
-            "img/char/orb/layer5.png",
-            "img/char/orb/layer6.png",
-            "img/char/orb/layer1d.png",
-            "img/char/orb/layer2d.png",
-            "img/char/orb/layer3d.png",
-            "img/char/orb/layer4d.png",
-            "img/char/orb/layer5d.png",};
+            "img/char/orb/layer.png"};
 
     static {
         characterStrings = CardCrawlGame.languagePack.getCharacterString("ats:Doctor");
