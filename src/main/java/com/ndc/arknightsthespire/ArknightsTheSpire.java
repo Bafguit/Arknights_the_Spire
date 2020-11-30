@@ -135,10 +135,12 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new Lavender(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Omniscience(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Sanity(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new SanityP(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Berate(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new IndustrialWaterCannon(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Bonebreaker(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new EmergencyDefibrillator(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new HiddenKiller(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Arts(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Assault(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Attack(), DOCTOR_COLOR);

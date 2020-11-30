@@ -35,7 +35,7 @@ public class CardSupporterCurseDoll extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
-                    new WeakPower(m, this.magicNumber, false), this.magicNumber));
+                    new WeakPower(m, 1, false), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                 new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
     }

@@ -95,7 +95,7 @@
   },
   "ats:Assault Order": {
     "NAME": "돌격지령β",
-    "DESCRIPTION": "SP !S! 자동 발동 NL [R] [R] 을 얻습니다."
+    "DESCRIPTION": "SP !S! 자동 발동 NL [E] [E] 를 얻습니다."
   },
   "ats:Support Order": {
     "NAME": "지원지령β",
@@ -207,7 +207,7 @@
     "NAME": "갈고리 발사",
     "DESCRIPTION": "카드를 3 장 뽑습니다. NL SP !S! 자동 발동",
     "EXTENDED_DESCRIPTION": [
-      "AtS:SP !S! AtS:자동 발동 NL 카드를 3 장 뽑습니다. [R] 을 얻습니다."
+      "AtS:SP !S! AtS:자동 발동 NL 카드를 3 장 뽑습니다. [E] 를 얻습니다."
     ]
   },
   "ats:Fractured Body": {
@@ -230,7 +230,7 @@
   },
   "ats:Curse Doll": {
     "NAME": "저주인형",
-    "DESCRIPTION": "약화를 !M! 부여합니다. 취약을 !M! 부여합니다."
+    "DESCRIPTION": "약화를 1 부여합니다. 취약을 !M! 부여합니다."
   },
   "ats:Shadow Raid": {
     "NAME": "그림자 방패",
