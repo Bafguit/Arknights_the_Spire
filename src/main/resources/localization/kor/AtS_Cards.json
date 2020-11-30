@@ -118,8 +118,7 @@
   },
   "ats:Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다.",
-    "UPGRADE_DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
+    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 2 얻습니다."
   },
   "ats:Cat Scratch": {
     "NAME": "할퀴기!",
@@ -183,7 +182,7 @@
     "NAME": "포자 확산",
     "DESCRIPTION": "약화를 !M! 부여합니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 NL 적이 가진 모든 효과를 제거합니다. 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:수동 NL 적이 가진 무작위 효과를 제거합니다. 약화를 !M! 부여합니다."
     ]
   },
   "ats:Encircling Forest": {

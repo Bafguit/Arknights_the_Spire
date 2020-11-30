@@ -1,11 +1,13 @@
 package com.ndc.arknightsthespire.cards.uncommon;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveAllPowersAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -35,8 +37,15 @@ public class CardSupporterSporePro extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new RemoveAllPowersAction(m, false));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
+        if(isSpJustUsed) {
+            if(m.powers.size() > 0) {
+                int powerLength = m.powers.size();
+                int rand = (int) (Math.random() * powerLength);
+                Object[] powers = m.powers.toArray();
+                addToBot(new RemoveSpecificPowerAction(m, p, (AbstractPower) powers[rand]));
+            }
+        }
+        addToBot(new ApplyPowerAction(m, p,
                     new WeakPower(m, this.magicNumber, false), this.magicNumber, true));
     }
 

@@ -40,7 +40,7 @@ public class CardSupporterFoxfire extends CardSPBase {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
                     new WeakPower(mo, this.magicNumber, false), this.magicNumber, true));
         }
-        if(this.upgraded) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, true));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2, true));
 
     }
 
@@ -51,6 +51,7 @@ public class CardSupporterFoxfire extends CardSPBase {
 
     @Override
     public void upgradeCard() {
+        this.upgradeMagicNumber(UPGRADE_REGEN);
     }
 
 

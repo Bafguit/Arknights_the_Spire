@@ -1,12 +1,12 @@
 {
   "ats:Doctor": {
     "NAMES": [
-      "박사"
+      "Doctor"
     ],
     "TEXT": [
-      "테라에서 구출되어 기억을 잃은 사람. NL 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
-      "앙기모",
-      "띠"
+      "One who was rescued from Terra and lost his memory. NL He seems to have a very good command of operations.",
+      "Ang",
+      "ANG"
     ]
   }
 }

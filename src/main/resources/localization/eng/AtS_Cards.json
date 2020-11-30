@@ -1,18 +1,18 @@
 {
   "ats:Overload": {
-    "NAME": "어설트 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동발동",
+    "NAME": "Assault Mode",
+    "DESCRIPTION": "Deal !D! damage 3 times. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
       "Overload",
-      "ats:SP !S! ats:자동발동 NL 피해를 !D! 만큼 5 번 줍니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage 5 times."
     ]
   },
   "ats:Cheat": {
-    "NAME": "치트",
-    "DESCRIPTION": "다 죽입니다."
+    "NAME": "Cheat",
+    "DESCRIPTION": "Kills all."
   },
   "ats:Counter Healing Mode": {
-    "NAME": "반격 의료 모드",
+    "NAME": "Counter Healing Mode",
     "DESCRIPTION": "Gain !M! ats:SP when healed."
   },
   "ats:Emotion Absorption": {
@@ -38,43 +38,43 @@
   },
   "ats:Charging Defense": {
     "NAME": "Charging Defense",
-    "DESCRIPTION": "Gain !B! 얻습니다. NL SP !S! 자동 발동 ",
+    "DESCRIPTION": "Gain !B! block. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 방어도를 !B! 얻습니다. 다음 피해를 받지 않습니다."
+      "ats:SP !S! ats:Auto NL Gain !B! block. Prevent the next damage."
     ]
   },
   "ats:Shell Defense": {
-    "NAME": "쉘 디펜스",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
+    "NAME": "Shell Defense",
+    "DESCRIPTION": "Gain !B! block. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 방어도를 !B! 얻습니다. 재생을 2 얻습니다."
+      "ats:SP !S! ats:Manual NL Gain !B! block and 2 Regen."
     ]
   },
   "ats:Magnetic Hammer": {
-    "NAME": "마그네틱 해머",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 방어도를 !B! 얻습니다. NL SP !S! 수동 발동 ",
+    "NAME": "Magnetic Hammer",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Gain !B! block. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 적 전체에게 피해를 !D! 주고 기절시킵니다."
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies and Stun them."
     ]
   },
   "ats:Thorns": {
-    "NAME": "가시덤불",
-    "DESCRIPTION": "가시를 !M! 얻습니다. 민첩을 1 얻습니다."
+    "NAME": "Thorns",
+    "DESCRIPTION": "Gain !M! Thorns. Gain 1 Dexterity."
   },
   "ats:Armor Crushing Shot": {
-    "NAME": "쇄갑격",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
+    "NAME": "Armor Crushing Shot",
+    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 피해를 !D! 줍니다. NL 취약을 !M! 부여합니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. NL Apply !M! Vulnerable"
     ]
   },
   "ats:Dogmatic Field": {
-    "NAME": "신조의 역장",
-    "DESCRIPTION": "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다. NL 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다. 민첩을 1 잃습니다."
+    "NAME": "Dogmatic Field",
+    "DESCRIPTION": "When you gain block through card, instead, heal that amount. NL Half of heal amount above the maximum health will be switched to block. Lose 1 Dexterity."
   },
   "ats:Rapid Magazine": {
-    "NAME": "쾌속장전",
-    "DESCRIPTION": "스나이퍼 공격 카드의 SP 소모가 1 감소합니다."
+    "NAME": "Rapid Magazine",
+    "DESCRIPTION": "ats:SP of ats:Sniper attack card will be reduced by 1."
   },
   "ats:Sunburst": {
     "NAME": "화염 폭발",
@@ -117,8 +117,7 @@
   },
   "ats:Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다.",
-    "UPGRADE_DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 !M! 얻습니다."
+    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 2 얻습니다."
   },
   "ats:Cat Scratch": {
     "NAME": "할퀴기!",

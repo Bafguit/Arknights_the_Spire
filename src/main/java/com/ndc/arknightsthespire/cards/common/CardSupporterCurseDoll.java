@@ -17,7 +17,7 @@ public class CardSupporterCurseDoll extends CardSPBase {
     public static final String IMG_PATH = "img/cards/CurseDoll.png";
     public static final PositionType POSITION = PositionType.SUPPORT;
     private static final int COST = 1;
-    private static final int NUM = 1;
+    private static final int NUM = 2;
     private static final int UP_NUM = 1;
 
     public CardSupporterCurseDoll() {

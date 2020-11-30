@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
 import com.megacrit.cardcrawl.helpers.input.InputActionSet;
 import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.ndc.arknightsthespire.SPHandler;
-import com.ndc.arknightsthespire.ui.SPLabel;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 
 import java.lang.reflect.InvocationTargetException;
@@ -27,7 +26,6 @@ public class EndTurnButtonPatcher {
     public static final float SHOW_Y = 210.0F * Settings.scale + ToggleSpButton.BUTTON_OFFSET_Y;
 
     public static ToggleSpButton toggleSpButton;
-    public static SPLabel spLabel;
 
     static {
         ReflectionHacks.setPrivateStaticFinal(EndTurnButton.class, "SHOW_X", SHOW_X);
@@ -42,7 +40,6 @@ public class EndTurnButtonPatcher {
     public static class ConstructorPatcher {
         public static void Postfix(EndTurnButton __instance) {
             toggleSpButton = new ToggleSpButton(__instance);
-            spLabel = new SPLabel();
         }
     }
 
@@ -95,7 +92,6 @@ public class EndTurnButtonPatcher {
     public static class ShowPatcher {
         public static void Postfix(EndTurnButton __instance) {
             toggleSpButton.show();
-            spLabel.show();
         }
     }
 
@@ -106,7 +102,6 @@ public class EndTurnButtonPatcher {
     public static class HidePatcher {
         public static void Postfix(EndTurnButton __instance) {
             toggleSpButton.hide();
-            spLabel.hide();
         }
     }
 
@@ -118,7 +113,6 @@ public class EndTurnButtonPatcher {
     public static class RenderPatcher {
         public static void Postfix(EndTurnButton __instance, SpriteBatch sb) {
             toggleSpButton.render(sb);
-            spLabel.render(sb);
         }
     }
 
