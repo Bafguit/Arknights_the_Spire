@@ -2,34 +2,50 @@
 package com.ndc.arknightsthespire;
 
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.RestRoom;
+import com.megacrit.cardcrawl.ui.campfire.LiftOption;
 import com.ndc.arknightsthespire.cards.basic.*;
 import com.ndc.arknightsthespire.cards.common.*;
 import com.ndc.arknightsthespire.cards.rare.*;
 import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
+import com.ndc.arknightsthespire.events.MaxSpOption;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
+import com.ndc.arknightsthespire.util.MessageCaller;
+import com.ndc.arknightsthespire.util.TextureLoader;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
 import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber{
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
+    public static boolean[] activeTutorials = new boolean[]{true};
+    public static Properties AtSDS = new Properties();
 
 
 
@@ -47,6 +63,20 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
         //Look at the BaseMod wiki for getting started. (Skip the decompiling part. It's not needed right now)
         CardColors.initialize();
+
+        try {
+            for(int i = 0; i < activeTutorials.length; ++i) {
+                AtSDS.setProperty("activeTutorials" + i, "true");
+            }
+
+            SpireConfig config = new SpireConfig("ats", "AtsConfig", AtSDS);
+
+            for(int j = 0; j < activeTutorials.length; ++j) {
+                activeTutorials[j] = config.getBool("activeTutorials" + j);
+            }
+        } catch (IOException var3) {
+            var3.printStackTrace();
+        }
     }
 
     public void receiveEditCards() {
@@ -110,6 +140,11 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     }
 
     public void receivePostInitialize() {
+        try {
+            this.CreatePanel();
+        } catch (IOException var2) {
+            var2.printStackTrace();
+        }
         System.out.println("POSTINIT");
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
@@ -149,6 +184,10 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new Snipe(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Special(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Support(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new MaxSp1(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new MaxSp2(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new MaxSp3(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new MaxSp4(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }
@@ -164,13 +203,13 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
+        BaseMod.loadCustomStringsFile(TutorialStrings.class, "localization/" + lang + "/AtS_tutorials.json");
     }
 
 
     private String getLangString() {
         return Settings.language.name().toLowerCase();
     }
-
 
     public void receiveEditKeywords() {
         Gson gson = new Gson();
@@ -185,5 +224,50 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
             }
         }
         System.out.println();
+    }
+
+    private void CreatePanel() throws IOException {
+        SpireConfig spireConfig = new SpireConfig("ats", "AtsConfig");
+        ModPanel settingsPanel = new ModPanel();
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("ats:Sans");
+        String[] TEXT = uiStrings.TEXT;
+        ModLabeledToggleButton tutorialOpen = new ModLabeledToggleButton(TEXT[0], 500.0F, 550.0F, Settings.CREAM_COLOR, FontHelper.charDescFont, activeTutorials[0], settingsPanel, (label) -> {
+        }, (button) -> {
+            for(int i = 0; i < activeTutorials.length; ++i) {
+                spireConfig.setBool("activeTutorials", activeTutorials[i] = button.enabled);
+            }
+
+            CardCrawlGame.mainMenuScreen.optionPanel.effects.clear();
+
+            try {
+                spireConfig.save();
+            } catch (IOException var3) {
+                var3.printStackTrace();
+            }
+
+        });
+        settingsPanel.addUIElement(tutorialOpen);
+        /*
+        Texture badgeTexture = TextureLoader.getTexture("CapriCoreResources/images/MokouMod/Badge.png");
+        BaseMod.registerModBadge(badgeTexture, "ats", "Fastcat", "Arknights the Spire", settingsPanel);*/
+    }
+
+    public static void saveData() throws IOException {
+        SpireConfig config = new SpireConfig("ats", "AtsConfig");
+
+        for(int i = 0; i < activeTutorials.length; ++i) {
+            config.setBool("activeTutorials" + i, activeTutorials[i]);
+        }
+
+        config.save();
+    }
+
+    @Override
+    public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        if (AbstractDungeon.player instanceof CharacterDoctor) {
+            if (activeTutorials[0]) {
+                AbstractDungeon.actionManager.addToBottom(new MessageCaller(0));
+            }
+        }
     }
 }

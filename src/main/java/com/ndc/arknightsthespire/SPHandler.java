@@ -1,12 +1,17 @@
 package com.ndc.arknightsthespire;
 
+import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.MaxHandSizePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
+import com.ndc.arknightsthespire.events.MaxSpOption;
 
-public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber {
+public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer> {
     private static int sp = 0;
-    private static int maxSp = 50;
+    private static int maxSp = 10;
     private static int diffSp = 0;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
@@ -23,6 +28,10 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public static int getMaxSp() {
         return maxSp;
     }
+    public static boolean getUpToMaxSp() {
+        if(maxSp == 50) return false;
+        else return true;
+    }
     public static int getDiffSp() {
         return diffSp;
     }
@@ -35,6 +44,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public static void addSp(int amount) {
         sp = Math.min(sp + amount, maxSp);
     }
+    public static void addMaxSp(int amount) { maxSp = Math.min(maxSp + amount, 50); }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
     }
@@ -62,6 +72,21 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     public static boolean isSpModeEnabled() {
         return isSpModeEnabled;
+    }
+
+    @Override
+    public Integer onSave()
+    {
+        return maxSp;
+        // Return the location of the card in your deck. AbstractCard cannot be serialized so we use an Integer instead.
+    }
+
+    @Override
+    public void onLoad(Integer savedMaxSp) {
+        if(savedMaxSp == null) {
+            maxSp = 15;
+        }
+        else maxSp = savedMaxSp;
     }
 
     @Override
@@ -97,4 +122,5 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public void receivePostEnergyRecharge() {
         this.addSp(turnAddSp);
     }
+
 }

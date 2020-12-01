@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire;
+package com.ndc.arknightsthespire.actions;
 
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

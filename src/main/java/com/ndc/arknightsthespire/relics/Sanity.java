@@ -5,9 +5,13 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.events.MaxSpOption;
 import com.ndc.arknightsthespire.util.TextureLoader;
+
+import java.util.ArrayList;
 
 public class Sanity extends CustomRelic {
     public static final String ID = "ats:Sanity";
@@ -30,7 +34,7 @@ public class Sanity extends CustomRelic {
             CardSPBase card = (CardSPBase) c;
             if (card.canUseSP && card.isSpJustUsed && !used) {
                 flash();
-                SPHandler.addSp((Math.round(card.baseSP / 2) <= 5 ? Math.round(card.baseSP / 2) : 5));
+                SPHandler.addSp((Math.max(Math.round(card.baseSP / 2), 5)));
                 used = true;
             }
         }
@@ -39,6 +43,11 @@ public class Sanity extends CustomRelic {
     @Override
     public void atTurnStart() {
         used = false;
+    }
+
+    @Override
+    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+        options.add(new MaxSpOption(true));
     }
 
     @Override

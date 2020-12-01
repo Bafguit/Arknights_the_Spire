@@ -258,7 +258,7 @@ public class ToggleSpButton {
                 }
 
                 if (this.hb.hovered && !AbstractDungeon.isScreenUp && !Settings.isTouchScreen) {
-                    TipHelper.renderGenericTip(this.current_x - 90.0F * Settings.scale, this.current_y + 300.0F * Settings.scale, LABEL[0] + " (" + InputActionSet.endTurn.getKeyString() + ")", MSG[0]);
+                    TipHelper.renderGenericTip(this.current_x - 90.0F * Settings.scale, this.current_y + 300.0F * Settings.scale, LABEL[0], MSG[0]);
                 }
             } else if (ReflectionHacks.getPrivate(endTurnButton, EndTurnButton.class, "label").equals(EndTurnButton.ENEMY_TURN_MSG)) {
                 this.textColor = Settings.CREAM_COLOR;

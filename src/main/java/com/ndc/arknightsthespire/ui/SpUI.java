@@ -50,7 +50,7 @@ public class SpUI extends AbstractPanel {
         this.energyVfxScale = Settings.scale;
         this.energyVfxColor = Color.WHITE.cpy();
         tips = new ArrayList();
-        tooltip = new PowerTip(uiStrings.TEXT[0], uiStrings.TEXT[1] + uiStrings.TEXT[2]);
+        tooltip = new PowerTip(uiStrings.TEXT[0], uiStrings.TEXT[1]);
         tips.add(tooltip);
         updateTooltip();
     }
@@ -84,7 +84,7 @@ public class SpUI extends AbstractPanel {
             FontHelper.renderFontCentered(sb, FontHelper.energyNumFontRed, text, this.current_x, this.current_y, ENERGY_TEXT_COLOR);
             this.tipHitbox.render(sb);
             if (this.tipHitbox.hovered && !isScreenUp) {
-                TipHelper.renderGenericTip(this.current_x + (float)tex.getWidth() / 2.0F * Settings.scale, this.current_y + (float)tex.getHeight() / 2.0F * Settings.scale, uiStrings.TEXT[0], uiStrings.TEXT[1] + uiStrings.TEXT[2]);
+                TipHelper.renderGenericTip(this.current_x + (float)tex.getWidth() / 2.0F * Settings.scale, this.current_y + (float)tex.getHeight() / 2.0F * Settings.scale, uiStrings.TEXT[0], uiStrings.TEXT[1]);
             }
         }
 
@@ -100,7 +100,7 @@ public class SpUI extends AbstractPanel {
 
     public static void updateTooltip() {
         if (player != null) {
-            tooltip.body = uiStrings.TEXT[1] + uiStrings.TEXT[2];
+            tooltip.body = uiStrings.TEXT[1];
             tips.clear();
             tips.add(tooltip);
         }
