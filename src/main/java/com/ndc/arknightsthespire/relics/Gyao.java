@@ -23,7 +23,7 @@ public class Gyao extends CustomRelic {
     @Override
     public void onGainGold() {
         flash();
-        AbstractDungeon.player.gainGold(15);
+        AbstractDungeon.player.gold += 15;
     }
 
     @Override

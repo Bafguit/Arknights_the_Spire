@@ -187,6 +187,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new MaxSp4(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new OldCoin(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Gyao(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new OriginiumAdd(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

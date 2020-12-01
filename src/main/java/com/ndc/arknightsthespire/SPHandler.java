@@ -2,9 +2,14 @@ package com.ndc.arknightsthespire;
 
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
+import com.badlogic.gdx.graphics.g3d.particles.ResourceData;
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
+
+import java.lang.reflect.Type;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
@@ -41,7 +46,10 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public static void addSp(int amount) {
         sp = Math.min(sp + amount, maxSp);
     }
-    public static void addMaxSp(int amount) { maxSp = Math.min(maxSp + amount, checkSanity()); }
+    public static void addMaxSp(int amount) {
+        maxSp = Math.min(maxSp + amount, checkSanity());
+        new SaveAndContinue();
+    }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
     }
