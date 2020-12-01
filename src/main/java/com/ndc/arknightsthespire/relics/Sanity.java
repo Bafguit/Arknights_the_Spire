@@ -34,7 +34,7 @@ public class Sanity extends CustomRelic {
             CardSPBase card = (CardSPBase) c;
             if (card.canUseSP && card.isSpJustUsed && !used) {
                 flash();
-                SPHandler.addSp((Math.max(Math.round(card.baseSP / 2), 5)));
+                SPHandler.addSp((Math.min(Math.round(card.baseSP / 2), 5)));
                 used = true;
             }
         }
@@ -47,7 +47,7 @@ public class Sanity extends CustomRelic {
 
     @Override
     public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
-        options.add(new MaxSpOption(true));
+        options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
     }
 
     @Override

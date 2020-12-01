@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.events.MaxSpOption;
 
-public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer> {
+public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
     private static int maxSp = 10;
     private static int diffSp = 0;
@@ -52,12 +52,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         addSp(soonAddedSp);
         soonAddedSp = 0;
     }
-    public static void removeSp(int amount) {
-        if(sp > 0) {
-            if(sp - amount < 0) sp = 0;
-            else sp -= amount;
-        }
-    }
+    public static void removeSp(int amount) { sp = Math.max(sp - amount, 0); }
     public static void addDiffSp(int amount) {
         diffSp += amount;
     }
@@ -77,14 +72,16 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     @Override
     public Integer onSave()
     {
+        System.out.println("@@Saving MaxSP...");
         return maxSp;
         // Return the location of the card in your deck. AbstractCard cannot be serialized so we use an Integer instead.
     }
 
     @Override
     public void onLoad(Integer savedMaxSp) {
+        System.out.println("@@Loading MaxSP...");
         if(savedMaxSp == null) {
-            maxSp = 15;
+            maxSp = 10;
         }
         else maxSp = savedMaxSp;
     }
@@ -123,4 +120,13 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         this.addSp(turnAddSp);
     }
 
+    @Override
+    public void receivePreStartGame() {
+        maxSp = 10;
+    }
+
+    @Override
+    public void receivePostDeath() {
+        maxSp = 10;
+    }
 }

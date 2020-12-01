@@ -22,14 +22,14 @@ import com.megacrit.cardcrawl.vfx.campfire.CampfireLiftEffect;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
-public class MaxSpOption extends AbstractCampfireOption implements PreRoomRenderSubscriber {
+public class MaxSpOption extends AbstractCampfireOption {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
 
     public MaxSpOption(boolean isMaxYet) {
         this.label = TEXT[0];
         this.usable = isMaxYet;
-        this.description = TEXT[1];
+        this.description = TEXT[1] + TEXT[2] + SPHandler.getMaxSp() + TEXT[3];
         this.img = TextureLoader.getTexture("img/ui/maximizeSp.png");
     }
     @Override
@@ -38,12 +38,6 @@ public class MaxSpOption extends AbstractCampfireOption implements PreRoomRender
             AbstractDungeon.effectList.add(new CampfireLiftEffect());
             SPHandler.addMaxSp(10);
         }
-    }
-
-    @Override
-    public void receivePreRoomRender(SpriteBatch spriteBatch) {
-        this.usable = SPHandler.getUpToMaxSp();
-        this.description = TEXT[1] + TEXT[2] + SPHandler.getMaxSp() + TEXT[3];
     }
 
     static {
