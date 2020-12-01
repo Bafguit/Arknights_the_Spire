@@ -26,7 +26,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return maxSp;
     }
     public static boolean getUpToMaxSp() {
-        if(maxSp == (AbstractDungeon.player.hasRelic("ats:Snity Plus") ? 50 : 40)) return false;
+        if(maxSp == checkSanity()) return false;
         else return true;
     }
     public static int getDiffSp() {
@@ -41,7 +41,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public static void addSp(int amount) {
         sp = Math.min(sp + amount, maxSp);
     }
-    public static void addMaxSp(int amount) { maxSp = Math.min(maxSp + amount, (AbstractDungeon.player.hasRelic("ats:Snity Plus") ? 50 : 40)); }
+    public static void addMaxSp(int amount) { maxSp = Math.min(maxSp + amount, checkSanity()); }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
     }
@@ -64,6 +64,11 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     public static boolean isSpModeEnabled() {
         return isSpModeEnabled;
+    }
+
+    public static int checkSanity() {
+        if(AbstractDungeon.isPlayerInDungeon()) if (AbstractDungeon.player.hasRelic("ats:Sanity Plus")) return 50;
+        return 40;
     }
 
     @Override
