@@ -6,7 +6,6 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
@@ -19,18 +18,15 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.RestRoom;
-import com.megacrit.cardcrawl.ui.campfire.LiftOption;
 import com.ndc.arknightsthespire.cards.basic.*;
 import com.ndc.arknightsthespire.cards.common.*;
 import com.ndc.arknightsthespire.cards.rare.*;
 import com.ndc.arknightsthespire.cards.uncommon.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
-import com.ndc.arknightsthespire.events.MaxSpOption;
+import com.ndc.arknightsthespire.events.NightField;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.util.MessageCaller;
-import com.ndc.arknightsthespire.util.TextureLoader;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -149,6 +145,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
+        //BaseMod.addEvent(NightField.ID, NightField.class);
     }
 
     public void receiveEditCharacters() {
@@ -188,6 +185,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new MaxSp2(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new MaxSp3(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new MaxSp4(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new OldCoin(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Gyao(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }
@@ -203,6 +202,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/AtS_Events.json");
         BaseMod.loadCustomStringsFile(TutorialStrings.class, "localization/" + lang + "/AtS_tutorials.json");
     }
 

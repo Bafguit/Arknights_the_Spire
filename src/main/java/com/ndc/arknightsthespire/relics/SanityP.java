@@ -8,9 +8,13 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.ui.MaxSpOption;
 import com.ndc.arknightsthespire.util.TextureLoader;
+
+import java.util.ArrayList;
 
 public class SanityP extends CustomRelic {
     public static final String ID = "ats:Sanity Plus";
@@ -63,6 +67,11 @@ public class SanityP extends CustomRelic {
     @Override
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic("ats:Sanity");
+    }
+
+    @Override
+    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+        options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
     }
 
     @Override

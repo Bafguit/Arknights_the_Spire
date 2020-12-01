@@ -2,12 +2,9 @@ package com.ndc.arknightsthespire;
 
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
-import basemod.patches.com.megacrit.cardcrawl.characters.AbstractPlayer.MaxHandSizePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-import com.ndc.arknightsthespire.events.MaxSpOption;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
@@ -29,7 +26,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return maxSp;
     }
     public static boolean getUpToMaxSp() {
-        if(maxSp == 50) return false;
+        if(maxSp == (AbstractDungeon.player.hasRelic("ats:Snity Plus") ? 50 : 40)) return false;
         else return true;
     }
     public static int getDiffSp() {
@@ -44,7 +41,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public static void addSp(int amount) {
         sp = Math.min(sp + amount, maxSp);
     }
-    public static void addMaxSp(int amount) { maxSp = Math.min(maxSp + amount, 50); }
+    public static void addMaxSp(int amount) { maxSp = Math.min(maxSp + amount, (AbstractDungeon.player.hasRelic("ats:Snity Plus") ? 50 : 40)); }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
     }

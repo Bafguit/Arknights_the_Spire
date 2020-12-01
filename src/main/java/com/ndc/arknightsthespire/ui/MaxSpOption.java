@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package com.ndc.arknightsthespire.events;
+package com.ndc.arknightsthespire.ui;
 
 import basemod.interfaces.PreRoomRenderSubscriber;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

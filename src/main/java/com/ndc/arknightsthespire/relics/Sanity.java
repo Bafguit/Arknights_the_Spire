@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.CardSPBase;
-import com.ndc.arknightsthespire.events.MaxSpOption;
+import com.ndc.arknightsthespire.ui.MaxSpOption;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import java.util.ArrayList;
