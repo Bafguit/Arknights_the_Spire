@@ -25,6 +25,7 @@ public class SanityP extends CustomRelic {
     public SanityP() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
         //AbstractDungeon.player.loseRelic("ats:Sanity");
+        SPHandler.upgradeLimit();
     }
 
     @Override

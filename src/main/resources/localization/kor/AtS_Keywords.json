@@ -38,7 +38,7 @@
     "NAMES": [
       "스나이퍼"
     ],
-    "DESCRIPTION": "#b낮은 #b코스트 와 #bSP #b소모 로 꾸준히 피해를 누적하는 클래스입니다."
+    "DESCRIPTION": "#b낮은 #b에너지 와 #bSP #b소모 로 꾸준히 피해를 누적하는 클래스입니다."
   },
   {
     "PROPER_NAME": "가드",
@@ -66,7 +66,7 @@
     "NAMES": [
       "캐스터"
     ],
-    "DESCRIPTION": "#b덱 #b회전률 이 높고 코스트 대신 #bSP를 #b소모 하는 것이 특징인 클래스입니다."
+    "DESCRIPTION": "#b덱 #b회전률 이 높고 #b에너지 #b대신 #bSP를 #b소모 하는 것이 특징인 클래스입니다."
   },
   {
     "PROPER_NAME": "서포터",
@@ -80,13 +80,13 @@
     "NAMES": [
       "뱅가드"
     ],
-    "DESCRIPTION": "#b코스트 #b회복 에 특화된 클래스입니다."
+    "DESCRIPTION": "#b에너지 #b회복 에 특화된 클래스입니다."
   },
   {
     "PROPER_NAME": "스페셜리스트",
     "NAMES": [
       "스페셜리스트"
     ],
-    "DESCRIPTION": "강력한 #b특수능력 과 높은 #b덱 #b회전률 이 특징인 클래스입니다."
+    "DESCRIPTION": "#b강력한 #b특수능력 과 높은 #b덱 #b회전률 이 특징인 클래스입니다."
   }
 ]

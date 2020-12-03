@@ -14,6 +14,7 @@ import java.lang.reflect.Type;
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
     private static int maxSp = 20;
+    private static int maxSpLimit = 40;
     private static int diffSp = 0;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
@@ -31,9 +32,10 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return maxSp;
     }
     public static boolean getUpToMaxSp() {
-        if(maxSp == 50) return false;
+        if(maxSp == maxSpLimit) return false;
         else return true;
     }
+    public static void upgradeLimit() {maxSpLimit = 50;}
     public static int getDiffSp() {
         return diffSp;
     }
@@ -47,7 +49,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         sp = Math.min(sp + amount, maxSp);
     }
     public static void addMaxSp(int amount) {
-        maxSp = Math.min(maxSp + amount, 50);
+        maxSp = Math.min(maxSp + amount, maxSpLimit);
     }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
