@@ -35,11 +35,6 @@ public class Berate extends CustomRelic {
     }
 
     @Override
-    public void onVictory() {
-        this.counter = 0;
-    }
-
-    @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic
         return new Berate();
     }

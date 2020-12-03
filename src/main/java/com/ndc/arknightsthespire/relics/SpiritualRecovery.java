@@ -2,7 +2,10 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -22,8 +25,10 @@ public class SpiritualRecovery extends CustomRelic {
 
     @Override
     public int onPlayerHeal(int healAmount) {
-        flash();
-        SPHandler.addSp(SP_RECOVER);
+        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            flash();
+            SPHandler.addSp(SP_RECOVER);
+        }
 
         return healAmount;
     }

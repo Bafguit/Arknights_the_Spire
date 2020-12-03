@@ -74,7 +74,8 @@
   },
   "ats:Rapid Magazine": {
     "NAME": "쾌속장전",
-    "DESCRIPTION": "ats:스나이퍼 공격 카드의 ats:SP 소모가 1 감소합니다."
+    "DESCRIPTION": "ats:스나이퍼 공격 카드의 ats:SP 소모가 1 감소합니다.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:스나이퍼 공격 카드의 ats:SP 소모가 1 감소합니다."
   },
   "ats:Sunburst": {
     "NAME": "화염 폭발",
@@ -82,8 +83,8 @@
   },
   "ats:Soul Absorption": {
     "NAME": "영혼 착취",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 사용하는 다음 ats:캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
-    "UPGRADE_DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 이번 턴에 한 번, 적에게 준 피해만큼 방어도를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "이번 턴에 한 번, 적에게 준 피해만큼 방어도를 얻습니다."
   },
   "ats:Durian": {
     "NAME": "폭발제-두리안맛",
@@ -137,7 +138,7 @@
   },
   "ats:Shadow Assault": {
     "NAME": "적소: 발도",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 의 2배만큼 2 번 줍니다. NL ats:SP !S! ats:수동",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 2 번 줍니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
       "적소: 절영",
       "ats:SP !S! ats:수동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다."
@@ -259,6 +260,21 @@
   "ats:Just Like an Apocalypse": {
     "NAME": "종말처럼",
     "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "복합형 약물파편",
+    "DESCRIPTION": "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
+  },
+  "ats:Neurotoxin": {
+    "NAME": "신경독소",
+    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다."
+  },
+  "ats:Ambush": {
+    "NAME": "매복",
+    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다."
   },
   "ats:NULL": {
     "NAME": "",

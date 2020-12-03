@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.cards.uncommon;
 
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -30,6 +31,7 @@ public class CardDefenderMagHammer extends CardSPBase {
         this.damage = this.baseDamage = DAMAGE;
         this.block = this.baseBlock = BLOCK;
         this.sp = this.baseSP = SP;
+        this.isMultiDamage = true;
 
         this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
 
@@ -39,8 +41,8 @@ public class CardDefenderMagHammer extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
-                DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn,
+        addToBot(new DamageAllEnemiesAction(m,
+                this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {

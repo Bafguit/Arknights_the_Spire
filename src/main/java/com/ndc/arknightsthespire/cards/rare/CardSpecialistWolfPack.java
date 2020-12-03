@@ -30,7 +30,7 @@ public class CardSpecialistWolfPack extends CardSPBase {
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
         this.exhaust = true;
-
+        this.selfRetain = true;
     }
 
     @Override

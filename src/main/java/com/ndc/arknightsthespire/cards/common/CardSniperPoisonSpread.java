@@ -20,7 +20,8 @@ public class CardSniperPoisonSpread extends CardSPBase {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
     private static final int UP_DMG = 2;
-    private static final int DEFAULT_SP = 4;
+    private static final int DEFAULT_SP = 3;
+    private static final int UP_SP = 2;
     private static final int POS = 2;
     private static final int UP_POS = 3;
 
@@ -57,6 +58,7 @@ public class CardSniperPoisonSpread extends CardSPBase {
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_POS);
         this.upgradeDamage(UP_DMG);
+        this.upgradeSP(UP_SP);
     }
 
 }

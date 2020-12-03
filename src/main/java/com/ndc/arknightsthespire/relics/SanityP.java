@@ -51,7 +51,7 @@ public class SanityP extends CustomRelic {
     public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
         if(c instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) c;
-            if (card.canUseSP && card.isSpJustUsed && !used) {
+            if (card.canUseSP && card.isSpJustUsed && !used && card.sp > 0) {
                 flash();
                 SPHandler.addSp((Math.round(card.baseSP / 2)));
                 used = true;

@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -30,6 +31,8 @@ public class Bonebreaker extends CustomRelic {
         }
 
     }
+
+
 
     @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic

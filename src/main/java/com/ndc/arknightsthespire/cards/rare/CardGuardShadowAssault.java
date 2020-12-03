@@ -1,12 +1,14 @@
 package com.ndc.arknightsthespire.cards.rare;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.RandomAttack;
 import com.ndc.arknightsthespire.cards.CardSPBase;
@@ -18,7 +20,7 @@ public class CardGuardShadowAssault extends CardSPBase {
     public static final String SP_IMG_PATH = "img/cards/ShadowAssault_sp.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
-    private static final int ATTACK_DMG = 5;
+    private static final int ATTACK_DMG = 10;
     private static final int UP_DMG = 1;
     private static final int SP = 40;
     private static final int UP_SP = 30;
@@ -31,6 +33,7 @@ public class CardGuardShadowAssault extends CardSPBase {
         this.sp = SP;
         this.baseSP = SP;
         this.spCardImage = SP_IMG_PATH;
+        this.isMultiDamage = true;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 
@@ -51,18 +54,17 @@ public class CardGuardShadowAssault extends CardSPBase {
             this.addToBot(new RandomAttack(this,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
 
-            this.damage = this.damage * 2;
             this.addToBot(new RandomAttack(this,
                     AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
-            this.damage = this.baseDamage;
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
-                    DamageInfo.createDamageMatrix(this.damage * 2, true), this.damageTypeForTurn,
+                    this.multiDamage, this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
-                    DamageInfo.createDamageMatrix(this.damage * 2, true), this.damageTypeForTurn,
+                    this.multiDamage, this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+            this.damage = this.baseDamage;
         }
     }
 

@@ -25,6 +25,7 @@ public class CardSniperExpAreaStr extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ALL_ENEMY, false, POSITION, false);
         this.damage = this.baseDamage = ATTACK_DMG;
+        this.isMultiDamage = true;
 
         this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
 
@@ -35,7 +36,7 @@ public class CardSniperExpAreaStr extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
-                DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn,
+                this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.SMASH, false));
     }
 

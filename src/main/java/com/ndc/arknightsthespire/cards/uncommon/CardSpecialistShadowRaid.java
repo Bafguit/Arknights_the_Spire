@@ -3,12 +3,15 @@ package com.ndc.arknightsthespire.cards.uncommon;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 import com.ndc.arknightsthespire.power.ShadowRaid;
+
+import javax.swing.text.AbstractDocument;
 
 public class CardSpecialistShadowRaid extends CardSPBase {
     public static final String ID = "ats:Shadow Raid";
@@ -29,7 +32,7 @@ public class CardSpecialistShadowRaid extends CardSPBase {
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
         this.exhaust = true;
-
+        this.selfRetain = true;
     }
 
     @Override

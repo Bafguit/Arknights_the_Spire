@@ -262,6 +262,21 @@
     "NAME": "종말처럼",
     "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
   },
+  "ats:Composite Medical Shells": {
+    "NAME": "복합형 약물파편",
+    "DESCRIPTION": "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
+  },
+  "ats:Neurotoxin": {
+    "NAME": "신경독소",
+    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다."
+  },
+  "ats:Ambush": {
+    "NAME": "매복",
+    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다."
+  },
   "ats:NULL": {
     "NAME": "",
     "DESCRIPTION": "",

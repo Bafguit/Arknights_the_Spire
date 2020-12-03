@@ -321,6 +321,7 @@ public abstract class CardSPBase extends CustomCard {
         AbstractPlayer p = AbstractDungeon.player;
 
         if(p.hasPower(DogmaticField.POWER_ID)) {
+            p.getPower(DogmaticField.POWER_ID).flash();
             AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, amt));
         }
         else {

@@ -88,11 +88,14 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardSniperExpAreaStr());
         BaseMod.addCard(new CardSniperFlexCamouflage());
         BaseMod.addCard(new CardSniperPoisonSpread());
+        BaseMod.addCard(new CardSniperNeurotoxin());
+        BaseMod.addCard(new CardSniperAmbush());
         //Medic
         BaseMod.addCard(new CardMedicDogmaticField());
         BaseMod.addCard(new CardMedicRevitalization());
         BaseMod.addCard(new CardMedicAutoCover());
         BaseMod.addCard(new CardMedicApocalypse());
+        BaseMod.addCard(new CardMedicComMedShell());
         //Supporter
         BaseMod.addCard(new CardSupporterFoxfire());
         BaseMod.addCard(new CardSupporterSporePro());
@@ -151,7 +154,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditCharacters() {
         System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
-                "img/char/CharacterDoctorButton.png",
+                "img/char/CharSelectButtonDoctor.png",
                 "img/char/PortraitBG.png",
                 DOCTOR_CLASS);
         System.out.println("DONE");

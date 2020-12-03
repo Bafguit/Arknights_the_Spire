@@ -29,6 +29,7 @@ public class CardGuardTrueSilverSlash extends CardSPBase {
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.sp = this.baseSP = SP;
+        this.isMultiDamage = true;
 
         this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
 

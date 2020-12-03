@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
-    private static int maxSp = 10;
+    private static int maxSp = 20;
     private static int diffSp = 0;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
@@ -31,7 +31,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return maxSp;
     }
     public static boolean getUpToMaxSp() {
-        if(maxSp == checkSanity()) return false;
+        if(maxSp == 50) return false;
         else return true;
     }
     public static int getDiffSp() {
@@ -47,8 +47,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         sp = Math.min(sp + amount, maxSp);
     }
     public static void addMaxSp(int amount) {
-        maxSp = Math.min(maxSp + amount, checkSanity());
-        new SaveAndContinue();
+        maxSp = Math.min(maxSp + amount, 50);
     }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
@@ -74,11 +73,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return isSpModeEnabled;
     }
 
-    public static int checkSanity() {
-        if(AbstractDungeon.isPlayerInDungeon()) if (AbstractDungeon.player.hasRelic("ats:Sanity Plus")) return 50;
-        return 40;
-    }
-
     @Override
     public Integer onSave()
     {
@@ -91,7 +85,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public void onLoad(Integer savedMaxSp) {
         System.out.println("@@Loading MaxSP...");
         if(savedMaxSp == null) {
-            maxSp = 10;
+            maxSp = 20;
         }
         else maxSp = savedMaxSp;
     }
@@ -132,11 +126,11 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     @Override
     public void receivePreStartGame() {
-        maxSp = 10;
+        maxSp = 20;
     }
 
     @Override
     public void receivePostDeath() {
-        maxSp = 10;
+        maxSp = 20;
     }
 }

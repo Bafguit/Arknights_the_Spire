@@ -17,7 +17,7 @@ public class CardCasterSoulAbs extends CardSPBase {
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
     private static final int SP = 5;
-    private static final int UP_SP = 3;
+    private static final int UP_SP = 0;
 
     public CardCasterSoulAbs() {
         super(ID, IMG_PATH, COST,
@@ -33,7 +33,7 @@ public class CardCasterSoulAbs extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(isSpJustUsed) addToBot(new ApplyPowerAction(p, p, new SoulAbsorption(p, p, this.upgraded)));
+        if(isSpJustUsed) addToBot(new ApplyPowerAction(p, p, new SoulAbsorption(p, p)));
     }
 
     @Override
@@ -44,6 +44,7 @@ public class CardCasterSoulAbs extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeSP(UP_SP);
+        this.sp = this.baseSP = UP_SP;
     }
 
 }
