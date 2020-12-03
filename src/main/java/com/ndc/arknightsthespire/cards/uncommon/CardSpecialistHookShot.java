@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors.AbstractCardEnum;
+import com.ndc.arknightsthespire.actions.CheckGainEnergy;
 import com.ndc.arknightsthespire.cards.CardSPBase;
 import com.ndc.arknightsthespire.cards.PositionType;
 
@@ -34,7 +35,7 @@ public class CardSpecialistHookShot extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new DrawCardAction(3));
-        if(isSpJustUsed) addToBot(new GainEnergyAction(1));
+        if(isSpJustUsed) new CheckGainEnergy(1);
     }
 
     @Override

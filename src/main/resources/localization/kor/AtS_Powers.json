@@ -98,6 +98,25 @@
       "% 확률로 0이 됩니다."
     ]
   },
+  "ats:Order": {
+    "NAME": "지령",
+    "DESCRIPTIONS": [
+      "턴 시작 시 에너지를 #b1 얻습니다."
+    ]
+  },
+  "ats:Defend Order": {
+    "NAME": "방어지령",
+    "DESCRIPTIONS": [
+      "에너지를 얻을 때마다 방어도를 #b",
+      " 얻습니다."
+    ]
+  },
+  "ats:Roar of Ursus": {
+    "NAME": "우르수스의 포효",
+    "DESCRIPTIONS": [
+      "에너지를 얻을 때마다 추가로 1 얻습니다."
+    ]
+  },
   "ats:": {
     "NAME": "",
     "DESCRIPTIONS": [

@@ -81,7 +81,7 @@ public class SpUI extends AbstractPanel {
             this.tipHitbox.move(this.current_x, this.current_y);
             this.renderVfx(sb);
             String text = SPHandler.getSp() + "/" + SPHandler.getMaxSp();
-            FontHelper.renderFontCentered(sb, FontHelper.energyNumFontRed, text, this.current_x, this.current_y, ENERGY_TEXT_COLOR);
+            FontHelper.renderFontCentered(sb, FontHelper.energyNumFontBlue, text, this.current_x, this.current_y, ENERGY_TEXT_COLOR);
             this.tipHitbox.render(sb);
             if (this.tipHitbox.hovered && !isScreenUp) {
                 TipHelper.renderGenericTip(this.current_x + (float)tex.getWidth() / 2.0F * Settings.scale, this.current_y + (float)tex.getHeight() / 2.0F * Settings.scale, uiStrings.TEXT[0], uiStrings.TEXT[1]);

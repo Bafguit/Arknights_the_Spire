@@ -134,6 +134,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CardGuardFracturedBody());
         //Vanguard
         BaseMod.addCard(new CardVanguardAssaultOrder());
+        BaseMod.addCard(new CardVanguardSupportOrder());
+        BaseMod.addCard(new CardVanguardDefendOrder());
+        BaseMod.addCard(new CardVanguardRoarOfUrsus());
 
         System.out.println("DONE");
     }

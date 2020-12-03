@@ -40,9 +40,9 @@ public class CharacterDoctor extends CustomPlayer {
     }
 
     public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-    public static final int STARTING_HP = 64;
-    public static final int MAX_HP = 64;
-    public static final int STARTING_GOLD = 112;
+    public static final int STARTING_HP = 72;
+    public static final int MAX_HP = 72;
+    public static final int STARTING_GOLD = 99;
     public static final int HAND_SIZE = 5;
     private static final int ORB_SLOTS = 0;
 
@@ -110,7 +110,7 @@ public class CharacterDoctor extends CustomPlayer {
 
 
     public CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold
-        return new CharSelectInfo("박사", "테라에서 구출되어 기억을 잃은 사람. NL 매우 뛰어난 작전 지휘 능력을 지니고 있다는 듯하다.",
+        return new CharSelectInfo(NAMES[0], TEXT[0],
                 STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, HAND_SIZE,
                 this, getStartingRelics(), getStartingDeck(), false);
     }

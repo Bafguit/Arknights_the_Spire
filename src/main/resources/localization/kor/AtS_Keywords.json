@@ -34,6 +34,14 @@
     "DESCRIPTION": "피해를 일정 % 적게 받습니다."
   },
   {
+    "PROPER_NAME": "지령",
+    "NAMES": [
+      "지령",
+      "지령을"
+    ],
+    "DESCRIPTION": "턴 시작 시 에너지를 #b1 얻습니다."
+  },
+  {
     "PROPER_NAME": "스나이퍼",
     "NAMES": [
       "스나이퍼"

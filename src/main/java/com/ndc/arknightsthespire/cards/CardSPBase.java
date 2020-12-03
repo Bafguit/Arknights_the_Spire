@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.power.DogmaticField;
 
@@ -96,6 +97,8 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public abstract void upgradeCard();
+
+
 
     @Override
     protected final void upgradeName() {}
