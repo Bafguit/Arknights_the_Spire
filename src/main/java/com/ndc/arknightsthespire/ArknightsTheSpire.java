@@ -116,6 +116,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new MagHammer());
         BaseMod.addCard(new Thorns());
         BaseMod.addCard(new CntHealMod());
+        BaseMod.addCard(new BeatenUp());
         //Caster
         BaseMod.addCard(new EmotionAbs());
         BaseMod.addCard(new MentalBurst());
@@ -124,6 +125,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new GuardianOb());
         BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new Sunburst());
+        BaseMod.addCard(new Ignite());
+        BaseMod.addCard(new Volcano());
         //Specialist
         BaseMod.addCard(new RatPack());
         BaseMod.addCard(new ChainHook());
@@ -203,6 +206,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new OldCoin(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Gyao(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new OriginiumAdd(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new TacticalDelivery(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

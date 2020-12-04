@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.cards.guard;
+package com.ndc.arknightsthespire.cards.caster;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,16 +15,16 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 import java.util.Iterator;
 
-public class TrueSilverSlash extends CardSPBase {
-    public static final String ID = "ats:True Silver Slash";
-    public static final String IMG_PATH = "img/cards/TrueSilverSlash.png";
-    public static final PositionType POSITION = PositionType.GUARD;
-    private static final int COST = 3;
+public class Volcano extends CardSPBase {
+    public static final String ID = "ats:Volcano";
+    public static final String IMG_PATH = "img/cards/Volcano.png";
+    public static final PositionType POSITION = PositionType.CASTER;
+    private static final int COST = 0;
     private static final int ATTACK_DMG = 8;
     private static final int UP_DMG = 2;
     private static final int SP = 40;
 
-    public TrueSilverSlash() {
+    public Volcano() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true);
@@ -32,46 +32,44 @@ public class TrueSilverSlash extends CardSPBase {
         this.sp = this.baseSP = SP;
         this.isMultiDamage = true;
 
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
+        this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
 
         this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
 
     }
 
-    public int getGuardDeck() {
+    public int getCasterDeck() {
 
-        int guardCount = 0;
+        int casterCount = 0;
         Iterator var1 = AbstractDungeon.player.masterDeck.group.iterator();
 
         while (var1.hasNext()) {
             AbstractCard c = (AbstractCard) var1.next();
             if(c instanceof CardSPBase) {
                 CardSPBase card = (CardSPBase) c;
-                if (card.position == POSITION) guardCount++;
+                if (card.position == POSITION) casterCount++;
             }
         }
 
-        return guardCount;
+        return casterCount;
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        int cardAmount = getGuardDeck();
-
-        if(isSpJustUsed) this.exhaust = true;
-
-        for(int for_i = 0; for_i < (isSpJustUsed ? cardAmount : 3); for_i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
-                    this.multiDamage, this.damageTypeForTurn,
-                    AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
+        if(isSpJustUsed) {
+            int cardAmount = getCasterDeck();
+            this.exhaust = true;
+            for (int for_i = 0; for_i < cardAmount; for_i++) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
+                        this.multiDamage, this.damageTypeForTurn,
+                        AbstractGameAction.AttackEffect.FIRE, true));
+            }
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
-                new NoBlockPower(p, 1, false), 1));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new TrueSilverSlash();
+        return new Volcano();
     }
 
     @Override

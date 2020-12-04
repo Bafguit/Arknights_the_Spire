@@ -79,7 +79,7 @@
   },
   "ats:Sunburst": {
     "NAME": "화염 폭발",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 적 전체에게 피해를 !D! 줍니다. NL ats:화상을 !M! , 손상을 !M! 부여합니다."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 적 전체에게 피해를 !D! 줍니다. NL ats:화상을 !M! 부여합니다."
   },
   "ats:Soul Absorption": {
     "NAME": "영혼 착취",
@@ -88,7 +88,7 @@
   },
   "ats:Durian": {
     "NAME": "폭발제-두리안맛",
-    "DESCRIPTION": "체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다. (최대 2) NL 다음 공격이 두 배의 피해를 가합니다. NL 소멸."
+    "DESCRIPTION": "보존. 체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다. (최대 2) NL 다음 공격이 두 배의 피해를 가합니다. NL 소멸."
   },
   "ats:Rat Pack": {
     "NAME": "쥐 떼",
@@ -111,7 +111,7 @@
   },
   "ats:Volcano": {
     "NAME": "화산",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 적 전체에게 ats:캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸."
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 덱에 있는 ats:캐스터 1 장당 적 전체에게 피해를 !D! 줍니다. NL 소멸."
   },
   "ats:Nebulous Foxfire": {
     "NAME": "희미한 여우불",
@@ -231,7 +231,7 @@
   },
   "ats:Shadow Raid": {
     "NAME": "그림자 방패",
-    "DESCRIPTION": "민첩을 !M! 얻습니다. 이번 턴이 끝날 때 민첩을 !M! 잃습니다. NL 소멸"
+    "DESCRIPTION": "보존. 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. NL 소멸"
   },
   "ats:Guardian Obelisk": {
     "NAME": "방어 오벨리스크",
@@ -239,15 +239,15 @@
   },
   "ats:Wolf Pack": {
     "NAME": "이리 떼",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 기절시킵니다. NL 소멸"
+    "DESCRIPTION": "보존. 적 전체에게 피해를 !D! 주고 기절시킵니다. NL 소멸"
   },
   "ats:Disruption Kick": {
     "NAME": "칠무약진각",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다. NL 소멸"
+    "DESCRIPTION": "보존. 적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다. NL 소멸"
   },
   "ats:Automatic Cover": {
     "NAME": "자동 엄호",
-    "DESCRIPTION": "방어도를 !B! 얻고 민첩을 !M! 얻습니다. 이번 턴이 끝날 때 민첩을 !M! 잃습니다."
+    "DESCRIPTION": "방어도를 !B! 얻고 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다."
   },
   "ats:Very Hot Blade": {
     "NAME": "엄청 뜨거운 칼",
@@ -269,7 +269,7 @@
   },
   "ats:Ambush": {
     "NAME": "매복",
-    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다.",
+    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M! #b% 확률로 0이 됩니다.",
     "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다."
   },
   "ats:Defend Order": {
@@ -278,12 +278,24 @@
   },
   "ats:Roar Of Ursus": {
     "NAME": "우르수스의 포효",
-    "DESCRIPTION": "에너지를 얻을 때마다 추가로 1 얻습니다."
+    "DESCRIPTION": "에너지를 얻을 때마다 추가로 1 얻습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 에너지를 얻을 때마다 추가로 1 얻습니다."
   },
   "ats:Echo Reverb": {
     "NAME": "메아리",
     "DESCRIPTION": "둔화를 부여합니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. NL 소멸."
+  },
+  "ats:Beaten Up": {
+    "NAME": "매 맞기",
+    "DESCRIPTION": "민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다. NL ats:SP !S! ats:자동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻고 민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+    ]
+  },
+  "ats:Ignite": {
+    "NAME": "이그니션",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. ats:화상을 !M! 부여합니다."
   },
   "ats:NULL": {
     "NAME": "",

@@ -203,6 +203,13 @@
       "획득 시 #y최대 #ySP 가 10 높아집니다."
     ]
   },
+  "ats:Tactical Delivery": {
+    "NAME": "전술 배달",
+    "FLAVOR": "해물비빔소스 냄새가 납니다.",
+    "DESCRIPTIONS": [
+      "획득 시 #y최대 #ySP 가 #b10 낮아집니다. 매 턴 시작 시 [E] 를 얻습니다."
+    ]
+  },
   "ats:": {
     "NAME": "",
     "FLAVOR": "",

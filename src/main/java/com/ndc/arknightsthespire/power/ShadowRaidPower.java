@@ -44,7 +44,7 @@ public class ShadowRaidPower extends AbstractPower implements CloneablePowerInte
         updateDescription();
     }
 
-    public void atEndOfTurn(boolean isPlayer) {
+    public void onEnergyRecharge() {
         this.flash();
         this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, -this.amount), -this.amount));
         addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "ats:Shadow Raid"));

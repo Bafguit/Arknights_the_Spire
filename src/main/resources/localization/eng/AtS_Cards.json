@@ -290,6 +290,17 @@
     "DESCRIPTION": "둔화를 부여합니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. NL 소멸."
   },
+  "ats:Beaten Up": {
+    "NAME": "매 맞기",
+    "DESCRIPTION": "민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다. NL ats:SP !S! ats:자동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻고 민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+    ]
+  },
+  "ats:Ignite": {
+    "NAME": "이그니션",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. ats:화상을 !M! 부여합니다."
+  },
   "ats:NULL": {
     "NAME": "",
     "DESCRIPTION": "",
