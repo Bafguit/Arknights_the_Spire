@@ -8,25 +8,24 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class CheckGainEnergy {
     public CheckGainEnergy(int amount) {
         AbstractPlayer p = AbstractDungeon.player;
-        int b = p.getPower("ats:Defend Order").amount;
         AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(amount));
-        checkDefend(p, b);
+        checkDefend(p);
         checkUrsus(p);
     }
 
-    public static void checkDefend(AbstractPlayer p, int b) {
+    public static void checkDefend(AbstractPlayer p) {
         if(p.hasPower("ats:Defend Order")) {
+            int b = p.getPower("ats:Defend Order").amount;
             p.getPower("ats:Defend Order").flash();
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, b));
         }
     }
 
     public static void checkUrsus(AbstractPlayer p) {
-        int b = p.getPower("ats:Defend Order").amount;
         if(p.hasPower("ats:Roar of Ursus")) {
             p.getPower("ats:Roar of Ursus").flash();
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
-            checkDefend(p, b);
+            checkDefend(p);
         }
     }
 }

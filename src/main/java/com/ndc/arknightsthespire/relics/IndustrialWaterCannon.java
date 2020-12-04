@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class IndustrialWaterCannon extends CustomRelic {

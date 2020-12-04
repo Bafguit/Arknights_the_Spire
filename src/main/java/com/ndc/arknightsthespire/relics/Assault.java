@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.ndc.arknightsthespire.cards.CardSPBase;
-import com.ndc.arknightsthespire.cards.PositionType;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import static com.ndc.arknightsthespire.SPHandler.addSp;

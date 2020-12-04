@@ -281,9 +281,14 @@
     "NAME": "방어지령",
     "DESCRIPTION": "에너지를 얻을 때마다 방어도를 !M! 얻습니다."
   },
-  "ats:Roar of Ursus": {
+  "ats:Roar Of Ursus": {
     "NAME": "우르수스의 포효",
     "DESCRIPTION": "에너지를 얻을 때마다 추가로 1 얻습니다."
+  },
+  "ats:Echo Reverb": {
+    "NAME": "메아리",
+    "DESCRIPTION": "둔화를 부여합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. NL 소멸."
   },
   "ats:NULL": {
     "NAME": "",

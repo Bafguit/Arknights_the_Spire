@@ -1,8 +1,6 @@
 package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
-import basemod.devcommands.relic.Relic;
-import basemod.devcommands.relic.RelicRemove;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.SPHandler;
-import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.ui.MaxSpOption;
 import com.ndc.arknightsthespire.util.TextureLoader;
 

@@ -25,6 +25,14 @@
     "DESCRIPTION": "#ySP가 충분하다면 #y사용 #y모드 #y전환 을 눌러 소모할 수 있습니다."
   },
   {
+    "PROPER_NAME": "화상",
+    "NAMES": [
+      "화상",
+      "화상을"
+    ],
+    "DESCRIPTION": "턴 시작 및 종료 시 피해를 받습니다."
+  },
+  {
     "PROPER_NAME": "가호",
     "NAMES": [
       "가호",
