@@ -36,6 +36,7 @@ public class Sanity extends CustomRelic {
                 flash();
                 SPHandler.addSp((Math.min(Math.round(card.baseSP / 2), 5)));
                 used = true;
+                this.pulse = false;
             }
         }
     }
@@ -43,11 +44,18 @@ public class Sanity extends CustomRelic {
     @Override
     public void atTurnStart() {
         used = false;
+        this.beginPulse();
+        this.pulse = true;
     }
 
     @Override
     public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
         options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
+    }
+
+    @Override
+    public void onVictory() {
+        this.pulse = false;
     }
 
     @Override

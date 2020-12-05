@@ -122,7 +122,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new MentalBurst());
         BaseMod.addCard(new SoulAbs());
         BaseMod.addCard(new Fate());
-        BaseMod.addCard(new GuardianOb());
+        BaseMod.addCard(new AttackStr());
         BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new Sunburst());
         BaseMod.addCard(new Ignite());

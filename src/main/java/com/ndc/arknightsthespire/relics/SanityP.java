@@ -54,6 +54,7 @@ public class SanityP extends CustomRelic {
                 flash();
                 SPHandler.addSp((Math.round(card.baseSP / 2)));
                 used = true;
+                this.pulse = false;
             }
         }
     }
@@ -61,6 +62,13 @@ public class SanityP extends CustomRelic {
     @Override
     public void atTurnStart() {
         used = false;
+        this.beginPulse();
+        this.pulse = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.pulse = false;
     }
 
     @Override

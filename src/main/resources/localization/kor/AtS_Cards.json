@@ -52,9 +52,9 @@
   },
   "ats:Magnetic Hammer": {
     "NAME": "마그네틱 해머",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 NL 적 전체에게 피해를 !D! 주고 기절시킵니다."
+      "ats:SP !S! ats:수동 NL 적 전체에게 피해를 !D! 주고 1 턴 동안 힘을 !M! 감소시킵니다. 방어도를 !B! 얻습니다."
     ]
   },
   "ats:Thorns": {
@@ -233,9 +233,9 @@
     "NAME": "그림자 방패",
     "DESCRIPTION": "보존. 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. NL 소멸"
   },
-  "ats:Guardian Obelisk": {
-    "NAME": "방어 오벨리스크",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다."
+  "ats:Attack Strengthen": {
+    "NAME": "공격 강화",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다."
   },
   "ats:Wolf Pack": {
     "NAME": "이리 떼",

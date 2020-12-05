@@ -18,7 +18,7 @@ public class Overload extends CardSPBase {
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
-    private static final int DEFAULT_SP = 7;
+    private static final int DEFAULT_SP = 6;
 
     public Overload() {
         super(ID, IMG_PATH, COST,
