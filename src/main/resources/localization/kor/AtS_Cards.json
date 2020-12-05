@@ -129,7 +129,7 @@
     "DESCRIPTION": "이번 턴 동안 힘을 !M! , 민첩을 !M! 얻습니다. 턴이 끝날 때 적 전체에게 피해를 15 줍니다."
   },
   "ats:Red Shift": {
-    "NAME": "적색 편이",
+    "NAME": "레드 무브",
     "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 5 번 줍니다."
   },
   "ats:Shadow Assault": {
@@ -209,9 +209,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "육참골단",
-    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 소멸. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다."
+      "ats:SP !S! ats:자동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다. 소멸."
     ]
   },
   "ats:Flexible Camouflage": {
@@ -269,8 +269,8 @@
   },
   "ats:Ambush": {
     "NAME": "매복",
-    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M! #b% 확률로 0이 됩니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다."
+    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다."
   },
   "ats:Defend Order": {
     "NAME": "방어지령",
