@@ -19,12 +19,7 @@ public class RapidMagazine extends CardSPBase {
     public RapidMagazine() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
-
-        this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper_512.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION);
     }
 
     @Override

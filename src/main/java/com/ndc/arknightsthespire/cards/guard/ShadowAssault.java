@@ -23,19 +23,10 @@ public class ShadowAssault extends CardSPBase {
     private static final int UP_SP = 30;
 
     public ShadowAssault() { //Not Using
-        super(ID, IMG_PATH, COST,
+        super(ID, IMG_PATH, SP_IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true);
-        this.damage = this.baseDamage = ATTACK_DMG;
-        this.sp = SP;
-        this.baseSP = SP;
-        this.spCardImage = SP_IMG_PATH;
+                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
-
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
     }
 
     @Override

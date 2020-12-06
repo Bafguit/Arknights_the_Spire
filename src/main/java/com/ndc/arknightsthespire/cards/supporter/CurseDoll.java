@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 public class CurseDoll extends CardSPBase {
     public static final String ID = "ats:Curse Doll";
     public static final String IMG_PATH = "img/cards/CurseDoll.png";
-    public static final PositionType POSITION = PositionType.SUPPORT;
+    public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int NUM = 2;
     private static final int UP_NUM = 1;
@@ -22,13 +22,7 @@ public class CurseDoll extends CardSPBase {
     public CurseDoll() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ENEMY, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = NUM;
-
-        this.setBackgroundTexture("img/512/supporter_512.png", "img/1024/supporter.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.COMMON, CardTarget.ENEMY, POSITION, 0, 0, NUM, 0);
     }
 
     @Override

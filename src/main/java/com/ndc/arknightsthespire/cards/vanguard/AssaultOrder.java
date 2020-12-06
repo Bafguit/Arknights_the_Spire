@@ -20,13 +20,7 @@ public class AssaultOrder extends CardSPBase {
     public AssaultOrder() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, true, POSITION, true);
-        this.sp = this.baseSP = SP;
-
-        this.setBackgroundTexture("img/512/vanguard_512.png", "img/1024/vanguard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.COMMON, CardTarget.SELF, true, POSITION, true, 0, 0, 0, SP);
     }
 
     @Override

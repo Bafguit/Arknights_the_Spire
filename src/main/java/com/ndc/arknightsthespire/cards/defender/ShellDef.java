@@ -22,15 +22,7 @@ public class ShellDef extends CardSPBase {
     public ShellDef() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, POSITION, true);
-        this.block = this.baseBlock = BLOCK_AMT;
-        this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
-        this.sp = this.baseSP = DEFAULT_SP;
-
-        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.COMMON, CardTarget.SELF, false, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
     }
 
     @Override

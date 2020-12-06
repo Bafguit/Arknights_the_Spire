@@ -43,7 +43,7 @@ public class RapidMagPower extends AbstractPower implements CloneablePowerInterf
 
         updateDescription();
 
-        CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
+        CardSPBase.getGroupSPChange(PositionType.SNIPER, -2);
         System.out.println(RapidMagPower.POWER_ID + " Applied Successfully.");
     }
 

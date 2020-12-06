@@ -20,13 +20,7 @@ public class DefendOrder extends CardSPBase {
     public DefendOrder() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = BLOCK;
-
-        this.setBackgroundTexture("img/512/vanguard_512.png", "img/1024/vanguard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, BLOCK, 0, 0);
     }
 
     @Override

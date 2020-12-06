@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 public class Foxfire extends CardSPBase {
     public static final String ID = "ats:Nebulous Foxfire";
     public static final String IMG_PATH = "img/cards/nff.png";
-    public static final PositionType POSITION = PositionType.SUPPORT;
+    public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 2;
     private static final int REGEN_AMOUNT = 2;
     private static final int UPGRADE_REGEN = 1;
@@ -23,13 +23,7 @@ public class Foxfire extends CardSPBase {
     public Foxfire() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = REGEN_AMOUNT;
-
-        this.setBackgroundTexture("img/512/supporter_512.png", "img/1024/supporter_512.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, false, 0, 0, REGEN_AMOUNT, 0);
     }
 
     @Override

@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 public class SporePro extends CardSPBase {
     public static final String ID = "ats:Spore Proliferation";
     public static final String IMG_PATH = "img/cards/SporeProliferation.png";
-    public static final PositionType POSITION = PositionType.SUPPORT;
+    public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int WEAK = 2;
     private static final int SP = 17;
@@ -23,14 +23,7 @@ public class SporePro extends CardSPBase {
     public SporePro() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true);
-        this.magicNumber = this.baseMagicNumber = WEAK;
-        this.sp = this.baseSP = SP;
-
-        this.setBackgroundTexture("img/512/supporter_512.png", "img/1024/supporter.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true, 0, 0, WEAK, SP);
     }
 
     @Override

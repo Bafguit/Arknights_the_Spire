@@ -20,13 +20,7 @@ public class Ambush extends CardSPBase {
     public Ambush() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = EVADE;
-
-        this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.RARE, CardTarget.SELF, POSITION, 0, 0, EVADE, 0);
     }
 
     @Override

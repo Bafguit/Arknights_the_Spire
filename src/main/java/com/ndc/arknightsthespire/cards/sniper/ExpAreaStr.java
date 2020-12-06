@@ -20,14 +20,8 @@ public class ExpAreaStr extends CardSPBase {
     public ExpAreaStr() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ALL_ENEMY, false, POSITION, false);
-        this.damage = this.baseDamage = ATTACK_DMG;
+                CardRarity.COMMON, CardTarget.ALL_ENEMY, POSITION, ATTACK_DMG, 0, 0, 0);
         this.isMultiDamage = true;
-
-        this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
     }
 
     @Override

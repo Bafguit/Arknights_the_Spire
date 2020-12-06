@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.sun.org.apache.regexp.internal.RE;
 
 public class Overload extends CardSPBase {
     public static final String ID = "ats:Overload";
@@ -23,16 +24,7 @@ public class Overload extends CardSPBase {
     public Overload() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
-        this.damage = this.baseDamage = ATTACK_DMG;
-        this.magicNumber = this.baseMagicNumber = REPEAT_ATK;
-        this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP;
-
-        this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, REPEAT_ATK, DEFAULT_SP);
     }
 
     @Override

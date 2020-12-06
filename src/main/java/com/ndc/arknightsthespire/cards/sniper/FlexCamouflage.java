@@ -15,20 +15,13 @@ public class FlexCamouflage extends CardSPBase {
     public static final String IMG_PATH = "img/cards/FlexibleCamouflage.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 0;
-    private static final int FLEX = 1;
+    private static final int FLEX = 2;
     private static final int UP_FLEX = 1;
 
     public FlexCamouflage() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, POSITION, false);
-
-        this.setBackgroundTexture("img/512/sniper_512.png", "img/1024/sniper.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
-        this.magicNumber = this.baseMagicNumber = FLEX;
-
+                CardRarity.COMMON, CardTarget.SELF, POSITION, 0, 0, FLEX, 0);
     }
 
     @Override

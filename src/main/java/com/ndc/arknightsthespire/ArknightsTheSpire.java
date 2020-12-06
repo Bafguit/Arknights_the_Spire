@@ -88,7 +88,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new Cheat());
         //Sniper
         BaseMod.addCard(new Overload());
-        BaseMod.addCard(new PowerfulStrike());
+        BaseMod.addCard(new PowerfulStrikeS());
         BaseMod.addCard(new ArmCrushShot());
         BaseMod.addCard(new RapidMagazine());
         BaseMod.addCard(new ConShotAuto());
@@ -122,7 +122,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new MentalBurst());
         BaseMod.addCard(new SoulAbs());
         BaseMod.addCard(new Fate());
-        BaseMod.addCard(new AttackStr());
+        BaseMod.addCard(new PowerfulStrikeC());
         BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new Sunburst());
         BaseMod.addCard(new Ignite());
@@ -144,6 +144,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new ThermiteBlade());
         BaseMod.addCard(new SoulRend());
         BaseMod.addCard(new FracturedBody());
+        BaseMod.addCard(new PowerfulStrikeG());
         //Vanguard
         BaseMod.addCard(new AssaultOrder());
         BaseMod.addCard(new SupportOrder());

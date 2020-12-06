@@ -22,13 +22,7 @@ public class WolfPack extends CardSPBase {
     public WolfPack() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, false);
-        this.damage = this.baseDamage = DAMAGE;
-
-        this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.RARE, CardTarget.ALL_ENEMY, POSITION, DAMAGE, 0, 0, 0);
         this.exhaust = true;
         this.selfRetain = true;
     }

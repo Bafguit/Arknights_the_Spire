@@ -27,15 +27,8 @@ public class TrueSilverSlash extends CardSPBase {
     public TrueSilverSlash() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true);
-        this.damage = this.baseDamage = ATTACK_DMG;
-        this.sp = this.baseSP = SP;
+                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
-
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
     }
 
     public int getGuardDeck() {

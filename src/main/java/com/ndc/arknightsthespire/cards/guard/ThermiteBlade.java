@@ -24,15 +24,7 @@ public class ThermiteBlade extends CardSPBase {
     public ThermiteBlade() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true);
-        this.damage = this.baseDamage = ATTACK_DMG;
-        this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP;
-
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, DEFAULT_SP);
     }
 
     @Override

@@ -20,13 +20,7 @@ public class RedShift extends CardSPBase {
     public RedShift() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, false);
-        this.damage = this.baseDamage = ATTACK_DMG;
-
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, false, ATTACK_DMG, 0, 0, 0);
     }
 
     @Override

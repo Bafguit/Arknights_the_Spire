@@ -24,13 +24,7 @@ public class AutoCover extends CardSPBase {
     public AutoCover() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = DEX;
-        this.block = this.baseBlock = BLOCK;
-
-        this.setBackgroundTexture("img/512/medic_512.png", "img/1024/medic.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, BLOCK, DEX, 0);
     }
 
     @Override

@@ -26,16 +26,7 @@ public class CatScratch extends CardSPBase {
     public CatScratch() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true);
-        this.damage = this.baseDamage = ATTACK_DMG;
-        this.magicNumber = this.baseMagicNumber = WEAK;
-        this.sp = DEFAULT_SP;
-        this.baseSP = DEFAULT_SP;
-
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, WEAK, DEFAULT_SP);
     }
 
     @Override

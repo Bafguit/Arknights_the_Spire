@@ -24,12 +24,7 @@ public class Durian extends CardSPBase {
     public Durian() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
-
-        this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.RARE, CardTarget.SELF, POSITION);
         this.exhaust = true;
         this.selfRetain = true;
     }

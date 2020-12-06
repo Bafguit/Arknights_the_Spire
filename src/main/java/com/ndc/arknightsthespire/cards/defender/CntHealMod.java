@@ -21,13 +21,7 @@ public class CntHealMod extends CardSPBase {
     public CntHealMod() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = SP;
-
-        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, SP, 0);
     }
 
     @Override

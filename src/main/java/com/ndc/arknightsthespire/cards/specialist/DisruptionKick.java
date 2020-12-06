@@ -21,13 +21,7 @@ public class DisruptionKick extends CardSPBase {
     public DisruptionKick() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, false);
-        this.damage = this.baseDamage = 1;
-
-        this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, false, 1, 0, 0, 0);
         this.exhaust = true;
         this.selfRetain = true;
     }

@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.ShelterPower;
 public class EncForest extends CardSPBase {
     public static final String ID = "ats:Encircling Forest";
     public static final String IMG_PATH = "img/cards/EncirclingForest.png";
-    public static final PositionType POSITION = PositionType.SUPPORT;
+    public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int SHELTER = 1;
     private static final int UP_SHELTER = 1;
@@ -22,14 +22,7 @@ public class EncForest extends CardSPBase {
     public EncForest() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, true);
-        this.magicNumber = this.baseMagicNumber = SHELTER;
-        this.sp = this.baseSP = SP;
-
-        this.setBackgroundTexture("img/512/supporter_512.png", "img/1024/supporter.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, true, 0, 0, SHELTER, SP);
     }
 
     @Override

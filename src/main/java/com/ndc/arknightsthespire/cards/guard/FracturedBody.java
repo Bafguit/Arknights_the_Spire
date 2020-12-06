@@ -26,12 +26,7 @@ public class FracturedBody extends CardSPBase {
     public FracturedBody() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, true, POSITION, true);
-        this.sp = this.baseSP = DEFAULT_SP;
-
-        this.setBackgroundTexture("img/512/guard_512.png", "img/1024/guard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
+                CardRarity.RARE, CardTarget.SELF, true, POSITION, true, 0, 0, 0, DEFAULT_SP);
         this.exhaust = true;
     }
 

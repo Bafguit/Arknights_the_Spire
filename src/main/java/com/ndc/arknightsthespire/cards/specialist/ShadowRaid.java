@@ -21,13 +21,7 @@ public class ShadowRaid extends CardSPBase {
     public ShadowRaid() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = DEX;
-
-        this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, DEX, 0);
         this.exhaust = true;
         this.selfRetain = true;
     }

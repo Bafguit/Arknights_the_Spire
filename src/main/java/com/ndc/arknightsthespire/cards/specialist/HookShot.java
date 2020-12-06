@@ -20,13 +20,7 @@ public class HookShot extends CardSPBase {
     public HookShot() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true);
-
-        this.setBackgroundTexture("img/512/specialist_512.png", "img/1024/specialist.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-        this.sp = this.baseSP = SP;
-
+                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true, 0, 0, 0, SP);
     }
 
     @Override

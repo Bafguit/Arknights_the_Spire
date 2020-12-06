@@ -19,21 +19,13 @@ public class DefendUp extends CardSPBase {
     public DefendUp() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, false, POSITION, true);
-        this.block = this.baseBlock = BLOCK_AMT;
-        this.magicNumber = this.baseMagicNumber = UPGRADE_BLOCK;
-        this.sp = this.baseSP = DEFAULT_SP;
-
-        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.BASIC, CardTarget.SELF, false, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        int b = this.block + (isSpJustUsed ? 5 : 0);
-        checkGainBlock(b);
+
+        checkGainBlock(this.block * (isSpJustUsed ? 2 : 1));
     }
 
     @Override

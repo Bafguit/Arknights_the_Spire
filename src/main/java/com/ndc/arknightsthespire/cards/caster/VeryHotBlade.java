@@ -24,15 +24,7 @@ public class VeryHotBlade extends CardSPBase {
     public VeryHotBlade() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true);
-        this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = HIT;
-        this.sp = this.baseSP = SP;
-
-        this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, HIT, SP);
     }
 
     @Override

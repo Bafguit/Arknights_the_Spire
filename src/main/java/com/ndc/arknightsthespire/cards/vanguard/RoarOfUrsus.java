@@ -18,12 +18,7 @@ public class RoarOfUrsus extends CardSPBase {
     public RoarOfUrsus() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, false, POSITION, false);
-
-        this.setBackgroundTexture("img/512/vanguard_512.png", "img/1024/vanguard.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.RARE, CardTarget.SELF, POSITION);
     }
 
     @Override

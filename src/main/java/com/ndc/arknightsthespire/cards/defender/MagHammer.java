@@ -24,24 +24,15 @@ public class MagHammer extends CardSPBase {
     private static final int UP_BLOCK = 3;
     private static final int DAMAGE = 7;
     private static final int UP_DAMAGE = 3;
-    private static final int SP = 20;
+    private static final int SP = 12;
     private static final int WEAK = 3;
     private static final int UP_WEAK = 5;
 
     public MagHammer() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true);
-        this.damage = this.baseDamage = DAMAGE;
-        this.block = this.baseBlock = BLOCK;
-        this.magicNumber = this.baseMagicNumber = WEAK;
-        this.sp = this.baseSP = SP;
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true, DAMAGE, BLOCK, WEAK, SP);
         this.isMultiDamage = true;
-
-        this.setBackgroundTexture("img/512/defender_512.png", "img/1024/defender.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
     }
 
     @Override

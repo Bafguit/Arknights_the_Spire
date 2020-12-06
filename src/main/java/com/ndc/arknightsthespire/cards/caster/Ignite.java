@@ -28,15 +28,7 @@ public class Ignite extends CardSPBase {
     public Ignite() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true);
-        this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = BURN;
-        this.sp = this.baseSP = SP;
-
-        this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, BURN, SP);
     }
 
     @Override

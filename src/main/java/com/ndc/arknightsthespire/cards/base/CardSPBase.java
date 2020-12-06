@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -46,8 +47,11 @@ public abstract class CardSPBase extends CustomCard {
     public boolean canUseSP = false;
     public boolean upgradedSP = false;
     public boolean onlySP = false;
-
     public boolean isSpJustUsed;
+    public CardSpPreview spCard;
+    public String nameUp;
+
+    private boolean showSP;
 
     protected String normalCardImage;
     protected String spCardImage;
@@ -59,18 +63,37 @@ public abstract class CardSPBase extends CustomCard {
     protected String SP_DESCRIPTION;
     protected String UPGRADE_DESCRIPTION;
 
-    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        this(id, CardCrawlGame.languagePack.getCardStrings(id),
-                img, cost, type, color, rarity, target, isAuto, position, hasSP);
+    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, PositionType position) {
+        this(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION,
+                img, null, cost, type, color, rarity, target, false, position, false, 0, 0, 0, 0);
     }
 
-    private CardSPBase(String id, CardStrings cardStrings, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP) {
-        super(id, cardStrings.NAME, img, cost, cardStrings.DESCRIPTION, type, color, rarity, target);
+    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, PositionType position, int d, int b, int m, int s) {
+        this(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION,
+                img, null, cost, type, color, rarity, target, false, position, false, d, b, m, s);
+    }
+
+    public CardSPBase(String id, String img, String spImg, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, int d, int b, int m, int s) {
+        this(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION,
+                img, spImg, cost, type, color, rarity, target, isAuto, position, hasSP, d, b, m, s);
+    }
+
+    public CardSPBase(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, int d, int b, int m, int s) {
+        this(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION,
+                img, null, cost, type, color, rarity, target, isAuto, position, hasSP, d, b, m, s);
+    }
+
+    public CardSPBase(String id, String name, String des, String img, String spImg, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, int d, int b, int m, int s) {
+        super(id, name, img, cost, des, type, color, rarity, target);
+        this.setBackgroundTexture("img/512/" + bt(position) + "_512.png", "img/1024/" + bt(position) + ".png");
+        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
         CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(id);
         normalCardImage = img;
-        NORMAL_DESCRIPTION = cardStrings.DESCRIPTION;
-        NORMAL_NAME = cardStrings.NAME;
-        if(cardStrings.EXTENDED_DESCRIPTION != null) {
+        this.spCardImage = spImg;
+        NORMAL_DESCRIPTION = des;
+        NORMAL_NAME = name;
+        CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
+        if(hasSP) {
             if (cardStrings.EXTENDED_DESCRIPTION.length == 1) {
                 SP_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION[0];
             } else if (cardStrings.EXTENDED_DESCRIPTION.length > 1) {
@@ -82,7 +105,33 @@ public abstract class CardSPBase extends CustomCard {
         this.position = position;
         this.isAuto = isAuto;
         this.canUseSP = hasSP;
+        this.showSP = hasSP;
+        this.damage = this.baseDamage = d;
+        this.magicNumber = this.baseMagicNumber = m;
+        this.block = this.baseBlock = b;
+        this.sp = this.baseSP = s;
+        if(showSP) {
+            if(cardStrings.EXTENDED_DESCRIPTION != null) {
+                if (cardStrings.EXTENDED_DESCRIPTION.length > 1) {
+                    if (this.spCardImage != null)
+                        this.spCard = new CardSpPreview(id, cardStrings.EXTENDED_DESCRIPTION[0], cardStrings.EXTENDED_DESCRIPTION[1], this.spCardImage, cost, type, color, rarity, target, isAuto, position, d, b, m, s);
+                    else
+                        this.spCard = new CardSpPreview(id, cardStrings.EXTENDED_DESCRIPTION[0], cardStrings.EXTENDED_DESCRIPTION[1], img, cost, type, color, rarity, target, isAuto, position, d, b, m, s);
+                } else if (cardStrings.EXTENDED_DESCRIPTION.length == 1) {
+                    if (this.spCardImage != null)
+                        this.spCard = new CardSpPreview(id, name, cardStrings.EXTENDED_DESCRIPTION[0], this.spCardImage, cost, type, color, rarity, target, isAuto, position, d, b, m, s);
+                    else
+                        this.spCard = new CardSpPreview(id, name, cardStrings.EXTENDED_DESCRIPTION[0], img, cost, type, color, rarity, target, isAuto, position, d, b, m, s);
+                }
+                this.spCard.nameUp = this.spCard.name;
+            }
+        }
+        this.cardsToPreview = this.spCard;
         this.updateState(false);
+    }
+
+    public String bt(PositionType p) {
+        return p.toString().toLowerCase();
     }
 
     @Override
@@ -97,14 +146,64 @@ public abstract class CardSPBase extends CustomCard {
 
     public abstract void upgradeCard();
 
-
+    @Override
+    protected void upgradeDamage(int amount) {
+        this.baseDamage += amount;
+        this.upgradedDamage = true;
+        if(this.spCard != null) {
+            this.spCard.baseDamage += amount;
+            this.spCard.upgradedDamage = true;
+        }
+    }
 
     @Override
-    protected final void upgradeName() {}
+    protected void upgradeBlock(int amount) {
+        this.baseBlock += amount;
+        this.upgradedBlock = true;
+        if(this.spCard != null) {
+            this.spCard.baseBlock += amount;
+            this.spCard.upgradedBlock = true;
+        }
+    }
+
+    @Override
+    protected void upgradeMagicNumber(int amount) {
+        this.baseMagicNumber += amount;
+        this.magicNumber = this.baseMagicNumber;
+        this.upgradedMagicNumber = true;
+        if(this.spCard != null) {
+            this.spCard.baseMagicNumber += amount;
+            this.spCard.magicNumber = this.spCard.baseMagicNumber;
+            this.spCard.upgradedMagicNumber = true;
+        }
+    }
+
+    @Override
+    protected void upgradeBaseCost(int newBaseCost) {
+        int diff = this.costForTurn - this.cost;
+        this.cost = newBaseCost;
+        if(this.spCard != null) this.spCard.cost = newBaseCost;
+        if (this.costForTurn > 0) {
+            this.costForTurn = this.cost + diff;
+            if(this.spCard != null) this.spCard.costForTurn = this.spCard.cost + diff;
+        }
+
+        if (this.costForTurn < 0) {
+            this.costForTurn = 0;
+            if(this.spCard != null) this.spCard.costForTurn = 0;
+        }
+
+        this.upgradedCost = true;
+        if(this.spCard != null) this.spCard.upgradedCost = true;
+    }
 
     public void upgradeSP(int sp) {
-        baseSP = sp;
-        upgradedSP = true;
+        this.baseSP = sp;
+        this.upgradedSP = true;
+        if(this.spCard != null) {
+            this.spCard.baseSP = sp;
+            this.spCard.upgradedSP = true;
+        }
     }
 
     public void changeSP(int c_sp) {
@@ -122,7 +221,10 @@ public abstract class CardSPBase extends CustomCard {
             AbstractCard c = (AbstractCard) var1.next();
             if(c instanceof CardSPBase) {
                 CardSPBase card = (CardSPBase) c;
-                if (card.position == cardClass && card.canUseSP == true) card.changeSP(SPHandler.getDiffSp());
+                if (card.position == cardClass && card.canUseSP == true) {
+                    card.changeSP(SPHandler.getDiffSp());
+                    if(card.spCard != null) card.spCard.changeSP(SPHandler.getDiffSp());
+                }
             }
         }
     }
@@ -130,7 +232,10 @@ public abstract class CardSPBase extends CustomCard {
     public static void getSingleClassSPChange(AbstractCard card, PositionType cardClass) {
         if(card instanceof CardSPBase) {
             CardSPBase sCard = (CardSPBase) card;
-            if (sCard.position == cardClass && sCard.canUseSP == true) sCard.changeSP(SPHandler.getDiffSp());
+            if (sCard.position == cardClass && sCard.canUseSP == true) {
+                sCard.changeSP(SPHandler.getDiffSp());
+                if(sCard.spCard != null) sCard.spCard.changeSP(SPHandler.getDiffSp());
+            }
         }
     }
 
@@ -150,6 +255,15 @@ public abstract class CardSPBase extends CustomCard {
         updateDescription();
         updateImage();
         updateGlow();
+        updateSpView();
+    }
+
+    public void updateSpView() {
+        if(this.spCard != null) {
+            if (this.isAuto && canAffordSP()) this.cardsToPreview = null;
+            else if (!this.isAuto && canAffordSP() && SPHandler.isSpModeEnabled()) this.cardsToPreview = null;
+            else this.cardsToPreview = this.spCard;
+        }
     }
 
     public void updateGlow() {
@@ -166,6 +280,10 @@ public abstract class CardSPBase extends CustomCard {
         }
         if(upgraded) {
             this.name += "+";
+            if(this.spCard != null) {
+                this.spCard.name = this.spCard.nameUp + "+";
+                this.spCard.initializeTitle();
+            }
         }
 
         this.initializeTitle();

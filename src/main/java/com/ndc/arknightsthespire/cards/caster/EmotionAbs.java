@@ -19,13 +19,7 @@ public class EmotionAbs extends CardSPBase {
     public EmotionAbs() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, false, POSITION, false);
-        this.magicNumber = this.baseMagicNumber = SP;
-
-        this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.BASIC, CardTarget.SELF, POSITION, 0, 0, SP, 0);
     }
 
     @Override

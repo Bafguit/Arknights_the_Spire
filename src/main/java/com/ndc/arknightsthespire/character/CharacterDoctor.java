@@ -87,9 +87,9 @@ public class CharacterDoctor extends CustomPlayer {
 
     public ArrayList<String> getStartingDeck() { // starting deck 'nuff said
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("ats:Powerful Strike");
-        retVal.add("ats:Powerful Strike");
-        retVal.add("ats:Powerful Strike");
+        retVal.add("ats:Powerful Strike C");
+        retVal.add("ats:Powerful Strike G");
+        retVal.add("ats:Powerful Strike S");
         retVal.add("ats:Armor Crushing Shot");
         retVal.add("ats:Defend Up");
         retVal.add("ats:Defend Up");

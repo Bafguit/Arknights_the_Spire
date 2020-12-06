@@ -20,13 +20,7 @@ public class SoulAbs extends CardSPBase {
     public SoulAbs() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true);
-        this.sp = this.baseSP = SP;
-
-        this.setBackgroundTexture("img/512/caster_512.png", "img/1024/caster.png");
-
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
-
+                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true, 0, 0, 0, SP);
     }
 
     @Override
@@ -42,7 +36,7 @@ public class SoulAbs extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeSP(UP_SP);
-        this.sp = this.baseSP = UP_SP;
+        this.canUseSP = false;
     }
 
 }

@@ -30,7 +30,7 @@ public class Support extends CustomRelic {
         AbstractCard c = card;
         if(c instanceof CardSPBase) {
             spC = (CardSPBase) c;
-            if(spC.position == PositionType.SUPPORT) {
+            if(spC.position == PositionType.SUPPORTER) {
                 flash();
                 addSp(1);
             }
