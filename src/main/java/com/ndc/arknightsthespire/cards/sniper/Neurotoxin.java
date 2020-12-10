@@ -14,16 +14,18 @@ public class Neurotoxin extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Neurotoxin.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
+    private static final int POISON = 1;
+    private static final int UP_POISON = 1;
 
     public Neurotoxin() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, POSITION);
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, POISON, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new NeurotoxinPower(p, p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new NeurotoxinPower(p, p, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -33,7 +35,7 @@ public class Neurotoxin extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.isInnate = true;
+        this.upgradeMagicNumber(UP_POISON);
     }
 
 }

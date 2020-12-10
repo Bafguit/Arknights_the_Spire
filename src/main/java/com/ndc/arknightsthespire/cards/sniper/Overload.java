@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.sun.org.apache.regexp.internal.RE;
@@ -30,10 +31,11 @@ public class Overload extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         int repeat = (isSpJustUsed ? 5 : REPEAT_ATK);
+        addToBot(new AtsSFX((isSpJustUsed ? "SMG_H" : "SMG")));
         for (int forI = 0; forI < repeat; forI++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+                    AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         }
     }
 

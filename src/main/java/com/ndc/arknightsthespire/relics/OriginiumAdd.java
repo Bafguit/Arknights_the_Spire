@@ -7,7 +7,9 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Circlet;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -20,7 +22,7 @@ public class OriginiumAdd extends CustomRelic {
         SPHandler.addMaxSp(10);
     }
 
-    @Override
+        @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }

@@ -72,7 +72,13 @@ public class BurnPower extends AbstractPower implements CloneablePowerInterface 
                 addToBot(new DamageAction(owner, new DamageInfo(owner, 1, DamageInfo.DamageType.HP_LOSS),
                         AbstractGameAction.AttackEffect.FIRE, true));
             }
-            addToBot(new RemoveSpecificPowerAction(owner, owner, "ats:Burn"));
+            if(this.owner.hasPower("ats:Guardian Obelisk") && this.amount > 1) {
+                this.owner.getPower("ats:Guardian Obelisk").flash();
+                addToBot(new ReducePowerAction(this.owner, this.source, "ats:Burn", Math.round(this.amount / 2)));
+                addToBot(new RemoveSpecificPowerAction(this.owner, this.source, "ats:Guardian Obelisk"));
+            } else {
+                addToBot(new RemoveSpecificPowerAction(owner, owner, "ats:Burn"));
+            }
         }
     }
 

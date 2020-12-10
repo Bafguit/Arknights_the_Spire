@@ -13,19 +13,18 @@ public class SoulAbs extends CardSPBase {
     public static final String ID = "ats:Soul Absorption";
     public static final String IMG_PATH = "img/cards/SoulAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
-    private static final int COST = 0;
-    private static final int SP = 5;
-    private static final int UP_SP = 0;
+    private static final int COST = 1;
+    private static final int UP_COST = 0;
 
     public SoulAbs() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true, 0, 0, 0, SP);
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(isSpJustUsed) addToBot(new ApplyPowerAction(p, p, new SoulAbsPower(p, p)));
+        addToBot(new ApplyPowerAction(p, p, new SoulAbsPower(p, p)));
     }
 
     @Override
@@ -35,8 +34,7 @@ public class SoulAbs extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeSP(UP_SP);
-        this.canUseSP = false;
+        this.upgradeBaseCost(UP_COST);
     }
 
 }

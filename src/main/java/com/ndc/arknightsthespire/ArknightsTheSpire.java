@@ -11,6 +11,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,7 +19,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.cards.Cheat;
+import com.ndc.arknightsthespire.cards.GainSP;
 import com.ndc.arknightsthespire.cards.caster.*;
 import com.ndc.arknightsthespire.cards.defender.*;
 import com.ndc.arknightsthespire.cards.guard.*;
@@ -44,7 +48,7 @@ import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber, PostBattleSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
     public static boolean[] activeTutorials = new boolean[]{true};
@@ -86,6 +90,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
         System.out.println("ADDING CARDS");
         BaseMod.addCard(new Cheat());
+        BaseMod.addCard(new GainSP());
         //Sniper
         BaseMod.addCard(new Overload());
         BaseMod.addCard(new PowerfulStrikeS());
@@ -109,6 +114,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new EncForest());
         BaseMod.addCard(new CurseDoll());
         BaseMod.addCard(new EchoReverb());
+        BaseMod.addCard(new SongOfBattle());
         //Defender
         BaseMod.addCard(new DefendUp());
         BaseMod.addCard(new ChargingDef());
@@ -117,16 +123,20 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new Thorns());
         BaseMod.addCard(new CntHealMod());
         BaseMod.addCard(new BeatenUp());
+        BaseMod.addCard(new Calcification());
         //Caster
         BaseMod.addCard(new EmotionAbs());
         BaseMod.addCard(new MentalBurst());
         BaseMod.addCard(new SoulAbs());
-        BaseMod.addCard(new Fate());
+        //BaseMod.addCard(new Fate());
         BaseMod.addCard(new PowerfulStrikeC());
         BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new Sunburst());
         BaseMod.addCard(new Ignite());
         BaseMod.addCard(new Volcano());
+        BaseMod.addCard(new BurningGround());
+        BaseMod.addCard(new GuardianObelisk());
+        BaseMod.addCard(new FlameOfHeaven());
         //Specialist
         BaseMod.addCard(new RatPack());
         BaseMod.addCard(new ChainHook());
@@ -135,6 +145,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new WolfPack());
         BaseMod.addCard(new DisruptionKick());
         BaseMod.addCard(new Durian());
+        BaseMod.addCard(new SteamPump());
+        BaseMod.addCard(new CollapsingStrike());
+        BaseMod.addCard(new LN2Cannon());
         //Guard
         BaseMod.addCard(new CatScratch());
         BaseMod.addCard(new RedShift());
@@ -145,6 +158,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new SoulRend());
         BaseMod.addCard(new FracturedBody());
         BaseMod.addCard(new PowerfulStrikeG());
+        BaseMod.addCard(new DemonStrength());
         //Vanguard
         BaseMod.addCard(new AssaultOrder());
         BaseMod.addCard(new SupportOrder());
@@ -289,6 +303,13 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
             if (activeTutorials[0]) {
                 AbstractDungeon.actionManager.addToBottom(new MessageCaller(0));
             }
+        }
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp()) {
+            abstractRoom.addRelicToRewards(new OriginiumAdd());
         }
     }
 }

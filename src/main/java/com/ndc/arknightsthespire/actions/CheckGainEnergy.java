@@ -22,8 +22,8 @@ public class CheckGainEnergy {
     }
 
     public static void checkUrsus(AbstractPlayer p) {
-        if(p.hasPower("ats:Roar of Ursus")) {
-            p.getPower("ats:Roar of Ursus").flash();
+        if(p.hasPower("ats:Roar Of Ursus")) {
+            p.getPower("ats:Roar Of Ursus").flash();
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
             checkDefend(p);
         }

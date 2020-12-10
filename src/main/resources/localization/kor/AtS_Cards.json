@@ -11,6 +11,10 @@
     "NAME": "치트",
     "DESCRIPTION": "다 죽입니다."
   },
+  "ats:GainSP": {
+    "NAME": "SP 회복",
+    "DESCRIPTION": "SP를 20000 얻습니다."
+  },
   "ats:Counter Healing Mode": {
     "NAME": "반격 의료 모드",
     "DESCRIPTION": "체력을 회복할 때마다 ats:SP를 !M! 얻습니다."
@@ -24,21 +28,21 @@
     "NAME": "강타β",
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 두 배가 됩니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
     ]
   },
   "ats:Powerful Strike C": {
     "NAME": "강타α",
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 두 배가 됩니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
     ]
   },
   "ats:Powerful Strike G": {
     "NAME": "강타γ",
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 두 배가 됩니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
     ]
   },
   "ats:Defend Up": {
@@ -46,7 +50,7 @@
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
       "방어 강화γ",
-      "ats:SP !S! ats:수동 NL 방어도를 !B! 의 두 배 얻습니다."
+      "ats:SP !S! ats:수동 NL 방어도를 !B! 얻고 추가로 5 얻습니다."
     ]
   },
   "ats:Charging Defense": {
@@ -72,7 +76,7 @@
   },
   "ats:Thorns": {
     "NAME": "가시덤불",
-    "DESCRIPTION": "가시를 !M! 얻습니다. 민첩을 1 얻습니다."
+    "DESCRIPTION": "가시를 !M! 얻습니다. 민첩을 !B! 얻습니다."
   },
   "ats:Armor Crushing Shot": {
     "NAME": "쇄갑격",
@@ -92,18 +96,14 @@
   },
   "ats:Sunburst": {
     "NAME": "화염 폭발",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 적 전체에게 피해를 !D! 줍니다. NL ats:화상을 !M! 부여합니다."
     ]
   },
   "ats:Soul Absorption": {
     "NAME": "영혼 착취",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
-    "UPGRADE_DESCRIPTION": "이번 턴에 한 번, 적에게 준 피해만큼 방어도를 얻습니다.",
-    "EXTENDED_DESCRIPTION": [
-      "이번 턴에 한 번, 적에게 준 피해만큼 방어도를 얻습니다."
-    ]
+    "DESCRIPTION": "이번 턴에 한 번, 적에게 준 피해만큼 방어도를 얻습니다."
   },
   "ats:Durian": {
     "NAME": "폭발제-두리안맛",
@@ -115,14 +115,14 @@
   },
   "ats:Assault Order": {
     "NAME": "돌격지령",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
+    "DESCRIPTION": "(아무런 일도 일어나지 않습니다...) NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL [E] [E] 를 얻습니다."
     ]
   },
   "ats:Support Order": {
     "NAME": "지원지령",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
+    "DESCRIPTION": "(아무런 일도 일어나지 않습니다...) NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL ats:지령을 !M! 얻습니다."
     ]
@@ -136,7 +136,7 @@
   },
   "ats:Volcano": {
     "NAME": "화산",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
+    "DESCRIPTION": "적 전체에게 화상을 !D! 부여합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 덱에 있는 ats:캐스터 1 장당 적 전체에게 피해를 !D! 줍니다. NL 소멸."
     ]
@@ -192,14 +192,15 @@
   },
   "ats:Mental Burst": {
     "NAME": "스피릿 버스트",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
+    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 6 번 주고 화상을 1 부여합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 줍니다."
+      "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 주고 화상을 1 부여합니다."
     ]
   },
   "ats:Fate": {
     "NAME": "운명",
-    "DESCRIPTION": "ats:캐스터 카드를 연속으로 사용할 때마다 카드를 1 장 뽑습니다."
+    "DESCRIPTION": "ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다."
   },
   "ats:Revitalization": {
     "NAME": "활력회복",
@@ -233,9 +234,9 @@
   },
   "ats:Hook Shot": {
     "NAME": "갈고리 발사",
-    "DESCRIPTION": "카드를 3 장 뽑습니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. 카드를 1 장 뽑습니다. ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 카드를 3 장 뽑습니다. [E] 를 얻습니다."
+      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻습니다. 카드를 2 장 뽑습니다."
     ]
   },
   "ats:Fractured Body": {
@@ -278,14 +279,14 @@
   },
   "ats:Very Hot Blade": {
     "NAME": "엄청 뜨거운 칼",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 3 번 줍니다. 방어도를 가진 적에게 피해가 2 증가합니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 적이 가진 화상 수치만큼 피해가 증가합니다. 카드를 1 장 뽑습니다."
     ]
   },
   "ats:Just Like an Apocalypse": {
     "NAME": "종말처럼",
-    "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다. NL 소멸."
+    "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
   },
   "ats:Composite Medical Shells": {
     "NAME": "복합형 약물파편",
@@ -294,8 +295,8 @@
   },
   "ats:Neurotoxin": {
     "NAME": "신경독소",
-    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다.",
-    "UPGRADE_DESCRIPTION": "선천성. ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다."
+    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 !M! 부여합니다.",
+    "UPGRADE_DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 !M! 부여합니다."
   },
   "ats:Ambush": {
     "NAME": "매복",
@@ -304,7 +305,7 @@
   },
   "ats:Defend Order": {
     "NAME": "방어지령",
-    "DESCRIPTION": "에너지를 얻을 때마다 방어도를 !M! 얻습니다."
+    "DESCRIPTION": "에너지를 얻을 때마다 방어도를 !B! 얻습니다."
   },
   "ats:Roar Of Ursus": {
     "NAME": "우르수스의 포효",
@@ -313,8 +314,8 @@
   },
   "ats:Echo Reverb": {
     "NAME": "메아리",
-    "DESCRIPTION": "둔화를 부여합니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. NL 소멸."
+    "DESCRIPTION": "둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸."
   },
   "ats:Beaten Up": {
     "NAME": "매 맞기",
@@ -325,10 +326,44 @@
   },
   "ats:Ignite": {
     "NAME": "이그니션",
-    "DESCRIPTION": "ats:SP !S! ats:자동",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. ats:화상을 !M! 부여합니다."
-    ]
+    "DESCRIPTION": "피해를 !D! 줍니다. ats:화상을 !M! 부여합니다."
+  },
+  "ats:Demon Strength": {
+    "NAME": "악귀의 힘",
+    "DESCRIPTION": "힘을 !M! 얻습니다. 민첩을 1 잃습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 힘을 !M! 얻습니다. 민첩을 1 잃습니다."
+  },
+  "ats:Steam Pump": {
+    "NAME": "스팀 펌프",
+    "DESCRIPTION": "카드를 !M! 장 버립니다. 방어도를 !B! 얻습니다."
+  },
+  "ats:Collapsing Strike": {
+    "NAME": "붕권식",
+    "DESCRIPTION": "카드를 !M! 장 버립니다. 피해를 !D! 줍니다."
+  },
+  "ats:Song Of Battle": {
+    "NAME": "전투의 노래",
+    "DESCRIPTION": "매 턴 시작 시 ats:SP를 !M! 얻습니다."
+  },
+  "ats:LN2 Cannon": {
+    "NAME": "액체 질소 대포",
+    "DESCRIPTION": "손에 있는 공격 카드를 제외한 모든 카드를 소멸시킵니다. 소멸시킨 카드 한 장당 적 전체에게 방어도를 무시하는 피해를 !D! 줍니다."
+  },
+  "ats:Calcification": {
+    "NAME": "칼슘화",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. 민첩 , 재생 , ats:SP를 1 얻습니다. "
+  },
+  "ats:Flame Of Heaven": {
+    "NAME": "메테오 플레임",
+    "DESCRIPTION": "보존. 적 하나의 ats:화상 수치를 2배로 증가시킵니다. 소멸."
+  },
+  "ats:Burning Ground": {
+    "NAME": "불타는 땅",
+    "DESCRIPTION": "캐스터 카드를 사용할 때마다 적 전체에게 ats:화상을 !M! 부여합니다."
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "방어 오벨리스크",
+    "DESCRIPTION": "적 하나의 ats:화상 수치만큼 방어도를 얻습니다. 적의 ats:화상이 끝날 때, 대신 절반만 감소합니다."
   },
   "ats:NULL": {
     "NAME": "",

@@ -14,6 +14,7 @@ public class RoarOfUrsus extends CardSPBase {
     public static final String IMG_PATH = "img/cards/RoarOfUrsus.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
+    private static final int UP_COST = 0;
 
     public RoarOfUrsus() {
         super(ID, IMG_PATH, COST,
@@ -33,6 +34,7 @@ public class RoarOfUrsus extends CardSPBase {
 
     @Override
     public void upgradeCard() {
+        this.upgradeBaseCost(UP_COST);
         this.isInnate = true;
     }
 

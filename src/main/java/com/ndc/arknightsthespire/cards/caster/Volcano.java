@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.NoBlockPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.BurnPower;
 
 import java.util.Iterator;
 
@@ -19,7 +20,7 @@ public class Volcano extends CardSPBase {
     public static final String ID = "ats:Volcano";
     public static final String IMG_PATH = "img/cards/Volcano.png";
     public static final PositionType POSITION = PositionType.CASTER;
-    private static final int COST = 0;
+    private static final int COST = 2;
     private static final int ATTACK_DMG = 8;
     private static final int UP_DMG = 2;
     private static final int SP = 40;
@@ -28,7 +29,6 @@ public class Volcano extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, SP);
-        this.isMultiDamage = true;
     }
 
     public int getCasterDeck() {
@@ -50,12 +50,17 @@ public class Volcano extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(isSpJustUsed) {
-            int cardAmount = getCasterDeck();
+            this.isMultiDamage = true;
             this.exhaust = true;
-            for (int for_i = 0; for_i < cardAmount; for_i++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
+            for (int for_i = 0; for_i < getCasterDeck(); for_i++) {
+                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p,
                         this.multiDamage, this.damageTypeForTurn,
                         AbstractGameAction.AttackEffect.FIRE, true));
+            }
+        } else {
+            for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                addToBot(new ApplyPowerAction(mo, p,
+                        new BurnPower(mo, p, this.damage), this.damage, true));
             }
         }
     }

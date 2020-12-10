@@ -1,12 +1,14 @@
 package com.ndc.arknightsthespire.cards.sniper;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -28,9 +30,9 @@ public class PowerfulStrikeS extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage * (isSpJustUsed ? 2 : 1), this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        addToBot(new AtsSFX((isSpJustUsed ? "PISTOL_H" : "PISTOL")));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage + (isSpJustUsed ? 5 : 0), this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.guard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -22,7 +25,7 @@ public class TrueSilverSlash extends CardSPBase {
     private static final int COST = 3;
     private static final int ATTACK_DMG = 8;
     private static final int UP_DMG = 2;
-    private static final int SP = 40;
+    private static final int SP = 30;
 
     public TrueSilverSlash() {
         super(ID, IMG_PATH, COST,
@@ -54,9 +57,9 @@ public class TrueSilverSlash extends CardSPBase {
         if(isSpJustUsed) this.exhaust = true;
 
         for(int for_i = 0; for_i < (isSpJustUsed ? cardAmount : 3); for_i++) {
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
-                    this.multiDamage, this.damageTypeForTurn,
-                    AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
+            addToBot(new AtsSFX("SILVER"));
+            addToBot(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
+                    AttackEffect.SLASH_HEAVY, false));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new NoBlockPower(p, 1, false), 1));

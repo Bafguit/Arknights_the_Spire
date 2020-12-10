@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -20,11 +22,11 @@ public class MagHammer extends CardSPBase {
     public static final String IMG_PATH = "img/cards/MagneticHammer.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;
-    private static final int BLOCK = 7;
-    private static final int UP_BLOCK = 3;
-    private static final int DAMAGE = 7;
-    private static final int UP_DAMAGE = 3;
-    private static final int SP = 12;
+    private static final int BLOCK = 10;
+    private static final int UP_BLOCK = 2;
+    private static final int DAMAGE = 10;
+    private static final int UP_DAMAGE = 2;
+    private static final int SP = 10;
     private static final int WEAK = 3;
     private static final int UP_WEAK = 5;
 
@@ -37,10 +39,10 @@ public class MagHammer extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new DamageAllEnemiesAction(m,
-                this.multiDamage, this.damageTypeForTurn,
+        addToBot(new AtsSFX("MAGNETIC_HAMMER"));
+        addToBot(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
-        addToBot(new GainBlockAction(p, this.block));
+        checkGainBlock(this.block);
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber));

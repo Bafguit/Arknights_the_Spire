@@ -15,7 +15,7 @@ public class SpiritualRecovery extends CustomRelic {
     private static final int SP_RECOVER = 1;
 
     public SpiritualRecovery() {
-        super(ID, IMG, RelicTier.UNCOMMON, LandingSound.MAGICAL); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.COMMON, LandingSound.MAGICAL); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override

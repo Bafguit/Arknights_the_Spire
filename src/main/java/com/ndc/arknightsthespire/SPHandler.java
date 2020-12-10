@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 
 import java.lang.reflect.Type;
 
@@ -117,7 +118,10 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     //
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        addSpSoon(cardAddSp);
+        if(abstractCard instanceof CardSPBase)
+            addSpSoon(cardAddSp);
+        else
+            addSp(cardAddSp);
         System.out.println("Current SP: " + sp);
     }
 

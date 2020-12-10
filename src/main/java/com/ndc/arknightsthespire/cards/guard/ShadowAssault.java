@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.actions.RandomAttack;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
@@ -33,26 +35,24 @@ public class ShadowAssault extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
 
         if(isSpJustUsed) {
-            for (int for_i = 0; for_i < 4; for_i++) {
+            for (int for_i = 0; for_i < 8; for_i++) {
+                addToBot(new AtsSFX("JUEYING_1"));
                 this.addToBot(new RandomAttack(this,
-                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-                this.addToBot(new RandomAttack(this,
-                        AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
+                        AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true, true));
             }
+            addToBot(new AtsSFX("JUEYING_1"));
             this.addToBot(new RandomAttack(this,
-                    AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
-
+                    AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false, true));
+            addToBot(new AtsSFX("JUEYING_2"));
             this.addToBot(new RandomAttack(this,
-                    AbstractGameAction.AttackEffect.SLASH_HEAVY, false));
+                    AbstractGameAction.AttackEffect.SLASH_HEAVY, false, true));
         }
         else {
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
-                    this.multiDamage, this.damageTypeForTurn,
+            addToBot(new AtsSFX("BADAO"));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(m,
-                    this.multiDamage, this.damageTypeForTurn,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            this.damage = this.baseDamage;
         }
     }
 

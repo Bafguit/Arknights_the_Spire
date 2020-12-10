@@ -17,7 +17,7 @@ public class EncForest extends CardSPBase {
     private static final int COST = 1;
     private static final int SHELTER = 1;
     private static final int UP_SHELTER = 1;
-    private static final int SP = 13;
+    private static final int SP = 10;
 
     public EncForest() {
         super(ID, IMG_PATH, COST,

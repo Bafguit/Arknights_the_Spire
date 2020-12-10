@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -17,9 +18,8 @@ public class ChainHook extends CardSPBase {
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int DAMAGE = 9;
-    private static final int UP_DAMAGE = 2;
+    private static final int UP_DAMAGE = 4;
     private static final int SP = 5;
-    private static final int UP_SP = 2;
 
     public ChainHook() {
         super(ID, IMG_PATH, COST,
@@ -29,7 +29,8 @@ public class ChainHook extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AttackEffect.SMASH));
+        addToBot(new AtsSFX("ROPE"));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AttackEffect.SMASH, false, true));
         addToBot(new DrawCardAction((isSpJustUsed ? 2 : 1)));
     }
 
@@ -41,7 +42,6 @@ public class ChainHook extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeDamage(UP_DAMAGE);
-        this.upgradeSP(UP_SP);
     }
 
 }

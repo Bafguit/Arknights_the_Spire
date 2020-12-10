@@ -18,17 +18,19 @@ public class Thorns extends CardSPBase {
     private static final int COST = 1;
     private static final int THORNS_AMOUNT = 2;
     private static final int UPGRADE_THORNS = 1;
+    private static final int DEX = 1;
+    private static final int UP_DEX = 1;
 
     public Thorns() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, THORNS_AMOUNT, 0);
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, DEX, THORNS_AMOUNT, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.block), this.block));
     }
 
     @Override
@@ -39,6 +41,7 @@ public class Thorns extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UPGRADE_THORNS);
+        this.upgradeBlock(UP_DEX);
     }
 
 

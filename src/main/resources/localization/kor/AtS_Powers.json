@@ -19,12 +19,6 @@
       " 얻습니다."
     ]
   },
-  "ats:Charging Defense": {
-    "NAME": "충전 완료",
-    "DESCRIPTIONS": [
-      "다음 피해를 받지 않습니다."
-    ]
-  },
   "ats:Blazing": {
     "NAME": "이글거림",
     "DESCRIPTIONS": [
@@ -41,7 +35,7 @@
   "ats:Fate": {
     "NAME": "운명",
     "DESCRIPTIONS": [
-      "#y캐스터 카드를 연속으로 사용할 때마다 카드를 #b",
+      "#y캐스터 카드를 사용할 때마다 카드를 #b",
       " 장 뽑습니다."
     ]
   },
@@ -95,7 +89,7 @@
     "NAME": "매복",
     "DESCRIPTIONS": [
       "이번 턴에 #y스나이퍼 공격 카드를 사용해다면, 받는 피해가 #b",
-      "% 확률로 0이 됩니다."
+      " % 확률로 0이 됩니다."
     ]
   },
   "ats:Order": {
@@ -128,6 +122,26 @@
     "NAME": "매 맞기",
     "DESCRIPTIONS": [
       "적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+    ]
+  },
+  "ats:Song Of Battle": {
+    "NAME": "전투의 노래",
+    "DESCRIPTIONS": [
+      "매 턴 시작 시 #ySP 를 #b",
+      " 얻습니다."
+    ]
+  },
+  "ats:Burning Ground": {
+    "NAME": "불타는 땅",
+    "DESCRIPTIONS": [
+      "#y캐스터 카드를 사용할 때마다 적 전체에게 #y화상 을 #b",
+      " 부여합니다."
+    ]
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "방어 오벨리스크",
+    "DESCRIPTIONS": [
+      "#y화상 이 끝날 때, 대신 절반만 감소합니다."
     ]
   },
   "ats:": {

@@ -49,26 +49,11 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
 
     @Override
     public int onHeal(int healAmount) {
-
-        int overHeal = player.currentHealth + healAmount;
-
-        if(overHeal > player.maxHealth && player.currentHealth < player.maxHealth) {
-            flash();
-            this.addToBot(new DamageAllEnemiesAction((AbstractCreature) null,
-                    DamageInfo.createDamageMatrix(overHeal - player.maxHealth, true),
-                    DamageInfo.DamageType.THORNS,
-                    AbstractGameAction.AttackEffect.POISON,
-                    true));
-            return healAmount - (overHeal - player.maxHealth);
-        } else if(overHeal <= player.maxHealth) {
-            flash();
-            this.addToBot(new DamageAllEnemiesAction((AbstractCreature) null,
-                    DamageInfo.createDamageMatrix(healAmount, true),
-                    DamageInfo.DamageType.THORNS,
-                    AbstractGameAction.AttackEffect.POISON,
-                    true));
-            return healAmount;
-        } else return 0;
+        flash();
+        this.addToBot(new DamageAllEnemiesAction((AbstractCreature) null,
+                DamageInfo.createDamageMatrix(healAmount, true),
+                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON, true));
+        return healAmount;
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

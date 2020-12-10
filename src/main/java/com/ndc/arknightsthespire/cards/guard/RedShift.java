@@ -26,7 +26,7 @@ public class RedShift extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         for(int for_i = 0; for_i < 5; for_i++) {
-            this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+            this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         }
     }
 

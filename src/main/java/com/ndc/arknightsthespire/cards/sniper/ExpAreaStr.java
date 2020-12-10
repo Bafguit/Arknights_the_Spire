@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.sniper;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,8 +15,8 @@ public class ExpAreaStr extends CardSPBase {
     public static final String IMG_PATH = "img/cards/ExpAreaStr.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 7;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int ATTACK_DMG = 8;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public ExpAreaStr() {
         super(ID, IMG_PATH, COST,
@@ -26,8 +27,7 @@ public class ExpAreaStr extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
-                this.multiDamage, this.damageTypeForTurn,
+        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.SMASH, false));
     }
 

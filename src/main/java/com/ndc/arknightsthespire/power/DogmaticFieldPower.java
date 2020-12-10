@@ -4,12 +4,15 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -44,21 +47,53 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
 
         updateDescription();
     }
+/*
+    public void onGainedBlock(float blockAmount) {
+        if(blockAmount > 0.0F) {
+            flash();
+            int overHeal = Math.round(p.currentHealth + blockAmount);
 
+            System.out.println("XXXX" + blockAmount);
+            if (overHeal > p.maxHealth) {
+                int b = Math.round(blockAmount - (overHeal - p.maxHealth));
+                addToBot(new LoseBlockAction(p, p, Math.round(b + (b/2))));
+                AbstractDungeon.actionManager.currentAction.isDone = true;
+            } else {
+                addToBot(new LoseBlockAction(p, p, Math.round(blockAmount)));
+                AbstractDungeon.actionManager.currentAction.isDone = true;
+            }
+            addToBot(new HealAction(p, p, Math.round(blockAmount)));
+        }
+    }*/
+/*
+    @Override
+    public float modifyBlock(float blockAmount) {
+        if(blockAmount > 0.0F) {
+            flash();
+            int overHeal = Math.round(p.currentHealth + blockAmount);
 
+            System.out.println("YYYY" + blockAmount);
+            if (overHeal > p.maxHealth) {
+                int b = Math.round(blockAmount - (overHeal - p.maxHealth));
+                addToBot(new HealAction(p, p, Math.round(blockAmount)));
+                return b/2;
+            } else {
+                addToBot(new HealAction(p, p, Math.round(blockAmount)));
+                return 0;
+            }
+        }
+        return blockAmount;
+    }*/
 
     @Override
-    public int onHeal(int healAmount) {
-
-        int overHeal = p.currentHealth + healAmount;
-
-        if(overHeal > p.maxHealth)
-        {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(overHeal - p.maxHealth)/2));
-            return healAmount - (overHeal - p.maxHealth);
+    public int onHeal(int blockAmount) {
+        int overHeal = Math.round(p.currentHealth + blockAmount);
+        if (overHeal > p.maxHealth) {
+            int b = Math.round(blockAmount - (overHeal - p.maxHealth));
+            addToBot(new GainBlockAction(p, p, b/2));
+            return b/2;
         }
-
-        return healAmount;
+        return blockAmount;
     }
 
 

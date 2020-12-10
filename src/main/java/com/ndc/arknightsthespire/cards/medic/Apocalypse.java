@@ -21,7 +21,6 @@ public class Apocalypse extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, POSITION, 0, 0, SP, 0);
-        this.exhaust = true;
     }
 
     @Override

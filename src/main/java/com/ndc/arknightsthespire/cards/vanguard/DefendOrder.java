@@ -25,7 +25,7 @@ public class DefendOrder extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new DefendOrderPower(p, p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new DefendOrderPower(p, p, this.block), this.block));
     }
 
     @Override
@@ -35,7 +35,7 @@ public class DefendOrder extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_BLOCK);
+        this.upgradeBlock(UP_BLOCK);
     }
 
 }

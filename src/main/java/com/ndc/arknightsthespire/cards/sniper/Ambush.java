@@ -21,6 +21,7 @@ public class Ambush extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.SELF, POSITION, 0, 0, EVADE, 0);
+        this.isInnate = true;
     }
 
     @Override
@@ -36,7 +37,6 @@ public class Ambush extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_EVADE);
-        this.isInnate = true;
     }
 
 }

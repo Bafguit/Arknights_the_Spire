@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.medic;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,9 +17,9 @@ public class AutoCover extends CardSPBase {
     public static final String IMG_PATH = "img/cards/AutomaticCover.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 8;
     private static final int UP_BLOCK = 3;
-    private static final int DEX = 1;
+    private static final int DEX = 2;
     private static final int UP_DEX = 1;
 
     public AutoCover() {

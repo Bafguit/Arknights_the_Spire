@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.supporter;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,6 +27,7 @@ public class EchoReverb extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        if(m.hasPower("Artifact")) addToBot(new RemoveSpecificPowerAction(m, m, "Artifact"));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                     new SlowPower(m, 0), 0));
     }

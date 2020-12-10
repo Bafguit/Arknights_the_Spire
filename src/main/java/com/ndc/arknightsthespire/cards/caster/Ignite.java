@@ -18,25 +18,22 @@ public class Ignite extends CardSPBase {
     public static final String ID = "ats:Ignite";
     public static final String IMG_PATH = "img/cards/Ignite.png";
     public static final PositionType POSITION = PositionType.CASTER;
-    private static final int COST = 0;
-    private static final int DAMAGE = 10;
-    private static final int SP = 5;
-    private static final int UP_SP = 3;
+    private static final int COST = 1;
+    private static final int DAMAGE = 7;
+    private static final int UP_DAMAGE = 2;
     private static final int BURN = 2;
     private static final int UP_BURN = 1;
 
     public Ignite() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, BURN, SP);
+                CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, BURN, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(isSpJustUsed) {
-            addToBot(new DamageAction(m, new DamageInfo(p, this.damage), AbstractGameAction.AttackEffect.FIRE));
-            addToBot(new ApplyPowerAction(m, p, new BurnPower(m, p, 2), 2));
-        }
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage), AbstractGameAction.AttackEffect.FIRE));
+        addToBot(new ApplyPowerAction(m, p, new BurnPower(m, p, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -47,7 +44,7 @@ public class Ignite extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_BURN);
-        this.upgradeSP(UP_SP);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

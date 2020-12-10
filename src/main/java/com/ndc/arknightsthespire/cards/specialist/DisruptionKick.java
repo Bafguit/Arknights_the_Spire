@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -24,12 +26,13 @@ public class DisruptionKick extends CardSPBase {
                 CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, false, 1, 0, 0, 0);
         this.exhaust = true;
         this.selfRetain = true;
+        this.isMultiDamage = true;
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(m,
-                DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn,
+        addToBot(new AtsSFX("TIGER"));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.LIGHTNING, true));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new RemoveAllPowersAction(mo, false));

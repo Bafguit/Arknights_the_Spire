@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.defender;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -25,7 +26,7 @@ public class BeatenUp extends CardSPBase {
     public BeatenUp() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, true, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
+                CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
     }
 
     @Override
@@ -33,7 +34,7 @@ public class BeatenUp extends CardSPBase {
         addToBot(new ApplyPowerAction(p, p, new BeatenUpPower(p, p)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, 1), 1));
-        if(isSpJustUsed) checkGainBlock(block);
+        if(isSpJustUsed) checkGainBlock(this.block);
     }
 
     @Override

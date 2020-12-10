@@ -13,8 +13,7 @@ public class Fate extends CardSPBase {
     public static final String ID = "ats:Fate";
     public static final String IMG_PATH = "img/cards/Fate.png";
     public static final PositionType POSITION = PositionType.CASTER;
-    private static final int COST = 3;
-    private static final int UP_COST = 2;
+    private static final int COST = 2;
 
     public Fate() {
         super(ID, IMG_PATH, COST,
@@ -34,7 +33,7 @@ public class Fate extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBaseCost(UP_COST);
+        this.isInnate = true;
     }
 
 }

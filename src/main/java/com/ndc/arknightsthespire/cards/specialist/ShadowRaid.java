@@ -14,7 +14,7 @@ public class ShadowRaid extends CardSPBase {
     public static final String ID = "ats:Shadow Raid";
     public static final String IMG_PATH = "img/cards/ShadowRaid.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DEX = 8;
     private static final int UP_DEX = 4;
 

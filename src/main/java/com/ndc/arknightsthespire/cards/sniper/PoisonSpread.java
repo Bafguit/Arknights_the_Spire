@@ -21,8 +21,8 @@ public class PoisonSpread extends CardSPBase {
     private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 3;
     private static final int UP_SP = 2;
-    private static final int POS = 2;
-    private static final int UP_POS = 3;
+    private static final int POS = 3;
+    private static final int UP_POS = 1;
 
     public PoisonSpread() {
         super(ID, IMG_PATH, COST,

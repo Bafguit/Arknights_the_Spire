@@ -20,7 +20,7 @@ public class Revitalization extends CardSPBase {
     public Revitalization() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.SELF, false, POSITION, false, 0, 0, REGEN, 0);
+                CardRarity.COMMON, CardTarget.SELF, POSITION, 0, 0, REGEN, 0);
         this.exhaust = true;
     }
 
@@ -36,7 +36,6 @@ public class Revitalization extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(-1);
         this.exhaust = false;
     }
 

@@ -1,5 +1,6 @@
 package com.ndc.arknightsthespire.cards.defender;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,7 +26,7 @@ public class DefendUp extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
 
-        checkGainBlock(this.block * (isSpJustUsed ? 2 : 1));
+        checkGainBlock(this.block + (isSpJustUsed ? 5 : 0));
     }
 
     @Override

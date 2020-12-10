@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -34,11 +36,13 @@ public class Durian extends CardSPBase {
         int d = 3;
         int dex = (p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0);
 
-        if(dex <= 2) d -= dex;
+        if(dex <= 2 && dex > 0) d -= dex;
+        else if(dex < 0) d = 3;
         else d = 1;
 
+        addToBot(new AtsSFX("DURIAN"));
         for(int forI = 0; forI < 5; forI++) {
-            addToBot(new DamageAction(p, new DamageInfo(p, d, DamageType.HP_LOSS), AttackEffect.FIRE, true));
+            addToBot(new DamageAction(p, new DamageInfo(p, d, DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
         }
 
         addToBot(new ApplyPowerAction(p, p, new PenNibPower(p, 1), 1));

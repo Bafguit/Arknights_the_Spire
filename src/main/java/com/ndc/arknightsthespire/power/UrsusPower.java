@@ -45,7 +45,6 @@ public class UrsusPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public void onEnergyRecharge() {
-        flash();
         CheckGainEnergy.checkUrsus(AbstractDungeon.player);
     }
 

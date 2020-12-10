@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
@@ -51,7 +52,7 @@ public class NeurotoxinPower extends AbstractPower implements CloneablePowerInte
 
         updateDescription();
     }
-
+/*
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if(info.type == DamageInfo.DamageType.NORMAL) m = target;
@@ -69,6 +70,23 @@ public class NeurotoxinPower extends AbstractPower implements CloneablePowerInte
         }
 
         return this.atDamageFinalGive(damage, type);
+    }
+*/
+    @Override
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        AbstractCard c = card;
+        if (c instanceof CardSPBase) {
+            CardSPBase cSP = (CardSPBase) c;
+            if (cSP.position == PositionType.SNIPER && cSP.type == AbstractCard.CardType.ATTACK) {
+                if (cSP.target == AbstractCard.CardTarget.ENEMY) {
+                    addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.amount), this.amount));
+                } else if (cSP.target == AbstractCard.CardTarget.ALL_ENEMY) {
+                    for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                        addToBot(new ApplyPowerAction(mo, p, new PoisonPower(mo, p, this.amount), this.amount));
+                    }
+                }
+            }
+        }
     }
 
     @Override
