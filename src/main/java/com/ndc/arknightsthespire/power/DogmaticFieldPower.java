@@ -83,7 +83,7 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
             }
         }
         return blockAmount;
-    }*/
+    }
 
     @Override
     public int onHeal(int blockAmount) {
@@ -94,7 +94,7 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
             return b/2;
         }
         return blockAmount;
-    }
+    }*/
 
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

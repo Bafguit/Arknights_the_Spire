@@ -76,7 +76,8 @@
   },
   "ats:Thorns": {
     "NAME": "가시덤불",
-    "DESCRIPTION": "가시를 !M! 얻습니다. 민첩을 !B! 얻습니다."
+    "DESCRIPTION": "가시를 !M! 얻습니다. 민첩을 1 얻습니다.",
+    "UPGRADE_DESCRIPTION": "가시를 !M! 얻습니다. 민첩을 2 얻습니다."
   },
   "ats:Armor Crushing Shot": {
     "NAME": "쇄갑격",

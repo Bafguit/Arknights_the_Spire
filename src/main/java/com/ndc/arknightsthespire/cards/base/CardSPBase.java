@@ -443,6 +443,10 @@ public abstract class CardSPBase extends CustomCard {
         if(p.hasPower(DogmaticFieldPower.POWER_ID)) {
             p.getPower(DogmaticFieldPower.POWER_ID).flash();
             AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, amt));
+            int overHeal = p.currentHealth + amt - p.maxHealth;
+            if (overHeal > 0) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(overHeal/2)));
+            }
         }
         else {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amt));
