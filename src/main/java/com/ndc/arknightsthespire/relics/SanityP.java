@@ -75,11 +75,11 @@ public class SanityP extends CustomRelic {
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic("ats:Sanity");
     }
-
+/*
     @Override
     public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
         options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
-    }
+    }*/
 
     @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic

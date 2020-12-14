@@ -37,7 +37,7 @@ public class Durian extends CardSPBase {
         int dex = (p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0);
 
         if(dex <= 2 && dex > 0) d -= dex;
-        else if(dex < 0) d = 3;
+        else if(dex <= 0) d = 3;
         else d = 1;
 
         addToBot(new AtsSFX("DURIAN"));

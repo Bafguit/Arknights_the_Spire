@@ -47,11 +47,11 @@ public class Sanity extends CustomRelic {
         this.beginPulse();
         this.pulse = true;
     }
-
+/*
     @Override
     public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
         options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
-    }
+    }*/
 
     @Override
     public void onVictory() {

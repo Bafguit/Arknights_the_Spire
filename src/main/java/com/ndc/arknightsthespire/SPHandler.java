@@ -14,7 +14,7 @@ import java.lang.reflect.Type;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
-    private static int maxSp = 20;
+    private static int maxSp = 10;
     private static int maxSpLimit = 40;
     private static int diffSp = 0;
     private static int defaultSp = 0;
@@ -33,7 +33,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return maxSp;
     }
     public static boolean getUpToMaxSp() {
-        if(maxSp == maxSpLimit) return false;
+        if(maxSp >= maxSpLimit) return false;
         else return true;
     }
     public static void upgradeLimit() {maxSpLimit = 50;}
@@ -132,11 +132,11 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     @Override
     public void receivePreStartGame() {
-        maxSp = 20;
+        maxSp = 10;
     }
 
     @Override
     public void receivePostDeath() {
-        maxSp = 20;
+        maxSp = 10;
     }
 }

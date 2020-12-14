@@ -4,6 +4,7 @@ package com.ndc.arknightsthespire;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.abstracts.CustomPlayer;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,9 +13,11 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.status.Burn;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
@@ -35,9 +38,12 @@ import com.ndc.arknightsthespire.cards.vanguard.DefendOrder;
 import com.ndc.arknightsthespire.cards.vanguard.RoarOfUrsus;
 import com.ndc.arknightsthespire.cards.vanguard.SupportOrder;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
+import com.ndc.arknightsthespire.potions.SpBigPotion;
+import com.ndc.arknightsthespire.potions.SpSmallPotion;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.util.MessageCaller;
+import org.apache.logging.log4j.util.Strings;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -179,6 +185,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
         //BaseMod.addEvent(NightField.ID, NightField.class);
+        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), null, SpSmallPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), null, SpBigPotion.ID, DOCTOR_CLASS);
     }
 
     public void receiveEditCharacters() {
@@ -235,6 +243,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/AtS_Powers.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/AtS_Potions.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
         BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/AtS_Events.json");
