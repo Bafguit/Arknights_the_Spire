@@ -16,12 +16,12 @@ public class Revitalization extends CardSPBase {
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int REGEN = 2;
+    private static final int UP_REGEN = 1;
 
     public Revitalization() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, POSITION, 0, 0, REGEN, 0);
-        this.exhaust = true;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class Revitalization extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.exhaust = false;
+        this.upgradeMagicNumber(UP_REGEN);
     }
 
 }

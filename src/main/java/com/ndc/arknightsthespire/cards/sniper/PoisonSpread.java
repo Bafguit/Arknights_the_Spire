@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -32,6 +33,7 @@ public class PoisonSpread extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        addToBot(new AtsSFX(isSpJustUsed ? "ARROW_H" : "CROSSBOW"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 new DamageInfo(p, damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.POISON));

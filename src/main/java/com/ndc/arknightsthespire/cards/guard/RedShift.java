@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.RandomAttack;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
@@ -25,7 +26,9 @@ public class RedShift extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        for(int for_i = 0; for_i < 5; for_i++) {
+        addToBot(new AtsSFX("REDSHIFT"));
+        for(int for_i = 0; for_i < 4; for_i++) {
+            addToBot(new AtsSFX("KNIFE"));
             this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         }
     }

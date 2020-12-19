@@ -10,7 +10,7 @@ import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class Apocalypse extends CardSPBase {
-    public static final String ID = "ats:Just Like an Apocalypse";
+    public static final String ID = "ats:Apocalypse";
     public static final String IMG_PATH = "img/cards/JLAA.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;

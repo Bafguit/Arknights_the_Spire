@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -29,9 +30,10 @@ public class ThermiteBlade extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        addToBot(new AtsSFX("BLADE"));
         if(!isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                AbstractGameAction.AttackEffect.SLASH_VERTICAL, false, true));
         else AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, p,
                 this.damage + 4, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }

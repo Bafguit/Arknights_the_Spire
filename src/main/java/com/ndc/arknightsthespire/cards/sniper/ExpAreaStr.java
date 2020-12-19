@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -27,8 +29,9 @@ public class ExpAreaStr extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn,
-                AbstractGameAction.AttackEffect.SMASH, false));
+        addToBot(new AtsSFX("GRENADE"));
+        addToBot(new DamageAllMute(p, this.multiDamage, this.damageTypeForTurn,
+                AbstractGameAction.AttackEffect.SMASH, false, true));
     }
 
     @Override

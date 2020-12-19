@@ -1,43 +1,43 @@
-package com.ndc.arknightsthespire.cards.guard;
+package com.ndc.arknightsthespire.cards.sniper;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
-public class PowerfulStrikeG extends CardSPBase {
-    public static final String ID = "ats:Powerful Strike G";
-    public static final String IMG_PATH = "img/cards/ps_g.png";
-    public static final PositionType POSITION = PositionType.GUARD;
+public class PowerfulStrike extends CardSPBase {
+    public static final String ID = "ats:Powerful Strike";
+    public static final String IMG_PATH = "img/cards/ps_s.png";
+    public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
-    private static final int UP_DMG = 1;
+    private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 3;
     private static final int UPGRADE_SP = 2;
 
-    public PowerfulStrikeG() {
+    public PowerfulStrike() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, DEFAULT_SP);
+                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, DEFAULT_SP);
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new AtsSFX((isSpJustUsed ? "HAWK_H" : "HAWK")));
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage + (isSpJustUsed ? 5 : 0), this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL, false, true));
+        addToBot(new AtsSFX((isSpJustUsed ? "PISTOL_H" : "PISTOL")));
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage * (isSpJustUsed ? 2 : 1), this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new PowerfulStrikeG();
+        return new PowerfulStrike();
     }
 
     @Override

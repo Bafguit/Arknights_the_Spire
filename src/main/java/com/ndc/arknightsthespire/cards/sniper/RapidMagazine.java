@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.RapidMagPower;
@@ -24,7 +25,7 @@ public class RapidMagazine extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-
+        addToBot(new AtsSFX("SKY"));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new RapidMagPower(p, p)));
     }
 

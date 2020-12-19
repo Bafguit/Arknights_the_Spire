@@ -32,6 +32,7 @@ public class FlameOfHeaven extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(m.hasPower("ats:Burn")) {
+            addToBot(new AtsSFX("METEOR"));
             addToBot(new ApplyPowerAction(m, p,
                     new BurnPower(m, p, m.getPower("ats:Burn").amount), m.getPower("ats:Burn").amount, true));
         }

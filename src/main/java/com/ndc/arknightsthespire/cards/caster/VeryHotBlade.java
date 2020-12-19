@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -29,9 +30,10 @@ public class VeryHotBlade extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        addToBot(new AtsSFX("DAGGER"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 new DamageInfo(p, (isSpJustUsed ? this.damage + (m.hasPower("ats:Burn") ? m.getPower("ats:Burn").amount : 0) : this.damage), this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+                AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         addToBot(new DrawCardAction(1));
     }
 

@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.BurnPower;
@@ -21,7 +23,7 @@ public class Volcano extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Volcano.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 6;
     private static final int UP_DMG = 2;
     private static final int SP = 40;
 
@@ -53,12 +55,14 @@ public class Volcano extends CardSPBase {
             this.isMultiDamage = true;
             this.exhaust = true;
             for (int for_i = 0; for_i < getCasterDeck(); for_i++) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p,
+                addToBot(new AtsSFX("VOLCANO"));
+                AbstractDungeon.actionManager.addToBottom(new DamageAllMute(p,
                         this.multiDamage, this.damageTypeForTurn,
-                        AbstractGameAction.AttackEffect.FIRE, true));
+                        AbstractGameAction.AttackEffect.FIRE, true, true));
             }
         } else {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                addToBot(new AtsSFX("VOLCANO"));
                 addToBot(new ApplyPowerAction(mo, p,
                         new BurnPower(mo, p, this.damage), this.damage, true));
             }

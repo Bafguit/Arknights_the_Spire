@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
@@ -50,9 +52,10 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
     @Override
     public int onHeal(int healAmount) {
         flash();
-        this.addToBot(new DamageAllEnemiesAction((AbstractCreature) null,
+        addToBot(new AtsSFX("MILK"));
+        this.addToBot(new DamageAllMute((AbstractCreature) null,
                 DamageInfo.createDamageMatrix(healAmount, true),
-                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON, true));
+                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON, true, true));
         return healAmount;
     }
 

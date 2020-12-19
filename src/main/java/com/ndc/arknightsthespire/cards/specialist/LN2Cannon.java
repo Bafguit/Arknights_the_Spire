@@ -30,7 +30,7 @@ public class LN2Cannon extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new AttackPerNonAttackCard(this.multiDamage));
+        addToBot(new AttackPerNonAttackCard(this.multiDamage, "HYDPUMP"));
     }
 
     @Override

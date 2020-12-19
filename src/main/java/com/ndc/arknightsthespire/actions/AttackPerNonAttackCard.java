@@ -19,11 +19,19 @@ import java.util.Iterator;
 
 public class AttackPerNonAttackCard extends AbstractGameAction {
     private int[] multiDamage;
+    private boolean hasSfx = false;
+    private String sfxName;
 
     public AttackPerNonAttackCard(int[] multiDamage) {
         this.multiDamage = multiDamage;
         this.setValues(AbstractDungeon.player, AbstractDungeon.player);
         this.actionType = ActionType.DAMAGE;
+    }
+
+    public AttackPerNonAttackCard(int[] multiDamage, String sfxName) {
+        this(multiDamage);
+        this.hasSfx = true;
+        this.sfxName = sfxName;
     }
 
     public void update() {
@@ -40,9 +48,11 @@ public class AttackPerNonAttackCard extends AbstractGameAction {
 
         var2 = cardsToExhaust.iterator();
 
+        if(this.hasSfx) addToBot(new AtsSFX(this.sfxName));
+
         while(var2.hasNext()) {
             c = (AbstractCard)var2.next();
-            this.addToTop(new DamageAllEnemiesAction(AbstractDungeon.player, this.multiDamage, DamageInfo.DamageType.HP_LOSS, AttackEffect.SHIELD, true));
+            this.addToTop(new DamageAllMute(AbstractDungeon.player, this.multiDamage, DamageInfo.DamageType.HP_LOSS, AttackEffect.SHIELD, true, true));
         }
 
         var2 = cardsToExhaust.iterator();

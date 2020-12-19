@@ -23,7 +23,7 @@ public class TrueSilverSlash extends CardSPBase {
     public static final String IMG_PATH = "img/cards/TrueSilverSlash.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 6;
     private static final int UP_DMG = 2;
     private static final int SP = 30;
 

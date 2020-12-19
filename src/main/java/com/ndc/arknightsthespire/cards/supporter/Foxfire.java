@@ -6,11 +6,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
+import com.megacrit.cardcrawl.powers.SlowPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.AtsSlowPower;
 
 public class Foxfire extends CardSPBase {
     public static final String ID = "ats:Nebulous Foxfire";
@@ -28,6 +31,7 @@ public class Foxfire extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        addToBot(new AtsSFX("CLING"));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
                     new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true));

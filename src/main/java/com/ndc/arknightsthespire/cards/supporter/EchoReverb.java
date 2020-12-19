@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.SlowPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -28,6 +29,7 @@ public class EchoReverb extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(m.hasPower("Artifact")) addToBot(new RemoveSpecificPowerAction(m, m, "Artifact"));
+        addToBot(new AtsSFX("BELL"));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                     new SlowPower(m, 0), 0));
     }

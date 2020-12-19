@@ -4,7 +4,6 @@ package com.ndc.arknightsthespire;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.abstracts.CustomPlayer;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -12,8 +11,6 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.status.Burn;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,7 +20,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
-import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.cards.Cheat;
 import com.ndc.arknightsthespire.cards.GainSP;
 import com.ndc.arknightsthespire.cards.caster.*;
@@ -33,17 +29,13 @@ import com.ndc.arknightsthespire.cards.medic.*;
 import com.ndc.arknightsthespire.cards.sniper.*;
 import com.ndc.arknightsthespire.cards.supporter.*;
 import com.ndc.arknightsthespire.cards.specialist.*;
-import com.ndc.arknightsthespire.cards.vanguard.AssaultOrder;
-import com.ndc.arknightsthespire.cards.vanguard.DefendOrder;
-import com.ndc.arknightsthespire.cards.vanguard.RoarOfUrsus;
-import com.ndc.arknightsthespire.cards.vanguard.SupportOrder;
+import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.potions.SpBigPotion;
 import com.ndc.arknightsthespire.potions.SpSmallPotion;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.util.MessageCaller;
-import org.apache.logging.log4j.util.Strings;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -98,8 +90,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new Cheat());
         BaseMod.addCard(new GainSP());
         //Sniper
+        BaseMod.addCard(new StrikeS());
         BaseMod.addCard(new Overload());
-        BaseMod.addCard(new PowerfulStrikeS());
+        BaseMod.addCard(new PowerfulStrike());
         BaseMod.addCard(new ArmCrushShot());
         BaseMod.addCard(new RapidMagazine());
         BaseMod.addCard(new ConShotAuto());
@@ -114,6 +107,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new AutoCover());
         BaseMod.addCard(new Apocalypse());
         BaseMod.addCard(new ComMedShell());
+        BaseMod.addCard(new DirDiagnosis());
+        BaseMod.addCard(new HealingDrone());
         //Supporter
         BaseMod.addCard(new Foxfire());
         BaseMod.addCard(new SporePro());
@@ -121,6 +116,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CurseDoll());
         BaseMod.addCard(new EchoReverb());
         BaseMod.addCard(new SongOfBattle());
+        BaseMod.addCard(new Weakening());
+        BaseMod.addCard(new ChildDance());
         //Defender
         BaseMod.addCard(new DefendUp());
         BaseMod.addCard(new ChargingDef());
@@ -131,11 +128,10 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new BeatenUp());
         BaseMod.addCard(new Calcification());
         //Caster
+        BaseMod.addCard(new StrikeC());
         BaseMod.addCard(new EmotionAbs());
         BaseMod.addCard(new MentalBurst());
         BaseMod.addCard(new SoulAbs());
-        //BaseMod.addCard(new Fate());
-        BaseMod.addCard(new PowerfulStrikeC());
         BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new Sunburst());
         BaseMod.addCard(new Ignite());
@@ -143,6 +139,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new BurningGround());
         BaseMod.addCard(new GuardianObelisk());
         BaseMod.addCard(new FlameOfHeaven());
+        //BaseMod.addCard(new Fate());
         //Specialist
         BaseMod.addCard(new RatPack());
         BaseMod.addCard(new ChainHook());
@@ -155,6 +152,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CollapsingStrike());
         BaseMod.addCard(new LN2Cannon());
         //Guard
+        BaseMod.addCard(new StrikeG());
         BaseMod.addCard(new CatScratch());
         BaseMod.addCard(new RedShift());
         BaseMod.addCard(new TrueSilverSlash());
@@ -163,13 +161,15 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new ThermiteBlade());
         BaseMod.addCard(new SoulRend());
         BaseMod.addCard(new FracturedBody());
-        BaseMod.addCard(new PowerfulStrikeG());
         BaseMod.addCard(new DemonStrength());
         //Vanguard
+        BaseMod.addCard(new StrikeV());
         BaseMod.addCard(new AssaultOrder());
         BaseMod.addCard(new SupportOrder());
         BaseMod.addCard(new DefendOrder());
         BaseMod.addCard(new RoarOfUrsus());
+        BaseMod.addCard(new LeapingHammer());
+        BaseMod.addCard(new HammerOn());
 
         System.out.println("DONE");
     }

@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -72,18 +73,16 @@ public class NeurotoxinPower extends AbstractPower implements CloneablePowerInte
         return this.atDamageFinalGive(damage, type);
     }
 */
+
     @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         AbstractCard c = card;
-        if (c instanceof CardSPBase) {
+        if(c instanceof CardSPBase) {
             CardSPBase cSP = (CardSPBase) c;
-            if (cSP.position == PositionType.SNIPER && cSP.type == AbstractCard.CardType.ATTACK) {
-                if (cSP.target == AbstractCard.CardTarget.ENEMY) {
-                    addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.amount), this.amount));
-                } else if (cSP.target == AbstractCard.CardTarget.ALL_ENEMY) {
-                    for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                        addToBot(new ApplyPowerAction(mo, p, new PoisonPower(mo, p, this.amount), this.amount));
-                    }
+            if(cSP.position == PositionType.SNIPER && cSP.type == AbstractCard.CardType.ATTACK) {
+                flash();
+                for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    addToBot(new ApplyPowerAction(mo, p, new PoisonPower(mo, p, this.amount), this.amount, true));
                 }
             }
         }

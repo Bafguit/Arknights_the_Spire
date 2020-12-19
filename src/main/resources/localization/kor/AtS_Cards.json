@@ -1,12 +1,4 @@
 {
-  "ats:Overload": {
-    "NAME": "어설트 모드",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동",
-    "EXTENDED_DESCRIPTION": [
-      "과부하 모드",
-      "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 5 번 줍니다."
-    ]
-  },
   "ats:Cheat": {
     "NAME": "치트",
     "DESCRIPTION": "다 죽입니다."
@@ -15,42 +7,55 @@
     "NAME": "SP 회복",
     "DESCRIPTION": "SP를 20000 얻습니다."
   },
-  "ats:Counter Healing Mode": {
-    "NAME": "반격 의료 모드",
-    "DESCRIPTION": "체력을 회복할 때마다 ats:SP를 !M! 얻습니다."
-  },
+//////////////////BASIC
   "ats:Emotion Absorption": {
     "NAME": "감정 흡수",
     "DESCRIPTION": "ats:SP를 !M! 얻습니다.",
     "UPGRADE_DESCRIPTION": "ats:SP를 !M! 얻습니다. 카드를 1 장 뽑습니다."
   },
-  "ats:Powerful Strike S": {
+  "ats:Strike C": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "ats:Strike G": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "ats:Strike S": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "ats:Strike V": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "ats:Leaping Hammer": {
+    "NAME": "점핑 해머",
+    "DESCRIPTION": "피해를 !D! 줍니다. ats:SP를 !M! 얻습니다."
+  },
+  "ats:Defend": {
+    "NAME": "방어",
+    "DESCRIPTION": "방어도를 !B! 얻습니다."
+  },
+//////////////////
+  "ats:Overload": {
+    "NAME": "어설트 모드",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동",
+    "EXTENDED_DESCRIPTION": [
+      "과부하 모드",
+      "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 5 번 줍니다."
+    ]
+  },
+  "ats:Counter Healing Mode": {
+    "NAME": "반격 의료 모드",
+    "DESCRIPTION": "체력을 회복할 때마다 ats:SP를 !M! 얻습니다."
+  },
+  "ats:Powerful Strike": {
     "NAME": "강타β",
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
-    ]
-  },
-  "ats:Powerful Strike C": {
-    "NAME": "강타α",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
-    ]
-  },
-  "ats:Powerful Strike G": {
-    "NAME": "강타γ",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 5 증가합니다."
-    ]
-  },
-  "ats:Defend Up": {
-    "NAME": "방어 강화β",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:수동",
-    "EXTENDED_DESCRIPTION": [
-      "방어 강화γ",
-      "ats:SP !S! ats:수동 NL 방어도를 !B! 얻고 추가로 5 얻습니다."
+      "강타γ",
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 두 배가 됩니다.."
     ]
   },
   "ats:Charging Defense": {
@@ -112,7 +117,7 @@
   },
   "ats:Rat Pack": {
     "NAME": "쥐 떼",
-    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 소멸."
+    "DESCRIPTION": "보존. 현재 체력만큼 방어도를 얻습니다. NL 소멸."
   },
   "ats:Assault Order": {
     "NAME": "돌격지령",
@@ -144,7 +149,7 @@
   },
   "ats:Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 2 얻습니다."
+    "DESCRIPTION": "적 전체에게 취약을 !M! , 약화를 !M! 부여합니다. 재생을 2 얻습니다."
   },
   "ats:Cat Scratch": {
     "NAME": "할퀴기!",
@@ -159,7 +164,7 @@
   },
   "ats:Red Shift": {
     "NAME": "레드 무브",
-    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 5 번 줍니다."
+    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 4 번 줍니다."
   },
   "ats:Shadow Assault": {
     "NAME": "적소: 발도",
@@ -205,8 +210,7 @@
   },
   "ats:Revitalization": {
     "NAME": "활력회복",
-    "DESCRIPTION": "재생을 !M! 얻습니다. NL 소멸",
-    "UPGRADE_DESCRIPTION": "재생을 !M! 얻습니다."
+    "DESCRIPTION": "재생을 !M! 얻습니다."
   },
   "ats:Spore Proliferation": {
     "NAME": "포자 확산",
@@ -280,12 +284,12 @@
   },
   "ats:Very Hot Blade": {
     "NAME": "엄청 뜨거운 칼",
-    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "피해를 !D! 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 적이 가진 화상 수치만큼 피해가 증가합니다. 카드를 1 장 뽑습니다."
     ]
   },
-  "ats:Just Like an Apocalypse": {
+  "ats:Apocalypse": {
     "NAME": "종말처럼",
     "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
   },
@@ -296,8 +300,7 @@
   },
   "ats:Neurotoxin": {
     "NAME": "신경독소",
-    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 !M! 부여합니다.",
-    "UPGRADE_DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 !M! 부여합니다."
+    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 적 전체에게 중독을 !M! 부여합니다."
   },
   "ats:Ambush": {
     "NAME": "매복",
@@ -320,10 +323,7 @@
   },
   "ats:Beaten Up": {
     "NAME": "매 맞기",
-    "DESCRIPTION": "민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다. NL ats:SP !S! ats:자동",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻고 민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
-    ]
+    "DESCRIPTION": "민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. 다음 적 턴에 공격을 받을 때마다 현재 민첩 만큼 피해를 줍니다."
   },
   "ats:Ignite": {
     "NAME": "이그니션",
@@ -352,7 +352,7 @@
   },
   "ats:Calcification": {
     "NAME": "칼슘화",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. 민첩 , 재생 , ats:SP를 1 얻습니다. "
+    "DESCRIPTION": "방어도를 !B! 얻습니다. 민첩, 재생 , ats:SP를 1 얻습니다."
   },
   "ats:Flame Of Heaven": {
     "NAME": "메테오 플레임",
@@ -360,11 +360,34 @@
   },
   "ats:Burning Ground": {
     "NAME": "불타는 땅",
-    "DESCRIPTION": "캐스터 카드를 사용할 때마다 적 전체에게 ats:화상을 !M! 부여합니다."
+    "DESCRIPTION": "ats:캐스터 카드를 사용할 때마다 적 전체에게 ats:화상을 !M! 부여합니다."
   },
   "ats:Guardian Obelisk": {
     "NAME": "방어 오벨리스크",
     "DESCRIPTION": "적 하나의 ats:화상 수치만큼 방어도를 얻습니다. 적의 ats:화상이 끝날 때, 대신 절반만 감소합니다."
+  },
+  "ats:Directed Diagnosis": {
+    "NAME": "지시된 진단",
+    "DESCRIPTION": "내가 가진 약화, 취약, 손상 수치가 절반으로 감소합니다. (최소 1) 체력을 !M! 회복합니다. NL ats:SP !S! ats:자동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:자동 NL 내가 가진 약화, 취약, 손상 수치가 절반으로 감소합니다. (최소 1) NL 내가 가진 무작위 해로운 효과를 제거하고 체력을 !M! 회복합니다."
+    ]
+  },
+  "ats:Weakening": {
+    "NAME": "약체화",
+    "DESCRIPTION": "체력이 40% 이하인 적이 있다면 공격이 !M! % 더 많은 피해를 줍니다."
+  },
+  "ats:Childhood Dance": {
+    "NAME": "어린 시절의 무용",
+    "DESCRIPTION": "적 전체에게 약화를 1 부여합니다."
+  },
+  "ats:Hammer On": {
+    "NAME": "망치 소리",
+    "DESCRIPTION": "피해를 !D! 줍니다. 이 공격으로 적이 죽으면 [E] 를 얻습니다."
+  },
+  "ats:Healing Drone": {
+    "NAME": "치료 드론",
+    "DESCRIPTION": "이번 턴 종료 및 다음 턴 시작 시, 체력을 !M! 회복합니다."
   },
   "ats:NULL": {
     "NAME": "",

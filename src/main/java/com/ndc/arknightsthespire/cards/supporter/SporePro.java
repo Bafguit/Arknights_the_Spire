@@ -11,13 +11,14 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.AtsSlowPower;
 
 public class SporePro extends CardSPBase {
     public static final String ID = "ats:Spore Proliferation";
     public static final String IMG_PATH = "img/cards/SporeProliferation.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
-    private static final int WEAK = 3;
+    private static final int WEAK = 2;
     private static final int SP = 15;
     private static final int UP_SP = 10;
 
@@ -29,7 +30,7 @@ public class SporePro extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new AtsSFX("SPORE_CLOUD_RELEASE"));
+        addToBot(new AtsSFX("BOTTLE"));
         if(isSpJustUsed) {
             if(m.powers.size() > 0) {
                 int powerLength = m.powers.size();

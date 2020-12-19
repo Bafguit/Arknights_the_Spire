@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.util.TextureLoader;
@@ -50,12 +51,13 @@ public class BurnGroundPower extends AbstractPower implements CloneablePowerInte
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         AbstractCard c = card;
         if(c instanceof CardSPBase) {
             CardSPBase cSP = (CardSPBase) c;
             if(cSP.position == PositionType.CASTER) {
                 flash();
+                addToBot(new AtsSFX("BURN"));
                 for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     addToBot(new ApplyPowerAction(mo, AbstractDungeon.player,
                             new BurnPower(mo, AbstractDungeon.player, this.amount), this.amount, true));

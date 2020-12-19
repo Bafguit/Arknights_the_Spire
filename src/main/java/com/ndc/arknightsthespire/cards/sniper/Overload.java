@@ -10,7 +10,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
-import com.sun.org.apache.regexp.internal.RE;
 
 public class Overload extends CardSPBase {
     public static final String ID = "ats:Overload";
