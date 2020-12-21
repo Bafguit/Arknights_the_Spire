@@ -109,6 +109,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new ComMedShell());
         BaseMod.addCard(new DirDiagnosis());
         BaseMod.addCard(new HealingDrone());
+        BaseMod.addCard(new HealingStr());
         //Supporter
         BaseMod.addCard(new Foxfire());
         BaseMod.addCard(new SporePro());
@@ -170,6 +171,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new RoarOfUrsus());
         BaseMod.addCard(new LeapingHammer());
         BaseMod.addCard(new HammerOn());
+        BaseMod.addCard(new CBBF());
+        BaseMod.addCard(new SwordRain());
 
         System.out.println("DONE");
     }

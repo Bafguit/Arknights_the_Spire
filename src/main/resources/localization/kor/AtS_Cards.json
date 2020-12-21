@@ -385,9 +385,24 @@
     "NAME": "망치 소리",
     "DESCRIPTION": "피해를 !D! 줍니다. 이 공격으로 적이 죽으면 [E] 를 얻습니다."
   },
+  "ats:Closed Bolt Burst Fire": {
+    "NAME": "클로즈드 볼트 연발",
+    "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. 이 공격으로 적이 죽으면 [E] [E] 를 얻습니다."
+  },
   "ats:Healing Drone": {
     "NAME": "치료 드론",
     "DESCRIPTION": "이번 턴 종료 및 다음 턴 시작 시, 체력을 !M! 회복합니다."
+  },
+  "ats:Healing Strengthening": {
+    "NAME": "치료 강화",
+    "DESCRIPTION": "ats:치유력을 !M! 얻습니다."
+  },
+  "ats:Sword Rain": {
+    "NAME": "검의 비",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL ats:SP !S! ats:수동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:수동 NL 적 전체에게 피해를 !D! 줍니다. [E] [E] 를 얻습니다."
+    ]
   },
   "ats:NULL": {
     "NAME": "",

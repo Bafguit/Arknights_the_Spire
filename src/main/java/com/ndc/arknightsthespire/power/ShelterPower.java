@@ -48,10 +48,13 @@ public class ShelterPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public int onAttacked (DamageInfo info, int damageAmount) {
-        flash();
-        if(toMulti == 2) return Math.round(damageAmount / 2);
-        return Math.round(damageAmount * 3 / 4);
+    public int onAttackedToChangeDamage (DamageInfo info, int damageAmount) {
+        if(damageAmount > 0) {
+            flash();
+            if (toMulti == 2) return Math.round(damageAmount / 2);
+            return Math.round(damageAmount * 3 / 4);
+        }
+        return damageAmount;
     }
 
     @Override

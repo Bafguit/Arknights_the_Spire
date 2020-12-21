@@ -18,7 +18,7 @@ public class ChargingDef extends CardSPBase {
     private static final int COST = 1;
     private static final int BLOCK_AMT = 7;
     private static final int UPGRADE_BLOCK = 3;
-    private static final int DEFAULT_SP = 8;
+    private static final int DEFAULT_SP = 10;
 
     public ChargingDef() {
         super(ID, IMG_PATH, COST,

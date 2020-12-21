@@ -21,7 +21,6 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class SoulRendPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
-    public int healAmt = 0;
 
     public static final String POWER_ID = "ats:Soul Rend";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -39,7 +38,7 @@ public class SoulRendPower extends AbstractPower implements CloneablePowerInterf
 
         this.owner = owner;
         this.source = source;
-        healAmt = healAmount;
+        this.amount = healAmount;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -61,13 +60,20 @@ public class SoulRendPower extends AbstractPower implements CloneablePowerInterf
 
 
     @Override
-    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if(!target.isPlayer && damageAmount > 0) {
+    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
+        if(info.owner.isPlayer && damageAmount > 0) {
             AbstractPlayer p = AbstractDungeon.player;
             if(lastCard != null && lastCard.position == PositionType.GUARD && info.owner.isPlayer && info.type != DamageInfo.DamageType.THORNS) {
-                addToBot(new HealAction(p, p, healAmt, 0.15F));
+                addToBot(new HealAction(p, p, this.amount, 0.15F));
             }
         }
+
+        return  damageAmount;
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        lastCard = null;
     }
 
     @Override
@@ -78,11 +84,11 @@ public class SoulRendPower extends AbstractPower implements CloneablePowerInterf
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + healAmt + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new SoulRendPower(owner, source, healAmt);
+        return new SoulRendPower(owner, source, amount);
     }
 }

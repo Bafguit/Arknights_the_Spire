@@ -43,6 +43,7 @@ public class AtsSound {
         this.map.put("BELL", this.load("skill_recallbell"));
         this.map.put("CLING", this.load("skill_soulwolf"));
         this.map.put("JUMP", this.load("skill_jumphammer"));
+        this.map.put("SWORDRAIN", this.load("skill_swordrain"));
         this.map.put("BATTLESONG", this.load("skill_battlesong"));
         this.map.put("MAGNETIC_HAMMER", this.load("skill_magnetichammer"));
         this.map.put("SILVER", this.load("atk_silver_n"));
@@ -62,13 +63,16 @@ public class AtsSound {
         this.map.put("PAW", this.load("atk_paw_n"));
         this.map.put("PAW_H", this.load("atk_paw_h"));
         this.map.put("DAGGER", this.load("atk_firedagger_s"));
-        this.map.put("SPEAR", this.load("atk_spear_n"));
         this.map.put("BLADE", this.load("atk_blade_n"));
+        this.map.put("POWER_HEAL", this.load("atk_heal_h"));
         this.map.put("VOLCANO", this.load("aoe_flamethrower_pre"));
         this.map.put("REDSHIFT", this.load("imp_knifethrow_h"));
         this.map.put("KNIFE", this.load("imp_knifethrow_n"));
         this.map.put("CASTER", this.load("imp_darkmag_n"));
         this.map.put("MILK", this.load("imp_milkcannon_n"));
+        this.map.put("SPEAR", this.load("imp_spear_n"));
+        this.map.put("SPEAR_H", this.load("imp_spear_h"));
+        this.map.put("BAGPIPE", this.load("imp_gunlance_s"));
         logger.info("Sound Effect Volume: " + Settings.SOUND_VOLUME);
         logger.info("Loaded " + this.map.size() + " Sound Effects");
         logger.info("SFX load time: " + (System.currentTimeMillis() - startTime) + "ms");
