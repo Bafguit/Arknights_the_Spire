@@ -35,7 +35,7 @@ public class ChargingDef extends CardSPBase {
             AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, block));
         }*/
 
-        checkGainBlock(this.block);
+        addToBot(new GainBlockAction(p, p, this.block));
 
         //SP Effect
         if(isSpJustUsed) {

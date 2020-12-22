@@ -28,7 +28,7 @@ public class ShellDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        checkGainBlock(this.block);
+        addToBot(new GainBlockAction(p, p, this.block));
         if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
     }
 

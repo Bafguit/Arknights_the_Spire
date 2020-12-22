@@ -13,11 +13,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.ndc.arknightsthespire.interfaces.OnGainBlockPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
 
-public class DogmaticFieldPower extends AbstractPower implements CloneablePowerInterface {
+public class DogmaticFieldPower extends AbstractPower implements CloneablePowerInterface, OnGainBlockPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = "ats:Dogmatic Field";
@@ -47,55 +48,6 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
 
         updateDescription();
     }
-/*
-    public void onGainedBlock(float blockAmount) {
-        if(blockAmount > 0.0F) {
-            flash();
-            int overHeal = Math.round(p.currentHealth + blockAmount);
-
-            System.out.println("XXXX" + blockAmount);
-            if (overHeal > p.maxHealth) {
-                int b = Math.round(blockAmount - (overHeal - p.maxHealth));
-                addToBot(new LoseBlockAction(p, p, Math.round(b + (b/2))));
-                AbstractDungeon.actionManager.currentAction.isDone = true;
-            } else {
-                addToBot(new LoseBlockAction(p, p, Math.round(blockAmount)));
-                AbstractDungeon.actionManager.currentAction.isDone = true;
-            }
-            addToBot(new HealAction(p, p, Math.round(blockAmount)));
-        }
-    }*/
-/*
-    @Override
-    public float modifyBlock(float blockAmount) {
-        if(blockAmount > 0.0F) {
-            flash();
-            int overHeal = Math.round(p.currentHealth + blockAmount);
-
-            System.out.println("YYYY" + blockAmount);
-            if (overHeal > p.maxHealth) {
-                int b = Math.round(blockAmount - (overHeal - p.maxHealth));
-                addToBot(new HealAction(p, p, Math.round(blockAmount)));
-                return b/2;
-            } else {
-                addToBot(new HealAction(p, p, Math.round(blockAmount)));
-                return 0;
-            }
-        }
-        return blockAmount;
-    }
-
-    @Override
-    public int onHeal(int blockAmount) {
-        int overHeal = Math.round(p.currentHealth + blockAmount);
-        if (overHeal > p.maxHealth) {
-            int b = Math.round(blockAmount - (overHeal - p.maxHealth));
-            addToBot(new GainBlockAction(p, p, b/2));
-            return b/2;
-        }
-        return blockAmount;
-    }*/
-
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
@@ -106,5 +58,17 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
     @Override
     public AbstractPower makeCopy() {
         return new DogmaticFieldPower(owner, source);
+    }
+
+    @Override
+    public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
+        flash();
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, blockAmount, 0.15F));
+        int overHeal = p.currentHealth + blockAmount - p.maxHealth;
+        if (overHeal > 0) {
+            return Math.round(overHeal/2);
+        }
+
+        return 0;
     }
 }

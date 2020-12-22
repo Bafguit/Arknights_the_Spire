@@ -57,7 +57,6 @@ public class EndTurnButtonPatcher {
     public static class UpdatePatcher {
         public static void Postfix(EndTurnButton __instance) {
             toggleSpButton.update();
-            System.out.println("UPDATE");
         }
     }
 
@@ -126,10 +125,8 @@ public class EndTurnButtonPatcher {
         public static void Insert(EndTurnButton __instance, SpriteBatch sb, @ByRef float[] tmpY) {
             float valueX = ReflectionHacks.getPrivate(__instance, EndTurnButton.class, "current_x");
             currentXMap.put(__instance, valueX);
-            System.out.println("A " + valueX + " " + tmpY[0]);
             ReflectionHacks.setPrivate(__instance, EndTurnButton.class, "current_x", valueX + ToggleSpButton.RIGHT_TEXT_OFFSET_X * Settings.scale);
             tmpY[0] += (3.0F + ToggleSpButton.TEXT_OFFSET_Y) * Settings.scale;
-            System.out.println("B " + ReflectionHacks.getPrivate(__instance, EndTurnButton.class, "current_x") + " " + tmpY[0]);
         }
     }
     @SpirePatch(
@@ -143,9 +140,7 @@ public class EndTurnButtonPatcher {
         )
         public static void Insert(EndTurnButton __instance, SpriteBatch sb) {
             if(currentXMap.get(__instance) != null) {
-                System.out.println("C " + ReflectionHacks.getPrivate(__instance, EndTurnButton.class, "current_x"));
                 ReflectionHacks.setPrivate(__instance, EndTurnButton.class, "current_x", currentXMap.get(__instance));
-                System.out.println("D " + ReflectionHacks.getPrivate(__instance, EndTurnButton.class, "current_x"));
             }
         }
     }

@@ -42,7 +42,7 @@ public class MagHammer extends CardSPBase {
         addToBot(new AtsSFX("MAGNETIC_HAMMER"));
         addToBot(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
-        checkGainBlock(this.block);
+        addToBot(new GainBlockAction(p, p, this.block));
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber));

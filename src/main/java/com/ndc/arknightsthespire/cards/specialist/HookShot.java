@@ -29,7 +29,7 @@ public class HookShot extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("ROPE"));
-        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new GainBlockAction(p, p, this.block));
         addToBot(new DrawCardAction((isSpJustUsed ? 2 : 1)));
     }
 

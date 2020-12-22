@@ -373,9 +373,10 @@
       "ats:SP !S! ats:자동 NL 내가 가진 약화, 취약, 손상 수치가 절반으로 감소합니다. (최소 1) NL 내가 가진 무작위 해로운 효과를 제거하고 체력을 !M! 회복합니다."
     ]
   },
-  "ats:Weakening": {
-    "NAME": "약체화",
-    "DESCRIPTION": "체력이 40% 이하인 적이 있다면 공격이 !M! % 더 많은 피해를 줍니다."
+  "ats:Part Time Job": {
+    "NAME": "아르바이트",
+    "DESCRIPTION": "재생을 3 얻습니다.",
+    "UPGRADE_DESCRIPTION": "내 턴 시작에 재생을 1 얻습니다."
   },
   "ats:Childhood Dance": {
     "NAME": "어린 시절의 무용",

@@ -27,7 +27,7 @@ public class GuardianObelisk extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(m.hasPower("ats:Burn")) {
-            checkGainBlock(m.getPower("ats:Burn").amount);
+            addToBot(new GainBlockAction(p, p, m.getPower("ats:Burn").amount));
             addToBot(new ApplyPowerAction(m, p,
                     new GuardObePower(m, p)));
         }

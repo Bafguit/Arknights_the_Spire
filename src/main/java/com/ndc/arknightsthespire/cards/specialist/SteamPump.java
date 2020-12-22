@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.cards.specialist;
 
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -30,7 +31,7 @@ public class SteamPump extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new DiscardAction(p, p, this.magicNumber, false));
         addToBot(new AtsSFX("PUMP"));
-        checkGainBlock(this.block);
+        addToBot(new GainBlockAction(p, p, this.block));
     }
 
     @Override
