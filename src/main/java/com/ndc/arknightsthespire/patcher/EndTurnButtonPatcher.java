@@ -46,7 +46,7 @@ public class EndTurnButtonPatcher {
     public static class ConstructorPatcher {
         public static void Postfix(EndTurnButton __instance, @ByRef(type="helpers.Hitbox") Object[] ___hb) {
             toggleSpButton = new ToggleSpButton(__instance);
-            ___hb[0] = new Hitbox(0.0F, 0.0F, 193.0F * Settings.scale, 100.0F * Settings.scale);
+            ___hb[0] = new Hitbox(0.0F, 0.0F, ToggleSpButton.HITBOX_WIDTH * Settings.scale, ToggleSpButton.HITBOX_HEIGHT * Settings.scale);
         }
     }
 
@@ -57,6 +57,7 @@ public class EndTurnButtonPatcher {
     public static class UpdatePatcher {
         public static void Postfix(EndTurnButton __instance) {
             toggleSpButton.update();
+            System.out.println("UPDATE");
         }
     }
 
@@ -119,14 +120,14 @@ public class EndTurnButtonPatcher {
     )
     public static class RenderInsertPatcher1 {
         @SpireInsertPatch(
-                rloc = 148,
+                rloc = 149,
                 localvars = {"tmpY"}
         )
         public static void Insert(EndTurnButton __instance, SpriteBatch sb, @ByRef float[] tmpY) {
             float valueX = ReflectionHacks.getPrivate(__instance, EndTurnButton.class, "current_x");
             currentXMap.put(__instance, valueX);
             System.out.println("A " + valueX + " " + tmpY[0]);
-            //ReflectionHacks.setPrivate(__instance, EndTurnButton.class, "current_x", valueX + ToggleSpButton.RIGHT_TEXT_OFFSET_X * Settings.scale);
+            ReflectionHacks.setPrivate(__instance, EndTurnButton.class, "current_x", valueX + ToggleSpButton.RIGHT_TEXT_OFFSET_X * Settings.scale);
             tmpY[0] += (3.0F + ToggleSpButton.TEXT_OFFSET_Y) * Settings.scale;
             System.out.println("B " + ReflectionHacks.getPrivate(__instance, EndTurnButton.class, "current_x") + " " + tmpY[0]);
         }
@@ -138,7 +139,7 @@ public class EndTurnButtonPatcher {
     )
     public static class RenderInsertPatcher2 {
         @SpireInsertPatch(
-                rloc = 149
+                rloc = 157
         )
         public static void Insert(EndTurnButton __instance, SpriteBatch sb) {
             if(currentXMap.get(__instance) != null) {

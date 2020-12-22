@@ -56,8 +56,10 @@ public class ToggleSpButton {
 
     public static final float OFFSET_X = 93;
     public static final float LEFT_TEXT_OFFSET_X = 7.0F;
-    public static final float RIGHT_TEXT_OFFSET_X = -2.0F;
+    public static final float RIGHT_TEXT_OFFSET_X = -7.0F;
     public static final float TEXT_OFFSET_Y = -1.5F;
+    public static final float HITBOX_WIDTH = 185.0F;
+    public static final float HITBOX_HEIGHT = 100.0F;
     EndTurnButton endTurnButton;
 
     public static Texture UI_BUTTON_LEFT = ImageMaster.loadImage("img/ui/uiButtonLeft.png");
@@ -77,7 +79,7 @@ public class ToggleSpButton {
         this.glowList = new ArrayList();
         this.glowTimer = 0.0F;
         this.isGlowing = false;
-        this.hb = new Hitbox(0.0F, 0.0F, 193.0F * Settings.scale, 100.0F * Settings.scale);
+        this.hb = new Hitbox(0.0F, 0.0F, HITBOX_WIDTH * Settings.scale, HITBOX_HEIGHT * Settings.scale);
         this.holdProgress = 0.0F;
         this.holdBarColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
 
