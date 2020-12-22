@@ -48,20 +48,16 @@ public class ToggleSpButton {
     private boolean isDisabled;
     private Color textColor;
     private ArrayList<EndTurnGlowEffect> glowList;
-    private static final float GLOW_INTERVAL = 1.2F;
     private float glowTimer;
     public boolean isGlowing;
     private Hitbox hb;
     private float holdProgress;
-    private static final float HOLD_DUR = 0.4F;
     private Color holdBarColor;
 
-    public static final float RIGHT_OFFSET_X = 39;
-    public static final float LEFT_OFFSET_X = -103;
-    public static final float BUTTON_OFFSET_Y = 19;
-    public static final float LEFT_TEXT_OFFSET_X = -8.0F;
-    public static final float RIGHT_TEXT_OFFSET_X = 8.0F;
-    public static final float TEXT_OFFSET_Y = -1.0F;
+    public static final float OFFSET_X = 93;
+    public static final float LEFT_TEXT_OFFSET_X = 7.0F;
+    public static final float RIGHT_TEXT_OFFSET_X = -2.0F;
+    public static final float TEXT_OFFSET_Y = -1.5F;
     EndTurnButton endTurnButton;
 
     public static Texture UI_BUTTON_LEFT = ImageMaster.loadImage("img/ui/uiButtonLeft.png");
@@ -81,7 +77,7 @@ public class ToggleSpButton {
         this.glowList = new ArrayList();
         this.glowTimer = 0.0F;
         this.isGlowing = false;
-        this.hb = new Hitbox(0.0F, 0.0F, 160.0F * Settings.scale, 100.0F * Settings.scale);
+        this.hb = new Hitbox(0.0F, 0.0F, 193.0F * Settings.scale, 100.0F * Settings.scale);
         this.holdProgress = 0.0F;
         this.holdBarColor = new Color(1.0F, 1.0F, 1.0F, 0.0F);
 
@@ -352,8 +348,8 @@ public class ToggleSpButton {
         TURN_ON_MSG = TEXT[0];
         TURN_OFF_MSG = TEXT[1];
         DISABLED_COLOR = new Color(0.7F, 0.7F, 0.7F, 1.0F);
-        SHOW_X = EndTurnButtonPatcher.SHOW_X + LEFT_OFFSET_X;
+        SHOW_X = EndTurnButtonPatcher.SHOW_X - OFFSET_X * Settings.scale;
         SHOW_Y = EndTurnButtonPatcher.SHOW_Y;
-        HIDE_X = EndTurnButtonPatcher.HIDE_X;
+        HIDE_X = EndTurnButtonPatcher.HIDE_X - OFFSET_X * Settings.scale;
     }
 }
