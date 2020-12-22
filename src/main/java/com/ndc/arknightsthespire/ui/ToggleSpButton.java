@@ -21,7 +21,7 @@ import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.EndTurnGlowEffect;
 import com.ndc.arknightsthespire.SPHandler;
-import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.patcher.EndTurnButtonPatcher;
 
 import java.util.ArrayList;

@@ -7,7 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.ndc.arknightsthespire.power.EmergencyDef;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.ndc.arknightsthespire.power.EmergencyPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class EmergencyDefibrillator extends CustomRelic {
@@ -26,11 +27,13 @@ public class EmergencyDefibrillator extends CustomRelic {
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        AbstractPlayer p = AbstractDungeon.player;
-        if(!isUsed && !this.usedUp && info.owner.isPlayer && p.currentHealth - damageAmount < Math.round(p.maxHealth/4)) {
-            addToBot(new ApplyPowerAction(p, p, new EmergencyDef(p, p)));
-            isUsed = true;
-            return p.currentHealth - Math.round(p.maxHealth/4);
+        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            AbstractPlayer p = AbstractDungeon.player;
+            if (!isUsed && !this.usedUp && info.owner.isPlayer && p.currentHealth - damageAmount < Math.round(p.maxHealth / 4)) {
+                addToBot(new ApplyPowerAction(p, p, new EmergencyPower(p, p)));
+                isUsed = true;
+                return p.currentHealth - Math.round(p.maxHealth / 4);
+            }
         }
 
         if(isUsed) {

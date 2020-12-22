@@ -8,12 +8,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 
 import java.lang.reflect.Type;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
     private static int maxSp = 10;
+    private static int maxSpLimit = 40;
     private static int diffSp = 0;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
@@ -31,9 +33,10 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return maxSp;
     }
     public static boolean getUpToMaxSp() {
-        if(maxSp == checkSanity()) return false;
+        if(maxSp >= maxSpLimit) return false;
         else return true;
     }
+    public static void upgradeLimit() {maxSpLimit = 50;}
     public static int getDiffSp() {
         return diffSp;
     }
@@ -47,8 +50,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         sp = Math.min(sp + amount, maxSp);
     }
     public static void addMaxSp(int amount) {
-        maxSp = Math.min(maxSp + amount, checkSanity());
-        new SaveAndContinue();
+        maxSp = Math.min(maxSp + amount, maxSpLimit);
     }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
@@ -74,11 +76,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         return isSpModeEnabled;
     }
 
-    public static int checkSanity() {
-        if(AbstractDungeon.isPlayerInDungeon()) if (AbstractDungeon.player.hasRelic("ats:Sanity Plus")) return 50;
-        return 40;
-    }
-
     @Override
     public Integer onSave()
     {
@@ -91,7 +88,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public void onLoad(Integer savedMaxSp) {
         System.out.println("@@Loading MaxSP...");
         if(savedMaxSp == null) {
-            maxSp = 10;
+            maxSp = 20;
         }
         else maxSp = savedMaxSp;
     }
@@ -121,7 +118,10 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     //
     @Override
     public void receiveCardUsed(AbstractCard abstractCard) {
-        addSpSoon(cardAddSp);
+        if(abstractCard instanceof CardSPBase)
+            addSpSoon(cardAddSp);
+        else
+            addSp(cardAddSp);
         System.out.println("Current SP: " + sp);
     }
 

@@ -2,8 +2,11 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -21,15 +24,17 @@ public class Bonebreaker extends CustomRelic {
     }
 
     @Override
-    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-
-        if(damageAmount <= target.currentBlock && info.owner.isPlayer && !target.isPlayer)
-        {
-            flash();
-            onAttackToChangeDamage(info, damageAmount + 2);
+    public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
+        if (info.owner != null && info.type == DamageInfo.DamageType.NORMAL && damageAmount < 2) {
+            this.flash();
+            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            return 2;
+        } else {
+            return damageAmount;
         }
-
     }
+
+
 
     @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic

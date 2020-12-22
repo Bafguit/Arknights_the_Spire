@@ -262,6 +262,45 @@
     "NAME": "종말처럼",
     "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
   },
+  "ats:Composite Medical Shells": {
+    "NAME": "복합형 약물파편",
+    "DESCRIPTION": "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
+  },
+  "ats:Neurotoxin": {
+    "NAME": "신경독소",
+    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다."
+  },
+  "ats:Ambush": {
+    "NAME": "매복",
+    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다."
+  },
+  "ats:Defend Order": {
+    "NAME": "방어지령",
+    "DESCRIPTION": "에너지를 얻을 때마다 방어도를 !M! 얻습니다."
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "우르수스의 포효",
+    "DESCRIPTION": "에너지를 얻을 때마다 추가로 1 얻습니다."
+  },
+  "ats:Echo Reverb": {
+    "NAME": "메아리",
+    "DESCRIPTION": "둔화를 부여합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. NL 소멸."
+  },
+  "ats:Beaten Up": {
+    "NAME": "매 맞기",
+    "DESCRIPTION": "민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다. NL ats:SP !S! ats:자동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻고 민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+    ]
+  },
+  "ats:Ignite": {
+    "NAME": "이그니션",
+    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. ats:화상을 !M! 부여합니다."
+  },
   "ats:NULL": {
     "NAME": "",
     "DESCRIPTION": "",

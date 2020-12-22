@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 
 public class AbstractCardPatcher {
 

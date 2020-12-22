@@ -19,12 +19,6 @@
       " 얻습니다."
     ]
   },
-  "ats:Charging Defense": {
-    "NAME": "충전 완료",
-    "DESCRIPTIONS": [
-      "다음 피해를 받지 않습니다."
-    ]
-  },
   "ats:Blazing": {
     "NAME": "이글거림",
     "DESCRIPTIONS": [
@@ -35,14 +29,13 @@
   "ats:Soul Absorption": {
     "NAME": "영혼 착취",
     "DESCRIPTIONS": [
-      "이번 턴에 사용하는 다음 #y캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
-      "이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
+      "적에게 준 피해만큼 방어도를 얻습니다."
     ]
   },
   "ats:Fate": {
     "NAME": "운명",
     "DESCRIPTIONS": [
-      "#y캐스터 카드를 연속으로 사용할 때마다 카드를 #b",
+      "#y캐스터 카드를 사용할 때마다 카드를 #b",
       " 장 뽑습니다."
     ]
   },
@@ -69,7 +62,7 @@
   "ats:Shadow Raid": {
     "NAME": "그림자 방패",
     "DESCRIPTIONS": [
-      "턴이 끝날 때 민첩을 #b",
+      "다음 턴 시작 시 민첩을 #b",
       " 잃습니다."
     ]
   },
@@ -77,6 +70,107 @@
     "NAME": "긴급 제세동기",
     "DESCRIPTIONS": [
       "공격 피해를 받지 않습니다. NL 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
+    ]
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "복합형 약물파편",
+    "DESCRIPTIONS": [
+      "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
+    ]
+  },
+  "ats:Neurotoxin": {
+    "NAME": "신경독소",
+    "DESCRIPTIONS": [
+      "#y스나이퍼 공격 카드를 사용할 때마다 적 전체에게 중독을 #b",
+      " 부여합니다."
+    ]
+  },
+  "ats:Ambush": {
+    "NAME": "매복",
+    "DESCRIPTIONS": [
+      "이번 턴에 #y스나이퍼 공격 카드를 사용해다면, 받는 피해가 #b",
+      " % 확률로 0이 됩니다."
+    ]
+  },
+  "ats:Order": {
+    "NAME": "지령",
+    "DESCRIPTIONS": [
+      "턴 시작 시 에너지를 #b1 얻습니다."
+    ]
+  },
+  "ats:Defend Order": {
+    "NAME": "방어지령",
+    "DESCRIPTIONS": [
+      "에너지를 얻을 때마다 방어도를 #b",
+      " 얻습니다."
+    ]
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "우르수스의 포효",
+    "DESCRIPTIONS": [
+      "에너지를 얻을 때마다 추가로 1 얻습니다. (유물 효과 제외)"
+    ]
+  },
+  "ats:Burn": {
+    "NAME": "화상",
+    "DESCRIPTIONS": [
+      "턴 시작 및 종료 시, 피해를 #b1 만큼 #b",
+      " 번 받습니다."
+    ]
+  },
+  "ats:Beaten Up": {
+    "NAME": "매 맞기",
+    "DESCRIPTIONS": [
+      "적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+    ]
+  },
+  "ats:Song Of Battle": {
+    "NAME": "전투의 노래",
+    "DESCRIPTIONS": [
+      "매 턴 시작 시 #ySP 를 #b",
+      " 얻습니다."
+    ]
+  },
+  "ats:Burning Ground": {
+    "NAME": "불타는 땅",
+    "DESCRIPTIONS": [
+      "#y캐스터 카드를 사용할 때마다 적 전체에게 #y화상 을 #b",
+      " 부여합니다."
+    ]
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "방어 오벨리스크",
+    "DESCRIPTIONS": [
+      "#y화상 이 끝날 때, 대신 절반만 감소합니다."
+    ]
+  },
+  "ats:Weakening": {
+    "NAME": "약체화",
+    "DESCRIPTIONS": [
+      "체력이 40% 이하인 적이 있다면 공격이 #b",
+      "% 더 많은 피해를 줍니다."
+    ]
+  },
+  "ats:Slow": {
+    "NAME": "정지",
+    "DESCRIPTIONS": [
+      "공격이 #b50% 더 적은 피해를 줍니다.",
+      ""
+    ]
+  },
+  "ats:Drone": {
+    "NAME": "치료 드론",
+    "DESCRIPTIONS": [
+      "턴 종료 및 시작 시, 체력을 #b1 만큼 #b",
+      " 번 회복합니다."
+    ]
+  },
+  "ats:Curative": {
+    "NAME": "치유력",
+    "DESCRIPTIONS": [
+      "#y체력 #y회복량 이 다음 수치만큼 증가합니다 : #b",
+      "#y체력 #y회복량 이 다음 수치만큼 감소합니다 : #b",
+      "."
     ]
   },
   "ats:": {

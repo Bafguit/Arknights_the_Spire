@@ -21,6 +21,13 @@
     "DESCRIPTION": "You can consume by Mode Change Button if you have enough #ySP."
   },
   {
+    "PROPER_NAME": "Burn",
+    "NAMES": [
+      "burn"
+    ],
+    "DESCRIPTION": "턴 시작 및 종료 시 피해를 받습니다."
+  },
+  {
     "PROPER_NAME": "Shelter",
     "NAMES": [
       "shelter"

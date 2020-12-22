@@ -6,7 +6,7 @@
       "sp를",
       "sp가"
     ],
-    "DESCRIPTION": "SP를 소모하면 카드의 효과가 강화됩니다."
+    "DESCRIPTION": "#ySP를 소모하면 카드의 효과가 강화됩니다."
   },
   {
     "PROPER_NAME": "자동",
@@ -14,7 +14,7 @@
       "자동",
       "자동인"
     ],
-    "DESCRIPTION": "SP가 충분하다면 자동으로 소모합니다."
+    "DESCRIPTION": "#ySP가 충분하다면 #y자동 으로 소모합니다."
   },
   {
     "PROPER_NAME": "수동",
@@ -22,7 +22,16 @@
       "수동",
       "수동인"
     ],
-    "DESCRIPTION": "SP가 충분하다면 사용 모드 전환을 눌러 소모할 수 있습니다."
+    "DESCRIPTION": "#ySP가 충분하다면 #y사용 #y모드 #y전환 을 눌러 소모할 수 있습니다."
+  },
+  {
+    "PROPER_NAME": "화상",
+    "NAMES": [
+      "화상",
+      "화상을",
+      "화상이"
+    ],
+    "DESCRIPTION": "턴 시작 및 종료 시 피해를 받습니다."
   },
   {
     "PROPER_NAME": "가호",
@@ -34,59 +43,84 @@
     "DESCRIPTION": "피해를 일정 % 적게 받습니다."
   },
   {
+    "PROPER_NAME": "지령",
+    "NAMES": [
+      "지령",
+      "지령을"
+    ],
+    "DESCRIPTION": "턴 시작 시 에너지를 #b1 얻습니다."
+  },
+  {
+    "PROPER_NAME": "정지",
+    "NAMES": [
+      "정지",
+      "정지를"
+    ],
+    "DESCRIPTION": "공격이 #b50% 더 적은 피해를 줍니다."
+  },
+  {
+    "PROPER_NAME": "치유력",
+    "NAMES": [
+      "치유력",
+      "치유력을",
+      "치유력이"
+    ],
+    "DESCRIPTION": "체력 회복량을 증가시킵니다."
+  },
+  {
     "PROPER_NAME": "스나이퍼",
     "NAMES": [
       "스나이퍼"
     ],
-    "DESCRIPTION": "스나이퍼"
+    "DESCRIPTION": "#b낮은 #b에너지 와 #bSP #b소모 로 꾸준히 피해를 누적하는 클래스입니다."
   },
   {
     "PROPER_NAME": "가드",
     "NAMES": [
       "가드"
     ],
-    "DESCRIPTION": "가드"
+    "DESCRIPTION": "높은 잠재력의 카드로 #b강력한 #b피해 를 주는 데에 특화된 클래스입니다."
   },
   {
     "PROPER_NAME": "메딕",
     "NAMES": [
       "메딕"
     ],
-    "DESCRIPTION": "메딕"
+    "DESCRIPTION": "#b체력 #b회복 에 특화된 클래스입니다."
   },
   {
     "PROPER_NAME": "디펜더",
     "NAMES": [
       "디펜더"
     ],
-    "DESCRIPTION": "디펜더"
+    "DESCRIPTION": "#b방어 에 특화된 클래스입니다."
   },
   {
     "PROPER_NAME": "캐스터",
     "NAMES": [
       "캐스터"
     ],
-    "DESCRIPTION": "캐스터"
+    "DESCRIPTION": "#b덱 #b회전률 이 높고 #b에너지 #b대신 #bSP를 #b소모 하는 것이 특징인 클래스입니다."
   },
   {
     "PROPER_NAME": "서포터",
     "NAMES": [
       "서포터"
     ],
-    "DESCRIPTION": "서포터"
+    "DESCRIPTION": "적에게 #b해로운 #b효과 를 주는 데에 특화된 클래스입니다."
   },
   {
     "PROPER_NAME": "뱅가드",
     "NAMES": [
       "뱅가드"
     ],
-    "DESCRIPTION": "뱅가드"
+    "DESCRIPTION": "#b에너지 #b회복 에 특화된 클래스입니다."
   },
   {
     "PROPER_NAME": "스페셜리스트",
     "NAMES": [
       "스페셜리스트"
     ],
-    "DESCRIPTION": "스페셜리스트"
+    "DESCRIPTION": "#b강력한 #b특수능력 과 높은 #b덱 #b회전률 이 특징인 클래스입니다."
   }
 ]

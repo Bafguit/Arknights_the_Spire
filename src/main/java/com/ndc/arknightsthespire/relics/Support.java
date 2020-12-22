@@ -2,18 +2,12 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.ndc.arknightsthespire.cards.CardSPBase;
-import com.ndc.arknightsthespire.cards.PositionType;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.util.TextureLoader;
-
-import javax.smartcardio.Card;
 
 import static com.ndc.arknightsthespire.SPHandler.addSp;
 
@@ -36,7 +30,7 @@ public class Support extends CustomRelic {
         AbstractCard c = card;
         if(c instanceof CardSPBase) {
             spC = (CardSPBase) c;
-            if(spC.position == PositionType.SUPPORT) {
+            if(spC.position == PositionType.SUPPORTER) {
                 flash();
                 addSp(1);
             }

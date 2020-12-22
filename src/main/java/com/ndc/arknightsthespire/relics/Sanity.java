@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.SPHandler;
-import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.ui.MaxSpOption;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -32,10 +32,11 @@ public class Sanity extends CustomRelic {
     public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
         if(c instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) c;
-            if (card.canUseSP && card.isSpJustUsed && !used) {
+            if (card.canUseSP && card.isSpJustUsed && !used && card.sp > 0) {
                 flash();
                 SPHandler.addSp((Math.min(Math.round(card.baseSP / 2), 5)));
                 used = true;
+                this.pulse = false;
             }
         }
     }
@@ -43,11 +44,18 @@ public class Sanity extends CustomRelic {
     @Override
     public void atTurnStart() {
         used = false;
+        this.beginPulse();
+        this.pulse = true;
     }
-
+/*
     @Override
     public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
         options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
+    }*/
+
+    @Override
+    public void onVictory() {
+        this.pulse = false;
     }
 
     @Override

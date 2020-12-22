@@ -14,16 +14,25 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.ndc.arknightsthespire.cards.basic.*;
-import com.ndc.arknightsthespire.cards.common.*;
-import com.ndc.arknightsthespire.cards.rare.*;
-import com.ndc.arknightsthespire.cards.uncommon.*;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import com.ndc.arknightsthespire.cards.Cheat;
+import com.ndc.arknightsthespire.cards.GainSP;
+import com.ndc.arknightsthespire.cards.caster.*;
+import com.ndc.arknightsthespire.cards.defender.*;
+import com.ndc.arknightsthespire.cards.guard.*;
+import com.ndc.arknightsthespire.cards.medic.*;
+import com.ndc.arknightsthespire.cards.sniper.*;
+import com.ndc.arknightsthespire.cards.supporter.*;
+import com.ndc.arknightsthespire.cards.specialist.*;
+import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
-import com.ndc.arknightsthespire.events.NightField;
+import com.ndc.arknightsthespire.potions.SpBigPotion;
+import com.ndc.arknightsthespire.potions.SpSmallPotion;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.util.MessageCaller;
@@ -37,7 +46,7 @@ import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber, PostBattleSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
     public static boolean[] activeTutorials = new boolean[]{true};
@@ -78,59 +87,92 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditCards() {
 
         System.out.println("ADDING CARDS");
-        BaseMod.addCard(new CardCheat());
+        BaseMod.addCard(new Cheat());
+        BaseMod.addCard(new GainSP());
         //Sniper
-        BaseMod.addCard(new CardSniperOverload());
-        BaseMod.addCard(new CardSniperPowerfulStrike());
-        BaseMod.addCard(new CardSniperArmCrushShot());
-        BaseMod.addCard(new CardSniperRapidMagazine());
-        BaseMod.addCard(new CardSniperConShotAuto());
-        BaseMod.addCard(new CardSniperExpAreaStr());
-        BaseMod.addCard(new CardSniperFlexCamouflage());
-        BaseMod.addCard(new CardSniperPoisonSpread());
+        BaseMod.addCard(new StrikeS());
+        BaseMod.addCard(new Overload());
+        BaseMod.addCard(new PowerfulStrike());
+        BaseMod.addCard(new ArmCrushShot());
+        BaseMod.addCard(new RapidMagazine());
+        BaseMod.addCard(new ConShotAuto());
+        BaseMod.addCard(new ExpAreaStr());
+        BaseMod.addCard(new FlexCamouflage());
+        BaseMod.addCard(new PoisonSpread());
+        BaseMod.addCard(new Neurotoxin());
+        BaseMod.addCard(new Ambush());
         //Medic
-        BaseMod.addCard(new CardMedicDogmaticField());
-        BaseMod.addCard(new CardMedicRevitalization());
-        BaseMod.addCard(new CardMedicAutoCover());
-        BaseMod.addCard(new CardMedicApocalypse());
+        BaseMod.addCard(new DogmaticField());
+        BaseMod.addCard(new Revitalization());
+        BaseMod.addCard(new AutoCover());
+        BaseMod.addCard(new Apocalypse());
+        BaseMod.addCard(new ComMedShell());
+        BaseMod.addCard(new DirDiagnosis());
+        BaseMod.addCard(new HealingDrone());
+        BaseMod.addCard(new HealingStr());
         //Supporter
-        BaseMod.addCard(new CardSupporterFoxfire());
-        BaseMod.addCard(new CardSupporterSporePro());
-        BaseMod.addCard(new CardSupporterEncForest());
-        BaseMod.addCard(new CardSupporterCurseDoll());
+        BaseMod.addCard(new Foxfire());
+        BaseMod.addCard(new SporePro());
+        BaseMod.addCard(new EncForest());
+        BaseMod.addCard(new CurseDoll());
+        BaseMod.addCard(new EchoReverb());
+        BaseMod.addCard(new SongOfBattle());
+        BaseMod.addCard(new Weakening());
+        BaseMod.addCard(new ChildDance());
         //Defender
-        BaseMod.addCard(new CardDefenderDefendUp());
-        BaseMod.addCard(new CardDefenderChargingDef());
-        BaseMod.addCard(new CardDefenderShellDef());
-        BaseMod.addCard(new CardDefenderMagHammer());
-        BaseMod.addCard(new CardDefenderThorns());
-        BaseMod.addCard(new CardDefenderCntHealMod());
+        BaseMod.addCard(new DefendUp());
+        BaseMod.addCard(new ChargingDef());
+        BaseMod.addCard(new ShellDef());
+        BaseMod.addCard(new MagHammer());
+        BaseMod.addCard(new Thorns());
+        BaseMod.addCard(new CntHealMod());
+        BaseMod.addCard(new BeatenUp());
+        BaseMod.addCard(new Calcification());
         //Caster
-        BaseMod.addCard(new CardCasterEmotionAbs());
-        BaseMod.addCard(new CardCasterMentalBurst());
-        BaseMod.addCard(new CardCasterSoulAbs());
-        BaseMod.addCard(new CardCasterFate());
-        BaseMod.addCard(new CardCasterGuardianOb());
-        BaseMod.addCard(new CardCasterVeryHotBlade());
+        BaseMod.addCard(new StrikeC());
+        BaseMod.addCard(new EmotionAbs());
+        BaseMod.addCard(new MentalBurst());
+        BaseMod.addCard(new SoulAbs());
+        BaseMod.addCard(new VeryHotBlade());
+        BaseMod.addCard(new Sunburst());
+        BaseMod.addCard(new Ignite());
+        BaseMod.addCard(new Volcano());
+        BaseMod.addCard(new BurningGround());
+        BaseMod.addCard(new GuardianObelisk());
+        BaseMod.addCard(new FlameOfHeaven());
+        //BaseMod.addCard(new Fate());
         //Specialist
-        BaseMod.addCard(new CardSpecialistRatPack());
-        BaseMod.addCard(new CardSpecialistChainHook());
-        BaseMod.addCard(new CardSpecialistHookShot());
-        BaseMod.addCard(new CardSpecialistShadowRaid());
-        BaseMod.addCard(new CardSpecialistWolfPack());
-        BaseMod.addCard(new CardSpecialistDisruptionKick());
-        BaseMod.addCard(new CardSpecialistDurian());
+        BaseMod.addCard(new RatPack());
+        BaseMod.addCard(new ChainHook());
+        BaseMod.addCard(new HookShot());
+        BaseMod.addCard(new ShadowRaid());
+        BaseMod.addCard(new WolfPack());
+        BaseMod.addCard(new DisruptionKick());
+        BaseMod.addCard(new Durian());
+        BaseMod.addCard(new SteamPump());
+        BaseMod.addCard(new CollapsingStrike());
+        BaseMod.addCard(new LN2Cannon());
         //Guard
-        BaseMod.addCard(new CardGuardCatScratch());
-        BaseMod.addCard(new CardGuardRedShift());
-        BaseMod.addCard(new CardGuardTrueSilverSlash());
-        BaseMod.addCard(new CardGuardBloodOath());
-        BaseMod.addCard(new CardGuardShadowAssault());
-        BaseMod.addCard(new CardGuardThermiteBlade());
-        BaseMod.addCard(new CardGuardSoulRend());
-        BaseMod.addCard(new CardGuardFracturedBody());
+        BaseMod.addCard(new StrikeG());
+        BaseMod.addCard(new CatScratch());
+        BaseMod.addCard(new RedShift());
+        BaseMod.addCard(new TrueSilverSlash());
+        BaseMod.addCard(new BloodOath());
+        BaseMod.addCard(new ShadowAssault());
+        BaseMod.addCard(new ThermiteBlade());
+        BaseMod.addCard(new SoulRend());
+        BaseMod.addCard(new FracturedBody());
+        BaseMod.addCard(new DemonStrength());
         //Vanguard
-        BaseMod.addCard(new CardVanguardAssaultOrder());
+        BaseMod.addCard(new StrikeV());
+        BaseMod.addCard(new AssaultOrder());
+        BaseMod.addCard(new SupportOrder());
+        BaseMod.addCard(new DefendOrder());
+        BaseMod.addCard(new RoarOfUrsus());
+        BaseMod.addCard(new LeapingHammer());
+        BaseMod.addCard(new HammerOn());
+        BaseMod.addCard(new CBBF());
+        BaseMod.addCard(new SwordRain());
 
         System.out.println("DONE");
     }
@@ -146,12 +188,14 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
         //BaseMod.addEvent(NightField.ID, NightField.class);
+        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), null, SpSmallPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), null, SpBigPotion.ID, DOCTOR_CLASS);
     }
 
     public void receiveEditCharacters() {
         System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
-                "img/char/CharacterDoctorButton.png",
+                "img/char/CharSelectButtonDoctor.png",
                 "img/char/PortraitBG.png",
                 DOCTOR_CLASS);
         System.out.println("DONE");
@@ -188,6 +232,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new OldCoin(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Gyao(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new OriginiumAdd(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new TacticalDelivery(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }
@@ -201,6 +246,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/AtS_Powers.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/AtS_Potions.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
         BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/AtS_Events.json");
@@ -269,6 +315,13 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
             if (activeTutorials[0]) {
                 AbstractDungeon.actionManager.addToBottom(new MessageCaller(0));
             }
+        }
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp()) {
+            abstractRoom.addRelicToRewards(new OriginiumAdd());
         }
     }
 }

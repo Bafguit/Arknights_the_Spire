@@ -1,8 +1,6 @@
 package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
-import basemod.devcommands.relic.Relic;
-import basemod.devcommands.relic.RelicRemove;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 import com.ndc.arknightsthespire.SPHandler;
-import com.ndc.arknightsthespire.cards.CardSPBase;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.ui.MaxSpOption;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -24,7 +22,8 @@ public class SanityP extends CustomRelic {
 
     public SanityP() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
-        //AbstractDungeon.player.loseRelic("ats:Sanity");
+        SPHandler.upgradeLimit();
+        SPHandler.addMaxSp(10);
     }
 
     @Override
@@ -51,10 +50,11 @@ public class SanityP extends CustomRelic {
     public void onUseCard(AbstractCard c, UseCardAction useCardAction) {
         if(c instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) c;
-            if (card.canUseSP && card.isSpJustUsed && !used) {
+            if (card.canUseSP && card.isSpJustUsed && !used && card.sp > 0) {
                 flash();
                 SPHandler.addSp((Math.round(card.baseSP / 2)));
                 used = true;
+                this.pulse = false;
             }
         }
     }
@@ -62,17 +62,24 @@ public class SanityP extends CustomRelic {
     @Override
     public void atTurnStart() {
         used = false;
+        this.beginPulse();
+        this.pulse = true;
+    }
+
+    @Override
+    public void onVictory() {
+        this.pulse = false;
     }
 
     @Override
     public boolean canSpawn() {
         return AbstractDungeon.player.hasRelic("ats:Sanity");
     }
-
+/*
     @Override
     public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
         options.add(new MaxSpOption(SPHandler.getUpToMaxSp()));
-    }
+    }*/
 
     @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic

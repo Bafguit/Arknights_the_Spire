@@ -19,6 +19,12 @@ public class MaxSp3 extends CustomRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0]; // DESCRIPTIONS pulls from your localization file
     }
+
+    @Override
+    public boolean canSpawn() {
+        return SPHandler.getUpToMaxSp();
+    }
+
     @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic
         return new MaxSp3();
