@@ -1,5 +1,6 @@
 package com.ndc.arknightsthespire.power;
 
+import basemod.devcommands.power.Power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
