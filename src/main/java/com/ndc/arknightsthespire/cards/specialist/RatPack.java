@@ -26,7 +26,7 @@ public class RatPack extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        checkGainBlock(AbstractDungeon.player.currentHealth);
+        addToBot(new GainBlockAction(p, p, AbstractDungeon.player.currentHealth));
     }
 
     @Override

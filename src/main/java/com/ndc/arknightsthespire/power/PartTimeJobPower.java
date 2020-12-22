@@ -48,21 +48,10 @@ public class PartTimeJobPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
-    public float atDamageGive(float damage, DamageType type) {
-        for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if(mo.currentHealth < Math.round(mo.maxHealth / 10 * 4)) {
-                this.isLower = true;
-            }
-        }
-
-        if(isLower) {
-            this.isLower = false;
-            return damage * (1 + this.number / 100);
-        }
-        else {
-            this.isLower = false;
-            return damage;
-        }
+    public void atStartOfTurn() {
+        flash();
+        AbstractPlayer p = AbstractDungeon.player;
+        addToBot(new ApplyPowerAction(p, p, new RegenPower(p, this.amount), this.amount));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

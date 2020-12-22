@@ -27,7 +27,7 @@ public abstract class CardSPBase extends CustomCard {
     // 87 251 218
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
     public static final Color DEFAULT_BORDER_GLOW_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
-    public static final Color SP_BORDER_GLOW_COLOR = new Color(0.0F, 0.0F, 0.63F, 0.5F);
+    public static final Color SP_BORDER_GLOW_COLOR = new Color(CardHelper.getColor(250, 145, 73));
     public static final Color NORMAL_AND_USABLE_COLOR = new Color(0x00E0FFFF);
     public static final Color NORMAL_AND_NOT_USABLE_COLOR = new Color(0x79A6B2FF);
     public static final Color NORMAL_AND_RESTRICTED_COLOR = new Color(0xC66F79FF);
@@ -46,7 +46,6 @@ public abstract class CardSPBase extends CustomCard {
     public boolean isSPModifiedForTurn = false; //TODO Not implemented
     public boolean canUseSP = false;
     public boolean upgradedSP = false;
-    public boolean onlySP = false;
     public boolean isSpJustUsed;
     public CardSpPreview spCard;
     public String nameUp;
@@ -310,22 +309,17 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     private boolean checkGlow() {
-        if(SPHandler.isSpModeEnabled()) {
-            if(canAffordSP()) {
-                this.glowColor = SP_BORDER_GLOW_COLOR;
-                return true;
-            }
-        } else {
-            if(isAuto) {
-                if(canAffordSP()) {
+        if(AbstractDungeon.isPlayerInDungeon()) {
+            if (SPHandler.isSpModeEnabled()) {
+                if (!this.isAuto && canAffordSP() && this.canUseSP) {
                     this.glowColor = SP_BORDER_GLOW_COLOR;
                     return true;
                 }
-                if(!onlySP) {
-                    this.glowColor = DEFAULT_BORDER_GLOW_COLOR;
+            } else {
+                if (this.isAuto && canAffordSP() && this.canUseSP) {
+                    this.glowColor = SP_BORDER_GLOW_COLOR;
                     return true;
                 }
-                return false;
             }
         }
         return false;
@@ -413,16 +407,12 @@ public abstract class CardSPBase extends CustomCard {
             if (this.isSPModified || this.isSPModifiedForTurn || this.freeToPlay()) {
                 if(this.canAffordSP()) {
                     costColor = MODIFIED_AND_USABLE_COLOR;
-                } else if(this.onlySP) {
-                    costColor = MODIFIED_AND_RESTRICTED_COLOR;
                 } else {
                     costColor = MODIFIED_AND_NOT_USABLE_COLOR;
                 }
             } else {
                 if(this.canAffordSP()) {
                     costColor = NORMAL_AND_USABLE_COLOR;
-                } else if(this.onlySP) {
-                    costColor = NORMAL_AND_RESTRICTED_COLOR;
                 } else {
                     costColor = NORMAL_AND_NOT_USABLE_COLOR;
                 }
@@ -434,22 +424,6 @@ public abstract class CardSPBase extends CustomCard {
             if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
                 FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, 125.0F * this.drawScale * Settings.scale, 180.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
             }
-        }
-    }
-
-    public static void checkGainBlock(int amt) {
-        AbstractPlayer p = AbstractDungeon.player;
-
-        if(p.hasPower(DogmaticFieldPower.POWER_ID)) {
-            p.getPower(DogmaticFieldPower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, amt));
-            int overHeal = p.currentHealth + amt - p.maxHealth;
-            if (overHeal > 0) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, Math.round(overHeal/2)));
-            }
-        }
-        else {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, amt));
         }
     }
 

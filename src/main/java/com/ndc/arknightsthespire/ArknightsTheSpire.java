@@ -24,6 +24,7 @@ import com.ndc.arknightsthespire.cards.Cheat;
 import com.ndc.arknightsthespire.cards.GainSP;
 import com.ndc.arknightsthespire.cards.caster.*;
 import com.ndc.arknightsthespire.cards.defender.*;
+import com.ndc.arknightsthespire.cards.defender.Defend;
 import com.ndc.arknightsthespire.cards.guard.*;
 import com.ndc.arknightsthespire.cards.medic.*;
 import com.ndc.arknightsthespire.cards.sniper.*;
@@ -87,8 +88,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditCards() {
 
         System.out.println("ADDING CARDS");
-        BaseMod.addCard(new Cheat());
-        BaseMod.addCard(new GainSP());
+        //BaseMod.addCard(new Cheat());
+        //BaseMod.addCard(new GainSP());
         //Sniper
         BaseMod.addCard(new StrikeS());
         BaseMod.addCard(new Overload());
@@ -117,10 +118,10 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new CurseDoll());
         BaseMod.addCard(new EchoReverb());
         BaseMod.addCard(new SongOfBattle());
-        BaseMod.addCard(new Weakening());
+        BaseMod.addCard(new PartTimeJob());
         BaseMod.addCard(new ChildDance());
         //Defender
-        BaseMod.addCard(new DefendUp());
+        BaseMod.addCard(new Defend());
         BaseMod.addCard(new ChargingDef());
         BaseMod.addCard(new ShellDef());
         BaseMod.addCard(new MagHammer());
@@ -188,8 +189,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
         //BaseMod.addEvent(NightField.ID, NightField.class);
-        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), null, SpSmallPotion.ID, DOCTOR_CLASS);
-        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), null, SpBigPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, DOCTOR_CLASS);
     }
 
     public void receiveEditCharacters() {
@@ -220,7 +221,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new Arts(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Assault(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Attack(), DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new Defend(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new com.ndc.arknightsthespire.relics.Defend(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Cure(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Snipe(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Special(), DOCTOR_COLOR);

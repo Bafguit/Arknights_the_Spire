@@ -130,7 +130,6 @@ public class ToggleSpButton {
                     //When hovered
                     CardCrawlGame.sound.play("UI_HOVER");
                     Iterator var1 = AbstractDungeon.player.hand.group.iterator();
-                    System.out.println("HOVER");
                     while(var1.hasNext()) {
                         AbstractCard c = (AbstractCard)var1.next();
                         if(c instanceof CardSPBase) {
