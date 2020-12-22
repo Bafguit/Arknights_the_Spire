@@ -376,7 +376,7 @@
   "ats:Part Time Job": {
     "NAME": "아르바이트",
     "DESCRIPTION": "재생을 3 얻습니다.",
-    "UPGRADE_DESCRIPTION": "내 턴 시작에 재생을 1 얻습니다."
+    "UPGRADE_DESCRIPTION": "내 턴 시작 및 종료 시 체력을 1 회복합니다."
   },
   "ats:Childhood Dance": {
     "NAME": "어린 시절의 무용",

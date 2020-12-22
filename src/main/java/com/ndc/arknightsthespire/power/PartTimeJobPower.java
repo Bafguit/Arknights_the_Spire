@@ -51,7 +51,7 @@ public class PartTimeJobPower extends AbstractPower implements CloneablePowerInt
     public void atStartOfTurn() {
         flash();
         AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new RegenPower(p, this.amount), this.amount));
+        addToBot(new ApplyPowerAction(p, p, new DronePower(p, p, this.amount), this.amount));
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
