@@ -30,7 +30,7 @@ public class Volcano extends CardSPBase {
     public Volcano() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, SP);
+                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, ATTACK_DMG, SP);
     }
 
     public int getCasterDeck() {
@@ -64,7 +64,7 @@ public class Volcano extends CardSPBase {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new AtsSFX("VOLCANO"));
                 addToBot(new ApplyPowerAction(mo, p,
-                        new BurnPower(mo, p, this.damage), this.damage, true));
+                        new BurnPower(mo, p, this.magicNumber), this.damage, true));
             }
         }
     }
@@ -77,6 +77,7 @@ public class Volcano extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeDamage(UP_DMG);
+        this.upgradeMagicNumber(UP_DMG);
     }
 
 }

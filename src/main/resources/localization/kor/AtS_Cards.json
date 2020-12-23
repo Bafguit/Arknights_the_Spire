@@ -142,7 +142,7 @@
   },
   "ats:Volcano": {
     "NAME": "화산",
-    "DESCRIPTION": "적 전체에게 화상을 !D! 부여합니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "적 전체에게 화상을 !M! 부여합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 덱에 있는 ats:캐스터 1 장당 적 전체에게 피해를 !D! 줍니다. NL 소멸."
     ]
