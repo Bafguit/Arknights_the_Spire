@@ -3,7 +3,7 @@
   "name": "Arknights The Spire",
   "author_list": ["FastCat", "Kuiprux"],
   "description": "Arknights Mode",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "sts_version": "01-14-2020",
   "mts_version": "3.18.0",
   "dependencies": ["basemod", "stslib"],

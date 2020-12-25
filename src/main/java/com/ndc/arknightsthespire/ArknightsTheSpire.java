@@ -256,7 +256,15 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
 
     private String getLangString() {
-        return Settings.language.name().toLowerCase();
+        String language = Settings.language.name().toLowerCase();
+
+        switch (language) {
+            case "kor":
+                return "kor";
+
+            default:
+                return "eng";
+        }
     }
 
     public void receiveEditKeywords() {
