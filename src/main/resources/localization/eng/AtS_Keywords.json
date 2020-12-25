@@ -25,14 +25,36 @@
     "NAMES": [
       "burn"
     ],
-    "DESCRIPTION": "턴 시작 및 종료 시 피해를 받습니다."
+    "DESCRIPTION": "At the start and the end of turn, lose HP."
   },
   {
     "PROPER_NAME": "Shelter",
     "NAMES": [
       "shelter"
     ],
-    "DESCRIPTION": "Reduced Damage N%."
+    "DESCRIPTION": "Reduce #bN% of attacked damage."
+  },
+  {
+    "PROPER_NAME": "Order",
+    "NAMES": [
+      "order"
+    ],
+    "DESCRIPTION": "At the start of turn, gain #b1 energy."
+  },
+  {
+    "PROPER_NAME": "정지",
+    "NAMES": [
+      "정지",
+      "정지를"
+    ],
+    "DESCRIPTION": "공격이 #b50% 더 적은 피해를 줍니다."
+  },
+  {
+    "PROPER_NAME": "Curative",
+    "NAMES": [
+      "curative"
+    ],
+    "DESCRIPTION": "Increase heal amount."
   },
   {
     "PROPER_NAME": "Sniper",

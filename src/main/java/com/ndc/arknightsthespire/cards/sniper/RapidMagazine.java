@@ -26,7 +26,7 @@ public class RapidMagazine extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("SKY"));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new RapidMagPower(p, p)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new RapidMagPower(p, p, 2)));
     }
 
     @Override

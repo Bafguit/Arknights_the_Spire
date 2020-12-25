@@ -27,12 +27,13 @@ public class RapidMagPower extends AbstractPower implements CloneablePowerInterf
     private static final Texture tex84 = TextureLoader.getTexture("img/power/RapidMagazine_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("img/power/RapidMagazine_32.png");
 
-    public RapidMagPower(final AbstractCreature owner, final AbstractCreature source) {
+    public RapidMagPower(final AbstractCreature owner, final AbstractCreature source, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+        this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -43,7 +44,7 @@ public class RapidMagPower extends AbstractPower implements CloneablePowerInterf
 
         updateDescription();
 
-        CardSPBase.getGroupSPChange(PositionType.SNIPER, -2);
+        CardSPBase.getGroupSPChange(PositionType.SNIPER, -this.amount);
         System.out.println(RapidMagPower.POWER_ID + " Applied Successfully.");
     }
 
@@ -75,11 +76,11 @@ public class RapidMagPower extends AbstractPower implements CloneablePowerInterf
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-            description = DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1];
+            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new RapidMagPower(owner, source);
+        return new RapidMagPower(owner, source, amount);
     }
 }

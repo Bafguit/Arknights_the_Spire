@@ -1,28 +1,22 @@
 {
   "ats:Rapid Magazine": {
-    "NAME": "쾌속장전",
+    "NAME": "Rapid Magazine",
     "DESCRIPTIONS": [
-      "#y스나이퍼 공격 카드의 SP 소모가 #b",
-      " 감소합니다."
+      "SP of Sniper attack card will be reduced by #b",
+      " ."
     ]
   },
   "ats:Dogmatic Field": {
-    "NAME": "신조의 역장",
+    "NAME": "Dogmatic Field",
     "DESCRIPTIONS": [
-      "카드로 방어도를 얻을 때, 대신 그만큼 체력을 회복합니다. NL 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다."
+      "When you gain block through card, instead, heal that amount. Half of heal amount above the maximum health will be switched to block."
     ]
   },
   "ats:Counter Healing Mode": {
-    "NAME": "반격 의료 모드",
+    "NAME": "Counter Healing Mode",
     "DESCRIPTIONS": [
-      "체력을 회복할 때마다 SP를 #b",
-      " 얻습니다."
-    ]
-  },
-  "ats:Charging Defense": {
-    "NAME": "충전 완료",
-    "DESCRIPTIONS": [
-      "다음 피해를 받지 않습니다."
+      "Gain #b",
+      " #ySP when healed."
     ]
   },
   "ats:Blazing": {
@@ -33,82 +27,150 @@
     ]
   },
   "ats:Soul Absorption": {
-    "NAME": "영혼 착취",
+    "NAME": "Soul Absorption",
     "DESCRIPTIONS": [
-      "이번 턴에 사용하는 다음 #y캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
-      "이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
+      "Gain block by next damage amount you dealt."
     ]
   },
   "ats:Fate": {
     "NAME": "운명",
     "DESCRIPTIONS": [
-      "#y캐스터 카드를 연속으로 사용할 때마다 카드를 #b",
+      "#y캐스터 카드를 사용할 때마다 카드를 #b",
       " 장 뽑습니다."
     ]
   },
   "ats:Shelter": {
-    "NAME": "가호",
+    "NAME": "Shelter",
     "DESCRIPTIONS": [
-      "피해를 #b",
-      "% 적게 받습니다."
+      "Attacked damage reduced by #b",
+      "% ."
     ]
   },
   "ats:Soul Rend": {
-    "NAME": "열혼",
+    "NAME": "Soul Rend",
     "DESCRIPTIONS": [
-      "#y가드 카드로 피해를 줄 때마다 체력을 #b",
-      " 회복합니다."
+      "Heal #b",
+      " HP when you deal damage with #yGuard card."
     ]
   },
   "ats:Fractured Body": {
-    "NAME": "육참골단",
+    "NAME": "Fractured Body",
     "DESCRIPTIONS": [
-      "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다."
-    ]
-  },
-  "ats:Emergency Defibrillator": {
-    "NAME": "긴급 제세동기",
-    "DESCRIPTIONS": [
-      "공격 피해를 받지 않습니다. NL 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
+      "Your HP will not fall below 1. At the end of this effect, make your HP to 1."
     ]
   },
   "ats:Shadow Raid": {
-    "NAME": "그림자 방패",
+    "NAME": "Shadow Raid",
     "DESCRIPTIONS": [
-      "턴이 끝날 때 민첩을 #b",
-      " 잃습니다."
+      "At the start of turn, lose #b",
+      " #yDexterity."
+    ]
+  },
+  "ats:Emergency Defibrillator": {
+    "NAME": "Emergency Defibrillator",
+    "DESCRIPTIONS": [
+      "Attacked damage reduced to 0. NL At the start of the next turn, heal #b50% HP."
+    ]
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "Composite Medical Shells",
+    "DESCRIPTIONS": [
+      "Deal damage to ALL enemies by heal amount."
+    ]
+  },
+  "ats:Neurotoxin": {
+    "NAME": "Neurotoxin",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " Poison to ALL enemies when you use #ySniper attack card."
+    ]
+  },
+  "ats:Ambush": {
+    "NAME": "Ambush",
+    "DESCRIPTIONS": [
+      "If you used #ySniper attack card during this turn, attacked damage reduced to 0 with #b",
+      "% chance."
     ]
   },
   "ats:Order": {
-    "NAME": "지령",
+    "NAME": "Order",
     "DESCRIPTIONS": [
-      "턴 시작 시 에너지를 #b1 얻습니다."
+      "At the start of turn, gain #b1 energy."
     ]
   },
   "ats:Defend Order": {
-    "NAME": "방어지령",
+    "NAME": "Defend Order",
     "DESCRIPTIONS": [
-      "에너지를 얻을 때마다 방어도를 #b",
-      " 얻습니다."
+      "Gain #b",
+      " bloc when energy gained."
     ]
   },
   "ats:Roar Of Ursus": {
-    "NAME": "우르수스의 포효",
+    "NAME": "Roar Of Ursus",
     "DESCRIPTIONS": [
-      "에너지를 얻을 때마다 추가로 1 얻습니다."
+      "Gain 1 more energy when energy gained."
     ]
   },
   "ats:Burn": {
-    "NAME": "화상",
+    "NAME": "Burn",
     "DESCRIPTIONS": [
-      "턴 시작 및 종료 시, 피해를 #b1 만큼 #b",
-      " 번 받습니다."
+      "At the start and the end of turn, Lose 1 HP #b",
+      " times."
     ]
   },
   "ats:Beaten Up": {
-    "NAME": "매 맞기",
+    "NAME": "Beaten Up",
     "DESCRIPTIONS": [
-      "적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+      "Deal damage by Dexterity amount to the enemy attacked you."
+    ]
+  },
+  "ats:Song Of Battle": {
+    "NAME": "Song Of Battle",
+    "DESCRIPTIONS": [
+      "At the start of turn, gain #b",
+      " #ySP."
+    ]
+  },
+  "ats:Burning Ground": {
+    "NAME": "Burning Ground",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " Apply !M! #yBurn to ALL enemies when you use #yCaster card."
+    ]
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "Guardian Obelisk",
+    "DESCRIPTIONS": [
+      "When #yBurn effect ends, instead, reduce to half."
+    ]
+  },
+  "ats:Part Time Job": {
+    "NAME": "Part Time Job",
+    "DESCRIPTIONS": [
+      "At the start and the end of turn, heal #b",
+      " HP."
+    ]
+  },
+  "ats:Drone": {
+    "NAME": "Healing Drone",
+    "DESCRIPTIONS": [
+      "At the start and the end of turn, heal 1 HP #b",
+      " times."
+    ]
+  },
+  "ats:Curative": {
+    "NAME": "Curative",
+    "DESCRIPTIONS": [
+      "Increases #yHeal amount by #b",
+      "Decreases #yHeal amount by #b",
+      "."
+    ]
+  },
+  "ats:": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      "",
+      ""
     ]
   }
 }

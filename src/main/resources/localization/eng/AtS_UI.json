@@ -1,20 +1,20 @@
 {
   "SpSingleCardViewPopup": {
     "TEXT": [
-      "#rSP가 부족해.",
-      "#r수동 #r발동이 아니야."
+      "Not enough #rSP.",
+      "Not #rManual #rTrigger."
     ]
   },
   "SpToggleButton": {
     "TEXT": [
-      "자동 발동",
-      "수동 발동"
+      "Auto",
+      "Manual"
     ]
   },
   "SpToolTips": {
     "TEXT": [
       "SP",
-      "현재 보유하고 있는 SP입니다. 카드를 사용할 때와 내 턴의 시작에 #b1 을 얻습니다."
+      "Current #ySP you have. Gain #b1 at the start of turn and using card."
     ]
   },
   "ats:Sans": {

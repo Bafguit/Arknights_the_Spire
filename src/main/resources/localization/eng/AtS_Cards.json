@@ -1,4 +1,46 @@
 {
+  "ats:Cheat": {
+    "NAME": "Cheat",
+    "DESCRIPTION": "Kills all."
+  },
+  "ats:GainSP": {
+    "NAME": "SP 회복",
+    "DESCRIPTION": "SP를 20000 얻습니다."
+  },
+  //////////////////BASIC
+  "ats:Emotion Absorption": {
+    "NAME": "Emotion Absorption",
+    "DESCRIPTION": "Gain !M! ats:SP.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ats:SP. NL Draw a card."
+  },
+  "ats:Strike C": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "ats:Strike G": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "ats:Strike S": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "ats:Strike V": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "ats:Armor Crushing Shot": {
+    "NAME": "Armor Crushing Shot",
+    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Deal !D! damage. NL Apply !M! Vulnerable."
+    ]
+  },
+  "ats:Defend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  },
+  //////////////////
   "ats:Overload": {
     "NAME": "Assault Mode",
     "DESCRIPTION": "Deal !D! damage 3 times. NL ats:SP !S! ats:Auto",
@@ -7,33 +49,15 @@
       "ats:SP !S! ats:Auto NL Deal !D! damage 5 times."
     ]
   },
-  "ats:Cheat": {
-    "NAME": "Cheat",
-    "DESCRIPTION": "Kills all."
-  },
   "ats:Counter Healing Mode": {
     "NAME": "Counter Healing Mode",
     "DESCRIPTION": "Gain !M! ats:SP when healed."
-  },
-  "ats:Emotion Absorption": {
-    "NAME": "Emotion Absorption",
-    "DESCRIPTION": "Gain !M! ats:SP.",
-    "UPGRADE_DESCRIPTION": "Gain !M! ats:SP. NL Draw a card."
   },
   "ats:Powerful Strike": {
     "NAME": "Powerful Strike",
     "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "Powerful Strike",
       "ats:SP !S! ats:Auto NL Deal !D! damage. NL Increased damage 5."
-    ]
-  },
-  "ats:Defend Up": {
-    "NAME": "Defend Up",
-    "DESCRIPTION": "Gain !B! block. NL ats:SP !S! ats:Manual",
-    "EXTENDED_DESCRIPTION": [
-      "Defend Up",
-      "ats:SP !S! ats:Manual NL Gain !B! block. NL Increased Block 5."
     ]
   },
   "ats:Charging Defense": {
@@ -50,23 +74,21 @@
       "ats:SP !S! ats:Manual NL Gain !B! block and 2 Regen."
     ]
   },
+  "ats:Leaping Hammer": {
+    "NAME": "Leaping Hammer",
+    "DESCRIPTION": "Deal !D! damage. Gain !M! ats:SP."
+  },
   "ats:Magnetic Hammer": {
     "NAME": "Magnetic Hammer",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Gain !B! block. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies and Stun them."
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies and reduce !M! Strength for 1 turn. Gain !B! block."
     ]
   },
   "ats:Thorns": {
     "NAME": "Thorns",
-    "DESCRIPTION": "Gain !M! Thorns. Gain 1 Dexterity."
-  },
-  "ats:Armor Crushing Shot": {
-    "NAME": "Armor Crushing Shot",
-    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage. NL Apply !M! Vulnerable"
-    ]
+    "DESCRIPTION": "Gain !M! Thorns. Gain 1 Dexterity.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Thorns. Gain 2 Dexterity."
   },
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
@@ -74,56 +96,65 @@
   },
   "ats:Rapid Magazine": {
     "NAME": "Rapid Magazine",
-    "DESCRIPTION": "ats:SP of ats:Sniper attack card will be reduced by 1."
+    "DESCRIPTION": "ats:SP of ats:Sniper attack card will be reduced by 2.",
+    "UPGRADE_DESCRIPTION": "Innate. ats:SP of ats:Sniper attack card will be reduced by 2."
   },
   "ats:Sunburst": {
-    "NAME": "화염 폭발",
-    "DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 피해를 !D! 줍니다. 방어도가 있다면 추가로 피해를 2 줍니다. NL 화상을 !M! 부여합니다."
+    "NAME": "Sunburst",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! ats:Burn to ALL enemies."
+    ]
   },
   "ats:Soul Absorption": {
-    "NAME": "영혼 착취",
-    "DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 캐스터 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다.",
-    "UPGRADE_DESCRIPTION": "SP !S! 자동 발동 NL 이번 턴에 사용하는 다음 공격 카드가 적 하나에게 준 피해만큼 방어도를 얻습니다."
+    "NAME": "Soul Absorption",
+    "DESCRIPTION": "Gain block by next damage amount you dealt during this turn."
   },
   "ats:Durian": {
-    "NAME": "Burst Stimulant: Durian",
-    "DESCRIPTION": "피해를 3 만큼 5 번 받습니다. NL 이번 턴 동안 힘을 5 얻고 모든 카드의 SP 소모가 3 감소합니다. NL 방어도에는 피해가 2로 감소합니다. NL 소멸."
+    "NAME": "Burst Stimulant-Durian",
+    "DESCRIPTION": "Retain. Lose 3 HP 5 times, damage reduced by Dexterity amount. (Maximum 2) NL Next attack deals double damage. NL Exhaust."
   },
   "ats:Rat Pack": {
-    "NAME": "쥐 떼",
-    "DESCRIPTION": "현재 체력만큼 방어도를 얻습니다. NL 소멸."
+    "NAME": "Rat Pack",
+    "DESCRIPTION": "Retain. Gain block by current health. NL Exhaust."
   },
   "ats:Assault Order": {
-    "NAME": "돌격지령β",
-    "DESCRIPTION": "SP !S! 자동 발동 NL [E] [E] 를 얻습니다."
+    "NAME": "Assault Order",
+    "DESCRIPTION": "(Nothing happens...) NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Gain [E] [E] ."
+    ]
   },
   "ats:Support Order": {
-    "NAME": "지원지령β",
-    "DESCRIPTION": "SP !S! 자동 발동 NL 지령을 2 얻습니다. NL 뱅가드 2턴 금지."
+    "NAME": "Support Order",
+    "DESCRIPTION": "(Nothing happens...) NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL ats:Gain !M! ats:Order."
+    ]
   },
   "ats:True Silver Slash": {
-    "NAME": "진은참",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 3 번 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL SP !S! 자동 발동",
+    "NAME": "True Silver Slash",
+    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. You cannot gain Block from cards for this turn. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 덱에 있는 가드 카드 1 장당 적 전체에게 피해를 !D! 줍니다. 이번 턴 동안 방어도를 얻을 수 없습니다. NL 소멸."
+      "ats:SP !S! ats:Auto NL Deal !D! damage to ALL enemies for each ats:Guard card in your deck. You cannot gain Block from cards for this turn. NL Exhaust."
     ]
   },
   "ats:Volcano": {
-    "NAME": "화산",
-    "DESCRIPTION": "SP !S! 자동 발동 NL 적 전체에게 캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸.",
+    "NAME": "Volcano",
+    "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 적 전체에게 캐스터 카드 수만큼 피해를 !D! 줍니다. NL 소멸."
+      "ats:SP !S! ats:Auto NL Deal !D! damage to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
     ]
   },
   "ats:Nebulous Foxfire": {
-    "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 약화를 !M! , 취약을 !M! 부여합니다. 재생을 2 얻습니다."
+    "NAME": "Nebulous Foxfire",
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable to ALL enemies. Gain 2 Regen."
   },
   "ats:Cat Scratch": {
-    "NAME": "할퀴기!",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
+    "NAME": "Cat Scratch",
+    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 피해를 !D! 주고 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! Weak."
     ]
   },
   "ats:Seething Burst": {
@@ -131,175 +162,247 @@
     "DESCRIPTION": "이번 턴 동안 힘을 !M! , 민첩을 !M! 얻습니다. 턴이 끝날 때 적 전체에게 피해를 15 줍니다."
   },
   "ats:Red Shift": {
-    "NAME": "적색 편이",
-    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 5 번 줍니다."
+    "NAME": "Red Shift",
+    "DESCRIPTION": "Deal !D! damage 4 times to a random enemy."
   },
   "ats:Shadow Assault": {
-    "NAME": "적소: 발도",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 의 2배만큼 2 번 줍니다. NL SP !S! 수동 발동",
+    "NAME": "Quick Draw",
+    "DESCRIPTION": "Deal !D! damage 2 times to ALL enemies. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "적소: 절영",
-      "SP !S! 수동 발동 NL 무작위 적들에게 피해를 !D! 만큼 10 번 줍니다."
+      "Shadow Assault",
+      "ats:SP !S! ats:Manual NL Deal !D! damage 10 times to a random enemy."
     ]
   },
   "ats:Blood Oath": {
-    "NAME": "흡혈",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 자동 발동",
+    "NAME": "Blood Oath",
+    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 피해를 !D! 줍니다. 체력을 !M! 회복합니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. Heal !M! HP."
     ]
   },
-  "ats:Consecutive Shot: Auto": {
-    "NAME": "2연사: 자동",
-    "DESCRIPTION": "피해를 !D! 만큼 2 번 줍니다."
+  "ats:Consecutive Shot Auto": {
+    "NAME": "Consecutive Shot: Auto",
+    "DESCRIPTION": "Deal !D! damage 2 times."
   },
   "ats:Explosion Area Strengthen": {
-    "NAME": "폭발범위확대",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다."
+    "NAME": "Explosion Area Strengthen",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
   },
   "ats:Thermite Blade": {
-    "NAME": "테르밋 블레이드",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL SP !S! 수동 발동",
+    "NAME": "Thermite Blade",
+    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 피해를 !D! 줍니다. 피해가 4 증가하고 방어도를 무시합니다."
+      "ats:SP !S! ats:Manual NL Deal !D! damage. Damage increased by 4 and ignores block."
     ]
   },
   "ats:Mental Burst": {
-    "NAME": "스피릿 버스트",
-    "DESCRIPTION": "SP !S! 자동 발동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 줍니다."
+    "NAME": "Mental Burst",
+    "DESCRIPTION": "Deal !D! damage and apply ats:Burn !M! times to a random enemy. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Deal !D! damage and apply ats:Burn !M! times to a random enemy."
+    ]
   },
   "ats:Fate": {
     "NAME": "운명",
-    "DESCRIPTION": "캐스터 카드를 연속으로 사용할 때마다 카드를 1 장 뽑습니다."
+    "DESCRIPTION": "ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다."
   },
   "ats:Revitalization": {
-    "NAME": "활력회복",
-    "DESCRIPTION": "재생을 !M! 얻습니다. NL 소멸",
-    "UPGRADE_DESCRIPTION": "재생을 !M! 얻습니다."
+    "NAME": "Revitalization",
+    "DESCRIPTION": "Gain !M! Regen."
   },
   "ats:Spore Proliferation": {
-    "NAME": "포자 확산",
-    "DESCRIPTION": "약화를 !M! 부여합니다. NL SP !S! 수동 발동",
+    "NAME": "Spore Proliferation",
+    "DESCRIPTION": "Apply !M! Weak. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 수동 발동 NL 적이 가진 모든 효과를 제거합니다. 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:Manual NL Remove a random power of the enemy. Apply !M! Weak."
     ]
   },
   "ats:Encircling Forest": {
     "NAME": "Encircling Forest",
     "DESCRIPTION": "Gain !M! ats:Shelter. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Gain !M! ats:Shelter. NL Effect of ats:Shelter is doubled."
+      "ats:SP !S! ats:Manual NL Gain !M! ats:Shelter. Effect of ats:Shelter increased to double."
     ]
   },
   "ats:Soul Rend": {
-    "NAME": "열혼",
-    "DESCRIPTION": "가드 카드로 피해를 줄 때마다 체력을 !M! 회복합니다."
+    "NAME": "Soul Rend",
+    "DESCRIPTION": "Heal !M! HP when you deal damage with ats:Guard card."
   },
   "ats:Chain Hook": {
-    "NAME": "체인 훅",
-    "DESCRIPTION": "피해를 !D! 줍니다. 카드를 1 장 뽑습니다. NL SP !S! 자동 발동",
+    "NAME": "Chain Hook",
+    "DESCRIPTION": "Deal !D! damage. Draw a card. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 피해를 !D! 줍니다. 카드를 2 장 뽑습니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. Draw 2 cards."
     ]
   },
   "ats:Hook Shot": {
-    "NAME": "갈고리 발사",
-    "DESCRIPTION": "카드를 3 장 뽑습니다. NL SP !S! 자동 발동",
+    "NAME": "Hook Shot",
+    "DESCRIPTION": "Gain !B! block. Draw a card. ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "AtS:SP !S! AtS:자동 발동 NL 카드를 3 장 뽑습니다. [E] 를 얻습니다."
+      "ats:SP !S! ats:Auto NL Gain !B! block. Draw 2 cards."
     ]
   },
   "ats:Fractured Body": {
-    "NAME": "육참골단",
-    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. NL SP !S! 자동 발동",
+    "NAME": "Fractured Body",
+    "DESCRIPTION": "Your HP will not fall below 1. At the end of this effect, make your HP to 1. Exhaust. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "SP !S! 자동 발동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다."
+      "ats:SP !S! ats:Auto NL Your HP will not fall below 1. At the end of the effect, make your HP to 1. Last for 2 turns. Exhaust."
     ]
   },
   "ats:Flexible Camouflage": {
-    "NAME": "재빠른 변장",
-    "DESCRIPTION": "힘을 !M! 얻습니다. NL 이번 턴이 끝날 때 힘을 !M! 잃습니다."
+    "NAME": "Flexible Camouflage",
+    "DESCRIPTION": "Gain !M! Strength. NL At the end of this turn, lose !M! Strength."
   },
   "ats:Poison Spread": {
-    "NAME": "독액 살포",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
+    "NAME": "Poison Spread",
+    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 중독을 !M! 부여합니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. Apply !M! Poison."
     ]
   },
   "ats:Curse Doll": {
-    "NAME": "저주인형",
-    "DESCRIPTION": "약화를 1 부여합니다. 취약을 !M! 부여합니다."
+    "NAME": "Curse Doll",
+    "DESCRIPTION": "Apply 1 Weak. Apply !M! Vulnerable."
   },
   "ats:Shadow Raid": {
-    "NAME": "그림자 방패",
-    "DESCRIPTION": "민첩을 !M! 얻습니다. 이번 턴이 끝날 때 민첩을 !M! 잃습니다. NL 소멸"
-  },
-  "ats:Guardian Obelisk": {
-    "NAME": "방어 오벨리스크",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다.",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 주고 기절시킵니다."
-    ]
+    "NAME": "Shadow Raid",
+    "DESCRIPTION": "Retain. Gain !M! Dexterity. NL At the start of the next turn, lose !M! Dexterity. NL Exhaust"
   },
   "ats:Wolf Pack": {
-    "NAME": "이리 떼",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 기절시킵니다. NL 소멸"
+    "NAME": "Wolf Pack",
+    "DESCRIPTION": "Retain. Deal !D! damage to ALL enemies and Stun Them. NL Exhaust"
   },
   "ats:Disruption Kick": {
-    "NAME": "칠무약진각",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다., NL 소멸"
+    "NAME": "Disruption Kick",
+    "DESCRIPTION": "Retain. Deal !D! damage to ALL enemies and Remove all powers of them. NL Exhaust"
   },
   "ats:Automatic Cover": {
-    "NAME": "자동 엄호",
-    "DESCRIPTION": "방어도를 !B! 얻고 민첩을 !M! 얻습니다. 이번 턴이 끝날 때 민첩을 !M! 잃습니다."
+    "NAME": "Automatic Cover",
+    "DESCRIPTION": "Gain !B! block. Gain !M! Dexterity. At the start of the next turn, lose !M! Dexterity."
   },
   "ats:Very Hot Blade": {
-    "NAME": "엄청 뜨거운 칼",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 3 번 줍니다. 방어도를 가진 적에게 피해가 2 증가합니다."
-  },
-  "ats:Just Like an Apocalypse": {
-    "NAME": "종말처럼",
-    "DESCRIPTION": "체력을 !M! 회복합니다. ats:SP를 !M! 얻습니다."
-  },
-  "ats:Composite Medical Shells": {
-    "NAME": "복합형 약물파편",
-    "DESCRIPTION": "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
-  },
-  "ats:Neurotoxin": {
-    "NAME": "신경독소",
-    "DESCRIPTION": "ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다.",
-    "UPGRADE_DESCRIPTION": "선천성. ats:스나이퍼 공격 카드를 사용할 때마다 중독을 1 부여합니다."
-  },
-  "ats:Ambush": {
-    "NAME": "매복",
-    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용해다면, 받는 피해가 !M!% 확률로 0이 됩니다."
-  },
-  "ats:Defend Order": {
-    "NAME": "방어지령",
-    "DESCRIPTION": "에너지를 얻을 때마다 방어도를 !M! 얻습니다."
-  },
-  "ats:Roar Of Ursus": {
-    "NAME": "우르수스의 포효",
-    "DESCRIPTION": "에너지를 얻을 때마다 추가로 1 얻습니다."
-  },
-  "ats:Echo Reverb": {
-    "NAME": "메아리",
-    "DESCRIPTION": "둔화를 부여합니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. NL 소멸."
-  },
-  "ats:Beaten Up": {
-    "NAME": "매 맞기",
-    "DESCRIPTION": "민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다. NL ats:SP !S! ats:자동",
+    "NAME": "Very Hot Blade",
+    "DESCRIPTION": "Deal !D! damage. Draw a card. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻고 민첩을 1 얻습니다. 다음 턴 시작 시 민첩을 1 잃습니다. 다음 적 턴에 피해를 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. Damage increased by ats:Burn amount of the enemy. Draw a card."
     ]
   },
+  "ats:Apocalypse": {
+    "NAME": "Just Like an Apocalypse",
+    "DESCRIPTION": "Heal !M! HP. Gain !M! ats:SP."
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "Composite Medical Shells",
+    "DESCRIPTION": "Deal damage to ALL enemies by heal amount.",
+    "UPGRADE_DESCRIPTION": "Innate. Deal damage to ALL enemies by heal amount."
+  },
+  "ats:Neurotoxin": {
+    "NAME": "Neurotoxin",
+    "DESCRIPTION": "Apply !M! Poison to ALL enemies when you use ats:Sniper attack card."
+  },
+  "ats:Ambush": {
+    "NAME": "Ambush",
+    "DESCRIPTION": "If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance.",
+    "UPGRADE_DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance."
+  },
+  "ats:Defend Order": {
+    "NAME": "Defend Order",
+    "DESCRIPTION": "Gain !B! block when energy gained."
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "Roar of Ursus",
+    "DESCRIPTION": "Gain 1 more energy when energy gained.",
+    "UPGRADE_DESCRIPTION": "Ambush. Gain 1 more energy when energy gained."
+  },
+  "ats:Echo Reverb": {
+    "NAME": "Echo Reverb",
+    "DESCRIPTION": "Remove Artifact and apply Slow. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. Remove Artifact and apply Slow. NL Exhaust."
+  },
+  "ats:Beaten Up": {
+    "NAME": "Beaten Up",
+    "DESCRIPTION": "Gain !M! Dexterity. At the start of the next turn, lose !M! Dexterity. During enemy's turn, deal damage by Dexterity amount to the enemy attacked you."
+  },
   "ats:Ignite": {
-    "NAME": "이그니션",
-    "DESCRIPTION": "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. ats:화상을 !M! 부여합니다."
+    "NAME": "Ignite",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! ats:Burn."
+  },
+  "ats:Demon Strength": {
+    "NAME": "Demon Strength",
+    "DESCRIPTION": "Gain !M! Strength. Lose 1 Dexterity.",
+    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Strength. Lose 1 Dexterity."
+  },
+  "ats:Steam Pump": {
+    "NAME": "Steam Pump",
+    "DESCRIPTION": "Discard !M! cards. Gain !B! block."
+  },
+  "ats:Collapsing Strike": {
+    "NAME": "Collapsing Strike",
+    "DESCRIPTION": "Discard !M! cards. Deal !D! damage."
+  },
+  "ats:Song Of Battle": {
+    "NAME": "Song Of Battle",
+    "DESCRIPTION": "At the start of turn, gain !M! ats:SP."
+  },
+  "ats:LN2 Cannon": {
+    "NAME": "LN2 Cannon",
+    "DESCRIPTION": "Exhaust all non-Attack cards in your hand. Deal !D! damage for each card Exhausted. Damage ignores block."
+  },
+  "ats:Calcification": {
+    "NAME": "Calcification",
+    "DESCRIPTION": "Gain !B! block. Gain 1 Dexterity, Regen, and ats:SP."
+  },
+  "ats:Flame Of Heaven": {
+    "NAME": "Flame Of Heaven",
+    "DESCRIPTION": "Retain. Double ats:Burn amount. Exhaust."
+  },
+  "ats:Burning Ground": {
+    "NAME": "Burning Ground",
+    "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies when you use ats:Caster card."
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "Guardian Obelisk",
+    "DESCRIPTION": "Gain block by ats:Burn amount. When ats:Burn effect ends, instead, reduce to half."
+  },
+  "ats:Directed Diagnosis": {
+    "NAME": "Directed Diagnosis",
+    "DESCRIPTION": "Reduce your Weak, Vulnerable, and Frail amount to half. (Minimum 1) Heal !M! HP. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Reduce your Weak, Vulnerable, and Frail amount to half. (Minimum 1) NL Remove your random debuff and heal !M! HP."
+    ]
+  },
+  "ats:Part Time Job": {
+    "NAME": "Part Time Job",
+    "DESCRIPTION": "Gain 3 Regen.",
+    "UPGRADE_DESCRIPTION": "At the start and the end of your turn, heal 1 HP."
+  },
+  "ats:Childhood Dance": {
+    "NAME": "Childhood Dance",
+    "DESCRIPTION": "Apply 1 Weak to ALL enemies."
+  },
+  "ats:Hammer On": {
+    "NAME": "Hammer On",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, gain [E]."
+  },
+  "ats:Closed Bolt Burst Fire": {
+    "NAME": "Closed Bolt Burst Fire",
+    "DESCRIPTION": "Deal !D! damage 3 times. NL If this kills an enemy, gain [E] [E]."
+  },
+  "ats:Healing Drone": {
+    "NAME": "Healing Drone",
+    "DESCRIPTION": "At the start and the end of your turn, heal !M! HP."
+  },
+  "ats:Healing Strengthening": {
+    "NAME": "Healing Strengthening",
+    "DESCRIPTION": "Gain !M! ats:Curative."
+  },
+  "ats:Sword Rain": {
+    "NAME": "Sword Rain",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies. Gain [E] [E]."
+    ]
   },
   "ats:NULL": {
     "NAME": "",

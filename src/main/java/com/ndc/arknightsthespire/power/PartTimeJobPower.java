@@ -5,6 +5,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -51,8 +52,15 @@ public class PartTimeJobPower extends AbstractPower implements CloneablePowerInt
     @Override
     public void atStartOfTurn() {
         flash();
-        AbstractPlayer p = AbstractDungeon.player;
-        addToBot(new ApplyPowerAction(p, p, new DronePower(p, p, this.amount), this.amount));
+        addToBot(new HealAction(this.owner, this.owner, this.amount));
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if(isPlayer) {
+            flash();
+            addToBot(new HealAction(this.owner, this.owner, this.amount));
+        }
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,12 +23,14 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.character.ATSCharacterEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.getCurrRoom;
+import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 public class SpUI extends AbstractPanel {
     private static final UIStrings uiStrings;
@@ -77,7 +80,7 @@ public class SpUI extends AbstractPanel {
     }
 
     public void render(SpriteBatch sb) {
-        if (!this.isHidden && CardCrawlGame.isInARun() && getCurrRoom() != null && getCurrRoom().phase == RoomPhase.COMBAT) {
+        if (!this.isHidden && CardCrawlGame.isInARun() && getCurrRoom() != null && getCurrRoom().phase == RoomPhase.COMBAT && player.chosenClass == DOCTOR_CLASS) {
             this.tipHitbox.move(this.current_x, this.current_y);
             this.renderVfx(sb);
             String text = SPHandler.getSp() + "/" + SPHandler.getMaxSp();

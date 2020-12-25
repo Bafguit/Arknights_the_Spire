@@ -1,16 +1,16 @@
 {
   "ats:Emergency Sanity Potion": {
-    "NAME": "응급 이성 회복제",
+    "NAME": "Emergency Sanity Potion",
     "DESCRIPTIONS": [
-      "#ySP 를 #b",
-      " 얻습니다."
+      "Gain #b",
+      " #ySP."
     ]
   },
   "ats:Top Emergency Sanity Potion": {
-    "NAME": "긴급 이성 회복제",
+    "NAME": "Top Emergency Sanity Potion",
     "DESCRIPTIONS": [
-      "#ySP 를 #b",
-      " 얻습니다."
+      "Gain #b",
+      " #ySP."
     ]
   }
 }
