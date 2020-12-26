@@ -1,13 +1,4 @@
 {
-  "ats:Cheat": {
-    "NAME": "Cheat",
-    "DESCRIPTION": "Kills all."
-  },
-  "ats:GainSP": {
-    "NAME": "SP 회복",
-    "DESCRIPTION": "SP를 20000 얻습니다."
-  },
-  //////////////////BASIC
   "ats:Emotion Absorption": {
     "NAME": "Emotion Absorption",
     "DESCRIPTION": "Gain !M! ats:SP.",
@@ -40,7 +31,6 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! block."
   },
-  //////////////////
   "ats:Overload": {
     "NAME": "Assault Mode",
     "DESCRIPTION": "Deal !D! damage 3 times. NL ats:SP !S! ats:Auto",
@@ -157,10 +147,6 @@
       "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! Weak."
     ]
   },
-  "ats:Seething Burst": {
-    "NAME": "끓어오르는 폭발",
-    "DESCRIPTION": "이번 턴 동안 힘을 !M! , 민첩을 !M! 얻습니다. 턴이 끝날 때 적 전체에게 피해를 15 줍니다."
-  },
   "ats:Red Shift": {
     "NAME": "Red Shift",
     "DESCRIPTION": "Deal !D! damage 4 times to a random enemy."
@@ -192,7 +178,7 @@
     "NAME": "Thermite Blade",
     "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage. Damage increased by 4 and ignores block."
+      "ats:SP !S! ats:Manual NL Deal !D! damage. Damage increased by 5 and ignores block."
     ]
   },
   "ats:Mental Burst": {
@@ -202,11 +188,6 @@
       "ats:SP !S! ats:Auto NL Deal !D! damage and apply ats:Burn !M! times to a random enemy."
     ]
   },
-  "ats:Fate": {
-    "NAME": "운명",
-    "DESCRIPTION": "ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다.",
-    "UPGRADE_DESCRIPTION": "선천성. ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다."
-  },
   "ats:Revitalization": {
     "NAME": "Revitalization",
     "DESCRIPTION": "Gain !M! Regen."
@@ -215,7 +196,7 @@
     "NAME": "Spore Proliferation",
     "DESCRIPTION": "Apply !M! Weak. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Remove a random power of the enemy. Apply !M! Weak."
+      "ats:SP !S! ats:Manual NL Remove a random buff of the enemy. Apply !M! Weak."
     ]
   },
   "ats:Encircling Forest": {
@@ -303,7 +284,7 @@
   },
   "ats:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance.",
+    "DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance.",
     "UPGRADE_DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance."
   },
   "ats:Defend Order": {
@@ -330,8 +311,7 @@
   },
   "ats:Demon Strength": {
     "NAME": "Demon Strength",
-    "DESCRIPTION": "Gain !M! Strength. Lose 1 Dexterity.",
-    "UPGRADE_DESCRIPTION": "Innate. Gain !M! Strength. Lose 1 Dexterity."
+    "DESCRIPTION": "Gain !M! Strength. Lose 1 Dexterity."
   },
   "ats:Steam Pump": {
     "NAME": "Steam Pump",
@@ -369,7 +349,7 @@
     "NAME": "Directed Diagnosis",
     "DESCRIPTION": "Reduce your Weak, Vulnerable, and Frail amount to half. (Minimum 1) Heal !M! HP. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Reduce your Weak, Vulnerable, and Frail amount to half. (Minimum 1) NL Remove your random debuff and heal !M! HP."
+      "ats:SP !S! ats:Auto NL Remove your all debuffs."
     ]
   },
   "ats:Part Time Job": {
@@ -405,7 +385,7 @@
     ]
   },
   "ats:NULL": {
-    "NAME": "",
+    "NAME": "This card is for add new one",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "",

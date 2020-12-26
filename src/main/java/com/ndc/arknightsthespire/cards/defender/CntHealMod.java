@@ -16,7 +16,7 @@ public class CntHealMod extends CardSPBase {
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;
     private static final int SP = 1;
-    private static final int UP_SP = 1;
+    private static final int UP_COST = 1;
 
     public CntHealMod() {
         super(ID, IMG_PATH, COST,
@@ -36,7 +36,7 @@ public class CntHealMod extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_SP);
+        this.upgradeBaseCost(UP_COST);
     }
 
 

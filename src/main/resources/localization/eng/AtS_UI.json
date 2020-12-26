@@ -16,18 +16,5 @@
       "SP",
       "Current #ySP you have. Gain #b1 at the start of turn and using card."
     ]
-  },
-  "ats:Sans": {
-    "TEXT": [
-      "Wa! Sans!"
-    ]
-  },
-  "MaxSpOption": {
-    "TEXT": [
-      "순오리지늄 섭취",
-      "최대 SP를 #b10 높입니다.",
-      " (현재 ",
-      ")"
-    ]
   }
 }

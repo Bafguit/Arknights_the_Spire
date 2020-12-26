@@ -32,33 +32,21 @@ public class DirDiagnosis extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        if(p.hasPower("Weakened") && p.getPower("Weakened").amount >= 2)
-            addToBot(new ReducePowerAction(p, p, "Weakened", Math.round(p.getPower("Weakened").amount / 2)));
-        if(p.hasPower("Vulnerable") && p.getPower("Vulnerable").amount >= 2)
-            addToBot(new ReducePowerAction(p, p, "Vulnerable", Math.round(p.getPower("Vulnerable").amount / 2)));
-        if(p.hasPower("Frail") && p.getPower("Frail").amount >= 2)
-            addToBot(new ReducePowerAction(p, p, "Frail", Math.round(p.getPower("Frail").amount / 2)));
-        addToBot(new HealAction(p, p, this.magicNumber));
-
         if(isSpJustUsed) {
             if(p.powers.size() > 0) {
-                int powerLength = p.powers.size();
-                Object[] powers = p.powers.toArray();
-                AbstractPower power;
-                for(int forI = 0; forI < powerLength; forI++) {
-                    power = (AbstractPower) powers[forI];
-                    if(power.type != AbstractPower.PowerType.DEBUFF) {
-                        powers[forI] = null;
-                    }
-                }
-                int rand;
-                do{
-                    rand = (int) (Math.random() * powerLength);
-                } while(powers[rand] == null);
-                power = (AbstractPower) powers[rand];
-                addToBot(new RemoveSpecificPowerAction(p, p, power));
+                addToBot(new RemoveAllPowersAction(p, true));
             }
+        } else {
+            if (p.hasPower("Weakened") && p.getPower("Weakened").amount >= 2)
+                addToBot(new ReducePowerAction(p, p, "Weakened", Math.round(p.getPower("Weakened").amount / 2)));
+            if (p.hasPower("Vulnerable") && p.getPower("Vulnerable").amount >= 2)
+                addToBot(new ReducePowerAction(p, p, "Vulnerable", Math.round(p.getPower("Vulnerable").amount / 2)));
+            if (p.hasPower("Frail") && p.getPower("Frail").amount >= 2)
+                addToBot(new ReducePowerAction(p, p, "Frail", Math.round(p.getPower("Frail").amount / 2)));
+            addToBot(new HealAction(p, p, this.magicNumber));
         }
+
+
     }
 
     @Override

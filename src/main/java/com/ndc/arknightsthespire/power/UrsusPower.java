@@ -5,15 +5,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
-import com.ndc.arknightsthespire.actions.CheckGainEnergy;
 
 //Gain 1 dex for the turn for each card played.
 
-public class UrsusPower extends AbstractPower implements CloneablePowerInterface {
+public class UrsusPower extends AbstractPower implements CloneablePowerInterface, OnGainEnergyPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = "ats:Roar Of Ursus";
@@ -43,11 +42,6 @@ public class UrsusPower extends AbstractPower implements CloneablePowerInterface
         updateDescription();
     }
 
-    @Override
-    public void onEnergyRecharge() {
-        CheckGainEnergy.checkUrsus(AbstractDungeon.player);
-    }
-
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
@@ -57,5 +51,11 @@ public class UrsusPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public AbstractPower makeCopy() {
         return new UrsusPower(owner, source);
+    }
+
+    @Override
+    public int onGainEnergy(int e) {
+        flash();
+        return e + 1;
     }
 }

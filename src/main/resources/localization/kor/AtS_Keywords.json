@@ -51,14 +51,6 @@
     "DESCRIPTION": "턴 시작 시 에너지를 #b1 얻습니다."
   },
   {
-    "PROPER_NAME": "정지",
-    "NAMES": [
-      "정지",
-      "정지를"
-    ],
-    "DESCRIPTION": "공격이 #b50% 더 적은 피해를 줍니다."
-  },
-  {
     "PROPER_NAME": "치유력",
     "NAMES": [
       "치유력",

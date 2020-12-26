@@ -17,8 +17,8 @@ public class DemonStrength extends CardSPBase {
     public static final String IMG_PATH = "img/cards/DemonStrength.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
-    private static final int UP_COST = 0;
     private static final int STR = 3;
+    private static final int UP_STR = 1;
     private static final int DEX = -1;
 
     public DemonStrength() {
@@ -40,8 +40,7 @@ public class DemonStrength extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBaseCost(UP_COST);
-        this.isInnate = true;
+        this.upgradeMagicNumber(UP_STR);
     }
 
 

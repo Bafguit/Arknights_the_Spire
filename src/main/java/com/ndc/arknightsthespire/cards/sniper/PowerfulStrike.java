@@ -16,7 +16,7 @@ public class PowerfulStrike extends CardSPBase {
     public static final String IMG_PATH = "img/cards/ps_s.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
+    private static final int ATTACK_DMG = 7;
     private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 3;
     private static final int UPGRADE_SP = 2;

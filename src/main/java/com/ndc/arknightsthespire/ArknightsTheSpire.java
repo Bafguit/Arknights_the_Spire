@@ -88,8 +88,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditCards() {
 
         System.out.println("ADDING CARDS");
-        //BaseMod.addCard(new Cheat());
-        //BaseMod.addCard(new GainSP());
         //Sniper
         BaseMod.addCard(new StrikeS());
         BaseMod.addCard(new Overload());
@@ -141,7 +139,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new BurningGround());
         BaseMod.addCard(new GuardianObelisk());
         BaseMod.addCard(new FlameOfHeaven());
-        //BaseMod.addCard(new Fate());
         //Specialist
         BaseMod.addCard(new RatPack());
         BaseMod.addCard(new ChainHook());
@@ -188,7 +185,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
-        //BaseMod.addEvent(NightField.ID, NightField.class);
         BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, DOCTOR_CLASS);
         BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, DOCTOR_CLASS);
     }
@@ -230,7 +226,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new MaxSp2(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new MaxSp3(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new MaxSp4(), DOCTOR_COLOR);
-        //BaseMod.addRelicToCustomPool(new OldCoin(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Gyao(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new OriginiumAdd(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new TacticalDelivery(), DOCTOR_COLOR);
@@ -244,13 +239,12 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     public void receiveEditStrings() {
         String lang = getLangString();
+        BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
         BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/AtS_Powers.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/AtS_Potions.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
-        BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
-        BaseMod.loadCustomStringsFile(EventStrings.class, "localization/" + lang + "/AtS_Events.json");
         BaseMod.loadCustomStringsFile(TutorialStrings.class, "localization/" + lang + "/AtS_tutorials.json");
     }
 

@@ -17,7 +17,7 @@ public class SongOfBattle extends CardSPBase {
     public static final String IMG_PATH = "img/cards/SongOfBattle.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
-    private static final int SP = 2;
+    private static final int SP = 3;
     private static final int UP_SP = 1;
 
     public SongOfBattle() {

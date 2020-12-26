@@ -23,7 +23,7 @@ public class Volcano extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Volcano.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 6;
+    private static final int ATTACK_DMG = 7;
     private static final int UP_DMG = 2;
     private static final int SP = 40;
 

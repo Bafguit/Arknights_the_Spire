@@ -214,11 +214,11 @@
     "NAME": "Tactical Delivery",
     "FLAVOR": "It smells like seafood bibim sauce.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. #yMaximum #ySP decreased by #b10."
+      "Gain [E] at the start of your turn. #yMaximum #ySP decreased by #b20."
     ]
   },
-  "ats:": {
-    "NAME": "",
+  "ats:NULL": {
+    "NAME": "This relic is for add new one",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "",

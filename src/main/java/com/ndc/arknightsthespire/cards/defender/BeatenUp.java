@@ -20,7 +20,7 @@ public class BeatenUp extends CardSPBase {
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int UP_COST = 0;
-    private static final int DEX = 2;
+    private static final int DEX = 3;
     private static final int UP_DEX = 1;
 
     public BeatenUp() {

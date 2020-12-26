@@ -16,7 +16,7 @@ public class FlexCamouflage extends CardSPBase {
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 0;
     private static final int FLEX = 2;
-    private static final int UP_FLEX = 1;
+    private static final int UP_FLEX = 2;
 
     public FlexCamouflage() {
         super(ID, IMG_PATH, COST,

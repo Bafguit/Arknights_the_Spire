@@ -18,7 +18,7 @@ public class VeryHotBlade extends CardSPBase {
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int DAMAGE = 8;
-    private static final int UP_DAMAGE = 1;
+    private static final int UP_DAMAGE = 2;
     private static final int SP = 5;
     private static final int UP_SP = 3;
 

@@ -7,14 +7,6 @@
       " 회복합니다."
     ]
   },
-  "ats:Blood Sample Collection": {
-    "NAME": "혈액 샘플 회수",
-    "FLAVOR": "\"블러드 씨에게 갖다주면 좋아하겠지?\"",
-    "DESCRIPTIONS": [
-      "",
-      ""
-    ]
-  },
   "ats:Spiritual Recovery": {
     "NAME": "정신 회복",
     "FLAVOR": "소량의 겨자 추출물이 함유되어 있사오니...",
@@ -214,7 +206,7 @@
     "NAME": "전술 배달",
     "FLAVOR": "해물비빔소스 냄새가 납니다.",
     "DESCRIPTIONS": [
-      "획득 시 #y최대 #ySP 가 #b10 낮아집니다. 매 턴 시작 시 [E] 를 얻습니다."
+      "획득 시 #y최대 #ySP 가 #b20 낮아집니다. 매 턴 시작 시 [E] 를 얻습니다."
     ]
   },
   "ats:": {

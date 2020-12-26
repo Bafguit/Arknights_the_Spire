@@ -18,7 +18,7 @@ public class ExpAreaStr extends CardSPBase {
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public ExpAreaStr() {
         super(ID, IMG_PATH, COST,

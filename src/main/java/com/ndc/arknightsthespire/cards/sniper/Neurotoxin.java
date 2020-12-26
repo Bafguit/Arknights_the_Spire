@@ -14,7 +14,7 @@ public class Neurotoxin extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Neurotoxin.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
-    private static final int POISON = 1;
+    private static final int POISON = 2;
     private static final int UP_POISON = 1;
 
     public Neurotoxin() {

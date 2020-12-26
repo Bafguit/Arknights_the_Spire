@@ -17,7 +17,7 @@ public class AutoCover extends CardSPBase {
     public static final String IMG_PATH = "img/cards/AutomaticCover.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 7;
     private static final int UP_BLOCK = 3;
     private static final int DEX = 2;
     private static final int UP_DEX = 1;

@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors.AbstractCardEnum;
 import com.ndc.arknightsthespire.actions.AtsSFX;
-import com.ndc.arknightsthespire.actions.CheckGainEnergy;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 

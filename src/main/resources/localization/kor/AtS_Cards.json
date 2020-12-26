@@ -1,13 +1,4 @@
 {
-  "ats:Cheat": {
-    "NAME": "치트",
-    "DESCRIPTION": "다 죽입니다."
-  },
-  "ats:GainSP": {
-    "NAME": "SP 회복",
-    "DESCRIPTION": "SP를 20000 얻습니다."
-  },
-//////////////////BASIC
   "ats:Emotion Absorption": {
     "NAME": "감정 흡수",
     "DESCRIPTION": "ats:SP를 !M! 얻습니다.",
@@ -40,7 +31,6 @@
     "NAME": "방어",
     "DESCRIPTION": "방어도를 !B! 얻습니다."
   },
-//////////////////
   "ats:Overload": {
     "NAME": "어설트 모드",
     "DESCRIPTION": "피해를 !D! 만큼 3 번 줍니다. NL ats:SP !S! ats:자동",
@@ -158,10 +148,6 @@
       "ats:SP !S! ats:자동 NL 피해를 !D! 주고 약화를 !M! 부여합니다."
     ]
   },
-  "ats:Seething Burst": {
-    "NAME": "끓어오르는 폭발",
-    "DESCRIPTION": "이번 턴 동안 힘을 !M! , 민첩을 !M! 얻습니다. 턴이 끝날 때 적 전체에게 피해를 15 줍니다."
-  },
   "ats:Red Shift": {
     "NAME": "레드 무브",
     "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 4 번 줍니다."
@@ -193,7 +179,7 @@
     "NAME": "테르밋 블레이드",
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 NL 피해를 !D! 줍니다. 피해가 4 증가하고 방어도를 무시합니다."
+      "ats:SP !S! ats:수동 NL 피해를 !D! 줍니다. 피해가 5 증가하고 방어도를 무시합니다."
     ]
   },
   "ats:Mental Burst": {
@@ -203,11 +189,6 @@
       "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 주고 화상을 1 부여합니다."
     ]
   },
-  "ats:Fate": {
-    "NAME": "운명",
-    "DESCRIPTION": "ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다.",
-    "UPGRADE_DESCRIPTION": "선천성. ats:캐스터 카드를 사용할 때마다 카드를 1 장 뽑습니다."
-  },
   "ats:Revitalization": {
     "NAME": "활력회복",
     "DESCRIPTION": "재생을 !M! 얻습니다."
@@ -216,7 +197,7 @@
     "NAME": "포자 확산",
     "DESCRIPTION": "약화를 !M! 부여합니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 NL 적이 가진 무작위 효과를 제거합니다. 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:수동 NL 적이 가진 무작위 이로운 효과를 제거합니다. 약화를 !M! 부여합니다."
     ]
   },
   "ats:Encircling Forest": {
@@ -304,7 +285,7 @@
   },
   "ats:Ambush": {
     "NAME": "매복",
-    "DESCRIPTION": "이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다.",
+    "DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다.",
     "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다."
   },
   "ats:Defend Order": {
@@ -331,8 +312,7 @@
   },
   "ats:Demon Strength": {
     "NAME": "악귀의 힘",
-    "DESCRIPTION": "힘을 !M! 얻습니다. 민첩을 1 잃습니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 힘을 !M! 얻습니다. 민첩을 1 잃습니다."
+    "DESCRIPTION": "힘을 !M! 얻습니다. 민첩을 1 잃습니다."
   },
   "ats:Steam Pump": {
     "NAME": "스팀 펌프",
@@ -370,7 +350,7 @@
     "NAME": "지시된 진단",
     "DESCRIPTION": "내가 가진 약화, 취약, 손상 수치가 절반으로 감소합니다. (최소 1) 체력을 !M! 회복합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 내가 가진 약화, 취약, 손상 수치가 절반으로 감소합니다. (최소 1) NL 내가 가진 무작위 해로운 효과를 제거하고 체력을 !M! 회복합니다."
+      "ats:SP !S! ats:자동 NL 내가 가진 해로운 효과를 모두 제거합니다."
     ]
   },
   "ats:Part Time Job": {

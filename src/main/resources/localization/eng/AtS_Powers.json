@@ -32,13 +32,6 @@
       "Gain block by next damage amount you dealt."
     ]
   },
-  "ats:Fate": {
-    "NAME": "운명",
-    "DESCRIPTIONS": [
-      "#y캐스터 카드를 사용할 때마다 카드를 #b",
-      " 장 뽑습니다."
-    ]
-  },
   "ats:Shelter": {
     "NAME": "Shelter",
     "DESCRIPTIONS": [
@@ -108,7 +101,7 @@
   "ats:Roar Of Ursus": {
     "NAME": "Roar Of Ursus",
     "DESCRIPTIONS": [
-      "Gain 1 more energy when energy gained."
+      "Gain 1 additional energy when energy gained."
     ]
   },
   "ats:Burn": {
@@ -166,8 +159,8 @@
       "."
     ]
   },
-  "ats:": {
-    "NAME": "",
+  "ats:NULL": {
+    "NAME": "This power is for add new one",
     "DESCRIPTIONS": [
       "",
       ""

@@ -17,8 +17,8 @@ public class HammerOn extends CardSPBase {
     public static final String IMG_PATH = "img/cards/HammerOn.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
-    private static final int DAMAGE = 11;
-    private static final int UP_DAMAGE = 4;
+    private static final int DAMAGE = 12;
+    private static final int UP_DAMAGE = 5;
 
     public HammerOn() {
         super(ID, IMG_PATH, COST,

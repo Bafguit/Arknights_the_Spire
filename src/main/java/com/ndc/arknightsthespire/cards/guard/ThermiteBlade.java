@@ -18,8 +18,8 @@ public class ThermiteBlade extends CardSPBase {
     public static final String IMG_PATH = "img/cards/ThermiteBlade.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 8;
-    private static final int UP_DMG = 3;
+    private static final int ATTACK_DMG = 10;
+    private static final int UP_DMG = 5;
     private static final int DEFAULT_SP = 5;
 
     public ThermiteBlade() {
@@ -35,7 +35,7 @@ public class ThermiteBlade extends CardSPBase {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL, false, true));
         else AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, p,
-                this.damage + 4, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                this.damage + 5, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

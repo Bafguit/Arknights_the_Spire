@@ -13,7 +13,7 @@ public class TacticalDelivery extends CustomRelic {
 
     public TacticalDelivery() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
-        SPHandler.addMaxSp(-10);
+        SPHandler.addMaxSp(-20);
     }
 
     @Override

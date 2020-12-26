@@ -11,7 +11,6 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
-import com.ndc.arknightsthespire.power.AtsSlowPower;
 
 public class SporePro extends CardSPBase {
     public static final String ID = "ats:Spore Proliferation";
@@ -33,10 +32,20 @@ public class SporePro extends CardSPBase {
         addToBot(new AtsSFX("BOTTLE"));
         if(isSpJustUsed) {
             if(m.powers.size() > 0) {
-                int powerLength = m.powers.size();
-                int rand = (int) (Math.random() * powerLength);
                 Object[] powers = m.powers.toArray();
-                addToBot(new RemoveSpecificPowerAction(m, p, (AbstractPower) powers[rand]));
+                int powerLength = m.powers.size();
+                boolean hasBuff = false;
+                for(AbstractPower pow : m.powers) {
+                    if(pow.type == AbstractPower.PowerType.BUFF) hasBuff = true;
+                }
+                while(hasBuff){
+                    int rand = (int) (Math.random() * powerLength);
+                    AbstractPower pw = (AbstractPower) powers[rand];
+                    if(pw.type == AbstractPower.PowerType.BUFF) {
+                        addToBot(new RemoveSpecificPowerAction(m, p, pw));
+                        break;
+                    }
+                }
             }
         }
         addToBot(new ApplyPowerAction(m, p,

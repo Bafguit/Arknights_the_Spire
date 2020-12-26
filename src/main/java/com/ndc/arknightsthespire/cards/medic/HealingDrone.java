@@ -16,7 +16,7 @@ public class HealingDrone extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Drone.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int DRONE = 2;
+    private static final int DRONE = 3;
     private static final int UP_DRONE = 1;
 
     public HealingDrone() {

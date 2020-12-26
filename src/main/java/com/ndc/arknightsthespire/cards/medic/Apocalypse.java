@@ -14,7 +14,7 @@ public class Apocalypse extends CardSPBase {
     public static final String IMG_PATH = "img/cards/JLAA.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int SP = 2;
+    private static final int SP = 3;
     private static final int UP_SP = 1;
 
     public Apocalypse() {
