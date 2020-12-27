@@ -16,5 +16,10 @@
       "SP",
       "Current #ySP you have. Gain #b1 at the start of turn and using card."
     ]
+  },
+  "ats:Sans": {
+    "TEXT": [
+      "Wa! Sans!"
+    ]
   }
 }

@@ -3,7 +3,6 @@ package com.ndc.arknightsthespire.power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.actions.CheckGainEnergy;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -50,7 +50,7 @@ public class OrderPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atStartOfTurn() {
         flash();
-        addToBot(new GainEnergyAction(1));
+        new CheckGainEnergy(1);
         AbstractPlayer p = AbstractDungeon.player;
         if(this.amount > 1) addToBot(new ReducePowerAction(p, p, "ats:Order", 1));
         else addToBot(new RemoveSpecificPowerAction(p, p, "ats:Order"));

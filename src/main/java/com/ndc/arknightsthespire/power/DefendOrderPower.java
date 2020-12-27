@@ -9,12 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
 
-public class DefendOrderPower extends AbstractPower implements CloneablePowerInterface, OnGainEnergyPower {
+public class DefendOrderPower extends AbstractPower implements CloneablePowerInterface {
     public AbstractCreature source;
 
     public static final String POWER_ID = "ats:Defend Order";
@@ -45,6 +44,12 @@ public class DefendOrderPower extends AbstractPower implements CloneablePowerInt
         updateDescription();
     }
 
+    @Override
+    public void onEnergyRecharge() {
+        flash();
+        addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
+    }
+
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
@@ -54,12 +59,5 @@ public class DefendOrderPower extends AbstractPower implements CloneablePowerInt
     @Override
     public AbstractPower makeCopy() {
         return new DefendOrderPower(owner, source, amount);
-    }
-
-    @Override
-    public int onGainEnergy(int e) {
-        flash();
-        addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
-        return e;
     }
 }
