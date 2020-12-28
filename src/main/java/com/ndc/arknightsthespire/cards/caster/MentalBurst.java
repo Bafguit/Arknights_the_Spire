@@ -15,7 +15,7 @@ public class MentalBurst extends CardSPBase {
     public static final String IMG_PATH = "img/cards/MentalBurst.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 2;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 3;
     private static final int UP_DAMAGE = 1;
     private static final int SP = 7;
     private static final int HIT = 6;

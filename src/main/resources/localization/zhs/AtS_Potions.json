@@ -1,0 +1,16 @@
+{
+  "ats:Emergency Sanity Potion": {
+    "NAME": "应急理智合剂",
+    "DESCRIPTIONS": [
+      "获得 #b",
+      " #y技力."
+    ]
+  },
+  "ats:Top Emergency Sanity Potion": {
+    "NAME": "应急理智顶液",
+    "DESCRIPTIONS": [
+      "获得 #b",
+      " #y技力."
+    ]
+  }
+}

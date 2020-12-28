@@ -22,9 +22,9 @@ public class MagHammer extends CardSPBase {
     public static final String IMG_PATH = "img/cards/MagneticHammer.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 2;
-    private static final int BLOCK = 10;
+    private static final int BLOCK = 8;
     private static final int UP_BLOCK = 2;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 8;
     private static final int UP_DAMAGE = 2;
     private static final int SP = 10;
     private static final int WEAK = 3;

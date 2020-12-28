@@ -1,0 +1,107 @@
+[
+  {
+    "PROPER_NAME": "技力",
+    "NAMES": [
+      "技力"
+    ],
+    "DESCRIPTION": "消费 #y技力 获得增强效果."
+  },
+  {
+    "PROPER_NAME": "自动",
+    "NAMES": [
+      "自动"
+    ],
+    "DESCRIPTION": "处于自动模式时才能打出,如果你拥有足够的 #y技力 打出 NL 会消费 #y技力 获得额外效果."
+  },
+  {
+    "PROPER_NAME": "手动",
+    "NAMES": [
+      "手动"
+    ],
+    "DESCRIPTION": "处于手动模式才能触发,如果你拥有足够的 #y技力 打出 NL 会消费 #y技力 获得强大效果.需要通过按钮切换到手动模式."
+  },
+  {
+    "PROPER_NAME": "燃烧",
+    "NAMES": [
+      "燃烧"
+    ],
+    "DESCRIPTION": "在回合开始和结束时,失去生命."
+  },
+  {
+    "PROPER_NAME": "庇护",
+    "NAMES": [
+      "庇护"
+    ],
+    "DESCRIPTION": "减少 #bN% 受到的攻击伤害."
+  },
+  {
+    "PROPER_NAME": "号令",
+    "NAMES": [
+      "号令"
+    ],
+    "DESCRIPTION": "在每个回合开始时,获得 #b1 能量 ."
+  },
+  {
+    "PROPER_NAME": "强效",
+    "NAMES": [
+      "强效"
+    ],
+    "DESCRIPTION": "增强生命回复的效果."
+  },
+  {
+    "PROPER_NAME": "狙击",
+    "NAMES": [
+      "狙击"
+    ],
+    "DESCRIPTION": "狙击卡"
+  },
+  {
+    "PROPER_NAME": "近卫",
+    "NAMES": [
+      "近卫"
+    ],
+    "DESCRIPTION": "近卫卡"
+  },
+  {
+    "PROPER_NAME": "医疗",
+    "NAMES": [
+      "医疗"
+    ],
+    "DESCRIPTION": "医疗卡"
+  },
+  {
+    "PROPER_NAME": "重装",
+    "NAMES": [
+      "重装"
+    ],
+    "DESCRIPTION": "重装卡"
+  },
+  {
+    "PROPER_NAME": "术师",
+    "NAMES": [
+      "术师"
+    ],
+    "DESCRIPTION": "术师卡"
+  },
+  {
+    "PROPER_NAME": "辅助",
+    "NAMES": [
+      "辅助"
+    ],
+    "DESCRIPTION": "辅助卡"
+  },
+  {
+    "PROPER_NAME": "先锋",
+    "NAMES": [
+      "先锋"
+    ],
+    "DESCRIPTION": "先锋卡"
+  },
+  {
+    "PROPER_NAME": "特种",
+    "NAMES": [
+      "特种"
+    ],
+    "DESCRIPTION": "特种卡"
+  }
+]

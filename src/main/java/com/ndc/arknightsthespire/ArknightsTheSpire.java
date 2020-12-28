@@ -253,6 +253,9 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         String language = Settings.language.name().toLowerCase();
 
         switch (language) {
+            case "zhs":
+                return "zhs";
+
             case "kor":
                 return "kor";
 

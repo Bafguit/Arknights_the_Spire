@@ -1,0 +1,395 @@
+{
+  "ats:Emotion Absorption": {
+    "NAME": "情绪吸收",
+    "DESCRIPTION": "获得 !M!  ats:技力 .",
+    "UPGRADE_DESCRIPTION": "获得 !M! ats:技力 . NL 抽1张牌."
+  },
+  "ats:Strike C": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害."
+  },
+  "ats:Strike G": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害."
+  },
+  "ats:Strike S": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害."
+  },
+  "ats:Strike V": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害."
+  },
+  "ats:Armor Crushing Shot": {
+    "NAME": "碎甲击",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. NL 给予 !M! 层 易伤 ."
+    ]
+  },
+  "ats:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 ."
+  },
+  "ats:Overload": {
+    "NAME": "冲锋模式",
+    "DESCRIPTION": "造成 !D! 点伤害3次. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      "过载模式",
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害5次."
+    ]
+  },
+  "ats:Counter Healing Mode": {
+    "NAME": "反制医疗模式",
+    "DESCRIPTION": "每当回复生命时获得 !M! ats:技力 ."
+  },
+  "ats:Powerful Strike": {
+    "NAME": "强力击·β型",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. NL 增加5点额外伤害."
+    ]
+  },
+  "ats:Charging Defense": {
+    "NAME": "充能防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 . NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 获得 !B! 点 格挡 . 阻止下一次你受到的生命值损伤."
+    ]
+  },
+  "ats:Shell Defense": {
+    "NAME": "壳状防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 . NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:手动 NL 获得 !B! 点 格挡 和2层 再生 ."
+    ]
+  },
+  "ats:Leaping Hammer": {
+    "NAME": "跃空锤",
+    "DESCRIPTION": "造成 !D! 点伤害. 获得 !M! ats:技力 ."
+  },
+  "ats:Magnetic Hammer": {
+    "NAME": "磁暴锤",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害. 获得 !B! 点 格挡 . NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害并使它们在一回合内失去 !M! 点 力量 . 获得 !B! 点 格挡 ."
+    ]
+  },
+  "ats:Thorns": {
+    "NAME": "荆棘",
+    "DESCRIPTION": "获得 !M! 层 荆棘 . 获得1点 敏捷 .",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 荆棘 . 获得2点 敏捷."
+  },
+  "ats:Dogmatic Field": {
+    "NAME": "教条力场",
+    "DESCRIPTION": "每当你获得 格挡 时,改为回复等量的生命. NL 超过生命值上限的回复量的一半会转换为 格挡 . 失去1点 敏捷 ."
+  },
+  "ats:Rapid Magazine": {
+    "NAME": "天马视域",
+    "DESCRIPTION": " ats:狙击 攻击牌消费 ats:技力 减少2.",
+    "UPGRADE_DESCRIPTION": " 固有 . ats:狙击 攻击牌消费 ats:技力 减少2."
+  },
+  "ats:Sunburst": {
+    "NAME": "炎爆",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 对所有敌人造成 !D! 点伤害并给予 !M! 层 ats:燃烧 ."
+    ]
+  },
+  "ats:Soul Absorption": {
+    "NAME": "灵魂汲取",
+    "DESCRIPTION": "本回合打出的下一张攻击牌造成未被格挡的伤害时获得等量 格挡 ."
+  },
+  "ats:Durian": {
+    "NAME": "爆发剂·榴莲味",
+    "DESCRIPTION": " 保留 . 失去3点生命5次, 根据 敏捷 降低伤害. (最多降低 2) NL 下一次攻击伤害翻倍. NL 消耗 ."
+  },
+  "ats:Rat Pack": {
+    "NAME": "鼠群",
+    "DESCRIPTION": " 保留 . 获得等同于当前生命值的 格挡 . NL 消耗 ."
+  },
+  "ats:Assault Order": {
+    "NAME": "冲锋号令·γ型",
+    "DESCRIPTION": "(什么都没有发生...) NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 获得 [E] [E] ."
+    ]
+  },
+  "ats:Support Order": {
+    "NAME": "支援号令·β型",
+    "DESCRIPTION": "(什么都没有发生...) NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 获得 !M! 层 ats:号令 ."
+    ]
+  },
+  "ats:True Silver Slash": {
+    "NAME": "真银斩",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害3次. 本回合你无法从卡牌中获得 格挡 . NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 你每有一张 ats:近卫 对所有敌人造成 !D! 点伤害. 本回合你无法从卡牌中获得 格挡 . NL 消耗 ."
+    ]
+  },
+  "ats:Volcano": {
+    "NAME": "火山",
+    "DESCRIPTION": "给予所有敌人 !M! 层 ats:燃烧 . NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 你每有一张 ats:术师 对所有敌人造成 !D! 点伤害. NL 消耗 ."
+    ]
+  },
+  "ats:Nebulous Foxfire": {
+    "NAME": "狐火渺然",
+    "DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 易伤 . 获得2层 再生 ."
+  },
+  "ats:Cat Scratch": {
+    "NAME": "挠伤",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害,给予 !M! 层 虚弱 ."
+    ]
+  },
+  "ats:Red Shift": {
+    "NAME": "红移",
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害4次."
+  },
+  "ats:Shadow Assault": {
+    "NAME": "赤霄·拔刀",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次. NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      "赤霄·绝影",
+      " ats:技力 !S! ats:手动 NL 随机对敌人造成 !D! 点伤害10次."
+    ]
+  },
+  "ats:Blood Oath": {
+    "NAME": "歃血",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. 回复 !M! 点生命."
+    ]
+  },
+  "ats:Consecutive Shot Auto": {
+    "NAME": "二连射·自动",
+    "DESCRIPTION": "造成 !D! 点伤害2次."
+  },
+  "ats:Explosion Area Strengthen": {
+    "NAME": "爆破范围提升·α型",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害."
+  },
+  "ats:Thermite Blade": {
+    "NAME": "极致锋度",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:手动 NL 造成 !D! 点伤害. 伤害提高5并且无视 格挡 ."
+    ]
+  },
+  "ats:Mental Burst": {
+    "NAME": "精神爆发",
+    "DESCRIPTION": "造成 !D! 点伤害, 随机给予敌人 ats:燃烧 6 次. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害,随机给予敌人 ats:燃烧 !M! 次."
+    ]
+  },
+  "ats:Revitalization": {
+    "NAME": "活力再生",
+    "DESCRIPTION": "获得 !M! 层 再生 ."
+  },
+  "ats:Spore Proliferation": {
+    "NAME": "孢子扩散",
+    "DESCRIPTION": "给予 !M! 层 虚弱 . NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力  !S!  ats:手动  NL 移除敌人身上的一个随机正面效果. 给予 !M! 层 虚弱 ."
+    ]
+  },
+  "ats:Encircling Forest": {
+    "NAME": "森廻",
+    "DESCRIPTION": "获得 !M! 回合 ats:庇护 . NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:手动 NL 获得 !M! 回合 ats:庇护 . ats:庇护 的效果翻倍."
+    ]
+  },
+  "ats:Soul Rend": {
+    "NAME": "裂魂",
+    "DESCRIPTION": "每当你打出 ats:近卫 造成伤害时回复 !M! 点生命."
+  },
+  "ats:Chain Hook": {
+    "NAME": "锁链勾爪",
+    "DESCRIPTION": "造成 !D! 点伤害. 抽1张牌. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. 抽2张牌."
+    ]
+  },
+  "ats:Hook Shot": {
+    "NAME": "勾爪发射",
+    "DESCRIPTION": "获得 !B! 点 格挡 . 抽1张牌. ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 获得 !B! 点 格挡 . 抽2张牌."
+    ]
+  },
+  "ats:Fractured Body": {
+    "NAME": "肉斩骨断",
+    "DESCRIPTION": "你的生命值始终不会低于1. 在这个效果结束后,令你的生命值变为1. 消耗 . NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 你的生命值始终不会低于1. 在这个效果结束后,令你的生命值变为1. 持续两个回合. 消耗 ."
+    ]
+  },
+  "ats:Flexible Camouflage": {
+    "NAME": "灵活伪装",
+    "DESCRIPTION": "获得 !M! 点 力量 . NL 在这个回合结束时,失去 !M! 点 力量 ."
+  },
+  "ats:Poison Spread": {
+    "NAME": "毒液散射",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. 给予 !M! 层 中毒 ."
+    ]
+  },
+  "ats:Curse Doll": {
+    "NAME": "诅咒娃娃",
+    "DESCRIPTION": "给予 1 层 虚弱 . 给予 !M! 层 易伤 ."
+  },
+  "ats:Shadow Raid": {
+    "NAME": "影袭",
+    "DESCRIPTION": " 保留 . 获得 !M! 点 敏捷 . NL 在下个回合开始时, 失去 !M! 点 敏捷 . NL 消耗 ."
+  },
+  "ats:Wolf Pack": {
+    "NAME": "狼群",
+    "DESCRIPTION": " 保留 . 对所有敌人造成 !D! 点伤害并击晕. NL 消耗 ."
+  },
+  "ats:Disruption Kick": {
+    "NAME": "七武掠阵踢",
+    "DESCRIPTION": " 保留 . 对所有敌人造成 !D! 点伤害,移除敌人身上的所有状态. NL 消耗 ."
+  },
+  "ats:Automatic Cover": {
+    "NAME": "自动掩护",
+    "DESCRIPTION": "获得 !B! 点 格挡 . 获得 !M! 点 敏捷 . 在下个回合开始时, 失去 !M! 点 敏捷 ."
+  },
+  "ats:Very Hot Blade": {
+    "NAME": "很热的刀",
+    "DESCRIPTION": "造成 !D! 点伤害. 抽1张牌. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. 根据敌人的 ats:燃烧 层数增加伤害. 抽1张卡."
+    ]
+  },
+  "ats:Apocalypse": {
+    "NAME": "宛如天启",
+    "DESCRIPTION": "回复 !M! 生命. 获得 !M! ats:技力 ."
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "复合型药物弹片",
+    "DESCRIPTION": "每当回复生命时对所有敌人造成同等伤害.",
+    "UPGRADE_DESCRIPTION": " 固有 . 每当回复生命时对所有敌人造成同等伤害."
+  },
+  "ats:Neurotoxin": {
+    "NAME": "神经毒素",
+    "DESCRIPTION": "每当你使用 ats:狙击 攻击牌时给予所有敌人 !M! 层 中毒 ."
+  },
+  "ats:Ambush": {
+    "NAME": "埋伏",
+    "DESCRIPTION": " 固有 .你在这个回合每打出一张 ats:狙击 攻击牌, 就有 !M! % 的机会闪避攻击.",
+    "UPGRADE_DESCRIPTION": " 固有 . 你在这个回合每打出一张 ats:狙击 攻击牌, 就有 !M! % 的机会闪避攻击."
+  },
+  "ats:Defend Order": {
+    "NAME": "冲锋号令·防御",
+    "DESCRIPTION": "每当获得能量时获得 !B! 点 格挡."
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "乌萨斯战吼",
+    "DESCRIPTION": "每当获得能量时额外获得1能量.",
+    "UPGRADE_DESCRIPTION": " 固有 . 每当获得能量时额外获得1能量."
+  },
+  "ats:Echo Reverb": {
+    "NAME": "传音回响",
+    "DESCRIPTION": "移除 人工制品 并给予 缓慢 . NL 消耗 .",
+    "UPGRADE_DESCRIPTION": " 固有 . NL 移除 人工制品 并给予 缓慢 . NL 消耗 ."
+  },
+  "ats:Beaten Up": {
+    "NAME": "挨打",
+    "DESCRIPTION": "获得 !M! 点 敏捷 . 在下个回合开始时, 失去 !M! 点 敏捷 . 在敌人的回合,每当敌人攻击你时对敌人造成等同敏捷的伤害."
+  },
+  "ats:Ignite": {
+    "NAME": "点燃",
+    "DESCRIPTION": "造成 !D! 点伤害. 给予 !M! 层 ats:燃烧 ."
+  },
+  "ats:Demon Strength": {
+    "NAME": "恶鬼之力",
+    "DESCRIPTION": "获得 !M! 点 力量 . 失去1点 敏捷 ."
+  },
+  "ats:Steam Pump": {
+    "NAME": "水蒸气泵",
+    "DESCRIPTION": "丢弃 !M! 张牌. 获得 !B! 点 格挡 ."
+  },
+  "ats:Collapsing Strike": {
+    "NAME": "崩拳式",
+    "DESCRIPTION": "丢弃 !M! 张牌. 造成 !D! 点伤害."
+  },
+  "ats:Song Of Battle": {
+    "NAME": "战斗之歌",
+    "DESCRIPTION": "在回合开始时,获得 !M! ats:技力 ."
+  },
+  "ats:LN2 Cannon": {
+    "NAME": "液氮大炮",
+    "DESCRIPTION": "消耗手牌中所有非攻击牌. 每张造成 !D! 点伤害. 无视 格挡 ."
+  },
+  "ats:Calcification": {
+    "NAME": "钙质化",
+    "DESCRIPTION": "获得 !B! 点 格挡 . 获得1点 敏捷 , 再生 , ats:技力 ."
+  },
+  "ats:Flame Of Heaven": {
+    "NAME": "天坠之火",
+    "DESCRIPTION": " 保留 . 翻倍 ats:燃烧 层数. 消耗 ."
+  },
+  "ats:Burning Ground": {
+    "NAME": "灼地",
+    "DESCRIPTION": "每当你打出一张 ats:术师 给予所有敌人 !M! 层 ats:燃烧 ."
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "守卫尖碑",
+    "DESCRIPTION": "根据 ats:燃烧 层数获得 格挡 . 当 ats:燃烧 效果触发后, 改为层数减半."
+  },
+  "ats:Directed Diagnosis": {
+    "NAME": "定向诊断",
+    "DESCRIPTION": "将你的 虚弱 , 易伤 , 脆弱 减半. (最小值 1) 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态."
+    ]
+  },
+  "ats:Part Time Job": {
+    "NAME": "兼职",
+    "DESCRIPTION": "获得3层 再生 .",
+    "UPGRADE_DESCRIPTION": "在你的回合开始和结束时, 回复1点生命."
+  },
+  "ats:Childhood Dance": {
+    "NAME": "儿时的舞乐",
+    "DESCRIPTION": "给予所有敌人一层 虚弱 ."
+  },
+  "ats:Hammer On": {
+    "NAME": "槌音",
+    "DESCRIPTION": "造成 !D! 点伤害. NL 如果此卡击杀了敌人,获得 [E] ."
+  },
+  "ats:Closed Bolt Burst Fire": {
+    "NAME": "闭膛连发",
+    "DESCRIPTION": "造成 !D! 点伤害3次. NL 如果此卡击杀了敌人,获得 [E] [E] ."
+  },
+  "ats:Healing Drone": {
+    "NAME": "医疗无人机",
+    "DESCRIPTION": "在你的回合开始和结束时,回复 !M! 点生命."
+  },
+  "ats:Healing Strengthening": {
+    "NAME": "治疗强化·γ型",
+    "DESCRIPTION": "获得 !M! ats:强效 ."
+  },
+  "ats:Sword Rain": {
+    "NAME": "剑雨",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害. NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害. 获得 [E] [E] ."
+    ]
+  },
+  "ats:NULL": {
+    "NAME": "",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "",
+      ""
+    ]
+  }
+}

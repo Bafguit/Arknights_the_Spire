@@ -183,7 +183,7 @@
   },
   "ats:Mental Burst": {
     "NAME": "Mental Burst",
-    "DESCRIPTION": "Deal !D! damage and apply ats:Burn !M! times to a random enemy. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Deal !D! damage and apply ats:Burn 6 times to a random enemy. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:Auto NL Deal !D! damage and apply ats:Burn !M! times to a random enemy."
     ]
@@ -294,7 +294,7 @@
   "ats:Roar Of Ursus": {
     "NAME": "Roar of Ursus",
     "DESCRIPTION": "Gain 1 more energy when energy gained.",
-    "UPGRADE_DESCRIPTION": "Ambush. Gain 1 more energy when energy gained."
+    "UPGRADE_DESCRIPTION": "Innate. Gain 1 more energy when energy gained."
   },
   "ats:Echo Reverb": {
     "NAME": "Echo Reverb",

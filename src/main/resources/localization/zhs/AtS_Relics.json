@@ -1,0 +1,213 @@
+{
+  "ats:Lavender": {
+    "NAME": "综合园艺成果",
+    "FLAVOR": "调香师的植物园闻起来总有淡淡的薰衣草味.",
+    "DESCRIPTIONS": [
+      "在回合结束时,回复 #b",
+      " 点生命."
+    ]
+  },
+  "ats:Spiritual Recovery": {
+    "NAME": "精神回复",
+    "FLAVOR": "它含有少量芥末提取物...",
+    "DESCRIPTIONS": [
+      "每当回复生命时获得 #b",
+      " #y技力 ."
+    ]
+  },
+  "ats:Rhine Circuitry": {
+    "NAME": "忧伤的驮兽",
+    "FLAVOR": "\"请勿阅读或将本手册给予伊芙利特.\"",
+    "DESCRIPTIONS": [
+      "每当你打出6张牌, 获得 #b",
+      " #y技力 ."
+    ]
+  },
+  "ats:Military Tradition": {
+    "NAME": "军事传统",
+    "FLAVOR": "我想维多利亚应该穿传统服装.",
+    "DESCRIPTIONS": [
+      "在战斗开始时,获得 #b",
+      " #y技力 ."
+    ]
+  },
+  "ats:Ability Aura": {
+    "NAME": "技力光环",
+    "FLAVOR": "\"ERA HASSEI-\"",
+    "DESCRIPTIONS": [
+      "在回合开始时, 获得 #b",
+      " #y技力 ."
+    ]
+  },
+  "ats:Omniscience": {
+    "NAME": "干明可鉴",
+    "FLAVOR": " 注意 : 非常热 ",
+    "DESCRIPTIONS": [
+      "每场战斗阻止两次生命流失."
+    ]
+  },
+  "ats:Sanity": {
+    "NAME": "理智",
+    "FLAVOR": "\"博士,那不能吃!\"",
+    "DESCRIPTIONS": [
+      "在每回合你第一次消费 #y技力 时返还一半. (最多 #b5)"
+    ]
+  },
+  "ats:Sanity Plus": {
+    "NAME": "理智+",
+    "FLAVOR": "\"博士,不要再偷偷吃了!\"",
+    "DESCRIPTIONS": [
+      "取代 #rSanity. 在每回合你第一次消费 #y技力 时返还一半. NL #y最大技力值 增加 #b10."
+    ]
+  },
+  "ats:Berate": {
+    "NAME": "呵斥",
+    "FLAVOR": "\"陈不用这个东西.\"",
+    "DESCRIPTIONS": [
+      "每当你打出4张攻击牌,获得 #b",
+      " #y技力 ."
+    ]
+  },
+  "ats:Industrial Water Cannon": {
+    "NAME": "工程蓄水炮",
+    "FLAVOR": "\"头儿...他们在烧烤.你能阻止他们吗!啊啊!有人把我的灭火器换成了伊芙利特的灭火器!你还好吗,头儿?\"",
+    "DESCRIPTIONS": [
+      "每当你消费 #y技力 3次, 抽1张牌."
+    ]
+  },
+  "ats:Bonebreaker": {
+    "NAME": "刺骨",
+    "FLAVOR": "她正走在墙上,很显眼.",
+    "DESCRIPTIONS": [
+      "每次攻击都会造成 #b",
+      " 的最低伤害."
+    ]
+  },
+  "ats:Emergency Defibrillator": {
+    "NAME": "紧急除颤",
+    "FLAVOR": "在除颤器运行期间,请不要采取暴力行为.",
+    "DESCRIPTIONS": [
+      "每当受到的攻击伤害会令你的生命值降低至 #b25%, 此次攻击伤害变为0并且在下个回合开始时回复 #b50% 生命. (本局游戏仅限一次)"
+    ]
+  },
+  "ats:Arts": {
+    "NAME": "术师招募券",
+    "FLAVOR": "这一定有着某种关联.",
+    "DESCRIPTIONS": [
+      "每当你打出 #y术师 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Assault": {
+    "NAME": "先锋招募券",
+    "FLAVOR": "\"BIBITTENJYANE-!\"",
+    "DESCRIPTIONS": [
+      "每当你打出 #y先锋 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Attack": {
+    "NAME": "近卫招募券",
+    "FLAVOR": "进攻是最好的防御.",
+    "DESCRIPTIONS": [
+      "每当你打出 #y近卫 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Defend": {
+    "NAME": "重装招募券",
+    "FLAVOR": "防御是最好的进攻.",
+    "DESCRIPTIONS": [
+      "每当你打出 #y重装 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Cure": {
+    "NAME": "医疗招募券",
+    "FLAVOR": "\"请快过来.\"",
+    "DESCRIPTIONS": [
+      "每当你打出 #y医疗 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Snipe": {
+    "NAME": "狙击招募券",
+    "FLAVOR": "最好提前排除危险.",
+    "DESCRIPTIONS": [
+      "每当你打出 #y狙击 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Special": {
+    "NAME": "特种招募券",
+    "FLAVOR": "每当特种小组聚集在一起,他们都说看不到第二个人.",
+    "DESCRIPTIONS": [
+      "每当你打出 #y特种 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Support": {
+    "NAME": "辅助",
+    "FLAVOR": "\"华法琳小姐, 那是辅助干员的休息室.\"",
+    "DESCRIPTIONS": [
+      "每当你打出 #y辅助 牌, 获得 #b1 #y技力 ."
+    ]
+  },
+  "ats:Hidden Killer": {
+    "NAME": "隐匿的杀手",
+    "FLAVOR": "为什么不把你的手伸向她?",
+    "DESCRIPTIONS": [
+      "如果你在回合内没有打出任意一张 #y攻击牌 , 下个回合获得 #b1 点力量."
+    ]
+  },
+  "ats:MaxSp1": {
+    "NAME": "立体投影仪",
+    "FLAVOR": "\"煌, 请不要用它捉弄迷迭香!\"",
+    "DESCRIPTIONS": [
+      "#y最大SP值 提高 #b10."
+    ]
+  },
+  "ats:MaxSp2": {
+    "NAME": "一台旧冰箱",
+    "FLAVOR": "吸引一个饥肠辘辘的人,它是最好的选择.",
+    "DESCRIPTIONS": [
+      "#y最大SP值 提高 #b10."
+    ]
+  },
+  "ats:MaxSp3": {
+    "NAME": "个人避难所",
+    "FLAVOR": "有传言说,总有人饿了就把它当床.",
+    "DESCRIPTIONS": [
+      "#y最大SP值 提高 #b10."
+    ]
+  },
+  "ats:MaxSp4": {
+    "NAME": "热水壶",
+    "FLAVOR": "它被禁止用于煮泡面——特别是对那些一直饿着的人.",
+    "DESCRIPTIONS": [
+      "#y最大SP值 提高 #b10."
+    ]
+  },
+  "ats:Gyao": {
+    "NAME": "\"嘎呜\" 挂饰",
+    "FLAVOR": "它是第二个最受欢迎的物品,仅次于一个被誉为财神的人的照片.",
+    "DESCRIPTIONS": [
+      "每当你得到金币额外获得 #b15 金币."
+    ]
+  },
+  "ats:Originium": {
+    "NAME": "至纯源石",
+    "FLAVOR": "据说克洛丝正在寻找这些东西.",
+    "DESCRIPTIONS": [
+      "#y最大SP值 提高 #b10."
+    ]
+  },
+  "ats:Tactical Delivery": {
+    "NAME": "战术快递",
+    "FLAVOR": "闻起来有海鲜的味道.",
+    "DESCRIPTIONS": [
+      "在你的回合开始时获得 [E] . #y最大SP值 提高 #b20."
+    ]
+  },
+  "ats:NULL": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "",
+      ""
+    ]
+  }
+}
