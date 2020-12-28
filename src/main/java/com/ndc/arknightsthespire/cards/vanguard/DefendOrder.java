@@ -20,12 +20,12 @@ public class DefendOrder extends CardSPBase {
     public DefendOrder() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, BLOCK, 0, 0);
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, BLOCK, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new DefendOrderPower(p, p, this.block), this.block));
+        addToBot(new ApplyPowerAction(p, p, new DefendOrderPower(p, p, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -35,7 +35,7 @@ public class DefendOrder extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBlock(UP_BLOCK);
+        this.upgradeMagicNumber(UP_BLOCK);
     }
 
 }

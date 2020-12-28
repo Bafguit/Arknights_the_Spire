@@ -1,5 +1,5 @@
 package com.ndc.arknightsthespire.patcher;
-/*
+
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
@@ -10,11 +10,11 @@ import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 
 @SpirePatch(
         clz=GainEnergyAction.class,
-        method="GainEnergyAction"
+        method=SpirePatch.CONSTRUCTOR
 )
 public class OnGainEnergyPatcher
 {
-    public static SpireReturn<Integer> Prefix(@ByRef int[] e)
+    public static SpireReturn<Integer> Prefix(GainEnergyAction __instance, @ByRef int[] e)
     {
         if (e[0] > 0) {
             for (AbstractPower power : AbstractDungeon.player.powers) {
@@ -26,4 +26,4 @@ public class OnGainEnergyPatcher
 
         return SpireReturn.Continue();
     }
-}*/
+}

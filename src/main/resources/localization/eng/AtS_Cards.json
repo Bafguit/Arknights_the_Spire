@@ -82,7 +82,7 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
-    "DESCRIPTION": "When you gain block through card, instead, heal that amount. NL Half of heal amount above the maximum health will be switched to block. Lose 1 Dexterity."
+    "DESCRIPTION": "When you gain block, instead, heal that amount. NL Half of heal amount above the maximum health will be switched to block. Lose 1 Dexterity."
   },
   "ats:Rapid Magazine": {
     "NAME": "Rapid Magazine",

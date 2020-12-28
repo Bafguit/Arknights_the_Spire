@@ -9,7 +9,7 @@
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
     "DESCRIPTIONS": [
-      "When you gain block through card, instead, heal that amount. Half of heal amount above the maximum health will be switched to block."
+      "When you gain block, instead, heal that amount. Half of heal amount above the maximum health will be switched to block."
     ]
   },
   "ats:Counter Healing Mode": {
