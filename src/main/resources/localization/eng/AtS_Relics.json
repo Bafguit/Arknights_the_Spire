@@ -161,46 +161,11 @@
       "If you do not play any #yAttacks during your turn, gain #b1 Strength for next turn."
     ]
   },
-  "ats:MaxSp1": {
-    "NAME": "Stereoscopic Projector",
-    "FLAVOR": "\"Mr. Blaze, this is not for playing tricks on Rosemary!\"",
-    "DESCRIPTIONS": [
-      "#yMaximum #ySP increased by #b10."
-    ]
-  },
-  "ats:MaxSp2": {
-    "NAME": "Old Refrigerator",
-    "FLAVOR": "It's the perfect thing to attract someone who's always hungry.",
-    "DESCRIPTIONS": [
-      "#yMaximum #ySP increased by #b10."
-    ]
-  },
-  "ats:MaxSp3": {
-    "NAME": "Personal Shelter",
-    "FLAVOR": "There are rumors that someone who's always hungry is using it as a bed.",
-    "DESCRIPTIONS": [
-      "#yMaximum #ySP increased by #b10."
-    ]
-  },
-  "ats:MaxSp4": {
-    "NAME": "Coffee Pot",
-    "FLAVOR": "It is prohibited to use it to cook ramen for someone who's always hungry.",
-    "DESCRIPTIONS": [
-      "#yMaximum #ySP increased by #b10."
-    ]
-  },
   "ats:Gyao": {
     "NAME": "\"Gyao\" Ring",
     "FLAVOR": "It is the second most popular item after a photo of someone who is praised as a god of money.",
     "DESCRIPTIONS": [
       "Gain #b15 additional gold when you obtain gold."
-    ]
-  },
-  "ats:Old Coin": {
-    "NAME": "오래된 주화",
-    "FLAVOR": "스노우상트는 이 주화가 지금은 쓰이지 않는다는 것을 알지 못합니다. 하지만 때때로 진실을 모르는 편이 더 행복할 수 있겠죠...",
-    "DESCRIPTIONS": [
-      "획득 시 현재 보유한 골드가 두 배가 됩니다."
     ]
   },
   "ats:Originium": {
@@ -214,7 +179,7 @@
     "NAME": "Tactical Delivery",
     "FLAVOR": "It smells like seafood bibim sauce.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. #yMaximum #ySP decreased by #b20."
+      "Gain [E] at the start of your turn. #yMaximum #ySP #yLimit decreased by #b20."
     ]
   },
   "ats:NULL": {

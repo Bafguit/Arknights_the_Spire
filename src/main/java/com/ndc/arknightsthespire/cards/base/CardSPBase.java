@@ -205,39 +205,14 @@ public abstract class CardSPBase extends CustomCard {
         }
     }
 
-    public void changeSP(int c_sp) {
-        if(this.sp + c_sp < 0) this.baseSP = 0;
-        else this.baseSP = this.sp + c_sp;
+    public void changeSpForBattle(int c_sp) {
+        this.sp = Math.max(0, this.baseSP + c_sp);
     }
 
-    public static void getGroupSPChange(PositionType cardClass, int c_sp) {
-
-        SPHandler.addDiffSp(c_sp);
-
-        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
-
-        while (var1.hasNext()) {
-            AbstractCard c = (AbstractCard) var1.next();
-            if(c instanceof CardSPBase) {
-                CardSPBase card = (CardSPBase) c;
-                if (card.position == cardClass && card.canUseSP == true) {
-                    card.changeSP(SPHandler.getDiffSp());
-                    if(card.spCard != null) card.spCard.changeSP(SPHandler.getDiffSp());
-                }
-            }
-        }
+    @Override
+    public void resetAttributes() {
+        this.sp = this.baseSP;
     }
-
-    public static void getSingleClassSPChange(AbstractCard card, PositionType cardClass) {
-        if(card instanceof CardSPBase) {
-            CardSPBase sCard = (CardSPBase) card;
-            if (sCard.position == cardClass && sCard.canUseSP == true) {
-                sCard.changeSP(SPHandler.getDiffSp());
-                if(sCard.spCard != null) sCard.spCard.changeSP(SPHandler.getDiffSp());
-            }
-        }
-    }
-
 
     public static void updateAllStateInHand(boolean shouldGlow) {
         Iterator var1 = AbstractDungeon.player.hand.group.iterator();
@@ -353,7 +328,7 @@ public abstract class CardSPBase extends CustomCard {
     public final void use(AbstractPlayer p, AbstractMonster m) {
         isSpJustUsed = false;
         if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
-            SPHandler.removeSp(this.baseSP);
+            SPHandler.removeSp(this.sp);
             isSpJustUsed = true;
             updateAllStateInHand(true);
         }
@@ -367,7 +342,7 @@ public abstract class CardSPBase extends CustomCard {
 
 
     public boolean canAffordSP() {
-        return SPHandler.getSp() >= this.baseSP;
+        return SPHandler.getSp() >= this.sp;
     }
 
     private BitmapFont getSpFont() {
@@ -419,7 +394,7 @@ public abstract class CardSPBase extends CustomCard {
             }
 
             costColor.a = this.transparency;
-            String text = String.valueOf(baseSP);
+            String text = String.valueOf(sp);
             BitmapFont font = this.getSpFont();
             if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
                 FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, 125.0F * this.drawScale * Settings.scale, 180.0F * this.drawScale * Settings.scale, this.angle, false, costColor);

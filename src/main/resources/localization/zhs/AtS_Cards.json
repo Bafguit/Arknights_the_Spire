@@ -289,7 +289,7 @@
   },
   "ats:Defend Order": {
     "NAME": "冲锋号令·防御",
-    "DESCRIPTION": "每当获得能量时获得 !B! 点 格挡."
+    "DESCRIPTION": "每当获得能量时获得 !M! 点 格挡."
   },
   "ats:Roar Of Ursus": {
     "NAME": "乌萨斯战吼",

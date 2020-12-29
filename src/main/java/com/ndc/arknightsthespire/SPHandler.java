@@ -5,6 +5,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.g3d.particles.ResourceData;
 import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
@@ -16,7 +17,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     private static int sp = 0;
     private static int maxSp = 10;
     private static int maxSpLimit = 40;
-    private static int diffSp = 0;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
     private static int cardAddSp = 1;
@@ -36,9 +36,19 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         if(maxSp >= maxSpLimit) return false;
         else return true;
     }
-    public static void upgradeLimit() {maxSpLimit = 50;}
-    public static int getDiffSp() {
-        return diffSp;
+    public void upgradeLimit() {
+        AbstractPlayer p = AbstractDungeon.player;
+        if(p.hasRelic("ats:Sanity Plus")) {
+            if(p.hasRelic("ats:Tactical Delivery")) {
+                maxSpLimit = 30;
+            } else {
+                maxSpLimit = 50;
+            }
+        } else if(p.hasRelic("ats:Tactical Delivery")) {
+            maxSpLimit = 20;
+        } else {
+            maxSpLimit = 40;
+        }
     }
     public static int getTurnAddSp() {
         return turnAddSp;
@@ -50,7 +60,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         sp = Math.min(sp + amount, maxSp);
     }
     public static void addMaxSp(int amount) {
-        maxSp = Math.min(maxSp + amount, maxSpLimit);
+        maxSp = Math.max(Math.min(maxSp + amount, maxSpLimit), 10);
     }
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
@@ -60,9 +70,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         soonAddedSp = 0;
     }
     public static void removeSp(int amount) { sp = Math.max(sp - amount, 0); }
-    public static void addDiffSp(int amount) {
-        diffSp += amount;
-    }
 
     public static void setSpMode(boolean isEnabled) {
         isSpModeEnabled = isEnabled;
@@ -103,6 +110,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
+        upgradeLimit();
         this.setSp(defaultSp + turnAddSp);
         System.out.println("Current SP: " + sp);
     }
@@ -110,8 +118,8 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         System.out.println("Saving...");
-        diffSp = 0;
         sp = 0;
+        maxSp = 10;
         System.out.println("Saved.");
     }
 

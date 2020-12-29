@@ -6,11 +6,14 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.util.TextureLoader;
+
+import java.util.Iterator;
 
 //Gain 1 dex for the turn for each card played.
 
@@ -44,33 +47,34 @@ public class RapidMagPower extends AbstractPower implements CloneablePowerInterf
 
         updateDescription();
 
-        CardSPBase.getGroupSPChange(PositionType.SNIPER, -this.amount);
+        Iterator var1 = AbstractDungeon.player.hand.group.iterator();
+
+        while (var1.hasNext()) {
+            AbstractCard c = (AbstractCard) var1.next();
+            if(c instanceof CardSPBase) {
+                CardSPBase card = (CardSPBase) c;
+                if (card.position == PositionType.SNIPER && card.canUseSP == true) {
+                    card.changeSpForBattle(-this.amount);
+                    if(card.spCard != null) {
+                        card.spCard.changeSpForBattle(-this.amount);
+                    }
+                }
+            }
+        }
         System.out.println(RapidMagPower.POWER_ID + " Applied Successfully.");
     }
 
- /*   @Override
-    public void onInitialApplication() {
-        CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
-        System.out.println(SPHandler.getDiffSp() + " is current diffSP");
-        System.out.println(amount + " is current amount");
-    }
-
     @Override
-    public void onApplyPower(AbstractPower p, AbstractCreature t, AbstractCreature s) {
-        if(p.ID == "Rapid Magazine" && t == AbstractDungeon.player) {
-            System.out.println(p.ID + " is successfully applied!");
-            CardSPBase.getGroupSPChange(PositionType.SNIPER, -1);
+    public void onCardDraw(AbstractCard c) {
+        if(c instanceof CardSPBase) {
+            CardSPBase card = (CardSPBase) c;
+            if (card.position == PositionType.SNIPER && card.canUseSP == true) {
+                card.changeSpForBattle(-this.amount);
+                if(card.spCard != null) {
+                    card.spCard.changeSpForBattle(-this.amount);
+                }
+            }
         }
-    }*/
-
-    @Override
-    public void onCardDraw(AbstractCard card) {
-        CardSPBase.getSingleClassSPChange(card, PositionType.SNIPER);
-    }
-
-    @Override
-    public void onVictory() {
-
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

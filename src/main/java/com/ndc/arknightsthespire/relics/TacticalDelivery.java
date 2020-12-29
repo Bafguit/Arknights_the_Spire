@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.util.TextureLoader;
@@ -13,12 +14,16 @@ public class TacticalDelivery extends CustomRelic {
 
     public TacticalDelivery() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it
-        SPHandler.addMaxSp(-20);
     }
 
     @Override
-    public void onEnergyRecharge() {
-        addToBot(new GainEnergyAction(1));
+    public void onEquip() {
+        ++AbstractDungeon.player.energy.energyMaster;
+    }
+
+    @Override
+    public void onUnequip() {
+        --AbstractDungeon.player.energy.energyMaster;
     }
 
     @Override

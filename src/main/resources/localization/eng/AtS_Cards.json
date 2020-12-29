@@ -289,7 +289,7 @@
   },
   "ats:Defend Order": {
     "NAME": "Defend Order",
-    "DESCRIPTION": "Gain !B! block when energy gained."
+    "DESCRIPTION": "Gain !M! block when energy gained."
   },
   "ats:Roar Of Ursus": {
     "NAME": "Roar of Ursus",
