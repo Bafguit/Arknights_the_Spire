@@ -5,9 +5,8 @@
 
 package com.ndc.arknightsthespire.interfaces;
 
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public interface OnGainBlockPower {
-    void onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount);
+public interface PreGainBlockPower {
+    int preGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount);
 }

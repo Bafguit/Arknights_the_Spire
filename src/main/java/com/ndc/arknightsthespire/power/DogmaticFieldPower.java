@@ -13,7 +13,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.FrailPower;
 import com.ndc.arknightsthespire.interfaces.OnGainBlockPower;
+import com.ndc.arknightsthespire.interfaces.PreGainBlockPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -61,14 +63,10 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
     }
 
     @Override
-    public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, blockAmount, 0.15F));
+    public void onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
         int overHeal = p.currentHealth + blockAmount - p.maxHealth;
-        if (overHeal > 0) {
-            return Math.round(overHeal/2);
-        }
-
-        return 0;
+        flash();
+        p.loseBlock((overHeal > 0 ? Math.round(blockAmount - overHeal/2) : blockAmount), true);
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, blockAmount, 0.15F));
     }
 }

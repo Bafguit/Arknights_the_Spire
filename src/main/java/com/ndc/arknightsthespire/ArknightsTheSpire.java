@@ -328,7 +328,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp()) {
+        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp() && AbstractDungeon.player instanceof CharacterDoctor) {
             abstractRoom.addRelicToRewards(new OriginiumAdd());
         }
     }

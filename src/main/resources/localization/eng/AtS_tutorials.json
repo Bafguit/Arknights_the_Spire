@@ -9,7 +9,7 @@
   },
   "ArknightsDoctor": {
     "TEXT": [
-      "#bDoctor uses a mechanism that enhances card effects consuming #ySP. NL The numbers displayed at the top left of the energy indicate the #yCurrent #ySP and the #yMaximum #ySP. NL You get #b1 #ySP when you #yuse #ya #ycard and #ystart #yyour #yturn, and you can increase your #yMaximum #ySP up to #b40 with artifacts and elite boss (default 10).",
+      "#bDoctor uses a mechanism that enhances card effects consuming #ySP. NL The numbers displayed at the top left of the energy indicate the #yCurrent #ySP and the #yMaximum #ySP. NL You get #b1 #ySP when you #yuse #ya #ycard and #ystart #yyour #yturn, and you can increase your #yMaximum #ySP up to #b40 with elite boss (default 10).",
       "There are #b8 #yClasses on the card that #bDoctor uses. NL #ySniper is a class that steadily accumulates damage due to low energy and SP consumption. NL #yDefender is a class specialized in defense and counterattacks. NL #yCaster is a class characterized by the use a debuff, #yBurn. NL #yGuard is a class specialized for high potential cards that can cause strong damage. NL #yMedics is a class specialized for HP recovery. NL #yVanguard is a class specialized for energy acquisition. NL #ySupporter is a class specialized for harming and benefiting the enemy. NL #ySpecialist is a class that has strong special abilities and hand management. NL Different strategies are available with cards and artifacts that create synergy with specific classes."
     ],
     "LABEL": [

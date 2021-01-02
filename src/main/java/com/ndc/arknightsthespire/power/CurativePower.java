@@ -14,9 +14,10 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.interfaces.PreHealPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
-public class CurativePower extends AbstractPower {
+public class CurativePower extends AbstractPower implements PreHealPower {
     public static final String POWER_ID = "ats:Curative";
     private static final PowerStrings powerStrings;
     public static final String NAME;
@@ -100,8 +101,8 @@ public class CurativePower extends AbstractPower {
     }
 
     @Override
-    public int onHeal(int healAmount){
-        return (healAmount += this.amount) < 0 ? 0 : healAmount;
+    public int preHeal(AbstractCreature owner, AbstractCreature source, int healAmount) {
+        return (healAmount + this.amount) < 0 ? 0 : healAmount + this.amount;
     }
 
     static {
