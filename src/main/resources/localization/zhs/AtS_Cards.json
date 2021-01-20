@@ -138,7 +138,7 @@
   },
   "ats:Nebulous Foxfire": {
     "NAME": "狐火渺然",
-    "DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 易伤 . 获得2层 再生 ."
+    "DESCRIPTION": "给予所有敌人 !M! 层 虚弱 和 易伤 . 获得 !M! 层 再生 ."
   },
   "ats:Cat Scratch": {
     "NAME": "挠伤",
@@ -383,6 +383,19 @@
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害. 获得 [E] [E] ."
     ]
+  },
+  "ats:Serious Mode": {
+    "NAME": "Serious Mode",
+    "DESCRIPTION": "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)",
+    "UPGRADE_DESCRIPTION": "Innate. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)"
+  },
+  "ats:Phantom": {
+    "NAME": "Phantom In The Mirror",
+    "DESCRIPTION": "Whenever you play a ats:Specialist card, a random card in your hand costs 0 until played."
+  },
+  "ats:Sashimi Platter": {
+    "NAME": "Sashimi Platter",
+    "DESCRIPTION": "Deal !D! damage. Heal !D! HP."
   },
   "ats:NULL": {
     "NAME": "",

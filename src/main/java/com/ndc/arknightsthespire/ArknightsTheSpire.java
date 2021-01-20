@@ -20,8 +20,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
-import com.ndc.arknightsthespire.cards.Cheat;
-import com.ndc.arknightsthespire.cards.GainSP;
 import com.ndc.arknightsthespire.cards.caster.*;
 import com.ndc.arknightsthespire.cards.defender.*;
 import com.ndc.arknightsthespire.cards.defender.Defend;
@@ -88,89 +86,88 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public void receiveEditCards() {
 
         System.out.println("ADDING CARDS");
-        //Sniper
+        //Basic
         BaseMod.addCard(new StrikeS());
-        BaseMod.addCard(new Overload());
-        BaseMod.addCard(new PowerfulStrike());
+        BaseMod.addCard(new StrikeC());
+        BaseMod.addCard(new StrikeG());
+        BaseMod.addCard(new StrikeV());
         BaseMod.addCard(new ArmCrushShot());
-        BaseMod.addCard(new RapidMagazine());
+        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new EmotionAbs());
+        //Common
+        BaseMod.addCard(new PowerfulStrike());
         BaseMod.addCard(new ConShotAuto());
         BaseMod.addCard(new ExpAreaStr());
         BaseMod.addCard(new FlexCamouflage());
         BaseMod.addCard(new PoisonSpread());
-        BaseMod.addCard(new Neurotoxin());
-        BaseMod.addCard(new Ambush());
-        //Medic
-        BaseMod.addCard(new DogmaticField());
         BaseMod.addCard(new Revitalization());
-        BaseMod.addCard(new AutoCover());
         BaseMod.addCard(new Apocalypse());
-        BaseMod.addCard(new ComMedShell());
-        BaseMod.addCard(new DirDiagnosis());
-        BaseMod.addCard(new HealingDrone());
-        BaseMod.addCard(new HealingStr());
-        //Supporter
-        BaseMod.addCard(new Foxfire());
+        BaseMod.addCard(new CurseDoll());
+        BaseMod.addCard(new ChildDance());
+        BaseMod.addCard(new ShellDef());
+        BaseMod.addCard(new Ignite());
+        BaseMod.addCard(new VeryHotBlade());
+        BaseMod.addCard(new CatScratch());
+        BaseMod.addCard(new BloodOath());
+        BaseMod.addCard(new LeapingHammer());
+        BaseMod.addCard(new HammerOn());
+        BaseMod.addCard(new CBBF());
+        BaseMod.addCard(new AssaultOrder());
+        //Uncommon
+        BaseMod.addCard(new Overload());
+        BaseMod.addCard(new RapidMagazine());
+        BaseMod.addCard(new Neurotoxin());
+        BaseMod.addCard(new AutoCover());
         BaseMod.addCard(new SporePro());
         BaseMod.addCard(new EncForest());
-        BaseMod.addCard(new CurseDoll());
-        BaseMod.addCard(new EchoReverb());
+        BaseMod.addCard(new ComMedShell());
+        BaseMod.addCard(new DirDiagnosis());
         BaseMod.addCard(new SongOfBattle());
         BaseMod.addCard(new PartTimeJob());
-        BaseMod.addCard(new ChildDance());
-        //Defender
-        BaseMod.addCard(new Defend());
+        BaseMod.addCard(new HealingDrone());
+        BaseMod.addCard(new HealingStr());
         BaseMod.addCard(new ChargingDef());
-        BaseMod.addCard(new ShellDef());
         BaseMod.addCard(new MagHammer());
         BaseMod.addCard(new Thorns());
         BaseMod.addCard(new CntHealMod());
         BaseMod.addCard(new BeatenUp());
-        BaseMod.addCard(new Calcification());
-        //Caster
-        BaseMod.addCard(new StrikeC());
-        BaseMod.addCard(new EmotionAbs());
         BaseMod.addCard(new MentalBurst());
         BaseMod.addCard(new SoulAbs());
-        BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new Sunburst());
-        BaseMod.addCard(new Ignite());
-        BaseMod.addCard(new Volcano());
         BaseMod.addCard(new BurningGround());
         BaseMod.addCard(new GuardianObelisk());
         BaseMod.addCard(new FlameOfHeaven());
-        //Specialist
-        BaseMod.addCard(new RatPack());
         BaseMod.addCard(new ChainHook());
         BaseMod.addCard(new HookShot());
         BaseMod.addCard(new ShadowRaid());
-        BaseMod.addCard(new WolfPack());
-        BaseMod.addCard(new DisruptionKick());
-        BaseMod.addCard(new Durian());
         BaseMod.addCard(new SteamPump());
         BaseMod.addCard(new CollapsingStrike());
         BaseMod.addCard(new LN2Cannon());
-        //Guard
-        BaseMod.addCard(new StrikeG());
-        BaseMod.addCard(new CatScratch());
         BaseMod.addCard(new RedShift());
-        BaseMod.addCard(new TrueSilverSlash());
-        BaseMod.addCard(new BloodOath());
-        BaseMod.addCard(new ShadowAssault());
         BaseMod.addCard(new ThermiteBlade());
-        BaseMod.addCard(new SoulRend());
-        BaseMod.addCard(new FracturedBody());
         BaseMod.addCard(new DemonStrength());
-        //Vanguard
-        BaseMod.addCard(new StrikeV());
-        BaseMod.addCard(new AssaultOrder());
         BaseMod.addCard(new SupportOrder());
         BaseMod.addCard(new DefendOrder());
-        BaseMod.addCard(new RoarOfUrsus());
-        BaseMod.addCard(new LeapingHammer());
-        BaseMod.addCard(new HammerOn());
-        BaseMod.addCard(new CBBF());
         BaseMod.addCard(new SwordRain());
+        BaseMod.addCard(new SeriousMode());
+        BaseMod.addCard(new PhantomMirror());
+        BaseMod.addCard(new SashimiPlatter());
+        //Rare
+        BaseMod.addCard(new Ambush());
+        BaseMod.addCard(new DogmaticField());
+        BaseMod.addCard(new Foxfire());
+        BaseMod.addCard(new EchoReverb());
+        BaseMod.addCard(new Calcification());
+        BaseMod.addCard(new Volcano());
+        BaseMod.addCard(new TrueSilverSlash());
+        BaseMod.addCard(new SoulRend());
+        BaseMod.addCard(new FracturedBody());
+        BaseMod.addCard(new ShadowAssault());
+        BaseMod.addCard(new RatPack());
+        BaseMod.addCard(new WolfPack());
+        BaseMod.addCard(new DisruptionKick());
+        BaseMod.addCard(new Durian());
+        BaseMod.addCard(new RoarOfUrsus());
 
         System.out.println("DONE");
     }
@@ -302,9 +299,6 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
         });
         settingsPanel.addUIElement(tutorialOpen);
-        /*
-        Texture badgeTexture = TextureLoader.getTexture("CapriCoreResources/images/MokouMod/Badge.png");
-        BaseMod.registerModBadge(badgeTexture, "ats", "Fastcat", "Arknights the Spire", settingsPanel);*/
     }
 
     public static void saveData() throws IOException {

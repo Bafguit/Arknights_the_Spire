@@ -1,4 +1,4 @@
-package com.ndc.arknightsthespire.cards.guard;
+package com.ndc.arknightsthespire.cards.specialist;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -12,43 +12,37 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
-public class BloodOath extends CardSPBase {
-    public static final String ID = "ats:Blood Oath";
-    public static final String IMG_PATH = "img/cards/BloodOath.png";
-    public static final PositionType POSITION = PositionType.GUARD;
+public class SashimiPlatter extends CardSPBase {
+    public static final String ID = "ats:Sashimi Platter";
+    public static final String IMG_PATH = "img/cards/Sashimi.png";
+    public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 8;
-    private static final int UP_DMG = 2;
-    private static final int DEFAULT_SP = 4;
-    private static final int UP_SP = 3;
-    private static final int HEAL = 3;
-    private static final int UP_HEAL = 2;
+    private static final int ATTACK_DMG = 6;
+    private static final int UP_DMG = 3;
 
-    public BloodOath() {
+    public SashimiPlatter() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, HEAL, DEFAULT_SP);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, false, ATTACK_DMG, 0, 0, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("BLADE"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL, false, true));
-        if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, magicNumber));
+                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.damage));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new BloodOath();
+        return new SashimiPlatter();
     }
 
     @Override
     public void upgradeCard() {
         this.upgradeDamage(UP_DMG);
-        this.upgradeMagicNumber(UP_HEAL);
-        this.upgradeSP(UP_SP);
     }
 
 }

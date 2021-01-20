@@ -33,7 +33,6 @@ public class NeurotoxinPower extends AbstractPower implements CloneablePowerInte
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture("img/power/Neurotoxin_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("img/power/Neurotoxin_32.png");
-    private static AbstractCreature m;
     private static AbstractPlayer p = AbstractDungeon.player;
 
     public NeurotoxinPower(final AbstractCreature owner, final AbstractCreature source, int amount) {
@@ -53,26 +52,6 @@ public class NeurotoxinPower extends AbstractPower implements CloneablePowerInte
 
         updateDescription();
     }
-/*
-    @Override
-    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if(info.type == DamageInfo.DamageType.NORMAL) m = target;
-    }
-
-    @Override
-    public float atDamageFinalGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        AbstractCard c = card;
-        if(c instanceof CardSPBase) {
-            CardSPBase cSP = (CardSPBase) c;
-            if(cSP.position == PositionType.SNIPER && m != null) {
-                addToBot(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.amount), this.amount));
-                m = null;
-            }
-        }
-
-        return this.atDamageFinalGive(damage, type);
-    }
-*/
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
@@ -86,21 +65,6 @@ public class NeurotoxinPower extends AbstractPower implements CloneablePowerInte
                 }
             }
         }
-    }
-
-    @Override
-    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if(isPlayer) m = null;
-    }
-
-    @Override
-    public void onDeath() {
-        m = null;
-    }
-
-    @Override
-    public void onVictory() {
-        m = null;
     }
 
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))

@@ -138,7 +138,7 @@
   },
   "ats:Nebulous Foxfire": {
     "NAME": "Nebulous Foxfire",
-    "DESCRIPTION": "Apply !M! Weak and Vulnerable to ALL enemies. Gain 2 Regen."
+    "DESCRIPTION": "Apply !M! Weak and Vulnerable to ALL enemies. Gain !M! Regen."
   },
   "ats:Cat Scratch": {
     "NAME": "Cat Scratch",
@@ -383,6 +383,19 @@
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies. Gain [E] [E]."
     ]
+  },
+  "ats:Serious Mode": {
+    "NAME": "Serious Mode",
+    "DESCRIPTION": "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)",
+    "UPGRADE_DESCRIPTION": "Innate. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)"
+  },
+  "ats:Phantom": {
+    "NAME": "Phantom In The Mirror",
+    "DESCRIPTION": "Whenever you play a ats:Specialist card, a random card in your hand costs 0 until played."
+  },
+  "ats:Sashimi Platter": {
+    "NAME": "Sashimi Platter",
+    "DESCRIPTION": "Deal !D! damage. Heal !D! HP."
   },
   "ats:NULL": {
     "NAME": "This card is for add new one",

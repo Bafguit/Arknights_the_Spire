@@ -102,7 +102,7 @@ public class CurativePower extends AbstractPower implements PreHealPower {
 
     @Override
     public int preHeal(AbstractCreature owner, AbstractCreature source, int healAmount) {
-        return (healAmount + this.amount) < 0 ? 0 : healAmount + this.amount;
+        return (healAmount += this.amount) < 0 ? 0 : healAmount;
     }
 
     static {

@@ -166,6 +166,19 @@
       "."
     ]
   },
+  "ats:Serious Mode": {
+    "NAME": "진심 모드",
+    "DESCRIPTIONS": [
+      "잃은 체력에 비례해 공격으로 주는 피해가 증가합니다. NL 현재 : #b",
+      "% 증가"
+    ]
+  },
+  "ats:Phantom": {
+    "NAME": "거울 속의 환영",
+    "DESCRIPTIONS": [
+      "#y스페셜리스트 카드를 사용할 때마다 무작위 카드 1장의 비용이 사용하기 전까지 #b0 이 됩니다."
+    ]
+  },
   "ats:": {
     "NAME": "",
     "DESCRIPTIONS": [

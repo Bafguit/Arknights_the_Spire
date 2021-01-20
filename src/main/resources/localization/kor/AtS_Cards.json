@@ -28,7 +28,7 @@
     ]
   },
   "ats:Defend": {
-    "NAME": "방어",
+    "NAME": "수비",
     "DESCRIPTION": "방어도를 !B! 얻습니다."
   },
   "ats:Overload": {
@@ -384,6 +384,19 @@
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:수동 NL 적 전체에게 피해를 !D! 줍니다. [E] [E] 를 얻습니다."
     ]
+  },
+  "ats:Serious Mode": {
+    "NAME": "진심 모드",
+    "DESCRIPTION": "잃은 체력에 비례해 공격으로 주는 피해가 증가합니다. (최대 체력의 70%를 잃으면 최대 100% 증가)",
+    "UPGRADE_DESCRIPTION": "선천성. 잃은 체력에 비례해 공격으로 주는 피해가 증가합니다. (최대 체력의 70%를 잃으면 최대 100% 증가)"
+  },
+  "ats:Phantom": {
+    "NAME": "거울 속의 환영",
+    "DESCRIPTION": "ats:스페셜리스트 카드를 사용할 때마다 무작위 카드 1장의 비용이 사용하기 전까지 0 이 됩니다."
+  },
+  "ats:Sashimi Platter": {
+    "NAME": "모듬 회",
+    "DESCRIPTION": "피해를 !D! 줍니다. 체력을 !D! 회복합니다."
   },
   "ats:NULL": {
     "NAME": "",

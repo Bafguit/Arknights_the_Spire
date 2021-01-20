@@ -36,7 +36,7 @@ public class Foxfire extends CardSPBase {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
                     new WeakPower(mo, this.magicNumber, false), this.magicNumber, true));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2, true));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, true));
 
     }
 

@@ -64,8 +64,8 @@ public class HiddenKiller extends CustomRelic {
         if (this.gainStrNext && !this.firstTurn) {
             this.flash();
             AbstractPlayer p = AbstractDungeon.player;
-            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 1), 1));
-            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 1), 1));
+            addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, 2), 2));
+            addToBot(new ApplyPowerAction(p, p, new LoseStrengthPower(p, 2), 2));
         }
 
         this.firstTurn = false;

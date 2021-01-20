@@ -16,7 +16,7 @@ public class ConShotAuto extends CardSPBase {
     public static final String IMG_PATH = "img/cards/ConShotAuto.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 4;
+    private static final int ATTACK_DMG = 5;
     private static final int UPGRADE_PLUS_DMG = 2;
 
     public ConShotAuto() {

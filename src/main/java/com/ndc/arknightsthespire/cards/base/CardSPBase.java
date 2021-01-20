@@ -285,13 +285,11 @@ public abstract class CardSPBase extends CustomCard {
 
     private boolean checkGlow() {
         if(AbstractDungeon.isPlayerInDungeon()) {
-            if (SPHandler.isSpModeEnabled()) {
-                if (!this.isAuto && canAffordSP() && this.canUseSP) {
+            if (this.canAffordSP() && this.canUseSP) {
+                if (!this.isAuto && SPHandler.isSpModeEnabled()) {
                     this.glowColor = SP_BORDER_GLOW_COLOR;
                     return true;
-                }
-            } else {
-                if (this.isAuto && canAffordSP() && this.canUseSP) {
+                } else if (this.isAuto) {
                     this.glowColor = SP_BORDER_GLOW_COLOR;
                     return true;
                 }
@@ -314,10 +312,6 @@ public abstract class CardSPBase extends CustomCard {
         if (SPHandler.isSpModeEnabled() && this.canUseSP) {
             if (!this.isAuto && !canAffordSP()) {
                 this.cantUseMessage = uiSPStrings.TEXT[0];
-                return false;
-            }
-            else if (this.isAuto) {
-                this.cantUseMessage = uiSPStrings.TEXT[1];
                 return false;
             }
         }

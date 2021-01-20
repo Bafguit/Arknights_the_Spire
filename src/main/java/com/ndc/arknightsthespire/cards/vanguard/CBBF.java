@@ -22,7 +22,7 @@ public class CBBF extends CardSPBase {
     public CBBF() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, 0, 0);
+                CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, 0, 0);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class AtsTutorial extends FtueTip {
     public static final String[] txt;
     public static final String[] LABEL;
     private Texture img1 = ImageMaster.loadImage("img/ui/t1.png");
-    private Texture img2 = ImageMaster.loadImage("img/ui/t2.png");
+    private Texture img2 = ImageMaster.loadImage("img/ui/t2_" + getLangString() + ".png");
     private Color screen = Color.valueOf("1c262a00");
     private float x;
     private float x1;
@@ -98,6 +98,21 @@ public class AtsTutorial extends FtueTip {
         }
 
         this.x = Interpolation.fade.apply(this.targetX, this.startX, this.scrollTimer / 0.3F);
+    }
+
+    private String getLangString() {
+        String language = Settings.language.name().toLowerCase();
+
+        switch (language) {
+            case "zhs":
+                return "zhs";
+
+            case "kor":
+                return "kor";
+
+            default:
+                return "eng";
+        }
     }
 
     public void render(SpriteBatch sb) {

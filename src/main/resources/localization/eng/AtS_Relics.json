@@ -158,7 +158,7 @@
     "NAME": "Hidden Killer",
     "FLAVOR": "Why don't you reach out your hand to her?",
     "DESCRIPTIONS": [
-      "If you do not play any #yAttacks during your turn, gain #b1 Strength for next turn."
+      "If you do not play any #yAttacks during your turn, gain #b2 Strength for next turn."
     ]
   },
   "ats:Gyao": {

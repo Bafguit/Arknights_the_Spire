@@ -25,7 +25,7 @@ public class VeryHotBlade extends CardSPBase {
     public VeryHotBlade() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, 0, SP);
+                CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, 0, SP);
     }
 
     @Override

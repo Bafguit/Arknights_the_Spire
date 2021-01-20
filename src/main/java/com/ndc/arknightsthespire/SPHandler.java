@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
     private static int maxSp = 10;
-    private static int maxSpLimit = 40;
+    private static int maxSpLimit = 50;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
     private static int cardAddSp = 1;
@@ -40,14 +40,14 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         AbstractPlayer p = AbstractDungeon.player;
         if(p.hasRelic("ats:Sanity Plus")) {
             if(p.hasRelic("ats:Tactical Delivery")) {
-                maxSpLimit = 30;
+                maxSpLimit = 40;
             } else {
-                maxSpLimit = 50;
+                maxSpLimit = 60;
             }
         } else if(p.hasRelic("ats:Tactical Delivery")) {
-            maxSpLimit = 20;
+            maxSpLimit = 30;
         } else {
-            maxSpLimit = 40;
+            maxSpLimit = 50;
         }
     }
     public static int getTurnAddSp() {

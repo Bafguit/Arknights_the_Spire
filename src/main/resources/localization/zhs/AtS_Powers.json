@@ -152,6 +152,19 @@
       "."
     ]
   },
+  "ats:Serious Mode": {
+    "NAME": "Serious Mode",
+    "DESCRIPTIONS": [
+      "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost) NL Current : #b",
+      "% increased"
+    ]
+  },
+  "ats:Phantom": {
+    "NAME": "Phantom In The Mirror",
+    "DESCRIPTIONS": [
+      "Whenever you play a #ySpecialist card, a random card in your hand costs #b0 until played."
+    ]
+  },
   "ats:": {
     "NAME": "",
     "DESCRIPTIONS": [
