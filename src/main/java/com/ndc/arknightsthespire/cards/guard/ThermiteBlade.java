@@ -27,7 +27,7 @@ public class ThermiteBlade extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, DEFAULT_SP);
     }
-
+//cat is cute!
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("BLADE"));
