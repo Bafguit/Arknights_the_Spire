@@ -397,6 +397,18 @@
     "NAME": "Sashimi Platter",
     "DESCRIPTION": "Deal !D! damage. Heal !D! HP."
   },
+  "ats:Absolute Focus": {
+    "NAME": "Absolute Focus",
+    "DESCRIPTION": "Select !M! card. Get a random card of which class is same as the selected card from your draw pile."
+  },
+  "ats:Literary Storm": {
+    "NAME": "Literary Storm",
+    "DESCRIPTION": "Get a random card of each class from your draw pile. NL Exhaust."
+  },
+  "ats:Guard Mode": {
+    "NAME": "Guard Mode",
+    "DESCRIPTION": "Gain !B! Block. Double when more than half of HP is lost."
+  },
   "ats:NULL": {
     "NAME": "This card is for add new one",
     "DESCRIPTION": "",

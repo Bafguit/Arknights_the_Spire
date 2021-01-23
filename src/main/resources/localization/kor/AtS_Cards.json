@@ -103,7 +103,7 @@
   },
   "ats:Durian": {
     "NAME": "폭발제-두리안맛",
-    "DESCRIPTION": "보존. 체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다. (최대 2) NL 이번 턴 동안 공격이 두 배의 피해를 가합니다. NL 소멸."
+    "DESCRIPTION": "보존. 체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다.(최대 2) 이번 턴 동안 공격이 두 배의 피해를 가합니다. NL 소멸."
   },
   "ats:Rat Pack": {
     "NAME": "쥐 떼",
@@ -111,14 +111,14 @@
   },
   "ats:Assault Order": {
     "NAME": "돌격지령",
-    "DESCRIPTION": "(아무런 일도 일어나지 않습니다...) NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "(기본 효과가 없습니다.) NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL [E] [E] 를 얻습니다."
     ]
   },
   "ats:Support Order": {
     "NAME": "지원지령",
-    "DESCRIPTION": "(아무런 일도 일어나지 않습니다...) NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "(기본 효과가 없습니다.) NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL ats:지령을 !M! 얻습니다."
     ]
@@ -285,8 +285,8 @@
   },
   "ats:Ambush": {
     "NAME": "매복",
-    "DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 받는 피해가 !M! % 확률로 0이 됩니다."
+    "DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 피해를 받을 때 !M! % 확률로 받는 피해가 0이 됩니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 피해를 받을 때 !M! % 확률로 받는 피해가 0이 됩니다."
   },
   "ats:Defend Order": {
     "NAME": "방어지령",
@@ -397,6 +397,18 @@
   "ats:Sashimi Platter": {
     "NAME": "모듬 회",
     "DESCRIPTION": "피해를 !D! 줍니다. 체력을 !D! 회복합니다."
+  },
+  "ats:Absolute Focus": {
+    "NAME": "집중력 강화",
+    "DESCRIPTION": "카드를 !M! 장 선택합니다. 뽑을 카드 더미에서 선택한 카드와 클래스가 같은 무작위 카드를 가져옵니다."
+  },
+  "ats:Literary Storm": {
+    "NAME": "문학의 폭풍",
+    "DESCRIPTION": "뽑을 카드 더미에서 모든 클래스의 무작위 카드를 1장씩 가져옵니다. NL 소멸."
+  },
+  "ats:Guard Mode": {
+    "NAME": "디펜스 모드",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. 체력이 절반 이하라면 두 배가 됩니다."
   },
   "ats:NULL": {
     "NAME": "",

@@ -1,5 +1,6 @@
 package com.ndc.arknightsthespire.cards.specialist;
 
+import basemod.devcommands.power.Power;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,6 +13,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.DurianPower;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
 import static com.megacrit.cardcrawl.cards.DamageInfo.*;

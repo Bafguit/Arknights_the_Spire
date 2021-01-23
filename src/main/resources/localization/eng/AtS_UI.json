@@ -21,5 +21,10 @@
     "TEXT": [
       "Wa! Sans!"
     ]
+  },
+  "SelectCard": {
+    "TEXT": [
+      "Select Card."
+    ]
   }
 }

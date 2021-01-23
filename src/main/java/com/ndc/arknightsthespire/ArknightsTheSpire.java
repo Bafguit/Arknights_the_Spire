@@ -103,7 +103,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new Revitalization());
         BaseMod.addCard(new Apocalypse());
         BaseMod.addCard(new CurseDoll());
-        BaseMod.addCard(new ChildDance());
+        BaseMod.addCard(new LiteraryStorm());
         BaseMod.addCard(new ShellDef());
         BaseMod.addCard(new Ignite());
         BaseMod.addCard(new VeryHotBlade());
@@ -113,6 +113,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new HammerOn());
         BaseMod.addCard(new CBBF());
         BaseMod.addCard(new AssaultOrder());
+        BaseMod.addCard(new AbsoluteFocus());
         //Uncommon
         BaseMod.addCard(new Overload());
         BaseMod.addCard(new RapidMagazine());
@@ -152,6 +153,8 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCard(new SeriousMode());
         BaseMod.addCard(new PhantomMirror());
         BaseMod.addCard(new SashimiPlatter());
+        BaseMod.addCard(new LiteraryStorm());
+        BaseMod.addCard(new GuardMode());
         //Rare
         BaseMod.addCard(new Ambush());
         BaseMod.addCard(new DogmaticField());

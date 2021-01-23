@@ -5,39 +5,42 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.SelectCardFromHandAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
-public class ChildDance extends CardSPBase {
-    public static final String ID = "ats:Childhood Dance";
-    public static final String IMG_PATH = "img/cards/ChildDance.png";
+public class AbsoluteFocus extends CardSPBase {
+    public static final String ID = "ats:Absolute Focus";
+    public static final String IMG_PATH = "img/cards/AbsoluteFocus.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
-    private static final int COST = 1;
-    private static final int UP_COST = 0;
+    private static final int COST = 0;
+    private static final int NUM = 1;
+    private static final int UP_NUM = 1;
 
-    public ChildDance() {
+    public AbsoluteFocus() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.COMMON, CardTarget.ALL_ENEMY, POSITION);
+                CardRarity.COMMON, CardTarget.SELF, POSITION, 0, 0, NUM, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new WeakPower(mo, 2, false), 2, true));
-        }
+        addToBot(new SelectCardFromHandAction(this.upgraded ? 2 : 1));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new ChildDance();
+        return new AbsoluteFocus();
     }
 
     @Override
     public void upgradeCard() {
-        this.upgradeBaseCost(UP_COST);
+        this.upgradeMagicNumber(UP_NUM);
     }
+
+
+
 }

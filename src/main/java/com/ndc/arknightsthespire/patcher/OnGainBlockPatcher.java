@@ -17,7 +17,7 @@ import com.ndc.arknightsthespire.interfaces.PreGainBlockPower;
 public class OnGainBlockPatcher
 {
 
-    public static SpireReturn<Integer> Postfix(AbstractCreature __instance, @ByRef int[] blockAmount)
+    public static SpireReturn<Integer> Prefix(AbstractCreature __instance, @ByRef int[] blockAmount)
     {
         if (blockAmount[0] > 0) {
             for (AbstractPower power : __instance.powers) {

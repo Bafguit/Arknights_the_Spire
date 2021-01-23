@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,7 +28,7 @@ public class DurianPower extends AbstractPower implements CloneablePowerInterfac
     private static final Texture tex84 = TextureLoader.getTexture("img/power/Durian_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("img/power/Durian_32.png");
 
-    public SeriousPower() {
+    public DurianPower() {
         name = NAME;
         ID = POWER_ID;
 

@@ -68,7 +68,6 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
             return blockAmount;
         } else {
             int overHeal = p.currentHealth + blockAmount - p.maxHealth;
-            flash();
             addToBot(new HealAction(p, p, blockAmount, 0.15F));
             return (overHeal > 0 ? overHeal / 2 : 0);
         }

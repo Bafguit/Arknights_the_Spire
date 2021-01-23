@@ -27,7 +27,7 @@ public abstract class CardSPBase extends CustomCard {
     // 87 251 218
     //public static final Color CYAN_BORDER_GLOW_COLOR = new Color(0.34F, 0.98F, 0.85F, 0.25F);
     public static final Color DEFAULT_BORDER_GLOW_COLOR = new Color(0.0F, 1.0F, 1.0F, 0.5F);
-    public static final Color SP_BORDER_GLOW_COLOR = new Color(CardHelper.getColor(250, 145, 73));
+    public static final Color SP_BORDER_GLOW_COLOR = Color.LIME;
     public static final Color NORMAL_AND_USABLE_COLOR = new Color(0x00E0FFFF);
     public static final Color NORMAL_AND_NOT_USABLE_COLOR = new Color(0x79A6B2FF);
     public static final Color NORMAL_AND_RESTRICTED_COLOR = new Color(0xC66F79FF);
@@ -197,21 +197,21 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void upgradeSP(int sp) {
-        this.baseSP = sp;
+        this.sp = sp;
         this.upgradedSP = true;
         if(this.spCard != null) {
-            this.spCard.baseSP = sp;
+            this.spCard.sp = sp;
             this.spCard.upgradedSP = true;
         }
     }
 
     public void changeSpForBattle(int c_sp) {
-        this.sp = Math.max(0, this.baseSP + c_sp);
+        this.baseSP = Math.max(0, this.sp + c_sp);
     }
 
     @Override
     public void resetAttributes() {
-        this.sp = this.baseSP;
+        this.baseSP = this.sp;
     }
 
     public static void updateAllStateInHand(boolean shouldGlow) {
@@ -322,7 +322,7 @@ public abstract class CardSPBase extends CustomCard {
     public final void use(AbstractPlayer p, AbstractMonster m) {
         isSpJustUsed = false;
         if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
-            SPHandler.removeSp(this.sp);
+            SPHandler.removeSp(this.baseSP);
             isSpJustUsed = true;
             updateAllStateInHand(true);
         }
