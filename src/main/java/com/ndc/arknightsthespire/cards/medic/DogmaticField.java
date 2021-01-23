@@ -27,8 +27,7 @@ public class DogmaticField extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         //Effect
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DogmaticFieldPower(p, p)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, -1)));
+        addToBot(new ApplyPowerAction(p, p, new DogmaticFieldPower(p, p)));
     }
 
     @Override

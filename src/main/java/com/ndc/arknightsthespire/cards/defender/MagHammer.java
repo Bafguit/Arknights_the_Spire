@@ -28,7 +28,7 @@ public class MagHammer extends CardSPBase {
     private static final int UP_DAMAGE = 2;
     private static final int SP = 10;
     private static final int WEAK = 3;
-    private static final int UP_WEAK = 5;
+    private static final int UP_WEAK = 2;
 
     public MagHammer() {
         super(ID, IMG_PATH, COST,

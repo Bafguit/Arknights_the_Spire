@@ -15,7 +15,7 @@ public class SoulRend extends CardSPBase {
     public static final String IMG_PATH = "img/cards/SoulRend.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
-    private static final int HEAL_AMOUNT = 1;
+    private static final int HEAL_AMOUNT = 2;
     private static final int UPGRADE_HEAL = 1;
 
     public SoulRend() {

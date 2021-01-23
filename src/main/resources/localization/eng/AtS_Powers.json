@@ -9,7 +9,7 @@
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
     "DESCRIPTIONS": [
-      "When you gain block, instead, heal that amount. Half of heal amount above the maximum health will be switched to block."
+      "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
     ]
   },
   "ats:Counter Healing Mode": {
@@ -172,11 +172,17 @@
       "Whenever you play a #ySpecialist card, a random card in your hand costs #b0 until played."
     ]
   },
+  "ats:Durian": {
+    "NAME": "Durian",
+    "DESCRIPTIONS": [
+      "Attack deals double damage."
+    ]
+  },
   "ats:NULL": {
     "NAME": "This power is for add new one",
     "DESCRIPTIONS": [
-      "",
-      ""
-    ]
+        "",
+        ""
+      ]
   }
 }

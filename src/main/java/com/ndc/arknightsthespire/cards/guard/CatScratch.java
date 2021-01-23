@@ -18,7 +18,7 @@ public class CatScratch extends CardSPBase {
     public static final String IMG_PATH = "img/cards/CatScratch.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 7;
+    private static final int ATTACK_DMG = 8;
     private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 4;
     private static final int WEAK = 1;

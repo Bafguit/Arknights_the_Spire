@@ -45,7 +45,7 @@ public class Durian extends CardSPBase {
             addToBot(new DamageAction(p, new DamageInfo(p, d, DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new PenNibPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new DurianPower()));
     }
 
     @Override

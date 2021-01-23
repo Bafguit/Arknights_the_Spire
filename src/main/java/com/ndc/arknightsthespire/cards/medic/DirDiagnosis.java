@@ -19,8 +19,7 @@ public class DirDiagnosis extends CardSPBase {
     public static final String IMG_PATH = "img/cards/DirDiagnosis.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int HEAL = 3;
-    private static final int UP_HEAL = 2;
+    private static final int HEAL = 5;
     private static final int SP = 15;
     private static final int UP_SP = 10;
 
@@ -37,12 +36,8 @@ public class DirDiagnosis extends CardSPBase {
                 addToBot(new RemoveAllPowersAction(p, true));
             }
         } else {
-            if (p.hasPower("Weakened") && p.getPower("Weakened").amount >= 2)
-                addToBot(new ReducePowerAction(p, p, "Weakened", Math.round(p.getPower("Weakened").amount / 2)));
-            if (p.hasPower("Vulnerable") && p.getPower("Vulnerable").amount >= 2)
-                addToBot(new ReducePowerAction(p, p, "Vulnerable", Math.round(p.getPower("Vulnerable").amount / 2)));
-            if (p.hasPower("Frail") && p.getPower("Frail").amount >= 2)
-                addToBot(new ReducePowerAction(p, p, "Frail", Math.round(p.getPower("Frail").amount / 2)));
+            if (p.hasPower("Frail"))
+                addToBot(new RemoveSpecificPowerAction(p, p, "Frail")
             addToBot(new HealAction(p, p, this.magicNumber));
         }
 
@@ -56,7 +51,6 @@ public class DirDiagnosis extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_HEAL);
         this.upgradeSP(UP_SP);
     }
 

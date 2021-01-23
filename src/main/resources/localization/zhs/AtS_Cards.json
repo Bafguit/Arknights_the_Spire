@@ -80,10 +80,6 @@
     "DESCRIPTION": "获得 !M! 层 荆棘 . 获得1点 敏捷 .",
     "UPGRADE_DESCRIPTION": "获得 !M! 层 荆棘 . 获得2点 敏捷."
   },
-  "ats:Dogmatic Field": {
-    "NAME": "教条力场",
-    "DESCRIPTION": "每当你获得 格挡 时,改为回复等量的生命. NL 超过生命值上限的回复量的一半会转换为 格挡 . 失去1点 敏捷 ."
-  },
   "ats:Rapid Magazine": {
     "NAME": "天马视域",
     "DESCRIPTION": " ats:狙击 攻击牌消费 ats:技力 减少2.",
@@ -99,10 +95,6 @@
   "ats:Soul Absorption": {
     "NAME": "灵魂汲取",
     "DESCRIPTION": "本回合打出的下一张攻击牌造成未被格挡的伤害时获得等量 格挡 ."
-  },
-  "ats:Durian": {
-    "NAME": "爆发剂·榴莲味",
-    "DESCRIPTION": " 保留 . 失去3点生命5次, 根据 敏捷 降低伤害. (最多降低 2) NL 下一次攻击伤害翻倍. NL 消耗 ."
   },
   "ats:Rat Pack": {
     "NAME": "鼠群",
@@ -345,13 +337,6 @@
     "NAME": "守卫尖碑",
     "DESCRIPTION": "根据 ats:燃烧 层数获得 格挡 . 当 ats:燃烧 效果触发后, 改为层数减半."
   },
-  "ats:Directed Diagnosis": {
-    "NAME": "定向诊断",
-    "DESCRIPTION": "将你的 虚弱 , 易伤 , 脆弱 减半. (最小值 1) 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态."
-    ]
-  },
   "ats:Part Time Job": {
     "NAME": "兼职",
     "DESCRIPTION": "获得3层 再生 .",
@@ -383,6 +368,21 @@
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害. 获得 [E] [E] ."
     ]
+  },
+  "ats:Dogmatic Field": {
+    "NAME": "教条力场",
+    "DESCRIPTION": "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
+  },
+  "ats:Directed Diagnosis": {
+    "NAME": "定向诊断",
+    "DESCRIPTION": "Remove your Frail. 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态."
+    ]
+  },
+  "ats:Durian": {
+    "NAME": "爆发剂·榴莲味",
+    "DESCRIPTION": " 保留 . 失去3点生命5次, 根据 敏捷 降低伤害. (最多降低 2) NL Attack deals double damage for this turn. NL 消耗 ."
   },
   "ats:Serious Mode": {
     "NAME": "Serious Mode",

@@ -6,12 +6,6 @@
       " ."
     ]
   },
-  "ats:Dogmatic Field": {
-    "NAME": "教条力场",
-    "DESCRIPTIONS": [
-      "每当你获得格挡时,改为回复等量的生命. 超过生命值上限的回复量的一半会转换为格挡."
-    ]
-  },
   "ats:Counter Healing Mode": {
     "NAME": "反制医疗模式",
     "DESCRIPTIONS": [
@@ -152,6 +146,12 @@
       "."
     ]
   },
+  "ats:Dogmatic Field": {
+    "NAME": "教条力场",
+    "DESCRIPTIONS": [
+      "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
+    ]
+  },
   "ats:Serious Mode": {
     "NAME": "Serious Mode",
     "DESCRIPTIONS": [
@@ -164,6 +164,12 @@
     "DESCRIPTIONS": [
       "Whenever you play a #ySpecialist card, a random card in your hand costs #b0 until played."
     ]
+  },
+  "ats:Durian": {
+    "NAME": "Durian",
+    "DESCRIPTIONS": [
+        "Attack deals double damage."
+      ]
   },
   "ats:": {
     "NAME": "",

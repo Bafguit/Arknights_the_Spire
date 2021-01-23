@@ -83,7 +83,7 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "신조의 역장",
-    "DESCRIPTION": "손상이 없다면, 방어도를 얻을 때 대신 그만큼 체력을 회복하고, 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다."
+    "DESCRIPTION": "손상이 없다면, 방어도를 얻을 때 대신 그만큼 체력을 회복하고, 최대 체력을 초과한 회복의 절반을 방어도로 전환합니다."
   },
   "ats:Rapid Magazine": {
     "NAME": "쾌속장전",
@@ -103,7 +103,7 @@
   },
   "ats:Durian": {
     "NAME": "폭발제-두리안맛",
-    "DESCRIPTION": "보존. 체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다. (최대 2) NL 다음 공격이 두 배의 피해를 가합니다. NL 소멸."
+    "DESCRIPTION": "보존. 체력을 3 만큼 5 번 잃습니다. 현재 민첩만큼 잃는 체력이 감소합니다. (최대 2) NL 이번 턴 동안 공격이 두 배의 피해를 가합니다. NL 소멸."
   },
   "ats:Rat Pack": {
     "NAME": "쥐 떼",
@@ -348,7 +348,7 @@
   },
   "ats:Directed Diagnosis": {
     "NAME": "지시된 진단",
-    "DESCRIPTION": "내가 가진 약화, 취약, 손상 수치가 절반으로 감소합니다. (최소 1) 체력을 !M! 회복합니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "내가 가진 손상을 제거합니다. 체력을 !M! 회복합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 내가 가진 해로운 효과를 모두 제거합니다."
     ]

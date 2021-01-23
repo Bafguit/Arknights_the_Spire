@@ -82,7 +82,7 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
-    "DESCRIPTION": "When you gain block, instead, heal that amount. NL Half of heal amount above the maximum health will be switched to block. Lose 1 Dexterity."
+    "DESCRIPTION": "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
   },
   "ats:Rapid Magazine": {
     "NAME": "Rapid Magazine",
@@ -102,7 +102,7 @@
   },
   "ats:Durian": {
     "NAME": "Burst Stimulant-Durian",
-    "DESCRIPTION": "Retain. Lose 3 HP 5 times, damage reduced by Dexterity amount. (Maximum 2) NL Next attack deals double damage. NL Exhaust."
+    "DESCRIPTION": "Retain. Lose 3 HP 5 times, damage reduced by Dexterity amount. (Maximum 2) NL Attack deals double damage for this turn. NL Exhaust."
   },
   "ats:Rat Pack": {
     "NAME": "Rat Pack",
@@ -347,7 +347,7 @@
   },
   "ats:Directed Diagnosis": {
     "NAME": "Directed Diagnosis",
-    "DESCRIPTION": "Reduce your Weak, Vulnerable, and Frail amount to half. (Minimum 1) Heal !M! HP. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Remove your Frail. Heal !M! HP. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:Auto NL Remove your all debuffs."
     ]
