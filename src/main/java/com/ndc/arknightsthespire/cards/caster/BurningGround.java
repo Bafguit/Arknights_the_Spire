@@ -4,11 +4,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
-import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.BurnGroundPower;
-import com.ndc.arknightsthespire.power.FatePower;
 
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardRarity.UNCOMMON;
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardTarget.SELF;

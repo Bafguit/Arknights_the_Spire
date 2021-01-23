@@ -27,12 +27,17 @@ public class EmergencyDefibrillator extends CustomRelic {
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !this.usedUp) {
             AbstractPlayer p = AbstractDungeon.player;
-            if (!isUsed && !this.usedUp && info.owner.isPlayer && p.currentHealth - damageAmount < Math.round(p.maxHealth / 4)) {
+            if (!isUsed && p.currentHealth - damageAmount < Math.round(p.maxHealth / 4)) {
                 addToBot(new ApplyPowerAction(p, p, new EmergencyPower(p, p)));
                 isUsed = true;
-                return p.currentHealth - Math.round(p.maxHealth / 4);
+                this.usedUp();
+                if(p.currentHealth <= Math.round(p.maxHealth / 4)) {
+                    return 0;
+                } else {
+                    return p.currentHealth - Math.round(p.maxHealth / 4);
+                }
             }
         }
 
@@ -45,7 +50,6 @@ public class EmergencyDefibrillator extends CustomRelic {
     @Override
     public void atTurnStart() {
         if(isUsed) {
-            this.usedUp();
             isUsed = false;
         }
     }

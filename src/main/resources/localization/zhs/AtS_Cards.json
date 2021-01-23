@@ -226,9 +226,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "肉斩骨断",
-    "DESCRIPTION": "你的生命值始终不会低于1. 在这个效果结束后,令你的生命值变为1. 消耗 . NL ats:技力 !S! ats:自动 ",
+    "DESCRIPTION": "保留 . 你的生命值始终不会低于1. 在这个效果结束后,令你的生命值变为1. 消耗 . NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 你的生命值始终不会低于1. 在这个效果结束后,令你的生命值变为1. 持续两个回合. 消耗 ."
+      " ats:技力 !S! ats:自动 NL 保留 . 你的生命值始终不会低于1. 在这个效果结束后,令你的生命值变为1. 持续两个回合. 消耗 ."
     ]
   },
   "ats:Flexible Camouflage": {
@@ -359,7 +359,7 @@
   },
   "ats:Childhood Dance": {
     "NAME": "儿时的舞乐",
-    "DESCRIPTION": "给予所有敌人一层 虚弱 ."
+    "DESCRIPTION": "给予所有敌人2层 虚弱 ."
   },
   "ats:Hammer On": {
     "NAME": "槌音",

@@ -18,7 +18,7 @@ public class Foxfire extends CardSPBase {
     public static final String IMG_PATH = "img/cards/nff.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 2;
-    private static final int REGEN_AMOUNT = 2;
+    private static final int REGEN_AMOUNT = 3;
     private static final int UPGRADE_REGEN = 1;
 
     public Foxfire() {

@@ -19,7 +19,6 @@ public class SteamPump extends CardSPBase {
     private static final int B = 8;
     private static final int U_B = 4;
     private static final int M = 1;
-    private static final int U_M = 1;
 
     public SteamPump() {
         super(ID, IMG_PATH, COST,
@@ -42,7 +41,6 @@ public class SteamPump extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeBlock(U_B);
-        this.upgradeMagicNumber(U_M);
     }
 
 }

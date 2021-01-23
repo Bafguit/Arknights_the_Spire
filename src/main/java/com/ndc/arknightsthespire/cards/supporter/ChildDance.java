@@ -27,7 +27,7 @@ public class ChildDance extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p,
-                    new WeakPower(mo, 1, false), 1, true));
+                    new WeakPower(mo, 2, false), 2, true));
         }
     }
 

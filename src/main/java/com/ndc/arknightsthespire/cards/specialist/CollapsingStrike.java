@@ -20,7 +20,6 @@ public class CollapsingStrike extends CardSPBase {
     private static final int D = 12;
     private static final int U_D = 4;
     private static final int M = 1;
-    private static final int U_M = 1;
 
     public CollapsingStrike() {
         super(ID, IMG_PATH, COST,
@@ -43,7 +42,6 @@ public class CollapsingStrike extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeDamage(U_D);
-        this.upgradeMagicNumber(U_M);
     }
 
 }

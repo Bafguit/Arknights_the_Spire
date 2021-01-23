@@ -226,9 +226,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "Fractured Body",
-    "DESCRIPTION": "Your HP will not fall below 1. At the end of this effect, make your HP to 1. Exhaust. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Retain. Your HP will not fall below 1. At the end of this effect, make your HP to 1. Exhaust. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Your HP will not fall below 1. At the end of the effect, make your HP to 1. Last for 2 turns. Exhaust."
+      "ats:SP !S! ats:Auto NL Retain. Your HP will not fall below 1. At the end of the effect, make your HP to 1. Last for 2 turns. Exhaust."
     ]
   },
   "ats:Flexible Camouflage": {
@@ -359,7 +359,7 @@
   },
   "ats:Childhood Dance": {
     "NAME": "Childhood Dance",
-    "DESCRIPTION": "Apply 1 Weak to ALL enemies."
+    "DESCRIPTION": "Apply 2 Weak to ALL enemies."
   },
   "ats:Hammer On": {
     "NAME": "Hammer On",

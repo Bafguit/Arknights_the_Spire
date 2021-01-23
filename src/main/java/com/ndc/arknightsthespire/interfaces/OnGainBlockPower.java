@@ -9,5 +9,5 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public interface OnGainBlockPower {
-    void onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount);
+    int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount);
 }

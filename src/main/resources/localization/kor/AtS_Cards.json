@@ -83,7 +83,7 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "신조의 역장",
-    "DESCRIPTION": "방어도를 얻을 때, 대신 그만큼 체력을 회복합니다. NL 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다. 민첩을 1 잃습니다."
+    "DESCRIPTION": "손상이 없다면, 방어도를 얻을 때 대신 그만큼 체력을 회복하고, 최대 체력을 초과한 회복의 절반이 방어도로 전환됩니다."
   },
   "ats:Rapid Magazine": {
     "NAME": "쾌속장전",
@@ -132,14 +132,14 @@
   },
   "ats:Volcano": {
     "NAME": "화산",
-    "DESCRIPTION": "적 전체에게 화상을 !M! 부여합니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "적 전체에게 ats:화상을 !M! 부여합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 덱에 있는 ats:캐스터 1 장당 적 전체에게 피해를 !D! 줍니다. NL 소멸."
+      "ats:SP !S! ats:자동 NL 덱에 있는 ats:캐스터 카드 1 장당 적 전체에게 피해를 !D! 줍니다. NL 소멸."
     ]
   },
   "ats:Nebulous Foxfire": {
     "NAME": "희미한 여우불",
-    "DESCRIPTION": "적 전체에게 취약을 !M! , 약화를 !M! 부여합니다. 재생을 2 얻습니다."
+    "DESCRIPTION": "적 전체에게 취약을 !M! , 약화를 !M! 부여합니다. 재생을 !M! 얻습니다."
   },
   "ats:Cat Scratch": {
     "NAME": "할퀴기!",
@@ -179,14 +179,14 @@
     "NAME": "테르밋 블레이드",
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 NL 피해를 !D! 줍니다. 피해가 5 증가하고 방어도를 무시합니다."
+      "ats:SP !S! ats:수동 NL 피해를 !D! 줍니다. 피해가 두 배로 증가하고 방어도를 무시합니다."
     ]
   },
   "ats:Mental Burst": {
     "NAME": "스피릿 버스트",
-    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 6 번 주고 화상을 1 부여합니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 6 번 주고 ats:화상을 1 부여합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 주고 화상을 1 부여합니다."
+      "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 주고 ats:화상을 1 부여합니다."
     ]
   },
   "ats:Revitalization": {
@@ -227,9 +227,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "육참골단",
-    "DESCRIPTION": "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 소멸. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "보존. 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 소멸. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다. 소멸."
+      "ats:SP !S! ats:자동 NL 보존. 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다. 소멸."
     ]
   },
   "ats:Flexible Camouflage": {
@@ -267,7 +267,7 @@
     "NAME": "엄청 뜨거운 칼",
     "DESCRIPTION": "피해를 !D! 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 적이 가진 화상 수치만큼 피해가 증가합니다. 카드를 1 장 뽑습니다."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 적이 가진 ats:화상 수치만큼 피해가 증가합니다. 카드를 1 장 뽑습니다."
     ]
   },
   "ats:Apocalypse": {
@@ -332,7 +332,7 @@
   },
   "ats:Calcification": {
     "NAME": "칼슘화",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. 민첩, 재생 , ats:SP를 1 얻습니다."
+    "DESCRIPTION": "방어도를 !B! 얻습니다. 민첩, 재생, ats:SP를 1 얻습니다."
   },
   "ats:Flame Of Heaven": {
     "NAME": "메테오 플레임",
@@ -360,7 +360,7 @@
   },
   "ats:Childhood Dance": {
     "NAME": "어린 시절의 무용",
-    "DESCRIPTION": "적 전체에게 약화를 1 부여합니다."
+    "DESCRIPTION": "적 전체에게 약화를 2 부여합니다."
   },
   "ats:Hammer On": {
     "NAME": "망치 소리",

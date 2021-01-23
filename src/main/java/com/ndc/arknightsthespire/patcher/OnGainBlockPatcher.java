@@ -22,7 +22,7 @@ public class OnGainBlockPatcher
         if (blockAmount[0] > 0) {
             for (AbstractPower power : __instance.powers) {
                 if (power instanceof OnGainBlockPower) {
-                    ((OnGainBlockPower) power).onGainBlock(__instance, null, blockAmount[0]);
+                    blockAmount[0] = ((OnGainBlockPower) power).onGainBlock(__instance, null, blockAmount[0]);
                 }
             }
         }

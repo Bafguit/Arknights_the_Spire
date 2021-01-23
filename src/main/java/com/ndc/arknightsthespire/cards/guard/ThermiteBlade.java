@@ -35,7 +35,7 @@ public class ThermiteBlade extends CardSPBase {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL, false, true));
         else AbstractDungeon.actionManager.addToBottom(new LoseHPAction(m, p,
-                this.damage + 5, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+                this.damage * 2, AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
     @Override

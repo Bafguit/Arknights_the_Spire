@@ -19,8 +19,8 @@ public class DirDiagnosis extends CardSPBase {
     public static final String IMG_PATH = "img/cards/DirDiagnosis.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int HEAL = 2;
-    private static final int UP_HEAL = 1;
+    private static final int HEAL = 3;
+    private static final int UP_HEAL = 2;
     private static final int SP = 15;
     private static final int UP_SP = 10;
 

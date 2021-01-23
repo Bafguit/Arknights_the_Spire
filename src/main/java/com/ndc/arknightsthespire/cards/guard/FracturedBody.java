@@ -28,6 +28,7 @@ public class FracturedBody extends CardSPBase {
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.SELF, true, POSITION, true, 0, 0, 0, DEFAULT_SP);
         this.exhaust = true;
+        this.selfRetain = true;
     }
 
     @Override

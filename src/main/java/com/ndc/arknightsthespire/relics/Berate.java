@@ -28,7 +28,7 @@ public class Berate extends CustomRelic {
             this.counter++;
             if (this.counter == 4) {
                 flash();
-                SPHandler.addSp(1);
+                SPHandler.addSp(2);
                 this.counter = 0;
             }
         }

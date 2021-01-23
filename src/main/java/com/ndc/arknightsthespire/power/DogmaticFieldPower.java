@@ -63,10 +63,14 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
     }
 
     @Override
-    public void onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
-        int overHeal = p.currentHealth + blockAmount - p.maxHealth;
-        flash();
-        p.loseBlock((overHeal > 0 ? Math.round(blockAmount - overHeal/2) : blockAmount), true);
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, blockAmount, 0.15F));
+    public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
+        if(p.hasPower(FrailPower.POWER_ID)) {
+            return blockAmount;
+        } else {
+            int overHeal = p.currentHealth + blockAmount - p.maxHealth;
+            flash();
+            addToBot(new HealAction(p, p, blockAmount, 0.15F));
+            return (overHeal > 0 ? overHeal / 2 : 0);
+        }
     }
 }

@@ -17,7 +17,7 @@ public class SporePro extends CardSPBase {
     public static final String IMG_PATH = "img/cards/SporeProliferation.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
-    private static final int WEAK = 2;
+    private static final int WEAK = 3;
     private static final int SP = 15;
     private static final int UP_SP = 10;
 
