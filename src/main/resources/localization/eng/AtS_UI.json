@@ -26,5 +26,10 @@
     "TEXT": [
       "Select Card."
     ]
+  },
+  "EnableSPKeyName": {
+    "TEXT": [
+      "Enable SP Button"
+    ]
   }
 }

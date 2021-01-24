@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.vfx.EndTurnGlowEffect;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.patcher.EndTurnButtonPatcher;
+import com.ndc.arknightsthespire.patcher.InputActionSetPatcher;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -100,6 +101,24 @@ public class ToggleSpButton {
             this.disable();
         }
 
+        //Check Key Press
+        if(this.enabled) {
+            System.out.println(InputActionSetPatcher.enableSPButton.isPressed());
+            if(InputActionSetPatcher.enableSPButton.isPressed()) {
+                if(!SPHandler.isSpModeEnabled()) {
+                    SPHandler.setSpMode(true);
+                    updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
+                    CardSPBase.updateAllStateInHand(true);
+                }
+            } else {
+                if(SPHandler.isSpModeEnabled()) {
+                    SPHandler.setSpMode(false);
+                    updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
+                    CardSPBase.updateAllStateInHand(true);
+                }
+            }
+        }
+
         this.glow();
         this.updateHoldProgress();
         if (this.current_x != this.target_x) {
@@ -159,7 +178,6 @@ public class ToggleSpButton {
                 CardSPBase.updateAllStateInHand(true);
             }
         }
-
     }
 
     private void updateHoldProgress() {

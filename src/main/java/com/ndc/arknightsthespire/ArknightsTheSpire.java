@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.input.InputAction;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
@@ -51,7 +52,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     public static boolean[] activeTutorials = new boolean[]{true};
     public static Properties AtSDS = new Properties();
 
-
+    public static InputAction enableSPButton;
 
     public ArknightsTheSpire(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
