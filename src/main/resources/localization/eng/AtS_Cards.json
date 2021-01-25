@@ -110,16 +110,16 @@
   },
   "ats:Assault Order": {
     "NAME": "Assault Order",
-    "DESCRIPTION": "(Nothing happens...) NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "(Default effect is empty) NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:Auto NL Gain [E] [E] ."
     ]
   },
   "ats:Support Order": {
     "NAME": "Support Order",
-    "DESCRIPTION": "(Nothing happens...) NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "(Default effect is empty) NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL ats:Gain !M! ats:Order."
+      "ats:SP !S! ats:Auto NL Gain [E] at the start of turn. Last for !M! turns."
     ]
   },
   "ats:True Silver Slash": {
