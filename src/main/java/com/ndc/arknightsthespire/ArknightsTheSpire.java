@@ -4,6 +4,7 @@ package com.ndc.arknightsthespire;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.devcommands.ConsoleCommand;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -31,6 +32,7 @@ import com.ndc.arknightsthespire.cards.supporter.*;
 import com.ndc.arknightsthespire.cards.specialist.*;
 import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
+import com.ndc.arknightsthespire.commands.SPCommandHandler;
 import com.ndc.arknightsthespire.potions.SpBigPotion;
 import com.ndc.arknightsthespire.potions.SpSmallPotion;
 import com.ndc.arknightsthespire.relics.*;
@@ -188,6 +190,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
         BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, DOCTOR_CLASS);
         BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, DOCTOR_CLASS);
+        ConsoleCommand.addCommand("sp", SPCommandHandler.class);
     }
 
     public void receiveEditCharacters() {
