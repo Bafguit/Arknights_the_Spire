@@ -54,6 +54,7 @@ public class ToggleSpButton {
     private Hitbox hb;
     private float holdProgress;
     private Color holdBarColor;
+    private boolean wasKeyPressed = false; //The last state when keypress is processed.
 
     public static final float OFFSET_X = 93;
     public static final float LEFT_TEXT_OFFSET_X = 7.0F;
@@ -103,18 +104,23 @@ public class ToggleSpButton {
 
         //Check Key Press
         if(this.enabled) {
-            System.out.println(InputActionSetPatcher.enableSPButton.isPressed());
             if(InputActionSetPatcher.enableSPButton.isPressed()) {
-                if(!SPHandler.isSpModeEnabled()) {
-                    SPHandler.setSpMode(true);
-                    updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
-                    CardSPBase.updateAllStateInHand(true);
+                if(!wasKeyPressed) {
+                    if (!SPHandler.isSpModeEnabled()) {
+                        SPHandler.setSpMode(true);
+                        updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
+                        CardSPBase.updateAllStateInHand(true);
+                    }
+                    wasKeyPressed = true;
                 }
             } else {
-                if(SPHandler.isSpModeEnabled()) {
-                    SPHandler.setSpMode(false);
-                    updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
-                    CardSPBase.updateAllStateInHand(true);
+                if(wasKeyPressed) {
+                    if (SPHandler.isSpModeEnabled()) {
+                        SPHandler.setSpMode(false);
+                        updateText(SPHandler.isSpModeEnabled() ? TURN_OFF_MSG : TURN_ON_MSG);
+                        CardSPBase.updateAllStateInHand(true);
+                    }
+                    wasKeyPressed = false;
                 }
             }
         }
