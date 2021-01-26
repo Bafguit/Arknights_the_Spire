@@ -17,6 +17,8 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     private static int sp = 0;
     private static int maxSp = 10;
     private static int maxSpLimit = 50;
+    private static final int MAX_SP_UP_LIMIT = 120;
+    private static final int MAX_SP_DOWN_LIMIT = 10;
     private static int defaultSp = 0;
     private static int turnAddSp = 1;
     private static int cardAddSp = 1;
@@ -53,15 +55,51 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public static int getTurnAddSp() {
         return turnAddSp;
     }
-    public static void setSp(int value) {
-        sp = value;
-    }
+
     public static void addSp(int amount) {
-        sp = Math.min(sp + amount, maxSp);
+        addSp(amount, false);
     }
+    public static void removeSp(int amount) {
+        removeSp(amount, false);
+    }
+    public static void setSp(int value) {
+        setSp(value, false);
+    }
+    public static void addSp(int amount, boolean isCommand) {
+        if(amount < 0) return;
+        setSp(sp + amount, isCommand);
+    }
+    public static void removeSp(int amount, boolean isCommand) {
+        if(amount < 0) return;
+        setSp(Math.max(sp - amount, 0), isCommand); //It won't work if sp-amount < 0
+    }
+    public static void setSp(int value, boolean isCommand) {
+        if(value < 0) return;
+        sp = Math.max(Math.min(value, (isCommand ? MAX_SP_UP_LIMIT : maxSp)), 0);
+    }
+
     public static void addMaxSp(int amount) {
-        maxSp = Math.max(Math.min(maxSp + amount, maxSpLimit), 10);
+        addMaxSp(amount, false);
     }
+    public static void removeMaxSp(int amount) {
+        removeMaxSp(amount, false);
+    }
+    public static void setMaxSp(int value) {
+        setMaxSp(value, false);
+    }
+    public static void addMaxSp(int amount, boolean isCommand) {
+        if(amount < 0) return;
+        setMaxSp(maxSp + amount, isCommand);
+    }
+    public static void removeMaxSp(int amount, boolean isCommand) {
+        if(amount < 0) return;
+        setMaxSp(Math.max(maxSp - amount, 0), isCommand); //It won't work if maxSp-amount < 0
+    }
+    public static void setMaxSp(int value, boolean isCommand) {
+        if(value < 0) return;
+        maxSp = Math.max(Math.min(value, (isCommand ? MAX_SP_UP_LIMIT : maxSpLimit)), MAX_SP_DOWN_LIMIT);
+    }
+
     public static void addSpSoon(int amount) {
         soonAddedSp += amount;
     }
@@ -69,7 +107,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         addSp(soonAddedSp);
         soonAddedSp = 0;
     }
-    public static void removeSp(int amount) { sp = Math.max(sp - amount, 0); }
 
     public static void setSpMode(boolean isEnabled) {
         isSpModeEnabled = isEnabled;
