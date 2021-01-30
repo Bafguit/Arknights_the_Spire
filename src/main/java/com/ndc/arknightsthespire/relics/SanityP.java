@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -49,7 +50,7 @@ public class SanityP extends CustomRelic {
         if(c instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) c;
             if (card.canUseSP && card.isSpJustUsed && !used && card.sp > 0) {
-                flash();
+                addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 SPHandler.addSp((Math.round(card.baseSP / 2)));
                 used = true;
                 this.pulse = false;

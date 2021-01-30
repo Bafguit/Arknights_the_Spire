@@ -17,7 +17,7 @@ public class CBBF extends CardSPBase {
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 2;
     private static final int DAMAGE = 6;
-    private static final int UP_DAMAGE = 2;
+    private static final int UP_DAMAGE = 1;
 
     public CBBF() {
         super(ID, IMG_PATH, COST,

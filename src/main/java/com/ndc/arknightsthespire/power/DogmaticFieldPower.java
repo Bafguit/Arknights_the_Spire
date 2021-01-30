@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
@@ -62,14 +63,11 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
         return new DogmaticFieldPower(owner, source);
     }
 
+
     @Override
     public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
-        if(p.hasPower(FrailPower.POWER_ID)) {
-            return blockAmount;
-        } else {
-            int overHeal = p.currentHealth + blockAmount - p.maxHealth;
-            addToBot(new HealAction(p, p, blockAmount, 0.15F));
-            return (overHeal > 0 ? overHeal / 2 : 0);
-        }
+        if(blockAmount > 5) addToBot(new HealAction(p, p, blockAmount - 5, 0.15F));
+
+        return Math.min(blockAmount, 5);
     }
 }

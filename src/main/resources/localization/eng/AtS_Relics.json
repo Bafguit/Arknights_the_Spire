@@ -91,13 +91,6 @@
       " minimum damage."
     ]
   },
-  "ats:Emergency Defibrillator": {
-    "NAME": "Emergency Defibrillator",
-    "FLAVOR": "Do not act violently while the defibrillator is in operation.",
-    "DESCRIPTIONS": [
-      "When attacked damage reduces your health to less than #b25%, attacked damage reduced to 0 for this turn and heal #b50% HP at the start of the next turn. (works once)"
-    ]
-  },
   "ats:Arts": {
     "NAME": "Arts",
     "FLAVOR": "There must be something to do with it.",
@@ -180,6 +173,23 @@
     "FLAVOR": "It smells like seafood bibim sauce.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. #yMaximum #ySP #yLimit decreased by #b20."
+    ]
+  },
+  "ats:Emergency Defibrillator": {
+    "NAME": "Emergency Defibrillator",
+    "FLAVOR": "Do not act violently while the defibrillator is in operation.",
+    "DESCRIPTIONS": [
+      "When attacked damage reduces your health to less than #b25%, attacked damage reduced to 0 for this turn and heal #b50% HP at the start of the next turn. (works once)",
+      "Attacked damage reduced to 0. Heal #b50% HP at the start of the next turn."
+    ]
+  },
+  "ats:Remnant Ash": {
+    "NAME": "Remnant Ash",
+    "FLAVOR": "Lævateinn!",
+    "DESCRIPTIONS": [
+      "When you gain critical damage, your HP will not fall below 1, but you will die after 2 turns. (works once)",
+      "Your HP will not fall below 1. You will die after #b",
+      " turn."
     ]
   },
   "ats:NULL": {

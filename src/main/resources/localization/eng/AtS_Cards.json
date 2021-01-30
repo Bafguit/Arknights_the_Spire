@@ -82,7 +82,7 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
-    "DESCRIPTION": "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
+    "DESCRIPTION": "When you gain block, heal HP instead of gaining block by block amount in excess of 5."
   },
   "ats:Rapid Magazine": {
     "NAME": "Rapid Magazine",
@@ -176,9 +176,9 @@
   },
   "ats:Thermite Blade": {
     "NAME": "Thermite Blade",
-    "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Manual",
+    "DESCRIPTION": "Deal !D! damage. Damage ignores block with 50% chance. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage. Damage increased by 5 and ignores block."
+      "ats:SP !S! ats:Manual NL Remove all blocks of the enemy. Deal !D! damage."
     ]
   },
   "ats:Mental Burst": {
@@ -386,8 +386,8 @@
   },
   "ats:Serious Mode": {
     "NAME": "Serious Mode",
-    "DESCRIPTION": "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)",
-    "UPGRADE_DESCRIPTION": "Innate. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)"
+    "DESCRIPTION": "Block you gain will be reduced to half. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)",
+    "UPGRADE_DESCRIPTION": "Innate. Block you gain will be reduced to half. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)"
   },
   "ats:Phantom": {
     "NAME": "Phantom In The Mirror",

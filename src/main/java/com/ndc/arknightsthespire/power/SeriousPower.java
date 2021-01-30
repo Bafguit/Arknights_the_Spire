@@ -48,6 +48,11 @@ public class SeriousPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
+    public float modifyBlock(float blockAmount) {
+        return blockAmount / 2;
+    }
+
+    @Override
     public float atDamageGive(float damage, DamageType type) {
         return damage * (2.0F - calcHealth());
     }

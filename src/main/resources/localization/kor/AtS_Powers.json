@@ -9,7 +9,7 @@
   "ats:Dogmatic Field": {
     "NAME": "신조의 역장",
     "DESCRIPTIONS": [
-      "손상이 없다면, 방어도를 얻을 때 대신 그만큼 체력을 회복하고, 최대 체력을 초과한 회복의 절반을 방어도로 전환합니다."
+      "방어도를 얻을 때, #b5 를 초과한 만큼은 방어도를 얻는 대신 체력을 회복합니다."
     ]
   },
   "ats:Counter Healing Mode": {
@@ -17,13 +17,6 @@
     "DESCRIPTIONS": [
       "체력을 회복할 때마다 SP 를 #b",
       " 얻습니다."
-    ]
-  },
-  "ats:Blazing": {
-    "NAME": "이글거림",
-    "DESCRIPTIONS": [
-      "턴이 끝날 때 적 전체에게 피해를 #b",
-      " 줍니다."
     ]
   },
   "ats:Soul Absorption": {
@@ -64,12 +57,6 @@
     "DESCRIPTIONS": [
       "턴 시작 시 민첩을 #b",
       " 잃습니다."
-    ]
-  },
-  "ats:Emergency Defibrillator": {
-    "NAME": "긴급 제세동기",
-    "DESCRIPTIONS": [
-      "공격 피해를 받지 않습니다. NL 다음 턴 시작 시 체력의 #b50% 를 회복합니다."
     ]
   },
   "ats:Composite Medical Shells": {
@@ -169,7 +156,7 @@
   "ats:Serious Mode": {
     "NAME": "진심 모드",
     "DESCRIPTIONS": [
-      "잃은 체력에 비례해 공격으로 주는 피해가 증가합니다. NL 현재 : #b",
+      "얻는 방어도가 절반으로 줄어드는 대신 잃은 체력에 비례해 공격으로 주는 피해가 증가합니다. NL 현재 : #b",
       "% 증가"
     ]
   },

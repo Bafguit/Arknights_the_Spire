@@ -27,7 +27,6 @@ public class Bonebreaker extends CustomRelic {
     public int onAttackToChangeDamage(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type == DamageInfo.DamageType.NORMAL && damageAmount < 2) {
             this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             return 2;
         } else {
             return damageAmount;

@@ -46,12 +46,6 @@
       " 点 #y敏捷 ."
     ]
   },
-  "ats:Emergency Defibrillator": {
-    "NAME": "急救药箱",
-    "DESCRIPTIONS": [
-      "攻击伤害降低至0. NL 在下个回合开始时, 回复 #b50% 点生命."
-    ]
-  },
   "ats:Composite Medical Shells": {
     "NAME": "复合型药物弹片",
     "DESCRIPTIONS": [
@@ -139,37 +133,37 @@
     ]
   },
   "ats:Curative": {
-    "NAME": "Curative",
+    "NAME": "治愈力",
     "DESCRIPTIONS": [
-      "提高 #y回复量 #b",
-      "降低 #y回复量 #b",
+      "提高 #y回血量 #b",
+      "降低 #y回血量 #b",
       "."
+    ]
+  },
+  "ats:Phantom": {
+    "NAME": "镜中幻影",
+    "DESCRIPTIONS": [
+      "每当你打出一张 #y特种 牌, 手牌中就有一张牌在被打出前耗能变为 #b0 ."
+    ]
+  },
+  "ats:Durian": {
+    "NAME": "榴莲剂",
+    "DESCRIPTIONS": [
+        "攻击造成双倍伤害."
+      ]
+  },
+  "ats:Serious Mode": {
+    "NAME": "认真模式",
+    "DESCRIPTIONS": [
+      "你获得的 格挡 减半. 根据已损失生命提高攻击伤害 (当失去70%生命时提高100%攻击伤害) NL 目前 : #b",
+      "% 提高"
     ]
   },
   "ats:Dogmatic Field": {
     "NAME": "教条力场",
     "DESCRIPTIONS": [
-      "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
+      "每当你获得格挡时,超过 #b5 点格挡的量将会变为回复生命值 ."
     ]
-  },
-  "ats:Serious Mode": {
-    "NAME": "Serious Mode",
-    "DESCRIPTIONS": [
-      "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost) NL Current : #b",
-      "% increased"
-    ]
-  },
-  "ats:Phantom": {
-    "NAME": "Phantom In The Mirror",
-    "DESCRIPTIONS": [
-      "Whenever you play a #ySpecialist card, a random card in your hand costs #b0 until played."
-    ]
-  },
-  "ats:Durian": {
-    "NAME": "Durian",
-    "DESCRIPTIONS": [
-        "Attack deals double damage."
-      ]
   },
   "ats:": {
     "NAME": "",

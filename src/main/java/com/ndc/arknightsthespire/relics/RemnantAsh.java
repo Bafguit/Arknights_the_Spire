@@ -2,7 +2,7 @@ package com.ndc.arknightsthespire.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.HealAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,13 +11,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
-public class EmergencyDefibrillator extends CustomRelic {
-    public static final String ID = "ats:Emergency Defibrillator";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/EmergencyDef.png");
-    public boolean isUsed = false;
+public class RemnantAsh extends CustomRelic {
+    public static final String ID = "ats:Remnant Ash";
+    private static final Texture IMG = TextureLoader.getTexture("img/relics/Ash.png");
 
-    public EmergencyDefibrillator() {
-        super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
+    public RemnantAsh() {
+        super(ID, IMG, RelicTier.RARE, LandingSound.SOLID);
     }
 
     @Override
@@ -26,8 +25,8 @@ public class EmergencyDefibrillator extends CustomRelic {
             this.usedUp();
             this.counter = -2;
             this.stopPulse();
-        } else if(setCounter == -3) {
-            this.counter = -3;
+        } else if(setCounter == 2) {
+            this.counter = setCounter;
             this.beginPulse();
             this.pulse = true;
         } else if(setCounter == -1) {
@@ -38,8 +37,20 @@ public class EmergencyDefibrillator extends CustomRelic {
     }
 
     @Override
+    public void atTurnStart() {
+        if(this.counter > 0) --this.counter;
+
+        if (this.counter == 0) {
+            this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractPlayer p = AbstractDungeon.player;
+            this.addToBot(new LoseHPAction(p, p, 9999));
+            this.setCounter(-2);
+        }
+    }
+
+    @Override
     public String getUpdatedDescription() {
-        return this.pulse ? DESCRIPTIONS[1] : DESCRIPTIONS[0]; // DESCRIPTIONS pulls from your localization file
+        return this.pulse ? DESCRIPTIONS[1] + this.counter + DESCRIPTIONS[2] : DESCRIPTIONS[0];
     }
 
     @Override
@@ -47,32 +58,21 @@ public class EmergencyDefibrillator extends CustomRelic {
         if(AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !this.usedUp) {
             AbstractPlayer p = AbstractDungeon.player;
 
-            if(this.pulse) {
+            if (this.pulse) {
                 this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                return 0;
-            }
-
-            if (!isUsed && p.currentHealth - damageAmount < Math.round(p.maxHealth / 4)) {
-                this.setCounter(-3);
-                if(p.currentHealth <= Math.round(p.maxHealth / 4)) {
-                    return 0;
-                } else {
-                    return p.currentHealth - Math.round(p.maxHealth / 4);
+                return Math.min(p.currentHealth - 1, damageAmount);
+            } else if (p.currentHealth - damageAmount < 1) {
+                if(p.hasRelic(EmergencyDefibrillator.ID)) {
+                    if(p.getRelic(EmergencyDefibrillator.ID).counter != -2) {
+                        return damageAmount;
+                    }
                 }
+                this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                this.setCounter(2);
+                return p.currentHealth - 1;
             }
         }
-
         return damageAmount;
-    }
-
-    @Override
-    public void atTurnStart() {
-        if(this.pulse) {
-            AbstractPlayer p = AbstractDungeon.player;
-            this.addToBot(new HealAction(p, p, Math.round(AbstractDungeon.player.maxHealth/2)));
-            this.addToTop(new RelicAboveCreatureAction(p, this));
-            this.setCounter(-2);
-        }
     }
 
     @Override
@@ -82,7 +82,7 @@ public class EmergencyDefibrillator extends CustomRelic {
 
     @Override
     public AbstractRelic makeCopy() { // always override this method to return a new instance of your relic
-        return new EmergencyDefibrillator();
+        return new RemnantAsh();
     }
 
 }

@@ -9,7 +9,7 @@
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
     "DESCRIPTIONS": [
-      "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
+      "When you gain block, heal HP instead of gaining block by block amount in excess of #b5 ."
     ]
   },
   "ats:Counter Healing Mode": {
@@ -17,13 +17,6 @@
     "DESCRIPTIONS": [
       "Gain #b",
       " #ySP when healed."
-    ]
-  },
-  "ats:Blazing": {
-    "NAME": "이글거림",
-    "DESCRIPTIONS": [
-      "턴이 끝날 때 적 전체에게 피해를 #b",
-      " 줍니다."
     ]
   },
   "ats:Soul Absorption": {
@@ -57,12 +50,6 @@
     "DESCRIPTIONS": [
       "At the start of turn, lose #b",
       " #yDexterity."
-    ]
-  },
-  "ats:Emergency Defibrillator": {
-    "NAME": "Emergency Defibrillator",
-    "DESCRIPTIONS": [
-      "Attacked damage reduced to 0. NL At the start of the next turn, heal #b50% HP."
     ]
   },
   "ats:Composite Medical Shells": {
@@ -162,7 +149,7 @@
   "ats:Serious Mode": {
     "NAME": "Serious Mode",
     "DESCRIPTIONS": [
-      "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost) NL Current : #b",
+      "Block you gain will be reduced to half. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost) NL Current : #b",
       "% increased"
     ]
   },

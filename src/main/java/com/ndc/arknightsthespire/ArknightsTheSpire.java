@@ -226,15 +226,10 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addRelicToCustomPool(new Snipe(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Special(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new Support(), DOCTOR_COLOR);
-        /*
-        BaseMod.addRelicToCustomPool(new MaxSp1(), DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new MaxSp2(), DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new MaxSp3(), DOCTOR_COLOR);
-        BaseMod.addRelicToCustomPool(new MaxSp4(), DOCTOR_COLOR);
-        */
         BaseMod.addRelicToCustomPool(new Gyao(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new OriginiumAdd(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new TacticalDelivery(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new RemnantAsh(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

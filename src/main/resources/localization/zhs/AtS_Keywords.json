@@ -11,7 +11,7 @@
     "NAMES": [
       "自动"
     ],
-    "DESCRIPTION": "处于自动模式时才能打出,如果你拥有足够的 #y技力 打出 NL 会消费 #y技力 获得额外效果."
+    "DESCRIPTION": "如果你拥有足够的 #y技力 打出 NL 会消费 #y技力 获得额外效果."
   },
   {
     "PROPER_NAME": "手动",
@@ -42,9 +42,9 @@
     "DESCRIPTION": "在每个回合开始时,获得 #b1 能量 ."
   },
   {
-    "PROPER_NAME": "强效",
+    "PROPER_NAME": "治愈力",
     "NAMES": [
-      "强效"
+      "治愈力"
     ],
     "DESCRIPTION": "增强生命回复的效果."
   },

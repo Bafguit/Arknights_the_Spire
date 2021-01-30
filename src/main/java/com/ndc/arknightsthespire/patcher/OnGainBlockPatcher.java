@@ -26,7 +26,6 @@ public class OnGainBlockPatcher
                 }
             }
         }
-
         return SpireReturn.Continue();
     }
 }

@@ -107,13 +107,6 @@
       " ats:技力 !S! ats:自动 NL 获得 [E] [E] ."
     ]
   },
-  "ats:Support Order": {
-    "NAME": "支援号令·β型",
-    "DESCRIPTION": "(什么都没有发生...) NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 获得 !M! 层 ats:号令 ."
-    ]
-  },
   "ats:True Silver Slash": {
     "NAME": "真银斩",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害3次. 本回合你无法从卡牌中获得 格挡 . NL ats:技力 !S! ats:自动 ",
@@ -166,18 +159,11 @@
     "NAME": "爆破范围提升·α型",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害."
   },
-  "ats:Thermite Blade": {
-    "NAME": "极致锋度",
-    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:手动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:手动 NL 造成 !D! 点伤害. 伤害提高5并且无视 格挡 ."
-    ]
-  },
   "ats:Mental Burst": {
     "NAME": "精神爆发",
-    "DESCRIPTION": "造成 !D! 点伤害, 随机给予敌人 ats:燃烧 6 次. NL ats:技力 !S! ats:自动 ",
+    "DESCRIPTION": "造成 !D! 点伤害且随机给予敌人 ats:燃烧 共 6 次. NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害,随机给予敌人 ats:燃烧 !M! 次."
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害且随机给予敌人 ats:燃烧 共 !M! 次."
     ]
   },
   "ats:Revitalization": {
@@ -360,7 +346,7 @@
   },
   "ats:Healing Strengthening": {
     "NAME": "治疗强化·γ型",
-    "DESCRIPTION": "获得 !M! ats:强效 ."
+    "DESCRIPTION": "获得 !M! ats:治愈力 ."
   },
   "ats:Sword Rain": {
     "NAME": "剑雨",
@@ -369,45 +355,59 @@
       " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害. 获得 [E] [E] ."
     ]
   },
-  "ats:Dogmatic Field": {
-    "NAME": "教条力场",
-    "DESCRIPTION": "When you gain block, if you don't have Frail, instead, heal that amount, and half of heal amount above the maximum health will be switched to block."
-  },
   "ats:Directed Diagnosis": {
     "NAME": "定向诊断",
-    "DESCRIPTION": "Remove your Frail. 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
+    "DESCRIPTION": "移除你所有的 脆弱 . 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态."
     ]
   },
   "ats:Durian": {
     "NAME": "爆发剂·榴莲味",
-    "DESCRIPTION": " 保留 . 失去3点生命5次, 根据 敏捷 降低伤害. (最多降低 2) NL Attack deals double damage for this turn. NL 消耗 ."
-  },
-  "ats:Serious Mode": {
-    "NAME": "Serious Mode",
-    "DESCRIPTION": "Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)",
-    "UPGRADE_DESCRIPTION": "Innate. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)"
+    "DESCRIPTION": " 保留 . 失去3点生命5次, 根据 敏捷 降低伤害. (最多降低 2) NL 本回合造成两倍的攻击伤害. NL 消耗 ."
   },
   "ats:Phantom": {
-    "NAME": "Phantom In The Mirror",
-    "DESCRIPTION": "Whenever you play a ats:Specialist card, a random card in your hand costs 0 until played."
+    "NAME": "镜中幻影",
+    "DESCRIPTION": "每当你打出一张 ats:特种 牌, 手牌中就有一张牌在被打出前耗能变为0."
   },
   "ats:Sashimi Platter": {
-    "NAME": "Sashimi Platter",
-    "DESCRIPTION": "Deal !D! damage. Heal !D! HP."
+    "NAME": "刺身拼盘",
+    "DESCRIPTION": "造成 !D! 点伤害. 回复 !D! 点生命."
   },
   "ats:Absolute Focus": {
-    "NAME": "Absolute Focus",
-    "DESCRIPTION": "Select !M! card. Get a random card of which class is same as the selected card from your draw pile."
+    "NAME": "专心致志",
+    "DESCRIPTION": "选择 !M! 张牌. 从抽牌堆里随机抽取一张和选择的牌职业相同的牌."
   },
   "ats:Literary Storm": {
-    "NAME": "Literary Storm",
-    "DESCRIPTION": "Get a random card of each class from your draw pile. NL Exhaust."
+    "NAME": "文学风暴",
+    "DESCRIPTION": "在你的抽牌堆中每个职业各随机抽取一张卡牌到手牌. NL 消耗 ."
   },
   "ats:Guard Mode": {
-    "NAME": "Guard Mode",
-    "DESCRIPTION": "Gain !B! Block. Double when more than half of HP is lost."
+    "NAME": "坚守模式",
+    "DESCRIPTION": "获得 !B! 点 格挡 . 当损失生命过半时获得双倍 格挡 ."
+  },
+  "ats:Serious Mode": {
+    "NAME": "认真模式",
+    "DESCRIPTION": "你获得的 格挡 减半. 根据已损失生命提高攻击伤害 (当失去70%生命时提高100%攻击伤害)",
+    "UPGRADE_DESCRIPTION": " 固有 . 你获得的 格挡 减半. 根据已损失生命提高攻击伤害 (当失去70%生命时提高100%攻击伤害)"
+  },
+  "ats:Support Order": {
+    "NAME": "支援号令·β型",
+    "DESCRIPTION": "(什么都没有发生...) NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 在回合开始时获得 [E] . 持续 !M! 个回合."
+    ]
+  },
+  "ats:Thermite Blade": {
+    "NAME": "极致锋度",
+    "DESCRIPTION": "造成 !D! 点伤害. 有50%的几率无视 格挡 . NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:手动 NL 移除敌人所有的 格挡 . 造成 !D! 点伤害."
+    ]
+  },
+  "ats:Dogmatic Field": {
+    "NAME": "教条力场",
+    "DESCRIPTION": "每当你获得 格挡 时,超过5点 格挡 的量将会变为回复生命值."
   },
   "ats:NULL": {
     "NAME": "",
