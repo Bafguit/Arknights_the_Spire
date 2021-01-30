@@ -36,6 +36,7 @@ import com.ndc.arknightsthespire.commands.SPCommandHandler;
 import com.ndc.arknightsthespire.potions.SpBigPotion;
 import com.ndc.arknightsthespire.potions.SpSmallPotion;
 import com.ndc.arknightsthespire.relics.*;
+import com.ndc.arknightsthespire.ui.SpUI;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
 import com.ndc.arknightsthespire.util.MessageCaller;
 
@@ -324,7 +325,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp() && AbstractDungeon.player instanceof CharacterDoctor) {
+        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp() && SpUI.isDoctor()) {
             abstractRoom.addRelicToRewards(new OriginiumAdd());
         }
     }

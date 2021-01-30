@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -23,10 +24,12 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.character.ATSCharacterEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.getCurrRoom;
@@ -75,12 +78,57 @@ public class SpUI extends AbstractPanel {
 
     }
 
+    public static boolean isDoctor() {
+
+        if(player.chosenClass == DOCTOR_CLASS) {
+            return true;
+        } else {
+            Iterator var1 = player.masterDeck.group.iterator();
+
+            while (var1.hasNext()) {
+                AbstractCard c = (AbstractCard) var1.next();
+                if (c instanceof CardSPBase) {
+                    return true;
+                }
+            }
+
+            var1 = player.hand.group.iterator();
+
+            while (var1.hasNext()) {
+                AbstractCard c = (AbstractCard) var1.next();
+                if (c instanceof CardSPBase) {
+                    return true;
+                }
+            }
+
+            var1 = player.exhaustPile.group.iterator();
+
+            while (var1.hasNext()) {
+                AbstractCard c = (AbstractCard) var1.next();
+                if (c instanceof CardSPBase) {
+                    return true;
+                }
+            }
+
+            var1 = player.drawPile.group.iterator();
+
+            while (var1.hasNext()) {
+                AbstractCard c = (AbstractCard) var1.next();
+                if (c instanceof CardSPBase) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     private void updateVfx() {
         tex = OrbVfx();
     }
 
     public void render(SpriteBatch sb) {
-        if (!this.isHidden && CardCrawlGame.isInARun() && getCurrRoom() != null && getCurrRoom().phase == RoomPhase.COMBAT && player.chosenClass == DOCTOR_CLASS) {
+        if (!this.isHidden && CardCrawlGame.isInARun() && getCurrRoom() != null && getCurrRoom().phase == RoomPhase.COMBAT && isDoctor()) {
             this.tipHitbox.move(this.current_x, this.current_y);
             this.renderVfx(sb);
             String text = SPHandler.getSp() + "/" + SPHandler.getMaxSp();
