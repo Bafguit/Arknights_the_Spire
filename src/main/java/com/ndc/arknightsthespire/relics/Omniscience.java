@@ -14,7 +14,7 @@ public class Omniscience extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("img/relics/Omniscience.png");
 
     public Omniscience() {
-        super(ID, IMG, RelicTier.BOSS, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override
@@ -25,8 +25,9 @@ public class Omniscience extends CustomRelic {
     @Override
     public void atBattleStartPreDraw() {
         AbstractPlayer p = AbstractDungeon.player;
+        int temp = Math.round(p.maxHealth / 4);
         flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, 2), 2));
+        addToBot(new AddTemporaryHPAction(p, p, temp));
     }
 
     @Override

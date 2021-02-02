@@ -18,7 +18,7 @@ public class ChargingDef extends CardSPBase {
     private static final int COST = 1;
     private static final int BLOCK_AMT = 8;
     private static final int UPGRADE_BLOCK = 4;
-    private static final int DEFAULT_SP = 16;
+    private static final int DEFAULT_SP = 12;
 
     public ChargingDef() {
         super(ID, IMG_PATH, COST,
@@ -28,11 +28,13 @@ public class ChargingDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new GainBlockAction(p, p, this.block));
+        
 
         //SP Effect
         if(isSpJustUsed) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new BufferPower(p, 1), 1));
+        } else {
+          addToBot(new GainBlockAction(p, p, this.block));
         }
     }
 

@@ -40,18 +40,22 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     }
     public void upgradeLimit() {
         AbstractPlayer p = AbstractDungeon.player;
-        if(p.hasRelic("ats:Sanity Plus")) {
-            if(p.hasRelic("ats:Tactical Delivery")) {
-                maxSpLimit = 40;
-            } else {
-                maxSpLimit = 60;
-            }
-        } else if(p.hasRelic("ats:Tactical Delivery")) {
-            maxSpLimit = 30;
-        } else {
-            maxSpLimit = 50;
-        }
+        maxSpLimit = getMaxSpLimit();
     }
+    
+    public static int getMaxSpLimit() {
+      int defMax = 50;
+      AbstractPlayer p = AbstractDungeon.player;
+      if(p.hasRelic("ats:Sanity Plus")) {
+        defMax += 10;
+      }
+      if(p.hasRelic("ats:Tactical Delivery")) {
+        defMax -= 20;
+      }
+      
+      return defMax;
+    }
+    
     public static int getTurnAddSp() {
         return turnAddSp;
     }
