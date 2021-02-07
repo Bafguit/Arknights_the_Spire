@@ -65,7 +65,7 @@ public class CharacterDoctor extends CustomPlayer {
     }
 
     public CharacterDoctor (String name) {
-        super(name, ATSCharacterEnum.ATS_DOCTOR, orbTextures, "img/char/orb/vfx.png", new SpineAnimation(
+        super(name, ATSCharacterEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpineAnimation(
                 MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1F));
 
         this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles

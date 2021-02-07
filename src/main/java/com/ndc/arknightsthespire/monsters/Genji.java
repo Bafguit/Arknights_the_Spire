@@ -67,9 +67,9 @@ public class Genji extends AbstractSpriterMonster {
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(45, 50);
+            this.setHp(50, 55);
         } else {
-            this.setHp(40, 55);
+            this.setHp(45, 50);
         }
 
         if (AbstractDungeon.ascensionLevel >= 2) {

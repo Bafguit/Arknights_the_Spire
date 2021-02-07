@@ -48,7 +48,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
-import static com.ndc.arknightsthespire.character.ATSCharacterEnum.ATS_DOCTOR;
+import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
@@ -192,11 +192,11 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
-        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, ATS_DOCTOR);
-        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, ATS_DOCTOR);
-        BaseMod.addPotion(BurnSmallPotion.class, Color.RED, Color.RED, Color.ORANGE, BurnSmallPotion.ID, ATS_DOCTOR);
-        BaseMod.addPotion(BurnBigPotion.class, Color.RED, Color.RED, Color.ORANGE, BurnBigPotion.ID, ATS_DOCTOR);
-        BaseMod.addPotion(FlameArtsPotion.class, Color.RED, Color.RED, Color.ORANGE, FlameArtsPotion.ID, ATS_DOCTOR);
+        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(BurnSmallPotion.class, Color.RED, Color.RED, Color.ORANGE, BurnSmallPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(BurnBigPotion.class, Color.RED, Color.RED, Color.ORANGE, BurnBigPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(FlameArtsPotion.class, Color.RED, Color.RED, Color.ORANGE, FlameArtsPotion.ID, DOCTOR_CLASS);
         ConsoleCommand.addCommand("sp", SPCommandHandler.class);
         addCustomMonster();
     }
@@ -219,7 +219,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
                 "img/char/CharSelectButtonDoctor.png",
                 "img/char/PortraitBG.png",
-                ATS_DOCTOR);
+                DOCTOR_CLASS);
         System.out.println("DONE");
     }
 
