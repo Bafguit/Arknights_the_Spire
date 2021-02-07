@@ -7,6 +7,7 @@ import basemod.ModPanel;
 import basemod.devcommands.ConsoleCommand;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
@@ -15,11 +16,13 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.input.InputAction;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import com.ndc.arknightsthespire.cards.caster.*;
@@ -33,8 +36,8 @@ import com.ndc.arknightsthespire.cards.specialist.*;
 import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.commands.SPCommandHandler;
-import com.ndc.arknightsthespire.potions.SpBigPotion;
-import com.ndc.arknightsthespire.potions.SpSmallPotion;
+import com.ndc.arknightsthespire.monsters.Genji;
+import com.ndc.arknightsthespire.potions.*;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.SpUI;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
@@ -45,7 +48,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
-import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
+import static com.ndc.arknightsthespire.character.ATSCharacterEnum.ATS_DOCTOR;
 
 
 @SpireInitializer
@@ -189,9 +192,26 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         ImageMaster.END_TURN_BUTTON = ToggleSpButton.UI_BUTTON_RIGHT;
         ImageMaster.END_TURN_BUTTON_GLOW = ToggleSpButton.UI_BUTTON_RIGHT_GLOW;
         ImageMaster.END_TURN_HOVER = ToggleSpButton.UI_BUTTON_RIGHT_HOVER;
-        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, DOCTOR_CLASS);
-        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, DOCTOR_CLASS);
+        BaseMod.addPotion(SpSmallPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpSmallPotion.ID, ATS_DOCTOR);
+        BaseMod.addPotion(SpBigPotion.class, CardHelper.getColor(53, 72, 76), CardHelper.getColor(250, 145, 73), CardHelper.getColor(250, 145, 73), SpBigPotion.ID, ATS_DOCTOR);
+        BaseMod.addPotion(BurnSmallPotion.class, Color.RED, Color.RED, Color.ORANGE, BurnSmallPotion.ID, ATS_DOCTOR);
+        BaseMod.addPotion(BurnBigPotion.class, Color.RED, Color.RED, Color.ORANGE, BurnBigPotion.ID, ATS_DOCTOR);
+        BaseMod.addPotion(FlameArtsPotion.class, Color.RED, Color.RED, Color.ORANGE, FlameArtsPotion.ID, ATS_DOCTOR);
         ConsoleCommand.addCommand("sp", SPCommandHandler.class);
+        addCustomMonster();
+    }
+
+    public void addCustomMonster() {
+        System.out.println("GENJI");
+        BaseMod.addMonster(Genji.ID, () -> new Genji());
+        //System.out.println("SLUG S");
+        /*BaseMod.addMonster("Slugs", () -> new MonsterGroup(new AbstractMonster[] {
+                new SlugA(),
+                new SlugB(),
+                new SlugC()
+        }));*/
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 5));
+        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 0));
     }
 
     public void receiveEditCharacters() {
@@ -199,7 +219,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
                 "img/char/CharSelectButtonDoctor.png",
                 "img/char/PortraitBG.png",
-                DOCTOR_CLASS);
+                ATS_DOCTOR);
         System.out.println("DONE");
     }
 
@@ -248,6 +268,7 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/AtS_Potions.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(TutorialStrings.class, "localization/" + lang + "/AtS_tutorials.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "localization/" + lang + "/AtS_Monsters.json");
     }
 
 

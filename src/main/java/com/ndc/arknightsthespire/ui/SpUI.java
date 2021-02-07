@@ -33,7 +33,7 @@ import java.util.Iterator;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.getCurrRoom;
-import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
+import static com.ndc.arknightsthespire.character.ATSCharacterEnum.ATS_DOCTOR;
 
 public class SpUI extends AbstractPanel {
     private static final UIStrings uiStrings;
@@ -80,7 +80,7 @@ public class SpUI extends AbstractPanel {
 
     public static boolean isDoctor() {
 
-        if(player.chosenClass == DOCTOR_CLASS) {
+        if(player.chosenClass == ATS_DOCTOR) {
             return true;
         } else {
             Iterator var1 = player.masterDeck.group.iterator();

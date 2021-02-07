@@ -51,7 +51,7 @@
     "NAME": "Omniscience",
     "FLAVOR": "CAUTION: Very hot",
     "DESCRIPTIONS": [
-      "Prevent 2 times you would lose HP each combat."
+      "Gain 25% temporary HP each combat."
     ]
   },
   "ats:Sanity": {

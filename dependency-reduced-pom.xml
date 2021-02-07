@@ -77,6 +77,13 @@
       <scope>system</scope>
       <systemPath>${Steam.path}/workshop/content/646570/1609158507/StSLib.jar</systemPath>
     </dependency>
+    <dependency>
+      <groupId>actlikeit</groupId>
+      <artifactId>ActLikeIt</artifactId>
+      <version>1.10.0</version>
+      <scope>system</scope>
+      <systemPath>${Steam.path}/workshop/content/646570/1934902042/actlikeit.jar</systemPath>
+    </dependency>
   </dependencies>
   <properties>
     <Steam.path>C:\Program Files (x86)\Steam\steamapps\</Steam.path>

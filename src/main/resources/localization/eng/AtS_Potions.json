@@ -12,5 +12,25 @@
       "Gain #b",
       " #ySP."
     ]
+  },
+  "ats:Burn Small Potion": {
+    "NAME": "Burning Flask",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " #yBurn to an enemy."
+    ]
+  },
+  "ats:Burn Big Potion": {
+    "NAME": "Burning Potion",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " #yBurn to an enemy."
+    ]
+  },
+  "ats:Flame Arts Potion": {
+    "NAME": "Bottle Of Flame Arts",
+    "DESCRIPTIONS": [
+      "Double #yBurn amount of an enemy."
+    ]
   }
 }

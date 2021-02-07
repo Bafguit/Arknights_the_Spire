@@ -19,7 +19,7 @@ public class SpManager {
     }
 
     public static boolean isImmortal() {
-        return player.chosenClass == ATSCharacterEnum.DOCTOR_CLASS;
+        return player.chosenClass == ATSCharacterEnum.ATS_DOCTOR;
     }
 
     public static SpUI getSpUI() {

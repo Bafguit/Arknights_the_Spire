@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 public class ATSCharacterEnum {
 
     @SpireEnum
-    public static AbstractPlayer.PlayerClass DOCTOR_CLASS;
+    public static AbstractPlayer.PlayerClass ATS_DOCTOR;
 
 
 }

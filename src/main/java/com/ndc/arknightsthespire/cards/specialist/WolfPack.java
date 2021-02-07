@@ -17,7 +17,7 @@ public class WolfPack extends CardSPBase {
     public static final String ID = "ats:Wolf Pack";
     public static final String IMG_PATH = "img/cards/WolfPack.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
-    private static final int COST = 2;
+    private static final int COST = 3;
     private static final int DAMAGE = 1;
     private static final int UP_DAMAGE = 6;
 

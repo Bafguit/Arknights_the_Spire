@@ -55,7 +55,7 @@
     "NAME": "차지 디펜스",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 방어도를 !B! 얻습니다. 다음 피해를 받지 않습니다."
+      "ats:SP !S! ats:자동 NL 다음 피해를 받지 않습니다."
     ]
   },
   "ats:Shell Defense": {
@@ -184,7 +184,7 @@
   },
   "ats:Mental Burst": {
     "NAME": "스피릿 버스트",
-    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 6 번 주고 ats:화상을 1 부여합니다. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "무작위 적들에게 피해를 !D! 만큼 !M! 번 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 무작위 적들에게 피해를 !D! 만큼 !M! 번 주고 ats:화상을 1 부여합니다."
     ]

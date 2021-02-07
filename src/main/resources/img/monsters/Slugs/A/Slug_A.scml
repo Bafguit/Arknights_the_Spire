@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="idle">
+        <file id="0" name="idle/idle_0-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="idle/idle_1-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="idle/idle_2-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="idle/idle_3-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="idle/idle_4-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="idle/idle_5-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="idle/idle_6-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="idle/idle_7-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="idle/idle_8-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <folder id="1" name="attack">
+        <file id="0" name="attack/attack_0-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="attack/attack_1-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="attack/attack_2-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="attack/attack_3-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="attack/attack_4-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="attack/attack_5-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="attack/attack_6-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="7" name="attack/attack_7-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="8" name="attack/attack_8-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <folder id="2" name="death">
+        <file id="0" name="death/death_0-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="death/death_1-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="death/death_2-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="death/death_3-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="death/death_4-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="death/death_5-removebg-preview.png" width="589" height="423" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="Slug_A">
+        <animation id="0" name="idle" length="900" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="100">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="200">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="300">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="4" time="400">
+                    <object_ref id="0" timeline="4" key="0" z_index="0"/>
+                </key>
+                <key id="5" time="500">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                </key>
+                <key id="6" time="600">
+                    <object_ref id="0" timeline="6" key="0" z_index="0"/>
+                </key>
+                <key id="7" time="700">
+                    <object_ref id="0" timeline="7" key="0" z_index="0"/>
+                </key>
+                <key id="8" time="800">
+                    <object_ref id="0" timeline="8" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="idle_0-removebg-preview">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="idle_1-removebg-preview">
+                <key id="0" time="100" spin="0">
+                    <object folder="0" file="1" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="idle_2-removebg-preview">
+                <key id="0" time="200" spin="0">
+                    <object folder="0" file="2" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="idle_3-removebg-preview">
+                <key id="0" time="300" spin="0">
+                    <object folder="0" file="3" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="idle_4-removebg-preview">
+                <key id="0" time="400" spin="0">
+                    <object folder="0" file="4" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="idle_5-removebg-preview">
+                <key id="0" time="500" spin="0">
+                    <object folder="0" file="5" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="idle_6-removebg-preview">
+                <key id="0" time="600" spin="0">
+                    <object folder="0" file="6" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="7" name="idle_7-removebg-preview">
+                <key id="0" time="700" spin="0">
+                    <object folder="0" file="7" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="8" name="idle_8-removebg-preview">
+                <key id="0" time="800" spin="0">
+                    <object folder="0" file="8" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="attack" length="1200" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="133">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="266">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="400">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="4" time="533">
+                    <object_ref id="0" timeline="4" key="0" z_index="0"/>
+                </key>
+                <key id="5" time="666">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                </key>
+                <key id="6" time="800">
+                    <object_ref id="0" timeline="6" key="0" z_index="0"/>
+                </key>
+                <key id="7" time="933">
+                    <object_ref id="0" timeline="7" key="0" z_index="0"/>
+                </key>
+                <key id="8" time="1066">
+                    <object_ref id="0" timeline="8" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="attack_1-removebg-preview">
+                <key id="0" spin="0">
+                    <object folder="1" file="1" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="attack_2-removebg-preview">
+                <key id="0" time="133" spin="0">
+                    <object folder="1" file="2" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="attack_3-removebg-preview">
+                <key id="0" time="266" spin="0">
+                    <object folder="1" file="3" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="attack_4-removebg-preview">
+                <key id="0" time="400" spin="0">
+                    <object folder="1" file="4" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="attack_5-removebg-preview">
+                <key id="0" time="533" spin="0">
+                    <object folder="1" file="5" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="attack_6-removebg-preview">
+                <key id="0" time="666" spin="0">
+                    <object folder="1" file="6" x="-440" y="520" angle="0" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="attack_7-removebg-preview">
+                <key id="0" time="800" spin="0">
+                    <object folder="1" file="7" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="7" name="attack_8-removebg-preview">
+                <key id="0" time="933" spin="0">
+                    <object folder="1" file="8" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="8" name="attack_0-removebg-preview">
+                <key id="0" time="1066" spin="0">
+                    <object folder="1" file="0" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="death" length="600" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="100">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="200">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                </key>
+                <key id="3" time="300">
+                    <object_ref id="0" timeline="3" key="0" z_index="0"/>
+                </key>
+                <key id="4" time="400">
+                    <object_ref id="0" timeline="4" key="0" z_index="0"/>
+                </key>
+                <key id="5" time="500">
+                    <object_ref id="0" timeline="5" key="0" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="death_0-removebg-preview">
+                <key id="0" spin="0">
+                    <object folder="2" file="0" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="death_1-removebg-preview">
+                <key id="0" time="100" spin="0">
+                    <object folder="2" file="1" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="death_2-removebg-preview">
+                <key id="0" time="200" spin="0">
+                    <object folder="2" file="2" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="death_3-removebg-preview">
+                <key id="0" time="300" spin="0">
+                    <object folder="2" file="3" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="death_4-removebg-preview">
+                <key id="0" time="400" spin="0">
+                    <object folder="2" file="4" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="death_5-removebg-preview">
+                <key id="0" time="500" spin="0">
+                    <object folder="2" file="5" x="-440" y="520" scale_x="1.5" scale_y="1.5"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

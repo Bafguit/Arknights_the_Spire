@@ -54,7 +54,7 @@
     "NAME": "充能防御",
     "DESCRIPTION": "获得 !B! 点 格挡 . NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 获得 !B! 点 格挡 . 阻止下一次你受到的生命值损伤."
+      " ats:技力 !S! ats:自动 NL 阻止下一次你受到的生命值损伤."
     ]
   },
   "ats:Shell Defense": {
@@ -161,7 +161,7 @@
   },
   "ats:Mental Burst": {
     "NAME": "精神爆发",
-    "DESCRIPTION": "造成 !D! 点伤害且随机给予敌人 ats:燃烧 共 6 次. NL ats:技力 !S! ats:自动 ",
+    "DESCRIPTION": "造成 !D! 随机对敌人造成 !D! 点伤害 !M! 次. NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害且随机给予敌人 ats:燃烧 共 !M! 次."
     ]

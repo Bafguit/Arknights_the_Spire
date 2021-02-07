@@ -15,25 +15,29 @@ public class MentalBurst extends CardSPBase {
     public static final String IMG_PATH = "img/cards/MentalBurst.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 2;
-    private static final int DAMAGE = 2;
-    private static final int UP_DAMAGE = 1;
+    private static final int DAMAGE = 3;
     private static final int SP = 7;
-    private static final int HIT = 6;
-    private static final int SP_HIT = 7;
-    private static final int UP_SP_HIT = 1;
+    private static final int HIT = 7;
+    private static final int UP_HIT = 1;
 
     public MentalBurst() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, true, DAMAGE, 0, SP_HIT, SP);
+                CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, true, DAMAGE, 0, HIT, SP);
 
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("SPIRIT"));
-        for (int forI = 0; forI < (isSpJustUsed ? this.magicNumber : HIT); forI++) {
-            this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true, true, 1));
+        if(isSpJustUsed) {
+            for (int forI = 0; forI < this.magicNumber; forI++) {
+                this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true, true, 1));
+            }
+        } else {
+            for (int forI = 0; forI < this.magicNumber; forI++) {
+                this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
+            }
         }
     }
 
@@ -44,8 +48,7 @@ public class MentalBurst extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
-        this.upgradeMagicNumber(UP_SP_HIT);
+        this.upgradeMagicNumber(UP_HIT);
     }
 
 }
