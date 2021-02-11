@@ -46,12 +46,6 @@
       " 点 #y敏捷 ."
     ]
   },
-  "ats:Composite Medical Shells": {
-    "NAME": "复合型药物弹片",
-    "DESCRIPTIONS": [
-      "每当回复生命时对所有敌人造成同等伤害."
-    ]
-  },
   "ats:Neurotoxin": {
     "NAME": "神经毒素",
     "DESCRIPTIONS": [
@@ -163,6 +157,13 @@
     "NAME": "教条力场",
     "DESCRIPTIONS": [
       "每当你获得格挡时,超过 #b5 点格挡的量将会变为回复生命值 ."
+    ]
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "复合型药物弹片",
+    "DESCRIPTIONS": [
+      "每当回复生命时对所有敌人造成同等伤害.( 最大 #b",
+      " )"
     ]
   },
   "ats:": {

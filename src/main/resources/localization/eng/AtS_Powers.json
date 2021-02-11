@@ -55,7 +55,8 @@
   "ats:Composite Medical Shells": {
     "NAME": "Composite Medical Shells",
     "DESCRIPTIONS": [
-      "Deal damage to ALL enemies by heal amount."
+      "Deal damage to ALL enemies by heal amount.( maximum #b",
+      " )"
     ]
   },
   "ats:Neurotoxin": {
@@ -115,7 +116,7 @@
     "NAME": "Burning Ground",
     "DESCRIPTIONS": [
       "Apply #b",
-      " Apply !M! #yBurn to ALL enemies when you use #yCaster card."
+      " #yBurn to ALL enemies when you use #yCaster card."
     ]
   },
   "ats:Guardian Obelisk": {

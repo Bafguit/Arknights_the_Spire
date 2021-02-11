@@ -9,8 +9,13 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
+import com.ndc.arknightsthespire.actions.DisruptionKickAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
 public class SporePro extends CardSPBase {
     public static final String ID = "ats:Spore Proliferation";
@@ -32,19 +37,16 @@ public class SporePro extends CardSPBase {
         addToBot(new AtsSFX("BOTTLE"));
         if(isSpJustUsed) {
             if(m.powers.size() > 0) {
-                Object[] powers = m.powers.toArray();
-                int powerLength = m.powers.size();
-                boolean hasBuff = false;
+                ArrayList<AbstractPower> buffs = new ArrayList<>();
                 for(AbstractPower pow : m.powers) {
-                    if(pow.type == AbstractPower.PowerType.BUFF) hasBuff = true;
-                }
-                while(hasBuff){
-                    int rand = (int) (Math.random() * powerLength);
-                    AbstractPower pw = (AbstractPower) powers[rand];
-                    if(pw.type == AbstractPower.PowerType.BUFF) {
-                        addToBot(new RemoveSpecificPowerAction(m, p, pw));
-                        break;
+                    if(pow.type == AbstractPower.PowerType.BUFF && !DisruptionKickAction.unRemoval.contains(pow.ID)) {
+                        buffs.add(pow);
                     }
+                }
+
+                if(buffs.size() > 0) {
+                    Random random = new Random();
+                    addToBot(new RemoveSpecificPowerAction(m, p, buffs.get(random.nextInt(buffs.size()))));
                 }
             }
         }

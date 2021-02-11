@@ -17,8 +17,8 @@ public class SashimiPlatter extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Sashimi.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
-    private static final int UP_DMG = 3;
+    private static final int ATTACK_DMG = 5;
+    private static final int UP_DMG = 2;
 
     public SashimiPlatter() {
         super(ID, IMG_PATH, COST,

@@ -18,12 +18,12 @@ public class ComMedShell extends CardSPBase {
     public ComMedShell() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.SELF, POSITION);
+                CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, 10, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new ComMedShellPower(p, p)));
+        addToBot(new ApplyPowerAction(p, p, new ComMedShellPower(p, p, this.magicNumber)));
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ComMedShell extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.isInnate = true;
+        this.upgradeMagicNumber(5);
     }
 
 }

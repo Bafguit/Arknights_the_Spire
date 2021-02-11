@@ -31,7 +31,7 @@ public class ShelterPower extends AbstractPower implements CloneablePowerInterfa
     public ShelterPower(final AbstractCreature owner, final AbstractCreature source, int amount, int multiple) {
         name = NAME;
         ID = POWER_ID;
-        toMulti = multiple;
+        this.toMulti = Math.max(1, multiple);
         this.amount = amount;
 
         this.owner = owner;

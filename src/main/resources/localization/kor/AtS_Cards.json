@@ -197,7 +197,7 @@
     "NAME": "포자 확산",
     "DESCRIPTION": "약화를 !M! 부여합니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:수동 NL 적이 가진 무작위 이로운 효과를 제거합니다. 약화를 !M! 부여합니다."
+      "ats:SP !S! ats:수동 NL 적이 가진 무작위 이로운 효과를 제거합니다. ats:일부 효과는 제거할 수 없습니다. 약화를 !M! 부여합니다."
     ]
   },
   "ats:Encircling Forest": {
@@ -257,7 +257,7 @@
   },
   "ats:Disruption Kick": {
     "NAME": "칠무약진각",
-    "DESCRIPTION": "보존. 적 전체에게 피해를 !D! 주고 모든 효과를 제거합니다. NL 소멸"
+    "DESCRIPTION": "보존. 적 전체에게 피해를 !D! 주고 ats:일부 효과를 제외한 모든 효과를 제거합니다. NL 소멸"
   },
   "ats:Automatic Cover": {
     "NAME": "자동 엄호",
@@ -276,8 +276,7 @@
   },
   "ats:Composite Medical Shells": {
     "NAME": "복합형 약물파편",
-    "DESCRIPTION": "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
+    "DESCRIPTION": "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다.( 최대 !M! )"
   },
   "ats:Neurotoxin": {
     "NAME": "신경독소",
@@ -299,12 +298,12 @@
   },
   "ats:Echo Reverb": {
     "NAME": "메아리",
-    "DESCRIPTION": "둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "선천성. 둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸."
+    "DESCRIPTION": "ats:둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "선천성. ats:둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸."
   },
   "ats:Beaten Up": {
     "NAME": "매 맞기",
-    "DESCRIPTION": "민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. 다음 적 턴에 공격을 받을 때마다 현재 민첩 만큼 피해를 줍니다."
+    "DESCRIPTION": "보존. 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. 다음 적 턴에 공격을 받을 때마다 현재 민첩 만큼 피해를 줍니다."
   },
   "ats:Ignite": {
     "NAME": "이그니션",

@@ -66,7 +66,7 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
-        if(blockAmount > 5) addToBot(new HealAction(p, p, blockAmount - 5, 0.15F));
+        if(blockAmount > 5) addToBot(new HealAction(p, p, blockAmount - 5));
 
         return Math.min(blockAmount, 5);
     }

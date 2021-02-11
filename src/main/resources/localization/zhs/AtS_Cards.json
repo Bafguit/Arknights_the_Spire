@@ -174,7 +174,7 @@
     "NAME": "孢子扩散",
     "DESCRIPTION": "给予 !M! 层 虚弱 . NL ats:技力 !S! ats:手动 ",
     "EXTENDED_DESCRIPTION": [
-      " ats:技力  !S!  ats:手动  NL 移除敌人身上的一个随机正面效果. 给予 !M! 层 虚弱 ."
+      " ats:技力  !S!  ats:手动  NL 移除敌人身上的一个随机正面状态. 不能移除 ats:特殊状态 . 给予 !M! 层 虚弱 ."
     ]
   },
   "ats:Encircling Forest": {
@@ -232,10 +232,6 @@
     "NAME": "狼群",
     "DESCRIPTION": " 保留 . 对所有敌人造成 !D! 点伤害并击晕. NL 消耗 ."
   },
-  "ats:Disruption Kick": {
-    "NAME": "七武掠阵踢",
-    "DESCRIPTION": " 保留 . 对所有敌人造成 !D! 点伤害,移除敌人身上的所有状态. NL 消耗 ."
-  },
   "ats:Automatic Cover": {
     "NAME": "自动掩护",
     "DESCRIPTION": "获得 !B! 点 格挡 . 获得 !M! 点 敏捷 . 在下个回合开始时, 失去 !M! 点 敏捷 ."
@@ -250,11 +246,6 @@
   "ats:Apocalypse": {
     "NAME": "宛如天启",
     "DESCRIPTION": "回复 !M! 生命. 获得 !M! ats:技力 ."
-  },
-  "ats:Composite Medical Shells": {
-    "NAME": "复合型药物弹片",
-    "DESCRIPTION": "每当回复生命时对所有敌人造成同等伤害.",
-    "UPGRADE_DESCRIPTION": " 固有 . 每当回复生命时对所有敌人造成同等伤害."
   },
   "ats:Neurotoxin": {
     "NAME": "神经毒素",
@@ -276,12 +267,12 @@
   },
   "ats:Echo Reverb": {
     "NAME": "传音回响",
-    "DESCRIPTION": "移除 人工制品 并给予 缓慢 . NL 消耗 .",
-    "UPGRADE_DESCRIPTION": " 固有 . NL 移除 人工制品 并给予 缓慢 . NL 消耗 ."
+    "DESCRIPTION": "移除 人工制品 并给予 ats:缓慢 . NL 消耗 .",
+    "UPGRADE_DESCRIPTION": " 固有 . NL 移除 人工制品 并给予 ats:缓慢 . NL 消耗 ."
   },
   "ats:Beaten Up": {
     "NAME": "挨打",
-    "DESCRIPTION": "获得 !M! 点 敏捷 . 在下个回合开始时, 失去 !M! 点 敏捷 . 在敌人的回合,每当敌人攻击你时对敌人造成等同敏捷的伤害."
+    "DESCRIPTION": "保留 . 获得 !M! 点 敏捷 . 在下个回合开始时, 失去 !M! 点 敏捷 . 在敌人的回合,每当敌人攻击你时对敌人造成等同敏捷的伤害."
   },
   "ats:Ignite": {
     "NAME": "点燃",
@@ -405,9 +396,17 @@
       " ats:技力 !S! ats:手动 NL 移除敌人所有的 格挡 . 造成 !D! 点伤害."
     ]
   },
+  "ats:Composite Medical Shells": {
+    "NAME": "复合型药物弹片",
+    "DESCRIPTION": "每当回复生命时对所有敌人造成同等伤害.( 最大 !M! )"
+  },
   "ats:Dogmatic Field": {
     "NAME": "教条力场",
     "DESCRIPTION": "每当你获得 格挡 时,超过5点 格挡 的量将会变为回复生命值."
+  },
+  "ats:Disruption Kick": {
+    "NAME": "七武掠阵踢",
+    "DESCRIPTION": " 保留 . 对所有敌人造成 !D! 点伤害并移除他们除了 ats:特殊状态 以外的状态. NL 消耗 ."
   },
   "ats:NULL": {
     "NAME": "",

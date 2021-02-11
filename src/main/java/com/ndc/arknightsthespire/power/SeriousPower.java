@@ -43,7 +43,12 @@ public class SeriousPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
+    public void stackPower(int stackAmount) {
+    }
+
+    @Override
     public void update(int slot) {
+        this.amount = getHpPercent();
         updateDescription();
     }
 
@@ -67,9 +72,13 @@ public class SeriousPower extends AbstractPower implements CloneablePowerInterfa
         else return 0;
     }
 
+    private int getHpPercent() {
+        return (int)(100.0F - calcHealth() * 100);
+    }
+
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + (int)(100.0F - calcHealth() * 100) + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + getHpPercent() + DESCRIPTIONS[1];
     }
 
     @Override

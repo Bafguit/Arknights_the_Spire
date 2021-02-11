@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.ndc.arknightsthespire.power.FracturedBodyPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class RemnantAsh extends CustomRelic {
@@ -66,6 +67,9 @@ public class RemnantAsh extends CustomRelic {
                     if(p.getRelic(EmergencyDefibrillator.ID).counter != -2) {
                         return damageAmount;
                     }
+                }
+                if(p.hasPower(FracturedBodyPower.POWER_ID)) {
+                    return damageAmount;
                 }
                 this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 this.setCounter(2);

@@ -62,7 +62,8 @@
   "ats:Composite Medical Shells": {
     "NAME": "복합형 약물파편",
     "DESCRIPTIONS": [
-      "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다."
+      "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다. ( 최대 #b",
+      " )"
     ]
   },
   "ats:Neurotoxin": {

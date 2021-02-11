@@ -103,5 +103,19 @@
       "specialist"
     ],
     "DESCRIPTION": "Specialist"
+  },
+  {
+    "PROPER_NAME": "Unremovable Powers",
+    "NAMES": [
+      "some"
+    ],
+    "DESCRIPTION": "Split, Mode Shift, Curiosity, Time Warp, Beat of Death, Fading, Shifting, Minion, Stasis, Unawakened, Thievery, Painful Stabs"
+  },
+  {
+    "PROPER_NAME": "Slow",
+    "NAMES": [
+      "slow"
+    ],
+    "DESCRIPTION": "Whenever you play a card, receives #b10% more damage from #yAttacks this turn."
   }
 ]

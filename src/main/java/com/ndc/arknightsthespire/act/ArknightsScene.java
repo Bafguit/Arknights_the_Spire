@@ -54,7 +54,7 @@ public class ArknightsScene extends AbstractScene {
             CardCrawlGame.music.silenceBGM();
         }
 
-        if (room.monsters != null) {
+        /*if (room.monsters != null) {
             Iterator var2 = room.monsters.monsters.iterator();
 
             label195:
@@ -65,7 +65,7 @@ public class ArknightsScene extends AbstractScene {
                     }
 
                     AbstractMonster mo = (AbstractMonster)var2.next();
-                    /*if (mo instanceof Nitori) {
+                    if (mo instanceof Nitori) {
                         this.bg = this.atlas.findRegion("mod/GenbuRavineCloudy");
                     } else if (mo instanceof Mamizou) {
                         this.bg = this.atlas.findRegion("mod/TanukiForestNight");
@@ -160,10 +160,11 @@ public class ArknightsScene extends AbstractScene {
                         }
                     } else {
                         this.bg = this.atlas.findRegion("mod/FancyPlaceNight");
-                    }*/
+                    }
                 }
             }
-        } else if (room instanceof ShopRoom) {
+        }*/
+        if (room instanceof ShopRoom) {
                 this.bg = this.atlas.findRegion("bg_shop");
         } else {
             this.bg = this.atlas.findRegion("bg_act_0");

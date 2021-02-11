@@ -1,0 +1,38 @@
+{
+  "ats:Genji": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Мститель",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug A": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Каменный червь",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug B": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Каменный червь α",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug C": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Каменный червь β",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

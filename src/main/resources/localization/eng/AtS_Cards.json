@@ -196,7 +196,7 @@
     "NAME": "Spore Proliferation",
     "DESCRIPTION": "Apply !M! Weak. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Remove a random buff of the enemy. Apply !M! Weak."
+      "ats:SP !S! ats:Manual NL Remove a random buff of the enemy. Cannot remove ats:特殊状态 powers. Apply !M! Weak."
     ]
   },
   "ats:Encircling Forest": {
@@ -256,7 +256,7 @@
   },
   "ats:Disruption Kick": {
     "NAME": "Disruption Kick",
-    "DESCRIPTION": "Retain. Deal !D! damage to ALL enemies and Remove all powers of them. NL Exhaust"
+    "DESCRIPTION": "Retain. Deal !D! damage to ALL enemies and Remove all powers of them except ats:some. NL Exhaust"
   },
   "ats:Automatic Cover": {
     "NAME": "Automatic Cover",
@@ -275,8 +275,7 @@
   },
   "ats:Composite Medical Shells": {
     "NAME": "Composite Medical Shells",
-    "DESCRIPTION": "Deal damage to ALL enemies by heal amount.",
-    "UPGRADE_DESCRIPTION": "Innate. Deal damage to ALL enemies by heal amount."
+    "DESCRIPTION": "Deal damage to ALL enemies by heal amount.( maximum !M! )"
   },
   "ats:Neurotoxin": {
     "NAME": "Neurotoxin",
@@ -298,12 +297,12 @@
   },
   "ats:Echo Reverb": {
     "NAME": "Echo Reverb",
-    "DESCRIPTION": "Remove Artifact and apply Slow. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. Remove Artifact and apply Slow. NL Exhaust."
+    "DESCRIPTION": "Remove Artifact and apply ats:Slow. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. Remove Artifact and apply ats:Slow. NL Exhaust."
   },
   "ats:Beaten Up": {
     "NAME": "Beaten Up",
-    "DESCRIPTION": "Gain !M! Dexterity. At the start of the next turn, lose !M! Dexterity. During enemy's turn, deal damage by Dexterity amount to the enemy attacked you."
+    "DESCRIPTION": "Retain. Gain !M! Dexterity. At the start of the next turn, lose !M! Dexterity. During enemy's turn, deal damage by Dexterity amount to the enemy attacked you."
   },
   "ats:Ignite": {
     "NAME": "Ignite",

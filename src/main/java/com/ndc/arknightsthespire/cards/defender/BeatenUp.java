@@ -27,6 +27,7 @@ public class BeatenUp extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, DEX, 0);
+        this.selfRetain = true;
     }
 
     @Override

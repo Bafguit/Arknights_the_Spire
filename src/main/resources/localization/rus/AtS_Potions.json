@@ -1,0 +1,36 @@
+{
+  "ats:Emergency Sanity Potion": {
+    "NAME": "Зелье здравомыслия",
+    "DESCRIPTIONS": [
+      "Даёт #b",
+      " #yОТ."
+    ]
+  },
+  "ats:Top Emergency Sanity Potion": {
+    "NAME": "Зелье здравомыслия: экстра",
+    "DESCRIPTIONS": [
+      "Даёт #b",
+      " #yОТ."
+    ]
+  },
+  "ats:Burn Small Potion": {
+    "NAME": "Бутылка с горючим",
+    "DESCRIPTIONS": [
+      "Наккладывает #b",
+      " #yГорения на врага."
+    ]
+  },
+  "ats:Burn Big Potion": {
+    "NAME": "Бутыль с горючим",
+    "DESCRIPTIONS": [
+      "Накладывает #b",
+      " #yГорения на врага."
+    ]
+  },
+  "ats:Flame Arts Potion": {
+    "NAME": "Бутыль пламени",
+    "DESCRIPTIONS": [
+      "Удваивает #yГорение на враге."
+    ]
+  }
+}
