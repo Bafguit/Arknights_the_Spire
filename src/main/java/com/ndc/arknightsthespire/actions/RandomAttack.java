@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.actions;
 
 import basemod.ReflectionHacks;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
@@ -19,6 +20,7 @@ public class RandomAttack extends AttackDamageRandomEnemyAction {
     private boolean skipWait;
     private boolean isMuted;
     private boolean hasBurn;
+    private boolean hasStun;
     private int burnAmount;
 
     public RandomAttack(AbstractCard card, AttackEffect effect) {
@@ -37,6 +39,13 @@ public class RandomAttack extends AttackDamageRandomEnemyAction {
         this.isMuted = isMuted;
         this.hasBurn = hasBurn;
         this.burnAmount = burnAmount;
+    }
+
+    public RandomAttack(AbstractCard card, AttackEffect effect, boolean superFast, boolean isMuted, boolean hasStun) {
+        super(card, effect);
+        this.skipWait = superFast;
+        this.isMuted = isMuted;
+        this.hasStun = hasStun;
     }
 
     public RandomAttack(AbstractCard card) {
@@ -61,8 +70,11 @@ public class RandomAttack extends AttackDamageRandomEnemyAction {
             } else {
                 this.addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn), effect, this.skipWait, isMuted));
             }
-            if(hasBurn) {
+            if(this.hasBurn) {
                 this.addToBot(new ApplyPowerAction(this.target, AbstractDungeon.player, new BurnPower(this.target, AbstractDungeon.player, this.burnAmount), this.burnAmount, true));
+            }
+            if(this.hasStun) {
+                this.addToBot(new StunMonsterAction((AbstractMonster) this.target, AbstractDungeon.player));
             }
         }
 

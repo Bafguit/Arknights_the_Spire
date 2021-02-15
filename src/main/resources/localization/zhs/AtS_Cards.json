@@ -350,7 +350,7 @@
     "NAME": "定向诊断",
     "DESCRIPTION": "移除你所有的 脆弱 . 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态."
+      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态. 回复 !M! 点生命."
     ]
   },
   "ats:Durian": {

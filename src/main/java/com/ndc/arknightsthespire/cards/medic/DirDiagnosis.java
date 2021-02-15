@@ -38,8 +38,8 @@ public class DirDiagnosis extends CardSPBase {
         } else {
             if (p.hasPower("Frail"))
                 addToBot(new RemoveSpecificPowerAction(p, p, "Frail"));
-            addToBot(new HealAction(p, p, this.magicNumber));
         }
+        addToBot(new HealAction(p, p, this.magicNumber));
 
 
     }

@@ -349,7 +349,7 @@
     "NAME": "지시된 진단",
     "DESCRIPTION": "내가 가진 손상을 제거합니다. 체력을 !M! 회복합니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 내가 가진 해로운 효과를 모두 제거합니다."
+      "ats:SP !S! ats:자동 NL 내가 가진 해로운 효과를 모두 제거합니다. 체력을 !M! 회복합니다."
     ]
   },
   "ats:Part Time Job": {

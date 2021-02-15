@@ -14,23 +14,23 @@
     ]
   },
   "ats:Burn Small Potion": {
-    "NAME": "Burning Flask",
+    "NAME": "灼烧瓶",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " #yBurn to an enemy."
+      "给予 #b",
+      " 层 #y燃烧 ."
     ]
   },
   "ats:Burn Big Potion": {
-    "NAME": "Burning Potion",
+    "NAME": "灼药水",
     "DESCRIPTIONS": [
-      "Apply #b",
-      " #yBurn to an enemy."
+      "给予 #b",
+      " 层 #y燃烧 ."
     ]
   },
   "ats:Flame Arts Potion": {
-    "NAME": "Bottle Of Flame Arts",
+    "NAME": "瓶中火焰",
     "DESCRIPTIONS": [
-      "Double #yBurn amount of an enemy."
+      "翻倍 #y燃烧 层数."
     ]
   }
 }

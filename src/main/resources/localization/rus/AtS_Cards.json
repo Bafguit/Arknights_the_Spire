@@ -10,11 +10,11 @@
   },
   "ats:Strike G": {
     "NAME": "Удар",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:   "
+    "DESCRIPTION": "Наносит !D! урона. NL ats:           "
   },
   "ats:Strike S": {
     "NAME": "Удар",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:  "
+    "DESCRIPTION": "Наносит !D! урона. NL ats:          "
   },
   "ats:Strike V": {
     "NAME": "Удар",
@@ -22,9 +22,9 @@
   },
   "ats:Armor Crushing Shot": {
     "NAME": "Пробить броню",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:  ",
+    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:          ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. NL Накладывает !M! Уязвимости. NL ats:  "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Накладывает !M! Уязвимости. NL ats:          "
     ]
   },
   "ats:Defend": {
@@ -33,10 +33,10 @@
   },
   "ats:Overload": {
     "NAME": "Режим штурма",
-    "DESCRIPTION": "Наносит !D! урона 3 раза. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:  ",
+    "DESCRIPTION": "Наносит !D! урона 3 раза. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:          ",
     "EXTENDED_DESCRIPTION": [
       "Перегрузка",
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона 5 раз. NL ats:  "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона 5 раз. NL ats:          "
     ]
   },
   "ats:Counter Healing Mode": {
@@ -45,23 +45,23 @@
   },
   "ats:Powerful Strike": {
     "NAME": "Мощный удар",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:  ",
+    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:          ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. NL Удваивает свой урон. NL ats:  "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Удваивает свой урон. NL ats:          "
     ]
   },
   "ats:Charging Defense": {
     "NAME": "Подпитка защитой",
-    "DESCRIPTION": "Даёт !B! Защиты. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:     ",
+    "DESCRIPTION": "Даёт !B! Защиты. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:     ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Предотвращает след. потерю ОЗ. NL ats:     "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Предотвращает след. потерю ОЗ. NL ats:     "
     ]
   },
   "ats:Shell Defense": {
     "NAME": "Защитная оболочка",
-    "DESCRIPTION": "Даёт !B! Защиты. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:     ",
+    "DESCRIPTION": "Даёт !B! Защиты. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:     ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Даёт !B! Защиты и 2 Регенерации. NL ats:     "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Даёт !B! Защиты и 2 Регенерации. NL ats:     "
     ]
   },
   "ats:Leaping Hammer": {
@@ -70,9 +70,9 @@
   },
   "ats:Magnetic Hammer": {
     "NAME": "Магнитный молот",
-    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Даёт !B! Защиты. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:     ",
+    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL Даёт !B! Защиты. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:     ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Наносит !D! урона ВСЕМ врагам. NL Враги теряют !M! Силы на 1 ход. NL Даёт !B! Защиты. NL ats:     "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Наносит !D! урона ВСЕМ врагам. NL Враги теряют !M! Силы на 1 ход. NL Даёт !B! Защиты. NL ats:     "
     ]
   },
   "ats:Thorns": {
@@ -86,14 +86,14 @@
   },
   "ats:Rapid Magazine": {
     "NAME": "Ускор. подзарядка",
-    "DESCRIPTION": "Стоимость ats:ОТ Атак ats:Снайпера будет снижена на [#6495ED]2.",
-    "UPGRADE_DESCRIPTION": "Начальная. NL Стоимость ats:ОТ Атак ats:Снайпера будет снижена на [#6495ED]2."
+    "DESCRIPTION": "Стоимость ats:ОТ Атак ats:Снайпера будет снижена на [#58ACFA]2.",
+    "UPGRADE_DESCRIPTION": "Начальная. NL Стоимость ats:ОТ Атак ats:Снайпера будет снижена на [#58ACFA]2."
   },
   "ats:Sunburst": {
     "NAME": "Солнечный удар",
-    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:      ",
+    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона и накладывает !M! ats:Горения на ВСЕХ врагов. NL ats:      "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона и накладывает !M! ats:Горения на ВСЕХ врагов. NL ats:      "
     ]
   },
   "ats:Soul Absorption": {
@@ -110,30 +110,30 @@
   },
   "ats:Assault Order": {
     "NAME": "Запрос штурма",
-    "DESCRIPTION": "(Срабатывает, если достаточно ОТ) NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:        ",
+    "DESCRIPTION": "(Срабатывает, если достаточно ОТ) NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:        ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Даёт [E] [E] . NL ats:        "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Даёт [E] [E] . NL ats:        "
     ]
   },
   "ats:Support Order": {
     "NAME": "Запрос поддержки",
-    "DESCRIPTION": "(Срабатывает, если достаточно ОТ) NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:        ",
+    "DESCRIPTION": "(Срабатывает, если достаточно ОТ) NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:        ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Даёт !M! ats:Запроса в начале вашего хода, на следующие !M! хода. NL ats:        "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Даёт !M! ats:Запроса в начале вашего хода, на следующие !M! хода. NL ats:        "
     ]
   },
   "ats:True Silver Slash": {
     "NAME": "Cеребрянный разрез",
-    "DESCRIPTION": "Наносит !D! урона 3 раза ВСЕМ врагам . Вы не получаете Защиту от карт в этот ход. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:   ",
+    "DESCRIPTION": "Наносит !D! урона 3 раза ВСЕМ врагам . Вы не получаете Защиту от карт в этот ход. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона ВСЕМ врагам за каждого ats:Стража в колоде. Вы не получаете Защиту от карт в этот ход. NL Сжигается."
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона ВСЕМ врагам за каждого ats:Стража в колоде. Вы не получаете Защиту от карт в этот ход. NL Сжигается."
     ]
   },
   "ats:Volcano": {
     "NAME": "Вулкан",
-    "DESCRIPTION": "Накладывает !M! ats:Горения на ВСЕХ врагов. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:      ",
+    "DESCRIPTION": "Накладывает !M! ats:Горения на ВСЕХ врагов. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона ВСЕМ врагам за каждого ats:Заклинателя в колоде. NL Сжигается."
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона ВСЕМ врагам за каждого ats:Заклинателя в колоде. NL Сжигается."
     ]
   },
   "ats:Nebulous Foxfire": {
@@ -142,61 +142,68 @@
   },
   "ats:Cat Scratch": {
     "NAME": "Царапание",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:   ",
+    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. NL Накладывает !M! Слабости. NL ats:   "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Накладывает !M! Слабости. NL ats:           "
     ]
   },
   "ats:Red Shift": {
     "NAME": "Красный сдвиг",
-    "DESCRIPTION": "Наносит !D! урона 4 раза случайному врагу. NL ats:   "
+    "DESCRIPTION": "Наносит !D! урона 4 раза случайному врагу. NL ats:           "
   },
   "ats:Shadow Assault": {
     "NAME": "Набросок",
-    "DESCRIPTION": "Наносит !D! урона 2 раза ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:   ",
+    "DESCRIPTION": "Наносит !D! урона 2 раза ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:           ",
     "EXTENDED_DESCRIPTION": [
       "Теневой штурм",
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Наносит !D! урона 10 раз случайному врагу. NL ats:   "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Наносит !D! урона 10 раз случайному врагу. NL ats:           "
     ]
   },
   "ats:Blood Oath": {
     "NAME": "Клятва крови",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:   ",
+    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. Восполняет !M! ОЗ. NL ats:   "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. Восполняет !M! ОЗ. NL ats:           "
     ]
   },
   "ats:Consecutive Shot Auto": {
     "NAME": "Пальнуть дуплетом",
-    "DESCRIPTION": "Наносит !D! урона 2 раза. NL ats:  "
+    "DESCRIPTION": "Наносит !D! урона 2 раза. NL ats:          "
   },
   "ats:Explosion Area Strengthen": {
     "NAME": "Взрыв по площади",
-    "DESCRIPTION": "Наносит !D! урона NL ВСЕМ врагам. NL ats:  "
+    "DESCRIPTION": "Наносит !D! урона NL ВСЕМ врагам. NL ats:          "
   },
   "ats:Thermite Blade": {
     "NAME": "Термитный клинок",
-    "DESCRIPTION": "Наносит !D! урона. NL Урон игнорирует Защиту с 50% шансом. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:   ",
+    "DESCRIPTION": "Наносит !D! урона. NL Урон игнорирует Защиту с 50% шансом. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Снимает всю Защиту с врага. NL Наносит !D! урона. NL ats:   "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Снимает всю Защиту с врага. NL Наносит !D! урона. NL ats:           "
     ]
   },
   "ats:Mental Burst": {
     "NAME": "Ментальная вспышка",
-    "DESCRIPTION": "Наносит !D! урона !M! раз случайному врагу. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:      ",
+    "DESCRIPTION": "Наносит !D! урона !M! раз случайному врагу. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона и накладывает ats:Горение !M! раз на случайного врага. NL ats:      "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона и накладывает ats:Горение !M! раз на случайного врага. NL ats:      "
     ]
   },
   "ats:Revitalization": {
     "NAME": "Заживление",
     "DESCRIPTION": "Даёт !M! Регенерации. NL ats:    "
   },
+  "ats:Spore Proliferation": {
+    "NAME": "Распылить споры",
+    "DESCRIPTION": "Накладывает !M! Слабости. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:       ",
+    "EXTENDED_DESCRIPTION": [
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Накладывает !M! Слабости. NL Снимает с врага случайный полож. *Талант, за исключением ats:Неснимаемого. NL ats:       "
+    ]
+  },
   "ats:Encircling Forest": {
     "NAME": "Окружающий лес",
-    "DESCRIPTION": "Даёт !M! ats:Убежища. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:       ",
+    "DESCRIPTION": "Даёт !M! ats:Убежища. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:       ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Даёт !M! ats:Убежища. Эффект ats:Убежища удваивается. NL ats:       "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Даёт !M! ats:Убежища. Эффект ats:Убежища удваивается. NL ats:       "
     ]
   },
   "ats:Soul Rend": {
@@ -205,34 +212,34 @@
   },
   "ats:Chain Hook": {
     "NAME": "Цепной крюк",
-    "DESCRIPTION": "Наносит !D! урона. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:         ",
+    "DESCRIPTION": "Наносит !D! урона. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:         ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. NL Вы берёте 2 карты. NL ats:         "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Вы берёте 2 карты. NL ats:         "
     ]
   },
   "ats:Hook Shot": {
     "NAME": "Выстрел крюком",
-    "DESCRIPTION": "Даёт !B! Защиты. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:         ",
+    "DESCRIPTION": "Даёт !B! Защиты. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:         ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Даёт !B! Защиты. NL Вы берёте 2 карты. NL ats:         "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Даёт !B! Защиты. NL Вы берёте 2 карты. NL ats:         "
     ]
   },
   "ats:Fractured Body": {
     "NAME": "Изломанное тело",
-    "DESCRIPTION": "Оставляется. NL Ваши ОЗ не могут быть ниже 1. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Сжигается. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:   ",
+    "DESCRIPTION": "Оставляется. NL Ваши ОЗ не могут быть ниже 1. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Сжигается. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "Оставляется. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Ваши ОЗ не могут быть ниже 1. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Эффект длится 2 хода. NL Сжигается. NL ats:   "
+      "Оставляется. NL ats:ОТ !S! [#6495ED]Авто ats:   NL Ваши ОЗ не могут быть ниже 1. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Эффект длится 2 хода. NL Сжигается. NL ats:           "
     ]
   },
   "ats:Flexible Camouflage": {
     "NAME": "Гибкая маскировка",
-    "DESCRIPTION": "Даёт !M! Силы. NL Отнимает !M! Силы в конце вашего хода. NL ats:  "
+    "DESCRIPTION": "Даёт !M! Силы. NL Отнимает !M! Силы в конце вашего хода. NL ats:          "
   },
   "ats:Poison Spread": {
     "NAME": "Распылить яд",
-    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:  ",
+    "DESCRIPTION": "Наносит !D! урона. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:          ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. Накладывает !M! Яда. NL ats:  "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. Накладывает !M! Яда. NL ats:          "
     ]
   },
   "ats:Curse Doll": {
@@ -247,24 +254,32 @@
     "NAME": "Волчья стая",
     "DESCRIPTION": "Оставляется. NL Наносит !D! урона ВСЕМ врагам и накладывает ats:Оглушение. NL Сжигается. NL ats:         "
   },
+  "ats:Disruption Kick": {
+    "NAME": "Сбивающий пинок",
+    "DESCRIPTION": "Оставляется. NL Наносит !D! урона ВСЕМ врагам и снимает ВСЕ *Таланты с них за исключением ats:Неснимаемых. NL Сжигается. NL ats:         "
+  },
   "ats:Automatic Cover": {
     "NAME": "Автоукрытие",
     "DESCRIPTION": "Даёт !B! Защиты. NL Даёт !M! Ловкости. NL В начале вашего след. хода, отнимает !M! Ловкости. NL ats:    "
   },
   "ats:Very Hot Blade": {
     "NAME": "Раскалённые клинки",
-    "DESCRIPTION": "Наносит !D! урона. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:      ",
+    "DESCRIPTION": "Наносит !D! урона. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Наносит !D! урона. NL Урон повышен на кол-во ats:Горящих врагов. NL Вы берёте карту. NL ats:      "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Урон повышен на кол-во ats:Горящих врагов. NL Вы берёте карту. NL ats:      "
     ]
   },
   "ats:Apocalypse": {
     "NAME": "Тех-восполнение",
     "DESCRIPTION": "Восполняет !M! ОЗ. NL Даёт !M! ats:ОТ. NL ats:    "
   },
+  "ats:Composite Medical Shells": {
+    "NAME": "Мед-снаряды",
+    "DESCRIPTION": "Наносит урон ВСЕМ врагам, равный кол-ву восполняемых ОЗ. ( Максимум !M! ) NL ats:    "
+  },
   "ats:Neurotoxin": {
     "NAME": "Нейротоксин",
-    "DESCRIPTION": "Накладывает !M! Яда на ВСЕХ врагов каждый раз, когда вы играете ats:Снайпера. NL ats:  "
+    "DESCRIPTION": "Накладывает !M! Яда на ВСЕХ врагов каждый раз, когда вы играете ats:Снайпера. NL ats:          "
   },
   "ats:Ambush": {
     "NAME": "Засада",
@@ -295,7 +310,7 @@
   },
   "ats:Demon Strength": {
     "NAME": "Сила демона",
-    "DESCRIPTION": "Даёт !M! Силы. NL Отнимает 1 Ловкости. NL ats:   "
+    "DESCRIPTION": "Даёт !M! Силы. NL Отнимает 1 Ловкости. NL ats:           "
   },
   "ats:Steam Pump": {
     "NAME": "Паровой насос",
@@ -331,9 +346,9 @@
   },
   "ats:Directed Diagnosis": {
     "NAME": "Направленный диагноз",
-    "DESCRIPTION": "Снимает Хрупкость. NL Восполняет !M! ОЗ NL ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL ats:    ",
+    "DESCRIPTION": "Снимает Хрупкость. NL Восполняет !M! ОЗ. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:    ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#6495ED][ ats:Авто [#6495ED]] NL Снимает с вас ВСЕ отрицательные эффекты. NL ats:    "
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Снимает с вас ВСЕ отрицательные эффекты. NL Восполняет !M! ОЗ. NL ats:    "
     ]
   },
   "ats:Part Time Job": {
@@ -347,11 +362,11 @@
   },
   "ats:Hammer On": {
     "NAME": "Крушить",
-    "DESCRIPTION": "Наносит !D! урона. NL Если убивает врага, даёт [E]. NL ats:        "
+    "DESCRIPTION": "Наносит !D! урона. NL Когда убивает врага, даёт [E]. NL ats:        "
   },
   "ats:Closed Bolt Burst Fire": {
     "NAME": "Очередь с пламегасом",
-    "DESCRIPTION": "Наносит !D! урона 3 раза. NL Если убивает врага, даёт [E] [E]. NL ats:        "
+    "DESCRIPTION": "Наносит !D! урона 3 раза. NL Когда убивает врага, даёт [E] [E]. NL ats:        "
   },
   "ats:Healing Drone": {
     "NAME": "Лечащий дрон",
@@ -363,19 +378,19 @@
   },
   "ats:Sword Rain": {
     "NAME": "Дождь из клинков",
-    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:        ",
+    "DESCRIPTION": "Наносит !D! урона ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:        ",
     "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Наносит !D! урона ВСЕМ врагам. NL Даёт [E] [E]. NL ats:        "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:    NL Наносит !D! урона ВСЕМ врагам. NL Даёт [E] [E]. NL ats:        "
     ]
   },
   "ats:Serious Mode": {
     "NAME": "Режим хладнокровия",
-    "DESCRIPTION": "Когда ваши ОЗ потеряны, повышает урон ваших *Атак (Урон повышен на 100%, когда вы потеряли 70% ОЗ) NL Снижает получаемую вами Защиту наполовину. NL ats:   ",
-    "UPGRADE_DESCRIPTION": "Начальная. NL Когда ваши ОЗ потеряны, повышает урон ваших *Атак (Урон повышен на 100%, когда вы потеряли 70% ОЗ) NL Снижает получаемую вами Защиту наполовину. NL ats:   "
+    "DESCRIPTION": "Когда ваши ОЗ потеряны, повышает урон ваших *Атак (Урон повышен на 100%, когда вы потеряли 70% ОЗ) NL Снижает получаемую вами Защиту наполовину. NL ats:           ",
+    "UPGRADE_DESCRIPTION": "Начальная. NL Когда ваши ОЗ потеряны, повышает урон ваших *Атак (Урон повышен на 100%, когда вы потеряли 70% ОЗ) NL Снижает получаемую вами Защиту наполовину. NL ats:           "
   },
   "ats:Phantom": {
     "NAME": "Зеркальный фантом",
-    "DESCRIPTION": "Каждый раз, когда вы играете ats:Специалиста, снижает стоимость случ. карты в руке до [#6495ED]0[#FFFFFF]. Она стоит [#6495ED]0[#FFFFFF], пока не разыграна."
+    "DESCRIPTION": "Каждый раз, когда вы играете ats:Специалиста, снижает стоимость случ. карты в руке до [#58ACFA]0[#FFFFFF]. Она стоит [#58ACFA]0[#FFFFFF], пока не разыграна."
   },
   "ats:Sashimi Platter": {
     "NAME": "Сашими",
@@ -384,7 +399,7 @@
   "ats:Absolute Focus": {
     "NAME": "Абсолютный фокус",
     "DESCRIPTION": "Выберите !M! карту в руке. NL Возьмите случ. карту того же класса из стопки добора, что и выбранная карта. NL ats:       ",
-    "UPGRADE_DESCRIPTION": "Выберите !M! карты в руке. NL Возьмите случ. карту того же класса из стопки добора, что и выбранная карта. NL ats:       "
+    "UPGRADE_DESCRIPTION": "Выберите !M! карты в руке. NL Возьмите случ. карты того же класса из стопки добора, что и выбранные карты. NL ats:       "
   },
   "ats:Literary Storm": {
     "NAME": "Книжная буря",
@@ -393,21 +408,6 @@
   "ats:Guard Mode": {
     "NAME": "Режим стража",
     "DESCRIPTION": "Даёт !B! Защиты. NL Удваивает свою Защиту, если у вас менее половины ОЗ. NL ats:     "
-  },
-  "ats:Composite Medical Shells": {
-    "NAME": "Мед-снаряды",
-    "DESCRIPTION": "Наносит урон ВСЕМ врагам, равный кол-ву восполняемых ОЗ.( максимум !M! ) NL ats:    ",
-  },
-  "ats:Spore Proliferation": {
-    "NAME": "Распылить споры",
-    "DESCRIPTION": "Накладывает !M! Слабости. NL ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL ats:       ",
-    "EXTENDED_DESCRIPTION": [
-      "ats:ОТ !S! [#C73FC7][ ats:Вручную [#C73FC7]] NL Накладывает !M! Слабости. NL Снимает с врага случайный полож. Cannot remove ats:some powers. эффект. NL ats:       "
-    ]
-  },
-  "ats:Disruption Kick": {
-    "NAME": "Сбивающий пинок",
-    "DESCRIPTION": "Оставляется. NL Deal !D! damage to ALL enemies and Remove all powers of them except ats:some. NL Сжигается. NL ats:         "
   },
   "ats:NULL": {
     "NAME": "This card is for add new one",

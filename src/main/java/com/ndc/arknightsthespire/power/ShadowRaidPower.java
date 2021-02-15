@@ -34,7 +34,7 @@ public class ShadowRaidPower extends AbstractPower implements CloneablePowerInte
         this.source = source;
         this.amount = amount;
 
-        type = PowerType.BUFF;
+        type = PowerType.DEBUFF;
         isTurnBased = true;
 
         // We load those txtures here.

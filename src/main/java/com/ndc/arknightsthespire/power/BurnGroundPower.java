@@ -51,7 +51,7 @@ public class BurnGroundPower extends AbstractPower implements CloneablePowerInte
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
         AbstractCard c = card;
         if(c instanceof CardSPBase) {
             CardSPBase cSP = (CardSPBase) c;
