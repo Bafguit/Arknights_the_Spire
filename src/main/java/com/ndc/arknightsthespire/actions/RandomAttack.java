@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.actions;
 
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
@@ -15,45 +16,47 @@ import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import com.ndc.arknightsthespire.power.BurnGroundPower;
 import com.ndc.arknightsthespire.power.BurnPower;
 
-public class RandomAttack extends AttackDamageRandomEnemyAction {
+public class RandomAttack extends AbstractGameAction {
 
     private boolean skipWait;
     private boolean isMuted;
     private boolean hasBurn;
     private boolean hasStun;
     private int burnAmount;
+    private DamageInfo info;
 
-    public RandomAttack(AbstractCard card, AttackEffect effect) {
-        this(card, effect, false, false);
-    }
-
-    public RandomAttack(AbstractCard card, AttackEffect effect, boolean superFast, boolean isMuted) {
-        super(card, effect);
+    public RandomAttack(DamageInfo info, AttackEffect effect, boolean superFast, boolean isMuted, boolean hasStun, boolean hasBurn, int burnAmount) {
+        this.info = info;
+        this.attackEffect = effect;
         this.skipWait = superFast;
         this.isMuted = isMuted;
-    }
-
-    public RandomAttack(AbstractCard card, AttackEffect effect, boolean superFast, boolean isMuted, boolean hasBurn, int burnAmount) {
-        super(card, effect);
-        this.skipWait = superFast;
-        this.isMuted = isMuted;
+        this.hasStun = hasStun;
         this.hasBurn = hasBurn;
         this.burnAmount = burnAmount;
     }
 
-    public RandomAttack(AbstractCard card, AttackEffect effect, boolean superFast, boolean isMuted, boolean hasStun) {
-        super(card, effect);
-        this.skipWait = superFast;
-        this.isMuted = isMuted;
-        this.hasStun = hasStun;
+    public RandomAttack(DamageInfo info, AttackEffect effect) {
+        this(info, effect, false, false);
     }
 
-    public RandomAttack(AbstractCard card) {
-        this(card, false);
+    public RandomAttack(DamageInfo info, AttackEffect effect, boolean superFast, boolean isMuted) {
+        this(info, effect, superFast, isMuted, false, false, 0);
     }
 
-    public RandomAttack(AbstractCard card, boolean superFast) {
-        this(card, AttackEffect.NONE, superFast, false);
+    public RandomAttack(DamageInfo info, AttackEffect effect, boolean superFast, boolean isMuted, boolean hasBurn, int burnAmount) {
+        this(info, effect, superFast, isMuted, false, hasBurn, burnAmount);
+    }
+
+    public RandomAttack(DamageInfo info, AttackEffect effect, boolean superFast, boolean isMuted, boolean hasStun) {
+        this(info, effect, superFast, isMuted, hasStun, false, 0);
+    }
+
+    public RandomAttack(DamageInfo info) {
+        this(info, false);
+    }
+
+    public RandomAttack(DamageInfo info, boolean superFast) {
+        this(info, AttackEffect.NONE, superFast, false, false, false, 0);
     }
 
     @Override
@@ -64,11 +67,11 @@ public class RandomAttack extends AttackDamageRandomEnemyAction {
             AttackEffect effect = (AttackEffect) ReflectionHacks.getPrivate(this, AttackDamageRandomEnemyAction.class, "effect");
             card.calculateCardDamage((AbstractMonster)this.target);
             if (AttackEffect.LIGHTNING == effect) {
-                this.addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn), AttackEffect.NONE, this.skipWait, isMuted));
+                this.addToTop(new DamageAction(this.target, this.info, AttackEffect.NONE, this.skipWait, isMuted));
                 this.addToTop(new SFXAction("ORB_LIGHTNING_EVOKE", 0.1F));
                 this.addToTop(new VFXAction(new LightningEffect(this.target.hb.cX, this.target.hb.cY)));
             } else {
-                this.addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn), effect, this.skipWait, isMuted));
+                this.addToTop(new DamageAction(this.target, this.info, effect, this.skipWait, isMuted));
             }
             if(this.hasBurn) {
                 this.addToBot(new ApplyPowerAction(this.target, AbstractDungeon.player, new BurnPower(this.target, AbstractDungeon.player, this.burnAmount), this.burnAmount, true));

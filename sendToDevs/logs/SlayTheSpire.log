@@ -1,0 +1,319 @@
+16:23:04.763 INFO basemod.BaseMod> initializeGson
+16:23:04.790 INFO basemod.BaseMod> initializeTypeMaps
+16:23:04.792 INFO basemod.BaseMod> Registered MonsterStrings
+16:23:04.796 INFO basemod.BaseMod> Registered PowerStrings
+16:23:04.797 INFO basemod.BaseMod> Registered CardStrings
+16:23:04.799 INFO basemod.BaseMod> Registered RelicStrings
+16:23:04.800 INFO basemod.BaseMod> Registered EventStrings
+16:23:04.801 INFO basemod.BaseMod> Registered PotionStrings
+16:23:04.802 INFO basemod.BaseMod> Registered CreditStrings
+16:23:04.803 INFO basemod.BaseMod> Registered TutorialStrings
+16:23:04.804 INFO basemod.BaseMod> Registered KeywordStrings
+16:23:04.805 INFO basemod.BaseMod> Registered ScoreBonusStrings
+16:23:04.806 INFO basemod.BaseMod> Registered CharacterStrings
+16:23:04.806 INFO basemod.BaseMod> Registered UIStrings
+16:23:04.808 INFO basemod.BaseMod> Registered OrbStrings
+16:23:04.809 INFO basemod.BaseMod> Registered StanceStrings
+16:23:04.810 INFO basemod.BaseMod> Registered RunModStrings
+16:23:04.810 INFO basemod.BaseMod> Registered BlightStrings
+16:23:04.811 INFO basemod.BaseMod> Registered AchievementStrings
+16:23:04.812 INFO basemod.BaseMod> initializePowerMap
+16:23:05.881 INFO basemod.BaseMod> initializeUnderscorePowerIDs
+16:23:05.977 INFO desktop.DesktopLauncher> time: 1613665385977
+16:23:05.978 INFO desktop.DesktopLauncher> version: 2020-12-22
+16:23:05.978 INFO desktop.DesktopLauncher> libgdx:  1.9.5
+16:23:05.979 INFO desktop.DesktopLauncher> default_locale: ko_KR
+16:23:05.979 INFO desktop.DesktopLauncher> default_charset: x-windows-949
+16:23:05.979 INFO desktop.DesktopLauncher> default_encoding: x-windows-949
+16:23:05.979 INFO desktop.DesktopLauncher> java_version: 1.8.0_41
+16:23:05.980 INFO desktop.DesktopLauncher> os_arch: x86
+16:23:05.980 INFO desktop.DesktopLauncher> os_name: Windows 8.1
+16:23:05.980 INFO desktop.DesktopLauncher> os_version: 6.3
+16:23:05.981 INFO core.SystemStats> MEMORY STATS:
+Free Memory: 88Mb
+Max Memory: 247Mb
+Allocated Memory: 221Mb
+Unallocated Memory: 25Mb
+Total Free Memory: 114Mb
+Used Memory: 133Mb
+
+16:23:05.983 INFO core.SystemStats> DISK STATS:
+Total Space: 106,561Mb
+Usable Space: 11,449Mb
+Free Space: 11,449Mb
+
+16:23:06.056 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:06.069 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:06.069 INFO desktop.DesktopLauncher> [WINDOWED_MODE]
+16:23:06.070 INFO desktop.DesktopLauncher> Settings successfully loaded
+16:23:06.070 INFO desktop.DesktopLauncher> Launching application...
+16:23:06.922 INFO ststwitch.TwitchConfig> The 'twitchconfig.txt' already exists, not overwriting it.
+16:23:06.925 INFO core.CardCrawlGame> DistributorPlatform=steam
+16:23:06.927 INFO core.CardCrawlGame> isModded=true
+16:23:06.927 INFO core.CardCrawlGame> isBeta=false
+16:23:07.332 INFO steam.SteamIntegration> [FAILURE] Steam API failed to initialize correctly.
+16:23:07.335 INFO core.CardCrawlGame> No migration
+16:23:07.353 INFO core.Settings> Initializing display settings...
+16:23:07.353 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:07.354 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:07.355 INFO core.Settings> Initializing sound settings...
+16:23:07.366 INFO core.Settings> Initializing game settings...
+16:23:07.438 INFO localization.LocalizedStrings> Loc Strings load time: 47ms
+16:23:07.439 INFO basemod.BaseMod> begin editing localization strings
+16:23:07.444 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.RunModStrings
+16:23:07.448 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.PowerStrings
+16:23:07.449 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.RelicStrings
+16:23:07.450 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.UIStrings
+16:23:07.452 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.PowerStrings
+16:23:07.453 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.RelicStrings
+16:23:07.455 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.UIStrings
+16:23:07.459 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.EventStrings
+16:23:07.461 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.ScoreBonusStrings
+16:23:07.464 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.UIStrings
+16:23:07.465 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.CardStrings
+16:23:07.467 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.PowerStrings
+16:23:07.468 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.RelicStrings
+16:23:07.471 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.PotionStrings
+16:23:07.473 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.CharacterStrings
+16:23:07.477 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.TutorialStrings
+16:23:07.480 INFO basemod.BaseMod> loadJsonStrings: com.megacrit.cardcrawl.localization.MonsterStrings
+16:23:07.599 INFO audio.MusicMaster> Music Volume: 0.5
+16:23:07.603 INFO audio.SoundMaster> Sound Effect Volume: 0.5
+16:23:07.604 INFO audio.SoundMaster> Loaded 368 Sound Effects
+16:23:07.604 INFO audio.SoundMaster> SFX load time: 3ms
+16:23:07.604 INFO basemod.BaseMod> begin adding custom sounds
+16:23:07.605 INFO basemod.BaseMod> Added 0 sounds
+16:23:09.855 INFO cards.AbstractCard> Card Image load time: 2241ms
+16:23:09.857 INFO basemod.BaseMod> editting keywords
+16:23:11.408 INFO helpers.ImageMaster> Texture load time: 1544ms
+16:23:12.030 INFO helpers.FontHelper> Font load time: 504ms
+16:23:12.047 INFO unlock.UnlockTracker> RED UNLOCKS:   0/9
+16:23:12.047 INFO unlock.UnlockTracker> GREEN UNLOCKS: 0/9
+16:23:12.048 INFO unlock.UnlockTracker> BLUE UNLOCKS: 0/9
+16:23:12.048 INFO unlock.UnlockTracker> PURPLE UNLOCKS: 0/9
+16:23:12.048 INFO unlock.UnlockTracker> RELIC UNLOCKS: 0/24
+16:23:12.136 INFO unlock.UnlockTracker> CARDS SEEN:    0/0
+16:23:12.184 INFO unlock.UnlockTracker> RELICS SEEN:   0/0
+16:23:12.186 INFO basemod.BaseMod> publish post refresh - refreshing unlocks
+16:23:12.187 INFO basemod.BaseMod> begin editing cards
+16:23:12.303 INFO panels.TopPanel> Twitch Integration enabled due to presence of 'twitch.properties` file.
+16:23:12.317 INFO panels.TopPanel> Not starting twitch integration because enabled=false
+16:23:12.395 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:12.395 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:12.396 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:12.396 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:12.397 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:12.398 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:12.398 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:12.399 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:12.399 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:12.400 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:12.401 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:12.401 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:13.440 INFO helpers.CardLibrary> Card load time: 143ms with 450 cards
+16:23:13.441 INFO basemod.BaseMod> begin editing relics
+16:23:13.444 INFO util.TextureLoader> AtS | Loading Texture: img/relics/SpiritualRecovery.png
+16:23:13.449 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.450 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.452 INFO util.TextureLoader> AtS | Loading Texture: img/relics/RhineCircuity.png
+16:23:13.454 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.455 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.456 INFO util.TextureLoader> AtS | Loading Texture: img/relics/MilitaryTradition.png
+16:23:13.460 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.461 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.461 INFO util.TextureLoader> AtS | Loading Texture: img/relics/AbilityAura.png
+16:23:13.464 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.465 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.466 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Lavender.png
+16:23:13.469 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.470 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.471 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Omniscience.png
+16:23:13.473 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.474 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.475 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Sanity.png
+16:23:13.478 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.478 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.479 INFO util.TextureLoader> AtS | Loading Texture: img/relics/SanityP.png
+16:23:13.482 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.483 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.484 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Berate.png
+16:23:13.486 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.487 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.488 INFO util.TextureLoader> AtS | Loading Texture: img/relics/IndustrialWaterCannon.png
+16:23:13.490 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.491 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.492 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Bonebreaker.png
+16:23:13.494 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.495 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.496 INFO util.TextureLoader> AtS | Loading Texture: img/relics/EmergencyDef.png
+16:23:13.499 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.500 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.501 INFO util.TextureLoader> AtS | Loading Texture: img/relics/HiddenKiller.png
+16:23:13.503 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.504 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.507 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Arts.png
+16:23:13.510 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.512 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.513 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Assault.png
+16:23:13.516 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.517 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.518 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Attack.png
+16:23:13.522 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.523 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.524 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Defend.png
+16:23:13.527 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.528 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.529 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Cure.png
+16:23:13.533 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.534 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.535 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Snipe.png
+16:23:13.538 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.540 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.541 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Special.png
+16:23:13.544 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.545 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.546 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Support.png
+16:23:13.549 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.551 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.552 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Gyao.png
+16:23:13.555 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.556 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.557 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Originium.png
+16:23:13.560 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.562 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.563 INFO util.TextureLoader> AtS | Loading Texture: img/relics/TacticalDelivery.png
+16:23:13.566 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.568 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:13.569 INFO util.TextureLoader> AtS | Loading Texture: img/relics/Ash.png
+16:23:13.573 INFO helpers.ImageMaster> [WARNING] No image at images/relics/
+16:23:13.574 INFO helpers.ImageMaster> [WARNING] No image at images/relics/outline/
+16:23:14.004 INFO helpers.RelicLibrary> Relic load time: 428ms
+16:23:14.005 INFO input.InputHelper> Setting input processor to Scroller
+16:23:14.062 INFO integrations.SteelSeries> enabled=false
+16:23:14.076 INFO util.TextureLoader> AtS | Loading Texture: img/char/orb/rvfx.png
+16:23:14.084 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.085 INFO basemod.BaseMod> postCreateStartingRelics for: IRONCLAD
+16:23:14.086 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.086 INFO basemod.BaseMod> postCreateStartingRelics adding [ Burning Blood ]
+16:23:14.086 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.088 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSDataVagabond
+16:23:14.108 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.108 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSDataVagabond
+16:23:14.108 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataVagabond
+16:23:14.111 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataVagabond
+16:23:14.261 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.261 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.261 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.261 INFO basemod.BaseMod> postCreateStartingRelics for: THE_SILENT
+16:23:14.261 INFO basemod.BaseMod> postCreateStartingRelics adding [ Ring of the Snake ]
+16:23:14.264 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSDataTheSilent
+16:23:14.293 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.293 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSDataTheSilent
+16:23:14.293 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataTheSilent
+16:23:14.297 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataTheSilent
+16:23:14.458 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.458 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.459 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.458 INFO basemod.BaseMod> postCreateStartingRelics for: DEFECT
+16:23:14.459 INFO basemod.BaseMod> postCreateStartingRelics adding [ Cracked Core ]
+16:23:14.460 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSDataDefect
+16:23:14.475 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.475 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSDataDefect
+16:23:14.475 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataDefect
+16:23:14.477 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataDefect
+16:23:14.814 INFO basemod.BaseMod> postCreateStartingRelics for: WATCHER
+16:23:14.814 INFO basemod.BaseMod> postCreateStartingRelics adding [ PureWater ]
+16:23:14.814 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.815 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.815 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.816 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSDataWatcher
+16:23:14.838 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.839 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSDataWatcher
+16:23:14.839 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataWatcher
+16:23:14.841 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSDataWatcher
+16:23:14.989 INFO basemod.BaseMod> begin editing characters
+16:23:14.998 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.998 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSSeenRelics
+16:23:14.998 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:14.998 INFO basemod.BaseMod> postCreateStartingRelics for: DOCTOR_CLASS
+16:23:14.998 INFO basemod.BaseMod> postCreateStartingRelics adding [ ats:Sanity ]
+16:23:14.999 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\DOCTOR_CLASS
+16:23:15.021 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSSeenRelics
+16:23:15.021 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\DOCTOR_CLASS
+16:23:15.021 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\DOCTOR_CLASS
+16:23:15.023 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\DOCTOR_CLASS
+16:23:15.316 DEBUG helpers.AsyncSaver> Enqueue: qsize=0 file=preferences\STSInputSettings_Controller
+16:23:15.316 DEBUG helpers.FileSaver> Dequeue: qsize=0 file=preferences\STSInputSettings_Controller
+16:23:15.316 DEBUG helpers.File> Attempting to save file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSInputSettings_Controller
+16:23:15.317 INFO basemod.BaseMod> publishPostInitialize
+16:23:15.319 DEBUG helpers.File> Successfully saved file=C:\Users\typic\OneDrive\사진\ats\Arknights_the_Spire\preferences\STSInputSettings_Controller
+16:23:15.407 INFO basemod.BaseMod> registerModBadge : BaseMod
+16:23:15.409 INFO basemod.ModBadge> initialized mod badge for: BaseMod
+16:23:15.409 INFO basemod.ModBadge> setup hooks for BaseMod mod badge
+16:23:15.415 INFO basemod.BaseMod> initializeUnderscoreCardIDs
+16:23:15.415 INFO basemod.BaseMod> initializeUnderscorePotionIDs
+16:23:15.416 INFO basemod.BaseMod> initializeUnderscoreEventIDs
+16:23:15.416 INFO basemod.BaseMod> initializeUnderscoreRelicIDs
+16:23:15.417 INFO basemod.BaseMod> initializeEncounters
+16:23:15.629 INFO basemod.BaseMod> registerModBadge : Act like it
+16:23:15.629 INFO basemod.ModBadge> initialized mod badge for: Act like it
+16:23:15.629 INFO basemod.ModBadge> setup hooks for Act like it mod badge
+16:23:15.758 INFO dungeons.AbstractDungeon> Generating seeds: 0
+16:23:17.321 INFO controller.CInputHelper> [CONTROLLER] Utilizing DirectInput
+16:23:17.736 INFO controller.CInputHelper> [CONTROLLER] No controllers detected
+16:23:25.677 INFO stats.StatsScreen> Loading character stats.
+16:23:25.735 INFO basemod.BaseMod> publishAddCustomModeMods
+16:23:25.745 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:25.746 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:25.746 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:25.747 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:25.748 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:25.749 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:25.749 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:25.750 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:25.751 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:25.752 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:25.752 INFO core.DisplayConfig> Reading info.displayconfig
+16:23:25.753 INFO core.DisplayConfig> DisplayConfig successfully read.
+16:23:25.756 DEBUG steam.SteamIntegration> Setting Rich Presence: Main Menu
+16:23:26.000 INFO unlock.UnlockTracker> RED UNLOCKS:   0/9
+16:23:26.001 INFO unlock.UnlockTracker> GREEN UNLOCKS: 0/9
+16:23:26.001 INFO unlock.UnlockTracker> BLUE UNLOCKS: 0/9
+16:23:26.001 INFO unlock.UnlockTracker> PURPLE UNLOCKS: 0/9
+16:23:26.002 INFO unlock.UnlockTracker> RELIC UNLOCKS: 0/24
+16:23:26.002 INFO unlock.UnlockTracker> CARDS SEEN:    0/451
+16:23:26.002 INFO unlock.UnlockTracker> RELICS SEEN:   5/178
+16:23:26.003 INFO UnlockTracker.CountModdedUnlockCards> Counting modded unlocks.
+16:23:26.003 INFO UnlockTracker.CountModdedUnlockCards> DOCTOR_CLASS UNLOCKS:	0/0
+16:23:26.004 INFO basemod.BaseMod> publish post refresh - refreshing unlocks
+16:23:26.005 INFO UnlockTracker.CountModdedUnlockCards> Counting modded unlocks.
+16:23:26.005 INFO UnlockTracker.CountModdedUnlockCards> DOCTOR_CLASS UNLOCKS:	0/0
+16:23:26.005 INFO compendium.CardLibraryScreen> Initializing card library screen.
+16:23:26.017 INFO basemod.BaseMod> postCreateStartingRelics for: IRONCLAD
+16:23:26.018 INFO basemod.BaseMod> postCreateStartingRelics adding [ Burning Blood ]
+16:23:26.106 INFO characters.CharacterManager> Successfully recreated IRONCLAD
+16:23:26.107 INFO basemod.BaseMod> postCreateStartingRelics for: THE_SILENT
+16:23:26.108 INFO basemod.BaseMod> postCreateStartingRelics adding [ Ring of the Snake ]
+16:23:26.175 INFO characters.CharacterManager> Successfully recreated THE_SILENT
+16:23:26.175 INFO basemod.BaseMod> postCreateStartingRelics for: DEFECT
+16:23:26.176 INFO basemod.BaseMod> postCreateStartingRelics adding [ Cracked Core ]
+16:23:26.278 INFO characters.CharacterManager> Successfully recreated DEFECT
+16:23:26.279 INFO basemod.BaseMod> postCreateStartingRelics for: WATCHER
+16:23:26.279 INFO basemod.BaseMod> postCreateStartingRelics adding [ PureWater ]
+16:23:26.402 INFO characters.CharacterManager> Successfully recreated WATCHER
+16:23:26.410 INFO basemod.BaseMod> postCreateStartingRelics for: DOCTOR_CLASS
+16:23:26.410 INFO basemod.BaseMod> postCreateStartingRelics adding [ ats:Sanity ]
+16:23:26.613 INFO characters.CharacterManager> Successfully recreated DOCTOR_CLASS
+16:23:26.649 INFO saveAndContinue.SaveAndContinue> IRONCLAD save does NOT exist!
+16:23:26.650 INFO saveAndContinue.SaveAndContinue> THE_SILENT save does NOT exist!
+16:23:26.650 INFO saveAndContinue.SaveAndContinue> DEFECT save does NOT exist!
+16:23:26.650 INFO saveAndContinue.SaveAndContinue> WATCHER save does NOT exist!
+16:23:26.651 INFO saveAndContinue.SaveAndContinue> DOCTOR_CLASS save does NOT exist!
+16:23:28.092 INFO mainMenu.MainMenuScreen> No saves detected, opening Save Slot screen automatically.
+16:23:37.307 INFO core.CardCrawlGame> PAUSE()
+16:23:37.308 INFO core.CardCrawlGame> Game shutting down...
+16:23:37.308 INFO core.CardCrawlGame> Flushing saves to disk...
+16:23:37.309 INFO helpers.FileSaver> Save thread interrupted!
+16:23:37.310 INFO helpers.FileSaver> Save thread will die now.
+16:23:37.311 INFO core.CardCrawlGame> Shutting down publisher integrations...
+16:23:37.311 INFO core.CardCrawlGame> Flushing logs to disk. Clean shutdown successful.

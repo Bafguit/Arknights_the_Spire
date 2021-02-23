@@ -15,6 +15,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 import java.util.Iterator;
 
@@ -32,6 +33,7 @@ public class TrueSilverSlash extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
+        this.setPercentage(1.7F);
     }
 
     public int getGuardDeck() {
@@ -58,7 +60,7 @@ public class TrueSilverSlash extends CardSPBase {
 
         for(int for_i = 0; for_i < (isSpJustUsed ? cardAmount : 3); for_i++) {
             addToBot(new AtsSFX("SILVER"));
-            addToBot(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
+            addToBot(new DamageAllMute(this.multiDamage, AtsEnum.PHYS,
                     AttackEffect.SLASH_HEAVY, false));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
@@ -72,7 +74,7 @@ public class TrueSilverSlash extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
+        this.upgradePer(2.0F);
     }
 
 }

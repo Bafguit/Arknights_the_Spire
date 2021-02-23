@@ -11,6 +11,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class SwordRain extends CardSPBase {
     public static final String ID = "ats:Sword Rain";
@@ -27,12 +28,13 @@ public class SwordRain extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true, DAMAGE, 0, 0, SP);
         this.isMultiDamage = true;
+        this.setPercentage(1.4F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("SWRODRAIN"));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
+        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.ARTS,
                 AbstractGameAction.AttackEffect.SLASH_VERTICAL, false));
         if(isSpJustUsed) addToBot(new GainEnergyAction(2));
     }
@@ -44,7 +46,7 @@ public class SwordRain extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(1.7F);
         this.upgradeSP(UP_SP);
     }
 

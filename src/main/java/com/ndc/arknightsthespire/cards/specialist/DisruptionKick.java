@@ -13,6 +13,7 @@ import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.actions.DisruptionKickAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class DisruptionKick extends CardSPBase {
     public static final String ID = "ats:Disruption Kick";
@@ -28,12 +29,13 @@ public class DisruptionKick extends CardSPBase {
         this.exhaust = true;
         this.selfRetain = true;
         this.isMultiDamage = true;
+        this.setPercentage(1.8F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("TIGER"));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
+        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.PHYS,
                 AbstractGameAction.AttackEffect.LIGHTNING, true));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new DisruptionKickAction(mo));
@@ -48,6 +50,7 @@ public class DisruptionKick extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeBaseCost(UP_COST);
+        this.upgradePer(2.0F);
     }
 
 }

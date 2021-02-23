@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import javax.swing.*;
@@ -59,7 +60,7 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
         addToBot(new AtsSFX("MILK"));
         this.addToBot(new DamageAllMute((AbstractCreature) null,
                 DamageInfo.createDamageMatrix(Math.min(healAmount, this.maxDamage), true),
-                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON, true, true));
+                AtsEnum.ARTS, AbstractGameAction.AttackEffect.POISON, true, true));
         return healAmount;
     }
 

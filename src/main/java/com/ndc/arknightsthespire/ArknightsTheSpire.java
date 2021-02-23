@@ -1,6 +1,7 @@
 
 package com.ndc.arknightsthespire;
 
+import actlikeit.RazIntent.CustomIntent;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -22,9 +23,13 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.input.InputAction;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import com.ndc.arknightsthespire.actions.ApplyAtkAction;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.caster.*;
 import com.ndc.arknightsthespire.cards.defender.*;
 import com.ndc.arknightsthespire.cards.defender.Defend;
@@ -37,28 +42,38 @@ import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.commands.SPCommandHandler;
 import com.ndc.arknightsthespire.monsters.Genji;
+import com.ndc.arknightsthespire.monsters.SlugA;
+import com.ndc.arknightsthespire.monsters.SlugB;
+import com.ndc.arknightsthespire.monsters.SlugC;
+import com.ndc.arknightsthespire.monsters.intent.ArtsAttackIntent;
+import com.ndc.arknightsthespire.monsters.intent.ArtsBuffAttackIntent;
+import com.ndc.arknightsthespire.monsters.intent.ArtsDebuffAttackIntent;
 import com.ndc.arknightsthespire.potions.*;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.SpUI;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
+import com.ndc.arknightsthespire.util.AbstractSpriterMonster;
 import com.ndc.arknightsthespire.util.MessageCaller;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Iterator;
 import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
-import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
+import static com.ndc.arknightsthespire.character.AtsEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber, PostBattleSubscriber {
+public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber, PostBattleSubscriber, PostDeathSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
     public static boolean[] activeTutorials = new boolean[]{true};
     public static Properties AtSDS = new Properties();
 
     public static InputAction enableSPButton;
+
+    public boolean isBattle = false;
 
     public ArknightsTheSpire(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
@@ -69,11 +84,14 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
     //Used by @SpireInitializer
     public static void initialize(){
         BaseMod.addDynamicVariable(new SPDynamicVariable());
+        BaseMod.addDynamicVariable(new PerDynamicVariable());
+        BaseMod.addDynamicVariable(new PerSpDynamicVariable());
         //This creates an instance of our classes and gets our code going after BaseMod and ModTheSpire initialize.
         INSTANCE = new ArknightsTheSpire();
 
         //Look at the BaseMod wiki for getting started. (Skip the decompiling part. It's not needed right now)
         CardColors.initialize();
+
 
         try {
             for(int i = 0; i < activeTutorials.length; ++i) {
@@ -199,19 +217,22 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
         BaseMod.addPotion(FlameArtsPotion.class, Color.RED, Color.RED, Color.ORANGE, FlameArtsPotion.ID, DOCTOR_CLASS);
         ConsoleCommand.addCommand("sp", SPCommandHandler.class);
         addCustomMonster();
+        CustomIntent.add(new ArtsAttackIntent());
+        CustomIntent.add(new ArtsBuffAttackIntent());
+        CustomIntent.add(new ArtsDebuffAttackIntent());
     }
 
     public void addCustomMonster() {
         System.out.println("GENJI");
         BaseMod.addMonster(Genji.ID, () -> new Genji());
-        //System.out.println("SLUG S");
+        System.out.println("SLUG S");
         /*BaseMod.addMonster("Slugs", () -> new MonsterGroup(new AbstractMonster[] {
-                new SlugA(),
-                new SlugB(),
-                new SlugC()
+                (AbstractMonster) new SlugA(),
+                (AbstractMonster) new SlugB(),
+                (AbstractMonster) new SlugC()
         }));*/
-        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 5));
-        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 0));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 100));
+        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 100));
     }
 
     public void receiveEditCharacters() {
@@ -340,17 +361,47 @@ public class ArknightsTheSpire implements EditCardsSubscriber, PostInitializeSub
 
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-        if (AbstractDungeon.player instanceof CharacterDoctor) {
+        if (SpUI.isDoctor()) {
             if (activeTutorials[0]) {
                 AbstractDungeon.actionManager.addToBottom(new MessageCaller(0));
             }
+            setDungeonDef();
+            isBattle = true;
         }
     }
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
-        if(abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp() && SpUI.isDoctor()) {
-            abstractRoom.addRelicToRewards(new OriginiumAdd());
+        if(SpUI.isDoctor()) {
+            isBattle = false;
+            if (abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp()) {
+                abstractRoom.addRelicToRewards(new OriginiumAdd());
+            }
         }
+    }
+
+    public static boolean getBattle() {
+        return INSTANCE.isBattle;
+    }
+
+    private void setDungeonDef() {
+        ApplyAtkAction.applyAtk(CharacterDoctor.defaultAtk);
+        ApplyDefAction.applyDef(AbstractDungeon.player, CharacterDoctor.defaultArm, CharacterDoctor.defaultRes);
+
+        Iterator mo = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
+        while (mo.hasNext()) {
+            AbstractMonster m = (AbstractMonster) mo.next();
+            if(m instanceof AbstractSpriterMonster) {
+                AbstractSpriterMonster sm = (AbstractSpriterMonster) m;
+                ApplyDefAction.applyDef(sm, sm.defaultArm, sm.defaultRes);
+            } else {
+                ApplyDefAction.applyDef(m, 0, 0);
+            }
+        }
+    }
+
+    @Override
+    public void receivePostDeath() {
+        if(SpUI.isDoctor()) isBattle = false;
     }
 }

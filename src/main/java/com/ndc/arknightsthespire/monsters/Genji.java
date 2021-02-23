@@ -9,28 +9,20 @@ import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Mainline;
 import com.brashmonkey.spriter.Player;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.common.SuicideAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.exordium.GremlinFat;
-import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
-import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.util.AbstractSpriterMonster;
 import com.ndc.arknightsthespire.util.BetterSpriterAnimation;
 
-import java.util.Iterator;
+import static com.megacrit.cardcrawl.cards.DamageInfo.*;
 
 public class Genji extends AbstractSpriterMonster {
     public static final String ID = "ats:Genji";
@@ -66,10 +58,16 @@ public class Genji extends AbstractSpriterMonster {
         this.dialogX = (this.hb_x - 70.0F) * Settings.scale;
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
 
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(50, 55);
+        if (AbstractDungeon.ascensionLevel >= 17) {
+            this.setDef(2, 50);
         } else {
-            this.setHp(45, 50);
+            this.setDef(1, 30);
+        }
+
+        if (AbstractDungeon.ascensionLevel >= 7) {
+            this.setHp(37, 40);
+        } else {
+            this.setHp(35, 38);
         }
 
         if (AbstractDungeon.ascensionLevel >= 2) {
@@ -78,11 +76,13 @@ public class Genji extends AbstractSpriterMonster {
             this.attackDamage = 7;
         }
 
-        this.damage.add(new DamageInfo(this, this.attackDamage));
-        this.damage.add(new DamageInfo(this, this.attackDamage * 2));
+        this.damage.add(new DamageInfo(this, this.attackDamage, DamageType.NORMAL));
+        this.damage.add(new DamageInfo(this, this.attackDamage * 2, DamageType.NORMAL));
 
         Player.PlayerListener listener = new Genji.GenjiListener(this);
         ((BetterSpriterAnimation)this.animation).myPlayer.addListener(listener);
+
+
     }
 
     public void takeTurn() {
@@ -100,6 +100,11 @@ public class Genji extends AbstractSpriterMonster {
     }
 
     protected void getMove(int num) {
+
+        if(this.nextMove == -1) {
+            ApplyDefAction.applyDef(this, 2, 20);
+        }
+
         if(this.currentHealth < this.maxHealth / 2) {
             this.setMove((byte)2, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 1, false);
         } else {

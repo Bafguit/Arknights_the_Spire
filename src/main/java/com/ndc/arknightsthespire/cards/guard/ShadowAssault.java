@@ -12,6 +12,7 @@ import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.actions.RandomAttack;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class ShadowAssault extends CardSPBase {
     public static final String ID = "ats:Shadow Assault";
@@ -29,6 +30,7 @@ public class ShadowAssault extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
+        this.setPercentage(3.0F, 2.5F);
     }
 
     @Override
@@ -37,21 +39,21 @@ public class ShadowAssault extends CardSPBase {
         if(isSpJustUsed) {
             for (int for_i = 0; for_i < 8; for_i++) {
                 addToBot(new AtsSFX("JUEYING_1"));
-                this.addToBot(new RandomAttack(this,
+                this.addToBot(new RandomAttack(this.getInfo(),
                         AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true, true));
             }
             addToBot(new AtsSFX("JUEYING_1"));
-            this.addToBot(new RandomAttack(this,
+            this.addToBot(new RandomAttack(this.getInfo(),
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false, true));
             addToBot(new AtsSFX("JUEYING_2"));
-            this.addToBot(new RandomAttack(this,
+            this.addToBot(new RandomAttack(this.getInfo(),
                     AbstractGameAction.AttackEffect.SLASH_HEAVY, false, true));
         }
         else {
             addToBot(new AtsSFX("BADAO"));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.PHYS,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.ARTS,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
     }
@@ -63,7 +65,7 @@ public class ShadowAssault extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
+        this.upgradePer(4.0F, 3.0F);
         this.upgradeSP(UP_SP);
     }
 

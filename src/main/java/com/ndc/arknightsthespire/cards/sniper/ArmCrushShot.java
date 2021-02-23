@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
@@ -21,23 +22,23 @@ public class ArmCrushShot extends CardSPBase {
     private static final int ATTACK_DMG = 5;
     private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 4;
-    private static final int VULN = 1;
-    private static final int UP_VULN = 1;
+    private static final int VULN = 35;
+    private static final int UP_VULN = 15;
 
     public ArmCrushShot() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, VULN, DEFAULT_SP);
+        this.tags.add(CardTags.STRIKE);
+        this.setPercentage(1.0F, 1.5F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX((isSpJustUsed ? "ARROW_H" : "ARROW")));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.BLUNT_LIGHT, false, true));
-        if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
-                new VulnerablePower(m, magicNumber, false), magicNumber));
+                this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_LIGHT, false, true));
+        if(isSpJustUsed) ApplyDefAction.applyPerTurn(m, p, -this.magicNumber, 0);
     }
 
     @Override
@@ -48,7 +49,7 @@ public class ArmCrushShot extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_VULN);
-        this.upgradeDamage(UP_DMG);
+        this.upgradePer(1.8F);
     }
 
 }

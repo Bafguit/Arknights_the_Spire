@@ -12,6 +12,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class WolfPack extends CardSPBase {
     public static final String ID = "ats:Wolf Pack";
@@ -28,13 +29,14 @@ public class WolfPack extends CardSPBase {
         this.exhaust = true;
         this.selfRetain = true;
         this.isMultiDamage = true;
+        this.setPercentage(1.4F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("WOLF"));
         AbstractDungeon.actionManager.addToBottom(new DamageAllMute(
-                this.multiDamage, this.damageTypeForTurn,
+                this.multiDamage, AtsEnum.PHYS,
                 AbstractGameAction.AttackEffect.LIGHTNING, true));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new StunMonsterAction(mo, p, 1));
@@ -48,7 +50,7 @@ public class WolfPack extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(2.0F);
     }
 
 }

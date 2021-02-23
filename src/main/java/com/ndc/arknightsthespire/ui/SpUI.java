@@ -4,28 +4,22 @@
 //
 
 package com.ndc.arknightsthespire.ui;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 import com.ndc.arknightsthespire.SPHandler;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
-import com.ndc.arknightsthespire.character.ATSCharacterEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -33,7 +27,7 @@ import java.util.Iterator;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.*;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.getCurrRoom;
-import static com.ndc.arknightsthespire.character.ATSCharacterEnum.DOCTOR_CLASS;
+import static com.ndc.arknightsthespire.character.AtsEnum.DOCTOR_CLASS;
 
 public class SpUI extends AbstractPanel {
     private static final UIStrings uiStrings;

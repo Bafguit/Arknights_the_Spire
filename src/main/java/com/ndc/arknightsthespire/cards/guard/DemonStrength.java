@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyAtkAction;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.SoulRendPower;
@@ -17,7 +19,7 @@ public class DemonStrength extends CardSPBase {
     public static final String IMG_PATH = "img/cards/DemonStrength.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
-    private static final int STR = 3;
+    private static final int STR = 2;
     private static final int UP_STR = 1;
     private static final int DEX = -1;
 
@@ -29,8 +31,8 @@ public class DemonStrength extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, STR), STR));
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, DEX), DEX));
+        ApplyAtkAction.applyAtk(this.magicNumber);
+        ApplyDefAction.applyDef(p, -2, 0);
     }
 
     @Override

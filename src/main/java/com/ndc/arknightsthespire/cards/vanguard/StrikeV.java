@@ -28,14 +28,14 @@ public class StrikeV extends CardSPBase {
                 DAMAGE, 0, 0, 0);
         this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
+        this.setPercentage(1.0F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("SPEAR"));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AttackEffect.SLASH_DIAGONAL, false, true));
+                this.getInfo(), AttackEffect.SLASH_DIAGONAL, false, true));
     }
 
     @Override
@@ -45,7 +45,7 @@ public class StrikeV extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(1.5F);
     }
 
 }

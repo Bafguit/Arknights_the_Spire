@@ -27,14 +27,14 @@ public class StrikeS extends CardSPBase {
                 DAMAGE, 0, 0, 0);
         this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
+        this.setPercentage(1.0F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("ARROW_H"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AttackEffect.BLUNT_LIGHT, false, true));
+                this.getInfo(), AttackEffect.BLUNT_LIGHT, false, true));
     }
 
     @Override
@@ -44,7 +44,7 @@ public class StrikeS extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(1.5F);
     }
 
 }

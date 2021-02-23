@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -17,9 +18,14 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.ndc.arknightsthespire.ArknightsTheSpire;
 import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.character.AtsEnum;
+import com.ndc.arknightsthespire.character.CharacterDoctor;
+import com.ndc.arknightsthespire.power.AttackPower;
 import com.ndc.arknightsthespire.power.DogmaticFieldPower;
 
+import java.util.Date;
 import java.util.Iterator;
 
 //TODO TEST
@@ -40,12 +46,16 @@ public abstract class CardSPBase extends CustomCard {
     //아니 이거 왜이래
     public int baseSP = 0;
     public int sp = 0;
+    public float perTurn = 1.0F;
+    public float perBase = 1.0F;
     public PositionType position;
     public boolean isAuto = false;
     public boolean isSPModified = false;
+    public boolean isPerModified = false;
     public boolean isSPModifiedForTurn = false; //TODO Not implemented
     public boolean canUseSP = false;
     public boolean upgradedSP = false;
+    public boolean upgradedPer = false;
     public boolean isSpJustUsed;
     public CardSpPreview spCard;
     public String nameUp;
@@ -205,13 +215,37 @@ public abstract class CardSPBase extends CustomCard {
         }
     }
 
+    public void upgradePer(float per) {
+        this.upgradePer(per, per);
+    }
+
+    public void upgradePer(float per, float sPer) {
+        this.upgradedPer = true;
+        if(this.spCard != null) {
+            this.spCard.upgradedPer = true;
+        }
+        this.setPercentage(per, sPer);
+    }
+
     public void changeSpForBattle(int c_sp) {
         this.baseSP = Math.max(0, this.sp + c_sp);
+        this.spCard.baseSP = Math.max(0, this.spCard.sp + c_sp);
+    }
+
+    public DamageInfo getInfo() {
+        return this.getInfo(false);
+    }
+
+    public DamageInfo getInfo(boolean isArts) {
+        return new DamageInfo(AbstractDungeon.player, this.damage, isArts ? AtsEnum.ARTS : AtsEnum.PHYS);
     }
 
     @Override
     public void resetAttributes() {
         this.baseSP = this.sp;
+        if(this.spCard != null) {
+            this.spCard.baseSP = this.spCard.sp;
+        }
     }
 
     public static void updateAllStateInHand(boolean shouldGlow) {
@@ -230,13 +264,34 @@ public abstract class CardSPBase extends CustomCard {
         updateImage();
         updateGlow();
         updateSpView();
+        updateDamage(ArknightsTheSpire.getBattle());
+    }
+
+    public void updateDamage(boolean isBattle) {
+        if(isBattle && AbstractDungeon.isPlayerInDungeon()) {
+            if(hasPlayerAtk()) {
+                if (this.canUseSP && this.shouldUseSp() && this.spCard != null) {
+                    this.damage = Math.round(getPlayerAtk() * this.spCard.perTurn);
+                } else {
+                    this.damage = Math.round(getPlayerAtk() * this.perTurn);
+                }
+            }
+        } else {
+            this.damage = Math.round(CharacterDoctor.defaultAtk * this.perTurn);
+        }
     }
 
     public void updateSpView() {
         if(this.spCard != null) {
-            if (this.isAuto && canAffordSP()) this.cardsToPreview = null;
-            else if (!this.isAuto && canAffordSP() && SPHandler.isSpModeEnabled()) this.cardsToPreview = null;
-            else this.cardsToPreview = this.spCard;
+            if (this.isAuto && canAffordSP()) {
+                this.cardsToPreview = null;
+            }
+            else if (!this.isAuto && canAffordSP() && SPHandler.isSpModeEnabled()) {
+                this.cardsToPreview = null;
+            }
+            else {
+                this.cardsToPreview = this.spCard;
+            }
         }
     }
 
@@ -278,8 +333,31 @@ public abstract class CardSPBase extends CustomCard {
     public void updateImage() {
         if(shouldUseSp() && spCardImage != null) {
             loadCardImage(spCardImage);
+            this.damage = Math.round(getPlayerAtk() * this.spCard.perBase);
+
         } else {
             loadCardImage(normalCardImage);
+        }
+    }
+
+    public void setPercentage(float base) {
+        this.setPercentage(base, base);
+    }
+
+    public static boolean hasPlayerAtk() {
+        return AbstractDungeon.player.hasPower(AttackPower.POWER_ID);
+    }
+
+    public static int getPlayerAtk() {
+        return AbstractDungeon.player.getPower(AttackPower.POWER_ID).amount;
+    }
+
+    public void setPercentage(float base, float sp) {
+        this.perBase = this.perTurn = base;
+        this.baseDamage = this.damage = Math.round(CharacterDoctor.defaultAtk * this.perBase);
+        if(this.spCard != null) {
+            this.spCard.perBase = this.spCard.perTurn = sp;
+            this.spCard.baseDamage = this.spCard.damage = Math.round(CharacterDoctor.defaultAtk * this.spCard.perBase);
         }
     }
 
@@ -369,31 +447,32 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void renderSp(SpriteBatch sb) {
-        boolean darken = (boolean) ReflectionHacks.getPrivate(this, AbstractCard.class, "darken");
-        if (this.cost > -2 && !darken && !this.isLocked && this.isSeen) {
+            boolean darken = (boolean) ReflectionHacks.getPrivate(this, AbstractCard.class, "darken");
+            if (this.cost > -2 && !darken && !this.isLocked && this.isSeen) {
+                if (this.canUseSP) {
+                    Color costColor;
+                    if (this.isSPModified || this.isSPModifiedForTurn || this.freeToPlay()) {
+                        if (this.canAffordSP()) {
+                            costColor = MODIFIED_AND_USABLE_COLOR;
+                        } else {
+                            costColor = MODIFIED_AND_NOT_USABLE_COLOR;
+                        }
+                    } else {
+                        if (this.canAffordSP()) {
+                            costColor = NORMAL_AND_USABLE_COLOR;
+                        } else {
+                            costColor = NORMAL_AND_NOT_USABLE_COLOR;
+                        }
+                    }
 
-            Color costColor;
-            if (this.isSPModified || this.isSPModifiedForTurn || this.freeToPlay()) {
-                if(this.canAffordSP()) {
-                    costColor = MODIFIED_AND_USABLE_COLOR;
-                } else {
-                    costColor = MODIFIED_AND_NOT_USABLE_COLOR;
-                }
-            } else {
-                if(this.canAffordSP()) {
-                    costColor = NORMAL_AND_USABLE_COLOR;
-                } else {
-                    costColor = NORMAL_AND_NOT_USABLE_COLOR;
+                    costColor.a = this.transparency;
+                    String text = String.valueOf(sp);
+                    BitmapFont font = this.getSpFont();
+                    if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
+                            FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, 125.0F * this.drawScale * Settings.scale, 180.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
+                    }
                 }
             }
-
-            costColor.a = this.transparency;
-            String text = String.valueOf(sp);
-            BitmapFont font = this.getSpFont();
-            if ((this.type != AbstractCard.CardType.STATUS || this.cardID.equals("Slimed")) && (this.color != AbstractCard.CardColor.CURSE || this.cardID.equals("Pride"))) {
-                FontHelper.renderRotatedText(sb, font, text, this.current_x, this.current_y, 125.0F * this.drawScale * Settings.scale, 180.0F * this.drawScale * Settings.scale, this.angle, false, costColor);
-            }
-        }
     }
 
     static {

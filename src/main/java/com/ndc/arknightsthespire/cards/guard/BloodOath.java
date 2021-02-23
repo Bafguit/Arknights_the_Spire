@@ -11,6 +11,7 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class BloodOath extends CardSPBase {
     public static final String ID = "ats:Blood Oath";
@@ -28,13 +29,15 @@ public class BloodOath extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, HEAL, DEFAULT_SP);
+        this.setPercentage(1.0F, 1.9F);
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("BLADE"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, damage, this.damageTypeForTurn),
+                this.getInfo(),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL, false, true));
         if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, magicNumber));
     }
@@ -46,9 +49,9 @@ public class BloodOath extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
         this.upgradeMagicNumber(UP_HEAL);
         this.upgradeSP(UP_SP);
+        this.upgradePer(1.0F, 2.2F);
     }
 
 }

@@ -14,6 +14,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.power.BurnPower;
 
 import java.util.Iterator;
@@ -31,6 +32,7 @@ public class Volcano extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, ATTACK_DMG, SP);
+        this.setPercentage(1.7F);
     }
 
     public int getCasterDeck() {
@@ -57,7 +59,7 @@ public class Volcano extends CardSPBase {
             for (int for_i = 0; for_i < getCasterDeck(); for_i++) {
                 addToBot(new AtsSFX("VOLCANO"));
                 AbstractDungeon.actionManager.addToBottom(new DamageAllMute(p,
-                        this.multiDamage, this.damageTypeForTurn,
+                        this.multiDamage, AtsEnum.ARTS,
                         AbstractGameAction.AttackEffect.FIRE, true, true));
             }
         } else {
@@ -76,8 +78,8 @@ public class Volcano extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
         this.upgradeMagicNumber(UP_DMG);
+        this.upgradePer(2.0F);
     }
 
 }

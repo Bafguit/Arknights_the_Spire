@@ -31,8 +31,7 @@ public class StrikeG extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("HAWK_H"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL, false, true));
+                this.getInfo(), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, false, true));
     }
 
     @Override
@@ -42,7 +41,7 @@ public class StrikeG extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
+        this.upgradePer(1.5F);
     }
 
 }

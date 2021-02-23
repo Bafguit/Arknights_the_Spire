@@ -25,13 +25,14 @@ public class CollapsingStrike extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, POSITION, D, 0, M, 0);
+        this.setPercentage(2.0F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new DiscardAction(p, p, this.magicNumber, false));
         addToBot(new AtsSFX("PUNCH"));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
+        addToBot(new DamageAction(m, this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
     }
 
     @Override
@@ -41,7 +42,7 @@ public class CollapsingStrike extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(U_D);
+        this.upgradePer(2.5F);
     }
 
 }

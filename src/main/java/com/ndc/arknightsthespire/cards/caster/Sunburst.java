@@ -18,6 +18,7 @@ import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.actions.RandomAttack;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.power.BurnPower;
 
 public class Sunburst extends CardSPBase {
@@ -37,13 +38,14 @@ public class Sunburst extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, true, DAMAGE, 0, BURN, SP);
         this.isMultiDamage = true;
+        this.setPercentage(1.2F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("FLAME"));
         addToBot(new DamageAllMute(
-                this.multiDamage, this.damageTypeForTurn,
+                this.multiDamage, AtsEnum.ARTS,
                 AbstractGameAction.AttackEffect.FIRE, false));
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -62,7 +64,7 @@ public class Sunburst extends CardSPBase {
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_BURN);
         this.upgradeSP(UP_SP);
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(1.5F);
     }
 
 }

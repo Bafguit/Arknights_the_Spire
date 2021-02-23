@@ -4,12 +4,10 @@ package com.ndc.arknightsthespire.character;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.Bash;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -64,8 +62,12 @@ public class CharacterDoctor extends CustomPlayer {
         TEXT = characterStrings.TEXT;
     }
 
+    public static int defaultArm = 2;
+    public static int defaultRes = 0;
+    public static int defaultAtk = 6;
+
     public CharacterDoctor (String name) {
-        super(name, ATSCharacterEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpineAnimation(
+        super(name, AtsEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpineAnimation(
                 MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1F));
 
         this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles

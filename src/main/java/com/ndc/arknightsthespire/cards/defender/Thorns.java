@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.ArmourPower;
 
 public class Thorns extends CardSPBase {
     public static final String ID = "ats:Thorns";
@@ -28,7 +29,7 @@ public class Thorns extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.upgraded ? 2 : 1), this.upgraded ? 2 : 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArmourPower(p, this.upgraded ? 2 : 1, 0)));
     }
 
     @Override

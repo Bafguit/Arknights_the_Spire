@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.ArmourPower;
 
 public class CurseDoll extends CardSPBase {
     public static final String ID = "ats:Curse Doll";
@@ -29,8 +31,7 @@ public class CurseDoll extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                     new WeakPower(m, 1, false), 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
-                new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+        ApplyDefAction.applyPerTurn(m, p, -50, 0);
     }
 
     @Override

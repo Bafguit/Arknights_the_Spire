@@ -9,6 +9,7 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
 
@@ -27,13 +28,14 @@ public class StrikeC extends CardSPBase {
                 DAMAGE, 0, 0, 0);
         this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
+        this.setPercentage(1.0F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("CASTER"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                this.getInfo(true),
                 AttackEffect.LIGHTNING, false, true));
     }
 
@@ -44,7 +46,7 @@ public class StrikeC extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(1.5F);
     }
 
 }

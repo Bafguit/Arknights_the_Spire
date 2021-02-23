@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.ShadowRaidPower;
@@ -15,8 +16,8 @@ public class ShadowRaid extends CardSPBase {
     public static final String IMG_PATH = "img/cards/ShadowRaid.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 0;
-    private static final int DEX = 8;
-    private static final int UP_DEX = 4;
+    private static final int DEX = 300;
+    private static final int UP_DEX = 100;
 
     public ShadowRaid() {
         super(ID, IMG_PATH, COST,
@@ -28,8 +29,7 @@ public class ShadowRaid extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        addToBot(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, this.magicNumber), this.magicNumber));
+        ApplyDefAction.applyPerTurn(p, p, this.magicNumber, 0);
     }
 
     @Override

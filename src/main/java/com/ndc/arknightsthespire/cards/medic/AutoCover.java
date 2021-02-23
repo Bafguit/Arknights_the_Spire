@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.ShadowRaidPower;
@@ -19,8 +20,8 @@ public class AutoCover extends CardSPBase {
     private static final int COST = 1;
     private static final int BLOCK = 7;
     private static final int UP_BLOCK = 3;
-    private static final int DEX = 2;
-    private static final int UP_DEX = 1;
+    private static final int DEX = 30;
+    private static final int UP_DEX = 20;
 
     public AutoCover() {
         super(ID, IMG_PATH, COST,
@@ -31,8 +32,7 @@ public class AutoCover extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, this.magicNumber), this.magicNumber));
+        ApplyDefAction.applyPerTurn(p, p, this.magicNumber, 0);
 
     }
 

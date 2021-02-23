@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.FrailPower;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.util.AbstractSpriterMonster;
 import com.ndc.arknightsthespire.util.BetterSpriterAnimation;
 
@@ -51,11 +52,17 @@ public class SlugB extends AbstractSpriterMonster {
     }
 
     public SlugB(float x, float y) {
-        super(NAME, ID, 15, -5.0F, 0.0F, 180.0F, 245.0F, (String)null, x, y);
+        super(NAME, ID, 15, -5.0F, 0.0F, 150.0F, 245.0F, (String)null, x, y);
         this.animation = new BetterSpriterAnimation("img/monsters/Slugs/B/Slug_B.scml");
         this.type = EnemyType.NORMAL;
         this.dialogX = (this.hb_x - 70.0F) * Settings.scale;
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
+
+        if (AbstractDungeon.ascensionLevel >= 17) {
+            this.setDef(1, 20);
+        } else {
+            this.setDef(0, 0);
+        }
 
         if (AbstractDungeon.ascensionLevel >= 7) {
             this.setHp(15, 18);
@@ -64,9 +71,9 @@ public class SlugB extends AbstractSpriterMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 2) {
-            this.attackDamage = 7;
+            this.attackDamage = 5;
         } else {
-            this.attackDamage = 6;
+            this.attackDamage = 4;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage));
@@ -78,23 +85,12 @@ public class SlugB extends AbstractSpriterMonster {
     public void takeTurn() {
         AbstractPlayer p = AbstractDungeon.player;
         this.runAnim("attack");
-        switch (this.nextMove) {
-            case 1:
-                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT));
-                break;
-            case 2:
-                this.addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 1, true)));
-        }
-
+        this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
     protected void getMove(int num) {
-        if(this.lastMove((byte)2)) {
-            this.setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base, 1, false);
-        } else {
-            this.setMove((byte)2, Intent.DEBUFF);
-        }
+        this.setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base, 1, false);
     }
 
     public void die(boolean triggerRelics) {

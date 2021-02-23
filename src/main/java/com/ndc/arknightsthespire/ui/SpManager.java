@@ -8,7 +8,7 @@ package com.ndc.arknightsthespire.ui;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase;
-import com.ndc.arknightsthespire.character.ATSCharacterEnum;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.ui.SpUtil.SpFields;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
@@ -19,7 +19,7 @@ public class SpManager {
     }
 
     public static boolean isImmortal() {
-        return player.chosenClass == ATSCharacterEnum.DOCTOR_CLASS;
+        return player.chosenClass == AtsEnum.DOCTOR_CLASS;
     }
 
     public static SpUI getSpUI() {

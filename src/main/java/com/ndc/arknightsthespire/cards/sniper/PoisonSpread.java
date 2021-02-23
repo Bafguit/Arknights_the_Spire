@@ -18,7 +18,7 @@ public class PoisonSpread extends CardSPBase {
     public static final String IMG_PATH = "img/cards/PoisonSpread.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 8;
+    private static final int ATTACK_DMG = 6;
     private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 3;
     private static final int UP_SP = 2;
@@ -29,14 +29,15 @@ public class PoisonSpread extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, POS, DEFAULT_SP);
+        this.tags.add(CardTags.STRIKE);
+        this.setPercentage(1.0F, 1.5F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX(isSpJustUsed ? "ARROW_H" : "CROSSBOW"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.POISON));
+                this.getInfo(), AbstractGameAction.AttackEffect.POISON));
         if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                 new PoisonPower(m, p, this.magicNumber), this.magicNumber));
     }
@@ -48,8 +49,8 @@ public class PoisonSpread extends CardSPBase {
 
     @Override
     public void upgradeCard() {
+        this.upgradePer(1.0F, 2.0F);
         this.upgradeMagicNumber(UP_POS);
-        this.upgradeDamage(UP_DMG);
         this.upgradeSP(UP_SP);
     }
 

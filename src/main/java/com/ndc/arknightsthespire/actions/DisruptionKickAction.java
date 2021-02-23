@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -37,7 +38,9 @@ public class DisruptionKickAction extends AbstractGameAction {
                 p = (AbstractPower)var1.next();
             } while(unRemoval.contains(p.ID));
 
-            this.addToTop(new RemoveSpecificPowerAction(this.c, this.c, p.ID));
+            if(p.type != AtsEnum.ATS_BASE) {
+                this.addToTop(new RemoveSpecificPowerAction(this.c, this.c, p.ID));
+            }
         }
     }
 

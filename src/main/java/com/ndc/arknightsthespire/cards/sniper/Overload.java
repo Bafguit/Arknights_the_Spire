@@ -20,12 +20,13 @@ public class Overload extends CardSPBase {
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
-    private static final int DEFAULT_SP = 6;
+    private static final int DEFAULT_SP = 5;
 
     public Overload() {
         super(ID, IMG_PATH, SP_IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, REPEAT_ATK, DEFAULT_SP);
+        this.setPercentage(0.7F, 0.5F);
     }
 
     @Override
@@ -34,8 +35,7 @@ public class Overload extends CardSPBase {
         addToBot(new AtsSFX((isSpJustUsed ? "SMG_H" : "SMG")));
         for (int forI = 0; forI < repeat; forI++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
+                    this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         }
     }
 
@@ -46,7 +46,7 @@ public class Overload extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UPGRADE_PLUS_DMG);
+        this.upgradePer(1.0F, 0.8F);
     }
 
 }

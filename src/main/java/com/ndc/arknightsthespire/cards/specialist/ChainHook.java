@@ -25,12 +25,13 @@ public class ChainHook extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, 0, SP);
+        this.setPercentage(1.5F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("ROPE"));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AttackEffect.SMASH, false, true));
+        addToBot(new DamageAction(m, this.getInfo(), AttackEffect.SMASH, false, true));
         addToBot(new DrawCardAction((isSpJustUsed ? 2 : 1)));
     }
 
@@ -41,7 +42,7 @@ public class ChainHook extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(2.0F);
     }
 
 }

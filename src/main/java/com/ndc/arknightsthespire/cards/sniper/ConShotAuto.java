@@ -23,6 +23,7 @@ public class ConShotAuto extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, ATTACK_DMG, 0, 0, 0);
+        this.setPercentage(0.8F);
     }
 
     @Override
@@ -30,8 +31,7 @@ public class ConShotAuto extends CardSPBase {
         for (int forI = 0; forI < 2; forI++) {
             addToBot(new AtsSFX("CROSSBOW"));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, false));
+                    this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, false));
         }
     }
 
@@ -42,7 +42,7 @@ public class ConShotAuto extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UPGRADE_PLUS_DMG);
+        this.upgradePer(1.1F);
     }
 
 }

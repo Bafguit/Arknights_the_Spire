@@ -24,12 +24,13 @@ public class HammerOn extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, 0, 0);
+        this.setPercentage(2.0F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("SPEAR"));
-        addToBot(new KillVanguard(m, new DamageInfo(p, damage, this.damageTypeForTurn),
+        addToBot(new KillVanguard(m, this.getInfo(),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, 1, true, true));
     }
 
@@ -40,7 +41,7 @@ public class HammerOn extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(2.5F);
     }
 
 }

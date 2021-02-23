@@ -25,14 +25,14 @@ public class LeapingHammer extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, SP, 0);
+        this.setPercentage(1.4F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("JUMP"));
         addToBot(new DamageAction(m,
-                new DamageInfo(p, damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
+                this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
         SPHandler.addSp(this.magicNumber);
     }
 
@@ -43,7 +43,7 @@ public class LeapingHammer extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(2.0F);
     }
 
 }

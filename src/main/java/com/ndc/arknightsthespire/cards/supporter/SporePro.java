@@ -12,6 +12,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DisruptionKickAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.ArmPerTurnPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -50,8 +51,8 @@ public class SporePro extends CardSPBase {
                 }
             }
         }
-        addToBot(new ApplyPowerAction(m, p,
-                    new WeakPower(m, this.magicNumber, false), this.magicNumber, true));
+        //addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true));
+        addToBot(new ApplyPowerAction(m, p, new ArmPerTurnPower(m, p, 50), 50));
     }
 
     @Override

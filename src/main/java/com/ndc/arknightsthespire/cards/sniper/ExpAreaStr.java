@@ -11,6 +11,7 @@ import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class ExpAreaStr extends CardSPBase {
     public static final String ID = "ats:Explosion Area Strengthen";
@@ -25,12 +26,13 @@ public class ExpAreaStr extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ALL_ENEMY, POSITION, ATTACK_DMG, 0, 0, 0);
         this.isMultiDamage = true;
+        this.setPercentage(1.5F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("GRENADE"));
-        addToBot(new DamageAllMute(p, this.multiDamage, this.damageTypeForTurn,
+        addToBot(new DamageAllMute(p, this.multiDamage, AtsEnum.PHYS,
                 AbstractGameAction.AttackEffect.SMASH, false, true));
     }
 
@@ -41,7 +43,7 @@ public class ExpAreaStr extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UPGRADE_PLUS_DMG);
+        this.upgradePer(1.8F);
     }
 
 }

@@ -9,10 +9,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PenNibPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyAtkAction;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.power.DurianPower;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
@@ -44,10 +46,10 @@ public class Durian extends CardSPBase {
 
         addToBot(new AtsSFX("DURIAN"));
         for(int forI = 0; forI < 5; forI++) {
-            addToBot(new DamageAction(p, new DamageInfo(p, d, DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
+            addToBot(new DamageAction(p, new DamageInfo(p, d, AtsEnum.PHYS), AttackEffect.FIRE, true, true));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new DurianPower()));
+        ApplyAtkAction.applyPerTurn(100);
     }
 
     @Override

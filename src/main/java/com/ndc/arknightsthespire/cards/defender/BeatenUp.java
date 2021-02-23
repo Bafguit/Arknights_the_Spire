@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.BeatenUpPower;
@@ -20,8 +21,8 @@ public class BeatenUp extends CardSPBase {
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int UP_COST = 0;
-    private static final int DEX = 3;
-    private static final int UP_DEX = 1;
+    private static final int DEX = 70;
+    private static final int UP_DEX = 50;
 
     public BeatenUp() {
         super(ID, IMG_PATH, COST,
@@ -33,8 +34,7 @@ public class BeatenUp extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new ApplyPowerAction(p, p, new BeatenUpPower(p, p)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, this.magicNumber), this.magicNumber));
+        ApplyDefAction.applyPerTurn(p, p, this.magicNumber, 0);
     }
 
     @Override

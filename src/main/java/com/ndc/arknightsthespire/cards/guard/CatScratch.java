@@ -2,6 +2,7 @@ package com.ndc.arknightsthespire.cards.guard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +13,7 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class CatScratch extends CardSPBase {
     public static final String ID = "ats:Cat Scratch";
@@ -28,13 +30,15 @@ public class CatScratch extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, WEAK, DEFAULT_SP);
+        this.setPercentage(1.0F, 1.7F);
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX((isSpJustUsed ? "PAW_H" : "PAW")));
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(m,
+                this.getInfo(true),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL, false, true));
         if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                 new WeakPower(m, magicNumber, false), magicNumber));
@@ -47,7 +51,7 @@ public class CatScratch extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
+        this.upgradePer(1.0F, 2.0F);
         this.upgradeMagicNumber(UP_WEAK);
     }
 

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
@@ -57,11 +58,13 @@ public class BeatenUpPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-            int dex;
-            if(player.hasPower("Dexterity")) dex = player.getPower("Dexterity").amount;
-            else dex = 0;
+            int dex = 0;
+            if(player.getPower(ArmourPower.POWER_ID) instanceof ArmourPower) {
+                dex = Math.round(((ArmourPower) player.getPower(ArmourPower.POWER_ID)).getFinalArmour() * 0.5F);
+            }
+
             this.flash();
-            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, dex, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
+            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, dex, AtsEnum.PHYS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
 
         return damageAmount;

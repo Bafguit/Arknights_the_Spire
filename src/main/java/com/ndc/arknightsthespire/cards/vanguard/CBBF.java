@@ -23,12 +23,13 @@ public class CBBF extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, 0, 0);
+        this.setPercentage(1.0F);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("BAGPIPE"));
-        addToBot(new KillVanguard(m, new DamageInfo(p, damage, this.damageTypeForTurn),
+        addToBot(new KillVanguard(m, this.getInfo(),
                 AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, 2, false, true, 3));
     }
 
@@ -39,7 +40,7 @@ public class CBBF extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
+        this.upgradePer(1.2F);
     }
 
 }

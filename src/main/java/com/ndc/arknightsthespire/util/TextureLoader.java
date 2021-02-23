@@ -18,6 +18,9 @@ public class TextureLoader {
     private static HashMap<String, Texture> textures = new HashMap<String, Texture>();
     public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
 
+    public TextureLoader(String s) {
+    }
+
     /**
      * @param textureString - String path to the texture you want to load relative to resources,
      *                      Example: "theDefaultResources/images/ui/missing_texture.png"

@@ -14,7 +14,7 @@ public class RedShift extends CardSPBase {
     public static final String ID = "ats:Red Shift";
     public static final String IMG_PATH = "img/cards/RedShift.png";
     public static final PositionType POSITION = PositionType.GUARD;
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int ATTACK_DMG = 4;
     private static final int UP_DMG = 1;
 
@@ -22,6 +22,7 @@ public class RedShift extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, false, ATTACK_DMG, 0, 0, 0);
+        this.setPercentage(2.5F);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class RedShift extends CardSPBase {
         addToBot(new AtsSFX("REDSHIFT"));
         for(int for_i = 0; for_i < 4; for_i++) {
             addToBot(new AtsSFX("KNIFE"));
-            this.addToBot(new RandomAttack(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
+            this.addToBot(new RandomAttack(this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         }
     }
 
@@ -40,7 +41,7 @@ public class RedShift extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DMG);
+        this.upgradePer(3.0F);
     }
 
 }
