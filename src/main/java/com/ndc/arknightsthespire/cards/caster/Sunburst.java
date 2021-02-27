@@ -38,7 +38,6 @@ public class Sunburst extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, true, DAMAGE, 0, BURN, SP);
         this.isMultiDamage = true;
-        this.setPercentage(1.2F);
     }
 
     @Override
@@ -64,7 +63,7 @@ public class Sunburst extends CardSPBase {
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_BURN);
         this.upgradeSP(UP_SP);
-        this.upgradePer(1.5F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

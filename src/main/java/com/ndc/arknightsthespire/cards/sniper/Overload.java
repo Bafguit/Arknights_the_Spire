@@ -26,7 +26,7 @@ public class Overload extends CardSPBase {
         super(ID, IMG_PATH, SP_IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, REPEAT_ATK, DEFAULT_SP);
-        this.setPercentage(0.7F, 0.5F);
+
     }
 
     @Override
@@ -46,7 +46,7 @@ public class Overload extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.0F, 0.8F);
+        this.upgradeDamage(UPGRADE_PLUS_DMG);
     }
 
 }

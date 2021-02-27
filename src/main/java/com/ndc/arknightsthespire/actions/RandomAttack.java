@@ -63,15 +63,15 @@ public class RandomAttack extends AbstractGameAction {
     public void update() {
         this.target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
         if (this.target != null) {
-            AbstractCard card = (AbstractCard) ReflectionHacks.getPrivate(this, AttackDamageRandomEnemyAction.class, "card");
-            AttackEffect effect = (AttackEffect) ReflectionHacks.getPrivate(this, AttackDamageRandomEnemyAction.class, "effect");
-            card.calculateCardDamage((AbstractMonster)this.target);
-            if (AttackEffect.LIGHTNING == effect) {
+            //AbstractCard card = (AbstractCard) ReflectionHacks.getPrivate(this, AttackDamageRandomEnemyAction.class, "card");
+            //AttackEffect effect = (AttackEffect) ReflectionHacks.getPrivate(this, AttackDamageRandomEnemyAction.class, "effect");
+            //card.calculateCardDamage((AbstractMonster)this.target);
+            if (this.attackEffect == AttackEffect.LIGHTNING) {
                 this.addToTop(new DamageAction(this.target, this.info, AttackEffect.NONE, this.skipWait, isMuted));
                 this.addToTop(new SFXAction("ORB_LIGHTNING_EVOKE", 0.1F));
                 this.addToTop(new VFXAction(new LightningEffect(this.target.hb.cX, this.target.hb.cY)));
             } else {
-                this.addToTop(new DamageAction(this.target, this.info, effect, this.skipWait, isMuted));
+                this.addToTop(new DamageAction(this.target, this.info, this.attackEffect, this.skipWait, isMuted));
             }
             if(this.hasBurn) {
                 this.addToBot(new ApplyPowerAction(this.target, AbstractDungeon.player, new BurnPower(this.target, AbstractDungeon.player, this.burnAmount), this.burnAmount, true));

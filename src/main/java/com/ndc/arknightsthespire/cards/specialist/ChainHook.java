@@ -25,7 +25,6 @@ public class ChainHook extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, 0, SP);
-        this.setPercentage(1.5F);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class ChainHook extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.0F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

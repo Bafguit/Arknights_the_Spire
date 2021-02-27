@@ -51,8 +51,7 @@ public class SporePro extends CardSPBase {
                 }
             }
         }
-        //addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true));
-        addToBot(new ApplyPowerAction(m, p, new ArmPerTurnPower(m, p, 50), 50));
+        addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true));
     }
 
     @Override

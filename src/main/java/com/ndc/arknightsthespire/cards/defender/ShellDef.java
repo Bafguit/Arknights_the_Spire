@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -24,11 +25,12 @@ public class ShellDef extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, false, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
+        this.setArm(80);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new GainBlockAction(p, p, this.block));
+        ApplyDefAction.applyTurn(p, p, this.arm, 0);
         if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
     }
 
@@ -39,7 +41,7 @@ public class ShellDef extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBlock(UPGRADE_BLOCK);
+        this.upgradeArm(50);
     }
 
 

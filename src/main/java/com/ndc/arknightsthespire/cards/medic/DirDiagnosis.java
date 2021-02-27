@@ -11,8 +11,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.actions.DisruptionKickAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+
+import java.util.ArrayList;
+import java.util.Random;
 
 public class DirDiagnosis extends CardSPBase {
     public static final String ID = "ats:Directed Diagnosis";
@@ -31,15 +35,23 @@ public class DirDiagnosis extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        addToBot(new HealAction(p, p, this.magicNumber));
         if(isSpJustUsed) {
             if(p.powers.size() > 0) {
                 addToBot(new RemoveAllPowersAction(p, true));
             }
         } else {
-            if (p.hasPower("Frail"))
-                addToBot(new RemoveSpecificPowerAction(p, p, "Frail"));
+            ArrayList<AbstractPower> debuffs = new ArrayList<>();
+            for(AbstractPower pow : m.powers) {
+                if(pow.type == AbstractPower.PowerType.DEBUFF && !DisruptionKickAction.unRemoval.contains(pow.ID)) {
+                    debuffs.add(pow);
+                }
+            }
+            if(debuffs.size() > 0) {
+                Random random = new Random();
+                addToBot(new RemoveSpecificPowerAction(p, p, debuffs.get(random.nextInt(debuffs.size()))));
+            }
         }
-        addToBot(new HealAction(p, p, this.magicNumber));
 
 
     }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -59,7 +60,7 @@ public class DefendOrderPower extends AbstractPower implements CloneablePowerInt
     @Override
     public int onGainEnergy(int e) {
         flash();
-        addToBot(new GainBlockAction(this.owner, this.amount));
+        ApplyDefAction.applyTurn(this.owner, this.owner, this.amount, 0);
         return e;
     }
 }

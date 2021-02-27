@@ -33,15 +33,15 @@ public class ThermiteBlade extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, DEFAULT_SP);
-        this.setPercentage(2.0F);
     }
     
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         Random random = new Random();
+        DamageType type = random.nextBoolean() ? AtsEnum.PHYS : DamageType.HP_LOSS;
         addToBot(new AtsSFX("BLADE"));
         addToBot(new DamageAction(m,
-                new DamageInfo(p, this.damage, isSpJustUsed ? DamageType.HP_LOSS : AtsEnum.PHYS),
+                new DamageInfo(p, this.damage, isSpJustUsed ? DamageType.HP_LOSS : type),
                 AttackEffect.SLASH_VERTICAL, false, true));
     }
 
@@ -52,7 +52,7 @@ public class ThermiteBlade extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.5F);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

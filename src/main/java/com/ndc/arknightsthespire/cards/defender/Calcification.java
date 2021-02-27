@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.ShadowRaidPower;
@@ -27,14 +28,16 @@ public class Calcification extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.SELF, POSITION, 0, BLOCK, DEX, 0);
+        this.setArm(1);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber, true));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, true));
-        SPHandler.addSp(this.magicNumber);
+        ApplyDefAction.applyDef(p, this.arm, 0);
+        if(this.upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, true));
+            SPHandler.addSp(this.magicNumber);
+        }
 
     }
 
@@ -45,7 +48,6 @@ public class Calcification extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBlock(UP_BLOCK);
     }
 
 }

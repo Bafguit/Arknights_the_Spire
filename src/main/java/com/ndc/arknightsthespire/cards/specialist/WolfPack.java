@@ -29,7 +29,6 @@ public class WolfPack extends CardSPBase {
         this.exhaust = true;
         this.selfRetain = true;
         this.isMultiDamage = true;
-        this.setPercentage(1.4F);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class WolfPack extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.0F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

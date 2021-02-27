@@ -32,7 +32,6 @@ public class Volcano extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, ATTACK_DMG, SP);
-        this.setPercentage(1.7F);
     }
 
     public int getCasterDeck() {
@@ -79,7 +78,7 @@ public class Volcano extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_DMG);
-        this.upgradePer(2.0F);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 import java.util.Random;
@@ -70,7 +71,7 @@ public class AmbushPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damage) {
-        if(this.canUse && info.type == DamageType.NORMAL && damage > 0) {
+        if(this.canUse && (info.type == AtsEnum.PHYS || info.type == DamageType.NORMAL) && damage > 0) {
             Random rand = new Random();
             int r = rand.nextInt(100);
             System.out.println("###RANDOM: " + r);

@@ -46,8 +46,14 @@ public abstract class CardSPBase extends CustomCard {
     //아니 이거 왜이래
     public int baseSP = 0;
     public int sp = 0;
-    public float perTurn = 1.0F;
-    public float perBase = 1.0F;
+    public int arm = 0;
+    public int baseArm = 0;
+    public boolean isArmModified = false;
+    public boolean upgradedArm = false;
+    public int res = 0;
+    public int baseRes = 0;
+    public boolean isResModified = false;
+    public boolean upgradedRes = false;
     public PositionType position;
     public boolean isAuto = false;
     public boolean isSPModified = false;
@@ -215,16 +221,26 @@ public abstract class CardSPBase extends CustomCard {
         }
     }
 
-    public void upgradePer(float per) {
-        this.upgradePer(per, per);
+    public void upgradeArm(int arm) {
+        this.upgradedArm = true;
+        this.baseArm += arm;
+        this.arm = this.baseArm;
+        if(this.spCard != null) {
+            this.spCard.baseArm = this.baseArm;
+            this.spCard.arm = this.arm;
+            this.spCard.upgradedArm = true;
+        }
     }
 
-    public void upgradePer(float per, float sPer) {
-        this.upgradedPer = true;
+    public void upgradeRes(int res) {
+        this.upgradedRes = true;
+        this.baseRes += res;
+        this.res = this.baseRes;
         if(this.spCard != null) {
-            this.spCard.upgradedPer = true;
+            this.spCard.baseRes = this.baseRes;
+            this.spCard.res = this.res;
+            this.spCard.upgradedRes = true;
         }
-        this.setPercentage(per, sPer);
     }
 
     public void changeSpForBattle(int c_sp) {
@@ -264,21 +280,6 @@ public abstract class CardSPBase extends CustomCard {
         updateImage();
         updateGlow();
         updateSpView();
-        updateDamage(ArknightsTheSpire.getBattle());
-    }
-
-    public void updateDamage(boolean isBattle) {
-        if(isBattle && AbstractDungeon.isPlayerInDungeon()) {
-            if(hasPlayerAtk()) {
-                if (this.canUseSP && this.shouldUseSp() && this.spCard != null) {
-                    this.damage = Math.round(getPlayerAtk() * this.spCard.perTurn);
-                } else {
-                    this.damage = Math.round(getPlayerAtk() * this.perTurn);
-                }
-            }
-        } else {
-            this.damage = Math.round(CharacterDoctor.defaultAtk * this.perTurn);
-        }
     }
 
     public void updateSpView() {
@@ -333,32 +334,23 @@ public abstract class CardSPBase extends CustomCard {
     public void updateImage() {
         if(shouldUseSp() && spCardImage != null) {
             loadCardImage(spCardImage);
-            this.damage = Math.round(getPlayerAtk() * this.spCard.perBase);
 
         } else {
             loadCardImage(normalCardImage);
         }
     }
 
-    public void setPercentage(float base) {
-        this.setPercentage(base, base);
+    public void setArm(int a) {
+        this.setDef(a, 0);
     }
 
-    public static boolean hasPlayerAtk() {
-        return AbstractDungeon.player.hasPower(AttackPower.POWER_ID);
+    public void setRes(int r) {
+        this.setDef(0, r);
     }
 
-    public static int getPlayerAtk() {
-        return AbstractDungeon.player.getPower(AttackPower.POWER_ID).amount;
-    }
-
-    public void setPercentage(float base, float sp) {
-        this.perBase = this.perTurn = base;
-        this.baseDamage = this.damage = Math.round(CharacterDoctor.defaultAtk * this.perBase);
-        if(this.spCard != null) {
-            this.spCard.perBase = this.spCard.perTurn = sp;
-            this.spCard.baseDamage = this.spCard.damage = Math.round(CharacterDoctor.defaultAtk * this.spCard.perBase);
-        }
+    public void setDef(int a, int r) {
+        this.baseArm = this.arm = a;
+        this.baseRes = this.res = r;
     }
 
     private boolean checkGlow() {
@@ -443,7 +435,7 @@ public abstract class CardSPBase extends CustomCard {
     }*/
 
     public boolean shouldUseSp() {
-        return canAffordSP() && (SPHandler.isSpModeEnabled() || isAuto) && this.sp > 0;
+        return this.canUseSP && canAffordSP() && (SPHandler.isSpModeEnabled() || isAuto) && this.sp > 0;
     }
 
     public void renderSp(SpriteBatch sb) {

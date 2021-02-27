@@ -1,5 +1,6 @@
 package com.ndc.arknightsthespire.cards.guard;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -30,7 +31,6 @@ public class ShadowAssault extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
-        this.setPercentage(3.0F, 2.5F);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class ShadowAssault extends CardSPBase {
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false, true));
             addToBot(new AtsSFX("JUEYING_2"));
             this.addToBot(new RandomAttack(this.getInfo(),
-                    AbstractGameAction.AttackEffect.SLASH_HEAVY, false, true));
+                    AbstractGameAction.AttackEffect.SLASH_HEAVY, false, true, true));
         }
         else {
             addToBot(new AtsSFX("BADAO"));
@@ -65,7 +65,7 @@ public class ShadowAssault extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(4.0F, 3.0F);
+        this.upgradeDamage(UP_DMG);
         this.upgradeSP(UP_SP);
     }
 

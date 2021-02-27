@@ -22,7 +22,6 @@ public class RedShift extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, false, ATTACK_DMG, 0, 0, 0);
-        this.setPercentage(2.5F);
     }
 
     @Override
@@ -41,7 +40,7 @@ public class RedShift extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(3.0F);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

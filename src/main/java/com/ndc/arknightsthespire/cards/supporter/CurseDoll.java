@@ -19,19 +19,20 @@ public class CurseDoll extends CardSPBase {
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int NUM = 2;
-    private static final int UP_NUM = 1;
+    private static final int UP_NUM = 2;
 
     public CurseDoll() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, 0, 0, NUM, 0);
+        this.setArm(NUM);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,
                     new WeakPower(m, 1, false), 1));
-        ApplyDefAction.applyPerTurn(m, p, -50, 0);
+        ApplyDefAction.applyPerTurn(m, p, -this.arm, 0);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class CurseDoll extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_NUM);
+        this.upgradeArm(UP_NUM);
     }
 
 

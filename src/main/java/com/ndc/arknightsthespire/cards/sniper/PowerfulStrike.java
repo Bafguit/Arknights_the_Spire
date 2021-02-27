@@ -17,24 +17,21 @@ public class PowerfulStrike extends CardSPBase {
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
+    private static final int UP_DMG = 1;
     private static final int DEFAULT_SP = 3;
     private static final int UPGRADE_SP = 2;
-    private static final float PER = 1.0F;
-    private static final float SPER = 2.0F;
-    private static final float UP_SPER = 2.3F;
 
     public PowerfulStrike() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, DEFAULT_SP);
         this.tags.add(CardTags.STRIKE);
-        this.setPercentage(1.0F, SPER);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX((isSpJustUsed ? "PISTOL_H" : "PISTOL")));
-        addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn),
+        addToBot(new DamageAction(m, this.getInfo(),
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY, false, true));
     }
 
@@ -46,7 +43,7 @@ public class PowerfulStrike extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeSP(UPGRADE_SP);
-        this.upgradePer(1.0F, UP_SPER);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

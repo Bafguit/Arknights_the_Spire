@@ -25,7 +25,6 @@ public class CollapsingStrike extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ENEMY, POSITION, D, 0, M, 0);
-        this.setPercentage(2.0F);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class CollapsingStrike extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.5F);
+        this.upgradeDamage(U_D);
     }
 
 }

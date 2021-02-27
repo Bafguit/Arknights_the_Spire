@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -48,7 +49,9 @@ public class SeriousPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void update(int slot) {
-        this.amount = getHpPercent();
+        if(this.amount != getHpPercent()) {
+            this.amount = getHpPercent();
+        }
         updateDescription();
     }
 

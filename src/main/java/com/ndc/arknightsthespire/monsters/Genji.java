@@ -5,9 +5,11 @@
 
 package com.ndc.arknightsthespire.monsters;
 
+import basemod.animations.SpineAnimation;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Mainline;
 import com.brashmonkey.spriter.Player;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;

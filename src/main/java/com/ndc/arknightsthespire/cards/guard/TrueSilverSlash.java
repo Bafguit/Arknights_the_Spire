@@ -33,7 +33,6 @@ public class TrueSilverSlash extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
-        this.setPercentage(1.7F);
     }
 
     public int getGuardDeck() {
@@ -74,7 +73,7 @@ public class TrueSilverSlash extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.0F);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

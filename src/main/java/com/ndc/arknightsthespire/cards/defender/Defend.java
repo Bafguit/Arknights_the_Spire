@@ -23,11 +23,12 @@ public class Defend extends CardSPBase {
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.SELF, POSITION, 0, 0, BLOCK_AMT, 0);
         this.tags.add(CardTags.STARTER_DEFEND);
+        this.setArm(1);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyTurn(p, p, this.magicNumber, 0);
+        ApplyDefAction.applyTurn(p, p, this.arm, 0);
     }
 
     @Override
@@ -37,7 +38,7 @@ public class Defend extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UPGRADE_BLOCK);
+        this.upgradeArm(1);
     }
 
 

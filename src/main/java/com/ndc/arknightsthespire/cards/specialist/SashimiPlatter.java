@@ -19,14 +19,11 @@ public class SashimiPlatter extends CardSPBase {
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;
     private static final int UP_DMG = 2;
-    private static final int HEAL = 40;
-    private static final int UP_HEAL = 10;
 
     public SashimiPlatter() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, false, ATTACK_DMG, 0, HEAL, 0);
-        this.setPercentage(1.5F);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, false, ATTACK_DMG, 0, 0, 0);
     }
 
     @Override
@@ -34,7 +31,7 @@ public class SashimiPlatter extends CardSPBase {
         addToBot(new AtsSFX("BLADE"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 this.getInfo(), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, false));
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, m.lastDamageTaken * (this.magicNumber / 100)));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.damage));
     }
 
     @Override
@@ -44,8 +41,7 @@ public class SashimiPlatter extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.6F);
-        this.upgradeMagicNumber(UP_HEAL);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

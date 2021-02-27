@@ -30,7 +30,6 @@ public class CatScratch extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, WEAK, DEFAULT_SP);
-        this.setPercentage(1.0F, 1.7F);
         this.tags.add(CardTags.STRIKE);
     }
 
@@ -51,7 +50,7 @@ public class CatScratch extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.0F, 2.0F);
+        this.upgradeDamage(UP_DMG);
         this.upgradeMagicNumber(UP_WEAK);
     }
 

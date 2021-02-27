@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.actions.DamageAllMute;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
@@ -35,6 +36,7 @@ public class MagHammer extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true, DAMAGE, BLOCK, WEAK, SP);
         this.isMultiDamage = true;
+        this.setArm(40);
     }
 
     @Override
@@ -42,7 +44,7 @@ public class MagHammer extends CardSPBase {
         addToBot(new AtsSFX("MAGNETIC_HAMMER"));
         addToBot(new DamageAllMute(this.multiDamage, this.damageTypeForTurn,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY, false));
-        addToBot(new GainBlockAction(p, p, this.block));
+        ApplyDefAction.applyTurn(p, p, this.arm, 0);
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber));

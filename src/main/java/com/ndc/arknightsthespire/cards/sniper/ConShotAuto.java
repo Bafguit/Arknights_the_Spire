@@ -23,7 +23,6 @@ public class ConShotAuto extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, ATTACK_DMG, 0, 0, 0);
-        this.setPercentage(0.8F);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class ConShotAuto extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.1F);
+        this.upgradeDamage(UPGRADE_PLUS_DMG);
     }
 
 }

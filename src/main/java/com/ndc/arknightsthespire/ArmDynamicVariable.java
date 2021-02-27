@@ -4,17 +4,17 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 
-public class PerDynamicVariable extends DynamicVariable {
+public class ArmDynamicVariable extends DynamicVariable {
     @Override
     public String key() {
-        return "P";
+        return "ats:A";
     }
 
     @Override
     public boolean isModified(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return card.isPerModified;
+            return card.isArmModified;
         }
         return false;
     }
@@ -23,7 +23,7 @@ public class PerDynamicVariable extends DynamicVariable {
     public int value(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return (int) Math.floor(card.perBase * 100);
+            return card.baseArm;
         }
         return 0;
     }
@@ -32,7 +32,7 @@ public class PerDynamicVariable extends DynamicVariable {
     public int baseValue(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return (int) Math.floor(card.perTurn * 100);
+            return card.arm;
         }
         return 0;
     }
@@ -41,7 +41,7 @@ public class PerDynamicVariable extends DynamicVariable {
     public boolean upgraded(AbstractCard abstractCard) {
         if(abstractCard instanceof CardSPBase) {
             CardSPBase card = (CardSPBase) abstractCard;
-            return card.upgradedPer;
+            return card.upgradedArm;
         }
         return false;
     }

@@ -50,10 +50,8 @@ public class ResTurnPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        if((!this.owner.isPlayer && isPlayer) || (this.owner.isPlayer && !isPlayer)) {
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        }
+    public void atStartOfTurn() {
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 
     @Override

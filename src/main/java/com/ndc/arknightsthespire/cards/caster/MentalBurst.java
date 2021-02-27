@@ -26,7 +26,6 @@ public class MentalBurst extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, true, POSITION, true, DAMAGE, 0, HIT, SP);
-        this.setPercentage(0.5F);
 
     }
 

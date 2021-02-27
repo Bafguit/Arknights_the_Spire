@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -24,11 +25,12 @@ public class GuardMode extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, POSITION, 0, BLOCK_AMT, 0, 0);
+        this.setArm(70);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new GainBlockAction(p, p, this.block * (p.currentHealth <= p.maxHealth/2 ? 2 : 1)));
+        ApplyDefAction.applyPerTurn(p, p, this.arm * (p.currentHealth <= p.maxHealth/2 ? 2 : 1), 0);
     }
 
     @Override
@@ -38,7 +40,7 @@ public class GuardMode extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBlock(UPGRADE_BLOCK);
+        this.upgradeArm(30);
     }
 
 

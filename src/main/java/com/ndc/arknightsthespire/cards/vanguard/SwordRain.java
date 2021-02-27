@@ -28,7 +28,6 @@ public class SwordRain extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, false, POSITION, true, DAMAGE, 0, 0, SP);
         this.isMultiDamage = true;
-        this.setPercentage(1.4F);
     }
 
     @Override
@@ -46,7 +45,7 @@ public class SwordRain extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.7F);
+        this.upgradeDamage(UP_DAMAGE);
         this.upgradeSP(UP_SP);
     }
 

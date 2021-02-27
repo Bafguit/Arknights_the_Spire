@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.medic;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,7 +19,7 @@ public class Revitalization extends CardSPBase {
     public static final String IMG_PATH = "img/cards/Revitalization.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int REGEN = 2;
+    private static final int REGEN = 4;
     private static final int UP_REGEN = 1;
 
     public Revitalization() {
@@ -29,7 +30,8 @@ public class Revitalization extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new HealAction(p, p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 1), 1));
     }
 
     @Override

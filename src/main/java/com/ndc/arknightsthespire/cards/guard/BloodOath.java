@@ -29,7 +29,6 @@ public class BloodOath extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, HEAL, DEFAULT_SP);
-        this.setPercentage(1.0F, 1.9F);
         this.tags.add(CardTags.STRIKE);
     }
 
@@ -51,7 +50,7 @@ public class BloodOath extends CardSPBase {
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_HEAL);
         this.upgradeSP(UP_SP);
-        this.upgradePer(1.0F, 2.2F);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

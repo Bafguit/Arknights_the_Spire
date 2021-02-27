@@ -26,7 +26,6 @@ public class ExpAreaStr extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ALL_ENEMY, POSITION, ATTACK_DMG, 0, 0, 0);
         this.isMultiDamage = true;
-        this.setPercentage(1.5F);
     }
 
     @Override
@@ -43,7 +42,7 @@ public class ExpAreaStr extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.8F);
+        this.upgradeDamage(UPGRADE_PLUS_DMG);
     }
 
 }

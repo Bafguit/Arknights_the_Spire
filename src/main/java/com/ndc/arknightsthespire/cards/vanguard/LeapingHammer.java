@@ -25,7 +25,6 @@ public class LeapingHammer extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, SP, 0);
-        this.setPercentage(1.4F);
     }
 
     @Override
@@ -43,7 +42,7 @@ public class LeapingHammer extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.0F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

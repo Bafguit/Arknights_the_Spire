@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -48,7 +49,7 @@ public class SoulAbsPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if(!target.isPlayer && damageAmount > 0) {
+        if(info.type == AtsEnum.ARTS && !target.isPlayer && damageAmount > 0) {
             addToBot(new GainBlockAction(AbstractDungeon.player, damageAmount));
             addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "ats:Soul Absorption"));
         }

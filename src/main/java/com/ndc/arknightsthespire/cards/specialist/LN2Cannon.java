@@ -26,7 +26,6 @@ public class LN2Cannon extends CardSPBase {
                 CardType.ATTACK, AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.ALL_ENEMY, POSITION, D, 0, 0, 0);
         this.isMultiDamage = true;
-        this.setPercentage(0.7F);
     }
 
     @Override
@@ -41,7 +40,7 @@ public class LN2Cannon extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.0F);
+        this.upgradeDamage(U_D);
     }
 
 }

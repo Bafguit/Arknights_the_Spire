@@ -29,7 +29,6 @@ public class DisruptionKick extends CardSPBase {
         this.exhaust = true;
         this.selfRetain = true;
         this.isMultiDamage = true;
-        this.setPercentage(1.8F);
     }
 
     @Override
@@ -50,7 +49,6 @@ public class DisruptionKick extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeBaseCost(UP_COST);
-        this.upgradePer(2.0F);
     }
 
 }

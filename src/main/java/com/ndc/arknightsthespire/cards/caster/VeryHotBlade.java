@@ -27,7 +27,6 @@ public class VeryHotBlade extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, true, POSITION, true, DAMAGE, 0, 0, SP);
-        this.setPercentage(1.4F);
     }
 
     @Override
@@ -47,7 +46,7 @@ public class VeryHotBlade extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeSP(UP_SP);
-        this.upgradePer(1.7F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 import com.ndc.arknightsthespire.power.ArmourPower;
@@ -24,12 +25,13 @@ public class Thorns extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, THORNS_AMOUNT, 0);
+        this.setArm(1);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        ApplyDefAction.applyDef(p, this.arm, 0);
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArmourPower(p, this.upgraded ? 2 : 1, 0)));
     }
 
     @Override
@@ -40,6 +42,7 @@ public class Thorns extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UPGRADE_THORNS);
+        this.upgradeArm(1);
     }
 
 

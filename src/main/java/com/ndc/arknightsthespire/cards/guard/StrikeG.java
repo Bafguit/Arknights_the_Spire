@@ -41,7 +41,7 @@ public class StrikeG extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.5F);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

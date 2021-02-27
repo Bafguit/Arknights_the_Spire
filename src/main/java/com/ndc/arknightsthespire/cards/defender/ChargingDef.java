@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
 
@@ -24,17 +25,14 @@ public class ChargingDef extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
+        this.setArm(80);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        
-
-        //SP Effect
+        ApplyDefAction.applyPerTurn(p, p, this.arm, 0);
         if(isSpJustUsed) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new BufferPower(p, 1), 1));
-        } else {
-          addToBot(new GainBlockAction(p, p, this.block));
         }
     }
 
@@ -45,7 +43,7 @@ public class ChargingDef extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBlock(UPGRADE_BLOCK);
+        this.upgradeArm(30);
     }
 
 }

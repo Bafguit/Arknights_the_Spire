@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -19,6 +20,8 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 import javax.smartcardio.Card;
 
+import java.util.Iterator;
+
 import static com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 
 //Gain 1 dex for the turn for each card played.
@@ -30,6 +33,7 @@ public class AttackPower extends AbstractPower implements CloneablePowerInterfac
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    public int charAtk = 6;
     public int baseAmount;
 
     public AttackPower(final AbstractCreature owner, int attack) {
@@ -56,7 +60,9 @@ public class AttackPower extends AbstractPower implements CloneablePowerInterfac
     public void update(int a) {
         this.updateDescription();
         this.amount = getAmount();
+        this.charAtk = this.amount;
     }
+
     public int getAmount() {
         return Math.max(Math.round(getFinalAttack()), 1);
     }
@@ -70,23 +76,29 @@ public class AttackPower extends AbstractPower implements CloneablePowerInterfac
         if(this.owner.hasPower(SeriousPower.POWER_ID)) {
             pa += this.owner.getPower(SeriousPower.POWER_ID).amount;
         }
+        if(this.owner.hasPower(DurianPower.POWER_ID)) {
+            pa += 100;
+        }
         if(this.owner.hasPower(AtkTurnPower.POWER_ID)) {
             a += this.owner.getPower(AtkTurnPower.POWER_ID).amount;
         }
-        return this.amount * ((float)pa / 100.0F) + a;
+        return this.baseAmount * ((float)pa / 100.0F) + a;
     }
 
     public String getAtkString() {
         String des = "";
         if(this.owner.hasPower(AtkPerTurnPower.POWER_ID) || this.owner.hasPower(SeriousPower.POWER_ID) || this.owner.hasPower(AtkTurnPower.POWER_ID)) {
             int pa = 100;
-            des = " (" + this.amount;
+            des = " (" + this.baseAmount;
             if (this.owner.hasPower(AtkPerTurnPower.POWER_ID) || this.owner.hasPower(SeriousPower.POWER_ID)) {
                 if (this.owner.hasPower(AtkPerTurnPower.POWER_ID)) {
                     pa += this.owner.getPower(AtkPerTurnPower.POWER_ID).amount;
                 }
                 if (this.owner.hasPower(SeriousPower.POWER_ID)) {
                     pa += this.owner.getPower(SeriousPower.POWER_ID).amount;
+                }
+                if(this.owner.hasPower(DurianPower.POWER_ID)) {
+                    pa += 100;
                 }
                 des += " x " + pa + "%";
             }

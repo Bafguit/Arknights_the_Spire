@@ -30,7 +30,7 @@ public class ArmCrushShot extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.ENEMY, true, POSITION, true, ATTACK_DMG, 0, VULN, DEFAULT_SP);
         this.tags.add(CardTags.STRIKE);
-        this.setPercentage(1.0F, 1.5F);
+        this.setArm(2);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ArmCrushShot extends CardSPBase {
         addToBot(new AtsSFX((isSpJustUsed ? "ARROW_H" : "ARROW")));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_LIGHT, false, true));
-        if(isSpJustUsed) ApplyDefAction.applyPerTurn(m, p, -this.magicNumber, 0);
+        if(isSpJustUsed) ApplyDefAction.applyTurn(m, p, -this.arm, 0);
     }
 
     @Override
@@ -48,8 +48,8 @@ public class ArmCrushShot extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_VULN);
-        this.upgradePer(1.8F);
+        this.upgradeArm(1);
+        this.upgradeDamage(UP_DMG);
     }
 
 }

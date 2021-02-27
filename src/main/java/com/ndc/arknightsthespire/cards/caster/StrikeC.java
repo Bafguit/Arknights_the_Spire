@@ -28,7 +28,6 @@ public class StrikeC extends CardSPBase {
                 DAMAGE, 0, 0, 0);
         this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.STARTER_STRIKE);
-        this.setPercentage(1.0F);
     }
 
     @Override
@@ -46,7 +45,7 @@ public class StrikeC extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.5F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

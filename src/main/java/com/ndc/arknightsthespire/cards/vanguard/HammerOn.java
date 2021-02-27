@@ -17,14 +17,13 @@ public class HammerOn extends CardSPBase {
     public static final String IMG_PATH = "img/cards/HammerOn.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 11;
     private static final int UP_DAMAGE = 3;
 
     public HammerOn() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, 0, 0);
-        this.setPercentage(2.0F);
     }
 
     @Override
@@ -41,7 +40,7 @@ public class HammerOn extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(2.5F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

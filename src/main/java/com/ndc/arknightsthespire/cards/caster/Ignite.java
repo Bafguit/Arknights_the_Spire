@@ -32,7 +32,6 @@ public class Ignite extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, BURN, 0);
-        this.setPercentage(1.2F);
     }
 
     @Override
@@ -50,7 +49,7 @@ public class Ignite extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_BURN);
-        this.upgradePer(1.5F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }

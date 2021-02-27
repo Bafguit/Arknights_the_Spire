@@ -5,6 +5,7 @@
 
 package com.ndc.arknightsthespire.monsters;
 
+import basemod.animations.SpineAnimation;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Mainline;
 import com.brashmonkey.spriter.Player;
@@ -53,7 +54,9 @@ public class SlugA extends AbstractSpriterMonster {
 
     public SlugA(float x, float y) {
         super(NAME, ID, 15, -5.0F, 0.0F, 150.0F, 245.0F, (String)null, x, y);
-        this.animation = new BetterSpriterAnimation("img/monsters/Slugs/A/Slug_A.scml");
+        this.animation = new SpineAnimation("img/monsters/Slugs/A/enemy_1007_slime.atlas",
+                "img/monsters/Slugs/A/enemy_1007_slime.skel",
+                1.0F);
         this.type = EnemyType.NORMAL;
         this.dialogX = (this.hb_x - 70.0F) * Settings.scale;
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
@@ -123,7 +126,7 @@ public class SlugA extends AbstractSpriterMonster {
         }
 
         public void animationFinished(Animation animation) {
-            if (animation.name.equals("death")) {
+            if (animation.name.equals("die")) {
                 this.character.stopAnimation();
             } else if (!animation.name.equals("idle")) {
                 this.character.resetAnimation();

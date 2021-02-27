@@ -131,6 +131,9 @@ public class ArmourPower extends AbstractPower implements CloneablePowerInterfac
         if(this.owner.hasPower(ArmPerTurnPower.POWER_ID)) {
             pa += this.owner.getPower(ArmPerTurnPower.POWER_ID).amount;
         }
+        if(this.owner.hasPower(DogmaticFieldPower.POWER_ID)) {
+            pa += this.owner.getPower(DogmaticFieldPower.POWER_ID).amount;
+        }
         if(this.owner.hasPower(ArmTurnPower.POWER_ID)) {
             a += this.owner.getPower(ArmTurnPower.POWER_ID).amount;
         }
@@ -153,11 +156,19 @@ public class ArmourPower extends AbstractPower implements CloneablePowerInterfac
         String des = "";
         if(this.owner.hasPower(ArmPerTurnPower.POWER_ID) || this.owner.hasPower(ArmTurnPower.POWER_ID)) {
             des = " (" + this.amount2;
-            if(this.owner.hasPower(ArmPerTurnPower.POWER_ID)) {
-                des += " x " + (100 + this.owner.getPower(ArmPerTurnPower.POWER_ID).amount) + "%";
+            int a = 100;
+            if(this.owner.hasPower(ArmPerTurnPower.POWER_ID) || this.owner.hasPower(DogmaticFieldPower.POWER_ID)) {
+                des += " x ";
+                if(this.owner.hasPower(ArmPerTurnPower.POWER_ID)) {
+                    a += this.owner.getPower(ArmPerTurnPower.POWER_ID).amount;
+                }
+                if(this.owner.hasPower(DogmaticFieldPower.POWER_ID)) {
+                    a += this.owner.getPower(DogmaticFieldPower.POWER_ID).amount;
+                }
+                des += a + "%";
             }
             if(this.owner.hasPower(ArmTurnPower.POWER_ID)) {
-                des += (this.owner.getPower(ArmTurnPower.POWER_ID).amount >= 0 ? " + " : " - ") + this.owner.getPower(ArmTurnPower.POWER_ID).amount;
+                des += (this.owner.getPower(ArmTurnPower.POWER_ID).amount >= 0 ? " + " : " - ") + (this.owner.getPower(ArmTurnPower.POWER_ID).amount >= 0 ? this.owner.getPower(ArmTurnPower.POWER_ID).amount : -this.owner.getPower(ArmTurnPower.POWER_ID).amount);
             }
             des += ")";
         }
@@ -170,7 +181,7 @@ public class ArmourPower extends AbstractPower implements CloneablePowerInterfac
         if(this.owner.hasPower(ArmPerTurnPower.POWER_ID) || this.owner.hasPower(ArmTurnPower.POWER_ID)) {
             des = " (" + this.amount;
             if(this.owner.hasPower(ResTurnPower.POWER_ID)) {
-                des += (this.owner.getPower(ResTurnPower.POWER_ID).amount >= 0 ? " + " : " - ") + this.owner.getPower(ResTurnPower.POWER_ID).amount;
+                des += (this.owner.getPower(ResTurnPower.POWER_ID).amount >= 0 ? " + " : " - ") + (this.owner.getPower(ResTurnPower.POWER_ID).amount >= 0 ? this.owner.getPower(ResTurnPower.POWER_ID).amount : -this.owner.getPower(ResTurnPower.POWER_ID).amount);
             }
             if(this.owner.hasPower(ResPerTurnPower.POWER_ID)) {
                 des += " x " + (100 + this.owner.getPower(ResPerTurnPower.POWER_ID).amount) + "%";

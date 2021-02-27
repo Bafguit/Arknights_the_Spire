@@ -23,7 +23,6 @@ public class CBBF extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.ENEMY, POSITION, DAMAGE, 0, 0, 0);
-        this.setPercentage(1.0F);
     }
 
     @Override
@@ -40,7 +39,7 @@ public class CBBF extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradePer(1.2F);
+        this.upgradeDamage(UP_DAMAGE);
     }
 
 }
