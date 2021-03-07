@@ -36,7 +36,7 @@
     "NAME": "Восполнение души",
     "DESCRIPTIONS": [
       "Восполняет #b",
-      " ОЗ, когда вы наносите урон картой #yСтража."
+      " ОЗ, когда вы наносите урон #yСтражем."
     ]
   },
   "ats:Fractured Body": {
@@ -55,8 +55,7 @@
   "ats:Composite Medical Shells": {
     "NAME": "Мед-снаряды",
     "DESCRIPTIONS": [
-      "Наносит урон ВСЕМ врагам, на количество восполняемых ОЗ.( максимум #b",
-      " )"
+      "Наносит урон ВСЕМ врагам, на количество восполняемых ОЗ."
     ]
   },
   "ats:Neurotoxin": {
@@ -102,7 +101,7 @@
   "ats:Beaten Up": {
     "NAME": "Дать сдачи",
     "DESCRIPTIONS": [
-      "Нанесите урон врагу, равный количеству вашей Ловкости, в ответ на каждую атаку."
+      "Наносит урон врагу, равный количеству вашей Ловкости, в ответ на каждую атаку."
     ]
   },
   "ats:Song Of Battle": {
@@ -167,34 +166,34 @@
     ]
   },
   "ats:Ballista": {
-    "NAME": "Ballista",
+    "NAME": "Баллиста",
     "DESCRIPTIONS": [
-      "At the start of turn, deal #b",
-      " damage #b",
-      " times."
+      "В начале хода, наносит #b",
+      " урона #b",
+      " раз(а)."
     ]
   },
   "ats:Evade": {
-    "NAME": "Evade",
+    "NAME": "Уклонение",
     "DESCRIPTIONS": [
-      "Damage from attack will be reduced to #b0 with #b",
-      "% chance. When evaded, gain #b",
-      " #yStrength for this turn."
+      "Урон от атак будет снижен до #b0 с #b",
+      "% шансом. При уклонении, даёт #b",
+      " #yСилы в этот ход."
     ]
   },
   "ats:Arm": {
-    "NAME": "Armour",
+    "NAME": "Доспех",
     "DESCRIPTIONS": [
-      "Damage from attack will be reduced by #b",
-      " . ( Minimum damage is #b1 )"
+      "Урон от атак будет снижен на #b",
+      " . ( Минимальный урон #b1 )"
     ]
   },
   "ats:Str": {
-    "NAME": "Attack after evade",
+    "NAME": "Атака после уклонения",
     "DESCRIPTIONS": [
-      "At the end of this turn, lose #b",
-      " #yStrength."
-    ]
+        "В конце этого хода, теряет #b",
+        " #yСилы."
+      ]
   },
   "ats:NULL": {
     "NAME": "This power is for add new one",

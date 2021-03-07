@@ -56,14 +56,14 @@
   },
   "ats:Sanity": {
     "NAME": "Sanity",
-    "FLAVOR": "\"Doctor, it's not to eat!\"",
+    "FLAVOR": "\"Miss.W, do not steal it!\"",
     "DESCRIPTIONS": [
       "Return half of #ySP you consumed first during each turn. (Maximum #b5)"
     ]
   },
   "ats:Sanity Plus": {
     "NAME": "Sanity+",
-    "FLAVOR": "\"Doctor, don't take it secretly and eat it!\"",
+    "FLAVOR": "\"Miss.W, don't put it in sleeping Doctor's mouth!\"",
     "DESCRIPTIONS": [
       "Replaces #rSanity. Return half of #ySP you consumed first during each turn. NL #yMaximum #ySP #yLimit increased by #b10."
     ]

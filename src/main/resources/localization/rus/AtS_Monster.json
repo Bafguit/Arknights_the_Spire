@@ -12,7 +12,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Каменный червь",
+    "NAME": "Слизень",
     "DIALOG": [
       ""
     ]
@@ -21,7 +21,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Каменный червь α",
+    "NAME": "Слизень α",
     "DIALOG": [
       ""
     ]
@@ -30,16 +30,16 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Каменный червь β",
+    "NAME": "Слизень β",
     "DIALOG": [
       ""
     ]
   },
   "ats:Shield": {
     "MOVES": [
-      "Unlock Armour"
+      "Раскрытый доспех"
     ],
-    "NAME": "Heavy Defender",
+    "NAME": "Тяжёлый защитник",
     "DIALOG": [
       ""
     ]
@@ -48,7 +48,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Mephisto",
+    "NAME": "Мефисто",
     "DIALOG": [
       ""
     ]
@@ -57,7 +57,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Faust",
+    "NAME": "Фауст",
     "DIALOG": [
       ""
     ]
@@ -66,7 +66,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Skullshatterer",
+    "NAME": "Крушитель черепов",
     "DIALOG": [
       ""
     ]
@@ -75,7 +75,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Crownslayer",
+    "NAME": "Цареубийца",
     "DIALOG": [
       ""
     ]
