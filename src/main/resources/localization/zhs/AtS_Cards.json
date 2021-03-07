@@ -43,13 +43,6 @@
     "NAME": "反制医疗模式",
     "DESCRIPTION": "每当回复生命时获得 !M! ats:技力 ."
   },
-  "ats:Powerful Strike": {
-    "NAME": "强力击·β型",
-    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. NL 增加5点额外伤害."
-    ]
-  },
   "ats:Charging Defense": {
     "NAME": "充能防御",
     "DESCRIPTION": "获得 !B! 点 格挡 . NL ats:技力 !S! ats:自动 ",
@@ -74,11 +67,6 @@
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害并使它们在一回合内失去 !M! 点 力量 . 获得 !B! 点 格挡 ."
     ]
-  },
-  "ats:Thorns": {
-    "NAME": "荆棘",
-    "DESCRIPTION": "获得 !M! 层 荆棘 . 获得1点 敏捷 .",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层 荆棘 . 获得2点 敏捷."
   },
   "ats:Rapid Magazine": {
     "NAME": "天马视域",
@@ -136,14 +124,6 @@
     "NAME": "红移",
     "DESCRIPTION": "随机对敌人造成 !D! 点伤害4次."
   },
-  "ats:Shadow Assault": {
-    "NAME": "赤霄·拔刀",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次. NL ats:技力 !S! ats:手动 ",
-    "EXTENDED_DESCRIPTION": [
-      "赤霄·绝影",
-      " ats:技力 !S! ats:手动 NL 随机对敌人造成 !D! 点伤害10次."
-    ]
-  },
   "ats:Blood Oath": {
     "NAME": "歃血",
     "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
@@ -165,10 +145,6 @@
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害且随机给予敌人 ats:燃烧 共 !M! 次."
     ]
-  },
-  "ats:Revitalization": {
-    "NAME": "活力再生",
-    "DESCRIPTION": "获得 !M! 层 再生 ."
   },
   "ats:Spore Proliferation": {
     "NAME": "孢子扩散",
@@ -346,13 +322,6 @@
       " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害. 获得 [E] [E] ."
     ]
   },
-  "ats:Directed Diagnosis": {
-    "NAME": "定向诊断",
-    "DESCRIPTION": "移除你所有的 脆弱 . 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态. 回复 !M! 点生命."
-    ]
-  },
   "ats:Durian": {
     "NAME": "爆发剂·榴莲味",
     "DESCRIPTION": " 保留 . 失去3点生命5次, 根据 敏捷 降低伤害. (最多降低 2) NL 本回合造成两倍的攻击伤害. NL 消耗 ."
@@ -407,6 +376,36 @@
   "ats:Disruption Kick": {
     "NAME": "七武掠阵踢",
     "DESCRIPTION": " 保留 . 对所有敌人造成 !D! 点伤害并移除他们除了 ats:特殊状态 以外的状态. NL 消耗 ."
+  },
+  "ats:Powerful Strike": {
+    "NAME": "强力击·β型",
+    "DESCRIPTION": "造成 !D! 点伤害. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害. NL Increase to double."
+    ]
+  },
+  "ats:Thorns": {
+    "NAME": "荆棘",
+    "DESCRIPTION": "Gain !M! Dexterity. Gain 2 Thorns."
+  },
+  "ats:Shadow Assault": {
+    "NAME": "赤霄·拔刀",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害2次. NL ats:技力 !S! ats:手动 ",
+    "EXTENDED_DESCRIPTION": [
+      "赤霄·绝影",
+      " ats:技力 !S! ats:手动 NL 随机对敌人造成 !D! 点伤害10次. Final damage stuns the enemy."
+    ]
+  },
+  "ats:Revitalization": {
+    "NAME": "活力再生",
+    "DESCRIPTION": "Heal !M! HP. Gain 1 Regen."
+  },
+  "ats:Directed Diagnosis": {
+    "NAME": "定向诊断",
+    "DESCRIPTION": "Remove your random debuff. 回复 !M! 点生命. NL ats:技力 !S! ats:自动 ",
+    "EXTENDED_DESCRIPTION": [
+      " ats:技力 !S! ats:自动 NL 移除你身上所有的负面状态. 回复 !M! 点生命."
+    ]
   },
   "ats:NULL": {
     "NAME": "",

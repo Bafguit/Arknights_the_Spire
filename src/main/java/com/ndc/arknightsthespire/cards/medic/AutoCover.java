@@ -20,8 +20,8 @@ public class AutoCover extends CardSPBase {
     private static final int COST = 1;
     private static final int BLOCK = 7;
     private static final int UP_BLOCK = 3;
-    private static final int DEX = 30;
-    private static final int UP_DEX = 20;
+    private static final int DEX = 2;
+    private static final int UP_DEX = 1;
 
     public AutoCover() {
         super(ID, IMG_PATH, COST,
@@ -32,7 +32,8 @@ public class AutoCover extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new GainBlockAction(p, p, this.block));
-        ApplyDefAction.applyPerTurn(p, p, this.magicNumber, 0);
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, this.magicNumber), this.magicNumber));
 
     }
 

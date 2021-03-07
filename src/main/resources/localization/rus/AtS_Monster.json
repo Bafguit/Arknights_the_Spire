@@ -1,0 +1,83 @@
+{
+  "ats:Genji": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Мститель",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug A": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Каменный червь",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug B": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Каменный червь α",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug C": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Каменный червь β",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Shield": {
+    "MOVES": [
+      "Unlock Armour"
+    ],
+    "NAME": "Heavy Defender",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Mephi": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Mephisto",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Faust": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Faust",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Skull": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Skullshatterer",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Crown": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Crownslayer",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

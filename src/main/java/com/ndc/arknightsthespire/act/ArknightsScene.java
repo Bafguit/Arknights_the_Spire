@@ -36,7 +36,7 @@ public class ArknightsScene extends AbstractScene {
     public ArknightsScene() {
         super("img/scene/bg_act.atlas");
         this.bg = this.atlas.findRegion("bg_shop");
-        this.ambianceName = "AMBIANCE_CITY";
+        this.ambianceName = "AMBIANCE_TERA";
         this.fadeInAmbiance();
     }
 

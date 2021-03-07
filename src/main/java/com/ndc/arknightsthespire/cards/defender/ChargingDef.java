@@ -19,7 +19,7 @@ public class ChargingDef extends CardSPBase {
     private static final int COST = 1;
     private static final int BLOCK_AMT = 8;
     private static final int UPGRADE_BLOCK = 4;
-    private static final int DEFAULT_SP = 10;
+    private static final int DEFAULT_SP = 8;
 
     public ChargingDef() {
         super(ID, IMG_PATH, COST,
@@ -30,7 +30,7 @@ public class ChargingDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyPerTurn(p, p, this.arm, 0);
+        addToBot(new GainBlockAction(p, this.block));
         if(isSpJustUsed) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new BufferPower(p, 1), 1));
         }
@@ -43,7 +43,7 @@ public class ChargingDef extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeArm(30);
+        this.upgradeBlock(UPGRADE_BLOCK);
     }
 
 }

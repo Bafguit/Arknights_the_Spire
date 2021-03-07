@@ -28,16 +28,14 @@ public class Calcification extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.RARE, CardTarget.SELF, POSITION, 0, BLOCK, DEX, 0);
-        this.setArm(1);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyDef(p, this.arm, 0);
-        if(this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, this.magicNumber), this.magicNumber, true));
-            SPHandler.addSp(this.magicNumber);
-        }
+        addToBot(new GainBlockAction(p, this.block));
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 1), 1, true));
+        SPHandler.addSp(1);
 
     }
 
@@ -48,6 +46,7 @@ public class Calcification extends CardSPBase {
 
     @Override
     public void upgradeCard() {
+        this.upgradeBlock(UP_BLOCK);
     }
 
 }

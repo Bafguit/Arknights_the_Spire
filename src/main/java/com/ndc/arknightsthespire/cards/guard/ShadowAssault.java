@@ -4,6 +4,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.StunMonsterAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -51,9 +52,9 @@ public class ShadowAssault extends CardSPBase {
         }
         else {
             addToBot(new AtsSFX("BADAO"));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.PHYS,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, DamageInfo.DamageType.NORMAL,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.ARTS,
+            AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, DamageInfo.DamageType.NORMAL,
                     AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
     }

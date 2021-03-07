@@ -58,7 +58,7 @@ public class Volcano extends CardSPBase {
             for (int for_i = 0; for_i < getCasterDeck(); for_i++) {
                 addToBot(new AtsSFX("VOLCANO"));
                 AbstractDungeon.actionManager.addToBottom(new DamageAllMute(p,
-                        this.multiDamage, AtsEnum.ARTS,
+                        this.multiDamage, DamageInfo.DamageType.NORMAL,
                         AbstractGameAction.AttackEffect.FIRE, true, true));
             }
         } else {

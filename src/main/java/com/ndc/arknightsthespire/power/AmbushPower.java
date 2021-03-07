@@ -71,7 +71,7 @@ public class AmbushPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damage) {
-        if(this.canUse && (info.type == AtsEnum.PHYS || info.type == DamageType.NORMAL) && damage > 0) {
+        if(this.canUse && info.type == DamageType.NORMAL && damage > 0) {
             Random rand = new Random();
             int r = rand.nextInt(100);
             System.out.println("###RANDOM: " + r);

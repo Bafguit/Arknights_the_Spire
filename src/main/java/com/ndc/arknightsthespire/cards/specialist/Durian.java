@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.cards.specialist;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PenNibPower;
@@ -10,6 +11,7 @@ import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.DurianPower;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
 
@@ -30,14 +32,19 @@ public class Durian extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        int d = 3;
+        int dex = (p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0);
 
+        if(dex <= 2 && dex > 0) d -= dex;
+        else if(dex <= 0) d = 3;
+        else d = 1;
 
         addToBot(new AtsSFX("DURIAN"));
         for(int forI = 0; forI < 5; forI++) {
-            addToBot(new DamageAction(p, this.getInfo(), AttackEffect.FIRE, true, true));
+            addToBot(new DamageAction(p, new DamageInfo(p, d, DamageInfo.DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new PenNibPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p, p, new DurianPower()));
     }
 
     @Override

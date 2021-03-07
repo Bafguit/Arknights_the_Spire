@@ -77,8 +77,7 @@
   },
   "ats:Thorns": {
     "NAME": "Ежовый манёвр",
-    "DESCRIPTION": "Даёт !M! Шипов. NL Даёт 1 Ловкости. NL ats:     ",
-    "UPGRADE_DESCRIPTION": "Даёт !M! Шипов. NL Даёт 2 Ловкости. NL ats:     "
+    "DESCRIPTION": "Даёт !M! Шипов. NL Даёт 2 Ловкости. NL ats:     "
   },
   "ats:Dogmatic Field": {
     "NAME": "Поле догмы",

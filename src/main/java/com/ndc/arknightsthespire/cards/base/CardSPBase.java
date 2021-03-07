@@ -65,6 +65,7 @@ public abstract class CardSPBase extends CustomCard {
     public boolean isSpJustUsed;
     public CardSpPreview spCard;
     public String nameUp;
+    private Color baseColor = new Color(0.2F, 0.9F, 1.0F, 0.25F);
 
     private boolean showSP;
 
@@ -245,7 +246,9 @@ public abstract class CardSPBase extends CustomCard {
 
     public void changeSpForBattle(int c_sp) {
         this.baseSP = Math.max(0, this.sp + c_sp);
-        this.spCard.baseSP = Math.max(0, this.spCard.sp + c_sp);
+        if(this.spCard != null) {
+            this.spCard.baseSP = Math.max(0, this.spCard.sp + c_sp);
+        }
     }
 
     public DamageInfo getInfo() {
@@ -253,7 +256,7 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public DamageInfo getInfo(boolean isArts) {
-        return new DamageInfo(AbstractDungeon.player, this.damage, isArts ? AtsEnum.ARTS : AtsEnum.PHYS);
+        return new DamageInfo(AbstractDungeon.player, this.damage, DamageInfo.DamageType.NORMAL);
     }
 
     @Override
@@ -278,28 +281,31 @@ public abstract class CardSPBase extends CustomCard {
         updateName();
         updateDescription();
         updateImage();
-        updateGlow();
         updateSpView();
+        updateGlow(shouldGlow);
     }
 
     public void updateSpView() {
         if(this.spCard != null) {
-            if (this.isAuto && canAffordSP()) {
-                this.cardsToPreview = null;
-            }
-            else if (!this.isAuto && canAffordSP() && SPHandler.isSpModeEnabled()) {
-                this.cardsToPreview = null;
-            }
-            else {
-                this.cardsToPreview = this.spCard;
+            this.cardsToPreview = this.spCard;
+            if(ArknightsTheSpire.getBattle()) {
+                if (this.isAuto && canAffordSP()) {
+                    this.cardsToPreview = null;
+                } else if (!this.isAuto && canAffordSP() && SPHandler.isSpModeEnabled()) {
+                    this.cardsToPreview = null;
+                }
             }
         }
     }
 
-    public void updateGlow() {
+    public void updateGlow(boolean showGlow) {
         boolean checkGlow = checkGlow();
-        if(checkGlow && !this.isGlowing) this.beginGlowing();
-        if(!checkGlow && this.isGlowing) this.stopGlowing();
+        if(!showGlow && ArknightsTheSpire.getBattle()) {
+            if (AbstractDungeon.player.hand.group.contains(this)) {
+                if (checkGlow && !this.isGlowing) this.beginGlowing();
+                if (!checkGlow && this.isGlowing) this.stopGlowing();
+            }
+        }
     }
 
     public void updateName() {
@@ -354,17 +360,16 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     private boolean checkGlow() {
-        if(AbstractDungeon.isPlayerInDungeon()) {
-            if (this.canAffordSP() && this.canUseSP) {
-                if (!this.isAuto && SPHandler.isSpModeEnabled()) {
-                    this.glowColor = SP_BORDER_GLOW_COLOR;
-                    return true;
-                } else if (this.isAuto) {
-                    this.glowColor = SP_BORDER_GLOW_COLOR;
-                    return true;
-                }
+        if (this.canAffordSP() && this.canUseSP) {
+            if (!this.isAuto && SPHandler.isSpModeEnabled()) {
+                this.glowColor = SP_BORDER_GLOW_COLOR;
+                return true;
+            } else if (this.isAuto) {
+                this.glowColor = SP_BORDER_GLOW_COLOR;
+                return true;
             }
         }
+        this.glowColor = this.baseColor.cpy();
         return false;
     }
 

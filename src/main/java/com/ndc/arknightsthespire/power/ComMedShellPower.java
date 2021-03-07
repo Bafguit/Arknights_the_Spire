@@ -60,7 +60,7 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
         addToBot(new AtsSFX("MILK"));
         this.addToBot(new DamageAllMute((AbstractCreature) null,
                 DamageInfo.createDamageMatrix(Math.min(healAmount, this.maxDamage), false),
-                AtsEnum.ARTS, AbstractGameAction.AttackEffect.POISON, true, true));
+                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.POISON, true, true));
         return healAmount;
     }
 

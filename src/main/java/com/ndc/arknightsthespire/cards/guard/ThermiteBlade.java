@@ -1,6 +1,7 @@
 package com.ndc.arknightsthespire.cards.guard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
@@ -37,8 +38,11 @@ public class ThermiteBlade extends CardSPBase {
     
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
+        if(isSpJustUsed) {
+            addToBot(new RemoveAllBlockAction(m, p));
+        }
         Random random = new Random();
-        DamageType type = random.nextBoolean() ? AtsEnum.PHYS : DamageType.HP_LOSS;
+        DamageType type = random.nextBoolean() ? DamageType.NORMAL : DamageType.HP_LOSS;
         addToBot(new AtsSFX("BLADE"));
         addToBot(new DamageAction(m,
                 new DamageInfo(p, this.damage, isSpJustUsed ? DamageType.HP_LOSS : type),

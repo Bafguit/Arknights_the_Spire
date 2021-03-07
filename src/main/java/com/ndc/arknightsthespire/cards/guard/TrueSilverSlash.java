@@ -59,7 +59,7 @@ public class TrueSilverSlash extends CardSPBase {
 
         for(int for_i = 0; for_i < (isSpJustUsed ? cardAmount : 3); for_i++) {
             addToBot(new AtsSFX("SILVER"));
-            addToBot(new DamageAllMute(this.multiDamage, AtsEnum.PHYS,
+            addToBot(new DamageAllMute(this.multiDamage, DamageInfo.DamageType.NORMAL,
                     AttackEffect.SLASH_HEAVY, false));
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,

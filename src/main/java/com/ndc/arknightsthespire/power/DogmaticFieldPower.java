@@ -27,7 +27,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
 
-public class DogmaticFieldPower extends AbstractPower implements CloneablePowerInterface, PreHealPower {
+public class DogmaticFieldPower extends AbstractPower implements CloneablePowerInterface, OnGainBlockPower {
     public AbstractCreature source;
 
     public static final String POWER_ID = "ats:Dogmatic Field";
@@ -35,30 +35,17 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final AbstractPlayer p = AbstractDungeon.player;
-    public int amount2;
-    public boolean up;
-    protected Color aColor = Color.YELLOW.cpy();
-    protected Color rColor = Color.LIME.cpy();
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
     private static final Texture tex84 = TextureLoader.getTexture("img/power/DogmaticField_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("img/power/DogmaticField_32.png");
 
-    public DogmaticFieldPower(final AbstractCreature owner, boolean upgraded) {
+    public DogmaticFieldPower(final AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.source = source;
-        this.up = upgraded;
-        if(!up) {
-            this.amount = 60;
-            this.amount2 = 30;
-        } else if(up) {
-            this.amount = 100;
-            this.amount2 = 50;
-        }
 
         type = PowerType.BUFF;
         isTurnBased = false;
@@ -73,22 +60,18 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount2 + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new DogmaticFieldPower(owner, up);
+        return new DogmaticFieldPower(owner);
     }
-
-    public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
-        FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount), x, y, this.fontScale, aColor);
-        FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(this.amount2), x, y + 15.0F * Settings.scale, this.fontScale, rColor);
-    }
-
 
     @Override
-    public int preHeal(AbstractCreature owner, AbstractCreature source, int healAmount) {
-        return Math.round((float)healAmount * ((100.0F + (float)this.amount2) / 100.0F));
+    public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
+        if(blockAmount > 5) addToBot(new HealAction(p, p, blockAmount - 5));
+
+        return Math.min(blockAmount, 5);
     }
 }

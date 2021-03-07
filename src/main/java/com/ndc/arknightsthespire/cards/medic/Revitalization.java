@@ -20,7 +20,7 @@ public class Revitalization extends CardSPBase {
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int REGEN = 4;
-    private static final int UP_REGEN = 1;
+    private static final int UP_REGEN = 2;
 
     public Revitalization() {
         super(ID, IMG_PATH, COST,

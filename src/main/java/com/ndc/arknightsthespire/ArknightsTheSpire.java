@@ -2,6 +2,7 @@
 package com.ndc.arknightsthespire;
 
 import actlikeit.RazIntent.CustomIntent;
+import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -20,15 +21,18 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.input.InputAction;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
+import com.ndc.arknightsthespire.act.Chernobog;
 import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.caster.*;
 import com.ndc.arknightsthespire.cards.defender.*;
@@ -41,7 +45,11 @@ import com.ndc.arknightsthespire.cards.specialist.*;
 import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.commands.SPCommandHandler;
-import com.ndc.arknightsthespire.monsters.Genji;
+import com.ndc.arknightsthespire.monsters.act1.*;
+import com.ndc.arknightsthespire.monsters.act1.boss.Crown;
+import com.ndc.arknightsthespire.monsters.act1.boss.Skull;
+import com.ndc.arknightsthespire.monsters.act2.boss.Faust;
+import com.ndc.arknightsthespire.monsters.act2.boss.Mephi;
 import com.ndc.arknightsthespire.monsters.intent.ArtsAttackIntent;
 import com.ndc.arknightsthespire.monsters.intent.ArtsBuffAttackIntent;
 import com.ndc.arknightsthespire.monsters.intent.ArtsDebuffAttackIntent;
@@ -49,13 +57,11 @@ import com.ndc.arknightsthespire.potions.*;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.SpUI;
 import com.ndc.arknightsthespire.ui.ToggleSpButton;
-import com.ndc.arknightsthespire.util.AbstractSpriterMonster;
 import com.ndc.arknightsthespire.util.MessageCaller;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
@@ -63,7 +69,7 @@ import static com.ndc.arknightsthespire.character.AtsEnum.DOCTOR_CLASS;
 
 
 @SpireInitializer
-public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber, PostBattleSubscriber {
+public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscriber, PostInitializeSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, PreRoomRenderSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, OnStartBattleSubscriber, PostBattleSubscriber, PostCreateStartingRelicsSubscriber {
 
     private static ArknightsTheSpire INSTANCE;
     public static boolean[] activeTutorials = new boolean[]{true};
@@ -71,7 +77,7 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
 
     public static InputAction enableSPButton;
 
-    public boolean isBattle = false;
+    public static boolean isBattle = false;
 
     public ArknightsTheSpire(){
         //Use this for when you subscribe to any hooks offered by BaseMod.
@@ -89,7 +95,6 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
 
         //Look at the BaseMod wiki for getting started. (Skip the decompiling part. It's not needed right now)
         CardColors.initialize();
-
 
         try {
             for(int i = 0; i < activeTutorials.length; ++i) {
@@ -215,29 +220,63 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addPotion(FlameArtsPotion.class, Color.RED, Color.RED, Color.ORANGE, FlameArtsPotion.ID, DOCTOR_CLASS);
         ConsoleCommand.addCommand("sp", SPCommandHandler.class);
         addCustomMonster();
-        CustomIntent.add(new ArtsAttackIntent());
+        /*Chernobog chernobog = new Chernobog();
+        chernobog.addAct(Exordium.ID);*/
+        /*CustomIntent.add(new ArtsAttackIntent());
         CustomIntent.add(new ArtsBuffAttackIntent());
-        CustomIntent.add(new ArtsDebuffAttackIntent());
+        CustomIntent.add(new ArtsDebuffAttackIntent());*/
     }
+
+    public void log(String s) {
+        System.out.println(s);
+    }
+/*
+    public void addCustomAct() {
+        //Act 1
+        Chernobog chernobog = new Chernobog();
+        chernobog.addMonster(Genji.ID, () -> new Genji());
+        chernobog.addStrongMonster(Shield.ID, () -> new Shield());
+        chernobog.addMonster("ats:Slugs", () -> new MonsterGroup(new AbstractMonster[] {
+                new SlugA(),
+                new SlugB(),
+                new SlugC()  }));
+        chernobog.addBoss(Exordium.ID, () -> new Skull(), "img/monsters/act_1/boss/skull.png", "img/monsters/act_1/boss/skull_out.png");
+        chernobog.addBoss(Exordium.ID, () -> new Crown(), "img/monsters/act_1/boss/crown.png", "img/monsters/act_1/boss/crown_out.png");
+
+
+    }*/
 
     public void addCustomMonster() {
         System.out.println("GENJI");
         BaseMod.addMonster(Genji.ID, () -> new Genji());
-        System.out.println("SLUG S");
-        /*BaseMod.addMonster("Slugs", () -> new MonsterGroup(new AbstractMonster[] {
-                (AbstractMonster) new SlugA(),
-                (AbstractMonster) new SlugB(),
-                (AbstractMonster) new SlugC()
-        }));*/
-        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 100));
-        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 100));
+        BaseMod.addMonster(Shield.ID, () -> new Shield());
+        System.out.println("SLUG");
+        //BaseMod.addMonster(SlugA.ID, () -> new SlugA());
+        BaseMod.addMonster("Slugs", () -> new MonsterGroup(new AbstractMonster[] {
+                 new SlugA(),
+                 new SlugB(),
+                 new SlugC()  }));
+        log("Act 1 Boss");
+        BaseMod.addMonster(Skull.ID, () -> new Skull());
+        BaseMod.addMonster(Crown.ID, () -> new Crown());
+        log("Act 2 Boss");
+        BaseMod.addMonster("MephiFaust", () -> new MonsterGroup(new AbstractMonster[] { new Faust(), new Mephi() }));
+
+
+        BaseMod.addBoss(Exordium.ID, Skull.ID, "img/monsters/act_1/boss/skull.png", "img/monsters/act_1/boss/skull_out.png");
+        BaseMod.addBoss(Exordium.ID, Crown.ID, "img/monsters/act_1/boss/crown.png", "img/monsters/act_1/boss/crown_out.png");
+        BaseMod.addBoss(TheCity.ID, "MephiFaust", "img/monsters/act_2/boss/mephi.png", "img/monsters/act_2/boss/mephi_out.png");
+        BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(Shield.ID, 1.0F));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 1.0F));
+        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SlugA.ID, 1.0F));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 1.0F));
     }
 
     public void receiveEditCharacters() {
         System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
                 "img/char/CharSelectButtonDoctor.png",
-                "img/char/PortraitBG.png",
+                "img/char/PortraitBG_w.png",
                 DOCTOR_CLASS);
         System.out.println("DONE");
     }
@@ -287,7 +326,7 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/AtS_Potions.json");
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
         BaseMod.loadCustomStringsFile(TutorialStrings.class, "localization/" + lang + "/AtS_tutorials.json");
-        BaseMod.loadCustomStringsFile(MonsterStrings.class, "localization/" + lang + "/AtS_Monsters.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "localization/" + lang + "/AtS_Monster.json");
     }
 
 
@@ -363,31 +402,27 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
             if (activeTutorials[0]) {
                 AbstractDungeon.actionManager.addToBottom(new MessageCaller(0));
             }
-            setDungeonDef();
+            isBattle = true;
+            //ApplyDefAction.applyDef(AbstractDungeon.player, CharacterDoctor.defaultArm, CharacterDoctor.defaultRes);
         }
     }
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         if(SpUI.isDoctor()) {
+            isBattle = false;
             if (abstractRoom instanceof MonsterRoomElite && SPHandler.getUpToMaxSp()) {
                 abstractRoom.addRelicToRewards(new OriginiumAdd());
             }
         }
     }
 
-    private void setDungeonDef() {
-        ApplyDefAction.applyDef(AbstractDungeon.player, CharacterDoctor.defaultArm, CharacterDoctor.defaultRes);
+    public static boolean getBattle() {
+        return isBattle;
+    }
 
-        Iterator mo = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-        while (mo.hasNext()) {
-            AbstractMonster m = (AbstractMonster) mo.next();
-            if(m instanceof AbstractSpriterMonster) {
-                AbstractSpriterMonster sm = (AbstractSpriterMonster) m;
-                ApplyDefAction.applyDef(sm, sm.defaultArm, sm.defaultRes);
-            } else {
-                ApplyDefAction.applyDef(m, 0, 0);
-            }
-        }
+    @Override
+    public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
+        isBattle = false;
     }
 }

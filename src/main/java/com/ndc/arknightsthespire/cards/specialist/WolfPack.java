@@ -35,7 +35,7 @@ public class WolfPack extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("WOLF"));
         AbstractDungeon.actionManager.addToBottom(new DamageAllMute(
-                this.multiDamage, AtsEnum.PHYS,
+                this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.LIGHTNING, true));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new StunMonsterAction(mo, p, 1));

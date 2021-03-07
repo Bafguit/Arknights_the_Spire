@@ -21,21 +21,21 @@ public class BeatenUp extends CardSPBase {
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int UP_COST = 0;
-    private static final int DEX = 60;
-    private static final int UP_DEX = 30;
+    private static final int DEX = 3;
+    private static final int UP_DEX = 2;
 
     public BeatenUp() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, DEX, 0);
         this.selfRetain = true;
-        this.setArm(DEX);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new ApplyPowerAction(p, p, new BeatenUpPower(p, p)));
-        ApplyDefAction.applyPerTurn(p, p, this.arm, 0);
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -46,7 +46,7 @@ public class BeatenUp extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeBaseCost(UP_COST);
-        this.upgradeArm(UP_DEX);
+        this.upgradeMagicNumber(UP_DEX);
     }
 
 }

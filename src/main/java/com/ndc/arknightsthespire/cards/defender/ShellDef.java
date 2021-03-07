@@ -25,12 +25,11 @@ public class ShellDef extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.COMMON, CardTarget.SELF, false, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
-        this.setArm(80);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyTurn(p, p, this.arm, 0);
+        addToBot(new GainBlockAction(p, this.block));
         if(isSpJustUsed) AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new RegenPower(p, 2), 2));
     }
 
@@ -41,7 +40,7 @@ public class ShellDef extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeArm(50);
+        this.upgradeBlock(UPGRADE_BLOCK);
     }
 
 

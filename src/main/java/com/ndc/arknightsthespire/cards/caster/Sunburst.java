@@ -44,7 +44,7 @@ public class Sunburst extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("FLAME"));
         addToBot(new DamageAllMute(
-                this.multiDamage, AtsEnum.ARTS,
+                this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.FIRE, false));
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {

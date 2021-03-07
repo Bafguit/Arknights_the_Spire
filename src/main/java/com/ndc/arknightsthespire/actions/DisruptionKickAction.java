@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.ndc.arknightsthespire.character.AtsEnum;
+import com.ndc.arknightsthespire.power.BallistaPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -58,5 +59,6 @@ public class DisruptionKickAction extends AbstractGameAction {
         unRemoval.add(UnawakenedPower.POWER_ID);
         unRemoval.add(ThieveryPower.POWER_ID);
         unRemoval.add(PainfulStabsPower.POWER_ID);
+        unRemoval.add(BallistaPower.POWER_ID);
     }
 }

@@ -30,7 +30,7 @@ public class GuardMode extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyPerTurn(p, p, this.arm * (p.currentHealth <= p.maxHealth/2 ? 2 : 1), 0);
+        addToBot(new GainBlockAction(p, this.block * (p.currentHealth <= p.maxHealth/2 ? 2 : 1)));
     }
 
     @Override
@@ -40,7 +40,7 @@ public class GuardMode extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeArm(30);
+        this.upgradeBlock(UPGRADE_BLOCK);
     }
 
 

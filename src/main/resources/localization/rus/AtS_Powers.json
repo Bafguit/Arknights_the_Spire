@@ -166,6 +166,36 @@
       "Ваши Атаки наносят двойной урон."
     ]
   },
+  "ats:Ballista": {
+    "NAME": "Ballista",
+    "DESCRIPTIONS": [
+      "At the start of turn, deal #b",
+      " damage #b",
+      " times."
+    ]
+  },
+  "ats:Evade": {
+    "NAME": "Evade",
+    "DESCRIPTIONS": [
+      "Damage from attack will be reduced to #b0 with #b",
+      "% chance. When evaded, gain #b",
+      " #yStrength for this turn."
+    ]
+  },
+  "ats:Arm": {
+    "NAME": "Armour",
+    "DESCRIPTIONS": [
+      "Damage from attack will be reduced by #b",
+      " . ( Minimum damage is #b1 )"
+    ]
+  },
+  "ats:Str": {
+    "NAME": "Attack after evade",
+    "DESCRIPTIONS": [
+      "At the end of this turn, lose #b",
+      " #yStrength."
+    ]
+  },
   "ats:NULL": {
     "NAME": "This power is for add new one",
     "DESCRIPTIONS": [

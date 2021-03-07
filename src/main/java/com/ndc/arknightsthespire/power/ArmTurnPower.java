@@ -20,29 +20,29 @@ public class ArmTurnPower extends AbstractPower implements CloneablePowerInterfa
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/beta_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/beta_32.png");
+    private boolean justApplied = false;
 
-    public ArmTurnPower(final AbstractCreature owner, final AbstractCreature source, int amount) {
+    public ArmTurnPower(final AbstractCreature owner, final AbstractCreature source, int amount, boolean isSourceMonster) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
         this.amount = amount;
+        this.justApplied = isSourceMonster;
         this.canGoNegative = true;
 
 
         type = PowerType.BUFF;
         isTurnBased = true;
 
-        // We load those txtures here.
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.loadRegion("dexterity");
 
         updateDescription();
+    }
+
+    public ArmTurnPower(AbstractCreature owner, AbstractCreature source, int amount) {
+        this(owner, source, amount, false);
     }
 
     @Override
@@ -57,8 +57,12 @@ public class ArmTurnPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+    public void atEndOfRound() {
+        if (this.justApplied) {
+            this.justApplied = false;
+        } else {
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        }
     }
 
     @Override

@@ -49,7 +49,7 @@ public class SoulAbsPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if(info.type == AtsEnum.ARTS && !target.isPlayer && damageAmount > 0) {
+        if(!target.isPlayer && damageAmount > 0) {
             addToBot(new GainBlockAction(AbstractDungeon.player, damageAmount));
             addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, "ats:Soul Absorption"));
         }

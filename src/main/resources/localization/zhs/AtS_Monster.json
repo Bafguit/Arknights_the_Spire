@@ -1,0 +1,83 @@
+{
+  "ats:Genji": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "寻仇者",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug A": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "원석충",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug B": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "원석충 α",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug C": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "원석충 β",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Shield": {
+    "MOVES": [
+      "Unlock Armour"
+    ],
+    "NAME": "重装防御者",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Mephi": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "梅菲斯特",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Faust": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "浮士德",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Skull": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "碎骨",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Crown": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "弑君者",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

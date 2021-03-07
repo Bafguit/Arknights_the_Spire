@@ -47,7 +47,7 @@
     "NAME": "Powerful Strike",
     "DESCRIPTION": "Deal !D! damage. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage. NL Increased damage 5."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. NL Increase to double."
     ]
   },
   "ats:Charging Defense": {
@@ -77,8 +77,7 @@
   },
   "ats:Thorns": {
     "NAME": "Thorns",
-    "DESCRIPTION": "Gain !M! Thorns. Gain 1 Dexterity.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Thorns. Gain 2 Dexterity."
+    "DESCRIPTION": "Gain !M! Dexterity. Gain 2 Thorns."
   },
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
@@ -156,7 +155,7 @@
     "DESCRIPTION": "Deal !D! damage 2 times to ALL enemies. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
       "Shadow Assault",
-      "ats:SP !S! ats:Manual NL Deal !D! damage 10 times to a random enemy."
+      "ats:SP !S! ats:Manual NL Deal !D! damage 10 times to a random enemy. Final damage stuns the enemy."
     ]
   },
   "ats:Blood Oath": {
@@ -190,13 +189,13 @@
   },
   "ats:Revitalization": {
     "NAME": "Revitalization",
-    "DESCRIPTION": "Gain !M! Regen."
+    "DESCRIPTION": "Heal !M! HP. Gain 1 Regen."
   },
   "ats:Spore Proliferation": {
     "NAME": "Spore Proliferation",
     "DESCRIPTION": "Apply !M! Weak. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Remove a random buff of the enemy. Cannot remove ats:特殊状态 powers. Apply !M! Weak."
+      "ats:SP !S! ats:Manual NL Remove a random buff of an enemy. Cannot remove ats:some powers. Apply !M! Weak."
     ]
   },
   "ats:Encircling Forest": {
@@ -334,7 +333,7 @@
   },
   "ats:Flame Of Heaven": {
     "NAME": "Flame Of Heaven",
-    "DESCRIPTION": "Retain. Double ats:Burn amount. Exhaust."
+    "DESCRIPTION": "Retain. Double ats:Burn amount of an enemy. Exhaust."
   },
   "ats:Burning Ground": {
     "NAME": "Burning Ground",
@@ -346,7 +345,7 @@
   },
   "ats:Directed Diagnosis": {
     "NAME": "Directed Diagnosis",
-    "DESCRIPTION": "Remove your Frail. Heal !M! HP. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Remove your random debuff. Heal !M! HP. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:Auto NL Remove your all debuffs. Heal !M! HP."
     ]
@@ -362,7 +361,7 @@
   },
   "ats:Hammer On": {
     "NAME": "Hammer On",
-    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, gain [E]."
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, gain [E] ."
   },
   "ats:Closed Bolt Burst Fire": {
     "NAME": "Closed Bolt Burst Fire",

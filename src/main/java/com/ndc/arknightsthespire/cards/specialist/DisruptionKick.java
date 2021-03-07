@@ -34,7 +34,7 @@ public class DisruptionKick extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("TIGER"));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, AtsEnum.PHYS,
+        AbstractDungeon.actionManager.addToBottom(new DamageAllMute(this.multiDamage, DamageInfo.DamageType.NORMAL,
                 AbstractGameAction.AttackEffect.LIGHTNING, true));
         for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             addToBot(new DisruptionKickAction(mo));

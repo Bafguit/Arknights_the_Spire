@@ -32,8 +32,7 @@ public class EchoReverb extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(m.hasPower("Artifact")) addToBot(new RemoveSpecificPowerAction(m, m, "Artifact"));
         addToBot(new AtsSFX("BELL"));
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,new SlowPower(m, 0), 0));
-        addToBot(new ApplyPowerAction(m, p, new ArmTurnPower(m, p, 2), 2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p,new SlowPower(m, 0), 0));
     }
 
     @Override

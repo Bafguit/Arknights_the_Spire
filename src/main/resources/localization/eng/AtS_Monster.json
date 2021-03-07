@@ -1,0 +1,83 @@
+{
+  "ats:Genji": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Avenger",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug A": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Slug",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug B": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Slug α",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Slug C": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Slug β",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Shield": {
+    "MOVES": [
+      "Unlock Armour"
+    ],
+    "NAME": "Heavy Defender",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Mephi": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Mephisto",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Faust": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Faust",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Skull": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Skullshatterer",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Crown": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Crownslayer",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

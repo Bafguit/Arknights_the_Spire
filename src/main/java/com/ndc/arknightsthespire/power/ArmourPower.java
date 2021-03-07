@@ -2,27 +2,17 @@ package com.ndc.arknightsthespire.power;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.brashmonkey.spriter.Player;
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.ndc.arknightsthespire.cards.base.CardSPBase;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.ndc.arknightsthespire.character.AtsEnum;
-import com.ndc.arknightsthespire.util.DamageT;
-import com.ndc.arknightsthespire.util.TextureLoader;
 
 import static com.megacrit.cardcrawl.cards.DamageInfo.*;
 
@@ -77,7 +67,7 @@ public class ArmourPower extends AbstractPower implements CloneablePowerInterfac
         if(info.type == AtsEnum.ARTS) {
             float dm = (float) damage * ((float)(100 - this.getAmount(true)) / 100.0F);
             return Math.round(Math.max(dm, 1.0F));
-        } else if(info.type == AtsEnum.PHYS || info.type == DamageType.NORMAL) {
+        } else if(info.type == AtsEnum.PHYS || info.type == DamageType.NORMAL || info.type == DamageType.THORNS) {
             return Math.max(damage - this.getAmount(false), 1);
         }
         /*

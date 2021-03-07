@@ -41,15 +41,17 @@ public class DirDiagnosis extends CardSPBase {
                 addToBot(new RemoveAllPowersAction(p, true));
             }
         } else {
-            ArrayList<AbstractPower> debuffs = new ArrayList<>();
-            for(AbstractPower pow : m.powers) {
-                if(pow.type == AbstractPower.PowerType.DEBUFF && !DisruptionKickAction.unRemoval.contains(pow.ID)) {
-                    debuffs.add(pow);
+            if(p.powers.size() > 0) {
+                ArrayList<AbstractPower> debuffs = new ArrayList<>();
+                for (AbstractPower pow : p.powers) {
+                    if (pow.type == AbstractPower.PowerType.DEBUFF && !DisruptionKickAction.unRemoval.contains(pow.ID)) {
+                        debuffs.add(pow);
+                    }
                 }
-            }
-            if(debuffs.size() > 0) {
-                Random random = new Random();
-                addToBot(new RemoveSpecificPowerAction(p, p, debuffs.get(random.nextInt(debuffs.size()))));
+                if (debuffs.size() > 0) {
+                    Random random = new Random();
+                    addToBot(new RemoveSpecificPowerAction(p, p, debuffs.get(random.nextInt(debuffs.size()))));
+                }
             }
         }
 

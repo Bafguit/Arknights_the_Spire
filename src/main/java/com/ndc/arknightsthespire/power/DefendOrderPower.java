@@ -60,7 +60,7 @@ public class DefendOrderPower extends AbstractPower implements CloneablePowerInt
     @Override
     public int onGainEnergy(int e) {
         flash();
-        ApplyDefAction.applyTurn(this.owner, this.owner, this.amount, 0);
+        addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
         return e;
     }
 }

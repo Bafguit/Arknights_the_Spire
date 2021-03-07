@@ -22,8 +22,8 @@ public class ArmCrushShot extends CardSPBase {
     private static final int ATTACK_DMG = 5;
     private static final int UP_DMG = 2;
     private static final int DEFAULT_SP = 4;
-    private static final int VULN = 35;
-    private static final int UP_VULN = 15;
+    private static final int VULN = 1;
+    private static final int UP_VULN = 1;
 
     public ArmCrushShot() {
         super(ID, IMG_PATH, COST,
@@ -38,7 +38,7 @@ public class ArmCrushShot extends CardSPBase {
         addToBot(new AtsSFX((isSpJustUsed ? "ARROW_H" : "ARROW")));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                 this.getInfo(), AbstractGameAction.AttackEffect.BLUNT_LIGHT, false, true));
-        if(isSpJustUsed) ApplyDefAction.applyTurn(m, p, -this.arm, 0);
+        if(isSpJustUsed) addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
     }
 
     @Override
@@ -48,7 +48,7 @@ public class ArmCrushShot extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeArm(1);
+        this.upgradeMagicNumber(UP_VULN);
         this.upgradeDamage(UP_DMG);
     }
 

@@ -16,8 +16,8 @@ public class ShadowRaid extends CardSPBase {
     public static final String IMG_PATH = "img/cards/ShadowRaid.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 0;
-    private static final int DEX = 300;
-    private static final int UP_DEX = 100;
+    private static final int DEX = 7;
+    private static final int UP_DEX = 3;
 
     public ShadowRaid() {
         super(ID, IMG_PATH, COST,
@@ -29,7 +29,8 @@ public class ShadowRaid extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyPerTurn(p, p, this.magicNumber, 0);
+        addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new ShadowRaidPower(p, p, this.magicNumber), this.magicNumber));
     }
 
     @Override

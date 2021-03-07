@@ -33,7 +33,7 @@ public class VeryHotBlade extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("DAGGER"));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                new DamageInfo(p, (isSpJustUsed ? this.damage + (m.hasPower("ats:Burn") ? m.getPower("ats:Burn").amount : 0) : this.damage), AtsEnum.ARTS),
+                new DamageInfo(p, (isSpJustUsed ? this.damage + (m.hasPower("ats:Burn") ? m.getPower("ats:Burn").amount : 0) : this.damage), DamageInfo.DamageType.NORMAL),
                 AbstractGameAction.AttackEffect.BLUNT_LIGHT, true, true));
         addToBot(new DrawCardAction(1));
     }

@@ -15,20 +15,19 @@ public class Defend extends CardSPBase {
     public static final String IMG_PATH = "img/cards/defend.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 1;
-    private static final int UPGRADE_BLOCK = 1;
+    private static final int BLOCK_AMT = 5;
+    private static final int UPGRADE_BLOCK = 3;
 
     public Defend() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.BASIC, CardTarget.SELF, POSITION, 0, 0, BLOCK_AMT, 0);
+                CardRarity.BASIC, CardTarget.SELF, POSITION, 0, BLOCK_AMT, 0, 0);
         this.tags.add(CardTags.STARTER_DEFEND);
-        this.setArm(1);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        ApplyDefAction.applyTurn(p, p, this.arm, 0);
+        addToBot(new GainBlockAction(p, this.block));
     }
 
     @Override
@@ -38,7 +37,7 @@ public class Defend extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeArm(1);
+        this.upgradeBlock(UPGRADE_BLOCK);
     }
 
 

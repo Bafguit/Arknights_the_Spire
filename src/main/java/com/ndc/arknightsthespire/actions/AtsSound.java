@@ -20,59 +20,69 @@ public class AtsSound {
     private static final Logger logger = LogManager.getLogger(AtsSound.class.getName());
     private HashMap<String, Sfx> map = new HashMap();
     private ArrayList<SoundInfo> fadeOutList = new ArrayList();
-    private static final String SFX_DIR = "sfx/p_";
+    private static final String SFX_DIR = "sfx/";
 
     public AtsSound() {
         long startTime = System.currentTimeMillis();
         Settings.SOUND_VOLUME = Settings.soundPref.getFloat("Sound Volume", 0.35F);
 
-        this.map.put("JUEYING_1", this.load("skill_jueying_1"));
-        this.map.put("JUEYING_2", this.load("skill_jueying_2"));
-        this.map.put("BADAO", this.load("skill_chixiaobadao"));
-        this.map.put("DURIAN", this.load("skill_fulminatingpotionY"));
-        this.map.put("TIGER", this.load("skill_tigerdrop_2"));
-        this.map.put("WOLF", this.load("skill_wolfroar"));
-        this.map.put("SPIRIT", this.load("skill_spiritexplo"));
-        this.map.put("FLAME", this.load("skill_flameexplo_3"));
-        this.map.put("BURN", this.load("skill_flameexplo_4"));
-        this.map.put("FIRE", this.load("skill_firebuff"));
-        this.map.put("METEOR", this.load("skill_aeroliteexplo"));
-        this.map.put("SKY", this.load("skill_skyeyeopen"));
-        this.map.put("PUMP", this.load("skill_hydraulic_n"));
-        this.map.put("HYDPUMP", this.load("skill_hydraulic_h"));
-        this.map.put("BELL", this.load("skill_recallbell"));
-        this.map.put("CLING", this.load("skill_soulwolf"));
-        this.map.put("JUMP", this.load("skill_jumphammer"));
-        this.map.put("SWORDRAIN", this.load("skill_swordrain"));
-        this.map.put("BATTLESONG", this.load("skill_battlesong"));
-        this.map.put("MAGNETIC_HAMMER", this.load("skill_magnetichammer"));
-        this.map.put("SILVER", this.load("atk_silver_n"));
-        this.map.put("BOTTLE", this.load("atk_bottle_n"));
-        this.map.put("PISTOL", this.load("atk_pistol_n"));
-        this.map.put("PISTOL_H", this.load("atk_pistol_h"));
-        this.map.put("HAWK", this.load("atk_hawk_n"));
-        this.map.put("HAWK_H", this.load("atk_hawk_h"));
-        this.map.put("SMG", this.load("atk_smg_n"));
-        this.map.put("SMG_H", this.load("atk_smg_h"));
-        this.map.put("PUNCH", this.load("atk_punch_h"));
-        this.map.put("ARROW", this.load("atk_arrow_n"));
-        this.map.put("ARROW_H", this.load("atk_arrow_h"));
-        this.map.put("CROSSBOW", this.load("atk_crossbow_n"));
-        this.map.put("GRENADE", this.load("atk_grenade_n"));
-        this.map.put("ROPE", this.load("atk_cowboy_h"));
-        this.map.put("PAW", this.load("atk_paw_n"));
-        this.map.put("PAW_H", this.load("atk_paw_h"));
-        this.map.put("DAGGER", this.load("atk_firedagger_s"));
-        this.map.put("BLADE", this.load("atk_blade_n"));
-        this.map.put("POWER_HEAL", this.load("atk_heal_h"));
-        this.map.put("VOLCANO", this.load("aoe_flamethrower_pre"));
-        this.map.put("REDSHIFT", this.load("imp_knifethrow_h"));
-        this.map.put("KNIFE", this.load("imp_knifethrow_n"));
-        this.map.put("CASTER", this.load("imp_darkmag_n"));
-        this.map.put("MILK", this.load("imp_milkcannon_n"));
-        this.map.put("SPEAR", this.load("imp_spear_n"));
-        this.map.put("SPEAR_H", this.load("imp_spear_h"));
-        this.map.put("BAGPIPE", this.load("imp_gunlance_s"));
+        this.map.put("JUEYING_1", this.load("p_skill_jueying_1"));
+        this.map.put("JUEYING_2", this.load("p_skill_jueying_2"));
+        this.map.put("BADAO", this.load("p_skill_chixiaobadao"));
+        this.map.put("DURIAN", this.load("p_skill_fulminatingpotionY"));
+        this.map.put("TIGER", this.load("p_skill_tigerdrop_2"));
+        this.map.put("WOLF", this.load("p_skill_wolfroar"));
+        this.map.put("SPIRIT", this.load("p_skill_spiritexplo"));
+        this.map.put("FLAME", this.load("p_skill_flameexplo_3"));
+        this.map.put("BURN", this.load("p_skill_flameexplo_4"));
+        this.map.put("FIRE", this.load("p_skill_firebuff"));
+        this.map.put("METEOR", this.load("p_skill_aeroliteexplo"));
+        this.map.put("SKY", this.load("p_skill_skyeyeopen"));
+        this.map.put("PUMP", this.load("p_skill_hydraulic_n"));
+        this.map.put("HYDPUMP", this.load("p_skill_hydraulic_h"));
+        this.map.put("BELL", this.load("p_skill_recallbell"));
+        this.map.put("CLING", this.load("p_skill_soulwolf"));
+        this.map.put("JUMP", this.load("p_skill_jumphammer"));
+        this.map.put("SWORDRAIN", this.load("p_skill_swordrain"));
+        this.map.put("BATTLESONG", this.load("p_skill_battlesong"));
+        this.map.put("MAGNETIC_HAMMER", this.load("p_skill_magnetichammer"));
+        this.map.put("SILVER", this.load("p_atk_silver_n"));
+        this.map.put("BOTTLE", this.load("p_atk_bottle_n"));
+        this.map.put("PISTOL", this.load("p_atk_pistol_n"));
+        this.map.put("PISTOL_H", this.load("p_atk_pistol_h"));
+        this.map.put("HAWK", this.load("p_atk_hawk_n"));
+        this.map.put("HAWK_H", this.load("p_atk_hawk_h"));
+        this.map.put("SMG", this.load("p_atk_smg_n"));
+        this.map.put("SMG_H", this.load("p_atk_smg_h"));
+        this.map.put("PUNCH", this.load("p_atk_punch_h"));
+        this.map.put("ARROW", this.load("p_atk_arrow_n"));
+        this.map.put("ARROW_H", this.load("p_atk_arrow_h"));
+        this.map.put("CROSSBOW", this.load("p_atk_crossbow_n"));
+        this.map.put("GRENADE", this.load("p_atk_grenade_n"));
+        this.map.put("ROPE", this.load("p_atk_cowboy_h"));
+        this.map.put("PAW", this.load("p_atk_paw_n"));
+        this.map.put("PAW_H", this.load("p_atk_paw_h"));
+        this.map.put("DAGGER", this.load("p_atk_firedagger_s"));
+        this.map.put("BLADE", this.load("p_atk_blade_n"));
+        this.map.put("POWER_HEAL", this.load("p_atk_heal_h"));
+        this.map.put("VOLCANO", this.load("p_aoe_flamethrower_pre"));
+        this.map.put("REDSHIFT", this.load("p_imp_knifethrow_h"));
+        this.map.put("KNIFE", this.load("p_imp_knifethrow_n"));
+        this.map.put("CASTER", this.load("p_imp_darkmag_n"));
+        this.map.put("MILK", this.load("p_imp_milkcannon_n"));
+        this.map.put("SPEAR", this.load("p_imp_spear_n"));
+        this.map.put("SPEAR_H", this.load("p_imp_spear_h"));
+        this.map.put("BAGPIPE", this.load("p_imp_gunlance_s"));
+        this.map.put("SKULL_R", this.load("e_skill_skulsrshot"));
+        this.map.put("SKULL_A", this.load("e_skill_skulsrsword"));
+        this.map.put("CROWN", this.load("e_skill_crownsflash"));
+        this.map.put("MEPHI", this.load("e_skill_aoeheal"));
+        this.map.put("FAUST_N", this.load("e_atk_faust_n"));
+        this.map.put("FAUST_H", this.load("e_atk_faust_h"));
+        this.map.put("FAUST_S", this.load("e_imp_faust_h2"));
+        this.map.put("BALLISTA", this.load("e_imp_faust_n"));
+        this.map.put("SKULL_INFO", this.load("act1_skull_intro"));
+        this.map.put("SKULL_LOOP", this.load("act1_skull_loop"));
         logger.info("Sound Effect Volume: " + Settings.SOUND_VOLUME);
         logger.info("Loaded " + this.map.size() + " Sound Effects");
         logger.info("SFX load time: " + (System.currentTimeMillis() - startTime) + "ms");
@@ -192,6 +202,16 @@ public class AtsSound {
             return 0L;
         }
     }
+    /*
+    public long playIntroLoop(String key, float volume) {
+        if (this.map.containsKey(key)) {
+            logger.info("Preloading: " + key);
+            long id = ((Sfx)this.map.get(key)).play(0.0F);
+            ((Sfx)this.map.get(key)).stop(id);
+        } else {
+            logger.info("Missing: " + key);
+        }
+    }*/
 
     public void adjustVolume(String key, long id, float volume) {
         ((Sfx)this.map.get(key)).setVolume(id, volume);
