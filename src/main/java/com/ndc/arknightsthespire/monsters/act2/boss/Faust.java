@@ -106,21 +106,22 @@ public class Faust extends CustomMonster {
         AbstractPlayer p = AbstractDungeon.player;
         switch (this.nextMove) {
             case 1:
-                this.addToBot(new AtsSFX("FAUST_N"));
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
+                this.addToBot(new AtsSFX("FAUST_N"));
                 this.addToBot(new WaitAnimAction(this, 0.9F));
-                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, false, false));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, false, true));
                 break;
             case 2:
-                this.addToBot(new AtsSFX("FAUST_H"));
                 this.addToBot(new PlayAnimationAction(this, "Skill_1"));
+                this.addToBot(new AtsSFX("FAUST_H"));
                 this.addToBot(new WaitAnimAction(this, 0.75F));
-                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.BLUNT_HEAVY, false, false));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.BLUNT_HEAVY, false, true));
                 break;
             case 3:
-                this.addToBot(new AtsSFX("FAUST_S"));
                 this.addToBot(new PlayAnimationAction(this, "Skill_2"));
-                this.addToBot(new WaitAnimAction(this, 0.4F));
+                this.addToBot(new WaitAnimAction(this, 0.2F));
+                this.addToBot(new AtsSFX("FAUST_S"));
+                this.addToBot(new WaitAnimAction(this, 0.2F));
                 this.addToBot(new ApplyPowerAction(this, this, new BallistaPower(this, this, 1, this.ballista), 1));
         }
 

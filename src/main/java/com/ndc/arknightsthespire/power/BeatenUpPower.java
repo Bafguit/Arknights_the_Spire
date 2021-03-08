@@ -64,7 +64,7 @@ public class BeatenUpPower extends AbstractPower implements CloneablePowerInterf
             }
 
             this.flash();
-            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, dex, AtsEnum.PHYS), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
+            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, dex, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
         }
 
         return damageAmount;

@@ -30,9 +30,10 @@ public class ChargingDef extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new GainBlockAction(p, this.block));
         if(isSpJustUsed) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new BufferPower(p, 1), 1));
+        } else {
+            addToBot(new GainBlockAction(p, this.block));
         }
     }
 

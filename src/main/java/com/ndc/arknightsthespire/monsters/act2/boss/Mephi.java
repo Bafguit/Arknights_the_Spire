@@ -97,10 +97,10 @@ public class Mephi extends CustomMonster {
 
     public void takeTurn() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new AtsSFX("MEPHI"));
         switch (this.nextMove) {
             case 1:
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
+                this.addToBot(new AtsSFX("MEPHI"));
                 this.addToBot(new WaitAnimAction(this, 0.3F));
                 this.addToBot(new HealAction(AbstractDungeon.getCurrRoom().monsters.monsters.get(0), this, this.heal));
                 this.addToBot(new HealAction(this, this, this.heal));
@@ -108,12 +108,14 @@ public class Mephi extends CustomMonster {
             case 2:
                 this.healed = true;
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
+                this.addToBot(new AtsSFX("MEPHI"));
                 this.addToBot(new WaitAnimAction(this, 0.3F));
                 this.addToBot(new HealAction(AbstractDungeon.getCurrRoom().monsters.monsters.get(0), this, this.heal * 5));
                 this.addToBot(new HealAction(this, this, this.heal * 5));
                 break;
             case 3:
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
+                this.addToBot(new AtsSFX("MEPHI"));
                 this.addToBot(new WaitAnimAction(this, 0.3F));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, true, true));
                 this.addToBot(new HealAction(this, this, this.heal));

@@ -10,6 +10,7 @@ import basemod.abstracts.CustomMonster;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.exordium.TheGuardian;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -87,14 +89,14 @@ public class Skull extends CustomMonster {
         AbstractPlayer p = AbstractDungeon.player;
         switch (this.nextMove) {
             case 1:
-                this.addToBot(new PlayAnimationAction(this, "Combat"));
+                this.addToBot(new PlayAnimationAction(this, "Combat", "Combat_End", null));
                 this.addToBot(new WaitAnimAction(this, 1.0F));
                 this.addToBot(new AtsSFX("SKULL_A"));
                 this.addToBot(new WaitAnimAction(this, 0.1F));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.SLASH_VERTICAL, true, false));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.SLASH_VERTICAL, false, false));
-                this.addToBot(new WaitAnimAction(this, 0.4F));
-                this.addToBot(new PlayAnimationAction(this, "Combat_End"));
+                //this.addToBot(new WaitAnimAction(this, 0.4F));
+                //this.addToBot(new PlayAnimationAction(this, "Combat_End"));
                 break;
             case 2:
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
@@ -106,11 +108,13 @@ public class Skull extends CustomMonster {
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new AtsSFX("SKULL_R"));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.FIRE, false, false));
+                this.addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, 2, true), 2));
                 break;
             case 4:
-                this.addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, 1, true), 1));
+                AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 1.0F, 2.5F));
                 break;
             case 5:
+                AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[1], 1.0F, 2.5F));
                 this.addToBot(new ApplyPowerAction(this, this, new NewStrPower(this, this.str), this.str));
                 this.isUped = true;
         }
@@ -123,9 +127,9 @@ public class Skull extends CustomMonster {
         if(this.currentHealth <= this.maxHealth / 2 && !this.isUped) {
             this.setMove((byte) 5, Intent.BUFF);
         } else if(this.lastMove((byte) 3)) {
-            this.setMove((byte) 4, Intent.DEBUFF);
+            this.setMove((byte) 4, Intent.UNKNOWN);
         } else if(this.lastMove((byte) 2)){
-            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
+            this.setMove((byte)3, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(0)).base);
         } else if(this.lastMove((byte) 4) || this.lastMove((byte) 5)){
             this.setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base, 2, true);
         } else {
@@ -146,6 +150,7 @@ public class Skull extends CustomMonster {
     }
 
     public void die() {
+        AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[2], 1.0F, 2.5F));
         super.die();
         this.addToBot(new PlayAnimationAction(this, "Die"));
     }

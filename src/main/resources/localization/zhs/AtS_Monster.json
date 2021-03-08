@@ -12,7 +12,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "원석충",
+    "NAME": "源石虫",
     "DIALOG": [
       ""
     ]
@@ -21,7 +21,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "원석충 α",
+    "NAME": "源石虫 α",
     "DIALOG": [
       ""
     ]
@@ -30,14 +30,14 @@
     "MOVES": [
       ""
     ],
-    "NAME": "원석충 β",
+    "NAME": "源石虫 β",
     "DIALOG": [
       ""
     ]
   },
   "ats:Shield": {
     "MOVES": [
-      "Unlock Armour"
+      "解锁装甲"
     ],
     "NAME": "重装防御者",
     "DIALOG": [
@@ -68,7 +68,9 @@
     ],
     "NAME": "碎骨",
     "DIALOG": [
-      ""
+      "Don't bother me...!",
+      "Now I'm the second Skullshatterer!",
+      "Alex..."
     ]
   },
   "ats:Crown": {

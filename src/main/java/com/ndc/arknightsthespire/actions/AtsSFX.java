@@ -33,7 +33,6 @@ public class AtsSFX extends AbstractGameAction {
     }
 
     public void update() {
-        atsS.update();
         if (!this.adjust) {
             atsS.play(this.key, this.pitchVar);
         } else {

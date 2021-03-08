@@ -3,34 +3,34 @@
     "NAME": "应急理智合剂",
     "DESCRIPTIONS": [
       "获得 #b",
-      " #y技力."
+      " #y技力。"
     ]
   },
   "ats:Top Emergency Sanity Potion": {
     "NAME": "应急理智顶液",
     "DESCRIPTIONS": [
       "获得 #b",
-      " #y技力."
+      " #y技力。"
     ]
   },
   "ats:Burn Small Potion": {
     "NAME": "灼烧瓶",
     "DESCRIPTIONS": [
       "给予 #b",
-      " 层 #y燃烧 ."
+      " 层 #y燃烧 。"
     ]
   },
   "ats:Burn Big Potion": {
     "NAME": "灼药水",
     "DESCRIPTIONS": [
       "给予 #b",
-      " 层 #y燃烧 ."
+      " 层 #y燃烧 。"
     ]
   },
   "ats:Flame Arts Potion": {
     "NAME": "瓶中火焰",
     "DESCRIPTIONS": [
-      "翻倍 #y燃烧 层数."
+      "翻倍 #y燃烧 层数。"
     ]
   }
 }

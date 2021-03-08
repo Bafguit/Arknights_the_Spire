@@ -12,7 +12,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Slug",
+    "NAME": "Originium Slug",
     "DIALOG": [
       ""
     ]
@@ -21,7 +21,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Slug α",
+    "NAME": "Originium Slug α",
     "DIALOG": [
       ""
     ]
@@ -30,7 +30,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Slug β",
+    "NAME": "Originium Slug β",
     "DIALOG": [
       ""
     ]
@@ -68,7 +68,9 @@
     ],
     "NAME": "Skullshatterer",
     "DIALOG": [
-      ""
+      "Don't bother me...!",
+      "Now I'm the second Skullshatterer!",
+      "Alex..."
     ]
   },
   "ats:Crown": {

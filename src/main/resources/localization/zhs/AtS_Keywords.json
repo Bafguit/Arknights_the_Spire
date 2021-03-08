@@ -4,49 +4,49 @@
     "NAMES": [
       "技力"
     ],
-    "DESCRIPTION": "消费 #y技力 获得增强效果."
+    "DESCRIPTION": "消费 #y技力 获得额外效果。"
   },
   {
     "PROPER_NAME": "自动",
     "NAMES": [
       "自动"
     ],
-    "DESCRIPTION": "如果你拥有足够的 #y技力 打出 NL 会消费 #y技力 获得额外效果."
+    "DESCRIPTION": "如果你拥有足够的 #y技力 时打出 NL 将会消费 #y技力 并获得额外效果。"
   },
   {
     "PROPER_NAME": "手动",
     "NAMES": [
       "手动"
     ],
-    "DESCRIPTION": "处于手动模式才能触发,如果你拥有足够的 #y技力 打出 NL 会消费 #y技力 获得强大效果.需要通过按钮切换到手动模式."
+    "DESCRIPTION": "处于手动模式时才能触发,如果你拥有足够的 #y技力 时打出 NL 将会消费 #y技力 获得强大的额外效果。需要通过按钮切换到手动模式。"
   },
   {
     "PROPER_NAME": "燃烧",
     "NAMES": [
       "燃烧"
     ],
-    "DESCRIPTION": "在回合开始和结束时,失去生命."
+    "DESCRIPTION": "在回合开始和结束时,失去生命。"
   },
   {
     "PROPER_NAME": "庇护",
     "NAMES": [
       "庇护"
     ],
-    "DESCRIPTION": "减少 #b25% 受到的攻击伤害."
+    "DESCRIPTION": "减少 #b25% 受到的攻击伤害。"
   },
   {
     "PROPER_NAME": "号令",
     "NAMES": [
       "号令"
     ],
-    "DESCRIPTION": "在每个回合开始时,获得 #b1 能量 ."
+    "DESCRIPTION": "在每个回合开始时,获得 #b1 能量 。"
   },
   {
     "PROPER_NAME": "治愈力",
     "NAMES": [
       "治愈力"
     ],
-    "DESCRIPTION": "增强生命回复的效果."
+    "DESCRIPTION": "增强生命回复的效果。"
   },
   {
     "PROPER_NAME": "狙击",
@@ -116,6 +116,6 @@
     "NAMES": [
       "缓慢"
     ],
-    "DESCRIPTION": "你在这个回合每打出一张卡牌,额外受到 #b10% 的 #y攻击 伤害."
+    "DESCRIPTION": "你在这个回合每打出一张卡牌,额外受到 #b10% 的 #y攻击 伤害。"
   }
 ]
