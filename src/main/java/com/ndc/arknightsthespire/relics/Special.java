@@ -13,7 +13,7 @@ import static com.ndc.arknightsthespire.SPHandler.addSp;
 
 public class Special extends CustomRelic {
     public static final String ID = "ats:Special";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Special.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Special.png");
     public CardSPBase spC;
 
     public Special() {

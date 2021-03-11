@@ -38,8 +38,8 @@ public class Crown extends CustomMonster {
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final String ATLAS = "img/monsters/act_1/boss/enemy_1502_crowns.atlas";
-    private static final String SKEL = "img/monsters/act_1/boss/enemy_1502_crowns.json";
+    private static final String ATLAS = "atsImg/monsters/act_1/boss/enemy_1502_crowns.atlas";
+    private static final String SKEL = "atsImg/monsters/act_1/boss/enemy_1502_crowns.json";
     private int attackDamage;
     private int arm = 0;
     private int res = 0;
@@ -123,7 +123,9 @@ public class Crown extends CustomMonster {
     public void usePreBattleAction() {
         super.usePreBattleAction();
         UnlockTracker.markBossAsSeen(this.id);
-        CardCrawlGame.music.playTempBGM("act1_crown_loop.ogg");
+        CardCrawlGame.music.unsilenceBGM();
+        AbstractDungeon.scene.fadeOutAmbiance();
+        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
         this.addToBot(new ApplyPowerAction(this, this, new EvadePower(this, this.evade, this.str)));
     }
 

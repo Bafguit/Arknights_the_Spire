@@ -13,7 +13,7 @@ import static com.ndc.arknightsthespire.SPHandler.addSp;
 
 public class Defend extends CustomRelic {
     public static final String ID = "ats:Defend";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Defend.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Defend.png");
     public CardSPBase spC;
 
     public Defend() {

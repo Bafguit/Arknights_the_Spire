@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class RatPack extends CardSPBase {
     public static final String ID = "ats:Rat Pack";
-    public static final String IMG_PATH = "img/cards/RatPack.png";
+    public static final String IMG_PATH = "atsImg/cards/RatPack.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 3;
     private static final int UP_COST = 2;

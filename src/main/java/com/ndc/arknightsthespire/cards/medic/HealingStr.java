@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.power.DogmaticFieldPower;
 
 public class HealingStr extends CardSPBase {
     public static final String ID = "ats:Healing Strengthening";
-    public static final String IMG_PATH = "img/cards/HealingStr.png";
+    public static final String IMG_PATH = "atsImg/cards/HealingStr.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int HEAL = 1;

@@ -29,8 +29,8 @@ public class BeatenUpPower extends AbstractPower implements CloneablePowerInterf
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/BeatenUp_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/BeatenUp_32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/BeatenUp_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/BeatenUp_32.png");
 
     public BeatenUpPower(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
@@ -58,13 +58,12 @@ public class BeatenUpPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-            int dex = 0;
-            if(player.getPower(ArmourPower.POWER_ID) instanceof ArmourPower) {
-                dex = Math.round(((ArmourPower) player.getPower(ArmourPower.POWER_ID)).getFinalArmour() * 0.5F);
-            }
+            int dex;
+            if(player.hasPower("Dexterity")) dex = player.getPower("Dexterity").amount;
+            else dex = 0;
 
             this.flash();
-            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, dex, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY, true));
+            this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, dex, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
         }
 
         return damageAmount;

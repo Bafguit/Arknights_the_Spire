@@ -31,6 +31,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.PlayAnimationAction;
+import com.ndc.arknightsthespire.cards.base.CardSPBase;
+import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 
 import java.util.ArrayList;
 
@@ -56,13 +58,13 @@ public class CharacterDoctor extends CustomPlayer {
     private static final String[] NAMES;
     private static final String[] TEXT;
 
-    public static final String MY_CHARACTER_SHOULDER_2 = "img/char/shoulder_w.png"; // campfire pose
-    public static final String MY_CHARACTER_SHOULDER_1 = "img/char/shoulder_w.png"; // another campfire pose
-    public static final String MY_CHARACTER_CORPSE = "img/char/corpse_w.png"; // dead corpse
-    public static final String MY_CHARACTER_SKELETON_ATLAS = "img/char/w/enemy_1504_cqbw.atlas"; // spine animation atlas
-    public static final String MY_CHARACTER_SKELETON_JSON = "img/char/w/enemy_1504_cqbw.json"; // spine animation json
+    public static final String MY_CHARACTER_SHOULDER_2 = "atsImg/char/shoulder_w.png"; // campfire pose
+    public static final String MY_CHARACTER_SHOULDER_1 = "atsImg/char/shoulder_w.png"; // another campfire pose
+    public static final String MY_CHARACTER_CORPSE = "atsImg/char/corpse_w.png"; // dead corpse
+    public static final String MY_CHARACTER_SKELETON_ATLAS = "atsImg/char/w/enemy_1504_cqbw.atlas"; // spine animation atlas
+    public static final String MY_CHARACTER_SKELETON_JSON = "atsImg/char/w/enemy_1504_cqbw.json"; // spine animation json
     public static final String[] orbTextures = {
-            "img/char/orb/layer.png"};
+            "atsImg/char/orb/layer.png"};
 
     static {
         characterStrings = CardCrawlGame.languagePack.getCharacterString("ats:W");
@@ -75,7 +77,7 @@ public class CharacterDoctor extends CustomPlayer {
     public static int defaultAtk = 6;
 
     public CharacterDoctor (String name) {
-        super(name, AtsEnum.DOCTOR_CLASS, orbTextures, "img/char/orb/vfx.png", new SpineAnimation(
+        super(name, AtsEnum.DOCTOR_CLASS, orbTextures, "atsImg/char/orb/vfx.png", new SpineAnimation(
                 MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.25F));
         this.loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.25F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
@@ -191,7 +193,9 @@ public class CharacterDoctor extends CustomPlayer {
     @Override
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
         if (c.type == AbstractCard.CardType.ATTACK) {
-            AbstractDungeon.actionManager.addToBottom(new PlayAnimationAction(this, "Attack"));
+            AnimationState.TrackEntry e = state.setAnimation(0, "Attack", false);
+            state.addAnimation(0,"Idle", true, 0.0f);
+            e.setTimeScale(1f);
         }
 
         c.calculateCardDamage(monster);
@@ -252,6 +256,5 @@ public class CharacterDoctor extends CustomPlayer {
     public String getVampireText() {
         return Vampires.DESCRIPTIONS[0];
     }
-
 }
 

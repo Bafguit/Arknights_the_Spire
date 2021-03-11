@@ -18,8 +18,8 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class ShadowAssault extends CardSPBase {
     public static final String ID = "ats:Shadow Assault";
-    public static final String IMG_PATH = "img/cards/ShadowAssault.png";
-    public static final String SP_IMG_PATH = "img/cards/ShadowAssault_sp.png";
+    public static final String IMG_PATH = "atsImg/cards/ShadowAssault.png";
+    public static final String SP_IMG_PATH = "atsImg/cards/ShadowAssault_sp.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
     private static final int ATTACK_DMG = 10;

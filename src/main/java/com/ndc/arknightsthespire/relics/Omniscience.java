@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Omniscience extends CustomRelic {
     public static final String ID = "ats:Omniscience";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Omniscience.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Omniscience.png");
 
     public Omniscience() {
         super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it

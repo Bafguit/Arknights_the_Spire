@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class SpiritualRecovery extends CustomRelic {
     public static final String ID = "ats:Spiritual Recovery";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/SpiritualRecovery.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/SpiritualRecovery.png");
     private static final int SP_RECOVER = 1;
 
     public SpiritualRecovery() {

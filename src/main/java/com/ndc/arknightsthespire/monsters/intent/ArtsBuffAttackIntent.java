@@ -22,7 +22,7 @@ public class ArtsBuffAttackIntent extends CustomIntent {
     private static final String[] TEXT;
 
     public ArtsBuffAttackIntent() {
-        super(AtsEnum.ATTACK_ARTS_BUFF, TEXT[5], "img/ui/intent/art.png", "img/ui/intent/arts_tip.png");
+        super(AtsEnum.ATTACK_ARTS_BUFF, TEXT[5], "atsImg/ui/intent/art.png", "atsImg/ui/intent/arts_tip.png");
     }
 
     @Override

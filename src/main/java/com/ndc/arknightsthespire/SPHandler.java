@@ -2,21 +2,17 @@ package com.ndc.arknightsthespire;
 
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
-import com.badlogic.gdx.graphics.g3d.particles.ResourceData;
-import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.saveAndContinue.SaveAndContinue;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
-
-import java.lang.reflect.Type;
 
 public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
     private static int sp = 0;
     private static int maxSp = 10;
     private static int maxSpLimit = 50;
+    private static int turnEnergy = 0;
     private static final int MAX_SP_UP_LIMIT = 120;
     private static final int MAX_SP_DOWN_LIMIT = 10;
     private static int defaultSp = 0;
@@ -54,6 +50,14 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
       }
       
       return defMax;
+    }
+
+    public static int getTurnEnergy() {
+        return turnEnergy;
+    }
+
+    public static void addTurnEnergy(int e) {
+        turnEnergy += e;
     }
     
     public static int getTurnAddSp() {
@@ -161,6 +165,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
         System.out.println("Saving...");
         sp = 0;
         maxSp = 10;
+        turnEnergy = 0;
         System.out.println("Saved.");
     }
 
@@ -177,6 +182,7 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     @Override
     public void receivePostEnergyRecharge() {
         this.addSp(turnAddSp);
+        turnEnergy = 0;
     }
 
     @Override
@@ -187,5 +193,6 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     @Override
     public void receivePostDeath() {
         maxSp = 10;
+        turnEnergy = 0;
     }
 }

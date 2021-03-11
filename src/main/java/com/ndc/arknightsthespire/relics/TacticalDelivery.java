@@ -10,7 +10,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class TacticalDelivery extends CustomRelic {
     public static final String ID = "ats:Tactical Delivery";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/TacticalDelivery.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/TacticalDelivery.png");
 
     public TacticalDelivery() {
         super(ID, IMG, RelicTier.BOSS, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it

@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.power.AmbushPower;
 
 public class Ambush extends CardSPBase {
     public static final String ID = "ats:Ambush";
-    public static final String IMG_PATH = "img/cards/Ambush.png";
+    public static final String IMG_PATH = "atsImg/cards/Ambush.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int EVADE = 40;

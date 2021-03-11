@@ -13,7 +13,7 @@ import static com.ndc.arknightsthespire.SPHandler.addSp;
 
 public class Snipe extends CustomRelic {
     public static final String ID = "ats:Snipe";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Snipe.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Snipe.png");
     public CardSPBase spC;
 
     public Snipe() {

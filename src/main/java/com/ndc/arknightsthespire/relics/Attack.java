@@ -13,7 +13,7 @@ import static com.ndc.arknightsthespire.SPHandler.addSp;
 
 public class Attack extends CustomRelic {
     public static final String ID = "ats:Attack";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Attack.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Attack.png");
     public CardSPBase spC;
 
     public Attack() {

@@ -64,11 +64,11 @@ public class ToggleSpButton {
     public static final float HITBOX_HEIGHT = 100.0F;
     EndTurnButton endTurnButton;
 
-    public static Texture UI_BUTTON_LEFT = ImageMaster.loadImage("img/ui/uiButtonLeft.png");
-    public static Texture UI_BUTTON_LEFT_HOVER = ImageMaster.loadImage("img/ui/uiButtonLeftHover.png");
-    public static Texture UI_BUTTON_RIGHT = ImageMaster.loadImage("img/ui/uiButtonRight.png");
-    public static Texture UI_BUTTON_RIGHT_GLOW = ImageMaster.loadImage("img/ui/uiButtonRightGlow.png");
-    public static Texture UI_BUTTON_RIGHT_HOVER = ImageMaster.loadImage("img/ui/uiButtonRightHover.png");
+    public static Texture UI_BUTTON_LEFT = ImageMaster.loadImage("atsImg/ui/uiButtonLeft.png");
+    public static Texture UI_BUTTON_LEFT_HOVER = ImageMaster.loadImage("atsImg/ui/uiButtonLeftHover.png");
+    public static Texture UI_BUTTON_RIGHT = ImageMaster.loadImage("atsImg/ui/uiButtonRight.png");
+    public static Texture UI_BUTTON_RIGHT_GLOW = ImageMaster.loadImage("atsImg/ui/uiButtonRightGlow.png");
+    public static Texture UI_BUTTON_RIGHT_HOVER = ImageMaster.loadImage("atsImg/ui/uiButtonRightHover.png");
 
     public ToggleSpButton(EndTurnButton endTurnButton) {
         this.label = TURN_ON_MSG;

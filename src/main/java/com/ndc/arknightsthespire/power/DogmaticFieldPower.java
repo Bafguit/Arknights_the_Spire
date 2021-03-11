@@ -38,8 +38,8 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/DogmaticField_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/DogmaticField_32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/DogmaticField_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/DogmaticField_32.png");
 
     public DogmaticFieldPower(final AbstractCreature owner) {
         name = NAME;
@@ -70,8 +70,9 @@ public class DogmaticFieldPower extends AbstractPower implements CloneablePowerI
 
     @Override
     public int onGainBlock(AbstractCreature owner, AbstractCreature source, int blockAmount) {
-        if(blockAmount > 5) addToBot(new HealAction(p, p, blockAmount - 5));
-
+        if(owner.isPlayer) {
+            if (blockAmount > 5) owner.heal(blockAmount - 5);
+        }
         return Math.min(blockAmount, 5);
     }
 }

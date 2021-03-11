@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class ChargingDef extends CardSPBase {
     public static final String ID = "ats:Charging Defense";
-    public static final String IMG_PATH = "img/cards/cdef.png";
+    public static final String IMG_PATH = "atsImg/cards/cdef.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int BLOCK_AMT = 8;

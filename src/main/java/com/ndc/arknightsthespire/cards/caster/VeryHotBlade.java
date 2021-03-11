@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class VeryHotBlade extends CardSPBase {
     public static final String ID = "ats:Very Hot Blade";
-    public static final String IMG_PATH = "img/cards/VeryHotBlade.png";
+    public static final String IMG_PATH = "atsImg/cards/VeryHotBlade.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int DAMAGE = 8;

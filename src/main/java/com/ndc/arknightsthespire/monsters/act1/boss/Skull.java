@@ -42,8 +42,8 @@ public class Skull extends CustomMonster {
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final String ATLAS = "img/monsters/act_1/boss/enemy_1500_skulsr.atlas";
-    private static final String SKEL = "img/monsters/act_1/boss/enemy_1500_skulsr.json";
+    private static final String ATLAS = "atsImg/monsters/act_1/boss/enemy_1500_skulsr.atlas";
+    private static final String SKEL = "atsImg/monsters/act_1/boss/enemy_1500_skulsr.json";
     private int attackDamage;
     private int arm = 0;
     private int res = 0;
@@ -89,7 +89,7 @@ public class Skull extends CustomMonster {
         AbstractPlayer p = AbstractDungeon.player;
         switch (this.nextMove) {
             case 1:
-                this.addToBot(new PlayAnimationAction(this, "Combat", "Combat_End", null));
+                this.addToBot(new PlayAnimationAction(this, "Combat", 0.0F, "Combat_End", null));
                 this.addToBot(new WaitAnimAction(this, 1.0F));
                 this.addToBot(new AtsSFX("SKULL_A"));
                 this.addToBot(new WaitAnimAction(this, 0.1F));
@@ -141,7 +141,9 @@ public class Skull extends CustomMonster {
     public void usePreBattleAction() {
         super.usePreBattleAction();
         UnlockTracker.markBossAsSeen(this.id);
-        CardCrawlGame.music.playTempBGM("act1_skull_loop.ogg");
+        CardCrawlGame.music.unsilenceBGM();
+        AbstractDungeon.scene.fadeOutAmbiance();
+        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
     }
 
     public void setDef(int a, int r) {

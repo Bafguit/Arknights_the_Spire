@@ -16,7 +16,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class WolfPack extends CardSPBase {
     public static final String ID = "ats:Wolf Pack";
-    public static final String IMG_PATH = "img/cards/WolfPack.png";
+    public static final String IMG_PATH = "atsImg/cards/WolfPack.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 3;
     private static final int DAMAGE = 1;

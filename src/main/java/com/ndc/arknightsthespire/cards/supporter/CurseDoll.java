@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.power.ArmourPower;
 
 public class CurseDoll extends CardSPBase {
     public static final String ID = "ats:Curse Doll";
-    public static final String IMG_PATH = "img/cards/CurseDoll.png";
+    public static final String IMG_PATH = "atsImg/cards/CurseDoll.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int NUM = 3;

@@ -25,8 +25,8 @@ public class AtsTutorial extends FtueTip {
     private static final TutorialStrings tutorialStrings;
     public static final String[] txt;
     public static final String[] LABEL;
-    private Texture img1 = ImageMaster.loadImage("img/ui/t1.png");
-    private Texture img2 = ImageMaster.loadImage("img/ui/t2_" + getLangString() + ".png");
+    private Texture img1 = ImageMaster.loadImage("atsImg/ui/t1.png");
+    private Texture img2 = ImageMaster.loadImage("atsImg/ui/t2_" + getLangString() + ".png");
     private Color screen = Color.valueOf("1c262a00");
     private float x;
     private float x1;
@@ -109,6 +109,9 @@ public class AtsTutorial extends FtueTip {
 
             case "kor":
                 return "kor";
+
+            case "rus":
+                return "rus";
 
             default:
                 return "eng";

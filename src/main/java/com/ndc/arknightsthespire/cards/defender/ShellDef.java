@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class ShellDef extends CardSPBase {
     public static final String ID = "ats:Shell Defense";
-    public static final String IMG_PATH = "img/cards/sdef.png";
+    public static final String IMG_PATH = "atsImg/cards/sdef.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int BLOCK_AMT = 8;

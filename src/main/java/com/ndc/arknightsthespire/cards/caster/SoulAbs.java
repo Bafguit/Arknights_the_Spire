@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.power.SoulAbsPower;
 
 public class SoulAbs extends CardSPBase {
     public static final String ID = "ats:Soul Absorption";
-    public static final String IMG_PATH = "img/cards/SoulAbs.png";
+    public static final String IMG_PATH = "atsImg/cards/SoulAbs.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int UP_COST = 0;

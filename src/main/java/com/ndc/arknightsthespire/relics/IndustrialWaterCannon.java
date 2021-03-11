@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class IndustrialWaterCannon extends CustomRelic {
     public static final String ID = "ats:Industrial Water Cannon";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/IndustrialWaterCannon.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/IndustrialWaterCannon.png");
 
     public IndustrialWaterCannon() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID); // this relic is uncommon and sounds magic when you click it

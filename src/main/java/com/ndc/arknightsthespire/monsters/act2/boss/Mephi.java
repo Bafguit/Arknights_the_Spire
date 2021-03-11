@@ -52,8 +52,8 @@ public class Mephi extends CustomMonster {
     private static final int HP_MAX = 48;
     private static final int A7_HP_MIN = 47;
     private static final int A7_HP_MAX = 50;
-    private static final String ATLAS = "img/monsters/act_2/boss/enemy_1507_mephi.atlas";
-    private static final String SKEL = "img/monsters/act_2/boss/enemy_1507_mephi.json";
+    private static final String ATLAS = "atsImg/monsters/act_2/boss/enemy_1507_mephi.atlas";
+    private static final String SKEL = "atsImg/monsters/act_2/boss/enemy_1507_mephi.json";
     private int attackDamage;
     private int arm = 0;
     private int res = 0;

@@ -56,7 +56,7 @@ public class SpUI extends AbstractPanel {
     }
 
     public static Texture OrbVfx() {
-        return TextureLoader.getTexture("img/char/orb/rvfx.png");
+        return TextureLoader.getTexture("atsImg/char/orb/rvfx.png");
     }
 
     public void update() {

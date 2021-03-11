@@ -6,6 +6,9 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.ndc.arknightsthespire.ArknightsTheSpire;
+import com.ndc.arknightsthespire.SPHandler;
+import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 
 @SpirePatch(
@@ -22,6 +25,8 @@ public class OnGainEnergyPatcher
                     e[0] = ((OnGainEnergyPower) power).onGainEnergy(e[0]);
                 }
             }
+
+            SPHandler.addTurnEnergy(e[0]);
         }
 
         return SpireReturn.Continue();

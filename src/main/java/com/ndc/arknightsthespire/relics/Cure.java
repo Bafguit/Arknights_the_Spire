@@ -13,7 +13,7 @@ import static com.ndc.arknightsthespire.SPHandler.addSp;
 
 public class Cure extends CustomRelic {
     public static final String ID = "ats:Cure";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Cure.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Cure.png");
     public CardSPBase spC;
 
     public Cure() {

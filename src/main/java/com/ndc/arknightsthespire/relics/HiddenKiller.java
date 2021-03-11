@@ -24,7 +24,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class HiddenKiller extends CustomRelic {
     public static final String ID = "ats:Hidden Killer";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/HiddenKiller.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/HiddenKiller.png");
     private boolean gainStrNext = false;
     private boolean firstTurn = false;
 

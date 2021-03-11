@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class SashimiPlatter extends CardSPBase {
     public static final String ID = "ats:Sashimi Platter";
-    public static final String IMG_PATH = "img/cards/Sashimi.png";
+    public static final String IMG_PATH = "atsImg/cards/Sashimi.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;

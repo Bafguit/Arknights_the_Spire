@@ -10,7 +10,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Berate extends CustomRelic {
     public static final String ID = "ats:Berate";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Berate.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Berate.png");
 
     public Berate() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it

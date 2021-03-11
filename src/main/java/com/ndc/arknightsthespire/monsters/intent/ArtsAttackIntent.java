@@ -13,7 +13,7 @@ public class ArtsAttackIntent extends CustomIntent {
     private static final String[] TEXT = uiStrings.TEXT;
 
     public ArtsAttackIntent() {
-        super(AtsEnum.ATTACK_ARTS, TEXT[0], "img/ui/intent/art.png", "img/ui/intent/arts_tip.png");
+        super(AtsEnum.ATTACK_ARTS, TEXT[0], "atsImg/ui/intent/art.png", "atsImg/ui/intent/arts_tip.png");
     }
 
     @Override

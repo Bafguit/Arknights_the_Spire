@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.SoulRendPower;
 
 public class SeriousMode extends CardSPBase {
     public static final String ID = "ats:Serious Mode";
-    public static final String IMG_PATH = "img/cards/SeriousMode.png";
+    public static final String IMG_PATH = "atsImg/cards/SeriousMode.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
 

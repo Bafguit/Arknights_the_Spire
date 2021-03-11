@@ -17,7 +17,7 @@ import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
 
 public class Durian extends CardSPBase {
     public static final String ID = "ats:Durian";
-    public static final String IMG_PATH = "img/cards/Durian.png";
+    public static final String IMG_PATH = "atsImg/cards/Durian.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int UP_COST = 0;

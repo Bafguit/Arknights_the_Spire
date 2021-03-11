@@ -48,8 +48,12 @@ public abstract class CardSPBase extends CustomCard {
     public int sp = 0;
     public int arm = 0;
     public int baseArm = 0;
+    public int et = 0;
+    public int baseEt = 0;
     public boolean isArmModified = false;
     public boolean upgradedArm = false;
+    public boolean isEtModified = false;
+    public boolean upgradedEt = false;
     public int res = 0;
     public int baseRes = 0;
     public boolean isResModified = false;
@@ -101,8 +105,8 @@ public abstract class CardSPBase extends CustomCard {
 
     public CardSPBase(String id, String name, String des, String img, String spImg, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target, boolean isAuto, PositionType position, boolean hasSP, int d, int b, int m, int s) {
         super(id, name, img, cost, des, type, color, rarity, target);
-        this.setBackgroundTexture("img/512/" + bt(position) + "_512.png", "img/1024/" + bt(position) + ".png");
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
+        this.setBackgroundTexture("atsImg/512/" + bt(position) + "_512.png", "atsImg/1024/" + bt(position) + ".png");
+        this.setOrbTexture("atsImg/orbs/cost.png", "atsImg/orbs/cost_small.png");
         CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(id);
         normalCardImage = img;
         this.spCardImage = spImg;
@@ -278,6 +282,7 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void updateState(boolean shouldGlow) {
+        this.baseEt = this.et = SPHandler.getTurnEnergy();
         updateName();
         updateDescription();
         updateImage();

@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.power.PhantomPower;
 
 public class PhantomMirror extends CardSPBase {
     public static final String ID = "ats:Phantom";
-    public static final String IMG_PATH = "img/cards/Phantom.png";
+    public static final String IMG_PATH = "atsImg/cards/Phantom.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int UP_COST = 0;

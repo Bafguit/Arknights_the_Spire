@@ -18,6 +18,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.monsters.city.TheCollector;
+import com.megacrit.cardcrawl.monsters.exordium.TheGuardian;
+import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.actions.AtsSFX;
@@ -47,8 +50,8 @@ public class Faust extends CustomMonster {
     private static final int HP_MAX = 48;
     private static final int A7_HP_MIN = 47;
     private static final int A7_HP_MAX = 50;
-    private static final String ATLAS = "img/monsters/act_2/boss/enemy_1508_faust.atlas";
-    private static final String SKEL = "img/monsters/act_2/boss/enemy_1508_faust.json";
+    private static final String ATLAS = "atsImg/monsters/act_2/boss/enemy_1508_faust.atlas";
+    private static final String SKEL = "atsImg/monsters/act_2/boss/enemy_1508_faust.json";
     private int attackDamage;
     private int arm = 0;
     private int res = 0;
@@ -106,8 +109,8 @@ public class Faust extends CustomMonster {
         AbstractPlayer p = AbstractDungeon.player;
         switch (this.nextMove) {
             case 1:
-                this.addToBot(new PlayAnimationAction(this, "Attack"));
-                this.addToBot(new AtsSFX("FAUST_N"));
+                this.addToBot(new PlayAnimationAction(this, "Attack", 0.4F, "FAUST_N"));
+                //this.addToBot(new AtsSFX("FAUST_N"));
                 this.addToBot(new WaitAnimAction(this, 0.9F));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, false, true));
                 break;
@@ -147,8 +150,10 @@ public class Faust extends CustomMonster {
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
+        CardCrawlGame.music.unsilenceBGM();
+        AbstractDungeon.scene.fadeOutAmbiance();
+        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
         UnlockTracker.markBossAsSeen(this.id);
-        CardCrawlGame.music.playTempBGM("act2_faust_loop.ogg");
     }
 
     public void setDef(int a, int r) {

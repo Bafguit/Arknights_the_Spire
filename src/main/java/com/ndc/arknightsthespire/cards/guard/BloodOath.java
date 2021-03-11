@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class BloodOath extends CardSPBase {
     public static final String ID = "ats:Blood Oath";
-    public static final String IMG_PATH = "img/cards/BloodOath.png";
+    public static final String IMG_PATH = "atsImg/cards/BloodOath.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;

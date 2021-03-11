@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.RapidMagPower;
 
 public class RapidMagazine extends CardSPBase {
     public static final String ID = "ats:Rapid Magazine";
-    public static final String IMG_PATH = "img/cards/RapidMagazine.png";
+    public static final String IMG_PATH = "atsImg/cards/RapidMagazine.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
 

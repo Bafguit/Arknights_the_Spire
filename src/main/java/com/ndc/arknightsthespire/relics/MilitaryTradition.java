@@ -8,7 +8,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class MilitaryTradition extends CustomRelic {
     public static final String ID = "ats:Military Tradition";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/MilitaryTradition.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/MilitaryTradition.png");
 
     public MilitaryTradition() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.CLINK); // this relic is uncommon and sounds magic when you click it

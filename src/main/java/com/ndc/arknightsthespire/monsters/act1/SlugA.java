@@ -42,8 +42,8 @@ public class SlugA extends CustomMonster {
     private static final int HP_MAX = 48;
     private static final int A7_HP_MIN = 47;
     private static final int A7_HP_MAX = 50;
-    private static final String ATLAS = "img/monsters/Slugs/A/enemy_1007_slime.atlas";
-    private static final String SKEL = "img/monsters/Slugs/A/enemy_1007_slime.json";
+    private static final String ATLAS = "atsImg/monsters/Slugs/A/enemy_1007_slime.atlas";
+    private static final String SKEL = "atsImg/monsters/Slugs/A/enemy_1007_slime.json";
     private Bone weapon;
     private int attackDamage;
     private int debuffDamage;

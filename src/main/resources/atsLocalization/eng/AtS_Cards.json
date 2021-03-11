@@ -407,6 +407,13 @@
     "NAME": "Guard Mode",
     "DESCRIPTION": "Gain !B! Block. Double when more than half of HP is lost."
   },
+  "ats:Fierce Glare": {
+    "NAME": "Fierce Glare",
+    "DESCRIPTION": "Deal !D! damage X times to ALL enemies. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Deal damage by amount of gained energy during this turn to ALL enemies. Repeat X times. ( Current !ats:E! )"
+    ]
+  },
   "ats:NULL": {
     "NAME": "This card is for add new one",
     "DESCRIPTION": "",

@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class LeapingHammer extends CardSPBase {
     public static final String ID = "ats:Leaping Hammer";
-    public static final String IMG_PATH = "img/cards/LeapHammer.png";
+    public static final String IMG_PATH = "atsImg/cards/LeapHammer.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
     private static final int DAMAGE = 8;

@@ -16,7 +16,7 @@ import com.ndc.arknightsthespire.power.ArmourPower;
 
 public class Revitalization extends CardSPBase {
     public static final String ID = "ats:Revitalization";
-    public static final String IMG_PATH = "img/cards/Revitalization.png";
+    public static final String IMG_PATH = "atsImg/cards/Revitalization.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int REGEN = 4;

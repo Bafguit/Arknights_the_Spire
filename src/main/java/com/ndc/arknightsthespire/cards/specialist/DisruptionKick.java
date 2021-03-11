@@ -17,7 +17,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class DisruptionKick extends CardSPBase {
     public static final String ID = "ats:Disruption Kick";
-    public static final String IMG_PATH = "img/cards/DisruptionKick.png";
+    public static final String IMG_PATH = "atsImg/cards/DisruptionKick.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 3;
     private static final int UP_COST = 2;

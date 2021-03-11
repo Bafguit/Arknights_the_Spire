@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class DemonStrength extends CardSPBase {
     public static final String ID = "ats:Demon Strength";
-    public static final String IMG_PATH = "img/cards/DemonStrength.png";
+    public static final String IMG_PATH = "atsImg/cards/DemonStrength.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int STR = 3;

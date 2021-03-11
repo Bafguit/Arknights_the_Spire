@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class SteamPump extends CardSPBase {
     public static final String ID = "ats:Steam Pump";
-    public static final String IMG_PATH = "img/cards/SteamPump.png";
+    public static final String IMG_PATH = "atsImg/cards/SteamPump.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int B = 8;

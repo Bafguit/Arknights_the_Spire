@@ -4,14 +4,11 @@ import actlikeit.dungeons.CustomDungeon;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import com.megacrit.cardcrawl.scenes.AbstractScene;
-import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.monsters.act1.*;
 import com.ndc.arknightsthespire.monsters.act1.boss.Crown;
 import com.ndc.arknightsthespire.monsters.act1.boss.Skull;
@@ -26,19 +23,19 @@ public class Chernobog extends CustomDungeon {
 
     public Chernobog() {
         super(NAME, ID);
-        this.setMainMusic("sfx/act1_main.ogg");
-        this.addTempMusic("SKULL_INTRO", "sfx/act1_skull_intro.ogg");
-        this.addTempMusic("SKULL_LOOP", "sfx/act1_skull_loop.ogg");
-        this.addTempMusic("CROWN_INTRO", "sfx/act1_crown_intro.ogg");
-        this.addTempMusic("CROWN_LOOP", "sfx/act1_crown_loop.ogg");
+        this.setMainMusic("atsSfx/act1_main.ogg");
+        this.addTempMusic("SKULL_INTRO", "atsSfx/act1_skull_intro.ogg");
+        this.addTempMusic("SKULL_LOOP", "atsSfx/act1_skull_loop.ogg");
+        this.addTempMusic("CROWN_INTRO", "atsSfx/act1_crown_intro.ogg");
+        this.addTempMusic("CROWN_LOOP", "atsSfx/act1_crown_loop.ogg");
         this.addMonster(Genji.ID, () -> new Genji());
         this.addStrongMonster(Shield.ID, () -> new Shield());
         this.addMonster("ats:Slugs", () -> new MonsterGroup(new AbstractMonster[] {
                 new SlugA(),
                 new SlugB(),
                 new SlugC()  }));
-        this.addBoss(Skull.ID, () -> new Skull(), "img/monsters/act_1/boss/skull.png", "img/monsters/act_1/boss/skull_out.png");
-        this.addBoss(Crown.ID, () -> new Crown(), "img/monsters/act_1/boss/crown.png", "img/monsters/act_1/boss/crown_out.png");
+        this.addBoss(Skull.ID, () -> new Skull(), "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
+        this.addBoss(Crown.ID, () -> new Crown(), "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
     }
 
     public Chernobog(CustomDungeon cd, AbstractPlayer p, ArrayList<String> emptyList) {

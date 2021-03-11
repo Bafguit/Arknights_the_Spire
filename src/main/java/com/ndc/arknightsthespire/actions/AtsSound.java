@@ -20,7 +20,7 @@ public class AtsSound {
     private static final Logger logger = LogManager.getLogger(AtsSound.class.getName());
     private HashMap<String, Sfx> map = new HashMap();
     private ArrayList<SoundInfo> fadeOutList = new ArrayList();
-    private static final String SFX_DIR = "sfx/";
+    private static final String SFX_DIR = "atsSfx/";
 
     public AtsSound() {
         long startTime = System.currentTimeMillis();

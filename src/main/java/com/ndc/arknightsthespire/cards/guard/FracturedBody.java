@@ -17,7 +17,7 @@ public class FracturedBody extends CardSPBase {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     // Get object containing the strings that are displayed in the game.
     public static final String NAME = cardStrings.NAME;
-    public static final String IMG_PATH = "img/cards/FracturedBody.png";
+    public static final String IMG_PATH = "atsImg/cards/FracturedBody.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int UP_COST = 0;

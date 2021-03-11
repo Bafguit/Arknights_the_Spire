@@ -9,7 +9,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Lavender extends CustomRelic {
     public static final String ID = "ats:Lavender";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Lavender.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Lavender.png");
 
     public Lavender() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.FLAT); // this relic is uncommon and sounds magic when you click it

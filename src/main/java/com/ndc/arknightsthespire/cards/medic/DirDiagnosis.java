@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class DirDiagnosis extends CardSPBase {
     public static final String ID = "ats:Directed Diagnosis";
-    public static final String IMG_PATH = "img/cards/DirDiagnosis.png";
+    public static final String IMG_PATH = "atsImg/cards/DirDiagnosis.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int HEAL = 5;

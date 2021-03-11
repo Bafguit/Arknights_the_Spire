@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class PowerfulStrike extends CardSPBase {
     public static final String ID = "ats:Powerful Strike";
-    public static final String IMG_PATH = "img/cards/ps_s.png";
+    public static final String IMG_PATH = "atsImg/cards/ps_s.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;

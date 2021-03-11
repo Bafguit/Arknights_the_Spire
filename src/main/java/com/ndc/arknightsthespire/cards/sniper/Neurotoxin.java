@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.power.NeurotoxinPower;
 
 public class Neurotoxin extends CardSPBase {
     public static final String ID = "ats:Neurotoxin";
-    public static final String IMG_PATH = "img/cards/Neurotoxin.png";
+    public static final String IMG_PATH = "atsImg/cards/Neurotoxin.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int POISON = 2;

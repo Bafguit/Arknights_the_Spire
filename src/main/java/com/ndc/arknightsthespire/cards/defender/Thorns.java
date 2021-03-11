@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.power.ArmourPower;
 
 public class Thorns extends CardSPBase {
     public static final String ID = "ats:Thorns";
-    public static final String IMG_PATH = "img/cards/thorns.png";
+    public static final String IMG_PATH = "atsImg/cards/thorns.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int THORNS_AMOUNT = 1;

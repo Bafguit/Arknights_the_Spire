@@ -20,7 +20,7 @@ import static com.ndc.arknightsthespire.CardColors.*;
 
 public class Ignite extends CardSPBase {
     public static final String ID = "ats:Ignite";
-    public static final String IMG_PATH = "img/cards/Ignite.png";
+    public static final String IMG_PATH = "atsImg/cards/Ignite.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int DAMAGE = 7;

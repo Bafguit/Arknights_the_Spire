@@ -34,7 +34,7 @@ public class ArknightsScene extends AbstractScene {
     private Texture fire;
 
     public ArknightsScene() {
-        super("img/scene/bg_act.atlas");
+        super("atsImg/scene/bg_act.atlas");
         this.bg = this.atlas.findRegion("bg_shop");
         this.ambianceName = "AMBIANCE_TERA";
         this.fadeInAmbiance();

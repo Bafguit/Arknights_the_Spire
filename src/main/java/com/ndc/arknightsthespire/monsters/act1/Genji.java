@@ -42,8 +42,8 @@ public class Genji extends CustomMonster {
     private static final int HP_MAX = 48;
     private static final int A7_HP_MIN = 47;
     private static final int A7_HP_MAX = 50;
-    private static final String ATLAS = "img/monsters/Avenger/enemy_1025_reveng.atlas";
-    private static final String SKEL = "img/monsters/Avenger/enemy_1025_reveng.json";
+    private static final String ATLAS = "atsImg/monsters/Avenger/enemy_1025_reveng.atlas";
+    private static final String SKEL = "atsImg/monsters/Avenger/enemy_1025_reveng.json";
     private int attackDamage;
     private float per;
     private int arm = 0;

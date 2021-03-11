@@ -23,7 +23,7 @@ import static com.megacrit.cardcrawl.cards.DamageInfo.*;
 
 public class ThermiteBlade extends CardSPBase {
     public static final String ID = "ats:Thermite Blade";
-    public static final String IMG_PATH = "img/cards/ThermiteBlade.png";
+    public static final String IMG_PATH = "atsImg/cards/ThermiteBlade.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 12;

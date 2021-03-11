@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class RedShift extends CardSPBase {
     public static final String ID = "ats:Red Shift";
-    public static final String IMG_PATH = "img/cards/RedShift.png";
+    public static final String IMG_PATH = "atsImg/cards/RedShift.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 4;

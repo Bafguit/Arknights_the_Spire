@@ -23,8 +23,8 @@ public class CurativePower extends AbstractPower implements PreHealPower {
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/Curative_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/Curative_32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/Curative_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/Curative_32.png");
 
     public CurativePower(AbstractCreature owner, int amount) {
         this.name = NAME;

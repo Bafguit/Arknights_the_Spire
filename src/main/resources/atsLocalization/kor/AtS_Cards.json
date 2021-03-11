@@ -408,6 +408,13 @@
     "NAME": "디펜스 모드",
     "DESCRIPTION": "방어도를 !B! 얻습니다. 체력이 절반 이하라면 두 배가 됩니다."
   },
+  "ats:Fierce Glare": {
+    "NAME": "격노의 눈",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 만큼 X번 줍니다. NL ats:SP !S! ats:수동",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:수동 NL 적 전체에게 이번 턴에 회복한 에너지만큼 피해를 줍니다. X번 반복합니다. ( 현재 !ats:E! )"
+    ]
+  },
   "ats:NULL": {
     "NAME": "",
     "DESCRIPTION": "",

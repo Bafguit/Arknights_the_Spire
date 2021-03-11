@@ -9,7 +9,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Gyao extends CustomRelic {
     public static final String ID = "ats:Gyao";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Gyao.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Gyao.png");
 
     public Gyao() {
         super(ID, IMG, RelicTier.RARE, LandingSound.CLINK); // this relic is uncommon and sounds magic when you click it

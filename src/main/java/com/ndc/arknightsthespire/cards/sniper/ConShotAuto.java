@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class ConShotAuto extends CardSPBase {
     public static final String ID = "ats:Consecutive Shot Auto";
-    public static final String IMG_PATH = "img/cards/ConShotAuto.png";
+    public static final String IMG_PATH = "atsImg/cards/ConShotAuto.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;

@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class AbsoluteFocus extends CardSPBase {
     public static final String ID = "ats:Absolute Focus";
-    public static final String IMG_PATH = "img/cards/AbsoluteFocus.png";
+    public static final String IMG_PATH = "atsImg/cards/AbsoluteFocus.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 0;
     private static final int NUM = 1;

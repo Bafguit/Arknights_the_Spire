@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class Foxfire extends CardSPBase {
     public static final String ID = "ats:Nebulous Foxfire";
-    public static final String IMG_PATH = "img/cards/nff.png";
+    public static final String IMG_PATH = "atsImg/cards/nff.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 2;
     private static final int REGEN_AMOUNT = 3;

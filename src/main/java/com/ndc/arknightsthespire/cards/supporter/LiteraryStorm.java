@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class LiteraryStorm extends CardSPBase {
     public static final String ID = "ats:Literary Storm";
-    public static final String IMG_PATH = "img/cards/LiteraryStorm.png";
+    public static final String IMG_PATH = "atsImg/cards/LiteraryStorm.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int UP_COST = 0;

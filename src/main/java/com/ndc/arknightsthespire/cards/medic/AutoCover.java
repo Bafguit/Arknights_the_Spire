@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.power.ShadowRaidPower;
 
 public class AutoCover extends CardSPBase {
     public static final String ID = "ats:Automatic Cover";
-    public static final String IMG_PATH = "img/cards/AutomaticCover.png";
+    public static final String IMG_PATH = "atsImg/cards/AutomaticCover.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int BLOCK = 7;

@@ -19,6 +19,7 @@ public class OnGainBlockPatcher
 
     public static SpireReturn<Integer> Prefix(AbstractCreature __instance, @ByRef int[] blockAmount)
     {
+        System.out.println("OnGainBlockPatcher");
         if (blockAmount[0] > 0) {
             for (AbstractPower power : __instance.powers) {
                 if (power instanceof OnGainBlockPower) {

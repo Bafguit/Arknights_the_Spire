@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class CollapsingStrike extends CardSPBase {
     public static final String ID = "ats:Collapsing Strike";
-    public static final String IMG_PATH = "img/cards/CollapsingStrike.png";
+    public static final String IMG_PATH = "atsImg/cards/CollapsingStrike.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int D = 12;

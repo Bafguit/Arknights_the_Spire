@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class HammerOn extends CardSPBase {
     public static final String ID = "ats:Hammer On";
-    public static final String IMG_PATH = "img/cards/HammerOn.png";
+    public static final String IMG_PATH = "atsImg/cards/HammerOn.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
     private static final int DAMAGE = 11;

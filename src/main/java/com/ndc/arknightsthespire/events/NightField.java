@@ -19,7 +19,7 @@ public class NightField extends AbstractImageEvent {
     public static CurScreen screen;
 
     public NightField(){
-        super(NAME, TEXT[0], "img/events/NightField.png");
+        super(NAME, TEXT[0], "atsImg/events/NightField.png");
 
         //This is where you would create your dialog options
         this.imageEventText.setDialogOption(OPTIONS[0]);

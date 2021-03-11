@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class MentalBurst extends CardSPBase {
     public static final String ID = "ats:Mental Burst";
-    public static final String IMG_PATH = "img/cards/MentalBurst.png";
+    public static final String IMG_PATH = "atsImg/cards/MentalBurst.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 2;
     private static final int DAMAGE = 3;

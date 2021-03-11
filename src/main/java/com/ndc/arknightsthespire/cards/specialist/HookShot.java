@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class HookShot extends CardSPBase {
     public static final String ID = "ats:Hook Shot";
-    public static final String IMG_PATH = "img/cards/HookShot.png";
+    public static final String IMG_PATH = "atsImg/cards/HookShot.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
     private static final int BLOCK = 7;

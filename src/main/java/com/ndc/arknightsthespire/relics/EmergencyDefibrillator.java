@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class EmergencyDefibrillator extends CustomRelic {
     public static final String ID = "ats:Emergency Defibrillator";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/EmergencyDef.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/EmergencyDef.png");
     public boolean isUsed = false;
 
     public EmergencyDefibrillator() {

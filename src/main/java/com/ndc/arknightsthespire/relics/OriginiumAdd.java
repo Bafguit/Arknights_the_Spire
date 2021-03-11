@@ -19,7 +19,7 @@ import java.util.prefs.AbstractPreferences;
 
 public class OriginiumAdd extends CustomRelic {
     public static final String ID = "ats:Originium";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Originium.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Originium.png");
 
     public OriginiumAdd() {
         super(ID, IMG, RelicTier.SPECIAL, LandingSound.CLINK);

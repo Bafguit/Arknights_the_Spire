@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class Apocalypse extends CardSPBase {
     public static final String ID = "ats:Apocalypse";
-    public static final String IMG_PATH = "img/cards/JLAA.png";
+    public static final String IMG_PATH = "atsImg/cards/JLAA.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int SP = 4;

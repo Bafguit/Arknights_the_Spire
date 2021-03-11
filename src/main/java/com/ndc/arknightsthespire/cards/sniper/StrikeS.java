@@ -14,7 +14,7 @@ import static com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 
 public class StrikeS extends CardSPBase {
     public static final String ID = "ats:Strike S";
-    public static final String IMG_PATH = "img/cards/Strike.png";
+    public static final String IMG_PATH = "atsImg/cards/Strike.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int DAMAGE = 6;

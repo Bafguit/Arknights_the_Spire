@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.power.SongOfBattlePower;
 
 public class SongOfBattle extends CardSPBase {
     public static final String ID = "ats:Song Of Battle";
-    public static final String IMG_PATH = "img/cards/SongOfBattle.png";
+    public static final String IMG_PATH = "atsImg/cards/SongOfBattle.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int SP = 3;

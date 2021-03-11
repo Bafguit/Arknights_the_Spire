@@ -48,8 +48,8 @@ public class Shield extends CustomMonster {
     private static final int HP_MAX = 48;
     private static final int A7_HP_MIN = 47;
     private static final int A7_HP_MAX = 50;
-    private static final String ATLAS = "img/monsters/act_1/enemy_1006_shield.atlas";
-    private static final String SKEL = "img/monsters/act_1/enemy_1006_shield.json";
+    private static final String ATLAS = "atsImg/monsters/act_1/enemy_1006_shield.atlas";
+    private static final String SKEL = "atsImg/monsters/act_1/enemy_1006_shield.json";
     private int attackDamage;
     private int def;
     private int arm = 0;

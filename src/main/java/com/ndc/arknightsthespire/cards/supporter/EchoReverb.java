@@ -16,7 +16,7 @@ import com.ndc.arknightsthespire.power.ArmTurnPower;
 
 public class EchoReverb extends CardSPBase {
     public static final String ID = "ats:Echo Reverb";
-    public static final String IMG_PATH = "img/cards/EchoReverb.png";
+    public static final String IMG_PATH = "atsImg/cards/EchoReverb.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int UP_COST = 0;

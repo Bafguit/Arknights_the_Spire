@@ -16,7 +16,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class ExpAreaStr extends CardSPBase {
     public static final String ID = "ats:Explosion Area Strengthen";
-    public static final String IMG_PATH = "img/cards/ExpAreaStr.png";
+    public static final String IMG_PATH = "atsImg/cards/ExpAreaStr.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;

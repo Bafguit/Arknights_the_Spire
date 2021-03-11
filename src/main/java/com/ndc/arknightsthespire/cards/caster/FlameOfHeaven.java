@@ -16,7 +16,7 @@ import com.ndc.arknightsthespire.power.BurnPower;
 
 public class FlameOfHeaven extends CardSPBase {
     public static final String ID = "ats:Flame Of Heaven";
-    public static final String IMG_PATH = "img/cards/FlameOfHeaven.png";
+    public static final String IMG_PATH = "atsImg/cards/FlameOfHeaven.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int UP_COST = 0;

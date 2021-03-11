@@ -42,7 +42,7 @@ public class TextureLoader {
      * Creates an instance of the texture, applies a linear filter to it, and places it in the HashMap
      *
      * @param textureString - String path to the texture you want to load relative to resources,
-     *                      Example: "img/ui/missingtexture.png"
+     *                      Example: "atsImg/ui/missingtexture.png"
      * @throws GdxRuntimeException
      */
     private static void loadTexture(final String textureString) throws GdxRuntimeException {

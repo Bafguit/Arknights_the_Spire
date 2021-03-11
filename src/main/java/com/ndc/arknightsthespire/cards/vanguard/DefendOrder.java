@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.power.DefendOrderPower;
 
 public class DefendOrder extends CardSPBase {
     public static final String ID = "ats:Defend Order";
-    public static final String IMG_PATH = "img/cards/DefendOrder.png";
+    public static final String IMG_PATH = "atsImg/cards/DefendOrder.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
     private static final int BLOCK = 4;

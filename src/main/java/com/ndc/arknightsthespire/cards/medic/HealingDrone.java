@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.DronePower;
 
 public class HealingDrone extends CardSPBase {
     public static final String ID = "ats:Healing Drone";
-    public static final String IMG_PATH = "img/cards/Drone.png";
+    public static final String IMG_PATH = "atsImg/cards/Drone.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
     private static final int DRONE = 3;

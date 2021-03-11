@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class Bonebreaker extends CustomRelic {
     public static final String ID = "ats:Bonebreaker";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Bonebreaker.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Bonebreaker.png");
 
     public Bonebreaker() {
         super(ID, IMG, RelicTier.UNCOMMON, LandingSound.SOLID); // this relic is uncommon and sounds magic when you click it

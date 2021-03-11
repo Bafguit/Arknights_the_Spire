@@ -21,7 +21,7 @@ import java.util.Iterator;
 
 public class TrueSilverSlash extends CardSPBase {
     public static final String ID = "ats:True Silver Slash";
-    public static final String IMG_PATH = "img/cards/TrueSilverSlash.png";
+    public static final String IMG_PATH = "atsImg/cards/TrueSilverSlash.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
     private static final int ATTACK_DMG = 7;

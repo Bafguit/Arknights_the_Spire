@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.power.ShelterPower;
 
 public class EncForest extends CardSPBase {
     public static final String ID = "ats:Encircling Forest";
-    public static final String IMG_PATH = "img/cards/EncirclingForest.png";
+    public static final String IMG_PATH = "atsImg/cards/EncirclingForest.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int SHELTER = 1;

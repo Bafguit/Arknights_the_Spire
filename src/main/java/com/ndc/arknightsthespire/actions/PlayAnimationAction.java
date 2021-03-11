@@ -12,10 +12,12 @@ public class PlayAnimationAction extends AbstractGameAction {
     private String key;
     private String sKey;
     private String sfxKey;
+    public float sfxTiming;
     public AtsSound atsS = new AtsSound();
 
-    public PlayAnimationAction(AbstractCreature owner, String key, String sKey, String sfxKey) {
+    public PlayAnimationAction(AbstractCreature owner, String key, float time, String sKey, String sfxKey) {
         this.duration = DEFAULT_DURATION;
+        this.sfxTiming = Math.max(this.duration - time, 0.0F);
         this.owner = owner;
         this.key = key;
         this.sKey = sKey;
@@ -23,11 +25,11 @@ public class PlayAnimationAction extends AbstractGameAction {
     }
 
     public PlayAnimationAction(AbstractCreature owner, String key) {
-        this(owner, key, null,  null);
+        this(owner, key, 0.5F, null,  null);
     }
 
-    public PlayAnimationAction(AbstractCreature owner, String key, String sfxKey) {
-        this(owner, key, null,  sfxKey);
+    public PlayAnimationAction(AbstractCreature owner, String key, float time, String sfxKey) {
+        this(owner, key, time, null,  sfxKey);
     }
 
     @Override
@@ -41,7 +43,7 @@ public class PlayAnimationAction extends AbstractGameAction {
                     owner.state.addAnimation(0, sKey, false, 0.0F);
                 }
                 owner.state.addAnimation(0, "Idle", true, 0.0F);
-                if(this.sfxKey != null) {
+                if(this.sfxKey != null && this.duration == this.sfxTiming) {
                     atsS.update();
                     atsS.play(this.sfxKey, 0.0F);
                 }

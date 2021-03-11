@@ -10,7 +10,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class RhineCircuitry extends CustomRelic {
     public static final String ID = "ats:Rhine Circuitry";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/RhineCircuity.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/RhineCircuity.png");
 
     public RhineCircuitry() {
         super(ID, IMG, RelicTier.COMMON, LandingSound.MAGICAL); // this relic is uncommon and sounds magic when you click it

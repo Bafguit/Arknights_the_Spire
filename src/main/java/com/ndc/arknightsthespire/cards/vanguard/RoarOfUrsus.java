@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.power.UrsusPower;
 
 public class RoarOfUrsus extends CardSPBase {
     public static final String ID = "ats:Roar Of Ursus";
-    public static final String IMG_PATH = "img/cards/RoarOfUrsus.png";
+    public static final String IMG_PATH = "atsImg/cards/RoarOfUrsus.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
     private static final int UP_COST = 0;

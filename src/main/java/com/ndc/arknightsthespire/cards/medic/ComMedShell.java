@@ -11,7 +11,7 @@ import com.ndc.arknightsthespire.power.ComMedShellPower;
 
 public class ComMedShell extends CardSPBase {
     public static final String ID = "ats:Composite Medical Shells";
-    public static final String IMG_PATH = "img/cards/ComMedShell.png";
+    public static final String IMG_PATH = "atsImg/cards/ComMedShell.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
 

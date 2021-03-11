@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class Cheat extends CardSPBase {
     public static final String ID = "ats:Cheat";
-    public static final String IMG_PATH = "img/cards/attack_beta.png";
+    public static final String IMG_PATH = "atsImg/cards/attack_beta.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 0;
 
@@ -21,9 +21,9 @@ public class Cheat extends CardSPBase {
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.BASIC, CardTarget.ALL_ENEMY, POSITION);
 
-        this.setBackgroundTexture("img/512/beta.png", "img/1024/beta.png");
+        this.setBackgroundTexture("atsImg/512/beta.png", "atsImg/1024/beta.png");
 
-        this.setOrbTexture("img/orbs/cost.png", "img/orbs/cost_small.png");
+        this.setOrbTexture("atsImg/orbs/cost.png", "atsImg/orbs/cost_small.png");
 
     }
 

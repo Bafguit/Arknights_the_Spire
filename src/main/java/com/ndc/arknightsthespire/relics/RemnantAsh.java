@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 
 public class RemnantAsh extends CustomRelic {
     public static final String ID = "ats:Remnant Ash";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/Ash.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Ash.png");
 
     public RemnantAsh() {
         super(ID, IMG, RelicTier.RARE, LandingSound.SOLID);

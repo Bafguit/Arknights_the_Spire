@@ -15,7 +15,7 @@ import static com.ndc.arknightsthespire.cards.base.PositionType.CASTER;
 
 public class BurningGround extends CardSPBase {
     public static final String ID = "ats:Burning Ground";
-    public static final String IMG_PATH = "img/cards/BurningGround.png";
+    public static final String IMG_PATH = "atsImg/cards/BurningGround.png";
     private static final int COST = 1;
     private static final int BURN = 2;
     private static final int UP_BURN = 1;

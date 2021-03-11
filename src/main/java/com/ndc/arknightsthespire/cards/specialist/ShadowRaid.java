@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.ShadowRaidPower;
 
 public class ShadowRaid extends CardSPBase {
     public static final String ID = "ats:Shadow Raid";
-    public static final String IMG_PATH = "img/cards/ShadowRaid.png";
+    public static final String IMG_PATH = "atsImg/cards/ShadowRaid.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 0;
     private static final int DEX = 7;

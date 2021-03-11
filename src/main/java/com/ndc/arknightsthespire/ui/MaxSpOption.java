@@ -35,7 +35,7 @@ public class MaxSpOption extends AbstractCampfireOption {
         this.label = TEXT[0];
         this.usable = isMaxYet;
         this.description = TEXT[1] + TEXT[2] + SPHandler.getMaxSp() + TEXT[3];
-        this.img = TextureLoader.getTexture("img/ui/maximizeSp.png");
+        this.img = TextureLoader.getTexture("atsImg/ui/maximizeSp.png");
     }
 
     @Override

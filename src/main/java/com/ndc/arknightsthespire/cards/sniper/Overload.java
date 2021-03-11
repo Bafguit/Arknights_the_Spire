@@ -13,8 +13,8 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class Overload extends CardSPBase {
     public static final String ID = "ats:Overload";
-    public static final String IMG_PATH = "img/cards/AssaultMode.png";
-    public static final String SP_IMG_PATH = "img/cards/overload.png";
+    public static final String IMG_PATH = "atsImg/cards/AssaultMode.png";
+    public static final String SP_IMG_PATH = "atsImg/cards/overload.png";
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 3;

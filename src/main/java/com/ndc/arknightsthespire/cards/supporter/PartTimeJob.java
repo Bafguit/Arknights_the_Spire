@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.PartTimeJobPower;
 
 public class PartTimeJob extends CardSPBase {
     public static final String ID = "ats:Part Time Job";
-    public static final String IMG_PATH = "img/cards/PartTimeJob.png";
+    public static final String IMG_PATH = "atsImg/cards/PartTimeJob.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
 

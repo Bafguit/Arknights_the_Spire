@@ -12,7 +12,7 @@ import com.ndc.arknightsthespire.power.SoulRendPower;
 
 public class SoulRend extends CardSPBase {
     public static final String ID = "ats:Soul Rend";
-    public static final String IMG_PATH = "img/cards/SoulRend.png";
+    public static final String IMG_PATH = "atsImg/cards/SoulRend.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int HEAL_AMOUNT = 2;

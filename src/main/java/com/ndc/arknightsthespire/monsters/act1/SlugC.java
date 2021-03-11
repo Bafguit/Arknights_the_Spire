@@ -44,8 +44,8 @@ public class SlugC extends CustomMonster {
     private static final int HP_MAX = 48;
     private static final int A7_HP_MIN = 47;
     private static final int A7_HP_MAX = 50;
-    private static final String ATLAS = "img/monsters/Slugs/C/enemy_1007_slime_3.atlas";
-    private static final String SKEL = "img/monsters/Slugs/C/enemy_1007_slime_3.json";
+    private static final String ATLAS = "atsImg/monsters/Slugs/C/enemy_1007_slime_3.atlas";
+    private static final String SKEL = "atsImg/monsters/Slugs/C/enemy_1007_slime_3.json";
     private int attackDamage;
     private int debuffDamage;
     private int arm = 0;

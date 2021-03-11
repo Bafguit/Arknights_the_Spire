@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class SporePro extends CardSPBase {
     public static final String ID = "ats:Spore Proliferation";
-    public static final String IMG_PATH = "img/cards/SporeProliferation.png";
+    public static final String IMG_PATH = "atsImg/cards/SporeProliferation.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
     private static final int WEAK = 3;

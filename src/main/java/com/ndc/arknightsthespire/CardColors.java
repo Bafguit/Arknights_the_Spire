@@ -13,9 +13,9 @@ public class CardColors {
     public static void initialize() {
         BaseMod.addColor(CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE,
-                "img/512/beta.png", "img/512/beta.png", "img/512/beta.png",
-                "img/orbs/cost.png", "img/1024/beta.png", "img/1024/beta.png",
-                "img/1024/beta.png", "img/orbs/cost.png", "img/orbs/cost_tip.png");
+                "atsImg/512/beta.png", "atsImg/512/beta.png", "atsImg/512/beta.png",
+                "atsImg/orbs/cost.png", "atsImg/1024/beta.png", "atsImg/1024/beta.png",
+                "atsImg/1024/beta.png", "atsImg/orbs/cost.png", "atsImg/orbs/cost_tip.png");
 
     }
 

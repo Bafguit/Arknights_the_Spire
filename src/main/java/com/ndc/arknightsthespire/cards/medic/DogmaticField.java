@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.DogmaticFieldPower;
 
 public class DogmaticField extends CardSPBase {
     public static final String ID = "ats:Dogmatic Field";
-    public static final String IMG_PATH = "img/cards/dmf.png";
+    public static final String IMG_PATH = "atsImg/cards/dmf.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 3;
     private static final int UPGRADE_COST = 2;

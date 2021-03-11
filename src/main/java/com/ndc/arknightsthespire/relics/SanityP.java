@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class SanityP extends CustomRelic {
     public static final String ID = "ats:Sanity Plus";
-    private static final Texture IMG = TextureLoader.getTexture("img/relics/SanityP.png");
+    private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/SanityP.png");
 
     public boolean used;
 

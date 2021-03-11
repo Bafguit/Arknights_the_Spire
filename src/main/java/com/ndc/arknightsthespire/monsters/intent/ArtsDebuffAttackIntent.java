@@ -18,7 +18,7 @@ public class ArtsDebuffAttackIntent extends CustomIntent {
     private static final String[] TEXT;
 
     public ArtsDebuffAttackIntent() {
-        super(AtsEnum.ATTACK_ARTS_BUFF, TEXT[5], "img/ui/intent/arts_1.png", "img/ui/intent/arts_1_tip.png");
+        super(AtsEnum.ATTACK_ARTS_BUFF, TEXT[5], "atsImg/ui/intent/arts_1.png", "atsImg/ui/intent/arts_1_tip.png");
     }
 
     @Override

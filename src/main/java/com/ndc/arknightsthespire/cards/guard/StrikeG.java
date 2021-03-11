@@ -14,7 +14,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class StrikeG extends CardSPBase {
     public static final String ID = "ats:Strike G";
-    public static final String IMG_PATH = "img/cards/Strike.png";
+    public static final String IMG_PATH = "atsImg/cards/Strike.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;

@@ -17,7 +17,7 @@ import com.ndc.arknightsthespire.character.AtsEnum;
 
 public class CatScratch extends CardSPBase {
     public static final String ID = "ats:Cat Scratch";
-    public static final String IMG_PATH = "img/cards/CatScratch.png";
+    public static final String IMG_PATH = "atsImg/cards/CatScratch.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;

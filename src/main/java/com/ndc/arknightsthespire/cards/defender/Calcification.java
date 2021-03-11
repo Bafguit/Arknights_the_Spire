@@ -17,7 +17,7 @@ import com.ndc.arknightsthespire.power.ShadowRaidPower;
 
 public class Calcification extends CardSPBase {
     public static final String ID = "ats:Calcification";
-    public static final String IMG_PATH = "img/cards/Calcification.png";
+    public static final String IMG_PATH = "atsImg/cards/Calcification.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int BLOCK = 3;

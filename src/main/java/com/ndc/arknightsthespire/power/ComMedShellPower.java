@@ -33,8 +33,8 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("img/power/ComMedShell_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("img/power/ComMedShell_32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/ComMedShell_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/ComMedShell_32.png");
 
     public ComMedShellPower(final AbstractCreature owner, final AbstractCreature source, int maxDamage) {
         name = NAME;
@@ -59,8 +59,8 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
         flash();
         addToBot(new AtsSFX("MILK"));
         this.addToBot(new DamageAllMute((AbstractCreature) null,
-                DamageInfo.createDamageMatrix(Math.min(healAmount, this.maxDamage), false),
-                DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.POISON, true, true));
+                DamageInfo.createDamageMatrix(Math.min(healAmount, this.maxDamage), true),
+                DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON, true, true));
         return healAmount;
     }
 

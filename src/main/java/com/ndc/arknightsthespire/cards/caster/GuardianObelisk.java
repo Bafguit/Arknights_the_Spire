@@ -13,7 +13,7 @@ import com.ndc.arknightsthespire.power.GuardObePower;
 
 public class GuardianObelisk extends CardSPBase {
     public static final String ID = "ats:Guardian Obelisk";
-    public static final String IMG_PATH = "img/cards/GuardianObelisk.png";
+    public static final String IMG_PATH = "atsImg/cards/GuardianObelisk.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int UP_COST = 0;

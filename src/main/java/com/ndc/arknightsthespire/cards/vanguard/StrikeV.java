@@ -15,7 +15,7 @@ import static com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 
 public class StrikeV extends CardSPBase {
     public static final String ID = "ats:Strike V";
-    public static final String IMG_PATH = "img/cards/Strike.png";
+    public static final String IMG_PATH = "atsImg/cards/Strike.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 1;
     private static final int DAMAGE = 6;

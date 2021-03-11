@@ -15,7 +15,7 @@ import com.ndc.arknightsthespire.cards.base.PositionType;
 
 public class GuardMode extends CardSPBase {
     public static final String ID = "ats:Guard Mode";
-    public static final String IMG_PATH = "img/cards/GuardMode.png";
+    public static final String IMG_PATH = "atsImg/cards/GuardMode.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
     private static final int BLOCK_AMT = 7;

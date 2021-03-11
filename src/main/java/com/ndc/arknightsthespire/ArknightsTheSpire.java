@@ -16,6 +16,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -90,6 +91,7 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addDynamicVariable(new SPDynamicVariable());
         BaseMod.addDynamicVariable(new ArmDynamicVariable());
         BaseMod.addDynamicVariable(new ResDynamicVariable());
+        BaseMod.addDynamicVariable(new EtDynamicVariable());
         //This creates an instance of our classes and gets our code going after BaseMod and ModTheSpire initialize.
         INSTANCE = new ArknightsTheSpire();
 
@@ -199,6 +201,7 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new DisruptionKick());
         BaseMod.addCard(new Durian());
         BaseMod.addCard(new RoarOfUrsus());
+        BaseMod.addCard(new FierceGlare());
 
         System.out.println("DONE");
     }
@@ -240,8 +243,8 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
                 new SlugA(),
                 new SlugB(),
                 new SlugC()  }));
-        chernobog.addBoss(Exordium.ID, () -> new Skull(), "img/monsters/act_1/boss/skull.png", "img/monsters/act_1/boss/skull_out.png");
-        chernobog.addBoss(Exordium.ID, () -> new Crown(), "img/monsters/act_1/boss/crown.png", "img/monsters/act_1/boss/crown_out.png");
+        chernobog.addBoss(Exordium.ID, () -> new Skull(), "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
+        chernobog.addBoss(Exordium.ID, () -> new Crown(), "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
 
 
     }*/
@@ -263,9 +266,9 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addMonster("MephiFaust", () -> new MonsterGroup(new AbstractMonster[] { new Faust(), new Mephi() }));
 
 
-        BaseMod.addBoss(Exordium.ID, Skull.ID, "img/monsters/act_1/boss/skull.png", "img/monsters/act_1/boss/skull_out.png");
-        BaseMod.addBoss(Exordium.ID, Crown.ID, "img/monsters/act_1/boss/crown.png", "img/monsters/act_1/boss/crown_out.png");
-        BaseMod.addBoss(TheCity.ID, "MephiFaust", "img/monsters/act_2/boss/mephi.png", "img/monsters/act_2/boss/mephi_out.png");
+        BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
+        BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
+        BaseMod.addBoss(TheCity.ID, "MephiFaust", "atsImg/monsters/act_2/boss/mephi.png", "atsImg/monsters/act_2/boss/mephi_out.png");
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(Shield.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 1.0F));
         //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SlugA.ID, 1.0F));
@@ -275,8 +278,8 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
     public void receiveEditCharacters() {
         System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
-                "img/char/CharSelectButtonDoctor.png",
-                "img/char/PortraitBG_w.png",
+                "atsImg/char/CharSelectButtonDoctor.png",
+                "atsImg/char/PortraitBG_w.png",
                 DOCTOR_CLASS);
         System.out.println("DONE");
     }
@@ -319,14 +322,14 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
 
     public void receiveEditStrings() {
         String lang = getLangString();
-        BaseMod.loadCustomStringsFile(UIStrings.class, "localization/" + lang + "/AtS_UI.json");
-        BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/AtS_Cards.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/AtS_Powers.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/" + lang + "/AtS_Relics.json");
-        BaseMod.loadCustomStringsFile(PotionStrings.class, "localization/" + lang + "/AtS_Potions.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, "localization/" + lang + "/AtS_Doctor.json");
-        BaseMod.loadCustomStringsFile(TutorialStrings.class, "localization/" + lang + "/AtS_tutorials.json");
-        BaseMod.loadCustomStringsFile(MonsterStrings.class, "localization/" + lang + "/AtS_Monster.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "atsLocalization/" + lang + "/AtS_UI.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, "atsLocalization/" + lang + "/AtS_Cards.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "atsLocalization/" + lang + "/AtS_Powers.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "atsLocalization/" + lang + "/AtS_Relics.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, "atsLocalization/" + lang + "/AtS_Potions.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, "atsLocalization/" + lang + "/AtS_Doctor.json");
+        BaseMod.loadCustomStringsFile(TutorialStrings.class, "atsLocalization/" + lang + "/AtS_tutorials.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "atsLocalization/" + lang + "/AtS_Monster.json");
     }
 
 
@@ -350,7 +353,7 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
 
     public void receiveEditKeywords() {
         Gson gson = new Gson();
-        String json = Gdx.files.internal("localization/" + getLangString() + "/AtS_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal("atsLocalization/" + getLangString() + "/AtS_Keywords.json").readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = (Keyword[])gson.fromJson(json, Keyword[].class);
         if (keywords != null) {
             int var7 = keywords.length;

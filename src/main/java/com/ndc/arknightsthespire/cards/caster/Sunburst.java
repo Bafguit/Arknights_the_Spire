@@ -23,7 +23,7 @@ import com.ndc.arknightsthespire.power.BurnPower;
 
 public class Sunburst extends CardSPBase {
     public static final String ID = "ats:Sunburst";
-    public static final String IMG_PATH = "img/cards/Sunburst.png";
+    public static final String IMG_PATH = "atsImg/cards/Sunburst.png";
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 1;
     private static final int DAMAGE = 7;
