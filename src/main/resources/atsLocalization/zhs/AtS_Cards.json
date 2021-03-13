@@ -408,11 +408,15 @@
     ]
   },
   "ats:Fierce Glare": {
-    "NAME": "Fierce Glare",
-    "DESCRIPTION": "Deal !D! damage X times to ALL enemies. NL ats:SP !S! ats:Auto",
+    "NAME": "怒目",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害X次. NL ats:技力 !S! ats:手动",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal damage by amount of gained energy during this turn to ALL enemies. Repeat X times. ( Current !ats:E! )"
+      "ats:技力 !S! ats:手动 NL 根据本回合获得的能量对敌人造成伤害。重复 X 次. ( 目前 !ats:E! )"
     ]
+  },
+  "ats:Sealed Floor": {
+    "NAME": "Sealed Floor",
+    "DESCRIPTION": "Retain. Unplayable. NL Does not get out of hand."
   },
   "ats:NULL": {
     "NAME": "",

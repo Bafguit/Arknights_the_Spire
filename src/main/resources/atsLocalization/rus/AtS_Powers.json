@@ -195,6 +195,24 @@
         " #yСилы."
       ]
   },
+  "ats:Frost": {
+    "NAME": "Frost Arts",
+    "DESCRIPTIONS": [
+      "You lose #b",
+      " Strength for current turn when you attacked.",
+      " Strength and Dexterity for current turn when you attacked."
+    ]
+  },
+  "ats:Frost Lose": {
+    "NAME": "Cold Wave",
+    "DESCRIPTIONS": [
+      "At the end of this turn,",
+      " lose Strength by #b",
+      " lose Strength and Dexterity by #b",
+      " gain Strength by #b",
+      " gain Strength and Dexterity by #b"
+    ]
+  },
   "ats:NULL": {
     "NAME": "This power is for add new one",
     "DESCRIPTIONS": [

@@ -409,11 +409,15 @@
     "DESCRIPTION": "Даёт !B! Защиты. NL Удваивает свою Защиту, если у вас менее половины ОЗ. NL ats:     "
   },
   "ats:Fierce Glare": {
-    "NAME": "Fierce Glare",
-    "DESCRIPTION": "Deal !D! damage X times to ALL enemies. NL ats:SP !S! ats:Auto",
+    "NAME": "Пронзающий взгляд",
+    "DESCRIPTION": "Нанонсит !D! урона X раз ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7]Вручную ats:     NL ats:        ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal damage by amount of gained energy during this turn to ALL enemies. Repeat X times. ( Current !ats:E! ) NL ats:        "
+      "ats:ОТ !S! [#C73FC7]Вручную ats:     NL Наносит урон ВСЕМ врагам, равный количеству полученной энергии в этот ход. NL Повторяется X раз. NL ( Получено: !ats:E! ) NL ats:        "
     ]
+  },
+  "ats:Sealed Floor": {
+    "NAME": "Sealed Floor",
+    "DESCRIPTION": "Retain. Unplayable. NL Does not get out of hand."
   },
   "ats:NULL": {
     "NAME": "This card is for add new one",

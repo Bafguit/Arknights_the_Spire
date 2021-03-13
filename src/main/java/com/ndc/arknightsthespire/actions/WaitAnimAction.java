@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.core.Settings;
 
 public class WaitAnimAction extends AbstractGameAction {
 
-    public WaitAnimAction(AbstractCreature a, float setDur) {
-        this.setValues((AbstractCreature)null, a, 0);
+    public WaitAnimAction(AbstractCreature source, float setDur) {
+        this.setValues((AbstractCreature)null, source, 0);
         this.duration = setDur;
         this.startDuration = setDur;
 
@@ -21,9 +21,6 @@ public class WaitAnimAction extends AbstractGameAction {
     }
 
     public void update() {
-        if(this.duration == this.startDuration) {
-        }
-
         this.tickDuration();
     }
 }

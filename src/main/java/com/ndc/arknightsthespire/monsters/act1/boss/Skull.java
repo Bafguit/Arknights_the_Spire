@@ -143,7 +143,7 @@ public class Skull extends CustomMonster {
         UnlockTracker.markBossAsSeen(this.id);
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
-        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
+        AbstractDungeon.getCurrRoom().playBgmInstantly("atsBgm/act1_skull_loop.ogg");
     }
 
     public void setDef(int a, int r) {
@@ -152,7 +152,7 @@ public class Skull extends CustomMonster {
     }
 
     public void die() {
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[2], 1.0F, 2.5F));
+        AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[2], 2.5F, 2.5F));
         super.die();
         this.addToBot(new PlayAnimationAction(this, "Die"));
     }

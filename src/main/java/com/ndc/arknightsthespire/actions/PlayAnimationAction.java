@@ -13,10 +13,11 @@ public class PlayAnimationAction extends AbstractGameAction {
     private String sKey;
     private String sfxKey;
     public float sfxTiming;
+    public boolean isImmediate = false;
     public AtsSound atsS = new AtsSound();
 
     public PlayAnimationAction(AbstractCreature owner, String key, float time, String sKey, String sfxKey) {
-        this.duration = DEFAULT_DURATION;
+        this.duration = this.startDuration = DEFAULT_DURATION;
         this.sfxTiming = Math.max(this.duration - time, 0.0F);
         this.owner = owner;
         this.key = key;
@@ -28,8 +29,18 @@ public class PlayAnimationAction extends AbstractGameAction {
         this(owner, key, 0.5F, null,  null);
     }
 
+    public PlayAnimationAction(AbstractCreature owner, String key, boolean isFast) {
+        this(owner, key, 0.5F, null,  null);
+        this.isImmediate = isFast;
+    }
+
     public PlayAnimationAction(AbstractCreature owner, String key, float time, String sfxKey) {
         this(owner, key, time, null,  sfxKey);
+    }
+
+    public PlayAnimationAction(AbstractCreature owner, String key, boolean isFast, String sfxKey) {
+        this(owner, key, 0.0F, null,  sfxKey);
+        this.isImmediate = isFast;
     }
 
     @Override
@@ -37,7 +48,7 @@ public class PlayAnimationAction extends AbstractGameAction {
         if (AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.isDone = true;
         } else {
-            if (this.duration == DEFAULT_DURATION) {
+            if (this.duration == this.startDuration) {
                 owner.state.setAnimation(0, key, false);
                 if(this.sKey != null) {
                     owner.state.addAnimation(0, sKey, false, 0.0F);
@@ -47,8 +58,15 @@ public class PlayAnimationAction extends AbstractGameAction {
                     atsS.update();
                     atsS.play(this.sfxKey, 0.0F);
                 }
+
+
             }
-            this.tickDuration();
+
+            if(this.duration == this.startDuration && this.isImmediate) {
+                this.isDone = true;
+            } else {
+                this.tickDuration();
+            }
         }
     }
 }

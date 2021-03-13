@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -77,7 +78,7 @@ public class Mephi extends CustomMonster {
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.heal = 5;
         } else {
-            this.heal = 3;
+            this.heal = 4;
         }
 
         if (AbstractDungeon.ascensionLevel >= 9) {
@@ -87,9 +88,9 @@ public class Mephi extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 9;
+            this.attackDamage = 15;
         } else {
-            this.attackDamage = 7;
+            this.attackDamage = 13;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
@@ -102,23 +103,20 @@ public class Mephi extends CustomMonster {
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new AtsSFX("MEPHI"));
                 this.addToBot(new WaitAnimAction(this, 0.3F));
-                this.addToBot(new HealAction(AbstractDungeon.getCurrRoom().monsters.monsters.get(0), this, this.heal));
-                this.addToBot(new HealAction(this, this, this.heal));
+                this.healAll(this.heal);
                 break;
             case 2:
-                this.healed = true;
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new AtsSFX("MEPHI"));
                 this.addToBot(new WaitAnimAction(this, 0.3F));
-                this.addToBot(new HealAction(AbstractDungeon.getCurrRoom().monsters.monsters.get(0), this, this.heal * 5));
-                this.addToBot(new HealAction(this, this, this.heal * 5));
+                this.healAll(this.heal * 2);
                 break;
             case 3:
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new AtsSFX("MEPHI"));
                 this.addToBot(new WaitAnimAction(this, 0.3F));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, true, true));
-                this.addToBot(new HealAction(this, this, this.heal));
+                this.healAll(this.heal * 2);
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -128,10 +126,16 @@ public class Mephi extends CustomMonster {
 
         if(AbstractDungeon.getCurrRoom().monsters.monsters.get(0).isDead) {
             this.setMove((byte)3, Intent.ATTACK_BUFF, ((DamageInfo)this.damage.get(0)).base, 1, false);
-        } else if(!this.healed && AbstractDungeon.getCurrRoom().monsters.monsters.get(0).currentHealth <= AbstractDungeon.getCurrRoom().monsters.monsters.get(0).maxHealth / 2){
+        } else if(AbstractDungeon.getCurrRoom().monsters.monsters.get(0).currentHealth <= AbstractDungeon.getCurrRoom().monsters.monsters.get(0).maxHealth / 2){
             this.setMove((byte)2, Intent.BUFF);
         } else {
             this.setMove((byte)1, Intent.BUFF);
+        }
+    }
+
+    public void healAll(int heal) {
+        for(AbstractCreature t : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            this.addToBot(new HealAction(t, t, heal));
         }
     }
 

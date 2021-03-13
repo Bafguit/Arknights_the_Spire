@@ -31,7 +31,7 @@ public class PowerfulStrike extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX((isSpJustUsed ? "PISTOL_H" : "PISTOL")));
-        addToBot(new DamageAction(m, new DamageInfo(m, this.damage * (isSpJustUsed ? 2 : 1), DamageInfo.DamageType.NORMAL),
+        addToBot(new DamageAction(m, new DamageInfo(p, this.damage * (isSpJustUsed ? 2 : 1), DamageInfo.DamageType.NORMAL),
                 isSpJustUsed ? AbstractGameAction.AttackEffect.BLUNT_HEAVY : AbstractGameAction.AttackEffect.BLUNT_LIGHT, false, true));
     }
 

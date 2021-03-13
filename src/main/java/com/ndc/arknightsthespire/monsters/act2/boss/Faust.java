@@ -152,7 +152,7 @@ public class Faust extends CustomMonster {
         super.usePreBattleAction();
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
-        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
+        AbstractDungeon.getCurrRoom().playBgmInstantly("atsBgm/act2_faust_loop.ogg");
         UnlockTracker.markBossAsSeen(this.id);
     }
 

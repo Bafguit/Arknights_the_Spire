@@ -44,6 +44,7 @@ public class Crown extends CustomMonster {
     private int arm = 0;
     private int res = 0;
     private int str = 2;
+    private int dmg = 5;
     private int evade = 30;
     private boolean isUped = false;
 
@@ -63,10 +64,10 @@ public class Crown extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.evade = 50;
-            this.str = 2;
+            this.str = 3;
         } else {
             this.evade = 30;
-            this.str = 1;
+            this.str = 2;
         }
 
         if (AbstractDungeon.ascensionLevel >= 9) {
@@ -77,12 +78,14 @@ public class Crown extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.attackDamage = 9;
+            this.dmg = 7;
         } else {
             this.attackDamage = 8;
+            this.dmg = 6;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
-        this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
+        this.damage.add(new DamageInfo(this, this.dmg, DamageInfo.DamageType.NORMAL));
     }
 
     public void takeTurn() {
@@ -98,7 +101,8 @@ public class Crown extends CustomMonster {
                 break;
             case 3:
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
-                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.SLASH_DIAGONAL, false));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.SLASH_HORIZONTAL, false));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.SLASH_VERTICAL, true));
                 break;
             case 4:
                 this.addToBot(new ApplyPowerAction(p, this, new VulnerablePower(p, 2, true), 2));
@@ -111,7 +115,7 @@ public class Crown extends CustomMonster {
         if(this.lastMove((byte) 3)) {
             this.setMove((byte) 4, Intent.DEBUFF);
         } else if(this.lastMove((byte) 2)) {
-            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
+            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
         } else if(this.lastMove((byte) 1) || this.lastMove((byte) 4)){
             this.setMove((byte)2, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
         } else {
@@ -125,7 +129,7 @@ public class Crown extends CustomMonster {
         UnlockTracker.markBossAsSeen(this.id);
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
-        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
+        AbstractDungeon.getCurrRoom().playBgmInstantly("atsBgm/act1_crown_loop.ogg");
         this.addToBot(new ApplyPowerAction(this, this, new EvadePower(this, this.evade, this.str)));
     }
 

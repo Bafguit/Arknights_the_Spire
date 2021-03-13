@@ -44,12 +44,14 @@ import com.ndc.arknightsthespire.cards.sniper.*;
 import com.ndc.arknightsthespire.cards.supporter.*;
 import com.ndc.arknightsthespire.cards.specialist.*;
 import com.ndc.arknightsthespire.cards.vanguard.*;
+import com.ndc.arknightsthespire.cards.xCurse.SealedFloor;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.commands.SPCommandHandler;
 import com.ndc.arknightsthespire.monsters.act1.*;
 import com.ndc.arknightsthespire.monsters.act1.boss.Crown;
 import com.ndc.arknightsthespire.monsters.act1.boss.Skull;
 import com.ndc.arknightsthespire.monsters.act2.boss.Faust;
+import com.ndc.arknightsthespire.monsters.act2.boss.Frost;
 import com.ndc.arknightsthespire.monsters.act2.boss.Mephi;
 import com.ndc.arknightsthespire.monsters.intent.ArtsAttackIntent;
 import com.ndc.arknightsthespire.monsters.intent.ArtsBuffAttackIntent;
@@ -202,6 +204,8 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new Durian());
         BaseMod.addCard(new RoarOfUrsus());
         BaseMod.addCard(new FierceGlare());
+        //Curse
+        BaseMod.addCard(new SealedFloor());
 
         System.out.println("DONE");
     }
@@ -264,11 +268,13 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addMonster(Crown.ID, () -> new Crown());
         log("Act 2 Boss");
         BaseMod.addMonster("MephiFaust", () -> new MonsterGroup(new AbstractMonster[] { new Faust(), new Mephi() }));
+        BaseMod.addMonster(Frost.ID, () -> new Frost());
 
 
         BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
         BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
         BaseMod.addBoss(TheCity.ID, "MephiFaust", "atsImg/monsters/act_2/boss/mephi.png", "atsImg/monsters/act_2/boss/mephi_out.png");
+        BaseMod.addBoss(TheCity.ID, Frost.ID, "atsImg/monsters/act_2/boss/frost.png", "atsImg/monsters/act_2/boss/frost_out.png");
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(Shield.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 1.0F));
         //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SlugA.ID, 1.0F));

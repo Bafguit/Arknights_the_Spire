@@ -83,6 +83,11 @@ public class AtsSound {
         this.map.put("BALLISTA", this.load("e_imp_faust_n"));
         this.map.put("SKULL_INFO", this.load("act1_skull_intro"));
         this.map.put("SKULL_LOOP", this.load("act1_skull_loop"));
+        this.map.put("FROST_A", this.load("e_aoe_frost"));
+        this.map.put("FROST_I1", this.load("e_aoe_frostnovaice_h1"));
+        this.map.put("FROST_I2", this.load("e_aoe_frostnovaice_h2"));
+        this.map.put("FROST_R1", this.load("e_skill_frostnovarevive_1"));
+        this.map.put("FROST_R2", this.load("e_skill_frostnovarevive_2"));
         logger.info("Sound Effect Volume: " + Settings.SOUND_VOLUME);
         logger.info("Loaded " + this.map.size() + " Sound Effects");
         logger.info("SFX load time: " + (System.currentTimeMillis() - startTime) + "ms");

@@ -81,5 +81,14 @@
     "DIALOG": [
       ""
     ]
+  },
+  "ats:Frost": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Frostnova",
+    "DIALOG": [
+      ""
+    ]
   }
 }
