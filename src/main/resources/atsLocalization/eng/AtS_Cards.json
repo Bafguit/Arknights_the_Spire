@@ -225,9 +225,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "Fractured Body",
-    "DESCRIPTION": "Retain. Your HP will not fall below 1. At the end of this effect, make your HP to 1. Exhaust. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Retain. Your HP will not fall below 1. Attack deals double damage. At the end of this effect, make your HP to 1. Exhaust. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Retain. Your HP will not fall below 1. At the end of the effect, make your HP to 1. Last for 2 turns. Exhaust."
+      "ats:SP !S! ats:Auto NL Retain. Your HP will not fall below 1. Attack deals double damage. At the end of the effect, make your HP to 1. Last for 2 turns. Exhaust."
     ]
   },
   "ats:Flexible Camouflage": {
@@ -417,6 +417,10 @@
   "ats:Sealed Floor": {
     "NAME": "Sealed Floor",
     "DESCRIPTION": "Retain. Unplayable. NL Does not get out of hand."
+  },
+  "ats:Lancet": {
+    "NAME": "Healing Mist",
+    "DESCRIPTION": "Unplayable. When you draw this card, heal !M! HP and Exhaust."
   },
   "ats:NULL": {
     "NAME": "This card is for add new one",

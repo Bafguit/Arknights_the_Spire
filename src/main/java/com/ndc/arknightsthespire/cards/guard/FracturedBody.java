@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
+import com.ndc.arknightsthespire.power.DurianPower;
 import com.ndc.arknightsthespire.power.FracturedBodyPower;
 
 public class FracturedBody extends CardSPBase {
@@ -35,6 +36,7 @@ public class FracturedBody extends CardSPBase {
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p,
                 new FracturedBodyPower(p, p, (isSpJustUsed ? 2 : 1)), (isSpJustUsed ? 2 : 1)));
+        addToBot(new ApplyPowerAction(p, p, new DurianPower()));
     }
 
     @Override

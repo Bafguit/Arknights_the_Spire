@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -46,12 +47,14 @@ import com.ndc.arknightsthespire.cards.specialist.*;
 import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.cards.xCurse.SealedFloor;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
+import com.ndc.arknightsthespire.character.CharacterW;
 import com.ndc.arknightsthespire.commands.SPCommandHandler;
 import com.ndc.arknightsthespire.monsters.act1.*;
 import com.ndc.arknightsthespire.monsters.act1.boss.Crown;
 import com.ndc.arknightsthespire.monsters.act1.boss.Skull;
 import com.ndc.arknightsthespire.monsters.act2.boss.Faust;
 import com.ndc.arknightsthespire.monsters.act2.boss.Frost;
+import com.ndc.arknightsthespire.monsters.act2.boss.FrostWS;
 import com.ndc.arknightsthespire.monsters.act2.boss.Mephi;
 import com.ndc.arknightsthespire.monsters.intent.ArtsAttackIntent;
 import com.ndc.arknightsthespire.monsters.intent.ArtsBuffAttackIntent;
@@ -69,6 +72,7 @@ import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
 import static com.ndc.arknightsthespire.character.AtsEnum.DOCTOR_CLASS;
+import static com.ndc.arknightsthespire.character.AtsEnum.W_CLASS;
 
 
 @SpireInitializer
@@ -146,6 +150,7 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new CBBF());
         BaseMod.addCard(new AssaultOrder());
         BaseMod.addCard(new AbsoluteFocus());
+        BaseMod.addCard(new HealingMist());
         //Uncommon
         BaseMod.addCard(new Overload());
         BaseMod.addCard(new RapidMagazine());
@@ -269,23 +274,27 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         log("Act 2 Boss");
         BaseMod.addMonster("MephiFaust", () -> new MonsterGroup(new AbstractMonster[] { new Faust(), new Mephi() }));
         BaseMod.addMonster(Frost.ID, () -> new Frost());
-
+        BaseMod.addMonster(FrostWS.ID, () -> new FrostWS());
 
         BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
         BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
         BaseMod.addBoss(TheCity.ID, "MephiFaust", "atsImg/monsters/act_2/boss/mephi.png", "atsImg/monsters/act_2/boss/mephi_out.png");
         BaseMod.addBoss(TheCity.ID, Frost.ID, "atsImg/monsters/act_2/boss/frost.png", "atsImg/monsters/act_2/boss/frost_out.png");
+        BaseMod.addBoss(TheBeyond.ID, FrostWS.ID, "atsImg/monsters/act_3/boss/frost.png", "atsImg/monsters/act_3/boss/frost_out.png");
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(Shield.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 1.0F));
-        //BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(SlugA.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 1.0F));
     }
 
     public void receiveEditCharacters() {
         System.out.println("ADDING CHARACTER");
+        BaseMod.addCharacter(new CharacterW(CardCrawlGame.playerName),
+                "atsImg/char/CharSelectButtonW.png",
+                "atsImg/char/PortraitBG_w.png",
+                W_CLASS);
         BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
                 "atsImg/char/CharSelectButtonDoctor.png",
-                "atsImg/char/PortraitBG_w.png",
+                "atsImg/char/PortraitBG.png",
                 DOCTOR_CLASS);
         System.out.println("DONE");
     }
@@ -318,6 +327,8 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addRelicToCustomPool(new OriginiumAdd(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new TacticalDelivery(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new RemnantAsh(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new HeartsK(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new HeartsKp(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

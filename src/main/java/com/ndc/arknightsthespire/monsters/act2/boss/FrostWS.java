@@ -39,14 +39,14 @@ import java.util.Iterator;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 
-public class Frost extends CustomMonster {
-    public static final String ID = "ats:Frost";
+public class FrostWS extends CustomMonster {
+    public static final String ID = "ats:FrostWS";
     private static final MonsterStrings monsterStrings;
     public static final String NAME;
     public static final String[] MOVES;
     public static final String[] DIALOG;
-    private static final String ATLAS = "atsImg/monsters/act_2/boss/enemy_1505_frstar.atlas";
-    private static final String SKEL = "atsImg/monsters/act_2/boss/enemy_1505_frstar.json";
+    private static final String ATLAS = "atsImg/monsters/act_3/boss/enemy_1510_frstar2.atlas";
+    private static final String SKEL = "atsImg/monsters/act_3/boss/enemy_1510_frstar2.json";
     private int attackDamage;
     private int arm = 0;
     private int res = 0;
@@ -58,12 +58,12 @@ public class Frost extends CustomMonster {
     private boolean isUped = false;
     private boolean isDied = false;
 
-    public Frost() {
+    public FrostWS() {
         this(0.0F, 0.0F);
     }
 
-    public Frost(float x, float y) {
-        super(NAME, ID, 220, -5.0F, 0.0F, 350.0F, 330.0F, (String)null, x, y);
+    public FrostWS(float x, float y) {
+        super(NAME, ID, 350, -5.0F, 0.0F, 400.0F, 330.0F, (String)null, x, y);
         this.loadAnimation(ATLAS, SKEL, 1.3F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -75,37 +75,39 @@ public class Frost extends CustomMonster {
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.str = 8;
             this.frost = 2;
-            this.pstr = 3;
+            this.pstr = 6;
         } else {
             this.str = 5;
             this.frost = 1;
-            this.pstr = 2;
+            this.pstr = 4;
         }
         this.iceCount = 4;
+        this.iceCounter = this.iceCount;
 
         if (AbstractDungeon.ascensionLevel >= 9) {
-            this.setHp(220);
+            this.setHp(380);
         } else {
-            this.setHp(200);
+            this.setHp(350);
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 20;
+            this.attackDamage = 27;
         } else {
-            this.attackDamage = 18;
+            this.attackDamage = 25;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
-        this.damage.add(new DamageInfo(this, this.attackDamage - 3, DamageInfo.DamageType.NORMAL));
+        this.damage.add(new DamageInfo(this, this.attackDamage + 15, DamageInfo.DamageType.NORMAL));
     }
 
     public void takeTurn() {
         if(this.halfDead) {
-            this.addToBot(new HealAction(this, this, this.maxHealth));
-            this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost, true), this.frost + 1));
-            this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.str)));
-            this.halfDead = false;
-            this.addToBot(new CanLoseAction());
+                this.addToBot(new HealAction(this, this, this.maxHealth));
+                this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost, true), this.frost + 1));
+                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.str)));
+                this.addToBot(new ApplyPowerAction(this, this, new BufferPower(this, 4), 4));
+                this.halfDead = false;
+                this.addToBot(new CanLoseAction());
         }
 
         AbstractPlayer p = AbstractDungeon.player;
@@ -120,16 +122,24 @@ public class Frost extends CustomMonster {
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new WaitAnimAction(this, 0.4F));
                 this.addToBot(new AtsSFX("CASTER"));
-                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.FIRE, false, false));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, false, false));
                 this.addToBot(new ApplyPowerAction(p, this, new StrengthPower(p, -this.pstr), -this.pstr));
                 if(this.isDied) this.addToBot(new ApplyPowerAction(p, this, new DexterityPower(p, -this.pstr), -this.pstr));
                 this.addToBot(new ApplyPowerAction(p, this, new LoseAtkPower(p, this.pstr, this.isDied ? true : false), this.pstr));
                 break;
             case 3:
+                this.addToBot(new PlayAnimationAction(this, "Skill_3", true, "FROST_I1"));
+                this.addToBot(new WaitAnimAction(this, 2.8F));
+                this.addToBot(new AtsSFX("FROST_I2"));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.BLUNT_HEAVY, false, false));
                 this.addToBot(new ApplyPowerAction(p, this, new WeakPower(p, 2, true), 2));
                 this.addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 2, true), 2));
                 break;
             case 4:
+                this.addToBot(new ApplyPowerAction(p, this, new WeakPower(p, 2, true), 2));
+                this.addToBot(new ApplyPowerAction(p, this, new FrailPower(p, 2, true), 2));
+                break;
+            case 5:
                 /*
                 this.addToBot(new AtsSFX("FROST_I1"));
                 this.addToBot(new WaitAnimAction(this, 0.5F));
@@ -149,12 +159,16 @@ public class Frost extends CustomMonster {
 
     protected void getMove(int num) {
 
-        if(this.iceCounter == this.iceCount && this.canAddIce()) {
-            this.setMove((byte) 4, Intent.UNKNOWN);
-        } else if(this.lastMove((byte) 2)) {
-            this.setMove((byte) 3, Intent.STRONG_DEBUFF);
+        if((this.iceCounter == this.iceCount || this.halfDead) && this.canAddIce()) {
+            this.setMove((byte) 5, Intent.UNKNOWN);
+        } else if(this.lastMove((byte) 2)){
+            if(this.isDied) {
+                this.setMove((byte)3, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(1)).base);
+            } else {
+                this.setMove((byte) 4, Intent.STRONG_DEBUFF);
+            }
         } else if(this.lastMove((byte) 1)){
-            this.setMove((byte)2, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(1)).base);
+            this.setMove((byte)2, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(0)).base);
         } else {
             this.setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
         }
@@ -201,7 +215,7 @@ public class Frost extends CustomMonster {
         UnlockTracker.markBossAsSeen(this.id);
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();
-        AbstractDungeon.getCurrRoom().playBgmInstantly("atsBgm/act2_frost_loop.ogg");
+        AbstractDungeon.getCurrRoom().playBgmInstantly("atsBgm/act3_frost_loop.ogg");
     }
 
     public void damage(DamageInfo info) {
@@ -219,6 +233,8 @@ public class Frost extends CustomMonster {
             while(s.hasNext()) {
                 p = (AbstractPower)s.next();
                 p.onDeath();
+                p.onRemove();
+                addToBot(new RemoveSpecificPowerAction(this, this, p));
             }
 
             s = AbstractDungeon.player.relics.iterator();
@@ -231,13 +247,12 @@ public class Frost extends CustomMonster {
             AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 
             this.addToTop(new ClearCardQueueAction());
-            s = this.powers.iterator();
             this.isDied = true;
 
             if (AbstractDungeon.ascensionLevel >= 9) {
-                this.maxHealth = 280;
+                this.maxHealth = 440;
             } else {
-                this.maxHealth = 250;
+                this.maxHealth = 400;
             }
 
             if (Settings.isEndless && AbstractDungeon.player.hasBlight("ToughEnemies")) {
@@ -248,6 +263,8 @@ public class Frost extends CustomMonster {
             if (ModHelper.isModEnabled("MonsterHunter")) {
                 this.currentHealth = (int)((float)this.currentHealth * 1.5F);
             }
+
+            this.setMove((byte) 5, Intent.UNKNOWN);
 
             this.addToBot(new PlayAnimationAction(this, "Skill_2", true, "FROST_R1"));
             this.addToBot(new WaitAnimAction(this, 6.0F));

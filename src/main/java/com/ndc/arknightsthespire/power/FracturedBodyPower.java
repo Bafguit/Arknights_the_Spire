@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -78,8 +79,10 @@ public class FracturedBodyPower extends AbstractPower implements CloneablePowerI
     @Override
     public void atStartOfTurn() {
         AbstractPlayer p = AbstractDungeon.player;
-        if (this.amount > 1)
+        if (this.amount > 1) {
             addToBot(new ReducePowerAction(p, p, "ats:Fractured Body", 1));
+            addToBot(new ApplyPowerAction(p, p, new DurianPower()));
+        }
         else if (this.amount == 1) {
             addToBot(new LoseHPAction(p, p, p.currentHealth - 1));
             addToBot(new RemoveSpecificPowerAction(p, p, "ats:Fractured Body"));

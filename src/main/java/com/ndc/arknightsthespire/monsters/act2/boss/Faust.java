@@ -80,13 +80,13 @@ public class Faust extends CustomMonster {
             this.count = 0;
             this.countBM = 5;
             this.countB = 2;
-            this.ballista = 6;
+            this.ballista = 10;
         } else {
             this.countM = 4;
             this.count = 1;
-            this.countBM = 7;
-            this.countB = 4;
-            this.ballista = 4;
+            this.countBM = 6;
+            this.countB = 3;
+            this.ballista = 6;
         }
 
         if (AbstractDungeon.ascensionLevel >= 9) {

@@ -196,21 +196,21 @@
       ]
   },
   "ats:Frost": {
-    "NAME": "Frost Arts",
+    "NAME": "Искусная заморозка",
     "DESCRIPTIONS": [
-      "You lose #b",
-      " Strength for current turn when you attacked.",
-      " Strength and Dexterity for current turn when you attacked."
+      "Вы теряете #b",
+      " Силы в этот ход, когда атакуете.",
+      " Силы и Ловкости в этот ход, когда атакуете."
     ]
   },
   "ats:Frost Lose": {
-    "NAME": "Cold Wave",
+    "NAME": "Волна холода",
     "DESCRIPTIONS": [
-      "At the end of this turn,",
-      " lose Strength by #b",
-      " lose Strength and Dexterity by #b",
-      " gain Strength by #b",
-      " gain Strength and Dexterity by #b"
+      "В конце этого хода,",
+      " снижает Силу на #b",
+      " снижает Силу и Ловкость на #b",
+      " повышает Силу на #b",
+      " повышает Силу и Ловкость на #b"
     ]
   },
   "ats:NULL": {

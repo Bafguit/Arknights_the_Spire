@@ -86,7 +86,16 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Frostnova",
+    "NAME": "霜星",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:FrostWS": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "霜星， \"冬痕\"",
     "DIALOG": [
       ""
     ]

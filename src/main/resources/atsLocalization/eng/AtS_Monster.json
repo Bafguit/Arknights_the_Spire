@@ -90,5 +90,14 @@
     "DIALOG": [
       ""
     ]
+  },
+  "ats:FrostWS": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Frostnova, \"Winter's Scar\"",
+    "DIALOG": [
+      ""
+    ]
   }
 }

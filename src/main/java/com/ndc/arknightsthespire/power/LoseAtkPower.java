@@ -38,7 +38,7 @@ public class LoseAtkPower extends AbstractPower {
             this.amount = -999;
         }
         this.updateDescription();
-        this.loadRegion("flex");
+        this.loadRegion("shackle");
         this.canGoNegative = true;
     }
 
@@ -62,21 +62,21 @@ public class LoseAtkPower extends AbstractPower {
 
     public void updateDescription() {
         if (this.amount > 0) {
-            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[2] : DESCRIPTIONS[1]) + this.amount;
-            this.type = PowerType.DEBUFF;
+            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[4] : DESCRIPTIONS[3]) + this.amount;
+            this.type = PowerType.BUFF;
         } else {
             int tmp = -this.amount;
-            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[4] : DESCRIPTIONS[3]) + tmp;
-            this.type = PowerType.BUFF;
+            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[2] : DESCRIPTIONS[1]) + tmp;
+            this.type = PowerType.DEBUFF;
         }
 
     }
 
     public void atEndOfTurn(boolean isPlayer) {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, -this.amount), -this.amount));
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
         if(this.hasDex) {
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, -this.amount), -this.amount));
+            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new DexterityPower(this.owner, this.amount), this.amount));
         }
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }

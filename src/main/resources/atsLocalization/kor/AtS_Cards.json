@@ -226,9 +226,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "육참골단",
-    "DESCRIPTION": "보존. 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 소멸. NL ats:SP !S! ats:자동",
+    "DESCRIPTION": "보존. 체력이 1 이하로 내려가지 않습니다. 공격으로 주는 피해가 두 배가 됩니다. 효과 종료 시 체력이 1 이 됩니다. 소멸. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:자동 NL 보존. 체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다. 소멸."
+      "ats:SP !S! ats:자동 NL 보존. 체력이 1 이하로 내려가지 않습니다. 공격으로 주는 피해가 두 배가 됩니다. 효과 종료 시 체력이 1 이 됩니다. 2 턴 동인 지속됩니다. 소멸."
     ]
   },
   "ats:Flexible Camouflage": {
@@ -418,6 +418,10 @@
   "ats:Sealed Floor": {
     "NAME": "봉인된 지면",
     "DESCRIPTION": "보존. 사용불가. NL 손에서 벗어나지 않습니다."
+  },
+  "ats:Lancet": {
+    "NAME": "응급 스프레이",
+    "DESCRIPTION": "사용불가. 이 카드를 뽑으면 소멸하면서 체력을 !M! 회복합니다."
   },
   "ats:NULL": {
     "NAME": "",

@@ -13,6 +13,8 @@ public class AtsEnum {
     @SpireEnum
     public static AbstractPlayer.PlayerClass DOCTOR_CLASS;
     @SpireEnum
+    public static AbstractPlayer.PlayerClass W_CLASS;
+    @SpireEnum
     public static AbstractPower.PowerType ATS_BASE;
     @SpireEnum
     public static DamageInfo.DamageType ARTS;

@@ -197,21 +197,21 @@
     ]
   },
   "ats:Frost": {
-    "NAME": "Frost Arts",
+    "NAME": "冰霜技艺",
     "DESCRIPTIONS": [
-      "You lose #b",
-      " Strength for current turn when you attacked.",
-      " Strength and Dexterity for current turn when you attacked."
+      "本回合每当你被攻击时，你失去 #b",
+      " 点 #y力量 。",
+      " 点 #y力量 和 #y敏捷 。"
     ]
   },
   "ats:Frost Lose": {
-    "NAME": "Cold Wave",
+    "NAME": "冷冻波",
     "DESCRIPTIONS": [
-      "At the end of this turn,",
-      " lose Strength by #b",
-      " lose Strength and Dexterity by #b",
-      " gain Strength by #b",
-      " gain Strength and Dexterity by #b"
+      "本回合结束时，",
+      " #y力量 降低 #b",
+      " #y力量 和 #y敏捷 降低 #b",
+      " #y力量 提高 #b",
+      " #y力量 和 #y敏捷 提高 #b"
     ]
   },
   "ats:": {

@@ -56,16 +56,16 @@
   },
   "ats:Sanity": {
     "NAME": "Sanity",
-    "FLAVOR": "\"Miss.W, do not steal it!\"",
+    "FLAVOR": "\"Doctor, it's not to eat!\"",
     "DESCRIPTIONS": [
-      "Return half of #ySP you consumed first during each turn. (Maximum #b5)"
+      "Return #ySP and gain block by half of #ySP you consumed first during each turn. (Maximum #b5)"
     ]
   },
   "ats:Sanity Plus": {
     "NAME": "Sanity+",
-    "FLAVOR": "\"Miss.W, don't put it in sleeping Doctor's mouth!\"",
+    "FLAVOR": "\"Doctor, don't take it secretly and eat it!\"",
     "DESCRIPTIONS": [
-      "Replaces #rSanity. Return half of #ySP you consumed first during each turn. NL #yMaximum #ySP #yLimit increased by #b10."
+      "#rReplaces #rSanity. Return #ySP and gain block by half of #ySP you consumed first during each turn. NL #yMaximum #ySP #yLimit increased by #b10."
     ]
   },
   "ats:Berate": {
@@ -190,6 +190,20 @@
       "When you gain critical damage, your HP will not fall below 1, but you will die after 2 turns. (works once)",
       "Your HP will not fall below 1. You will die after #b",
       " turn."
+    ]
+  },
+  "ats:Hearts K": {
+    "NAME": "King of Hearts",
+    "FLAVOR": "\"Mm, another beautiful day.\"",
+    "DESCRIPTIONS": [
+      "At the start of battle, reduce #b4 #yStrength of ALL enemies for 1 turn."
+    ]
+  },
+  "ats:Hearts K Plus": {
+    "NAME": "King of Hearts+",
+    "FLAVOR": "\"Just gotta kill them all to finish the job, right? Don’t think in such simple terms? But that’s a pain in the ass...\"",
+    "DESCRIPTIONS": [
+      "At the starts of battle, #ystun ALL enemies."
     ]
   },
   "ats:NULL": {

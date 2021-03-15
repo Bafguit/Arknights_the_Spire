@@ -77,9 +77,9 @@ public class Skull extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 8;
+            this.attackDamage = 10;
         } else {
-            this.attackDamage = 7;
+            this.attackDamage = 9;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
