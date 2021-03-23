@@ -422,6 +422,10 @@
     "NAME": "Healing Mist",
     "DESCRIPTION": "Unplayable. When you draw this card, heal !M! HP and Exhaust."
   },
+  "ats:Mine": {
+    "NAME": "Mine",
+    "DESCRIPTION": "Retain. An enemy loses 10 HP. Reduce 5 ats:Armour for this turn. NL Exhaust. Cannot discard."
+  },
   "ats:NULL": {
     "NAME": "This card is for add new one",
     "DESCRIPTION": "",

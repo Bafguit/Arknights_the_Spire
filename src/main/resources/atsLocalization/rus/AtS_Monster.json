@@ -95,7 +95,35 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Морррозная, \"Зимний Шрам\"",
+    "NAME": "Морррозная \"Зимний шрам\"",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Guerilla": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Guerilla Siegebreaker",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Patriot": {
+    "MOVES": [
+      "Forwarding...",
+      "Recovering..."
+    ],
+    "NAME": "Patriot",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Guerilla 2": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Guerilla Siegebreaker Leader",
     "DIALOG": [
       ""
     ]

@@ -420,7 +420,11 @@
   },
   "ats:Lancet": {
     "NAME": "战术整理",
-    "DESCRIPTION": "不能被打出 . 　When　you draw　this　card,　heal　!M!　HP　and　Exhaust."
+    "DESCRIPTION": "不能被打出 . 　When　you draw　this　card,　heal　 !M! 　HP　and　Exhaust."
+  },
+  "ats:Mine": {
+    "NAME": "Mine",
+    "DESCRIPTION": "Retain.　An　enemy　loses　10　HP.　Reduce　5　 ats:Armour 　for　this　turn.　NL 　Exhaust. 　Cannot　discard."
   },
   "ats:NULL": {
     "NAME": "",

@@ -423,6 +423,10 @@
     "NAME": "응급 스프레이",
     "DESCRIPTION": "사용불가. 이 카드를 뽑으면 소멸하면서 체력을 !M! 회복합니다."
   },
+  "ats:Mine": {
+    "NAME": "지뢰",
+    "DESCRIPTION": "보존. 적 하나의 체력을 10 감소시키고 이번 턴 동안 ats:장갑을 5 낮춥니다. NL 소멸. 버릴 수 없습니다."
+  },
   "ats:NULL": {
     "NAME": "",
     "DESCRIPTION": "",

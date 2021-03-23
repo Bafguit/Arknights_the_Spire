@@ -55,7 +55,9 @@ public class KillVanguard extends AbstractGameAction {
                 this.target.damage(this.info);
             }
             if (((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) {
-                addToBot(new GainEnergyAction(this.energyGainAmt));
+                if(this.energyGainAmt > 0) {
+                    addToBot(new GainEnergyAction(this.energyGainAmt));
+                }
             }
 
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {

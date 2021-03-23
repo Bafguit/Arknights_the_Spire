@@ -221,6 +221,12 @@ public class CharacterW extends CustomPlayer {
         if (!this.hand.canUseAnyCard() && !this.endTurnQueued) {
             AbstractDungeon.overlayMenu.endTurnButton.isGlowing = true;
         }
+/*
+        c.freeToPlayOnce = false;
+        if(c.isCostModifiedForTurn) {
+            c.costForTurn = c.cost;
+            c.isCostModifiedForTurn = false;
+        }*/
     }
 
     @Override

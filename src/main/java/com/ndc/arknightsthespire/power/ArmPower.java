@@ -24,33 +24,26 @@ public class ArmPower extends AbstractPower implements CloneablePowerInterface {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
-    // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
-    private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/beta_84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/beta_32.png");
-
-    public ArmPower(final AbstractCreature owner, final AbstractCreature source, int amount) {
+    public ArmPower(final AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
-        this.source = source;
         this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = true;
 
         // We load those txtures here.
-        this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
-        this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
+        this.loadRegion("dexterity");
 
         updateDescription();
     }
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if(damageAmount > 0) {
-            return info.type == DamageInfo.DamageType.NORMAL ? Math.max(damageAmount - this.amount, 1) : damageAmount;
+        if(info.type == DamageInfo.DamageType.NORMAL && damageAmount > 0 && this.amount > 0) {
+            return Math.max(damageAmount - this.amount, 1);
         } else {
             return damageAmount;
         }
@@ -64,6 +57,6 @@ public class ArmPower extends AbstractPower implements CloneablePowerInterface {
 
     @Override
     public AbstractPower makeCopy() {
-        return new ArmPower(owner, source, amount);
+        return new ArmPower(owner, amount);
     }
 }

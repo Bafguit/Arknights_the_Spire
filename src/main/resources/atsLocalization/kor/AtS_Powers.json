@@ -322,6 +322,39 @@
       " 힘, 민첩을 얻습니다. : #b"
     ]
   },
+  "ats:Forwarding": {
+    "NAME": "전진하는 중",
+    "DESCRIPTIONS": [
+      "#r방어도를 #r얻는 카드를 사용하면 잠시 전진을 멈추고 #r강력한 #r공격 을 합니다. NL #b",
+      " 턴 후에 전진을 마치고 공격을 시작합니다."
+    ]
+  },
+  "ats:Lose Arm": {
+    "NAME": "방어력 감소",
+    "DESCRIPTIONS": [
+      "턴 종료 시 #y장갑 을 #b",
+      " 얻습니다."
+    ]
+  },
+  "ats:Mine": {
+    "NAME": "지뢰",
+    "DESCRIPTIONS": [
+      "턴 시작 시 손에 #y지뢰 카드가 없다면 #b1 장을 손으로 가져옵니다. NL 남은 개수: #r"
+    ]
+  },
+  "ats:No Damage": {
+    "NAME": "회복하는 중",
+    "DESCRIPTIONS": [
+      "피해를 받지 않습니다. 턴 종료 시 최대 체력의 #b20% 를 회복합니다."
+    ]
+  },
+  "ats:Ore Mist": {
+    "NAME": "광석 안개",
+    "DESCRIPTIONS": [
+      "턴 시작 및 종료 시 체력을 #b",
+      " 잃습니다."
+    ]
+  },
   "ats:": {
     "NAME": "",
     "DESCRIPTIONS": [

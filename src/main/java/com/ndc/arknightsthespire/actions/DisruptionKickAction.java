@@ -9,10 +9,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.ndc.arknightsthespire.character.AtsEnum;
-import com.ndc.arknightsthespire.power.BallistaPower;
-import com.ndc.arknightsthespire.power.FrostPower;
+import com.ndc.arknightsthespire.power.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -62,5 +60,12 @@ public class DisruptionKickAction extends AbstractGameAction {
         unRemoval.add(PainfulStabsPower.POWER_ID);
         unRemoval.add(BallistaPower.POWER_ID);
         unRemoval.add(FrostPower.POWER_ID);
+        unRemoval.add(NoDamagePower.POWER_ID);
+        unRemoval.add(ForwardingPower.POWER_ID);
+        unRemoval.add(ArmPower.POWER_ID);
+        unRemoval.add(LoseArmPower.POWER_ID);
+        unRemoval.add(OreMistPower.POWER_ID);
+        unRemoval.add(NoDamagePower.POWER_ID);
+        unRemoval.add(MinePower.POWER_ID);
     }
 }

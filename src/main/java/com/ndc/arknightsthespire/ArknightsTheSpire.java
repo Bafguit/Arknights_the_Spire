@@ -1,8 +1,6 @@
 
 package com.ndc.arknightsthespire;
 
-import actlikeit.RazIntent.CustomIntent;
-import actlikeit.dungeons.CustomDungeon;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -16,7 +14,6 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -34,8 +31,6 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
-import com.ndc.arknightsthespire.act.Chernobog;
-import com.ndc.arknightsthespire.actions.ApplyDefAction;
 import com.ndc.arknightsthespire.cards.caster.*;
 import com.ndc.arknightsthespire.cards.defender.*;
 import com.ndc.arknightsthespire.cards.defender.Defend;
@@ -54,11 +49,9 @@ import com.ndc.arknightsthespire.monsters.act1.boss.Crown;
 import com.ndc.arknightsthespire.monsters.act1.boss.Skull;
 import com.ndc.arknightsthespire.monsters.act2.boss.Faust;
 import com.ndc.arknightsthespire.monsters.act2.boss.Frost;
-import com.ndc.arknightsthespire.monsters.act2.boss.FrostWS;
+import com.ndc.arknightsthespire.monsters.act3.boss.FrostWS;
 import com.ndc.arknightsthespire.monsters.act2.boss.Mephi;
-import com.ndc.arknightsthespire.monsters.intent.ArtsAttackIntent;
-import com.ndc.arknightsthespire.monsters.intent.ArtsBuffAttackIntent;
-import com.ndc.arknightsthespire.monsters.intent.ArtsDebuffAttackIntent;
+import com.ndc.arknightsthespire.monsters.act3.boss.Patirot;
 import com.ndc.arknightsthespire.potions.*;
 import com.ndc.arknightsthespire.relics.*;
 import com.ndc.arknightsthespire.ui.SpUI;
@@ -275,12 +268,14 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addMonster("MephiFaust", () -> new MonsterGroup(new AbstractMonster[] { new Faust(), new Mephi() }));
         BaseMod.addMonster(Frost.ID, () -> new Frost());
         BaseMod.addMonster(FrostWS.ID, () -> new FrostWS());
+        BaseMod.addMonster(Patirot.ID, () -> new Patirot());
 
-        BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
-        BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
+        //BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
+        //BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
         BaseMod.addBoss(TheCity.ID, "MephiFaust", "atsImg/monsters/act_2/boss/mephi.png", "atsImg/monsters/act_2/boss/mephi_out.png");
         BaseMod.addBoss(TheCity.ID, Frost.ID, "atsImg/monsters/act_2/boss/frost.png", "atsImg/monsters/act_2/boss/frost_out.png");
         BaseMod.addBoss(TheBeyond.ID, FrostWS.ID, "atsImg/monsters/act_3/boss/frost.png", "atsImg/monsters/act_3/boss/frost_out.png");
+        BaseMod.addBoss(Exordium.ID, Patirot.ID, "atsImg/monsters/act_3/boss/patriot.png", "atsImg/monsters/act_3/boss/patriot_out.png");
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(Shield.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 1.0F));

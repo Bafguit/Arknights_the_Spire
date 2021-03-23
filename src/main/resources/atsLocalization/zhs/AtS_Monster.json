@@ -99,5 +99,33 @@
     "DIALOG": [
       ""
     ]
+  },
+  "ats:Guerilla": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "游击队突袭战士",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Patriot": {
+    "MOVES": [
+      "Forwarding...",
+      "Recovering..."
+    ],
+    "NAME": "爱国者",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Guerilla 2": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "游击队突袭战士组长",
+    "DIALOG": [
+      ""
+    ]
   }
 }

@@ -214,6 +214,39 @@
       " gain Strength and Dexterity by #b"
     ]
   },
+  "ats:Forwarding": {
+    "NAME": "Forwarding",
+    "DESCRIPTIONS": [
+      "When you use a card that #ygains #yblock, #yPatriot will stop for a moment and #rattack #rstrongly. NL After #b",
+      " turn, #yPatriot will stop moving and start attacking."
+    ]
+  },
+  "ats:Lose Arm": {
+    "NAME": "Reduced Armour",
+    "DESCRIPTIONS": [
+      "At the end of turn, gain #b",
+      " #yArmour ."
+    ]
+  },
+  "ats:Mine": {
+    "NAME": "Mine",
+    "DESCRIPTIONS": [
+      "At the start of turn, gain #b1 #yMine card if you don't have it in your hand. NL Left amount: #r"
+    ]
+  },
+  "ats:No Damage": {
+    "NAME": "Recovering",
+    "DESCRIPTIONS": [
+      "Cannot be harmed. At the end of turn, Heal #b20% HP."
+    ]
+  },
+  "ats:Ore Mist": {
+    "NAME": "Ore Mist",
+    "DESCRIPTIONS": [
+      "At the start and the end of turn, lose #b",
+      " HP."
+    ]
+  },
   "ats:NULL": {
     "NAME": "This power is for add new one",
     "DESCRIPTIONS": [

@@ -99,5 +99,33 @@
     "DIALOG": [
       ""
     ]
+  },
+  "ats:Patriot": {
+    "MOVES": [
+      "전진하는 중...",
+      "회복 중..."
+    ],
+    "NAME": "패트리어트",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Guerilla": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "유격대 돌격 전사",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "ats:Guerilla 2": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "유격대 돌격 전사 리더",
+    "DIALOG": [
+      ""
+    ]
   }
 }

@@ -26,6 +26,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -179,6 +180,9 @@ public class CharacterDoctor extends CustomPlayer {
 
     @Override
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
+        if (c.type == AbstractCard.CardType.ATTACK) {
+            this.useFastAttackAnimation();
+        }
 
         c.calculateCardDamage(monster);
         if (c.cost == -1 && EnergyPanel.totalCount < energyOnUse && !c.ignoreEnergyOnUse) {
@@ -206,6 +210,12 @@ public class CharacterDoctor extends CustomPlayer {
         if (!this.hand.canUseAnyCard() && !this.endTurnQueued) {
             AbstractDungeon.overlayMenu.endTurnButton.isGlowing = true;
         }
+/*
+        c.freeToPlayOnce = false;
+        if(c.isCostModifiedForTurn) {
+            c.costForTurn = c.cost;
+            c.isCostModifiedForTurn = false;
+        }*/
     }
 
     @Override

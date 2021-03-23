@@ -109,7 +109,14 @@
     "NAMES": [
       "some"
     ],
-    "DESCRIPTION": "Split, Mode Shift, Curiosity, Time Warp, Beat of Death, Fading, Shifting, Minion, Stasis, Unawakened, Thievery, Painful Stabs, Ballista, Frost Arts"
+    "DESCRIPTION": "Split, Mode Shift, Curiosity, Time Warp, Beat of Death, Fading, Shifting, Minion, Stasis, Unawakened, Thievery, Painful Stabs, Ballista, Frost Arts, Armour, Reduced Armour, Forwarding, Ore Mist, Recovering"
+  },
+  {
+    "PROPER_NAME": "Armour",
+    "NAMES": [
+      "Armour"
+    ],
+    "DESCRIPTION": "Reduce #yAttack damage by #yArmour amount."
   },
   {
     "PROPER_NAME": "Slow",

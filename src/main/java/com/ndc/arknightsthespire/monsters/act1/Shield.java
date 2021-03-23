@@ -90,7 +90,7 @@ public class Shield extends CustomMonster {
             this.attackDamage = 8;
         }
 
-        this.damage.add(new DamageInfo(this, this.attackDamage, AtsEnum.PHYS));
+        this.damage.add(new DamageInfo(this, this.attackDamage, DamageType.NORMAL));
     }
 
     public void takeTurn() {
@@ -104,11 +104,11 @@ public class Shield extends CustomMonster {
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_HEAVY));
                 this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, -this.atk)));
-                addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this, this.atk)));
+                addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this.atk)));
                 break;
             case 2:
                 this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.atk + 1)));
-                addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this, -this.atk)));
+                addToBot(new ApplyPowerAction(this, this, new ArmPower(this, -this.atk)));
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -129,7 +129,7 @@ public class Shield extends CustomMonster {
     @Override
     public void usePreBattleAction() {
         super.usePreBattleAction();
-        addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this, this.def)));
+        addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this.def)));
     }
 
     public void setDef(int a, int r) {

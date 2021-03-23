@@ -88,6 +88,15 @@ public class AtsSound {
         this.map.put("FROST_I2", this.load("e_aoe_frostnovaice_h2"));
         this.map.put("FROST_R1", this.load("e_skill_frostnovarevive_1"));
         this.map.put("FROST_R2", this.load("e_skill_frostnovarevive_2"));
+        this.map.put("PAT_A1", this.load("e_atk_patriot1_n"));
+        this.map.put("PAT_A2", this.load("e_atk_patriot2_n"));
+        this.map.put("PAT_S1", this.load("e_skill_patriotjavelin_1"));
+        this.map.put("PAT_S2", this.load("e_skill_patriotjavelin_2"));
+        this.map.put("PAT_S3", this.load("e_imp_patriotjavelin"));
+        this.map.put("PAT_D1", this.load("e_skill_patriot1to2"));
+        this.map.put("PAT_D2", this.load("e_skill_patriot2to3_1"));
+        this.map.put("PAT_D3", this.load("e_skill_patriot2to3_2"));
+        this.map.put("PAT_D4", this.load("e_skill_patriot2to3_3"));
         logger.info("Sound Effect Volume: " + Settings.SOUND_VOLUME);
         logger.info("Loaded " + this.map.size() + " Sound Effects");
         logger.info("SFX load time: " + (System.currentTimeMillis() - startTime) + "ms");

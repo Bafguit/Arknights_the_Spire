@@ -225,9 +225,9 @@
   },
   "ats:Fractured Body": {
     "NAME": "Изломанное тело",
-    "DESCRIPTION": "Оставляется. NL Ваши ОЗ не могут быть ниже 1. Атака наносит двойной урон. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Сжигается. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:           ",
+    "DESCRIPTION": "Оставляется. NL Ваши ОЗ не могут быть ниже 1. NL Ваши атаки наносят двойной урон. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Сжигается. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "Оставляется. NL ats:ОТ !S! [#6495ED]Авто ats:   NL Ваши ОЗ не могут быть ниже 1. Атака наносит двойной урон. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Эффект длится 2 хода. NL Сжигается. NL ats:           "
+      "Оставляется. NL ats:ОТ !S! [#6495ED]Авто ats:   NL Ваши ОЗ не могут быть ниже 1. NL Ваши атаки наносят двойной урон. NL Ваши ОЗ снижаются до 1, когда заканчивается эффект. NL Эффект длится 2 хода. NL Сжигается. NL ats:           "
     ]
   },
   "ats:Flexible Camouflage": {
@@ -420,8 +420,12 @@
     "DESCRIPTION": "Оставляется. NL Неиграбельная. NL Не может быть удалена из руки."
   },
   "ats:Lancet": {
-    "NAME": "Healing Mist",
-    "DESCRIPTION": "Unplayable. When you draw this card, heal !M! HP and Exhaust."
+    "NAME": "Лечащий туман",
+    "DESCRIPTION": "Неиграбельная. NL Когда вы берёте эту карту в руку, восполняет !M! ОЗ и Сжигается."
+  },
+  "ats:Mine": {
+    "NAME": "Mine",
+    "DESCRIPTION": "Retain. An enemy loses 10 HP. Reduce 5 ats:Armour for this turn. NL Exhaust. Cannot discard."
   },
   "ats:NULL": {
     "NAME": "This card is for add new one",

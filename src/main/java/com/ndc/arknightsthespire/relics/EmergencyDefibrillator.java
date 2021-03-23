@@ -5,9 +5,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.red.Whirlwind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
@@ -17,7 +19,7 @@ public class EmergencyDefibrillator extends CustomRelic {
     public boolean isUsed = false;
 
     public EmergencyDefibrillator() {
-        super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     @Override

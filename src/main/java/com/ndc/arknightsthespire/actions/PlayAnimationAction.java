@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.ndc.arknightsthespire.monsters.act3.boss.Patirot;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,6 +12,7 @@ public class PlayAnimationAction extends AbstractGameAction {
     private AbstractCreature owner;
     private String key;
     private String sKey;
+    private String idle;
     private String sfxKey;
     public float sfxTiming;
     public boolean isImmediate = false;
@@ -23,6 +25,11 @@ public class PlayAnimationAction extends AbstractGameAction {
         this.key = key;
         this.sKey = sKey;
         this.sfxKey = sfxKey;
+        if(this.owner instanceof Patirot) {
+            this.idle = ((Patirot) this.owner).curKey;
+        } else {
+            this.idle = "Idle";
+        }
     }
 
     public PlayAnimationAction(AbstractCreature owner, String key) {
@@ -53,7 +60,7 @@ public class PlayAnimationAction extends AbstractGameAction {
                 if(this.sKey != null) {
                     owner.state.addAnimation(0, sKey, false, 0.0F);
                 }
-                owner.state.addAnimation(0, "Idle", true, 0.0F);
+                owner.state.addAnimation(0, this.idle, true, 0.0F);
                 if(this.sfxKey != null && this.duration == this.sfxTiming) {
                     atsS.update();
                     atsS.play(this.sfxKey, 0.0F);

@@ -263,8 +263,8 @@ public abstract class CardSPBase extends CustomCard {
         return new DamageInfo(AbstractDungeon.player, this.damage, DamageInfo.DamageType.NORMAL);
     }
 
-    @Override
     public void resetAttributes() {
+        super.resetAttributes();
         this.baseSP = this.sp;
         if(this.spCard != null) {
             this.spCard.baseSP = this.spCard.sp;

@@ -34,8 +34,6 @@ public class SealedFloor extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.CURSE, CardColor.CURSE,
                 CardRarity.CURSE, CardTarget.NONE, POSITION);
-        this.tags.add(CardTags.STRIKE);
-        this.tags.add(CardTags.STARTER_STRIKE);
         this.selfRetain = true;
     }
 
@@ -87,7 +85,6 @@ public class SealedFloor extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeDamage(UP_DAMAGE);
     }
 
 }
