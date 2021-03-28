@@ -28,6 +28,14 @@ public class GuardMode extends CardSPBase {
         this.setArm(70);
     }
 
+    public void triggerOnGlowCheck() {
+        AbstractPlayer p = AbstractDungeon.player;
+        this.glowColor = this.baseColor.cpy();
+        if(p.currentHealth <= p.maxHealth/2) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
+    }
+
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new GainBlockAction(p, this.block * (p.currentHealth <= p.maxHealth/2 ? 2 : 1)));

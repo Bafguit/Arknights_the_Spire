@@ -25,11 +25,10 @@ public class Sunburst extends CardSPBase {
     public static final String ID = "ats:Sunburst";
     public static final String IMG_PATH = "atsImg/cards/Sunburst.png";
     public static final PositionType POSITION = PositionType.CASTER;
-    private static final int COST = 1;
-    private static final int DAMAGE = 7;
+    private static final int COST = 2;
+    private static final int DAMAGE = 10;
     private static final int UP_DAMAGE = 2;
     private static final int SP = 7;
-    private static final int UP_SP = 5;
     private static final int BURN = 2;
     private static final int UP_BURN = 1;
 
@@ -43,15 +42,9 @@ public class Sunburst extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("FLAME"));
-        addToBot(new DamageAllMute(
+        addToBot(new DamageAllMute(AbstractDungeon.player,
                 this.multiDamage, DamageInfo.DamageType.NORMAL,
-                AbstractGameAction.AttackEffect.FIRE, false));
-        if(isSpJustUsed) {
-            for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                addToBot(new ApplyPowerAction(mo, p,
-                        new BurnPower(mo, p, this.magicNumber), this.magicNumber, true));
-            }
-        }
+                AbstractGameAction.AttackEffect.FIRE, false, true, this.magicNumber, isSpJustUsed ? this.magicNumber : 0));
     }
 
     @Override
@@ -62,7 +55,6 @@ public class Sunburst extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_BURN);
-        this.upgradeSP(UP_SP);
         this.upgradeDamage(UP_DAMAGE);
     }
 

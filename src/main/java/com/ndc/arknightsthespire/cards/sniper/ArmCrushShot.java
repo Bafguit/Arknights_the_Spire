@@ -20,10 +20,9 @@ public class ArmCrushShot extends CardSPBase {
     public static final PositionType POSITION = PositionType.SNIPER;
     private static final int COST = 1;
     private static final int ATTACK_DMG = 5;
-    private static final int UP_DMG = 2;
+    private static final int UP_DMG = 3;
     private static final int DEFAULT_SP = 4;
-    private static final int VULN = 1;
-    private static final int UP_VULN = 1;
+    private static final int VULN = 2;
 
     public ArmCrushShot() {
         super(ID, IMG_PATH, COST,
@@ -48,7 +47,6 @@ public class ArmCrushShot extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(UP_VULN);
         this.upgradeDamage(UP_DMG);
     }
 

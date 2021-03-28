@@ -130,7 +130,6 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new FlexCamouflage());
         BaseMod.addCard(new PoisonSpread());
         BaseMod.addCard(new Revitalization());
-        BaseMod.addCard(new Apocalypse());
         BaseMod.addCard(new CurseDoll());
         BaseMod.addCard(new LiteraryStorm());
         BaseMod.addCard(new ShellDef());
@@ -138,7 +137,6 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new VeryHotBlade());
         BaseMod.addCard(new CatScratch());
         BaseMod.addCard(new BloodOath());
-        BaseMod.addCard(new LeapingHammer());
         BaseMod.addCard(new HammerOn());
         BaseMod.addCard(new CBBF());
         BaseMod.addCard(new AssaultOrder());
@@ -146,7 +144,6 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new HealingMist());
         //Uncommon
         BaseMod.addCard(new Overload());
-        BaseMod.addCard(new RapidMagazine());
         BaseMod.addCard(new Neurotoxin());
         BaseMod.addCard(new AutoCover());
         BaseMod.addCard(new SporePro());
@@ -154,7 +151,6 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new ComMedShell());
         BaseMod.addCard(new DirDiagnosis());
         BaseMod.addCard(new SongOfBattle());
-        BaseMod.addCard(new PartTimeJob());
         BaseMod.addCard(new HealingDrone());
         BaseMod.addCard(new HealingStr());
         BaseMod.addCard(new ChargingDef());
@@ -171,20 +167,19 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addCard(new ChainHook());
         BaseMod.addCard(new HookShot());
         BaseMod.addCard(new ShadowRaid());
-        BaseMod.addCard(new SteamPump());
         BaseMod.addCard(new CollapsingStrike());
         BaseMod.addCard(new LN2Cannon());
         BaseMod.addCard(new RedShift());
         BaseMod.addCard(new ThermiteBlade());
         BaseMod.addCard(new DemonStrength());
         BaseMod.addCard(new SupportOrder());
-        BaseMod.addCard(new DefendOrder());
         BaseMod.addCard(new SwordRain());
         BaseMod.addCard(new SeriousMode());
-        BaseMod.addCard(new PhantomMirror());
         BaseMod.addCard(new SashimiPlatter());
         BaseMod.addCard(new LiteraryStorm());
         BaseMod.addCard(new GuardMode());
+        BaseMod.addCard(new ElectricNet());
+        BaseMod.addCard(new SkullCrusher());
         //Rare
         BaseMod.addCard(new Ambush());
         BaseMod.addCard(new DogmaticField());
@@ -270,12 +265,12 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addMonster(FrostWS.ID, () -> new FrostWS());
         BaseMod.addMonster(Patirot.ID, () -> new Patirot());
 
-        //BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
-        //BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
+        BaseMod.addBoss(Exordium.ID, Skull.ID, "atsImg/monsters/act_1/boss/skull.png", "atsImg/monsters/act_1/boss/skull_out.png");
+        BaseMod.addBoss(Exordium.ID, Crown.ID, "atsImg/monsters/act_1/boss/crown.png", "atsImg/monsters/act_1/boss/crown_out.png");
         BaseMod.addBoss(TheCity.ID, "MephiFaust", "atsImg/monsters/act_2/boss/mephi.png", "atsImg/monsters/act_2/boss/mephi_out.png");
         BaseMod.addBoss(TheCity.ID, Frost.ID, "atsImg/monsters/act_2/boss/frost.png", "atsImg/monsters/act_2/boss/frost_out.png");
         BaseMod.addBoss(TheBeyond.ID, FrostWS.ID, "atsImg/monsters/act_3/boss/frost.png", "atsImg/monsters/act_3/boss/frost_out.png");
-        BaseMod.addBoss(Exordium.ID, Patirot.ID, "atsImg/monsters/act_3/boss/patriot.png", "atsImg/monsters/act_3/boss/patriot_out.png");
+        BaseMod.addBoss(TheBeyond.ID, Patirot.ID, "atsImg/monsters/act_3/boss/patriot.png", "atsImg/monsters/act_3/boss/patriot_out.png");
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(Shield.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(Genji.ID, 1.0F));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo("Slugs", 1.0F));

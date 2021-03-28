@@ -75,8 +75,8 @@ public class CharacterW extends CustomPlayer {
 
     public CharacterW(String name) {
         super(name, AtsEnum.W_CLASS, orbTextures, "atsImg/char/orb/vfx.png", new SpineAnimation(
-                MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.25F));
-        this.loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.25F);
+                MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.5F));
+        this.loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.5F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
@@ -86,7 +86,7 @@ public class CharacterW extends CustomPlayer {
         initializeClass(null, MY_CHARACTER_SHOULDER_2, // required call to load textures and setup energy/loadout
                 MY_CHARACTER_SHOULDER_1,
                 MY_CHARACTER_CORPSE,
-                getLoadout(), 30.0F, -5.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));// if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
+                getLoadout(), 0.0F, -5.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));// if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
 
     }
 
@@ -179,7 +179,7 @@ public class CharacterW extends CustomPlayer {
     @Override
     public void damage(DamageInfo info)
     {
-        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > currentBlock) {
+        if (AbstractDungeon.getCurrRoom().combatEvent && info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > currentBlock) {
             AnimationState.TrackEntry e = state.setAnimation(0, "Die_2", false);
             state.addAnimation(0,"Idle", true, 0.0f);
             e.setTimeScale(1f);

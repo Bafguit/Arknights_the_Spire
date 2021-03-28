@@ -50,6 +50,7 @@ public abstract class CardSPBase extends CustomCard {
     public int baseArm = 0;
     public int et = 0;
     public int baseEt = 0;
+    public CardType baseType;
     public boolean isArmModified = false;
     public boolean upgradedArm = false;
     public boolean isEtModified = false;
@@ -66,10 +67,11 @@ public abstract class CardSPBase extends CustomCard {
     public boolean canUseSP = false;
     public boolean upgradedSP = false;
     public boolean upgradedPer = false;
+    public boolean freeToSp = false;
     public boolean isSpJustUsed;
     public CardSpPreview spCard;
     public String nameUp;
-    private Color baseColor = new Color(0.2F, 0.9F, 1.0F, 0.25F);
+    public Color baseColor = new Color(0.2F, 0.9F, 1.0F, 0.25F);
 
     private boolean showSP;
 
@@ -126,6 +128,7 @@ public abstract class CardSPBase extends CustomCard {
         this.isAuto = isAuto;
         this.canUseSP = hasSP;
         this.showSP = hasSP;
+        this.baseType = type;
         this.damage = this.baseDamage = d;
         this.magicNumber = this.baseMagicNumber = m;
         this.block = this.baseBlock = b;
@@ -248,13 +251,6 @@ public abstract class CardSPBase extends CustomCard {
         }
     }
 
-    public void changeSpForBattle(int c_sp) {
-        this.baseSP = Math.max(0, this.sp + c_sp);
-        if(this.spCard != null) {
-            this.spCard.baseSP = Math.max(0, this.spCard.sp + c_sp);
-        }
-    }
-
     public DamageInfo getInfo() {
         return this.getInfo(false);
     }
@@ -266,6 +262,7 @@ public abstract class CardSPBase extends CustomCard {
     public void resetAttributes() {
         super.resetAttributes();
         this.baseSP = this.sp;
+        this.type = this.baseType;
         if(this.spCard != null) {
             this.spCard.baseSP = this.spCard.sp;
         }
@@ -314,12 +311,12 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void updateName() {
-        if(shouldUseSp() && SP_NAME != null) {
+        if(this.shouldUseSp() && SP_NAME != null) {
             this.name = SP_NAME;
         } else {
             this.name = NORMAL_NAME;
         }
-        if(upgraded) {
+        if(this.upgraded) {
             this.name += "+";
             if(this.spCard != null) {
                 this.spCard.name = this.spCard.nameUp + "+";
@@ -331,7 +328,7 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void updateDescription() {
-        if(shouldUseSp() && SP_DESCRIPTION != null) {
+        if(this.shouldUseSp() && SP_DESCRIPTION != null) {
             this.rawDescription = SP_DESCRIPTION;
         } else if(upgraded && UPGRADE_DESCRIPTION != null) {
             this.rawDescription = UPGRADE_DESCRIPTION;
@@ -343,11 +340,10 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void updateImage() {
-        if(shouldUseSp() && spCardImage != null) {
-            loadCardImage(spCardImage);
-
+        if(this.shouldUseSp() && this.spCardImage != null) {
+            loadCardImage(this.spCardImage);
         } else {
-            loadCardImage(normalCardImage);
+            loadCardImage(this.normalCardImage);
         }
     }
 
@@ -378,8 +374,6 @@ public abstract class CardSPBase extends CustomCard {
         return false;
     }
 
-
-
     /*
         @Override
         public boolean hasEnoughEnergy() {
@@ -402,7 +396,10 @@ public abstract class CardSPBase extends CustomCard {
     public final void use(AbstractPlayer p, AbstractMonster m) {
         isSpJustUsed = false;
         if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
-            SPHandler.removeSp(this.baseSP);
+            if(!this.freeToSp) {
+                SPHandler.removeSp(this.baseSP);
+            }
+            this.freeToSp = false;
             isSpJustUsed = true;
             updateAllStateInHand(true);
         }
@@ -445,7 +442,7 @@ public abstract class CardSPBase extends CustomCard {
     }*/
 
     public boolean shouldUseSp() {
-        return this.canUseSP && canAffordSP() && (SPHandler.isSpModeEnabled() || isAuto) && this.sp > 0;
+        return this.canUseSP && canAffordSP() && (SPHandler.isSpModeEnabled() || isAuto) && (this.sp > 0 || this.freeToSp);
     }
 
     public void renderSp(SpriteBatch sb) {

@@ -43,7 +43,7 @@ public class Guerilla1 extends CustomMonster {
 
     public Guerilla1(float x, float y) {
         super(NAME, ID, 60, -5.0F, 0.0F, 200.0F, 250.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.5F);
         this.flipHorizontal = true;
         this.type = EnemyType.NORMAL;
         this.dialogX = (this.hb_x - 70.0F) * Settings.scale;

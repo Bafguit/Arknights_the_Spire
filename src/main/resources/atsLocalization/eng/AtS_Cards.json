@@ -64,10 +64,6 @@
       "ats:SP !S! ats:Manual NL Gain !B! block and 2 Regen."
     ]
   },
-  "ats:Leaping Hammer": {
-    "NAME": "Leaping Hammer",
-    "DESCRIPTION": "Deal !D! damage. Gain !M! ats:SP."
-  },
   "ats:Magnetic Hammer": {
     "NAME": "Magnetic Hammer",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Gain !B! block. NL ats:SP !S! ats:Manual",
@@ -77,22 +73,18 @@
   },
   "ats:Thorns": {
     "NAME": "Thorns",
-    "DESCRIPTION": "Gain !M! Dexterity. Gain 2 Thorns."
+    "DESCRIPTION": "Gain !M! Dexterity. Gain !ats:R! Thorns."
   },
   "ats:Dogmatic Field": {
     "NAME": "Dogmatic Field",
-    "DESCRIPTION": "When you gain block, heal HP instead of gaining block by block amount in excess of 5."
-  },
-  "ats:Rapid Magazine": {
-    "NAME": "Rapid Magazine",
-    "DESCRIPTION": "ats:SP of ats:Sniper attack card will be reduced by 2.",
-    "UPGRADE_DESCRIPTION": "Innate. ats:SP of ats:Sniper attack card will be reduced by 2."
+    "DESCRIPTION": "When you gain block, heal HP instead of gaining block by block amount in excess of 5.",
+    "UPGRADE_DESCRIPTION": "Innate. When you gain block, heal HP instead of gaining block by block amount in excess of 5."
   },
   "ats:Sunburst": {
     "NAME": "Sunburst",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Deal !D! damage and apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! ats:Burn to ALL enemies."
+      "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! Vulnerable and ats:Burn to ALL enemies."
     ]
   },
   "ats:Soul Absorption": {
@@ -123,16 +115,16 @@
   },
   "ats:True Silver Slash": {
     "NAME": "True Silver Slash",
-    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. You cannot gain Block from cards for this turn. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. You cannot gain Block from cards for this turn. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage to ALL enemies for each ats:Guard card in your deck. You cannot gain Block from cards for this turn. NL Exhaust."
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Guard card in your deck. You cannot gain Block from cards for this turn. NL Exhaust."
     ]
   },
   "ats:Volcano": {
     "NAME": "Volcano",
-    "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
     ]
   },
   "ats:Nebulous Foxfire": {
@@ -193,10 +185,7 @@
   },
   "ats:Spore Proliferation": {
     "NAME": "Spore Proliferation",
-    "DESCRIPTION": "Apply !M! Weak. NL ats:SP !S! ats:Manual",
-    "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Remove a random buff of an enemy. Cannot remove ats:some powers. Apply !M! Weak."
-    ]
+    "DESCRIPTION": "Remove a random buff of an enemy. Cannot remove ats:some powers. Apply !M! Weak."
   },
   "ats:Encircling Forest": {
     "NAME": "Encircling Forest",
@@ -263,14 +252,10 @@
   },
   "ats:Very Hot Blade": {
     "NAME": "Very Hot Blade",
-    "DESCRIPTION": "Deal !D! damage. Draw a card. NL ats:SP !S! ats:Auto",
+    "DESCRIPTION": "Deal !D! damage 3 times. Draw a card. NL ats:SP !S! ats:Auto",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage. Damage increased by ats:Burn amount of the enemy. Draw a card."
+      "ats:SP !S! ats:Auto NL Deal !D! damage. If the enemy has ats:Burn, gain [E] and the enemy loses HP by ats:Burn amount. Draw a card."
     ]
-  },
-  "ats:Apocalypse": {
-    "NAME": "Just Like an Apocalypse",
-    "DESCRIPTION": "Heal !M! HP. Gain !M! ats:SP."
   },
   "ats:Composite Medical Shells": {
     "NAME": "Composite Medical Shells",
@@ -285,14 +270,9 @@
     "DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance.",
     "UPGRADE_DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance."
   },
-  "ats:Defend Order": {
-    "NAME": "Defend Order",
-    "DESCRIPTION": "Gain !M! block when energy gained."
-  },
   "ats:Roar Of Ursus": {
     "NAME": "Roar of Ursus",
-    "DESCRIPTION": "Gain 1 more energy when energy gained.",
-    "UPGRADE_DESCRIPTION": "Innate. Gain 1 more energy when energy gained."
+    "DESCRIPTION": "Innate. Gain 1 more energy and draw !M! card when energy gained."
   },
   "ats:Echo Reverb": {
     "NAME": "Echo Reverb",
@@ -311,13 +291,13 @@
     "NAME": "Demon Strength",
     "DESCRIPTION": "Gain !M! Strength. Lose 1 Dexterity."
   },
-  "ats:Steam Pump": {
-    "NAME": "Steam Pump",
-    "DESCRIPTION": "Discard !M! cards. Gain !B! block."
-  },
   "ats:Collapsing Strike": {
     "NAME": "Collapsing Strike",
-    "DESCRIPTION": "Discard !M! cards. Deal !D! damage."
+    "DESCRIPTION": "Discard !M! card. Deal !D! damage. ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "Steam Pump",
+      "ats:SP !S! ats:Manual NL Discard !M! card. Gain !B! block."
+    ]
   },
   "ats:Song Of Battle": {
     "NAME": "Song Of Battle",
@@ -350,15 +330,6 @@
       "ats:SP !S! ats:Auto NL Remove your all debuffs. Heal !M! HP."
     ]
   },
-  "ats:Part Time Job": {
-    "NAME": "Part Time Job",
-    "DESCRIPTION": "Gain 3 Regen.",
-    "UPGRADE_DESCRIPTION": "At the start and the end of your turn, heal 1 HP."
-  },
-  "ats:Childhood Dance": {
-    "NAME": "Childhood Dance",
-    "DESCRIPTION": "Apply 2 Weak to ALL enemies."
-  },
   "ats:Hammer On": {
     "NAME": "Hammer On",
     "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, gain [E] ."
@@ -387,10 +358,6 @@
     "DESCRIPTION": "Block you gain will be reduced to half. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)",
     "UPGRADE_DESCRIPTION": "Innate. Block you gain will be reduced to half. Based on HP lost, increase Attack damage (increase 100% when 70% HP is lost)"
   },
-  "ats:Phantom": {
-    "NAME": "Phantom In The Mirror",
-    "DESCRIPTION": "Whenever you play a ats:Specialist card, a random card in your hand costs 0 until played."
-  },
   "ats:Sashimi Platter": {
     "NAME": "Sashimi Platter",
     "DESCRIPTION": "Deal !D! damage. Heal !D! HP."
@@ -411,7 +378,7 @@
     "NAME": "Fierce Glare",
     "DESCRIPTION": "Deal !D! damage X times to ALL enemies. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal damage by amount of gained energy during this turn to ALL enemies. Repeat X times. ( Current !ats:E! )"
+      "ats:SP !S! ats:Manual NL Deal !D! damage X times to ALL enemies. Gain X energy."
     ]
   },
   "ats:Sealed Floor": {
@@ -425,6 +392,20 @@
   "ats:Mine": {
     "NAME": "Mine",
     "DESCRIPTION": "Retain. An enemy loses 10 HP. Reduce 5 ats:Armour for this turn. NL Exhaust. Cannot discard."
+  },
+  "ats:Electric Net": {
+    "NAME": "Electric Net",
+    "DESCRIPTION": "Draw !M! cards. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Draw !M! cards. Gain [E] ."
+    ]
+  },
+  "ats:Skull Crusher": {
+    "NAME": "Skull Crusher",
+    "DESCRIPTION": "Deal !D! damage. Strength affect this card 3 times. NL ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Manual NL Deal !D! damage. Strength affect this card 3 times. If you gained energy during this turn, stun the enemy."
+    ]
   },
   "ats:NULL": {
     "NAME": "This card is for add new one",

@@ -8,7 +8,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 
-public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber {
+import java.util.ArrayList;
+
+public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, PostEnergyRechargeSubscriber, OnCardUseSubscriber, PostBattleSubscriber, CustomSavable<Integer>, PreStartGameSubscriber, PostDeathSubscriber, PostCreateStartingRelicsSubscriber {
     private static int sp = 0;
     private static int maxSp = 10;
     private static int maxSpLimit = 50;
@@ -194,5 +196,14 @@ public class SPHandler implements PostDrawSubscriber, OnStartBattleSubscriber, P
     public void receivePostDeath() {
         maxSp = 10;
         turnEnergy = 0;
+    }
+
+    @Override
+    public void receivePostCreateStartingRelics(AbstractPlayer.PlayerClass playerClass, ArrayList<String> arrayList) {
+        System.out.println("Saving...");
+        sp = 0;
+        maxSp = 10;
+        turnEnergy = 0;
+        System.out.println("Saved.");
     }
 }

@@ -109,14 +109,14 @@
     "NAMES": [
       "特殊状态"
     ],
-    "DESCRIPTION": "分裂, 形态转换, 好奇, 时间扭曲, 死亡律动, 消逝, 变化, 爪牙, 凝滞, 未觉醒, 偷窃, 疼痛戳刺, 弩炮, 冰霜技艺, Armour, Reduced Armour, Forwarding, Ore Mist, Recovering"
+    "DESCRIPTION": "分裂, 形态转换, 好奇, 时间扭曲, 死亡律动, 消逝, 变化, 爪牙, Life Link, 凝滞, 未觉醒, 偷窃, 疼痛戳刺, 弩炮, 冰霜技艺, 盔甲, 盔甲破损, 正在移动, 源石雾, 正在恢复"
   },
   {
-    "PROPER_NAME": "Armour",
+    "PROPER_NAME": "盔甲",
     "NAMES": [
-      "Armour"
+      "盔甲"
     ],
-    "DESCRIPTION": "Reduce　#yAttack　damage　by　#yArmour　amount."
+    "DESCRIPTION": "根据 #y盔甲 层数减少受到的 #y攻击 伤害."
   },
   {
     "PROPER_NAME": "缓慢",

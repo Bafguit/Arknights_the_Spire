@@ -20,7 +20,8 @@ public class Overload extends CardSPBase {
     private static final int ATTACK_DMG = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int REPEAT_ATK = 3;
-    private static final int DEFAULT_SP = 5;
+    private static final int DEFAULT_SP = 6;
+    private static final int UP_SP = 5;
 
     public Overload() {
         super(ID, IMG_PATH, SP_IMG_PATH, COST,
@@ -47,6 +48,7 @@ public class Overload extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeDamage(UPGRADE_PLUS_DMG);
+        this.upgradeSP(UP_SP);
     }
 
 }

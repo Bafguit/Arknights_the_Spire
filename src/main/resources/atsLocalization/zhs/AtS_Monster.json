@@ -111,8 +111,8 @@
   },
   "ats:Patriot": {
     "MOVES": [
-      "Forwarding...",
-      "Recovering..."
+      "正在移动...",
+      "正在恢复..."
     ],
     "NAME": "爱国者",
     "DIALOG": [

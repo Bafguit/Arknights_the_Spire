@@ -20,9 +20,9 @@ public class FierceGlare extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/FierceGlare.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = -1;
-    private static final int DAMAGE = 7;
-    private static final int SP = 30;
-    private static final int UP_SP = 20;
+    private static final int DAMAGE = 8;
+    private static final int SP = 20;
+    private static final int UP_SP = 10;
 
     public FierceGlare() {
         super(ID, IMG_PATH, COST,
@@ -36,7 +36,7 @@ public class FierceGlare extends CardSPBase {
         AbstractDungeon.player.energy.use(EnergyPanel.totalCount);
         if(isSpJustUsed) {
             for (int i = 0; i < this.energyOnUse; i++) {
-                addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(SPHandler.getTurnEnergy()), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
+                addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(SPHandler.getTurnEnergy() + 3), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
             }
         } else {
             for (int i = 0; i < this.energyOnUse; i++) {

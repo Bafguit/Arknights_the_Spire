@@ -66,6 +66,7 @@ public class ClassFromDeckToHandAction extends AbstractGameAction {
             } else {
                 this.p.drawPile.removeCard(card);
                 this.p.hand.addToTop(card);
+                card.triggerWhenDrawn();
             }
 
             this.p.hand.refreshHandLayout();

@@ -67,7 +67,7 @@ public class Faust extends CustomMonster {
 
     public Faust(float x, float y) {
         super(NAME, ID, 300, -5.0F, 0.0F, 320.0F, 330.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.5F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;
@@ -84,8 +84,8 @@ public class Faust extends CustomMonster {
         } else {
             this.countM = 4;
             this.count = 1;
-            this.countBM = 6;
-            this.countB = 3;
+            this.countBM = 5;
+            this.countB = 2;
             this.ballista = 6;
         }
 
@@ -96,7 +96,7 @@ public class Faust extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 17;
+            this.attackDamage = 20;
         } else {
             this.attackDamage = 15;
         }

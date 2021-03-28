@@ -18,7 +18,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
+import com.ndc.arknightsthespire.power.BurnPower;
+
 import java.util.Iterator;
 
 public class DamageAllMute extends AbstractGameAction {
@@ -27,6 +30,9 @@ public class DamageAllMute extends AbstractGameAction {
     private boolean firstFrame;
     private boolean utilizeBaseDamage;
     private boolean isMuted;
+    private boolean hasBurn = false;
+    private int burn = 0;
+    private int vul = 0;
 
     public DamageAllMute(AbstractCreature source, int[] amount, DamageType type, AttackEffect effect, boolean isFast, boolean isMuted) {
         this.firstFrame = true;
@@ -43,6 +49,13 @@ public class DamageAllMute extends AbstractGameAction {
             this.duration = Settings.ACTION_DUR_FAST;
         }
 
+    }
+
+    public DamageAllMute(AbstractCreature source, int[] amount, DamageType type, AttackEffect effect, boolean isFast, boolean isMuted, int burn, int vul) {
+        this(source, amount, type, effect, isFast, isMuted);
+        this.hasBurn = true;
+        this.burn = burn;
+        this.vul = vul;
     }
 
     public DamageAllMute(int[] amount, DamageType type, AttackEffect effect, boolean isFast) {
@@ -98,6 +111,13 @@ public class DamageAllMute extends AbstractGameAction {
                     }
 
                     ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).damage(new DamageInfo(this.source, this.damage[i], this.damageType));
+
+                    if(this.vul > 0) {
+                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).addPower(new VulnerablePower(AbstractDungeon.getCurrRoom().monsters.monsters.get(i), this.vul, false));
+                    }
+                    if(this.hasBurn) {
+                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).addPower(new BurnPower(AbstractDungeon.getCurrRoom().monsters.monsters.get(i), this.source, this.burn));
+                    }
                 }
             }
 

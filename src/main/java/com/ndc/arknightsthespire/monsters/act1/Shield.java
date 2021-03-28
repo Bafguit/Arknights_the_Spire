@@ -62,7 +62,7 @@ public class Shield extends CustomMonster {
 
     public Shield(float x, float y) {
         super(NAME, ID, 60, -5.0F, 0.0F, 220.0F, 300.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.4F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;

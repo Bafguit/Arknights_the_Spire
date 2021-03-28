@@ -17,15 +17,15 @@ public class ChargingDef extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/cdef.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
     private static final int COST = 1;
-    private static final int BLOCK_AMT = 8;
-    private static final int UPGRADE_BLOCK = 4;
-    private static final int DEFAULT_SP = 8;
+    private static final int BLOCK_AMT = 9;
+    private static final int UPGRADE_BLOCK = 3;
+    private static final int DEFAULT_SP = 10;
+    private static final int UP_SP = 8;
 
     public ChargingDef() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, true, POSITION, true, 0, BLOCK_AMT, 0, DEFAULT_SP);
-        this.setArm(80);
     }
 
     @Override
@@ -45,6 +45,7 @@ public class ChargingDef extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeBlock(UPGRADE_BLOCK);
+        this.upgradeSP(UP_SP);
     }
 
 }

@@ -14,7 +14,7 @@ public class SupportOrder extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/SupportOrder.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 0;
-    private static final int SP = 10;
+    private static final int SP = 8;
     private static final int ORDER = 2;
     private static final int UP_ORDER = 1;
 

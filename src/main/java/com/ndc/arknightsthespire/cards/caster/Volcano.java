@@ -25,13 +25,13 @@ public class Volcano extends CardSPBase {
     public static final PositionType POSITION = PositionType.CASTER;
     private static final int COST = 2;
     private static final int ATTACK_DMG = 7;
-    private static final int UP_DMG = 2;
+    private static final int UP_DMG = 3;
     private static final int SP = 30;
 
     public Volcano() {
         super(ID, IMG_PATH, COST,
-                CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, ATTACK_DMG, SP);
+                CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
+                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true, 0, 0, ATTACK_DMG, SP);
     }
 
     public int getCasterDeck() {
@@ -57,9 +57,11 @@ public class Volcano extends CardSPBase {
             this.exhaust = true;
             for (int for_i = 0; for_i < getCasterDeck(); for_i++) {
                 addToBot(new AtsSFX("VOLCANO"));
-                AbstractDungeon.actionManager.addToBottom(new DamageAllMute(p,
-                        this.multiDamage, DamageInfo.DamageType.NORMAL,
-                        AbstractGameAction.AttackEffect.FIRE, true, true));
+                for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    addToBot(new AtsSFX("VOLCANO"));
+                    addToBot(new ApplyPowerAction(mo, p,
+                            new BurnPower(mo, p, this.magicNumber), this.damage, true));
+                }
             }
         } else {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -78,7 +80,6 @@ public class Volcano extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UP_DMG);
-        this.upgradeDamage(UP_DMG);
     }
 
 }

@@ -18,7 +18,7 @@ public class LN2Cannon extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/LN2Cannon.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 2;
-    private static final int D = 4;
+    private static final int D = 5;
     private static final int U_D = 2;
 
     public LN2Cannon() {

@@ -14,9 +14,9 @@ public class RedShift extends CardSPBase {
     public static final String ID = "ats:Red Shift";
     public static final String IMG_PATH = "atsImg/cards/RedShift.png";
     public static final PositionType POSITION = PositionType.GUARD;
-    private static final int COST = 1;
-    private static final int ATTACK_DMG = 4;
-    private static final int UP_DMG = 1;
+    private static final int COST = 2;
+    private static final int ATTACK_DMG = 5;
+    private static final int UP_DMG = 2;
 
     public RedShift() {
         super(ID, IMG_PATH, COST,

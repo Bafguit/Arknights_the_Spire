@@ -68,7 +68,7 @@
     ],
     "NAME": "Крушитель черепов",
     "DIALOG": [
-      "Ты меня достала!",
+      "Это меня достало!",
       "Всё, теперь я оторву тебе голову!",
       "Алекс..."
     ]
@@ -104,17 +104,17 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Guerilla Siegebreaker",
+    "NAME": "Партизан-штурмовик",
     "DIALOG": [
       ""
     ]
   },
   "ats:Patriot": {
     "MOVES": [
-      "Forwarding...",
-      "Recovering..."
+      "Вперёд...",
+      "Восстановление..."
     ],
-    "NAME": "Patriot",
+    "NAME": "Патриот",
     "DIALOG": [
       ""
     ]
@@ -123,7 +123,7 @@
     "MOVES": [
       ""
     ],
-    "NAME": "Guerilla Siegebreaker Leader",
+    "NAME": "Партизан-штурмовик Лидер",
     "DIALOG": [
       ""
     ]

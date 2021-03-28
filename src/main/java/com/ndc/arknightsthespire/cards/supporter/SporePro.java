@@ -23,20 +23,18 @@ public class SporePro extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/SporeProliferation.png";
     public static final PositionType POSITION = PositionType.SUPPORTER;
     private static final int COST = 1;
-    private static final int WEAK = 3;
-    private static final int SP = 15;
-    private static final int UP_SP = 10;
+    private static final int WEAK = 2;
+    private static final int UP_WEAK = 1;
 
     public SporePro() {
         super(ID, IMG_PATH, COST,
                 CardType.SKILL, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.UNCOMMON, CardTarget.ENEMY, false, POSITION, true, 0, 0, WEAK, SP);
+                CardRarity.UNCOMMON, CardTarget.ENEMY, POSITION, 0, 0, WEAK, 0);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new AtsSFX("BOTTLE"));
-        if(isSpJustUsed) {
             if(m.powers.size() > 0) {
                 ArrayList<AbstractPower> buffs = new ArrayList<>();
                 for(AbstractPower pow : m.powers) {
@@ -50,7 +48,6 @@ public class SporePro extends CardSPBase {
                     addToBot(new RemoveSpecificPowerAction(m, p, buffs.get(random.nextInt(buffs.size()))));
                 }
             }
-        }
         addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true));
     }
 
@@ -61,7 +58,7 @@ public class SporePro extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeSP(UP_SP);
+        this.upgradeMagicNumber(UP_WEAK);
     }
 
 

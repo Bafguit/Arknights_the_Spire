@@ -15,8 +15,8 @@ public class HookShot extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/HookShot.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
-    private static final int BLOCK = 7;
-    private static final int UP_BLOCK = 3;
+    private static final int BLOCK = 9;
+    private static final int UP_BLOCK = 4;
     private static final int SP = 5;
 
     public HookShot() {

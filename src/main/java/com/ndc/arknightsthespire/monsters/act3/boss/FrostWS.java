@@ -65,7 +65,7 @@ public class FrostWS extends CustomMonster {
 
     public FrostWS(float x, float y) {
         super(NAME, ID, 350, -5.0F, 0.0F, 400.0F, 330.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.5F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;
@@ -102,14 +102,6 @@ public class FrostWS extends CustomMonster {
     }
 
     public void takeTurn() {
-        if(this.halfDead) {
-                this.addToBot(new HealAction(this, this, this.maxHealth));
-                this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost, true), this.frost + 1));
-                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.str)));
-                this.addToBot(new ApplyPowerAction(this, this, new BufferPower(this, 4), 4));
-                this.halfDead = false;
-                this.addToBot(new CanLoseAction());
-        }
 
         AbstractPlayer p = AbstractDungeon.player;
         switch (this.nextMove) {
@@ -148,6 +140,7 @@ public class FrostWS extends CustomMonster {
                 this.addToBot(new WaitAnimAction(this, 1.0F));*/
                 this.addToBot(new AtsSFX("FROST_A"));
                 this.addIce();
+                break;
         }
 
         if(this.iceCounter == this.iceCount) {
@@ -173,6 +166,7 @@ public class FrostWS extends CustomMonster {
         } else {
             this.setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
         }
+        this.createIntent();
     }
 
     private boolean canAddIce() {

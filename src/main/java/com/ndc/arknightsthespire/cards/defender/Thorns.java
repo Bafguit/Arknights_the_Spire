@@ -25,12 +25,13 @@ public class Thorns extends CardSPBase {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
                 CardRarity.UNCOMMON, CardTarget.SELF, POSITION, 0, 0, THORNS_AMOUNT, 0);
+        this.setRes(2);
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, 2), 2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, this.res), this.res));
     }
 
     @Override
@@ -41,6 +42,7 @@ public class Thorns extends CardSPBase {
     @Override
     public void upgradeCard() {
         this.upgradeMagicNumber(UPGRADE_THORNS);
+        this.upgradeRes(1);
     }
 
 

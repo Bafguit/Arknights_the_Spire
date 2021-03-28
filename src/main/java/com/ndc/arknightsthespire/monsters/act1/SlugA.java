@@ -56,7 +56,7 @@ public class SlugA extends CustomMonster {
 
     public SlugA(float x, float y) {
         super(NAME, ID, 15, -5.0F, 0.0F, 150.0F, 245.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.6F);
+        this.loadAnimation(ATLAS, SKEL, 1.7F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;

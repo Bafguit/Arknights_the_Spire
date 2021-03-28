@@ -8,6 +8,7 @@ package com.ndc.arknightsthespire.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.powers.*;
 import com.ndc.arknightsthespire.character.AtsEnum;
 import com.ndc.arknightsthespire.power.*;
@@ -53,6 +54,7 @@ public class DisruptionKickAction extends AbstractGameAction {
         unRemoval.add(BeatOfDeathPower.POWER_ID);
         unRemoval.add(FadingPower.POWER_ID);
         unRemoval.add(MinionPower.POWER_ID);
+        unRemoval.add(RegrowPower.POWER_ID);
         unRemoval.add(ShiftingPower.POWER_ID);
         unRemoval.add(StasisPower.POWER_ID);
         unRemoval.add(UnawakenedPower.POWER_ID);

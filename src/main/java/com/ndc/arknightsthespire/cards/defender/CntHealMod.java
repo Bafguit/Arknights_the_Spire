@@ -14,7 +14,7 @@ public class CntHealMod extends CardSPBase {
     public static final String ID = "ats:Counter Healing Mode";
     public static final String IMG_PATH = "atsImg/cards/CntHealMode.png";
     public static final PositionType POSITION = PositionType.DEFENDER;
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int SP = 1;
     private static final int UP_SP = 1;
 

@@ -79,8 +79,8 @@ public class CharacterDoctor extends CustomPlayer {
 
     public CharacterDoctor (String name) {
         super(name, AtsEnum.DOCTOR_CLASS, orbTextures, "atsImg/char/orb/vfx.png", new SpineAnimation(
-                MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.25F));
-        this.loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.0F);
+                MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.3F));
+        this.loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.3F);
 
         this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
         this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
@@ -88,7 +88,7 @@ public class CharacterDoctor extends CustomPlayer {
         initializeClass(null, MY_CHARACTER_SHOULDER_2, // required call to load textures and setup energy/loadout
                 MY_CHARACTER_SHOULDER_1,
                 MY_CHARACTER_CORPSE,
-                getLoadout(), 20.0F, -5.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));// if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
+                getLoadout(), 0.0F, -5.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));// if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
 
     }
 

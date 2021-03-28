@@ -13,18 +13,18 @@ public class RoarOfUrsus extends CardSPBase {
     public static final String ID = "ats:Roar Of Ursus";
     public static final String IMG_PATH = "atsImg/cards/RoarOfUrsus.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
-    private static final int COST = 1;
-    private static final int UP_COST = 0;
+    private static final int COST = 0;
 
     public RoarOfUrsus() {
         super(ID, IMG_PATH, COST,
                 CardType.POWER, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.SELF, POSITION);
+                CardRarity.RARE, CardTarget.SELF, POSITION, 0, 0, 1, 0);
+        this.isInnate = true;
     }
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        addToBot(new ApplyPowerAction(p, p, new UrsusPower(p, p)));
+        addToBot(new ApplyPowerAction(p, p, new UrsusPower(p, p, this.magicNumber)));
     }
 
     @Override
@@ -34,8 +34,7 @@ public class RoarOfUrsus extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBaseCost(UP_COST);
-        this.isInnate = true;
+        this.upgradeMagicNumber(1);
     }
 
 }

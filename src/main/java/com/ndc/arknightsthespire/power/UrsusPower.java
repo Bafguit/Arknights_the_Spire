@@ -3,6 +3,8 @@ package com.ndc.arknightsthespire.power;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -25,12 +27,13 @@ public class UrsusPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/RoarOfUrsus_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/RoarOfUrsus_32.png");
 
-    public UrsusPower(final AbstractCreature owner, final AbstractCreature source) {
+    public UrsusPower(final AbstractCreature owner, final AbstractCreature source, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+        this.amount = amount;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -45,17 +48,18 @@ public class UrsusPower extends AbstractPower implements CloneablePowerInterface
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override
     public AbstractPower makeCopy() {
-        return new UrsusPower(owner, source);
+        return new UrsusPower(owner, source, amount);
     }
 
     @Override
     public int onGainEnergy(int e) {
         flash();
+        addToBot(new DrawCardAction(this.amount));
         return e + 1;
     }
 }

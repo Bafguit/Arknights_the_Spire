@@ -89,7 +89,8 @@
   "ats:Roar Of Ursus": {
     "NAME": "Roar Of Ursus",
     "DESCRIPTIONS": [
-      "Gain 1 additional energy when energy gained."
+      "Gain #b1 additional energy and draw #b",
+      " card when energy gained."
     ]
   },
   "ats:Burn": {

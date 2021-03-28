@@ -55,7 +55,7 @@ public class Genji extends CustomMonster {
 
     public Genji(float x, float y) {
         super(NAME, ID, 60, -5.0F, 0.0F, 220.0F, 245.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.4F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;
@@ -70,9 +70,9 @@ public class Genji extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(37, 40);
+            this.setHp(47, 50);
         } else {
-            this.setHp(35, 38);
+            this.setHp(45, 48);
         }
 
         if (AbstractDungeon.ascensionLevel >= 2) {

@@ -73,12 +73,6 @@
       " 点格挡。"
     ]
   },
-  "ats:Roar Of Ursus": {
-    "NAME": "乌萨斯战吼",
-    "DESCRIPTIONS": [
-      "每当获得能量时额外获得1能量。"
-    ]
-  },
   "ats:Burn": {
     "NAME": "燃烧",
     "DESCRIPTIONS": [
@@ -169,7 +163,7 @@
   "ats:Ballista": {
     "NAME": "弩炮",
     "DESCRIPTIONS": [
-      "在每个回合开始时, 造成 #b",
+      "在每次行动之前, 造成 #b",
       " 点伤害 #b",
       " 次。"
     ]
@@ -199,7 +193,7 @@
   "ats:Frost": {
     "NAME": "冰霜技艺",
     "DESCRIPTIONS": [
-      "本回合每当你被攻击时，你失去 #b",
+      "本回合每当被攻击时，你失去 #b",
       " 点 #y力量 。",
       " 点 #y力量 和 #y敏捷 。"
     ]
@@ -215,36 +209,43 @@
     ]
   },
   "ats:Forwarding": {
-    "NAME": "Forwarding",
+    "NAME": "正在移动",
     "DESCRIPTIONS": [
-      "When　you　use　a　card　that　 #ygains 　 #yblock, 　 #yPatriot 　will　stop　for　a　moment　and　 #rattack　 #rstrongly. 　NL　After　 #b",
-      " 　turn,　 #yPatriot 　will　stop　moving　and　start　attacking."
+      "每当你打出一张 #y获得格挡 的牌， #y爱国者 将会停止移动并进行一次 #r强力的攻击 。 NL 在 #b",
+      " 回合后， #y爱国者 将会停止移动并开始攻击。"
     ]
   },
   "ats:Lose Arm": {
-    "NAME": "Reduced　Armour",
+    "NAME": "盔甲破损",
     "DESCRIPTIONS": [
-      "At 　the 　end 　of 　turn, 　gain 　#b",
-      " 　#yArmour ."
+      "在回合结束时，获得 #b",
+      " 层 #y盔甲 ."
     ]
   },
   "ats:Mine": {
-    "NAME": "Mine",
+    "NAME": "地雷",
     "DESCRIPTIONS": [
-      "At 　the 　start 　of 　turn, 　gain 　#b1 　#yMine 　card 　if 　you 　don't 　have 　it 　in 　your 　hand. 　NL 　Left 　amount: 　#r"
+      "在回合开始时，如果你的手牌中没有 #y地雷 ，则将一张 #y地雷 加入到你的手牌中。 NL 剩余地雷: #r"
     ]
   },
   "ats:No Damage": {
-    "NAME": "On 　Healing",
+    "NAME": "正在恢复",
     "DESCRIPTIONS": [
-      "Cannot 　be 　harmed. 　At 　the 　end 　of 　turn, 　Heal 　#b20% 　HP."
+      "不会受到伤害，在回合结束时，回复 #b20% 生命。"
     ]
   },
   "ats:Ore Mist": {
-    "NAME": "Ore Mist",
+    "NAME": "源石雾",
     "DESCRIPTIONS": [
-      "At the start and the end of turn, lose #b",
-      " HP."
+      "在每个回合开始和结束时，失去 #b",
+      " 点生命."
+    ]
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "Roar Of Ursus",
+    "DESCRIPTIONS": [
+      "Gain #b1 additional energy and draw #b",
+      " card when energy gained."
     ]
   },
   "ats:": {

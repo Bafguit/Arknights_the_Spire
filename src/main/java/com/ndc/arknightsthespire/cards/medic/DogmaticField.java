@@ -15,8 +15,7 @@ public class DogmaticField extends CardSPBase {
     public static final String ID = "ats:Dogmatic Field";
     public static final String IMG_PATH = "atsImg/cards/dmf.png";
     public static final PositionType POSITION = PositionType.MEDIC;
-    private static final int COST = 3;
-    private static final int UPGRADE_COST = 2;
+    private static final int COST = 2;
 
     public DogmaticField() {
         super(ID, IMG_PATH, COST,
@@ -37,7 +36,7 @@ public class DogmaticField extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeBaseCost(UPGRADE_COST);
+        this.isInnate = true;
     }
 
 

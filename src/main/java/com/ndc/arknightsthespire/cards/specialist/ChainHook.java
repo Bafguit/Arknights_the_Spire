@@ -17,8 +17,8 @@ public class ChainHook extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/ChainHook.png";
     public static final PositionType POSITION = PositionType.SPECIALIST;
     private static final int COST = 1;
-    private static final int DAMAGE = 9;
-    private static final int UP_DAMAGE = 4;
+    private static final int DAMAGE = 10;
+    private static final int UP_DAMAGE = 5;
     private static final int SP = 5;
 
     public ChainHook() {

@@ -68,18 +68,6 @@
       " ats:技力 !S! ats:手动 NL 对所有敌人造成 !D! 点伤害并令它们在一回合内失去 !M! 点 力量 。 获得 !B! 点 格挡 。"
     ]
   },
-  "ats:Rapid Magazine": {
-    "NAME": "天马视域",
-    "DESCRIPTION": " ats:狙击 攻击牌消费 ats:技力 减少2。",
-    "UPGRADE_DESCRIPTION": " 固有 。 ats:狙击 攻击牌消费 ats:技力 减少2。"
-  },
-  "ats:Sunburst": {
-    "NAME": "炎爆",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 对所有敌人造成 !D! 点伤害并给予 !M! 层 ats:燃烧 。"
-    ]
-  },
   "ats:Soul Absorption": {
     "NAME": "灵魂汲取",
     "DESCRIPTION": "本回合打出的下一张攻击牌造成未被格挡的伤害时获得等量 格挡 。"
@@ -93,20 +81,6 @@
     "DESCRIPTION": "(什么都没有发生。) NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:自动 NL 获得 [E] [E] 。"
-    ]
-  },
-  "ats:True Silver Slash": {
-    "NAME": "真银斩",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害3次。 本回合你无法从卡牌中获得 格挡 。 NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 你每有一张 ats:近卫 对所有敌人造成 !D! 点伤害。 本回合你无法从卡牌中获得 格挡 。 NL 消耗 。"
-    ]
-  },
-  "ats:Volcano": {
-    "NAME": "火山",
-    "DESCRIPTION": "给予所有敌人 !M! 层 ats:燃烧 。 NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 你每有一张 ats:术师 对所有敌人造成 !D! 点伤害。 NL 消耗 。"
     ]
   },
   "ats:Nebulous Foxfire": {
@@ -144,13 +118,6 @@
     "DESCRIPTION": "造成 !D! 随机对敌人造成 !D! 点伤害 !M! 次。 NL ats:技力 !S! ats:自动 ",
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害且随机给予敌人 ats:燃烧 共 !M! 次。"
-    ]
-  },
-  "ats:Spore Proliferation": {
-    "NAME": "孢子扩散",
-    "DESCRIPTION": "给予 !M! 层 虚弱 。 NL ats:技力 !S! ats:手动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:手动  NL 移除敌人身上的一个随机正面状态。 不能移除 ats:特殊状态 。 给予 !M! 层 虚弱 。"
     ]
   },
   "ats:Encircling Forest": {
@@ -212,13 +179,6 @@
     "NAME": "自动掩护",
     "DESCRIPTION": "获得 !B! 点 格挡 。 获得 !M! 点 敏捷 。 在下个回合开始时, 失去 !M! 点 敏捷 。"
   },
-  "ats:Very Hot Blade": {
-    "NAME": "很热的刀",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL  抽1张牌。 NL ats:技力 !S! ats:自动 ",
-    "EXTENDED_DESCRIPTION": [
-      " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害。 根据敌人的 ats:燃烧 层数增加伤害。 抽1张牌。"
-    ]
-  },
   "ats:Apocalypse": {
     "NAME": "宛如天启",
     "DESCRIPTION": "回复 !M! 生命。 获得 !M! ats:技力 。"
@@ -236,11 +196,6 @@
     "NAME": "冲锋号令·防御",
     "DESCRIPTION": "每当获得能量时获得 !M! 点 格挡。"
   },
-  "ats:Roar Of Ursus": {
-    "NAME": "乌萨斯战吼",
-    "DESCRIPTION": "每当获得能量时额外获得1能量。",
-    "UPGRADE_DESCRIPTION": " 固有 。 每当获得能量时额外获得1能量。"
-  },
   "ats:Echo Reverb": {
     "NAME": "传音回响",
     "DESCRIPTION": "移除 人工制品 并给予 ats:缓慢 。 NL 消耗 。",
@@ -257,14 +212,6 @@
   "ats:Demon Strength": {
     "NAME": "恶鬼之力",
     "DESCRIPTION": "获得 !M! 点 力量 。 失去1点 敏捷 。"
-  },
-  "ats:Steam Pump": {
-    "NAME": "水蒸气泵",
-    "DESCRIPTION": "丢弃 !M! 张牌。 获得 !B! 点 格挡 。"
-  },
-  "ats:Collapsing Strike": {
-    "NAME": "崩拳式",
-    "DESCRIPTION": "丢弃 !M! 张牌。 造成 !D! 点伤害。"
   },
   "ats:Song Of Battle": {
     "NAME": "战斗之歌",
@@ -369,13 +316,9 @@
     "NAME": "复合型药物弹片",
     "DESCRIPTION": "每当回复生命时对所有敌人造成同等伤害。( 最大 !M! )"
   },
-  "ats:Dogmatic Field": {
-    "NAME": "教条力场",
-    "DESCRIPTION": "每当你获得 格挡 时,超过5点 格挡 的量将会变为回复生命值。"
-  },
   "ats:Disruption Kick": {
     "NAME": "七武掠阵踢",
-    "DESCRIPTION": " 保留 。 对所有敌人造成 !D! 点伤害并移除他们除了 ats:特殊状态 以外的状态。 NL 消耗 。"
+    "DESCRIPTION": " 保留 。 对所有敌人造成 !D! 点伤害并移除 ats:特殊状态 以外的状态。 NL 消耗 。"
   },
   "ats:Powerful Strike": {
     "NAME": "强力击·β型",
@@ -383,10 +326,6 @@
     "EXTENDED_DESCRIPTION": [
       " ats:技力 !S! ats:自动 NL 造成 !D! 点伤害。 NL 伤害翻倍。"
     ]
-  },
-  "ats:Thorns": {
-    "NAME": "荆棘",
-    "DESCRIPTION": "获得 !M! 层 敏捷 。 获得2层 荆棘 。"
   },
   "ats:Shadow Assault": {
     "NAME": "赤霄·拔刀",
@@ -408,23 +347,90 @@
     ]
   },
   "ats:Fierce Glare": {
-    "NAME": "怒目",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害X次. NL ats:技力 !S! ats:手动",
+    "NAME": "Fierce Glare",
+    "DESCRIPTION": "Deal !D! damage X times to ALL enemies. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:技力 !S! ats:手动 NL 根据本回合获得的能量对敌人造成伤害。重复 X 次. ( 目前 !ats:E! )"
+      "ats:SP !S! ats:Manual NL Deal !D! damage X times to ALL enemies. Gain X energy."
     ]
   },
   "ats:Sealed Floor": {
     "NAME": "封印的地面",
-    "DESCRIPTION": " 保留 . 不能被打出 . NL 不能从手牌中被丢弃."
+    "DESCRIPTION": " 保留 。 不能被打出 。 NL 不能从手牌中被丢弃。"
   },
   "ats:Lancet": {
     "NAME": "战术整理",
-    "DESCRIPTION": "不能被打出 . 　When　you draw　this　card,　heal　 !M! 　HP　and　Exhaust."
+    "DESCRIPTION": " 不能被打出 。每当你抽到这张牌，回复 !M! 点生命然后 消耗 ."
   },
   "ats:Mine": {
-    "NAME": "Mine",
-    "DESCRIPTION": "Retain.　An　enemy　loses　10　HP.　Reduce　5　 ats:Armour 　for　this　turn.　NL 　Exhaust. 　Cannot　discard."
+    "NAME": "地雷",
+    "DESCRIPTION": " 保留 。 NL 令敌人失去10点生命。 NL 在这个回合内移除5层 NL ats:盔甲 。 NL 消耗 。不能被丢弃。"
+  },
+  "ats:Electric Net": {
+    "NAME": "Electric Net",
+    "DESCRIPTION": "Draw !M! cards. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Draw !M! cards. Gain [E] ."
+    ]
+  },
+  "ats:Skull Crusher": {
+    "NAME": "Skull Crusher",
+    "DESCRIPTION": "Deal !D! damage. Strength affect this card 3 times. NL ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Manual NL Deal !D! damage. Strength affect this card 3 times. If you gained energy during this turn, stun the enemy."
+    ]
+  },
+  "ats:Thorns": {
+    "NAME": "Thorns",
+    "DESCRIPTION": "Gain !M! Dexterity. Gain !ats:R! Thorns."
+  },
+  "ats:Dogmatic Field": {
+    "NAME": "Dogmatic Field",
+    "DESCRIPTION": "When you gain block, heal HP instead of gaining block by block amount in excess of 5.",
+    "UPGRADE_DESCRIPTION": "Innate. When you gain block, heal HP instead of gaining block by block amount in excess of 5."
+  },
+  "ats:Sunburst": {
+    "NAME": "Sunburst",
+    "DESCRIPTION": "Deal !D! damage and apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! Vulnerable and ats:Burn to ALL enemies."
+    ]
+  },
+  "ats:True Silver Slash": {
+    "NAME": "True Silver Slash",
+    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. You cannot gain Block from cards for this turn. NL ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Guard card in your deck. You cannot gain Block from cards for this turn. NL Exhaust."
+    ]
+  },
+  "ats:Volcano": {
+    "NAME": "Volcano",
+    "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
+    ]
+  },
+  "ats:Spore Proliferation": {
+    "NAME": "Spore Proliferation",
+    "DESCRIPTION": "Remove a random buff of an enemy. Cannot remove ats:some powers. Apply !M! Weak."
+  },
+  "ats:Very Hot Blade": {
+    "NAME": "Very Hot Blade",
+    "DESCRIPTION": "Deal !D! damage 3 times. Draw a card. NL ats:SP !S! ats:Auto",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:Auto NL Deal !D! damage. If the enemy has ats:Burn, gain [E] and the enemy loses HP by ats:Burn amount. Draw a card."
+    ]
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "Roar of Ursus",
+    "DESCRIPTION": "Innate. Gain 1 more energy and draw !M! card when energy gained."
+  },
+  "ats:Collapsing Strike": {
+    "NAME": "Collapsing Strike",
+    "DESCRIPTION": "Discard !M! card. Deal !D! damage. ats:SP !S! ats:Manual",
+    "EXTENDED_DESCRIPTION": [
+      "Steam Pump",
+      "ats:SP !S! ats:Manual NL Discard !M! card. Gain !B! block."
+    ]
   },
   "ats:NULL": {
     "NAME": "",

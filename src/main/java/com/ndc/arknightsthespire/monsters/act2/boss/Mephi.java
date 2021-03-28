@@ -67,7 +67,7 @@ public class Mephi extends CustomMonster {
 
     public Mephi(float x, float y) {
         super(NAME, ID, 200, -5.0F, 0.0F, 300.0F, 330.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.5F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;

@@ -24,14 +24,14 @@ public class TrueSilverSlash extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/TrueSilverSlash.png";
     public static final PositionType POSITION = PositionType.GUARD;
     private static final int COST = 3;
-    private static final int ATTACK_DMG = 7;
-    private static final int UP_DMG = 2;
+    private static final int ATTACK_DMG = 8;
+    private static final int UP_DMG = 3;
     private static final int SP = 30;
 
     public TrueSilverSlash() {
         super(ID, IMG_PATH, COST,
                 CardType.ATTACK, CardColors.AbstractCardEnum.DOCTOR_COLOR,
-                CardRarity.RARE, CardTarget.ALL_ENEMY, true, POSITION, true, ATTACK_DMG, 0, 0, SP);
+                CardRarity.RARE, CardTarget.ALL_ENEMY, false, POSITION, true, ATTACK_DMG, 0, 0, SP);
         this.isMultiDamage = true;
     }
 

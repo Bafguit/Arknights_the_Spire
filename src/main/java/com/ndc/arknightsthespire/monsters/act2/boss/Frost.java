@@ -64,7 +64,7 @@ public class Frost extends CustomMonster {
 
     public Frost(float x, float y) {
         super(NAME, ID, 220, -5.0F, 0.0F, 350.0F, 330.0F, (String)null, x, y);
-        this.loadAnimation(ATLAS, SKEL, 1.3F);
+        this.loadAnimation(ATLAS, SKEL, 1.5F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         this.flipHorizontal = true;
@@ -90,9 +90,9 @@ public class Frost extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 20;
+            this.attackDamage = 25;
         } else {
-            this.attackDamage = 18;
+            this.attackDamage = 21;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
@@ -158,6 +158,7 @@ public class Frost extends CustomMonster {
         } else {
             this.setMove((byte)1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
         }
+        this.createIntent();
     }
 
     private boolean canAddIce() {
@@ -248,6 +249,9 @@ public class Frost extends CustomMonster {
             if (ModHelper.isModEnabled("MonsterHunter")) {
                 this.currentHealth = (int)((float)this.currentHealth * 1.5F);
             }
+
+
+            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)5, Intent.UNKNOWN));
 
             this.addToBot(new PlayAnimationAction(this, "Skill_2", true, "FROST_R1"));
             this.addToBot(new WaitAnimAction(this, 6.0F));
