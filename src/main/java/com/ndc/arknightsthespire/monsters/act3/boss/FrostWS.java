@@ -102,6 +102,14 @@ public class FrostWS extends CustomMonster {
     }
 
     public void takeTurn() {
+        if(this.halfDead) {
+            this.addToBot(new HealAction(this, this, this.maxHealth));
+            this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost, true), this.frost + 1));
+            this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.str)));
+            this.addToBot(new ApplyPowerAction(this, this, new BufferPower(this, 4), 4));
+            this.halfDead = false;
+            this.addToBot(new CanLoseAction());
+        }
 
         AbstractPlayer p = AbstractDungeon.player;
         switch (this.nextMove) {

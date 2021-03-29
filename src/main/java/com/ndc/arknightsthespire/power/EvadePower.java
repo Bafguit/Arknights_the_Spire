@@ -50,8 +50,7 @@ public class EvadePower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        Random random = new Random();
-        if(damageAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && random.nextInt(100) < this.amount) {
+        if(damageAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && AbstractDungeon.cardRandomRng.random.nextInt(100) < this.amount) {
             this.flash();
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.str)));
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CrStrPower(this.owner, this.str)));

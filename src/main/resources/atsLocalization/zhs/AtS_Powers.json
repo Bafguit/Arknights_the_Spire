@@ -219,7 +219,7 @@
     "NAME": "盔甲破损",
     "DESCRIPTIONS": [
       "在回合结束时，获得 #b",
-      " 层 #y盔甲 ."
+      " 层 #y盔甲 。"
     ]
   },
   "ats:Mine": {
@@ -238,14 +238,14 @@
     "NAME": "源石雾",
     "DESCRIPTIONS": [
       "在每个回合开始和结束时，失去 #b",
-      " 点生命."
+      " 点生命。"
     ]
   },
   "ats:Roar Of Ursus": {
-    "NAME": "Roar Of Ursus",
+    "NAME": "乌萨斯战吼",
     "DESCRIPTIONS": [
-      "Gain #b1 additional energy and draw #b",
-      " card when energy gained."
+      "每当获得 [E] 时额外获得 #b1 [E] 然后抽 #b",
+      " 张牌。"
     ]
   },
   "ats:": {

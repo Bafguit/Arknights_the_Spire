@@ -13,24 +13,19 @@ public class Berate extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/Berate.png");
 
     public Berate() {
-        super(ID, IMG, RelicTier.COMMON, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
-        this.counter = 0;
+        super(ID, IMG, RelicTier.COMMON, LandingSound.SOLID); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + 2 + DESCRIPTIONS[1]; // DESCRIPTIONS pulls from your localization file
+        return DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1]; // DESCRIPTIONS pulls from your localization file
     }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if(card.type == AbstractCard.CardType.ATTACK) {
-            this.counter++;
-            if (this.counter == 4) {
-                flash();
-                SPHandler.addSp(2);
-                this.counter = 0;
-            }
+            flash();
+            SPHandler.addSp(1);
         }
     }
 

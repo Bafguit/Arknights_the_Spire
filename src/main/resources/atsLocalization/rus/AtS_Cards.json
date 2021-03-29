@@ -72,19 +72,19 @@
     ]
   },
   "ats:Thorns": {
-    "NAME": "Thorns",
-    "DESCRIPTION": "Gain !M! Dexterity. Gain !ats:R! Thorns."
+    "NAME": "Ежовый манёвр",
+    "DESCRIPTION": "Даёт !M! Ловкости. NL Даёт !ats:R! Шипов NL ats:     "
   },
   "ats:Dogmatic Field": {
-    "NAME": "Dogmatic Field",
-    "DESCRIPTION": "When you gain block, heal HP instead of gaining block by block amount in excess of 5.",
-    "UPGRADE_DESCRIPTION": "Innate. When you gain block, heal HP instead of gaining block by block amount in excess of 5."
+    "NAME": "Поле догмы",
+    "DESCRIPTION": "Вы восполняете ОЗ вместо Защиты, если получаемая вами Защита больше 5. NL ats:    ",
+    "UPGRADE_DESCRIPTION": "Начальная. NL Вы восполняете ОЗ вместо Защиты, если получаемая вами Защита больше 5. NL ats:    "
   },
   "ats:Sunburst": {
-    "NAME": "Sunburst",
-    "DESCRIPTION": "Deal !D! damage and apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Auto",
+    "NAME": "Солнечный удар",
+    "DESCRIPTION": "Наносит !D! урона и накладывает !M! ats:Горения на ВСЕХ врагов. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage and apply !M! Vulnerable and ats:Burn to ALL enemies."
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Накладывает !M! ats:Горения и Уязвимости на ВСЕХ врагов. NL ats:      "
     ]
   },
   "ats:Soul Absorption": {
@@ -114,17 +114,17 @@
     ]
   },
   "ats:True Silver Slash": {
-    "NAME": "True Silver Slash",
-    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. You cannot gain Block from cards for this turn. NL ats:SP !S! ats:Manual",
+    "NAME": "Cеребрянный разрез",
+    "DESCRIPTION": "Наносит !D! урона 3 раза ВСЕМ врагам. Вы не получаете Защиту от карт в этот ход. NL ats:ОТ !S! [#C73FC7]Вручную ats:   NL ats:           ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Guard card in your deck. You cannot gain Block from cards for this turn. NL Exhaust."
+      "ats:ОТ !S! [#C73FC7]Вручную ats:   NL Наносит !D! урона ВСЕМ врагам за каждого ats:Стража в колоде. Вы не получаете Защиту от карт в этот ход. NL Сжигается."
     ]
   },
   "ats:Volcano": {
-    "NAME": "Volcano",
-    "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Manual",
+    "NAME": "Вулкан",
+    "DESCRIPTION": "Накладывает !M! ats:Горения на ВСЕХ врагов. NL ats:ОТ !S! [#C73FC7]Вручную ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
+      "ats:ОТ !S! [#C73FC7]Вручную ats:   NL  Накладывает !M! ats:Горения на ВСЕХ врагов за каждого ats:Заклинателя в колоде. NL Сжигается."
     ]
   },
   "ats:Nebulous Foxfire": {
@@ -143,7 +143,7 @@
     "DESCRIPTION": "Наносит !D! урона 4 раза случайному врагу. NL ats:           "
   },
   "ats:Shadow Assault": {
-    "NAME": "Набросок",
+    "NAME": "Штурм",
     "DESCRIPTION": "Наносит !D! урона 2 раза ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7]Вручную ats:    NL ats:           ",
     "EXTENDED_DESCRIPTION": [
       "Теневой штурм",
@@ -184,8 +184,8 @@
     "DESCRIPTION": "Восполняет  !M! ОЗ. NL Даёт 1 Регенерации. NL ats:    "
   },
   "ats:Spore Proliferation": {
-    "NAME": "Spore Proliferation",
-    "DESCRIPTION": "Remove a random buff of an enemy. Cannot remove ats:some powers. Apply !M! Weak."
+    "NAME": "Распылить споры",
+    "DESCRIPTION": "Накладывает !M! Слабости. NL Снимает с врага случайный полож. эффект, за исключением ats:Неснимаемого. NL ats:       "
   },
   "ats:Encircling Forest": {
     "NAME": "Окружающий лес",
@@ -251,15 +251,11 @@
     "DESCRIPTION": "Даёт !B! Защиты. NL Даёт !M! Ловкости. NL В начале вашего след. хода, отнимает !M! Ловкости. NL ats:    "
   },
   "ats:Very Hot Blade": {
-    "NAME": "Very Hot Blade",
-    "DESCRIPTION": "Deal !D! damage 3 times. Draw a card. NL ats:SP !S! ats:Auto",
+    "NAME": "Раскалённые клинки",
+    "DESCRIPTION": "Наносит !D! урона 3 раза. NL Вы берёте карту. NL ats:ОТ !S! [#6495ED]Авто ats:   NL ats:      ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Deal !D! damage. If the enemy has ats:Burn, gain [E] and the enemy loses HP by ats:Burn amount. Draw a card."
+      "ats:ОТ !S! [#6495ED]Авто ats:   NL Наносит !D! урона. NL Когда на враге ats:Горение, даёт [E] и враг теряет ОЗ, за каждую единицу ats:Горения. NL Вы берёте карту. NL ats:      "
     ]
-  },
-  "ats:Apocalypse": {
-    "NAME": "Тех-восполнение",
-    "DESCRIPTION": "Восполняет !M! ОЗ. NL Даёт !M! ats:ОТ. NL ats:    "
   },
   "ats:Composite Medical Shells": {
     "NAME": "Мед-снаряды",
@@ -274,13 +270,9 @@
     "DESCRIPTION": "Начальная. NL Если вы играли ats:Снайпера в этот ход, предотвращает урон вражеских Атак с !M! % шансом.",
     "UPGRADE_DESCRIPTION": "Начальная. NL Если вы играли ats:Снайпера в этот ход, предотвращает урон вражеских Атак с !M! % шансом."
   },
-  "ats:Defend Order": {
-    "NAME": "Запрос обороны",
-    "DESCRIPTION": "Даёт !B! Защиты, когда вы получаете [E] . NL ats:        "
-  },
   "ats:Roar Of Ursus": {
-    "NAME": "Roar of Ursus",
-    "DESCRIPTION": "Innate. Gain 1 more energy and draw !M! card when energy gained."
+    "NAME": "Рёв Урсуса",
+    "DESCRIPTION": "Начальная. NL Даёт на 1 больше [E] и вы берёте !M! карты, когда вы получаете [E] . NL ats:        "
   },
   "ats:Echo Reverb": {
     "NAME": "Эхо-реверберация",
@@ -299,16 +291,12 @@
     "NAME": "Сила демона",
     "DESCRIPTION": "Даёт !M! Силы. NL Отнимает 1 Ловкости. NL ats:           "
   },
-  "ats:Steam Pump": {
-    "NAME": "Паровой насос",
-    "DESCRIPTION": "Даёт !B! Защиты NL Вы сбрасываете !M! карту. NL ats:         "
-  },
   "ats:Collapsing Strike": {
-    "NAME": "Collapsing Strike",
-    "DESCRIPTION": "Discard !M! card. Deal !D! damage. ats:SP !S! ats:Manual",
+    "NAME": "Сминающий удар",
+    "DESCRIPTION": "Наносит !D! урона NL Вы сбрасываете !M! карту. NL ats:ОТ !S! [#C73FC7]Вручную NL ats:         ",
     "EXTENDED_DESCRIPTION": [
-      "Steam Pump",
-      "ats:SP !S! ats:Manual NL Discard !M! card. Gain !B! block."
+      "Паровой насос",
+      "ats:ОТ !S! [#C73FC7]Вручную NL Вы сбрасываете !M! карты. NL Даёт !B! Защиты. NL ats:         "
     ]
   },
   "ats:Song Of Battle": {
@@ -342,15 +330,6 @@
       "ats:ОТ !S! [#6495ED]Авто ats:   NL Снимает с вас ВСЕ отрицательные эффекты. NL Восполняет !M! ОЗ. NL ats:    "
     ]
   },
-  "ats:Part Time Job": {
-    "NAME": "Неполная занятость",
-    "DESCRIPTION": "Даёт 3 Регенерации. NL ats:       ",
-    "UPGRADE_DESCRIPTION": "В начале и в конце вашего хода, восполняет 1 ОЗ. NL ats:       "
-  },
-  "ats:Childhood Dance": {
-    "NAME": "Танец детства",
-    "DESCRIPTION": "Накладывает 2 Слабости на ВСЕХ врагов. NL ats:       "
-  },
   "ats:Hammer On": {
     "NAME": "Крушить",
     "DESCRIPTION": "Наносит !D! урона. NL Когда убивает врага, даёт [E]. NL ats:        "
@@ -379,10 +358,6 @@
     "DESCRIPTION": "Когда ваши ОЗ потеряны, повышает урон ваших *Атак (Урон повышен на 100%, когда вы потеряли 70% ОЗ) NL Снижает получаемую вами Защиту наполовину. NL ats:           ",
     "UPGRADE_DESCRIPTION": "Начальная. NL Когда ваши ОЗ потеряны, повышает урон ваших *Атак (Урон повышен на 100%, когда вы потеряли 70% ОЗ) NL Снижает получаемую вами Защиту наполовину. NL ats:           "
   },
-  "ats:Phantom": {
-    "NAME": "Зеркальный фантом",
-    "DESCRIPTION": "Каждый раз, когда вы играете ats:Специалиста, снижает стоимость случ. карты в руке до [#58ACFA]0[#FFFFFF]. Она стоит [#58ACFA]0[#FFFFFF], пока не разыграна."
-  },
   "ats:Sashimi Platter": {
     "NAME": "Сашими",
     "DESCRIPTION": "Наносит !D! урона. Восполняет !D! ОЗ. NL ats:         "
@@ -401,10 +376,10 @@
     "DESCRIPTION": "Даёт !B! Защиты. NL Удваивает свою Защиту, если у вас менее половины ОЗ. NL ats:     "
   },
   "ats:Fierce Glare": {
-    "NAME": "Fierce Glare",
-    "DESCRIPTION": "Deal !D! damage X times to ALL enemies. NL ats:SP !S! ats:Manual",
+    "NAME": "Пронзающий взгляд",
+    "DESCRIPTION": "Наносит !D! урона X раз ВСЕМ врагам. NL ats:ОТ !S! [#C73FC7]Вручную NL ats:        ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage X times to ALL enemies. Gain X energy."
+      "ats:ОТ !S! [#C73FC7]Вручную ats:     NL Наносит !D! урона X раз ВСЕМ врагам. NL Даёт X энергии. NL ats:        "
     ]
   },
   "ats:Sealed Floor": {
@@ -417,20 +392,20 @@
   },
   "ats:Mine": {
     "NAME": "Мина",
-    "DESCRIPTION": "Оставляется. NL Отнимает 10 ОЗ у врага. Снижает ats:Броню на 5 в этот ход. NL Сжигается. NL Невозможно сбросить."
+    "DESCRIPTION": "Оставляется. NL Наносит 10 урона по ОЗ врага. Снижает ats:Броню на 5 в этот ход. NL Сжигается. NL Невозможно сбросить."
   },
   "ats:Electric Net": {
-    "NAME": "Electric Net",
-    "DESCRIPTION": "Draw !M! cards. NL ats:SP !S! ats:Auto",
+    "NAME": "Электрическая сеть",
+    "DESCRIPTION": "Вы берёте !M! карты. NL ats:ОТ !S! [#6495ED]Авто NL ats:         ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Auto NL Draw !M! cards. Gain [E] ."
+      "ats:ОТ !S! [#6495ED]Авто NL Вы берёте !M! карты. Даёт [E] . NL ats:         "
     ]
   },
   "ats:Skull Crusher": {
-    "NAME": "Skull Crusher",
-    "DESCRIPTION": "Deal !D! damage. Strength affect this card 3 times. NL ats:SP !S! ats:Manual",
+    "NAME": "Крушитель черепов",
+    "DESCRIPTION": "Наносит !D! урона. NL Сила влияет на эту карту 3 раза. NL ats:ОТ !S! [#C73FC7]Вручную NL ats:        ",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage. Strength affect this card 3 times. If you gained energy during this turn, stun the enemy."
+      "ats:ОТ !S! [#C73FC7]Вручную NL Наносит !D! урона. NL Сила влияет на эту карту 3 раза. Если вы получали энергию в этот ход, ats:Оглушает врага. NL ats:        "
     ]
   },
   "ats:NULL": {

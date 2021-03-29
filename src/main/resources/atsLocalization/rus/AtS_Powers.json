@@ -86,10 +86,10 @@
     ]
   },
   "ats:Roar Of Ursus": {
-    "NAME": "Roar Of Ursus",
+    "NAME": "Рёв Урсуса",
     "DESCRIPTIONS": [
-      "Gain #b1 additional energy and draw #b",
-      " card when energy gained."
+      "Даёт #b1 доп. энергию, и вы берёте #b",
+      " карты, когда получаете энергию."
     ]
   },
   "ats:Burn": {

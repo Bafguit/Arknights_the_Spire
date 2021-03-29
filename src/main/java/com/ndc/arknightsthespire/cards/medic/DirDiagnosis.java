@@ -49,8 +49,7 @@ public class DirDiagnosis extends CardSPBase {
                     }
                 }
                 if (debuffs.size() > 0) {
-                    Random random = new Random();
-                    addToBot(new RemoveSpecificPowerAction(p, p, debuffs.get(random.nextInt(debuffs.size()))));
+                    addToBot(new RemoveSpecificPowerAction(p, p, debuffs.get(AbstractDungeon.cardRandomRng.random.nextInt(debuffs.size()))));
                 }
             }
         }

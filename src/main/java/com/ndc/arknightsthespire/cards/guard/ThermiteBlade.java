@@ -41,8 +41,7 @@ public class ThermiteBlade extends CardSPBase {
         if(isSpJustUsed) {
             addToBot(new RemoveAllBlockAction(m, p));
         }
-        Random random = new Random();
-        DamageType type = random.nextBoolean() ? DamageType.NORMAL : DamageType.HP_LOSS;
+        DamageType type = AbstractDungeon.cardRandomRng.random.nextBoolean() ? DamageType.NORMAL : DamageType.HP_LOSS;
         addToBot(new AtsSFX("BLADE"));
         addToBot(new DamageAction(m,
                 new DamageInfo(p, this.damage, isSpJustUsed ? DamageType.HP_LOSS : type),

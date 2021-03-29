@@ -124,7 +124,7 @@
     "NAME": "Volcano",
     "DESCRIPTION": "Apply !M! ats:Burn to ALL enemies. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
-      "ats:SP !S! ats:Manual NL Deal !D! damage to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
+      "ats:SP !S! ats:Manual NL Apply !M! ats:Burn to ALL enemies for each ats:Caster card in your deck. NL Exhaust."
     ]
   },
   "ats:Nebulous Foxfire": {

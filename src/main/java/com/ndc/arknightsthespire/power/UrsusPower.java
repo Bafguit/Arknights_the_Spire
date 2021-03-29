@@ -59,7 +59,9 @@ public class UrsusPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public int onGainEnergy(int e) {
         flash();
-        addToBot(new DrawCardAction(this.amount));
+        if(this.amount >= 1) {
+            addToBot(new DrawCardAction(this.amount));
+        }
         return e + 1;
     }
 }

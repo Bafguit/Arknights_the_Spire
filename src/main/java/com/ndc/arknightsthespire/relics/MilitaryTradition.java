@@ -16,13 +16,13 @@ public class MilitaryTradition extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + 8 + DESCRIPTIONS[1]; // DESCRIPTIONS pulls from your localization file
+        return DESCRIPTIONS[0] + 10 + DESCRIPTIONS[1]; // DESCRIPTIONS pulls from your localization file
     }
 
     @Override
     public void atBattleStart() {
         flash();
-        SPHandler.addSp(8);
+        SPHandler.addSp(10);
     }
 
     @Override

@@ -50,6 +50,7 @@ public abstract class CardSPBase extends CustomCard {
     public int baseArm = 0;
     public int et = 0;
     public int baseEt = 0;
+    public boolean isUsing = false;
     public CardType baseType;
     public boolean isArmModified = false;
     public boolean upgradedArm = false;
@@ -279,12 +280,14 @@ public abstract class CardSPBase extends CustomCard {
     }
 
     public void updateState(boolean shouldGlow) {
-        this.baseEt = this.et = SPHandler.getTurnEnergy();
-        updateName();
-        updateDescription();
-        updateImage();
-        updateSpView();
-        updateGlow(shouldGlow);
+        if(!this.isUsing) {
+            this.baseEt = this.et = SPHandler.getTurnEnergy();
+            updateName();
+            updateDescription();
+            updateImage();
+            updateSpView();
+            updateGlow(shouldGlow);
+        }
     }
 
     public void updateSpView() {
@@ -384,7 +387,7 @@ public abstract class CardSPBase extends CustomCard {
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (SPHandler.isSpModeEnabled() && this.canUseSP) {
-            if (!this.isAuto && !canAffordSP()) {
+            if (!this.isAuto && !canAffordSP() && !this.isInAutoplay) {
                 this.cantUseMessage = uiSPStrings.TEXT[0];
                 return false;
             }
@@ -395,8 +398,8 @@ public abstract class CardSPBase extends CustomCard {
     @Override
     public final void use(AbstractPlayer p, AbstractMonster m) {
         isSpJustUsed = false;
-        if(canAffordSP() && (this.isAuto || SPHandler.isSpModeEnabled())) {
-            if(!this.freeToSp) {
+        if((canAffordSP() || this.isInAutoplay) && (this.isAuto || SPHandler.isSpModeEnabled())) {
+            if(!this.freeToSp && !this.isInAutoplay) {
                 SPHandler.removeSp(this.baseSP);
             }
             this.freeToSp = false;

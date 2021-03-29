@@ -81,7 +81,6 @@ public class RemoveRangedCardAction extends AbstractGameAction {
             }
         }
 
-        Random rand = new Random();
 
         ArrayList<AbstractCard> rc = new ArrayList();
         AbstractCard c1;
@@ -89,27 +88,26 @@ public class RemoveRangedCardAction extends AbstractGameAction {
         AbstractCard c3;
 
         if(draw.size() > 0) {
-            c1 = draw.get(draw.size() == 1 ? 0 : rand.nextInt(draw.size() - 1));
+            c1 = draw.get(draw.size() == 1 ? 0 : AbstractDungeon.cardRandomRng.random.nextInt(draw.size() - 1));
             rc.add(c1);
         } else {
             c1 = null;
         }
         if(hand.size() > 0) {
-            c2 = hand.get(hand.size() == 1 ? 0 : rand.nextInt(hand.size() - 1));
+            c2 = hand.get(hand.size() == 1 ? 0 : AbstractDungeon.cardRandomRng.random.nextInt(hand.size() - 1));
             rc.add(c2);
         } else {
             c2 = null;
         }
         if(disc.size() > 0) {
-            c3 = disc.get(disc.size() == 1 ? 0 : rand.nextInt(disc.size() - 1));
+            c3 = disc.get(disc.size() == 1 ? 0 : AbstractDungeon.cardRandomRng.random.nextInt(disc.size() - 1));
             rc.add(c3);
         } else {
             c3 = null;
         }
 
         if(rc.size() > 0) {
-            Random random = new Random();
-            AbstractCard r = rc.get(rc.size() == 1 ? 0 : random.nextInt(rc.size() - 1));
+            AbstractCard r = rc.get(rc.size() == 1 ? 0 : AbstractDungeon.cardRandomRng.random.nextInt(rc.size() - 1));
             if(c1 != null) {
                 if(r == c1) {
                     this.addToBot(new ExhaustSpecificCardAction(r, AbstractDungeon.player.drawPile));

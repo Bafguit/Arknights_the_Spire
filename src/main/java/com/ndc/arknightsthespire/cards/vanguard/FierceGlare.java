@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.cards.vanguard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -20,7 +21,7 @@ public class FierceGlare extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/FierceGlare.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = -1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 7;
     private static final int SP = 20;
     private static final int UP_SP = 10;
 
@@ -33,15 +34,13 @@ public class FierceGlare extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        AbstractDungeon.player.energy.use(EnergyPanel.totalCount);
+        int e = EnergyPanel.totalCount;
+        AbstractDungeon.player.energy.use(e);
+        for (int i = 0; i < this.energyOnUse; i++) {
+            addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
+        }
         if(isSpJustUsed) {
-            for (int i = 0; i < this.energyOnUse; i++) {
-                addToBot(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(SPHandler.getTurnEnergy() + 3), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
-            }
-        } else {
-            for (int i = 0; i < this.energyOnUse; i++) {
-                addToBot(new DamageAllEnemiesAction(p, this.multiDamage, DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.SMASH));
-            }
+            addToBot(new GainEnergyAction(e));
         }
     }
 

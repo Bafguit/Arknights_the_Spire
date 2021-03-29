@@ -7,14 +7,6 @@
       " HP."
     ]
   },
-  "ats:Blood Sample Collection": {
-    "NAME": "Blood Sample Collection",
-    "FLAVOR": "\"She'll love it if I bring it to Mr. Blood, right?\"",
-    "DESCRIPTIONS": [
-      "",
-      ""
-    ]
-  },
   "ats:Spiritual Recovery": {
     "NAME": "Spiritual Recovery",
     "FLAVOR": "It contains a small amount of mustard extract...",
@@ -24,32 +16,32 @@
     ]
   },
   "ats:Rhine Circuitry": {
-    "NAME": "Rhine Circuitry",
-    "FLAVOR": "\"Do not pass or read the manual to Ifrit.\"",
+    "NAME": "Originium Zone Generator",
+    "FLAVOR": "Originium crystals are planted in advance to ensure that the Caster team can complete their mission. This form of combat...",
     "DESCRIPTIONS": [
-      "Whenever you play 6 cards, gain #b",
-      " #ySP."
+      "Whenever you play a card, apply #b",
+      " #yBurn to ALL enemies."
     ]
   },
   "ats:Military Tradition": {
-    "NAME": "Military Tradition",
-    "FLAVOR": "I guess Victoria should wear traditional clothing.",
+    "NAME": "Transporter-Type Meebo",
+    "FLAVOR": "The “Great Meebo Monument” is covered with the codenames of its compatriots, but it knows no joy or sorrow. It simply wants to work.",
     "DESCRIPTIONS": [
       "At the start of battle, gain #b",
       " #ySP."
     ]
   },
   "ats:Ability Aura": {
-    "NAME": "Ability Aura",
-    "FLAVOR": "\"ERA HASSEI-\"",
+    "NAME": "Braintet",
+    "FLAVOR": "A new type of energy draught developed by Parasol Pharmaceuticals. It’s sugar free, has a minty taste, and has no side effects.",
     "DESCRIPTIONS": [
       "At the start of turn, Gain #b",
       " #ySP."
     ]
   },
   "ats:Omniscience": {
-    "NAME": "Omniscience",
-    "FLAVOR": "CAUTION: Very hot",
+    "NAME": "“Self-Defense Handbook”",
+    "FLAVOR": "Its complete title is, “Handbook of Self-Defense When Traveling to the City-States of Other Countries Surrounding Laterano and the Zones Between Them.” You can read it, but you can’t learn anything from it.",
     "DESCRIPTIONS": [
       "Gain 25% temporary HP each combat."
     ]
@@ -69,82 +61,90 @@
     ]
   },
   "ats:Berate": {
-    "NAME": "Berate",
-    "FLAVOR": "\"Chen doesn't use this stuff.\"",
+    "NAME": "Captain Morgan’s Wine",
+    "FLAVOR": "A wine produced in the Iberian region. Despite having gained popularity in the heart of Victoria’s bustling cities, it is now discontinued.",
     "DESCRIPTIONS": [
-      "When you play 4 attack card, gain #b",
+      "When you play attack card, gain #b",
       " #ySP."
     ]
   },
   "ats:Industrial Water Cannon": {
-    "NAME": "Industrial Water Cannon",
-    "FLAVOR": "\"Chief... Theytheythey're barbecuinginthedormagain. Canyouplease stopthemforme! Aaaah! Someoneswapped myfireextinguisher withIfrit'sflamethrower! Areyouokay, Chief?\"",
+    "NAME": "Superelastic Alloy Spring",
+    "FLAVOR": "High-quality springs with several times the elasticity of normal springs. Regardless of how you use them, be careful not to hurt yourself.",
     "DESCRIPTIONS": [
-      "When you consume #ySP 3 times, draw a card."
+      "When you consume #ySP , draw a card."
     ]
   },
   "ats:Bonebreaker": {
-    "NAME": "Bonebreaker",
-    "FLAVOR": "She's Walking on the wall as if it's obvious.",
+    "NAME": "Corroded Silver Lance",
+    "FLAVOR": "A lance that can pierce mountains and lakes, accompanied by the trampling of hooves that can disperse gathered clouds. Fireworks and advertisements have dulled everyone’s memories, but they are still out there.",
     "DESCRIPTIONS": [
       "Every attacks will have #b",
       " minimum damage."
     ]
   },
   "ats:Arts": {
-    "NAME": "Arts",
-    "FLAVOR": "There must be something to do with it.",
+    "NAME": "Sabotage Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #yCaster card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #yCaster cards to your deck.",
+      "Caster Card"
     ]
   },
   "ats:Assault": {
-    "NAME": "Assault",
-    "FLAVOR": "\"BIBITTENJYANE-!\"",
+    "NAME": "Assault Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #yVanguard card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #yVanguard cards to your deck.",
+      "Vanguard Card"
     ]
   },
   "ats:Attack": {
-    "NAME": "Attack",
-    "FLAVOR": "Attack is the best defense.",
+    "NAME": "Assault Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #yGuard card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #yGuard cards to your deck.",
+      "Guard Card"
     ]
   },
   "ats:Defend": {
-    "NAME": "Defend",
-    "FLAVOR": "Defense is the best attack.",
+    "NAME": "Fortification Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #yDefender card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #yDefender cards to your deck.",
+      "Defender Card"
     ]
   },
   "ats:Cure": {
-    "NAME": "Cure",
-    "FLAVOR": "\"Come here, please.\"",
+    "NAME": "Ranged Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #yMedic card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #yMedic cards to your deck.",
+      "Medic Card"
     ]
   },
   "ats:Snipe": {
-    "NAME": "Snipe",
-    "FLAVOR": "It's better to get rid of the hazard in advance.",
+    "NAME": "Ranged Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #ySniper card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #ySniper cards to your deck.",
+      "Sniper Card"
     ]
   },
   "ats:Special": {
-    "NAME": "Special",
-    "FLAVOR": "Whenever a specialist team gets together, they say they can't see two people.",
+    "NAME": "Sabotage Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #ySpecialist card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #ySpecialist cards to your deck.",
+      "Specialist Card"
     ]
   },
   "ats:Support": {
-    "NAME": "Support",
-    "FLAVOR": "\"Mr. Blood, that's a waiting room for supporters.\"",
+    "NAME": "Fortification Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "When you play #ySupporter card, gain #b1 #ySP."
+      "Upon pickup, choose and add #b3 #ySupporter cards to your deck.",
+      "Supporter Card"
     ]
   },
   "ats:Hidden Killer": {
@@ -155,8 +155,8 @@
     ]
   },
   "ats:Gyao": {
-    "NAME": "\"Gyao\" Ring",
-    "FLAVOR": "It is the second most popular item after a photo of someone who is praised as a god of money.",
+    "NAME": "\"Roar\" Pendant",
+    "FLAVOR": "An amulet circulated among a few members of the L.G.D. who don’t take their work very seriously. Said to be able to double one’s bonuses.",
     "DESCRIPTIONS": [
       "Gain #b15 additional gold when you obtain gold."
     ]
@@ -169,8 +169,8 @@
     ]
   },
   "ats:Tactical Delivery": {
-    "NAME": "Tactical Delivery",
-    "FLAVOR": "It smells like seafood bibim sauce.",
+    "NAME": "Crate of Explosive Building Materials",
+    "FLAVOR": "Rhodes Island’s portable basic building materials kits are limited in quantity. If lost, please reapply for redistribution. Please assemble according to the instructions.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. #yMaximum #ySP #yLimit decreased by #b20."
     ]

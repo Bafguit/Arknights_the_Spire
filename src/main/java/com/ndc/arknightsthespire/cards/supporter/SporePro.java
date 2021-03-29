@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -44,8 +45,7 @@ public class SporePro extends CardSPBase {
                 }
 
                 if(buffs.size() > 0) {
-                    Random random = new Random();
-                    addToBot(new RemoveSpecificPowerAction(m, p, buffs.get(random.nextInt(buffs.size()))));
+                    addToBot(new RemoveSpecificPowerAction(m, p, buffs.get(AbstractDungeon.cardRandomRng.random.nextInt(buffs.size()))));
                 }
             }
         addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber, true));

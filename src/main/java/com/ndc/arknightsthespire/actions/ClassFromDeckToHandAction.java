@@ -57,8 +57,7 @@ public class ClassFromDeckToHandAction extends AbstractGameAction {
             }
 
         if (tmp.group.size() != 0) {
-            Random random = new Random();
-            card = tmp.group.get(random.nextInt(tmp.group.size()));
+            card = tmp.group.get(AbstractDungeon.cardRandomRng.random.nextInt(tmp.group.size()));
 
             if (this.p.hand.size() == 10) {
                 this.p.drawPile.moveToDiscardPile(card);

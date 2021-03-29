@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.DuplicationPotion;
 import com.megacrit.cardcrawl.powers.NoBlockPower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
@@ -53,21 +54,20 @@ public class Volcano extends CardSPBase {
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
         if(isSpJustUsed) {
-            this.isMultiDamage = true;
             this.exhaust = true;
             for (int for_i = 0; for_i < getCasterDeck(); for_i++) {
                 addToBot(new AtsSFX("VOLCANO"));
                 for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     addToBot(new AtsSFX("VOLCANO"));
                     addToBot(new ApplyPowerAction(mo, p,
-                            new BurnPower(mo, p, this.magicNumber), this.damage, true));
+                            new BurnPower(mo, p, this.magicNumber), this.magicNumber, true));
                 }
             }
         } else {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new AtsSFX("VOLCANO"));
                 addToBot(new ApplyPowerAction(mo, p,
-                        new BurnPower(mo, p, this.magicNumber), this.damage, true));
+                        new BurnPower(mo, p, this.magicNumber), this.magicNumber, true));
             }
         }
     }

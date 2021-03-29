@@ -13,7 +13,7 @@ public class RoarOfUrsus extends CardSPBase {
     public static final String ID = "ats:Roar Of Ursus";
     public static final String IMG_PATH = "atsImg/cards/RoarOfUrsus.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public RoarOfUrsus() {
         super(ID, IMG_PATH, COST,
@@ -34,7 +34,7 @@ public class RoarOfUrsus extends CardSPBase {
 
     @Override
     public void upgradeCard() {
-        this.upgradeMagicNumber(1);
+        this.upgradeBaseCost(0);
     }
 
 }

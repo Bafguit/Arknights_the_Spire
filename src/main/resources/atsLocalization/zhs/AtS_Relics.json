@@ -16,24 +16,24 @@
     ]
   },
   "ats:Rhine Circuitry": {
-    "NAME": "忧伤的驮兽",
-    "FLAVOR": "\"请勿阅读或将本手册给予伊芙利特。\"",
+    "NAME": "Originium Zone Generator",
+    "FLAVOR": "Originium crystals are planted in advance to ensure that the Caster team can complete their mission. This form of combat...",
     "DESCRIPTIONS": [
-      "每当你打出6张牌, 获得 #b",
-      " #y技力 。"
+      "Whenever you play a card, apply #b",
+      " #yBurn to ALL enemies."
     ]
   },
   "ats:Military Tradition": {
-    "NAME": "军事传统",
-    "FLAVOR": "我想维多利亚应该穿传统服装。",
+    "NAME": "Transporter-Type Meebo",
+    "FLAVOR": "The “Great Meebo Monument” is covered with the codenames of its compatriots, but it knows no joy or sorrow. It simply wants to work.",
     "DESCRIPTIONS": [
       "在战斗开始时,获得 #b",
       " #y技力 。"
     ]
   },
   "ats:Ability Aura": {
-    "NAME": "技力光环",
-    "FLAVOR": "\"ERA HASSEI-\"",
+    "NAME": "Braintet",
+    "FLAVOR": "A new type of energy draught developed by Parasol Pharmaceuticals. It’s sugar free, has a minty taste, and has no side effects.",
     "DESCRIPTIONS": [
       "在回合开始时, 获得 #b",
       " #y技力 。"
@@ -54,82 +54,90 @@
     ]
   },
   "ats:Berate": {
-    "NAME": "呵斥",
-    "FLAVOR": "\"陈不用这个东西。\"",
+    "NAME": "Captain Morgan’s Wine",
+    "FLAVOR": "A wine produced in the Iberian region. Despite having gained popularity in the heart of Victoria’s bustling cities, it is now discontinued.",
     "DESCRIPTIONS": [
-      "每当你打出4张攻击牌,获得 #b",
+      "每当你打出攻击牌,获得 #b",
       " #y技力 。"
     ]
   },
   "ats:Industrial Water Cannon": {
-    "NAME": "工程蓄水炮",
-    "FLAVOR": "\"头儿。。。他们在烧烤。你能阻止他们吗!啊啊!有人把我的灭火器换成了伊芙利特的灭火器!你还好吗,头儿?\"",
+    "NAME": "Superelastic Alloy Spring",
+    "FLAVOR": "High-quality springs with several times the elasticity of normal springs. Regardless of how you use them, be careful not to hurt yourself.",
     "DESCRIPTIONS": [
-      "每当你消费 #y技力 3次, 抽1张牌。"
+      "每当你消费 #y技力 , 抽1张牌。"
     ]
   },
   "ats:Bonebreaker": {
-    "NAME": "刺骨",
-    "FLAVOR": "她正走在墙上,很显眼。",
+    "NAME": "Corroded Silver Lance",
+    "FLAVOR": "A lance that can pierce mountains and lakes, accompanied by the trampling of hooves that can disperse gathered clouds. Fireworks and advertisements have dulled everyone’s memories, but they are still out there.",
     "DESCRIPTIONS": [
       "每次攻击都会造成最少 #b",
       " 点伤害。"
     ]
   },
   "ats:Arts": {
-    "NAME": "术师招募券",
-    "FLAVOR": "这一定有着某种关联。",
+    "NAME": "Sabotage Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y术师 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #yCaster cards to your deck.",
+      "Caster Card"
     ]
   },
   "ats:Assault": {
-    "NAME": "先锋招募券",
-    "FLAVOR": "\"BIBITTENJYANE-!\"",
+    "NAME": "Assault Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y先锋 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #yVanguard cards to your deck.",
+      "Vanguard Card"
     ]
   },
   "ats:Attack": {
-    "NAME": "近卫招募券",
-    "FLAVOR": "进攻是最好的防御。",
+    "NAME": "Assault Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y近卫 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #yGuard cards to your deck.",
+      "Guard Card"
     ]
   },
   "ats:Defend": {
-    "NAME": "重装招募券",
-    "FLAVOR": "防御是最好的进攻。",
+    "NAME": "Fortification Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y重装 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #yDefender cards to your deck.",
+      "Defender Card"
     ]
   },
   "ats:Cure": {
-    "NAME": "医疗招募券",
-    "FLAVOR": "\"请快过来。\"",
+    "NAME": "Ranged Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y医疗 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #yMedic cards to your deck.",
+      "Medic Card"
     ]
   },
   "ats:Snipe": {
-    "NAME": "狙击招募券",
-    "FLAVOR": "最好提前排除危险。",
+    "NAME": "Ranged Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y狙击 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #ySniper cards to your deck.",
+      "Sniper Card"
     ]
   },
   "ats:Special": {
-    "NAME": "特种招募券",
-    "FLAVOR": "每当特种小组聚集在一起,他们都说看不到第二个人。",
+    "NAME": "Sabotage Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y特种 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #ySpecialist cards to your deck.",
+      "Specialist Card"
     ]
   },
   "ats:Support": {
-    "NAME": "辅助",
-    "FLAVOR": "\"华法琳小姐, 那是辅助干员的休息室。\"",
+    "NAME": "Fortification Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "每当你打出 #y辅助 牌, 获得 #b1 #y技力 。"
+      "Upon pickup, choose and add #b3 #ySupporter cards to your deck.",
+      "Supporter Card"
     ]
   },
   "ats:Hidden Killer": {
@@ -140,8 +148,8 @@
     ]
   },
   "ats:Gyao": {
-    "NAME": "\"嘎呜\" 挂饰",
-    "FLAVOR": "它是第二个最受欢迎的物品,仅次于一个被誉为财神的人的照片。",
+    "NAME": "\"Roar\" Pendant",
+    "FLAVOR": "An amulet circulated among a few members of the L.G.D. who don’t take their work very seriously. Said to be able to double one’s bonuses.",
     "DESCRIPTIONS": [
       "每当你得到金币时额外获得 #b15 金币。"
     ]
@@ -154,8 +162,8 @@
     ]
   },
   "ats:Tactical Delivery": {
-    "NAME": "战术快递",
-    "FLAVOR": "闻起来有海鲜的味道。",
+    "NAME": "Crate of Explosive Building Materials",
+    "FLAVOR": "Rhodes Island’s portable basic building materials kits are limited in quantity. If lost, please reapply for redistribution. Please assemble according to the instructions.",
     "DESCRIPTIONS": [
       "在你的回合开始时获得 [E] 。 #y最大技力值 减少 #b20"
     ]
@@ -178,8 +186,8 @@
     ]
   },
   "ats:Omniscience": {
-    "NAME": "干明可鉴",
-    "FLAVOR": " 注意 : 非常热 ",
+    "NAME": "“Self-Defense Handbook”",
+    "FLAVOR": "Its complete title is, “Handbook of Self-Defense When Traveling to the City-States of Other Countries Surrounding Laterano and the Zones Between Them.” You can read it, but you can’t learn anything from it.",
     "DESCRIPTIONS": [
       "在每场战斗开始时获得25%额外生命值。"
     ]

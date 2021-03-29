@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
@@ -72,8 +73,7 @@ public class AmbushPower extends AbstractPower implements CloneablePowerInterfac
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damage) {
         if(this.canUse && info.type == DamageType.NORMAL && damage > 0) {
-            Random rand = new Random();
-            int r = rand.nextInt(100);
+            int r = AbstractDungeon.cardRandomRng.random.nextInt(100);
             System.out.println("###RANDOM: " + r);
             if (r < this.amount) {
                 System.out.println("###RANDOM: SUCCESS");

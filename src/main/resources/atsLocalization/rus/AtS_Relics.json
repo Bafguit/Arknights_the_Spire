@@ -24,32 +24,32 @@
     ]
   },
   "ats:Rhine Circuitry": {
-    "NAME": "Схема Рейна",
-    "FLAVOR": "\"Не передавайте или не читайте руководство Ифриту.\"",
+    "NAME": "Originium Zone Generator",
+    "FLAVOR": "Originium crystals are planted in advance to ensure that the Caster team can complete their mission. This form of combat...",
     "DESCRIPTIONS": [
-      "Даёт #b",
-      " #yОТ каждый раз, когда вы разыгрываете #b6 карт."
+      "Whenever you play a card, apply #b",
+      " #yBurn to ALL enemies."
     ]
   },
   "ats:Military Tradition": {
-    "NAME": "Воинские традиции",
-    "FLAVOR": "Я считаю, что Виктории следует рядиться в классические платья.",
+    "NAME": "Transporter-Type Meebo",
+    "FLAVOR": "The “Great Meebo Monument” is covered with the codenames of its compatriots, but it knows no joy or sorrow. It simply wants to work.",
     "DESCRIPTIONS": [
       "Даёт #b", 
       " #yОТ в начале боя."
     ]
   },
   "ats:Ability Aura": {
-    "NAME": "Способности ауры",
-    "FLAVOR": "\"ЭПОХА ХЭЙСЕЙ-\"",
+    "NAME": "Braintet",
+    "FLAVOR": "A new type of energy draught developed by Parasol Pharmaceuticals. It’s sugar free, has a minty taste, and has no side effects.",
     "DESCRIPTIONS": [
       "Даёт #b",
       " #yОТ в начале вашего хода."
     ]
   },
   "ats:Omniscience": {
-    "NAME": "Всеведение",
-    "FLAVOR": "ОСТОРОЖНО: Очень горячо",
+    "NAME": "“Self-Defense Handbook”",
+    "FLAVOR": "Its complete title is, “Handbook of Self-Defense When Traveling to the City-States of Other Countries Surrounding Laterano and the Zones Between Them.” You can read it, but you can’t learn anything from it.",
     "DESCRIPTIONS": [
       "В каждом бою даёт #b25% #yВременных #yОЗ от ваших максимальных ОЗ."
     ]
@@ -69,82 +69,90 @@
     ]
   },
   "ats:Berate": {
-    "NAME": "Совет",
-    "FLAVOR": "\"Чен, не используй эту штуку\"",
+    "NAME": "Captain Morgan’s Wine",
+    "FLAVOR": "A wine produced in the Iberian region. Despite having gained popularity in the heart of Victoria’s bustling cities, it is now discontinued.",
     "DESCRIPTIONS": [
       "Даёт #b",
-      " #yОТ когда вы разыгрываете #b4 #yАтаки."
+      " #yОТ когда вы разыгрываете #yАтаки."
     ]
   },
   "ats:Industrial Water Cannon": {
-    "NAME": "Индустриальная водяная пушка",
-    "FLAVOR": "\"Шеф... Этоэтоэто жаренопузырьчатоогромношумящиее . Можешьпожалуйстаостановтьменя! Ааааааа! Многопоточнонапордробительное! Свамивсёвпорядке, Шеф?\"",
+    "NAME": "Superelastic Alloy Spring",
+    "FLAVOR": "High-quality springs with several times the elasticity of normal springs. Regardless of how you use them, be careful not to hurt yourself.",
     "DESCRIPTIONS": [
-      "Когда вы тратите #yОТ #b3 раза, вы берёте карту."
+      "Когда вы тратите #yОТ , вы берёте карту."
     ]
   },
   "ats:Bonebreaker": {
-    "NAME": "Крушитель черепов",
-    "FLAVOR": "Она ходит по стене, как будто это нечто привычное.",
+    "NAME": "Corroded Silver Lance",
+    "FLAVOR": "A lance that can pierce mountains and lakes, accompanied by the trampling of hooves that can disperse gathered clouds. Fireworks and advertisements have dulled everyone’s memories, but they are still out there.",
     "DESCRIPTIONS": [
       "Каждая #yАтака будет иметь #b",
       " минимального урона."
     ]
   },
   "ats:Arts": {
-    "NAME": "Искусство",
-    "FLAVOR": "Вероятно с этим надо что-то делать.",
+    "NAME": "Sabotage Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yЗаклинателя"
+      "Upon pickup, choose and add #b3 #yCaster cards to your deck.",
+      "Caster Card"
     ]
   },
   "ats:Assault": {
-    "NAME": "Штурм",
-    "FLAVOR": "\"ВПЕРЁЁД-!\"",
+    "NAME": "Assault Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yАвангарда"
+      "Upon pickup, choose and add #b3 #yVanguard cards to your deck.",
+      "Vanguard Card"
     ]
   },
   "ats:Attack": {
-    "NAME": "Атака",
-    "FLAVOR": "Лучшая защита, это нападение.",
+    "NAME": "Assault Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yСтража"
+      "Upon pickup, choose and add #b3 #yGuard cards to your deck.",
+      "Guard Card"
     ]
   },
   "ats:Defend": {
-    "NAME": "Оборона",
-    "FLAVOR": "Иногда защита лучше чем нападение.",
+    "NAME": "Fortification Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yЗащитника"
+      "Upon pickup, choose and add #b3 #yDefender cards to your deck.",
+      "Defender Card"
     ]
   },
   "ats:Cure": {
-    "NAME": "Лечение",
-    "FLAVOR": "\"Пожалуйста, подойдите.\"",
+    "NAME": "Ranged Co-op Expansion",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yМедика."
+      "Upon pickup, choose and add #b3 #yMedic cards to your deck.",
+      "Medic Card"
     ]
   },
   "ats:Snipe": {
-    "NAME": "Снайперская позиция",
-    "FLAVOR": "Лучше избавить себя от проблем заранее.",
+    "NAME": "Ranged Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yСнайпера."
+      "Upon pickup, choose and add #b3 #ySniper cards to your deck.",
+      "Sniper Card"
     ]
   },
   "ats:Special": {
-    "NAME": "Особые меры",
-    "FLAVOR": "Когда два специалиста собираются в одном месте, это место становится слишком тесно для них двоих.",
+    "NAME": "Sabotage Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yСпециалиста."
+      "Upon pickup, choose and add #b3 #ySpecialist cards to your deck.",
+      "Specialist Card"
     ]
   },
   "ats:Support": {
-    "NAME": "Поддержка",
-    "FLAVOR": "\"Мистер Блад, это комната поддержки.\"",
+    "NAME": "Fortification Co-op Reinforcements",
+    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
     "DESCRIPTIONS": [
-      "Даёт #b1 #yОТ, когда вы разыгрываете карту #yПоддержки."
+      "Upon pickup, choose and add #b3 #ySupporter cards to your deck.",
+      "Supporter Card"
     ]
   },
   "ats:Hidden Killer": {
@@ -155,8 +163,8 @@
     ]
   },
   "ats:Gyao": {
-    "NAME": "\"Гяо\" Кольцо",
-    "FLAVOR": "Это второй по популярности предмет, после фото человека, который восхваляют как денежное божество.",
+    "NAME": "\"Roar\" Pendant",
+    "FLAVOR": "An amulet circulated among a few members of the L.G.D. who don’t take their work very seriously. Said to be able to double one’s bonuses.",
     "DESCRIPTIONS": [
       "Даёт #b15 дополнительного золота, когда вы получаете золото."
     ]
@@ -169,8 +177,8 @@
     ]
   },
   "ats:Tactical Delivery": {
-    "NAME": "Тактическая доставка",
-    "FLAVOR": "Это пахнет как Бибим соус из морепродуктов.",
+    "NAME": "Crate of Explosive Building Materials",
+    "FLAVOR": "Rhodes Island’s portable basic building materials kits are limited in quantity. If lost, please reapply for redistribution. Please assemble according to the instructions.",
     "DESCRIPTIONS": [
       "Даёт [E] в начале вашего хода. Снижает #yМаксимальный #yлимит #yОТ (50) на #b20."
     ]

@@ -16,13 +16,13 @@ public class AbilityAura extends CustomRelic {
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + 2 + DESCRIPTIONS[1]; // DESCRIPTIONS pulls from your localization file
+        return DESCRIPTIONS[0] + 3 + DESCRIPTIONS[1]; // DESCRIPTIONS pulls from your localization file
     }
 
     @Override
     public void atTurnStart() {
         flash();
-        SPHandler.addSp(2);
+        SPHandler.addSp(3);
     }
 
     @Override
