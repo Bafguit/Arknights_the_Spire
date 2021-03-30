@@ -293,7 +293,7 @@
   },
   "ats:Collapsing Strike": {
     "NAME": "Collapsing Strike",
-    "DESCRIPTION": "Discard !M! card. Deal !D! damage. ats:SP !S! ats:Manual",
+    "DESCRIPTION": "Discard !M! card. Deal !D! damage. NL ats:SP !S! ats:Manual",
     "EXTENDED_DESCRIPTION": [
       "Steam Pump",
       "ats:SP !S! ats:Manual NL Discard !M! card. Gain !B! block."

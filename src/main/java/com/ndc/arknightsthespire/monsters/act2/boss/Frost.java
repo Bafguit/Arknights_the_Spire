@@ -251,7 +251,7 @@ public class Frost extends CustomMonster {
             }
 
 
-            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)5, Intent.UNKNOWN));
+            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)4, Intent.UNKNOWN));
 
             this.addToBot(new PlayAnimationAction(this, "Skill_2", true, "FROST_R1"));
             this.addToBot(new WaitAnimAction(this, 6.0F));

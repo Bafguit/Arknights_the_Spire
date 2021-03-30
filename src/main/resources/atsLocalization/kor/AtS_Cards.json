@@ -294,7 +294,7 @@
   },
   "ats:Collapsing Strike": {
     "NAME": "붕권식",
-    "DESCRIPTION": "카드를 !M! 장 버립니다. 피해를 !D! 줍니다. ats:SP !S! ats:수동",
+    "DESCRIPTION": "카드를 !M! 장 버립니다. 피해를 !D! 줍니다. NL ats:SP !S! ats:수동",
     "EXTENDED_DESCRIPTION": [
       "스팀 펌프",
       "ats:SP !S! ats:수동 NL 카드를 !M! 장 버립니다. 방어도를 !B! 얻습니다."

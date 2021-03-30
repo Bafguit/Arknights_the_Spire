@@ -7,14 +7,6 @@
       " ОЗ в конце вашего хода."
     ]
   },
-  "ats:Blood Sample Collection": {
-    "NAME": "Коллекция проб крови",
-    "FLAVOR": "\"Ей понравится, если я принесу это мистеру Бладу, верно?\"",
-    "DESCRIPTIONS": [
-      "",
-      ""
-    ]
-  },
   "ats:Spiritual Recovery": {
     "NAME": "Духовное восстановление",
     "FLAVOR": "Это содержит небольшое количество экстракта горчицы...",
@@ -24,32 +16,32 @@
     ]
   },
   "ats:Rhine Circuitry": {
-    "NAME": "Originium Zone Generator",
-    "FLAVOR": "Originium crystals are planted in advance to ensure that the Caster team can complete their mission. This form of combat...",
+    "NAME": "Зона генерации Оргиниума",
+    "FLAVOR": "Кристаллы оргиниума размещаются заранее, что бы команда заклинателей могла выполнить свою миссию. Этот метод боя...",
     "DESCRIPTIONS": [
-      "Whenever you play a card, apply #b",
-      " #yBurn to ALL enemies."
+      "Каждый раз, когда вы разыгрываете карту, накладывает #b",
+      " #yГорения на ВСЕХ врагов."
     ]
   },
   "ats:Military Tradition": {
-    "NAME": "Transporter-Type Meebo",
-    "FLAVOR": "The “Great Meebo Monument” is covered with the codenames of its compatriots, but it knows no joy or sorrow. It simply wants to work.",
+    "NAME": "Транспортёр-передатчик Мибо",
+    "FLAVOR": " “Великий монумент Мибо” покрыт кодовыми именами своих соотечественников, но ему не ведомы ни радость ни печаль. Он просто работает.",
     "DESCRIPTIONS": [
       "Даёт #b", 
       " #yОТ в начале боя."
     ]
   },
   "ats:Ability Aura": {
-    "NAME": "Braintet",
-    "FLAVOR": "A new type of energy draught developed by Parasol Pharmaceuticals. It’s sugar free, has a minty taste, and has no side effects.",
+    "NAME": "Мозговитс",
+    "FLAVOR": "Новый способ пополнения энергии, разработанный Parasol Pharmaceuticals. Без сахара, имеет мятный вкус и не имеет побочных эффектов.",
     "DESCRIPTIONS": [
       "Даёт #b",
       " #yОТ в начале вашего хода."
     ]
   },
   "ats:Omniscience": {
-    "NAME": "“Self-Defense Handbook”",
-    "FLAVOR": "Its complete title is, “Handbook of Self-Defense When Traveling to the City-States of Other Countries Surrounding Laterano and the Zones Between Them.” You can read it, but you can’t learn anything from it.",
+    "NAME": "Справочник по самообороне",
+    "FLAVOR": "Его полное название “Справочник по самообороне при поездках в города-государства других стран, окружающих Латерано и зоны между ним” Вы можете прочесть это, но не усвоить для себя чего-то нового.",
     "DESCRIPTIONS": [
       "В каждом бою даёт #b25% #yВременных #yОЗ от ваших максимальных ОЗ."
     ]
@@ -69,90 +61,90 @@
     ]
   },
   "ats:Berate": {
-    "NAME": "Captain Morgan’s Wine",
-    "FLAVOR": "A wine produced in the Iberian region. Despite having gained popularity in the heart of Victoria’s bustling cities, it is now discontinued.",
+    "NAME": "Вино капитана Моргана",
+    "FLAVOR": "Вино, произведенное в Иберийском регионе. Несмотря на то, что оно приобрело популярность в самом центре оживленных городов Виктории, сейчас его производство прекращено.",
     "DESCRIPTIONS": [
       "Даёт #b",
-      " #yОТ когда вы разыгрываете #yАтаки."
+      " #yОТ когда вы разыгрываете #b4 #yАтаки."
     ]
   },
   "ats:Industrial Water Cannon": {
-    "NAME": "Superelastic Alloy Spring",
-    "FLAVOR": "High-quality springs with several times the elasticity of normal springs. Regardless of how you use them, be careful not to hurt yourself.",
+    "NAME": "Пружина из сверхупругого сплава",
+    "FLAVOR": "Высококачественные пружины, эластичность которых в несколько раз выше, чем у обычных пружин. Независимо от того, как вы их используете, будьте осторожны, чтобы не пораниться.",
     "DESCRIPTIONS": [
-      "Когда вы тратите #yОТ , вы берёте карту."
+      "Когда вы тратите #yОТ #b3 раза, вы берёте карту."
     ]
   },
   "ats:Bonebreaker": {
-    "NAME": "Corroded Silver Lance",
-    "FLAVOR": "A lance that can pierce mountains and lakes, accompanied by the trampling of hooves that can disperse gathered clouds. Fireworks and advertisements have dulled everyone’s memories, but they are still out there.",
+    "NAME": "Ржавое серебряное копье",
+    "FLAVOR": "Копье, которое может пронзать горы и озера, которое под аккомпанемент копыт, разгоняет сгустившиеся тучи. Ныне вездесущяя реклама и яркие фейерверки притупили воспоминания, которые всё ещё остаются.",
     "DESCRIPTIONS": [
       "Каждая #yАтака будет иметь #b",
       " минимального урона."
     ]
   },
   "ats:Arts": {
-    "NAME": "Sabotage Co-op Expansion",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Расширение: объединение Заклинателей",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #yCaster cards to your deck.",
-      "Caster Card"
+      "При получении, выберите и добавьте #b3 карты #yЗаклинателя в колоду.",
+      "Карта Заклинателя"
     ]
   },
   "ats:Assault": {
-    "NAME": "Assault Co-op Expansion",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Расширение:  объединение Авангарда",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #yVanguard cards to your deck.",
-      "Vanguard Card"
+      "При получении, выберите и добавьте #b3 карты #yАвангарда в колоду.",
+      "Карта Авангарда"
     ]
   },
   "ats:Attack": {
-    "NAME": "Assault Co-op Reinforcements",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Подкрепление:  объединение Стражей",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #yGuard cards to your deck.",
-      "Guard Card"
+      "При получении, выберите и добавьте #b3 карты #yСтража в колоду.",
+      "Карта Стража"
     ]
   },
   "ats:Defend": {
-    "NAME": "Fortification Co-op Expansion",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Укрепление:  объединение Защитников",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #yDefender cards to your deck.",
-      "Defender Card"
+      "При получении, выберите и добавьте #b3 карты #yЗащитника в колоду.",
+      "Карта Защитника"
     ]
   },
   "ats:Cure": {
-    "NAME": "Ranged Co-op Expansion",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Поддержка: объединение Медиков",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #yMedic cards to your deck.",
-      "Medic Card"
+      "При получении, выберите и добавьте #b3 карты #yМедика в колоду.",
+      "Карта Медика"
     ]
   },
   "ats:Snipe": {
-    "NAME": "Ranged Co-op Reinforcements",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Подкрепление: объединение Снайперов",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #ySniper cards to your deck.",
-      "Sniper Card"
+      "При получении, выберите и добавьте #b3 карты #yСнайпера в колоду.",
+      "Карта Снайпера"
     ]
   },
   "ats:Special": {
-    "NAME": "Sabotage Co-op Reinforcements",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Подкрепление: объединение Специалистов",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #ySpecialist cards to your deck.",
-      "Specialist Card"
+      "При получении, выберите и добавьте #b3 карты #yСпециалиста в колоду.",
+      "Карта Специалиста"
     ]
   },
   "ats:Support": {
-    "NAME": "Fortification Co-op Reinforcements",
-    "FLAVOR": "It is difficult to gain the upper hand in frontline combat with only a single squad of Operators. Supplementing combat capabilities through Co-ops is an effective solution.",
+    "NAME": "Укрепление: объединение Поддержки",
+    "FLAVOR": "Трудно одержать победу в боях на передовой, имея только один отряд операторов. Дополнение боевых возможностей при помощи объединения - эффективное решение.",
     "DESCRIPTIONS": [
-      "Upon pickup, choose and add #b3 #ySupporter cards to your deck.",
-      "Supporter Card"
+      "При получении, выберите и добавьте #b3 карты #yПоддержки в колоду.",
+      "Карта Поддержки"
     ]
   },
   "ats:Hidden Killer": {
@@ -163,22 +155,22 @@
     ]
   },
   "ats:Gyao": {
-    "NAME": "\"Roar\" Pendant",
-    "FLAVOR": "An amulet circulated among a few members of the L.G.D. who don’t take their work very seriously. Said to be able to double one’s bonuses.",
+    "NAME": "\"Рёв\" Амулет",
+    "FLAVOR": "Амулет распространялся среди нескольких членов L.G.D. которые не очень серьезно относятся к своей работе. Говорят, что может удвоить бонусы.",
     "DESCRIPTIONS": [
       "Даёт #b15 дополнительного золота, когда вы получаете золото."
     ]
   },
   "ats:Originium": {
     "NAME": "Оргиниумная зависимость",
-    "FLAVOR": "Поговаривают, что ближние разыскивают чистый Оргиниум.",
+    "FLAVOR": "Говорят, что ближние разыскивают утерянный чистый Оргиниум.",
     "DESCRIPTIONS": [
       "Повышает #yМаксимум #yОТ на #b10."
     ]
   },
   "ats:Tactical Delivery": {
-    "NAME": "Crate of Explosive Building Materials",
-    "FLAVOR": "Rhodes Island’s portable basic building materials kits are limited in quantity. If lost, please reapply for redistribution. Please assemble according to the instructions.",
+    "NAME": "Ящик со взрывоопасными строительными материалами",
+    "FLAVOR": "Количество переносных комплектов основных строительных материалов на острове Родос ограничено. В случае утери, пожалуйста, повторно подайте заявку на выдачу. Пожалуйста, выполняйте сборку соответственно инструкции.",
     "DESCRIPTIONS": [
       "Даёт [E] в начале вашего хода. Снижает #yМаксимальный #yлимит #yОТ (50) на #b20."
     ]
@@ -211,7 +203,7 @@
     "NAME": "Король червей+",
     "FLAVOR": "\"Нужно просто всех убить, так? Звучит просто? Но это та ещё заноза в мягком месте...\"",
     "DESCRIPTIONS": [
-      "#yОглушает ВСЕХ врагов в начале боя."
+      "Заменяет #yКороль #yчервей. #yОглушает ВСЕХ врагов в начале боя."
     ]
   },
   "ats:NULL": {
