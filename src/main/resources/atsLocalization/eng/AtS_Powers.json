@@ -178,8 +178,8 @@
   "ats:Evade": {
     "NAME": "Evade",
     "DESCRIPTIONS": [
-      "Damage from attack will be reduced to #b0 with #b",
-      "% chance. When evaded, gain #b",
+      "When owner has damaged #b",
+      " times, block next damage and gain #b",
       " #yStrength for this turn."
     ]
   },

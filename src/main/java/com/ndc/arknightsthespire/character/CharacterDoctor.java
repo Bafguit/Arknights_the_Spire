@@ -33,6 +33,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.PlayAnimationAction;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
+import com.ndc.arknightsthespire.cards.caster.EmotionAbs;
 import com.ndc.arknightsthespire.interfaces.OnGainEnergyPower;
 
 import java.util.ArrayList;
@@ -139,7 +140,7 @@ public class CharacterDoctor extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Bash();
+        return new EmotionAbs();
     }
 
     @Override

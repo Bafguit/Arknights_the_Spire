@@ -206,6 +206,22 @@
       "在每场战斗开始时, #y击晕 所有敌人."
     ]
   },
+  "ats:Crimson": {
+    "NAME": "赤霄",
+    "FLAVOR": "\"全体人员，做好战斗准备。\n\"",
+    "DESCRIPTIONS": [
+      "Your first Attack each combat deals #b",
+      " additional damage."
+    ]
+  },
+  "ats:Crimson Plus": {
+    "NAME": "赤霄+",
+    "FLAVOR": "\"准备好了吗？那么，一切按照计划进行。\n\"",
+    "DESCRIPTIONS": [
+      "Your first Attack each turn deals #b",
+      " additional damage."
+    ]
+  },
   "ats:NULL": {
     "NAME": "",
     "FLAVOR": "",

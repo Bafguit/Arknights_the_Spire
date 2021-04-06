@@ -29,15 +29,16 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.ndc.arknightsthespire.CardColors;
+import com.ndc.arknightsthespire.actions.AtsSound;
 import com.ndc.arknightsthespire.cards.caster.EmotionAbs;
-import com.ndc.arknightsthespire.cards.sniper.ArmCrushShot;
+import com.ndc.arknightsthespire.relics.Crimson;
 import com.ndc.arknightsthespire.relics.HeartsK;
 
 import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 
-public class CharacterW extends CustomPlayer {
+public class CharacterChen extends CustomPlayer {
 
     @Override
     public void renderPlayerImage(SpriteBatch sb) {
@@ -56,17 +57,18 @@ public class CharacterW extends CustomPlayer {
     private static final CharacterStrings characterStrings;
     private static final String[] NAMES;
     private static final String[] TEXT;
+    private AtsSound sound = new AtsSound();
 
-    public static final String MY_CHARACTER_SHOULDER_2 = "atsImg/char/shoulder_w.png"; // campfire pose
-    public static final String MY_CHARACTER_SHOULDER_1 = "atsImg/char/shoulder_w.png"; // another campfire pose
-    public static final String MY_CHARACTER_CORPSE = "atsImg/char/corpse_w.png"; // dead corpse
-    public static final String MY_CHARACTER_SKELETON_ATLAS = "atsImg/char/w/enemy_1504_cqbw.atlas"; // spine animation atlas
-    public static final String MY_CHARACTER_SKELETON_JSON = "atsImg/char/w/enemy_1504_cqbw.json"; // spine animation json
+    public static final String MY_CHARACTER_SHOULDER_2 = "atsImg/char/shoulder_chen.png"; // campfire pose
+    public static final String MY_CHARACTER_SHOULDER_1 = "atsImg/char/shoulder_chen.png"; // another campfire pose
+    public static final String MY_CHARACTER_CORPSE = "atsImg/char/corpse_chen.png"; // dead corpse
+    public static final String MY_CHARACTER_SKELETON_ATLAS = "atsImg/char/Chen/char_010_chen.atlas"; // spine animation atlas
+    public static final String MY_CHARACTER_SKELETON_JSON = "atsImg/char/Chen/char_010_chen.json"; // spine animation json
     public static final String[] orbTextures = {
             "atsImg/char/orb/layer.png"};
 
     static {
-        characterStrings = CardCrawlGame.languagePack.getCharacterString("ats:W");
+        characterStrings = CardCrawlGame.languagePack.getCharacterString("ats:Chen");
         NAMES = characterStrings.NAMES;
         TEXT = characterStrings.TEXT;
     }
@@ -75,8 +77,8 @@ public class CharacterW extends CustomPlayer {
     public static int defaultRes = 0;
     public static int defaultAtk = 6;
 
-    public CharacterW(String name) {
-        super(name, AtsEnum.W_CLASS, orbTextures, "atsImg/char/orb/vfx.png", new SpineAnimation(
+    public CharacterChen(String name) {
+        super(name, AtsEnum.CHEN_CLASS, orbTextures, "atsImg/char/orb/vfx.png", new SpineAnimation(
                 MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.5F));
         this.loadAnimation(MY_CHARACTER_SKELETON_ATLAS, MY_CHARACTER_SKELETON_JSON, 1.5F);
         AnimationState.TrackEntry e = state.setAnimation(0, "Idle", true);
@@ -109,8 +111,8 @@ public class CharacterW extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() { // starting relics - also simple
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(HeartsK.ID);
-        UnlockTracker.markRelicAsSeen(HeartsK.ID);
+        retVal.add(Crimson.ID);
+        UnlockTracker.markRelicAsSeen(Crimson.ID);
         return retVal;
     }
 
@@ -159,7 +161,7 @@ public class CharacterW extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_HEAVY", MathUtils.random(-0.2F, 0.2F));
+        sound.play("BADAO");
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
 
@@ -175,25 +177,34 @@ public class CharacterW extends CustomPlayer {
 
     @Override
     public AbstractPlayer newInstance() {
-        return new CharacterW(this.name);
+        return new CharacterChen(this.name);
     }
 
     @Override
     public void damage(DamageInfo info)
     {
         if (info.owner instanceof AbstractMonster && info.type != DamageInfo.DamageType.THORNS && info.output > currentBlock) {
-            System.out.println("Ouch!");
-            AnimationState.TrackEntry e = state.setAnimation(0, "Die_2", false);
+            AnimationState.TrackEntry e = state.setAnimation(0, "Die", false);
             state.addAnimation(0,"Idle", true, 0.0f);
             e.setTimeScale(1f);
         }
         super.damage(info);
     }
 
+    public void setAnimation(String key, boolean loop) {
+        AnimationState.TrackEntry e = state.setAnimation(0, key, loop);
+        e.setTimeScale(1f);
+    }
+
+    public void addAnimation(String key, boolean loop, float delay) {
+        state.addAnimation(0,key, loop, delay);
+    }
+
     @Override
     public void useCard(AbstractCard c, AbstractMonster monster, int energyOnUse) {
         if (c.type == AbstractCard.CardType.ATTACK) {
             AnimationState.TrackEntry e = state.setAnimation(0, "Attack", false);
+            state.addAnimation(0,"Attack_End", false, 0.0f);
             state.addAnimation(0,"Idle", true, 0.0f);
             e.setTimeScale(1f);
         }

@@ -98,7 +98,7 @@ public class Faust extends CustomMonster {
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.attackDamage = 20;
         } else {
-            this.attackDamage = 15;
+            this.attackDamage = 18;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));

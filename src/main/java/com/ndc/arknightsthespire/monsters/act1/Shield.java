@@ -75,7 +75,7 @@ public class Shield extends CustomMonster {
             this.atk = 4;
         } else {
             this.def = 4;
-            this.atk = 2;
+            this.atk = 3;
         }
 
         if (AbstractDungeon.ascensionLevel >= 7) {
@@ -103,11 +103,10 @@ public class Shield extends CustomMonster {
             case 3:
                 this.addToBot(new PlayAnimationAction(this, "Attack"));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_HEAVY));
-                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, -this.atk)));
                 addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this.atk)));
                 break;
             case 2:
-                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.atk + 1)));
+                this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.atk)));
                 addToBot(new ApplyPowerAction(this, this, new ArmPower(this, -this.atk)));
         }
 

@@ -29,7 +29,6 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
-import com.megacrit.cardcrawl.relics.Tingsha;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import com.ndc.arknightsthespire.cards.caster.*;
@@ -42,6 +41,7 @@ import com.ndc.arknightsthespire.cards.supporter.*;
 import com.ndc.arknightsthespire.cards.specialist.*;
 import com.ndc.arknightsthespire.cards.vanguard.*;
 import com.ndc.arknightsthespire.cards.xCurse.SealedFloor;
+import com.ndc.arknightsthespire.character.CharacterChen;
 import com.ndc.arknightsthespire.character.CharacterDoctor;
 import com.ndc.arknightsthespire.character.CharacterW;
 import com.ndc.arknightsthespire.commands.SPCommandHandler;
@@ -65,8 +65,7 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import static com.ndc.arknightsthespire.CardColors.AbstractCardEnum.*;
-import static com.ndc.arknightsthespire.character.AtsEnum.DOCTOR_CLASS;
-import static com.ndc.arknightsthespire.character.AtsEnum.W_CLASS;
+import static com.ndc.arknightsthespire.character.AtsEnum.*;
 
 
 @SpireInitializer
@@ -278,15 +277,19 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
     }
 
     public void receiveEditCharacters() {
+        BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
+                "atsImg/char/CharSelectButtonDoctor.png",
+                "atsImg/char/PortraitBG.png",
+                DOCTOR_CLASS);
         System.out.println("ADDING CHARACTER");
         BaseMod.addCharacter(new CharacterW(CardCrawlGame.playerName),
                 "atsImg/char/CharSelectButtonW.png",
                 "atsImg/char/PortraitBG_w.png",
                 W_CLASS);
-        BaseMod.addCharacter(new CharacterDoctor(CardCrawlGame.playerName),
-                "atsImg/char/CharSelectButtonDoctor.png",
-                "atsImg/char/PortraitBG.png",
-                DOCTOR_CLASS);
+        BaseMod.addCharacter(new CharacterChen(CardCrawlGame.playerName),
+                "atsImg/char/CharSelectButtonChen.png",
+                "atsImg/char/PortraitBG_chen.png",
+                CHEN_CLASS);
         System.out.println("DONE");
     }
 
@@ -320,6 +323,8 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
         BaseMod.addRelicToCustomPool(new RemnantAsh(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new HeartsK(), DOCTOR_COLOR);
         BaseMod.addRelicToCustomPool(new HeartsKp(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new Crimson(), DOCTOR_COLOR);
+        BaseMod.addRelicToCustomPool(new CrimsonP(), DOCTOR_COLOR);
 
         System.out.println("DONE");
     }

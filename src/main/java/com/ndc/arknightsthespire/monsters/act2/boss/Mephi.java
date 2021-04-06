@@ -76,9 +76,9 @@ public class Mephi extends CustomMonster {
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
 
         if (AbstractDungeon.ascensionLevel >= 19) {
-            this.heal = 5;
+            this.heal = 15;
         } else {
-            this.heal = 4;
+            this.heal = 10;
         }
 
         if (AbstractDungeon.ascensionLevel >= 9) {
@@ -88,9 +88,9 @@ public class Mephi extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 15;
+            this.attackDamage = 18;
         } else {
-            this.attackDamage = 13;
+            this.attackDamage = 15;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));

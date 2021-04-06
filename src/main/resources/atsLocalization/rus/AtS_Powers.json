@@ -177,9 +177,9 @@
   "ats:Evade": {
     "NAME": "Уклонение",
     "DESCRIPTIONS": [
-      "Урон от атак будет снижен до #b0 с #b",
-      "% шансом. При уклонении, даёт #b",
-      " #yСилы в этот ход."
+      "When owner has damaged #b",
+      " times, block next damage and gain #b",
+      " #yStrength for this turn."
     ]
   },
   "ats:Arm": {

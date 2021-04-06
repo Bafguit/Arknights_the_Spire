@@ -3,6 +3,7 @@ package com.ndc.arknightsthespire.util;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.ndc.arknightsthespire.CardColors;
@@ -32,6 +33,12 @@ public class CardUtil {
     }
 
     public static void generateCardReward(ArrayList<AbstractCard> cards, int amount) {
+        for (int i = 0; i < AbstractDungeon.getCurrRoom().rewards.size(); i++) {
+            if (AbstractDungeon.getCurrRoom().rewards.get(i).type == RewardItem.RewardType.CARD) {
+                AbstractDungeon.getCurrRoom().rewards.remove(i);
+            }
+        }
+
         for (int i = 0; i < amount; i++) {
             RewardItem r = new RewardItem();
             int a;

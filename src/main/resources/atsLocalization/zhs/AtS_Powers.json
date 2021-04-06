@@ -171,9 +171,9 @@
   "ats:Evade": {
     "NAME": "闪避",
     "DESCRIPTIONS": [
-      "受到的每次攻击伤害将有 #b",
-      "% 的概率降为0。 每当闪避时, 在这个回合获得 #b",
-      " 点 #y力量 。"
+      "When owner has damaged #b",
+      " times, block next damage and gain #b",
+      " #yStrength for this turn."
     ]
   },
   "ats:Arm": {

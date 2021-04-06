@@ -72,15 +72,15 @@ public class SlugC extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(11, 13);
+            this.setHp(13, 16);
         } else {
-            this.setHp(10, 12);
+            this.setHp(11, 14);
         }
 
         if (AbstractDungeon.ascensionLevel >= 2) {
-            this.attackDamage = 4;
+            this.attackDamage = 7;
         } else {
-            this.attackDamage = 3;
+            this.attackDamage = 6;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage));

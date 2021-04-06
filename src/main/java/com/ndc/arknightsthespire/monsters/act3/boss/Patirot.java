@@ -82,11 +82,13 @@ public class Patirot extends CustomMonster {
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
 
         if (AbstractDungeon.ascensionLevel >= 19) {
-            this.iceCount = 5;
-            this.iceCounter = 3;
+            this.iceCount = 4;
+            this.str = 12;
+            this.iceCounter = 2;
         } else {
-            this.iceCount = 6;
-            this.iceCounter = 4;
+            this.iceCount = 5;
+            this.str = 15;
+            this.iceCounter = 3;
         }
         this.phase = 1;
         this.arm = 10;
@@ -122,7 +124,7 @@ public class Patirot extends CustomMonster {
         switch (this.nextMove) {
             case 0:
                 this.setIdle("Move_1");
-                this.addToBot(new ApplyPowerAction(this, this, new ForwardingPower(this, 15)));
+                this.addToBot(new ApplyPowerAction(this, this, new ForwardingPower(this, this.str)));
                 this.addToBot(new WaitAnimAction(this, 2.0F));
                 break;
             case -3:
@@ -277,7 +279,7 @@ public class Patirot extends CustomMonster {
         super.usePreBattleAction();
         this.addToBot(new CannotLoseAction());
         this.addToBot(new ApplyPowerAction(this, this, new ArmPower(this, this.arm), this.arm));
-        this.addToBot(new ApplyPowerAction(player, this, new MinePower(15)));
+        this.addToBot(new ApplyPowerAction(player, this, new MinePower(this.str)));
         UnlockTracker.markBossAsSeen(this.id);
         CardCrawlGame.music.unsilenceBGM();
         AbstractDungeon.scene.fadeOutAmbiance();

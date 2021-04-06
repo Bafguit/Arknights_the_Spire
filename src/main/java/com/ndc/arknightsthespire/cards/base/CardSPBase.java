@@ -333,10 +333,19 @@ public abstract class CardSPBase extends CustomCard {
     public void updateDescription() {
         if(this.shouldUseSp() && SP_DESCRIPTION != null) {
             this.rawDescription = SP_DESCRIPTION;
+            if(!this.isCostModifiedForTurn) {
+                this.costForTurn = this.spCard.cost;
+            }
         } else if(upgraded && UPGRADE_DESCRIPTION != null) {
             this.rawDescription = UPGRADE_DESCRIPTION;
+            if(!this.isCostModifiedForTurn) {
+                this.costForTurn = this.cost;
+            }
         } else {
             this.rawDescription = NORMAL_DESCRIPTION;
+            if(!this.isCostModifiedForTurn) {
+                this.costForTurn = this.cost;
+            }
         }
 
         this.initializeDescription();

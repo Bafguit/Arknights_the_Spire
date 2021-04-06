@@ -23,10 +23,10 @@ import java.util.Iterator;
 
 public class SkullCrusher extends CardSPBase {
     public static final String ID = "ats:Skull Crusher";
-    public static final String IMG_PATH = "atsImg/cards/attack_beta.png";
+    public static final String IMG_PATH = "atsImg/cards/SkullCrusher.png";
     public static final PositionType POSITION = PositionType.VANGUARD;
     private static final int COST = 2;
-    private static final int DAMAGE = 16;
+    private static final int DAMAGE = 14;
     private static final int UP_DAMAGE = 4;
     public boolean canStun = false;
 

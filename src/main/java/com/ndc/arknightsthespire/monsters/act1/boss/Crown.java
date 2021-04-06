@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.powers.BlurPower;
+import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -63,25 +64,25 @@ public class Crown extends CustomMonster {
         this.dialogY -= (this.hb_y - 55.0F) * Settings.scale;
 
         if (AbstractDungeon.ascensionLevel >= 19) {
-            this.evade = 50;
-            this.str = 3;
+            this.evade = 2;
+            this.str = 5;
         } else {
-            this.evade = 30;
-            this.str = 2;
+            this.evade = 3;
+            this.str = 3;
         }
 
         if (AbstractDungeon.ascensionLevel >= 9) {
-            this.setHp(220);
+            this.setHp(280);
         } else {
-            this.setHp(200);
+            this.setHp(250);
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.attackDamage = 9;
-            this.dmg = 7;
+            this.dmg = 8;
         } else {
             this.attackDamage = 8;
-            this.dmg = 6;
+            this.dmg = 7;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
@@ -112,15 +113,17 @@ public class Crown extends CustomMonster {
     }
 
     protected void getMove(int num) {
-        if(this.lastMove((byte) 3)) {
+        if(this.hasPower(BufferPower.POWER_ID)) {
+            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
+        } else if(this.lastMove((byte) 3)) {
             this.setMove((byte) 4, Intent.DEBUFF);
         } else if(this.lastMove((byte) 2)) {
-            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
         } else if(this.lastMove((byte) 1) || this.lastMove((byte) 4)){
             this.setMove((byte)2, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
         } else {
             this.setMove((byte)1, Intent.STRONG_DEBUFF);
         }
+        this.createIntent();
     }
 
     @Override
