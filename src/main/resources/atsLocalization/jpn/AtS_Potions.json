@@ -1,36 +1,36 @@
 {
   "ats:Emergency Sanity Potion": {
-    "NAME": "응급 이성 회복제",
+    "NAME": "初級理性回復剤",
     "DESCRIPTIONS": [
-      "#ySP 를 #b",
-      " 얻습니다."
+      "#ySP #b",
+      " を得る。"
     ]
   },
   "ats:Top Emergency Sanity Potion": {
-    "NAME": "긴급 이성 회복제",
+    "NAME": "上級理性回復剤",
     "DESCRIPTIONS": [
-      "#ySP 를 #b",
-      " 얻습니다."
+      "#ySP #b",
+      " を得る。"
     ]
   },
   "ats:Burn Small Potion": {
-    "NAME": "불타는 플라스크",
+    "NAME": "燃えるフラスコ",
     "DESCRIPTIONS": [
-      "적 하나에게 #y화상 을 #b",
-      " 부여합니다."
+      "#y火傷 #b",
+      " を与える。"
     ]
   },
   "ats:Burn Big Potion": {
-    "NAME": "불타는 포션",
+    "NAME": "燃えるポーション",
     "DESCRIPTIONS": [
-      "적 하나에게 #y화상 을 #b",
-      " 부여합니다."
+      "#y火傷 #b",
+      " を与える。"
     ]
   },
   "ats:Flame Arts Potion": {
-    "NAME": "화염 아츠가 담긴 병",
+    "NAME": "炎アーツのガラスびん",
     "DESCRIPTIONS": [
-      "적 하나의 #y화상 수치를 두 배로 만듭니다."
+      "敵の #y火傷 を #b2 倍にする。"
     ]
   },
   "ats:": {
