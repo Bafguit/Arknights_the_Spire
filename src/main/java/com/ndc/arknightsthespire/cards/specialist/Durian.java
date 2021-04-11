@@ -32,16 +32,10 @@ public class Durian extends CardSPBase {
 
     @Override
     public void useCard(AbstractPlayer p, AbstractMonster m, boolean isSpJustUsed) {
-        int d = 3;
-        int dex = (p.hasPower("Dexterity") ? p.getPower("Dexterity").amount : 0);
-
-        if(dex <= 2 && dex > 0) d -= dex;
-        else if(dex <= 0) d = 3;
-        else d = 1;
 
         addToBot(new AtsSFX("DURIAN"));
         for(int forI = 0; forI < 5; forI++) {
-            addToBot(new DamageAction(p, new DamageInfo(p, d, DamageInfo.DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
+            addToBot(new DamageAction(p, new DamageInfo(p, 1, DamageInfo.DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
         }
 
         addToBot(new ApplyPowerAction(p, p, new DurianPower()));

@@ -39,9 +39,11 @@ public class CrimsonP extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        this.flash();
-        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VigorPower(AbstractDungeon.player, 3), 3));
-        this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        if(!AbstractDungeon.player.hasPower(VigorPower.POWER_ID)) {
+            this.flash();
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VigorPower(AbstractDungeon.player, 3), 3));
+            this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        }
     }
 
 

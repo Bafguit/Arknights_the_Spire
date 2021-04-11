@@ -1,0 +1,418 @@
+{
+  "ats:Emotion Absorption": {
+    "NAME": "アブソープション",
+    "DESCRIPTION": "!M! ats:SP を得る。",
+    "UPGRADE_DESCRIPTION": "!M! ats:SP を得る。 カードを 1 枚引く。"
+  },
+  "ats:Strike C": {
+    "NAME": "ストライク",
+    "DESCRIPTION": "!D! ダメージを与える。"
+  },
+  "ats:Strike G": {
+    "NAME": "ストライク",
+    "DESCRIPTION": "!D! ダメージを与える。"
+  },
+  "ats:Strike S": {
+    "NAME": "ストライク",
+    "DESCRIPTION": "!D! ダメージを与える。"
+  },
+  "ats:Strike V": {
+    "NAME": "ストライク",
+    "DESCRIPTION": "!D! ダメージを与える。"
+  },
+  "ats:Armor Crushing Shot": {
+    "NAME": "装甲砕き",
+    "DESCRIPTION": "!D! ダメージを与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL !D! ダメージを与える。 NL 弱体 !M! を与える。"
+    ]
+  },
+  "ats:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "!B! ブロック を得る。"
+  },
+  "ats:Overload": {
+    "NAME": "アサルトモード",
+    "DESCRIPTION": "!D! ダメージを 3 回与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "オーバーロード",
+      "ats:SP !S! ats:自動 NL !D! ダメージを 3 回与える。"
+    ]
+  },
+  "ats:Counter Healing Mode": {
+    "NAME": "医療態勢・受動",
+    "DESCRIPTION": "HPを回復するたびに !M! ats：SP を得る。"
+  },
+  "ats:Powerful Strike": {
+    "NAME": "強撃β",
+    "DESCRIPTION": "!D! ダメージを与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "強撃γ",
+      "ats:SP !S! ats:自動 NL !D! の 2 倍のダメージを与える。"
+    ]
+  },
+  "ats:Charging Defense": {
+    "NAME": "チャージガード",
+    "DESCRIPTION": "!B! ブロック を得る。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL 次にHPを失うとき、それを無効化する。"
+    ]
+  },
+  "ats:Shell Defense": {
+    "NAME": "シェルガード",
+    "DESCRIPTION": "!B! ブロック を得る。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL !B! ブロック を得る。 再生 2 を得る。"
+    ]
+  },
+  "ats:Magnetic Hammer": {
+    "NAME": "テスラハンマー",
+    "DESCRIPTION": "敵全体に !D! ダメージを与える。 NL !B! ブロック を得る。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL 敵全体に !D! ダメージを与える。 ターン終了時まで、敵全体が 筋力 !M! を失う。 !B! ブロック を得る。"
+    ]
+  },
+  "ats:Thorns": {
+    "NAME": "荊棘",
+    "DESCRIPTION": "敏捷性 !M! を得る。 NL トゲ !ats:R! を得る。"
+  },
+  "ats:Dogmatic Field": {
+    "NAME": "教導の結界",
+    "DESCRIPTION": "ブロックを得るとき、5 を超えただけブロックを得る代わりに、HPを回復する。",
+    "UPGRADE_DESCRIPTION": "天賦 NL ブロックを得るとき、5を超えただけブロックを得る代わりに、HPを回復する。"
+  },
+  "ats:Sunburst": {
+    "NAME": "爆炎",
+    "DESCRIPTION": "敵全体に !D! ダメージと　ats:火傷 !M! を与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL 敵全体に !D! ダメージを与える。 敵全体に ats:火傷 と 弱体 !M! を与える。"
+    ]
+  },
+  "ats:Soul Absorption": {
+    "NAME": "ソウルドレイン",
+    "DESCRIPTION": "次のアタックのブロックされなかったダメージに等しいブロックを得る。"
+  },
+  "ats:Durian": {
+    "NAME": "劇性増強剤・ドリアン",
+    "DESCRIPTION": "保留 NL このターン、アタックのダメージが 2 倍になる。 NL HPを 5 失う。 廃棄"
+  },
+  "ats:Rat Pack": {
+    "NAME": "鼠の縄張り",
+    "DESCRIPTION": "保留 NL 現在のHPの値に等しい ブロック を得る。 廃棄"
+  },
+  "ats:Assault Order": {
+    "NAME": "突撃指令",
+    "DESCRIPTION": "(基本効果がない。) NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL [E] [E] を得る。"
+    ]
+  },
+  "ats:Support Order": {
+    "NAME": "支援指令",
+    "DESCRIPTION": "(基本効果がない。) NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL ターン開始時、 [E] を得る。 この効果は !M! ターン続く。"
+    ]
+  },
+  "ats:True Silver Slash": {
+    "NAME": "真銀斬",
+    "DESCRIPTION": "敵全体に !D! ダメージを 3 回与える。 ターン終了時まで、カードから ブロック を得ることができない。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL デッキの ats:前衛 カード 1 あたり敵全体に !D! ダメージを与える。 ターン終了時まで、カードから ブロック を得ることができない。 廃棄"
+    ]
+  },
+  "ats:Volcano": {
+    "NAME": "イラプション",
+    "DESCRIPTION": "敵全体に ats:火傷 !M! を与える。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL デッキの ats:術師 カード 1 あたり敵全体に ats:火傷 !M! を与える。 廃棄"
+    ]
+  },
+  "ats:Nebulous Foxfire": {
+    "NAME": "渺然たる狐火",
+    "DESCRIPTION": "敵全体に 弱体 と 脱力 !M! を与える。 再生 !M! を得る。"
+  },
+  "ats:Cat Scratch": {
+    "NAME": "ひっかき！",
+    "DESCRIPTION": "!D! ダメージを与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL !D! ダメージを与える。 脱力 !M! を与える。"
+    ]
+  },
+  "ats:Red Shift": {
+    "NAME": "レッドシフト",
+    "DESCRIPTION": "ランダムな敵に !D! ダメージを 4 回与える。"
+  },
+  "ats:Shadow Assault": {
+    "NAME": "赤霄・抜刀",
+    "DESCRIPTION": "敵全体に !D! ダメージを 2 回与える。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "赤霄・絶影",
+      "ats:SP !S! ats:手動 NL ランダムな敵に !D! ダメージを 10 回与える。 最後ダメージを受けた敵は気絶する。"
+    ]
+  },
+  "ats:Blood Oath": {
+    "NAME": "血化粧",
+    "DESCRIPTION": "!D! ダメージを与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL !D! ダメージを与える。 HPを !M! 回復する。"
+    ]
+  },
+  "ats:Consecutive Shot Auto": {
+    "NAME": "2点・バースト",
+    "DESCRIPTION": "!D! ダメージを 2 回与える。"
+  },
+  "ats:Explosion Area Strengthen": {
+    "NAME": "爆破範囲拡大",
+    "DESCRIPTION": "敵全体に !D! ダメージを与える。"
+  },
+  "ats:Thermite Blade": {
+    "NAME": "テルミットレイピア",
+    "DESCRIPTION": "!D! ダメージを与える。 NL 50％の確率で ブロック を無視します。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL 敵の ブロック をすべて取り除く。 !D! ダメージを与える。"
+    ]
+  },
+  "ats:Mental Burst": {
+    "NAME": "ソウルブースト",
+    "DESCRIPTION": "ランダムな敵に !D! ダメージを !M! 回与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL ランダムな敵に !D! ダメージと ats:火傷 1 を !M! 回与える。"
+    ]
+  },
+  "ats:Revitalization": {
+    "NAME": "回復力促進",
+    "DESCRIPTION": "HPを !M! 回復する。 再生 !M! を得る。"
+  },
+  "ats:Spore Proliferation": {
+    "NAME": "胞子飛散",
+    "DESCRIPTION": "敵にかかっているランダムな ats:バフ を取り除く。 脱力 !M! を与える。"
+  },
+  "ats:Encircling Forest": {
+    "NAME": "森廻",
+    "DESCRIPTION": "ats:加護 !M! を得る。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL ats:加護 !M! を得る。 効果が倍増する。"
+    ]
+  },
+  "ats:Soul Rend": {
+    "NAME": "烈魂",
+    "DESCRIPTION": "ats:前衛 カードでダメージを与えるたび、 HPを !M! 回復する。"
+  },
+  "ats:Chain Hook": {
+    "NAME": "ワイヤーシックル",
+    "DESCRIPTION": "!D! ダメージを与える。 カードを 1 枚引く。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL !D! ダメージを与える。 カードを 2 枚引く。"
+    ]
+  },
+  "ats:Hook Shot": {
+    "NAME": "鉤縄投擲",
+    "DESCRIPTION": "!B! ブロック を得る。 NL カードを 1 枚引く。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL !B! ブロック を得る。 カードを 2 枚引く。"
+    ]
+  },
+  "ats:Fractured Body": {
+    "NAME": "肉斬骨断",
+    "DESCRIPTION": "保留 NL HPが 1 以下に下がらない。 アタックのダメージが 2 倍になる。 効果終了時HPが 1 になる。 廃棄 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL 保留 NL HPが 1 以下に下がらない。 アタックのダメージが 2 倍になる。 効果終了時HPが 1 になる。 この効果は 2 ターン続く。 廃棄"
+    ]
+  },
+  "ats:Flexible Camouflage": {
+    "NAME": "コンシールメント",
+    "DESCRIPTION": "筋力 !M! を得る。 このターン終了時に 筋力 !M! を失う。"
+  },
+  "ats:Poison Spread": {
+    "NAME": "毒液装填",
+    "DESCRIPTION": "!D! ダメージを与える。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL !D! ダメージを与える。 毒 !M! を与える。"
+    ]
+  },
+  "ats:Curse Doll": {
+    "NAME": "呪いの人形",
+    "DESCRIPTION": "脱力 1 を与える。 弱体 !M! を与える。"
+  },
+  "ats:Shadow Raid": {
+    "NAME": "スニークガード",
+    "DESCRIPTION": "保留 NL 敏捷性 !M! を得る。 次のターン起動時に 敏捷性 !M! を失う。 廃棄"
+  },
+  "ats:Wolf Pack": {
+    "NAME": "郡狼",
+    "DESCRIPTION": "保留 NL 敵全体を気絶させて !D! ダメージを与える。 廃棄"
+  },
+  "ats:Disruption Kick": {
+    "NAME": "七武掠陣脚",
+    "DESCRIPTION": "保留 NL 敵全体のすべての ats:バフ とデバフを取り除くし !D! ダメージを与える。 廃棄"
+  },
+  "ats:Automatic Cover": {
+    "NAME": "オートカバー",
+    "DESCRIPTION": "!B! ブロック を得る。 敏捷性 !M! を得る。 次のターン起動時に 敏捷性 !M! を失う。"
+  },
+  "ats:Very Hot Blade": {
+    "NAME": "「あついないふ」",
+    "DESCRIPTION": "!D! ダメージを 3 回与える。 カードを 1 枚引く。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL ダメージを 3 回与える。 敵が ats:火傷 を受けている場合は NL 敵はHPを ats:火傷 だけ失う, [E] を得る。 NL カードを 1 枚引く。"
+    ]
+  },
+  "ats:Composite Medical Shells": {
+    "NAME": "特製薬刃弾",
+    "DESCRIPTION": "HPを回復するたびに 敵全体にそれだけダメージを与えます。（ 最大 !M! ）"
+  },
+  "ats:Neurotoxin": {
+    "NAME": "神経毒",
+    "DESCRIPTION": "ats:狙撃 アタックカードをプレイするたび、敵全体に 毒 !M! を与える。"
+  },
+  "ats:Ambush": {
+    "NAME": "潜伏",
+    "DESCRIPTION": "天賦 NL このターンにプレイした ats:狙撃 アタックカードがある場合、 ダメージを受けると !M! ％ の確率で 0 になる。"
+  },
+  "ats:Roar Of Ursus": {
+    "NAME": "ウルサスの雄叫び",
+    "DESCRIPTION": "天賦 NL エネルギーを得るたびに追加で 1 得てカードを !M! 枚引く。"
+  },
+  "ats:Echo Reverb": {
+    "NAME": "木霊せし聖音",
+    "DESCRIPTION": "ats:スロー 与える。 敵が アーティファクト を受けている場合、取り除く。 廃棄",
+    "UPGRADE_DESCRIPTION": "天賦 NL ats:スロー 与える。 敵が アーティファクト を受けている場合、取り除く。 廃棄"
+  },
+  "ats:Beaten Up": {
+    "NAME": "「かかってこい！」",
+    "DESCRIPTION": "保留 NL 敏捷性 !M! を得る。 次のターン起動時に 敏捷性 !M! を失う。 このターン攻撃を受けるたび、攻撃した敵に 敏捷性 だけダメージを与える。"
+  },
+  "ats:Ignite": {
+    "NAME": "イグニッション",
+    "DESCRIPTION": "!D! ダメージと　ats:火傷 !M! を与える。"
+  },
+  "ats:Demon Strength": {
+    "NAME": "悪鬼の力",
+    "DESCRIPTION": "筋力 !M! を得る。 敏捷性 1 を失う。"
+  },
+  "ats:Collapsing Strike": {
+    "NAME": "崩拳",
+    "DESCRIPTION": "カードを !M! 枚捨てる。 NL !D! ダメージを与える。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "消火ポンプ",
+      "ats:SP !S! ats:手動 NL カードを !M! 枚捨てる。 NL !B! ブロック を得る。"
+    ]
+  },
+  "ats:Song Of Battle": {
+    "NAME": "ファイトソング",
+    "DESCRIPTION": "ターン開始時、 !M! ats:SP を得る。"
+  },
+  "ats:LN2 Cannon": {
+    "NAME": "LN2キャノン",
+    "DESCRIPTION": "アタック以外の手札を 廃棄 する。 この方法で 廃棄 したカードの枚数ｘ敵全体に !D! ダメージを与える。 ブロック を無視します。"
+  },
+  "ats:Calcification": {
+    "NAME": "硬質化",
+    "DESCRIPTION": "!B! ブロック を得る。 NL 1 敏捷性 、 再生 、 ats:SP を得る。"
+  },
+  "ats:Flame Of Heaven": {
+    "NAME": "メテオフレイム",
+    "DESCRIPTION": "保留 NL 敵の ats:火傷 を 2 倍にする。 廃棄"
+  },
+  "ats:Burning Ground": {
+    "NAME": "灼獄",
+    "DESCRIPTION": "ats:術師 アタックカードをプレイするたび、敵全体に ats:火傷 !M! を与える。"
+  },
+  "ats:Guardian Obelisk": {
+    "NAME": "オベリスク召喚",
+    "DESCRIPTION": "敵の ats:火傷 だけ ブロック を得る。 敵の ats:火傷 が終わるとき、代わりに半分に減少する。"
+  },
+  "ats:Directed Diagnosis": {
+    "NAME": "指示された診断",
+    "DESCRIPTION": "自分のランダムデバフを取り除く。 HPを !M! 回復する。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL 自分のすべてのデバフを取り除く。 HPを !M! 回復する。"
+    ]
+  },
+  "ats:Hammer On": {
+    "NAME": "ハンマリング・オン",
+    "DESCRIPTION": "!D! ダメージを与える。 この攻撃で敵を倒したとき、 [E] を得る。"
+  },
+  "ats:Closed Bolt Burst Fire": {
+    "NAME": "クローズドボルト連射",
+    "DESCRIPTION": "!D! ダメージを 3 回与える。 この攻撃で敵を倒したとき、 [E] [E] を得る。"
+  },
+  "ats:Healing Drone": {
+    "NAME": "医療ドローン",
+    "DESCRIPTION": "このターン終了時と次のターン起動時に HPを !M! 回復する。"
+  },
+  "ats:Healing Strengthening": {
+    "NAME": "回復力強化",
+    "DESCRIPTION": "HP回復が !M! 増加する。"
+  },
+  "ats:Sword Rain": {
+    "NAME": "剣雨",
+    "DESCRIPTION": "敵全体に !D! ダメージを与える。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL 敵全体に !D! ダメージを与える。 [E] [E] を得る。"
+    ]
+  },
+  "ats:Serious Mode": {
+    "NAME": "マジモード",
+    "DESCRIPTION": "取得 ブロック が半分に減少する代わりに、HPの減少量に応じてアタック被害が上昇する。 NL (上昇最大値:HPが70%減少時、100%上昇)",
+    "UPGRADE_DESCRIPTION": "天賦 NL 取得 ブロック が半分に減少する代わりに、HPの減少量に応じてアタック被害が上昇する。 NL (上昇最大値:HPが70%減少時、100%上昇)"
+  },
+  "ats:Sashimi Platter": {
+    "NAME": "刺身・乱れ盛り",
+    "DESCRIPTION": "!D! ダメージを与える。 NL HPを !D! 回復する。"
+  },
+  "ats:Absolute Focus": {
+    "NAME": "一心不乱",
+    "DESCRIPTION": "カードを !M! 枚選ぶ。 山札から選択したカードと職業が同じランダムカードを手札に加える。"
+  },
+  "ats:Literary Storm": {
+    "NAME": "嵐より生まれしもの",
+    "DESCRIPTION": "山札からすべての職業のランダムカードを 1 枚ずつ手札に加える。 廃棄"
+  },
+  "ats:Guard Mode": {
+    "NAME": "鉄壁の構え",
+    "DESCRIPTION": "!B! ブロック を得る。 HPが半分以下であれば、 2 倍得る。"
+  },
+  "ats:Fierce Glare": {
+    "NAME": "激怒の目",
+    "DESCRIPTION": "敵全体に !D! ダメージを X 回与える。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL 敵全体に !D! ダメージを X 回与える。 [E] を X 得る。"
+    ]
+  },
+  "ats:Sealed Floor": {
+    "NAME": "封印された地面",
+    "DESCRIPTION": "保留 、 使用不可 NL 手札から抜け出せない。"
+  },
+  "ats:Lancet": {
+    "NAME": "救急スプレー",
+    "DESCRIPTION": "使用不可 NL このカードを引いたとき、HPを !M! 回復しつつ 廃棄 する。"
+  },
+  "ats:Mine": {
+    "NAME": "地雷",
+    "DESCRIPTION": "保留 NL 敵のHPを10減少させ、このターン、 装甲 を 5 を失う。 NL 廃棄 、捨てることができない。"
+  },
+  "ats:Electric Net": {
+    "NAME": "ネットキャプチャー",
+    "DESCRIPTION": "カードを !M! 枚引く。 NL ats:SP !S! ats:自動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:自動 NL カードを !M! 枚引く。 [E] を得る。"
+    ]
+  },
+  "ats:Skull Crusher": {
+    "NAME": "スカルクラッシュ",
+    "DESCRIPTION": "!D! ダメージを与える。このカードには !M! 倍の 筋力 ボーナスが適用される。 NL ats:SP !S! ats:手動",
+    "EXTENDED_DESCRIPTION": [
+      "ats:SP !S! ats:手動 NL !D! ダメージを与える。このカードには !M! 倍の 筋力 ボーナスが適用される。 このターンに [E] を得た場合、敵は気絶する。"
+    ]
+  },
+  "ats:NULL": {
+    "NAME": "",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "",
+      ""
+    ]
+  }
+}

@@ -76,11 +76,11 @@ public class FrostWS extends CustomMonster {
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.str = 8;
             this.frost = 2;
-            this.pstr = 6;
+            this.pstr = 8;
         } else {
             this.str = 5;
             this.frost = 1;
-            this.pstr = 4;
+            this.pstr = 5;
         }
         this.iceCount = 4;
         this.iceCounter = this.iceCount;
@@ -104,7 +104,7 @@ public class FrostWS extends CustomMonster {
     public void takeTurn() {
         if(this.halfDead) {
             this.addToBot(new HealAction(this, this, this.maxHealth));
-            this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost, true), this.frost + 1));
+            this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost + 1, true)));
             this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.str)));
             this.addToBot(new ApplyPowerAction(this, this, new BufferPower(this, 4), 4));
             this.halfDead = false;
@@ -161,7 +161,7 @@ public class FrostWS extends CustomMonster {
 
     protected void getMove(int num) {
 
-        if(this.iceCounter == this.iceCount && this.canAddIce()) {
+        if((this.lastMove((byte) 4) || this.lastMove((byte) 3))&& this.canAddIce()) {
             this.setMove((byte) 5, Intent.UNKNOWN);
         } else if(this.lastMove((byte) 2)){
             if(this.isDied) {
@@ -230,6 +230,9 @@ public class FrostWS extends CustomMonster {
                 this.halfDead = true;
             }
 
+            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)5, Intent.UNKNOWN));
+            this.createIntent();
+
             Iterator s = this.powers.iterator();
 
             AbstractPower p;
@@ -246,8 +249,6 @@ public class FrostWS extends CustomMonster {
                 AbstractRelic r = (AbstractRelic)s.next();
                 r.onMonsterDeath(this);
             }
-
-            AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 
             this.addToTop(new ClearCardQueueAction());
             this.isDied = true;
@@ -266,8 +267,6 @@ public class FrostWS extends CustomMonster {
             if (ModHelper.isModEnabled("MonsterHunter")) {
                 this.currentHealth = (int)((float)this.currentHealth * 1.5F);
             }
-
-            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)5, Intent.UNKNOWN));
 
             this.addToBot(new PlayAnimationAction(this, "Skill_2", true, "FROST_R1"));
             this.addToBot(new WaitAnimAction(this, 6.0F));

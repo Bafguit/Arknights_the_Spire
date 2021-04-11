@@ -171,9 +171,9 @@
   "ats:Evade": {
     "NAME": "闪避",
     "DESCRIPTIONS": [
-      "When owner has damaged #b",
-      " times, block next damage and gain #b",
-      " #yStrength for this turn."
+      "每当受到 #b",
+      " 次攻击伤害, 格挡即将受到的下一次伤害并在本回合内获得 #b",
+      " 点 #y力量 。"
     ]
   },
   "ats:Arm": {

@@ -55,14 +55,13 @@ public class EvadePower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if(damageAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS) {
+        if(damageAmount > 0 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && !this.owner.hasPower(BufferPower.POWER_ID)) {
             this.amount++;
             if(this.amount == this.cnt) {
                 this.flash();
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new BufferPower(this.owner, 1)));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.str)));
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CrStrPower(this.owner, this.str)));
-                this.addToBot(new RollMoveAction((Crown)this.owner));
+                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new BufferPower(this.owner, 1), 1, true));
+                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.str), this.str, true));
+                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new CrStrPower(this.owner, this.str), this.str, true));
                 this.amount = 0;
             }
         }
@@ -72,7 +71,7 @@ public class EvadePower extends AbstractPower implements CloneablePowerInterface
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + this.cnt + 1 + DESCRIPTIONS[1] + this.str + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + this.cnt + DESCRIPTIONS[1] + this.str + DESCRIPTIONS[2];
     }
 
     @Override

@@ -3,7 +3,7 @@
   "name": "Arknights",
   "author_list": ["FastCat", "Kuiprux"],
   "description": "Character mod from a mobile game, Arknights.",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "sts_version": "12-22-2020",
   "mts_version": "3.18.0",
   "dependencies": ["basemod", "stslib", "actlikeit"],

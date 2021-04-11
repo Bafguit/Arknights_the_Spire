@@ -189,8 +189,7 @@
   },
   "ats:Ambush": {
     "NAME": "埋伏",
-    "DESCRIPTION": " 固有 。你在这个回合每打出一张 ats:狙击 攻击牌, 就有 !M! % 的概率闪避一次攻击伤害。",
-    "UPGRADE_DESCRIPTION": " 固有 。 你在这个回合每打出一张 ats:狙击 攻击牌, 就有 !M! % 的概率闪避一次攻击伤害。"
+    "DESCRIPTION": " 固有 。你在这个回合每打出一张 ats:狙击 攻击牌, 就有 !M! % 的概率闪避一次攻击伤害。"
   },
   "ats:Defend Order": {
     "NAME": "冲锋号令·防御",
@@ -271,7 +270,7 @@
   },
   "ats:Durian": {
     "NAME": "爆发剂·榴莲味",
-    "DESCRIPTION": " 保留 。 失去3点生命5次, 根据 敏捷 降低伤害。 (最多降低 2) NL 本回合造成两倍的攻击伤害。 NL 消耗 。"
+    "DESCRIPTION": " 保留 。 失去5点生命。 本回合造成两倍的攻击伤害。 NL 消耗 。"
   },
   "ats:Phantom": {
     "NAME": "镜中幻影",
@@ -363,7 +362,7 @@
   },
   "ats:Mine": {
     "NAME": "地雷",
-    "DESCRIPTION": " 保留 。 NL 令敌人失去10点生命。 NL 在这个回合内移除5层 NL ats:盔甲 。 NL 消耗 。不能被丢弃。"
+    "DESCRIPTION": " 保留 。 NL 令敌人失去10点生命。 NL 在这个回合内移除5层盔甲。 NL 消耗 。不能被丢弃。"
   },
   "ats:Electric Net": {
     "NAME": "伸缩式电捕网",

@@ -48,7 +48,7 @@
     "DESCRIPTION": "피해를 !D! 줍니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "강타γ",
-      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 두 배가 됩니다.."
+      "ats:SP !S! ats:자동 NL 피해를 !D! 줍니다. 피해가 두 배가 됩니다."
     ]
   },
   "ats:Charging Defense": {
@@ -252,7 +252,7 @@
     "DESCRIPTION": "방어도를 !B! 얻고 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다."
   },
   "ats:Very Hot Blade": {
-    "NAME": "엄청 뜨거운 칼",
+    "NAME": "\"엄청 뜨거운 칼\"",
     "DESCRIPTION": "피해를 !D! 만큼 3번 줍니다. 카드를 1 장 뽑습니다. NL ats:SP !S! ats:자동",
     "EXTENDED_DESCRIPTION": [
       "ats:SP !S! ats:자동 NL 피해를 !D! 만큼 3번 줍니다. 적이 ats:화상을 가지고 있다면, [E] 를 얻고 공격한 적은 ats:화상 수치만큼 체력을 잃습니다. 카드를 1 장 뽑습니다."
@@ -268,8 +268,7 @@
   },
   "ats:Ambush": {
     "NAME": "매복",
-    "DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 피해를 받을 때 !M! % 확률로 받는 피해가 0이 됩니다.",
-    "UPGRADE_DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 피해를 받을 때 !M! % 확률로 받는 피해가 0이 됩니다."
+    "DESCRIPTION": "선천성. 이번 턴에 ats:스나이퍼 공격 카드를 사용했다면, 피해를 받을 때 !M! % 확률로 받는 피해가 0이 됩니다."
   },
   "ats:Roar Of Ursus": {
     "NAME": "우르수스의 포효",
@@ -281,8 +280,8 @@
     "UPGRADE_DESCRIPTION": "선천성. ats:둔화를 부여합니다. 적이 인공물을 가지고 있다면, 제거합니다. NL 소멸."
   },
   "ats:Beaten Up": {
-    "NAME": "매 맞기",
-    "DESCRIPTION": "보존. 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. 다음 적 턴에 공격을 받을 때마다 현재 민첩 수치만큼 피해를 줍니다."
+    "NAME": "얻어맞기",
+    "DESCRIPTION": "보존. 민첩을 !M! 얻습니다. 다음 턴 시작 시 민첩을 !M! 잃습니다. 이번 턴에 공격을 받을 때마다 현재 민첩 수치만큼 피해를 줍니다."
   },
   "ats:Ignite": {
     "NAME": "이그니션",
@@ -392,7 +391,7 @@
   },
   "ats:Mine": {
     "NAME": "지뢰",
-    "DESCRIPTION": "보존. 적 하나의 체력을 10 감소시키고 이번 턴 동안 ats:장갑을 5 낮춥니다. NL 소멸. 버릴 수 없습니다."
+    "DESCRIPTION": "보존. 적 하나의 체력을 10 감소시키고 이번 턴 동안 장갑을 5 낮춥니다. NL 소멸. 버릴 수 없습니다."
   },
   "ats:Electric Net": {
     "NAME": "신축성 전기 포획망",

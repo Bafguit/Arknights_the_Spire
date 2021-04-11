@@ -1,0 +1,52 @@
+{
+  "SpSingleCardViewPopup": {
+    "TEXT": [
+      "#rSP가 부족해.",
+      "#r수동 #r발동 이 아니야."
+    ]
+  },
+  "SpToggleButton": {
+    "TEXT": [
+      "自動 発動",
+      "手動 発動"
+    ]
+  },
+  "SpToolTips": {
+    "TEXT": [
+      "SP",
+      "현재 보유하고 있는 SP입니다. 카드를 사용할 때와 내 턴의 시작에 #b1 을 얻습니다."
+    ]
+  },
+  "ats:Sans": {
+    "TEXT": [
+      "Wa! Sans!"
+    ]
+  },
+  "SelectCard": {
+    "TEXT": [
+      "카드를 선택하세요."
+    ]
+  },
+  "EnableSPKeyName": {
+    "TEXT": [
+      "SP 버튼 활성화"
+    ]
+  },
+  "ArtsAttack": {
+    "TEXT": [
+      "아츠 공격",
+      "이 적은 #b",
+      " 의 #r아츠 피해로 #b",
+      " 번 #y공격 하려고 합니다.",
+      " 의 #r아츠 피해로 #y공격 하려고 합니다.",
+      "복합",
+      "이 적은 #y이로운 #y효과 를 사용하고, #b",
+      "이 적은 당신에게 #y해로운 #y효과 를 사용하고, #b"
+    ]
+  },
+  "act:Chernobog": {
+    "TEXT": [
+      "체르노보그"
+    ]
+  }
+}

@@ -210,16 +210,16 @@
     "NAME": "赤霄",
     "FLAVOR": "\"全体人员，做好战斗准备。\n\"",
     "DESCRIPTIONS": [
-      "Your first Attack each combat deals #b",
-      " additional damage."
+      "在一场战斗中，你的第一次攻击额外造成 #b",
+      " 点伤害。"
     ]
   },
   "ats:Crimson Plus": {
     "NAME": "赤霄+",
     "FLAVOR": "\"准备好了吗？那么，一切按照计划进行。\n\"",
     "DESCRIPTIONS": [
-      "Your first Attack each turn deals #b",
-      " additional damage."
+      "每个回合内，你的第一次攻击将额外造成 #b",
+      " 点伤害。"
     ]
   },
   "ats:NULL": {

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -16,9 +17,10 @@ import com.ndc.arknightsthespire.util.TextureLoader;
 public class Crimson extends CustomRelic {
     public static final String ID = "ats:Crimson";
     private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/ShadA.png");
+    private AbstractPower power = new VigorPower(AbstractDungeon.player, 3);
 
     public Crimson() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.STARTER, LandingSound.HEAVY);
     }
 
     @Override

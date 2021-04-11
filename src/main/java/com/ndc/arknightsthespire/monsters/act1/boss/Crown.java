@@ -65,10 +65,10 @@ public class Crown extends CustomMonster {
 
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.evade = 2;
-            this.str = 5;
+            this.str = 2;
         } else {
             this.evade = 3;
-            this.str = 3;
+            this.str = 1;
         }
 
         if (AbstractDungeon.ascensionLevel >= 9) {
@@ -113,9 +113,7 @@ public class Crown extends CustomMonster {
     }
 
     protected void getMove(int num) {
-        if(this.hasPower(BufferPower.POWER_ID)) {
-            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
-        } else if(this.lastMove((byte) 3)) {
+        if(this.lastMove((byte) 3)) {
             this.setMove((byte) 4, Intent.DEBUFF);
         } else if(this.lastMove((byte) 2)) {
         } else if(this.lastMove((byte) 1) || this.lastMove((byte) 4)){

@@ -44,6 +44,22 @@ public class SealedFloor extends CardSPBase {
 
     @Override
     public void triggerOnManualDiscard() {
+        if(player.hand.size() == 10) {
+            ArrayList<AbstractCard> cards = new ArrayList<>();
+
+            for(AbstractCard c : player.hand.group) {
+                if(c.cardID != SealedFloor.ID) {
+                    cards.add(c);
+                }
+            }
+
+            if(cards.size() > 1) {
+                AbstractCard c = cards.get(cards.size() - 1);
+                player.hand.moveToDiscardPile(c);
+                c.triggerOnManualDiscard();
+                GameActionManager.incrementDiscard(false);
+            }
+        }
         this.addToBot(new MakeTempCardInHandAction(this.makeCopy()));
         player.discardPile.removeCard(this);
     }
@@ -72,6 +88,22 @@ public class SealedFloor extends CardSPBase {
 
     @Override
     public void triggerOnExhaust() {
+        if(player.hand.size() == 10) {
+            ArrayList<AbstractCard> cards = new ArrayList<>();
+
+            for(AbstractCard c : player.hand.group) {
+                if(c.cardID != SealedFloor.ID) {
+                    cards.add(c);
+                }
+            }
+
+            if(cards.size() > 1) {
+                AbstractCard c = cards.get(cards.size() - 1);
+                player.hand.moveToDiscardPile(c);
+                c.triggerOnManualDiscard();
+                GameActionManager.incrementDiscard(false);
+            }
+        }
         this.addToBot(new MakeTempCardInHandAction(this.makeCopy()));
     }
 

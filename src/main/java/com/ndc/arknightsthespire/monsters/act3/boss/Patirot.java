@@ -100,13 +100,13 @@ public class Patirot extends CustomMonster {
         }
 
         if (AbstractDungeon.ascensionLevel >= 4) {
-            this.attackDamage = 18;
+            this.attackDamage = 22;
         } else {
-            this.attackDamage = 17;
+            this.attackDamage = 21;
         }
 
         this.damage.add(new DamageInfo(this, this.attackDamage, DamageInfo.DamageType.NORMAL));
-        this.damage.add(new DamageInfo(this, this.attackDamage + 18, DamageInfo.DamageType.NORMAL));
+        this.damage.add(new DamageInfo(this, this.attackDamage + 13, DamageInfo.DamageType.NORMAL));
     }
 
     public void takeTurn() {
@@ -172,6 +172,14 @@ public class Patirot extends CustomMonster {
                 this.addToBot(new AtsSFX("PAT_S2"));
                 this.addToBot(new WaitAnimAction(this, 1.3F));
                 this.addToBot(new RemoveRangedCardAction(this, "PAT_S3"));
+            case 4:
+                this.addToBot(new PlayAnimationAction(this, "Attack_2"));
+                this.addToBot(new AtsSFX("PAT_A2"));
+                this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AttackEffect.SMASH, false, true));
+                this.addToBot(new ApplyPowerAction(player, this, new VulnerablePower(player, 1, true), 1, true));
+                this.addToBot(new ApplyPowerAction(player, this, new FrailPower(player, 1, true), 1, true));
+                this.addToBot(new ApplyPowerAction(player, this, new WeakPower(player, 1, true), 1, true));
+                break;
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -204,6 +212,8 @@ public class Patirot extends CustomMonster {
         } else if (this.phase == 2) {
             if(this.iceCounter == this.iceCount && this.canRemove()) {
                 this.setMove((byte)3, Intent.STRONG_DEBUFF);
+            } else if (this.lastMove((byte) 2)) {
+                this.setMove((byte)4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(1)).base);
             } else {
                 this.setMove((byte)2, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base);
             }

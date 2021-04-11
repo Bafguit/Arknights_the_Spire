@@ -81,7 +81,7 @@ public class Frost extends CustomMonster {
             this.frost = 1;
             this.pstr = 2;
         }
-        this.iceCount = 4;
+        this.iceCount = 3;
 
         if (AbstractDungeon.ascensionLevel >= 9) {
             this.setHp(220);
@@ -139,17 +139,12 @@ public class Frost extends CustomMonster {
                 this.addIce();
         }
 
-        if(this.iceCounter == this.iceCount) {
-            this.iceCounter = 0;
-        } else {
-            this.iceCounter++;
-        }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
     protected void getMove(int num) {
 
-        if(this.iceCounter == this.iceCount && this.canAddIce()) {
+        if(this.lastMove((byte) 3) && this.canAddIce()) {
             this.setMove((byte) 4, Intent.UNKNOWN);
         } else if(this.lastMove((byte) 2)) {
             this.setMove((byte) 3, Intent.STRONG_DEBUFF);
@@ -214,6 +209,9 @@ public class Frost extends CustomMonster {
                 this.halfDead = true;
             }
 
+            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)4, Intent.UNKNOWN));
+            this.createIntent();
+
             Iterator s = this.powers.iterator();
 
             AbstractPower p;
@@ -228,8 +226,6 @@ public class Frost extends CustomMonster {
                 AbstractRelic r = (AbstractRelic)s.next();
                 r.onMonsterDeath(this);
             }
-
-            AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
 
             this.addToTop(new ClearCardQueueAction());
             s = this.powers.iterator();
@@ -249,9 +245,6 @@ public class Frost extends CustomMonster {
             if (ModHelper.isModEnabled("MonsterHunter")) {
                 this.currentHealth = (int)((float)this.currentHealth * 1.5F);
             }
-
-
-            AbstractDungeon.actionManager.addToBottom(new SetMoveAction(this, (byte)4, Intent.UNKNOWN));
 
             this.addToBot(new PlayAnimationAction(this, "Skill_2", true, "FROST_R1"));
             this.addToBot(new WaitAnimAction(this, 6.0F));

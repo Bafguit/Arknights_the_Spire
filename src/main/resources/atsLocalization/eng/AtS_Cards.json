@@ -93,7 +93,7 @@
   },
   "ats:Durian": {
     "NAME": "Burst Stimulant-Durian",
-    "DESCRIPTION": "Retain. Lose 3 HP 5 times, damage reduced by Dexterity amount. (Maximum 2) NL Attack deals double damage for this turn. NL Exhaust."
+    "DESCRIPTION": "Retain. Lose 5 HP. Attack deals double damage for this turn. NL Exhaust."
   },
   "ats:Rat Pack": {
     "NAME": "Rat Pack",
@@ -267,8 +267,7 @@
   },
   "ats:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance.",
-    "UPGRADE_DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance."
+    "DESCRIPTION": "Innate. If you used ats:Sniper attack card during this turn, prevent receiving attack damage with !M! % chance."
   },
   "ats:Roar Of Ursus": {
     "NAME": "Roar of Ursus",
@@ -391,7 +390,7 @@
   },
   "ats:Mine": {
     "NAME": "Mine",
-    "DESCRIPTION": "Retain. An enemy loses 10 HP. Reduce 5 ats:Armour for this turn. NL Exhaust. Cannot discard."
+    "DESCRIPTION": "Retain. An enemy loses 10 HP. Reduce 5 Armour for this turn. NL Exhaust. Cannot discard."
   },
   "ats:Electric Net": {
     "NAME": "Electric Net",
