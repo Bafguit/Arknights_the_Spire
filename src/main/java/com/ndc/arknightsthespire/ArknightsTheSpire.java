@@ -360,6 +360,9 @@ public class ArknightsTheSpire extends PostRefresh implements EditCardsSubscribe
             case "kor":
                 return "kor";
 
+            case "jpn":
+                return "jpn";
+
             default:
                 return "eng";
         }
