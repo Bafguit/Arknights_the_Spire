@@ -391,7 +391,7 @@
   },
   "ats:Mine": {
     "NAME": "地雷",
-    "DESCRIPTION": "保留 NL 敵のHPを10減少させ、このターン、 装甲 を 5 を失う。 NL 廃棄 、捨てることができない。"
+    "DESCRIPTION": "保留 NL 敵のHPを10減少させ、このターン、装甲を 5 を失う。 NL 廃棄 、捨てることができない。"
   },
   "ats:Electric Net": {
     "NAME": "ネットキャプチャー",

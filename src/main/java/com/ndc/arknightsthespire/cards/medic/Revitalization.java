@@ -19,7 +19,7 @@ public class Revitalization extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/Revitalization.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = 1;
-    private static final int REGEN = 4;
+    private static final int REGEN = 3;
     private static final int UP_REGEN = 2;
 
     public Revitalization() {

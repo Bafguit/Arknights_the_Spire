@@ -19,7 +19,7 @@ public class HealingMist extends CardSPBase {
     public static final String IMG_PATH = "atsImg/cards/Lancet.png";
     public static final PositionType POSITION = PositionType.MEDIC;
     private static final int COST = -2;
-    private static final int SP = 8;
+    private static final int SP = 6;
     private static final int UP_SP = 2;
 
     public HealingMist() {
