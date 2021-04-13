@@ -1,55 +1,55 @@
 {
   "ats:Dogmatic Field": {
-    "NAME": "신조의 역장",
+    "NAME": "教導の結界",
     "DESCRIPTIONS": [
-      "방어도를 얻을 때, #b5 를 초과한 만큼은 방어도를 얻는 대신 체력을 회복합니다."
+      "ブロックを得るとき、 #b5 を超えただけブロックを得る代わりに、HPを回復する。"
     ]
   },
   "ats:Counter Healing Mode": {
-    "NAME": "반격 의료 모드",
+    "NAME": "医療態勢・受動",
     "DESCRIPTIONS": [
-      "체력을 회복할 때마다 SP 를 #b",
-      " 얻습니다."
+      "HPを回復するたびに #b",
+      " #ySP を得る。"
     ]
   },
   "ats:Soul Absorption": {
-    "NAME": "영혼 착취",
+    "NAME": "ソウルドレイン",
     "DESCRIPTIONS": [
-      "적에게 준 피해만큼 방어도를 얻습니다."
+      "次のアタックのブロックされなかったダメージに等しいブロックを得る。"
     ]
   },
   "ats:Shelter": {
-    "NAME": "가호",
+    "NAME": "森廻",
     "DESCRIPTIONS": [
-      "피해를 #b",
-      "% 적게 받습니다."
+      "受けるダメージが #b",
+      "% 減少します。"
     ]
   },
   "ats:Soul Rend": {
-    "NAME": "열혼",
+    "NAME": "烈魂",
     "DESCRIPTIONS": [
-      "#y가드 카드로 피해를 줄 때마다 체력을 #b",
-      " 회복합니다."
+      "#y前衛 カードでダメージを与えるたび、HPを #b",
+      " 回復する。"
     ]
   },
   "ats:Fractured Body": {
-    "NAME": "육참골단",
+    "NAME": "肉斬骨断",
     "DESCRIPTIONS": [
-      "체력이 1 이하로 내려가지 않습니다. 효과 종료 시 체력이 1 이 됩니다."
+      "HPが #b1 以下に下がらない。 アタックのダメージが #b2 倍になる。 効果終了時HPが #r1 になる。"
     ]
   },
   "ats:Shadow Raid": {
-    "NAME": "그림자 방패",
+    "NAME": "スニークガード",
     "DESCRIPTIONS": [
-      "턴 시작 시 민첩을 #b",
-      " 잃습니다."
+      "ターン起動時に #y敏捷性 #b",
+      " を失う。"
     ]
   },
   "ats:Composite Medical Shells": {
-    "NAME": "복합형 약물파편",
+    "NAME": "特製薬刃弾",
     "DESCRIPTIONS": [
-      "체력을 회복할 때마다 적 전체에게 그만큼 피해를 줍니다. ( 최대 #b",
-      " )"
+      "HPを回復するたびに 敵全体にそれだけダメージを与えます。（ 最大 #b",
+      " ）"
     ]
   },
   "ats:Neurotoxin": {

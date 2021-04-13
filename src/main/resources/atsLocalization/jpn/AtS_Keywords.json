@@ -32,7 +32,7 @@
     "NAMES": [
       "加護"
     ],
-    "DESCRIPTION": "受けるダメージが #25％ 減少します。"
+    "DESCRIPTION": "受けるダメージが #b25％ 減少します。"
   },
   {
     "PROPER_NAME": "指令",

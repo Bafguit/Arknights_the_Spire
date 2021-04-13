@@ -78,7 +78,7 @@
   },
   "ats:Dogmatic Field": {
     "NAME": "教導の結界",
-    "DESCRIPTION": "ブロックを得るとき、5 を超えただけブロックを得る代わりに、HPを回復する。",
+    "DESCRIPTION": "ブロックを得るとき、 5 を超えただけブロックを得る代わりに、HPを回復する。",
     "UPGRADE_DESCRIPTION": "天賦 NL ブロックを得るとき、5を超えただけブロックを得る代わりに、HPを回復する。"
   },
   "ats:Sunburst": {
