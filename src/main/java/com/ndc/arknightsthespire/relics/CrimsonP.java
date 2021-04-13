@@ -14,7 +14,7 @@ public class CrimsonP extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture("atsImg/relics/ShadAP.png");
 
     public CrimsonP() {
-        super(ID, IMG, RelicTier.STARTER, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
+        super(ID, IMG, RelicTier.BOSS, LandingSound.HEAVY); // this relic is uncommon and sounds magic when you click it
     }
 
     @Override
