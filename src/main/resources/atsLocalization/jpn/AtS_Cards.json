@@ -272,7 +272,7 @@
   },
   "ats:Roar Of Ursus": {
     "NAME": "ウルサスの雄叫び",
-    "DESCRIPTION": "天賦 NL エネルギーを得るたびに追加で 1 得てカードを !M! 枚引く。"
+    "DESCRIPTION": "天賦 NL エナジーを得るたびに追加で 1 得てカードを !M! 枚引く。"
   },
   "ats:Echo Reverb": {
     "NAME": "木霊せし聖音",
@@ -340,7 +340,7 @@
   },
   "ats:Healing Drone": {
     "NAME": "医療ドローン",
-    "DESCRIPTION": "このターン終了時と次のターン起動時に HPを !M! 回復する。"
+    "DESCRIPTION": "このターン終了時と次のターン起動時にHPを !M! 回復する。"
   },
   "ats:Healing Strengthening": {
     "NAME": "回復力強化",
