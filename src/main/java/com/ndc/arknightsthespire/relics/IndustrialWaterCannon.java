@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.util.TextureLoader;
@@ -23,7 +25,7 @@ public class IndustrialWaterCannon extends CustomRelic {
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if(card instanceof CardSPBase) {
             CardSPBase c = (CardSPBase) card;
             if (c.isSpJustUsed) {
