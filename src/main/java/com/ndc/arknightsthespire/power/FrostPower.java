@@ -44,7 +44,7 @@ public class FrostPower extends AbstractPower implements CloneablePowerInterface
                 this.addToBot(new ApplyPowerAction(info.owner, this.owner, new DexterityPower(info.owner, -this.amount), -this.amount));
             }
             if (!this.owner.hasPower("Artifact")) {
-                this.addToBot(new ApplyPowerAction(info.owner, this.owner, new LoseAtkPower(info.owner, this.amount, this.isRevived ? true : false), this.amount));
+                this.addToBot(new ApplyPowerAction(info.owner, this.owner, new LoseAtkPower(info.owner, this.amount, this.isRevived), this.amount));
             }
         }
         return damageAmount;

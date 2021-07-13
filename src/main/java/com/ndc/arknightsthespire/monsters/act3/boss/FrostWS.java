@@ -104,7 +104,7 @@ public class FrostWS extends CustomMonster {
     public void takeTurn() {
         if(this.halfDead) {
             this.addToBot(new HealAction(this, this, this.maxHealth));
-            this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost + 1, true)));
+            this.addToBot(new ApplyPowerAction(this, this, new FrostPower(this, this.frost, true)));
             this.addToBot(new ApplyPowerAction(this, this, new StrengthPower(this, this.str)));
             this.addToBot(new ApplyPowerAction(this, this, new BufferPower(this, 4), 4));
             this.halfDead = false;
@@ -126,7 +126,7 @@ public class FrostWS extends CustomMonster {
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, false, false));
                 this.addToBot(new ApplyPowerAction(p, this, new StrengthPower(p, -this.pstr), -this.pstr));
                 if(this.isDied) this.addToBot(new ApplyPowerAction(p, this, new DexterityPower(p, -this.pstr), -this.pstr));
-                this.addToBot(new ApplyPowerAction(p, this, new LoseAtkPower(p, this.pstr, this.isDied ? true : false), this.pstr));
+                this.addToBot(new ApplyPowerAction(p, this, new LoseAtkPower(p, this.pstr, this.isDied), this.pstr));
                 break;
             case 3:
                 this.addToBot(new PlayAnimationAction(this, "Skill_3", true, "FROST_I1"));
