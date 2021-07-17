@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.megacrit.cardcrawl.powers.ReactivePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.ndc.arknightsthespire.cards.specialist.CollapsingStrike;
 import com.ndc.arknightsthespire.monsters.act3.boss.Patirot;
 
 public class ForwardingPower extends AbstractPower {
@@ -42,8 +43,13 @@ public class ForwardingPower extends AbstractPower {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
-    public void onUseCard(AbstractCard card, UseCardAction action) {
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.baseBlock > 0) {
+            if(card instanceof CollapsingStrike) {
+                if(!((CollapsingStrike) card).isSpJustUsed) {
+                    return;
+                }
+            }
             if(this.owner instanceof Patirot) {
                 Patirot m = (Patirot) this.owner;
                 if(!this.isAttack) {
