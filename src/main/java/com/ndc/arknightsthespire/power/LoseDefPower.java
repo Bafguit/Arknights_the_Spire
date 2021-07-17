@@ -61,11 +61,11 @@ public class LoseDefPower extends AbstractPower {
 
     public void updateDescription() {
         if (this.amount > 0) {
-            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[4] : DESCRIPTIONS[3]) + this.amount;
+            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[4] + this.amount;
             this.type = PowerType.BUFF;
         } else {
             int tmp = -this.amount;
-            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[2] : DESCRIPTIONS[1]) + tmp;
+            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[2] + tmp;
             this.type = PowerType.DEBUFF;
         }
 

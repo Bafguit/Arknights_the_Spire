@@ -24,12 +24,11 @@ public class LoseAtkPower extends AbstractPower {
     public static final String[] DESCRIPTIONS;
     public boolean hasDex = false;
 
-    public LoseAtkPower(AbstractCreature owner, int newAmount, boolean hasDex) {
+    public LoseAtkPower(AbstractCreature owner, int newAmount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = newAmount;
-        this.hasDex = hasDex;
         if (this.amount >= 999) {
             this.amount = 999;
         }
@@ -62,11 +61,11 @@ public class LoseAtkPower extends AbstractPower {
 
     public void updateDescription() {
         if (this.amount > 0) {
-            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[4] : DESCRIPTIONS[3]) + this.amount;
+            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[3] + this.amount;
             this.type = PowerType.BUFF;
         } else {
             int tmp = -this.amount;
-            this.description = DESCRIPTIONS[0] + (this.hasDex ? DESCRIPTIONS[2] : DESCRIPTIONS[1]) + tmp;
+            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[1] + tmp;
             this.type = PowerType.DEBUFF;
         }
 

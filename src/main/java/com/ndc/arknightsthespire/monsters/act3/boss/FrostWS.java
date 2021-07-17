@@ -34,6 +34,7 @@ import com.ndc.arknightsthespire.actions.WaitAnimAction;
 import com.ndc.arknightsthespire.cards.xCurse.SealedFloor;
 import com.ndc.arknightsthespire.power.FrostPower;
 import com.ndc.arknightsthespire.power.LoseAtkPower;
+import com.ndc.arknightsthespire.power.LoseDefPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -124,9 +125,20 @@ public class FrostWS extends CustomMonster {
                 this.addToBot(new WaitAnimAction(this, 0.4F));
                 this.addToBot(new AtsSFX("CASTER"));
                 this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(0), AttackEffect.BLUNT_LIGHT, false, false));
+                AbstractPower tp = p.getPower("Artifact");
                 this.addToBot(new ApplyPowerAction(p, this, new StrengthPower(p, -this.pstr), -this.pstr));
-                if(this.isDied) this.addToBot(new ApplyPowerAction(p, this, new DexterityPower(p, -this.pstr), -this.pstr));
-                this.addToBot(new ApplyPowerAction(p, this, new LoseAtkPower(p, this.pstr, this.isDied), this.pstr));
+                if (tp == null) {
+                    this.addToBot(new ApplyPowerAction(p, this, new LoseAtkPower(p, this.pstr), this.pstr));
+                    if (this.isDied) {
+                        this.addToBot(new ApplyPowerAction(p, this, new DexterityPower(p, -this.pstr), -this.pstr));
+                        this.addToBot(new ApplyPowerAction(p, this, new LoseDefPower(p, this.pstr), this.pstr));
+                    }
+                } else if(this.isDied) {
+                    this.addToBot(new ApplyPowerAction(p, this, new DexterityPower(p, -this.pstr), -this.pstr));
+                    if(tp.amount < 2) {
+                        this.addToBot(new ApplyPowerAction(p, this, new LoseDefPower(p, this.pstr), this.pstr));
+                    }
+                }
                 break;
             case 3:
                 this.addToBot(new PlayAnimationAction(this, "Skill_3", true, "FROST_I1"));

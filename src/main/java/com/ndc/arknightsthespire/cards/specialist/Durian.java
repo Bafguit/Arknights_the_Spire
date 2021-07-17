@@ -6,12 +6,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PenNibPower;
+import com.megacrit.cardcrawl.powers.DoubleDamagePower;
 import com.ndc.arknightsthespire.CardColors;
 import com.ndc.arknightsthespire.actions.AtsSFX;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.cards.base.PositionType;
-import com.ndc.arknightsthespire.power.DurianPower;
 
 import static com.megacrit.cardcrawl.actions.AbstractGameAction.*;
 
@@ -38,7 +37,7 @@ public class Durian extends CardSPBase {
             addToBot(new DamageAction(p, new DamageInfo(p, 1, DamageInfo.DamageType.HP_LOSS), AttackEffect.FIRE, true, true));
         }
 
-        addToBot(new ApplyPowerAction(p, p, new DurianPower()));
+        addToBot(new ApplyPowerAction(p, p, new DoubleDamagePower(p, 1, false)));
     }
 
     @Override

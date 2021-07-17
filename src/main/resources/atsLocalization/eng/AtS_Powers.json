@@ -210,9 +210,9 @@
     "DESCRIPTIONS": [
       "At the end of this turn,",
       " lose Strength by #b",
-      " lose Strength and Dexterity by #b",
+      " lose Dexterity by #b",
       " gain Strength by #b",
-      " gain Strength and Dexterity by #b"
+      " gain Dexterity by #b"
     ]
   },
   "ats:Forwarding": {

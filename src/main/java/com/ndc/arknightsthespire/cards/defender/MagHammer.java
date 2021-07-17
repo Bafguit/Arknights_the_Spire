@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.ndc.arknightsthespire.CardColors;
@@ -48,7 +49,9 @@ public class MagHammer extends CardSPBase {
         if(isSpJustUsed) {
             for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 addToBot(new ApplyPowerAction(mo, p, new StrengthPower(mo, -this.magicNumber), -this.magicNumber));
-                addToBot(new ApplyPowerAction(mo, p, new LoseStrengthPower(mo, -this.magicNumber), -this.magicNumber));
+                if (!mo.hasPower("Artifact")) {
+                    this.addToTop(new ApplyPowerAction(mo, null, new GainStrengthPower(mo, 4), 4, true));
+                }
             }
         }
         //SP

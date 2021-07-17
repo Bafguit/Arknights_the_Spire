@@ -5,12 +5,14 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.ndc.arknightsthespire.util.TextureLoader;
 
 //Gain 1 dex for the turn for each card played.
@@ -28,12 +30,13 @@ public class GuardObePower extends AbstractPower implements CloneablePowerInterf
     private static final Texture tex84 = TextureLoader.getTexture("atsImg/power/GuardObe_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("atsImg/power/GuardObe_32.png");
 
-    public GuardObePower(final AbstractCreature owner, final AbstractCreature source) {
+    public GuardObePower(final AbstractCreature owner, final AbstractCreature source, int amount) {
         name = NAME;
         ID = POWER_ID;
 
         this.owner = owner;
         this.source = source;
+        this.amount = amount;
 
         type = PowerType.DEBUFF;
         isTurnBased = true;
@@ -45,7 +48,14 @@ public class GuardObePower extends AbstractPower implements CloneablePowerInterf
         updateDescription();
     }
 
-    // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
+    public void atStartOfTurnPostDraw() {
+        if (this.amount == 1) {
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
+        } else {
+            this.addToBot(new ReducePowerAction(this.owner, this.owner, this, 1));
+        }
+    }
+
     @Override
     public void updateDescription() {
         description = DESCRIPTIONS[0];
@@ -53,6 +63,6 @@ public class GuardObePower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public AbstractPower makeCopy() {
-        return new GuardObePower(owner, source);
+        return new GuardObePower(owner, source, amount);
     }
 }

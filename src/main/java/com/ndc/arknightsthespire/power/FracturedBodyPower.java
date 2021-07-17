@@ -81,10 +81,11 @@ public class FracturedBodyPower extends AbstractPower implements CloneablePowerI
         AbstractPlayer p = AbstractDungeon.player;
         if (this.amount > 1) {
             addToBot(new ReducePowerAction(p, p, "ats:Fractured Body", 1));
-            addToBot(new ApplyPowerAction(p, p, new DurianPower()));
         }
         else if (this.amount == 1) {
-            addToBot(new LoseHPAction(p, p, p.currentHealth - 1));
+            if(this.owner.currentHealth > 1) {
+                addToBot(new LoseHPAction(p, p, p.currentHealth - 1));
+            }
             addToBot(new RemoveSpecificPowerAction(p, p, "ats:Fractured Body"));
         }
     }

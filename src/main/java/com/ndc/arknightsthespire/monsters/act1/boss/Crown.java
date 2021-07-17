@@ -116,7 +116,7 @@ public class Crown extends CustomMonster {
         if(this.lastMove((byte) 3)) {
             this.setMove((byte) 4, Intent.DEBUFF);
         } else if(this.lastMove((byte) 2)) {
-            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 1, true);
+            this.setMove((byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
         } else if(this.lastMove((byte) 1) || this.lastMove((byte) 4)){
             this.setMove((byte)2, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base);
         } else {

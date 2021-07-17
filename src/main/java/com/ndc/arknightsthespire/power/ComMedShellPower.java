@@ -29,7 +29,6 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    public int maxDamage = 10;
 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     // There's a fallback "missing texture" image, so the game shouldn't crash if you accidentally put a non-existent file.
@@ -42,7 +41,7 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
 
         this.owner = owner;
         this.source = source;
-        this.maxDamage = Math.max(10, maxDamage);
+        this.amount = maxDamage;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -59,7 +58,7 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
         flash();
         addToBot(new AtsSFX("MILK"));
         this.addToBot(new DamageAllMute((AbstractCreature) null,
-                DamageInfo.createDamageMatrix(Math.min(healAmount, this.maxDamage), true),
+                DamageInfo.createDamageMatrix(Math.min(healAmount, this.amount), true),
                 DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.POISON, true, true));
         return healAmount;
     }
@@ -67,7 +66,7 @@ public class ComMedShellPower extends AbstractPower implements CloneablePowerInt
     // Update the description when you apply this power. (i.e. add or remove an "s" in keyword(s))
     @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0] + this.maxDamage + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override

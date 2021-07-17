@@ -44,10 +44,6 @@ public class SeriousPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-    }
-
-    @Override
     public void update(int slot) {
         if(this.amount != getHpPercent()) {
             this.amount = getHpPercent();

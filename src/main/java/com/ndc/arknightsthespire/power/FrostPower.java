@@ -39,12 +39,19 @@ public class FrostPower extends AbstractPower implements CloneablePowerInterface
     public int onAttacked(DamageInfo info, int damageAmount) {
         if(info.owner != this.owner && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS) {
             flash();
+            AbstractPower tp = this.owner.getPower("Artifact");
             this.addToBot(new ApplyPowerAction(info.owner, this.owner, new StrengthPower(info.owner, -this.amount), -this.amount));
-            if(this.isRevived) {
+            if (tp == null) {
+                this.addToBot(new ApplyPowerAction(info.owner, this.owner, new LoseAtkPower(info.owner, this.amount), this.amount));
+                if(this.isRevived) {
+                    this.addToBot(new ApplyPowerAction(info.owner, this.owner, new DexterityPower(info.owner, -this.amount), -this.amount));
+                    this.addToBot(new ApplyPowerAction(info.owner, this.owner, new LoseDefPower(info.owner, this.amount), this.amount));
+                }
+            } else if(this.isRevived) {
                 this.addToBot(new ApplyPowerAction(info.owner, this.owner, new DexterityPower(info.owner, -this.amount), -this.amount));
-            }
-            if (!this.owner.hasPower("Artifact")) {
-                this.addToBot(new ApplyPowerAction(info.owner, this.owner, new LoseAtkPower(info.owner, this.amount, this.isRevived), this.amount));
+                if(tp.amount < 2) {
+                    this.addToBot(new ApplyPowerAction(info.owner, this.owner, new LoseDefPower(info.owner, this.amount), this.amount));
+                }
             }
         }
         return damageAmount;

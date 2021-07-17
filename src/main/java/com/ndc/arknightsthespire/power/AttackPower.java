@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.DoubleDamagePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.ndc.arknightsthespire.cards.base.CardSPBase;
 import com.ndc.arknightsthespire.character.AtsEnum;
@@ -76,7 +77,7 @@ public class AttackPower extends AbstractPower implements CloneablePowerInterfac
         if(this.owner.hasPower(SeriousPower.POWER_ID)) {
             pa += this.owner.getPower(SeriousPower.POWER_ID).amount;
         }
-        if(this.owner.hasPower(DurianPower.POWER_ID)) {
+        if(this.owner.hasPower(DoubleDamagePower.POWER_ID)) {
             pa += 100;
         }
         if(this.owner.hasPower(AtkTurnPower.POWER_ID)) {
@@ -97,7 +98,7 @@ public class AttackPower extends AbstractPower implements CloneablePowerInterfac
                 if (this.owner.hasPower(SeriousPower.POWER_ID)) {
                     pa += this.owner.getPower(SeriousPower.POWER_ID).amount;
                 }
-                if(this.owner.hasPower(DurianPower.POWER_ID)) {
+                if(this.owner.hasPower(DoubleDamagePower.POWER_ID)) {
                     pa += 100;
                 }
                 des += " x " + pa + "%";
