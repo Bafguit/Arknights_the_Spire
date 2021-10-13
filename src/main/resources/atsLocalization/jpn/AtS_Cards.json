@@ -36,12 +36,12 @@
     "DESCRIPTION": "!D! ダメージを 3 回与える。 NL [#FFC800]SP !S! ats:自動",
     "EXTENDED_DESCRIPTION": [
       "オーバーロード",
-      "[#FFC800]SP !S! ats:自動 NL !D! ダメージを 3 回与える。"
+      "[#FFC800]SP !S! ats:自動 NL !D! ダメージを 5 回与える。"
     ]
   },
   "ats:Counter Healing Mode": {
     "NAME": "医療態勢・受動",
-    "DESCRIPTION": "HPを回復するたびに !M! ats：SP を得る。"
+    "DESCRIPTION": "HPを回復するたびに !M!        [#FFC800]SP を得る。"
   },
   "ats:Powerful Strike": {
     "NAME": "強撃β",
@@ -83,7 +83,7 @@
   },
   "ats:Sunburst": {
     "NAME": "爆炎",
-    "DESCRIPTION": "敵全体に !D! ダメージと　ats:火傷 !M! を与える。 NL [#FFC800]SP !S! ats:自動",
+    "DESCRIPTION": "敵全体に !D! ダメージと       ats:火傷  !M! を与える。 NL [#FFC800]SP !S! ats:自動",
     "EXTENDED_DESCRIPTION": [
       "[#FFC800]SP !S! ats:自動 NL 敵全体に !D! ダメージを与える。 敵全体に ats:火傷 と 弱体 !M! を与える。"
     ]
@@ -182,9 +182,9 @@
   },
   "ats:Revitalization": {
     "NAME": "回復力促進",
-    "DESCRIPTION": "HPを !M! 回復する。 再生 !M! を得る。"
+    "DESCRIPTION": "HPを !M! 回復する。 再生1を得る。"
   },
-  "[#FFC800]SPore Proliferation": {
+  "ats:Spore Proliferation": {
     "NAME": "胞子飛散",
     "DESCRIPTION": "敵にかかっているランダムな ats:バフ を取り除く。 脱力 !M! を与える。"
   },
@@ -245,7 +245,7 @@
   },
   "ats:Disruption Kick": {
     "NAME": "七武掠陣脚",
-    "DESCRIPTION": "保留 NL 敵全体のすべての ats:バフ とデバフを取り除くし !D! ダメージを与える。 廃棄"
+    "DESCRIPTION": "保留 NL 敵全体のすべての ats:バフ とデバフを取り除き、 !D! ダメージを与える。 廃棄"
   },
   "ats:Automatic Cover": {
     "NAME": "オートカバー",
@@ -255,12 +255,12 @@
     "NAME": "「あついないふ」",
     "DESCRIPTION": "!D! ダメージを 3 回与える。 カードを 1 枚引く。 NL [#FFC800]SP !S! ats:自動",
     "EXTENDED_DESCRIPTION": [
-      "[#FFC800]SP !S! ats:自動 NL ダメージを 3 回与える。 敵が ats:火傷 を受けている場合は NL 敵はHPを ats:火傷 だけ失う, [E] を得る。 NL カードを 1 枚引く。"
+      "[#FFC800]SP !S! ats:自動 NL !D! ダメージを 3 回与える。 敵が ats:火傷 を受けている場合は NL 敵はHPを ats:火傷 だけ失う, [E] を得る。 NL カードを 1 枚引く。"
     ]
   },
   "ats:Composite Medical Shells": {
     "NAME": "特製薬刃弾",
-    "DESCRIPTION": "HPを回復するたびに 敵全体にそれだけダメージを与えます。（ 最大 !M! ）"
+    "DESCRIPTION": "HPを回復するたびに 敵全体に同数のダメージを与えます。（ 最大 !M! ）"
   },
   "ats:Neurotoxin": {
     "NAME": "神経毒",
@@ -276,7 +276,7 @@
   },
   "ats:Echo Reverb": {
     "NAME": "木霊せし聖音",
-    "DESCRIPTION": "ats:スロー 与える。 敵が アーティファクト を受けている場合、取り除く。 廃棄",
+    "DESCRIPTION": "ats:スロー を与える。 敵が アーティファクト を受けている場合、取り除く。 廃棄",
     "UPGRADE_DESCRIPTION": "天賦 NL ats:スロー 与える。 敵が アーティファクト を受けている場合、取り除く。 廃棄"
   },
   "ats:Beaten Up": {
@@ -285,7 +285,7 @@
   },
   "ats:Ignite": {
     "NAME": "イグニッション",
-    "DESCRIPTION": "!D! ダメージと　ats:火傷 !M! を与える。"
+    "DESCRIPTION": "!D! ダメージと NL   ats:火傷  !M! を与える。"
   },
   "ats:Demon Strength": {
     "NAME": "悪鬼の力",
@@ -364,7 +364,7 @@
   },
   "ats:Absolute Focus": {
     "NAME": "一心不乱",
-    "DESCRIPTION": "カードを !M! 枚選ぶ。 山札から選択したカードと職業が同じランダムカードを手札に加える。"
+    "DESCRIPTION": "手札からカードを !M! 枚選ぶ。 山札から選択したカードと職業が同じランダムカードを手札に加える。"
   },
   "ats:Literary Storm": {
     "NAME": "嵐より生まれしもの",

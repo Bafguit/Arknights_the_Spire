@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
@@ -101,22 +102,23 @@ public class DamageAllMute extends AbstractGameAction {
             int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size();
 
             for(int i = 0; i < temp; ++i) {
-                if (!((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).isDeadOrEscaped()) {
+                AbstractMonster m = (AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+                if (!m.isDeadOrEscaped()) {
                     if (this.attackEffect == AttackEffect.POISON) {
-                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).tint.color.set(Color.CHARTREUSE);
-                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).tint.changeColor(Color.WHITE.cpy());
+                        m.tint.color.set(Color.CHARTREUSE);
+                        m.tint.changeColor(Color.WHITE.cpy());
                     } else if (this.attackEffect == AttackEffect.FIRE) {
-                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).tint.color.set(Color.RED);
-                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).tint.changeColor(Color.WHITE.cpy());
+                        m.tint.color.set(Color.RED);
+                        m.tint.changeColor(Color.WHITE.cpy());
                     }
 
-                    ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).damage(new DamageInfo(this.source, this.damage[i], this.damageType));
+                    m.damage(new DamageInfo(this.source, this.damage[i], this.damageType));
 
                     if(this.vul > 0) {
-                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).addPower(new VulnerablePower(AbstractDungeon.getCurrRoom().monsters.monsters.get(i), this.vul, false));
+                        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new VulnerablePower(m, this.vul, false)));
                     }
                     if(this.hasBurn) {
-                        ((AbstractMonster)AbstractDungeon.getCurrRoom().monsters.monsters.get(i)).addPower(new BurnPower(AbstractDungeon.getCurrRoom().monsters.monsters.get(i), this.source, this.burn));
+                        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, new BurnPower(m, this.source, this.burn)));
                     }
                 }
             }

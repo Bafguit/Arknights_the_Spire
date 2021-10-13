@@ -2,7 +2,7 @@
   {
     "PROPER_NAME": "SP",
     "NAMES": [
-      "sp",
+      "sp"
     ],
     "DESCRIPTION": "#ySP を消費すると、カードの効果が強化される。"
   },
@@ -23,7 +23,7 @@
   {
     "PROPER_NAME": "火傷",
     "NAMES": [
-      "火傷",
+      "火傷"
     ],
     "DESCRIPTION": "このターン終了時と次のターン起動時にHPを失う。"
   },
@@ -37,14 +37,14 @@
   {
     "PROPER_NAME": "指令",
     "NAMES": [
-      "指令",
+      "指令"
     ],
     "DESCRIPTION": "ターン開始時、エナジーを得る。"
   },
   {
     "PROPER_NAME": "治癒力",
     "NAMES": [
-      "治癒力",
+      "治癒力"
     ],
     "DESCRIPTION": "体力回復量が増加する。"
   },

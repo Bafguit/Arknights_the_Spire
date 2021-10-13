@@ -4,7 +4,7 @@
   <groupId>com.ndc</groupId>
   <artifactId>arknights-the-spire</artifactId>
   <name>Arknights the Spire</name>
-  <version>1.0.12</version>
+  <version>1.0.13</version>
   <description>Slay the Spire mod with Arknights Dokutah</description>
   <build>
     <finalName>ArknightsTheSpire</finalName>

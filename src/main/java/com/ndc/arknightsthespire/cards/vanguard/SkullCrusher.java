@@ -38,9 +38,7 @@ public class SkullCrusher extends CardSPBase {
 
     public void triggerOnGlowCheck() {
         if(this.et >= 1) {
-            if(shouldUseSp()) {
-                this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-            }
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
             this.canStun = true;
         } else {
             this.glowColor = this.baseColor.cpy();
